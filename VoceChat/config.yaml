@@ -10,7 +10,7 @@ url: https://voce.chat/
 
 map:
   - config:rw
-image: docker.io/privoce/vocechat-server
+image: docker.io/privoce/vocechat-server:v0.3.54
 init: false
 ingress: true
 ingress_port: 3000
