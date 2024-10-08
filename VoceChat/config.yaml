@@ -7,7 +7,7 @@ arch:
   - amd64
 url: https://voce.chat/
 map:
-  - addons:rw
+  - data:rw
 image: docker.io/privoce/vocechat-server
 init: false
 ingress: true
