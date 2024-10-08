@@ -6,9 +6,8 @@ slug: "vocechat-server"
 arch:
   - amd64
 url: https://voce.chat/
-environment: {
-    "VOCE_HOME": "/data"
-  }
+map:
+  - addons:rw
 image: docker.io/privoce/vocechat-server
 init: false
 ingress: true
