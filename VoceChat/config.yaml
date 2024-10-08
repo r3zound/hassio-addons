@@ -20,4 +20,4 @@ ports:
 ports_description:
   3009/tcp: "VoceChat Server"
 startup: application
-watchdog: tcp://[HOST]:[PORT:3000]
+"webui":"[PROTO:http]://[HOST]:[PORT:3009]"
