@@ -19,5 +19,3 @@ ports:
   3009/tcp: 3000
 ports_description:
   3009/tcp: "VoceChat Server"
-startup: application
-webui: "[PROTO:http]://[HOST]:[PORT:3009]"
