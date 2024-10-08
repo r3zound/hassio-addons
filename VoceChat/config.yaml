@@ -13,7 +13,7 @@ map:
 image: docker.io/privoce/vocechat-server
 init: false
 ingress: true
-ingress_port: 3009
+ingress_port: 3000
 ingress_stream: true
 ports:
   3009/tcp: 3000
