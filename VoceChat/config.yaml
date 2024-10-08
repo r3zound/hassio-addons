@@ -14,3 +14,4 @@ ports:
   3000/tcp: 3000
 ports_description:
   3000/tcp: "VoceChat Server"
+watchdog: tcp://[HOST]:[PORT:3000]
