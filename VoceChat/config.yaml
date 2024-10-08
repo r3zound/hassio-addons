@@ -6,12 +6,9 @@ slug: "vocechat-server"
 arch:
   - amd64
 url: https://voce.chat/
-map:
-  - data:rw
 image: docker.io/privoce/vocechat-server
 init: false
 ingress: true
-startup: system
 ingress_port: 3000
 ingress_stream: true
 ports:
