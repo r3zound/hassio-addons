@@ -10,9 +10,9 @@ image: docker.io/privoce/vocechat-server
 init: false
 ingress: true
 ingress_port: 3000
-options:
-    data_location: "/config/addons_config/Vocechat"
-
+options: {
+    "data_location": "/config/addons_config/Vocechat"
+    }
 ports:
   3000/tcp: 3000
 ports_description:
