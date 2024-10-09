@@ -8,19 +8,19 @@ arch:
 url: https://voce.chat/
 image: docker.io/privoce/vocechat-server
 init: false
+hassio_api: true
+hassio_role: manager
+startup: services
+ingress: true
 map: 
   - addon_config:rw
-  
-
-ingress: true
 ingress_port: 3000
 options: 
-    WORKDIR: "/config/addons_config/Vocechat"
+    current_dir: "/addons_config/Vocechat"
 ports:
   3000/tcp: 3000
 ports_description:
   3000/tcp: "VoceChat Server"
 watchdog: "http://[HOST]:[PORT:3000]"
 webui: "http://[HOST]:[PORT:3000]"
-startup: system
-hassio_api: true
+
