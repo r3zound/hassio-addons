@@ -7,11 +7,14 @@ arch:
   - amd64
 url: https://voce.chat/
 image: docker.io/privoce/vocechat-server
+map: [
+    "config:rw"
+  ]
 init: false
 ingress: true
 ingress_port: 3000
 options: {
-    "data_location": "/config/addons_config/Vocechat"
+    data_location: "/config/addons_config/Vocechat"
     }
 ports:
   3000/tcp: 3000
