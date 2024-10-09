@@ -21,9 +21,10 @@ init: false
 ingress: true
 ingress_port: 3000
 options: 
-    data: "/config/addons_config/Vocechat"
+    WORKDIR: "/config/addons_config/Vocechat"
 ports:
   3000/tcp: 3000
 ports_description:
   3000/tcp: "VoceChat Server"
 watchdog: tcp://[HOST]:[PORT:3000]
+startup: services
