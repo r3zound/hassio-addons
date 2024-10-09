@@ -7,15 +7,21 @@ arch:
   - amd64
 url: https://voce.chat/
 image: docker.io/privoce/vocechat-server
-map: [
-    "config:rw"
-  ]
+map: 
+  - homeassistant_config:rw
+  - addon_config:rw
+  - ssl:rw
+  - all_addon_configs:rw
+  - addons:rw
+  - share:rw
+  - backup:rw
+  - media:rw
+  
 init: false
 ingress: true
 ingress_port: 3000
-options: {
-    data_location: "/config/addons_config/Vocechat"
-    }
+options: 
+    data: "/config/addons_config/Vocechat"
 ports:
   3000/tcp: 3000
 ports_description:
