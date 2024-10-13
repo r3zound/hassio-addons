@@ -16,7 +16,7 @@ map:
   - addon_config:rw
 ingress_port: 3000
 options: 
-    current_dir: "/addons_config/Vocechat"
+    data_dir: "/addons_config/vocechat"
 ports:
   3000/tcp: 3000
 ports_description:
