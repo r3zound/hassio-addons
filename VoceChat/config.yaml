@@ -24,4 +24,5 @@ ports_description:
   3000/tcp: "VoceChat Server"
 watchdog: "http://[HOST]:[PORT:3000]"
 webui: "http://[HOST]:[PORT:3000]"
-
+schema:
+  - data_dir: "str?"
