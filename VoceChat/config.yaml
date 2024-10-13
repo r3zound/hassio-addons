@@ -17,12 +17,10 @@ map:
   - config:rw
 ingress_port: 3000
 options: 
-    data_dir: "/addons_config/vocechat"
+    data_dir: "/config/addons_config/vocechat"
 ports:
   3000/tcp: 3000
 ports_description:
   3000/tcp: "VoceChat Server"
 watchdog: "http://[HOST]:[PORT:3000]"
 webui: "http://[HOST]:[PORT:3000]"
-schema:
-  - data_dir: "str?"
