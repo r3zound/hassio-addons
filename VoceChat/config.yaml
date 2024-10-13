@@ -15,7 +15,7 @@
 "startup": "services",
 "ingress": true,
 "map": [
-  "addon_config:rw"
+  "addon_config:rw",
   "config:rw"
   ],
 "ingress_port": 3000
