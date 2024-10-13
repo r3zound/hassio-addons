@@ -19,9 +19,6 @@
     "config:rw"
   ],
   "ingress_port": 3000,
-  "options": {
-    "data_dir": "/config/addons_config/vocechat"
-  },
   "ports": {
     "3000/tcp": 3000
   },
