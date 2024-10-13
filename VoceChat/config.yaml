@@ -18,7 +18,7 @@
   "addon_config:rw",
   "config:rw"
   ],
-"ingress_port": 3000
+"ingress_port": 3000,
 "options": {
     "data_dir": "/config/addons_config/vocechat"
     },
