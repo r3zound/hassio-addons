@@ -22,7 +22,7 @@
 "options": {
     "data_dir": "/config/addons_config/vocechat"
     },
-"ports":{
+"ports": {
   "3000/tcp": 3000
   },
 "ports_description": {
