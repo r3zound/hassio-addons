@@ -16,7 +16,8 @@
   "map": [
     "addon_config:rw",
     "config:rw",
-    "share:/data"
+    "share:/data",
+    "/data:/home/vocechat-server"
   ],
   "ingress_port": 3000,
   "ports": {
