@@ -1,6 +1,6 @@
 {
   "name": "VoceChat Server",
-  "description": "VoceChat Server Add-on for Home Assistant",
+  "description": "VoceChat Server Add-on for Home Assistant with persistent data",
   "version": "v0.3.57",
   "slug": "vocechat-server",
   "init": false,
@@ -9,14 +9,14 @@
   ],
   "url": "https://voce.chat/",
   "image": "docker.io/privoce/vocechat-server",
-
   "hassio_api": true,
   "hassio_role": "manager",
   "startup": "services",
   "ingress": true,
   "map": [
-    "addon_configs:rw",
-    "config:rw"
+    "addon_config:rw",
+    "config:rw",
+    "share:/data"
   ],
   "ingress_port": 3000,
   "ports": {
@@ -26,5 +26,11 @@
     "3000/tcp": "VoceChat Server"
   },
   "watchdog": "http://[HOST]:[PORT:3000]",
-  "webui": "http://[HOST]:[PORT:3000]"
+  "webui": "http://[HOST]:[PORT:3000]",
+  "options": {
+    "data_path": "/data"
+  },
+  "schema": {
+    "data_path": "str"
+  }
 }
