@@ -14,7 +14,7 @@ map:
   - addon_config:rw
 #  - config:rw
 #  - share:/data
-#  - /home/vocechat-server:/config/addon_config/vocechat-server
+  - /addon_configs/vocechat-server:/home/vocechat-server
 ports:
   3000/tcp: 3000
 ports_description:
@@ -25,7 +25,7 @@ options:
   data_path: "/addon_configs/vocechat-server/data"
 schema:
   data_path: str
-#image: "docker.io/privoce/vocechat-server"
+image: "docker.io/privoce/vocechat-server"
 webui: "http://[HOST]:[PORT:3000]"
 watchdog: "http://[HOST]:[PORT:3000]"
 #environment:
