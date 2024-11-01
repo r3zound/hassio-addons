@@ -3,7 +3,7 @@ RUN apk update && apk add ca-certificates
 
 FROM busybox
 RUN mkdir -p /addon_configs/vocechat-server
-COPY --from=certs /etc/ssl/certs /etc/ssl/certs
+#COPY --from=certs /etc/ssl/certs /etc/ssl/certs
 
 COPY vocechat-server /home/vocechat-server/vocechat-server
 
