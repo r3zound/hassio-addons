@@ -12,7 +12,6 @@ ingress_port: 3000
 panel_icon: mdi:chat
 map:
   - addon_config:rw
-  - config:rw
   - share:/data
   - /data:/addon_config/vocechat-server
 ports:
