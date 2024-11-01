@@ -12,6 +12,6 @@ FROM $BUILD_FROM
 #COPY data /home/vocechat-server/data
 #COPY config /home/vocechat-server/config 
 COPY docker-entrypoint.sh / 
-#RUN RUN chmod +x /docker-entrypoint.sh 
+RUN chmod +x /docker-entrypoint.sh 
 
 #WORKDIR /home/vocechat-server
