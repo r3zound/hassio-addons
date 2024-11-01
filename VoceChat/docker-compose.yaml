@@ -19,6 +19,7 @@ services:
 #      - ADMIN_PASSWORD=123456
 #      - DOMAIN=localhost
     volumes:
+      - /config:- /config
       - /config/addon_config/vocechat-server:/home/vocechat-server
       - /config/addon_config/vocechat-server/data:/home/vocechat-server/data
       - /config/addon_config/vocechat-server/config:/home/vocechat-server/config
