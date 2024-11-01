@@ -25,7 +25,7 @@ options:
   data_path: "/config/addons_config/vocechat-server/data"
 schema:
   data_path: str
-image: "docker.io/privoce/vocechat-server"
+#image: "docker.io/privoce/vocechat-server"
 webui: "http://[HOST]:[PORT:3000]"
 watchdog: "http://[HOST]:[PORT:3000]"
 #environment:
