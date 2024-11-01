@@ -11,9 +11,10 @@ ingress: true
 ingress_port: 3000
 panel_icon: mdi:chat
 map:
-  - addon_config:rw
+#  - addon_config:rw
+  - config:rw
   - share:/data
-  - /home/vocechat-server:/addon_config/vocechat-server
+  - /home/vocechat-server:/config/addon_config/vocechat-server
 ports:
   3000/tcp: 3000
 ports_description:
@@ -21,7 +22,7 @@ ports_description:
 hassio_api: true
 hassio_role: manager
 options:
-  data_path: "/addon_config/vocechat-server/data"
+  data_path: "/config/addon_config/vocechat-server/data"
 schema:
   data_path: str
 image: "docker.io/privoce/vocechat-server"

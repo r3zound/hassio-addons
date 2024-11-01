@@ -7,11 +7,11 @@ docker pull Privoce/vocechat-server:latest
 docker run -d --restart=always \
   -p 443:443 \
   --name vocechat-server \
-  -v ~/.vocechat-server/data:/addon_config/vocechat-server/data \
+  -v ~/.vocechat-server/data:/config/addon_config/vocechat-server/data \
   Privoce/vocechat-server:latest \
   --network.bind "0.0.0.0:443" \
   --network.domain "chat.domain.com" \
   --network.tls.type "acme_tls_alpn_01" \
   --network.tls.acme.directory_url "https://acme-v02.api.letsencrypt.org/directory" \
-  --network.tls.acme.cache_path "/addon_config/vocechat-server/data/cert"
+  --network.tls.acme.cache_path "/config/addon_config/vocechat-server/data/cert"
 docker logs -f vocechat-server

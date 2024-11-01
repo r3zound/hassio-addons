@@ -12,5 +12,5 @@ RUN chmod +x /docker-entrypoint.sh
 #    VOCECHAT_FCM_CLIENT_EMAIL=""\
 #    VOCECHAT_FCM_TOKEN_URI="https://oauth2.googleapis.com/token"
 EXPOSE 3000
-WORKDIR /addon_config/vocechat-server
+WORKDIR /config/addon_config/vocechat-server
 ENTRYPOINT ["/docker-entrypoint.sh"]
