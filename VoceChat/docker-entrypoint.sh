@@ -20,7 +20,7 @@
 #EOT
 #fi
 
-cd /config/addon_config/vocechat-server/
+cd /addon_configs/vocechat-server
 cmd="./vocechat-server"
 if test $# -gt 0; then
   case "$1" in
