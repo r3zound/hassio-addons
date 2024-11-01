@@ -18,8 +18,8 @@ services:
 #      - ADMIN_USER=admin
 #      - ADMIN_PASSWORD=123456
 #      - DOMAIN=localhost
-    volumes:
-      - /addon_config/vocechat-server/data:/home/vocechat-server/data
+#    volumes:
+#      - /addon_config/vocechat-server/data:/home/vocechat-server/data
     expose:
       - 3000
     ports:
