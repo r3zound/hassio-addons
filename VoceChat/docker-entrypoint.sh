@@ -21,6 +21,17 @@
 #fi
 
 cd /config/addons_config/vocechat-server
+
+if [ ! -f "/config/addons_config/vocechat-server/vocechat-server" ]; then
+  cp /home/vocechat-server/vocechat-server /config/addons_config/vocechat-server/vocechat-server
+  cp /home/vocechat-server/data /config/addons_config/vocechat-server/data
+  cp /home/vocechat-server/config /config/addons_config/vocechat-server/config
+fi
+
+
+
+
+
 cmd="./vocechat-server"
 if test $# -gt 0; then
   case "$1" in

@@ -14,9 +14,8 @@ FROM $BUILD_FROM
 COPY docker-entrypoint.sh / 
 RUN chmod +x /docker-entrypoint.sh 
 
-#WORKDIR /home/vocechat-server
 
-COPY /home/vocechat-server/vocechat-server /config/addons_config/vocechat-server/vocechat-server
-COPY /home/vocechat-server/data /config/addons_config/vocechat-server/data
-COPY /home/vocechat-server/config /config/addons_config/vocechat-server/config
+#COPY /home/vocechat-server/vocechat-server /config/addons_config/vocechat-server/vocechat-server
+#COPY /home/vocechat-server/data /config/addons_config/vocechat-server/data
+#COPY /home/vocechat-server/config /config/addons_config/vocechat-server/config
 WORKDIR /config/addons_config/vocechat-server
