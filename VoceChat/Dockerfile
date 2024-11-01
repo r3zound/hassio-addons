@@ -6,7 +6,7 @@ FROM $BUILD_FROM
 # Copy data
 
 
-COPY /etc/ssl/certs /etc/ssl/certs
+#COPY /etc/ssl/certs /etc/ssl/certs
 
 COPY vocechat-server /home/vocechat-server/vocechat-server
 
