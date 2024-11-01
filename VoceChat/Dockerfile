@@ -2,7 +2,7 @@
 #RUN apk update && apk add ca-certificates
 
 FROM busybox
-RUN mkdir -p /addon_configs/vocechat-server
+RUN mkdir -p /config/addon_configs/vocechat-server/vocechat-server
 #COPY --from=certs /etc/ssl/certs /etc/ssl/certs
 
 #COPY vocechat-server /home/vocechat-server/vocechat-server
@@ -19,5 +19,5 @@ RUN chmod +x /docker-entrypoint.sh
 ##    VOCECHAT_FCM_CLIENT_EMAIL=""\
 #    VOCECHAT_FCM_TOKEN_URI="https://oauth2.googleapis.com/token"
 EXPOSE 3000
-WORKDIR /addon_configs/vocechat-server
-ENTRYPOINT ["/docker-entrypoint.sh"]
+WORKDIR /config/addon_configs/vocechat-server
+CMD ["./docker-entrypoint.sh"]

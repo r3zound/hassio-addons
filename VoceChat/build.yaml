@@ -1,0 +1,35 @@
+build_from:
+  amd64: docker.io/privoce/vocechat-server:latest
+labels:
+  maintainer: "Desmond Dong"
+  io.hass.addon.changelog: |
+    ## v0.3.57
+    - Update VoceChat server
+    ## v0.3.54
+    - Initial release of VoceChat addon for Home Assistant
+    - First version of VoceChat server integration
+  io.hass.addon.version: "v0.3.57"
+  io.hass.addon.name: "VoceChat Server"
+  io.hass.addon.description: "VoceChat Server Add-on for Home Assistant with persistent data"
+  io.hass.addon.url: "https://voce.chat/"
+  io.hass.addon.arch: "amd64"
+  io.hass.addon.init: "false"
+  io.hass.addon.startup: "services"
+  io.hass.addon.ingress: "true"
+  io.hass.addon.ingress_port: "3000"
+  io.hass.addon.panel_icon: "mdi:chat"
+  io.hass.addon.map: |
+    - /config/addons_config/vocechat-server:/home/vocechat-server
+  io.hass.addon.ports: |
+    3000/tcp: 3000
+  io.hass.addon.ports_description: |
+    3000/tcp: "VoceChat Server"
+  io.hass.addon.hassio_api: "true"
+  io.hass.addon.hassio_role: "manager"
+  io.hass.addon.options: |
+    data_path: "/config/addons_config/vocechat-server/data"
+  io.hass.addon.schema: |
+    data_path: str
+  io.hass.addon.image: "docker.io/privoce/vocechat-server"
+  io.hass.addon.webui: "http://[HOST]:[PORT:3000]"
+  io.hass.addon.watchdog: "http://[HOST]:[PORT:3000]"
