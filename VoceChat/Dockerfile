@@ -3,7 +3,7 @@ RUN apk update && apk add ca-certificates
 
 FROM busybox
 COPY --from=certs /etc/ssl/certs /etc/ssl/certs
-COPY vocechat-server /config/addon_config/vocechat-server/vocechat-server
+COPY vocechat-server /config/addon_config/vocechat-server/
 COPY config /config/addon_config/vocechat-server/config
 COPY docker-entrypoint.sh /
 RUN chmod +x /docker-entrypoint.sh
