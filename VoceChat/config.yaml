@@ -13,7 +13,7 @@ panel_icon: mdi:chat
 map:
 #  - addon_config:rw
   - config:rw
-  - share:/data
+#  - share:/data
 #  - /home/vocechat-server:/config/addon_config/vocechat-server
 ports:
   3000/tcp: 3000
@@ -28,8 +28,8 @@ schema:
 #image: "docker.io/privoce/vocechat-server"
 webui: "http://[HOST]:[PORT:3000]"
 watchdog: "http://[HOST]:[PORT:3000]"
-environment:
-  VOCECHAT_FCM_PROJECT_ID: ""
-  VOCECHAT_FCM_PRIVATE_KEY: ""
-  VOCECHAT_FCM_CLIENT_EMAIL: ""
-  VOCECHAT_FCM_TOKEN_URI: "https://oauth2.googleapis.com/token"
+#environment:
+#  VOCECHAT_FCM_PROJECT_ID: ""
+#  VOCECHAT_FCM_PRIVATE_KEY: ""
+#  VOCECHAT_FCM_CLIENT_EMAIL: ""
+#  VOCECHAT_FCM_TOKEN_URI: "https://oauth2.googleapis.com/token"
