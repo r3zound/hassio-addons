@@ -22,13 +22,14 @@
 
 cd /config/addons_config/vocechat-server
 
-if [ ! -f "/config/addons_config/vocechat-server/vocechat-server" ]; then
-  cp /home/vocechat-server/vocechat-server /config/addons_config/vocechat-server/vocechat-server
+
+cp /home/vocechat-server/vocechat-server /config/addons_config/vocechat-server/vocechat-server
+if [ ! -d "/config/addons_config/vocechat-server/data" ]; then
   cp -r /home/vocechat-server/data /config/addons_config/vocechat-server/data
+fi
+if [ ! -d "/config/addons_config/vocechat-server/config" ]; then
   cp -r /home/vocechat-server/config /config/addons_config/vocechat-server/config
 fi
-
-
 
 
 
