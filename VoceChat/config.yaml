@@ -5,6 +5,7 @@ description: "VoceChat Server Add-on for Home Assistant with persistent data"
 url: "https://voce.chat/"
 arch:
   - amd64
+  - armhf
 init: false
 startup: services
 ingress: true
