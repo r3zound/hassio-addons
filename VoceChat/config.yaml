@@ -6,6 +6,7 @@ url: "https://voce.chat/"
 arch:
   - amd64
   - armhf
+  - aarch64
 init: false
 startup: services
 ingress: true

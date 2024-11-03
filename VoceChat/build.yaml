@@ -1,6 +1,7 @@
 build_from:
   amd64: docker.io/privoce/vocechat-server:latest
   armhf: docker.io/privoce/vocechat-server:latest-arm64
+  aarch64: docker.io/privoce/vocechat-server:latest-arm64
 labels:
   maintainer: "Desmond Dong"
   io.hass.addon.changelog: |
@@ -13,7 +14,7 @@ labels:
   io.hass.addon.name: "VoceChat Server"
   io.hass.addon.description: "VoceChat Server Add-on for Home Assistant with persistent data"
   io.hass.addon.url: "https://voce.chat/"
-  io.hass.addon.arch: "amd64,arm64"
+  io.hass.addon.arch: "amd64, armhf, aarch64"
   io.hass.addon.init: "false"
   io.hass.addon.startup: "services"
   io.hass.addon.ingress: "true"
