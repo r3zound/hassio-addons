@@ -26,6 +26,7 @@ The add-on doesn't require any manual configuration. However, you can adjust the
 ## Follow Us
 
 Stay updated with our latest developments:
+如果需要即时沟通,请扫码关注
 
 ![QR Code](https://github.com/user-attachments/assets/5c74897a-e32a-4fcc-b41c-1fc0d76a2494)
 
