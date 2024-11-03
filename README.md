@@ -43,7 +43,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Follow Us
 
-Stay updated with our latest developments:
+Stay updated with our latest developments:\n
 如果需要即时沟通，请扫码关注。如果需要把特定的软件变成插件也欢迎随时间告知，有时候我就慢慢转。
 
 ![QR Code](https://github.com/user-attachments/assets/5c74897a-e32a-4fcc-b41c-1fc0d76a2494)
