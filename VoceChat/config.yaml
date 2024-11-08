@@ -1,5 +1,5 @@
 name: "VoceChat Server"
-version: "v0.3.57"
+version: "v0.4.0"
 slug: "vocechat-server"
 description: "VoceChat Server Add-on for Home Assistant with persistent data. \n 关注微信号：老王杂谈说 获取更多内容吧"
 url: "https://github.com/djhui/hassio-addons"

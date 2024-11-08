@@ -1,16 +1,19 @@
 build_from:
-  amd64: docker.io/privoce/vocechat-server:latest
+  amd64: docker.io/privoce/vocechat-server:v0.4.0
   armhf: docker.io/privoce/vocechat-server:latest-arm64
   aarch64: docker.io/privoce/vocechat-server:latest-arm64
 labels:
   maintainer: "Desmond Dong"
   io.hass.addon.changelog: |
+    ## v0.4.0
+    - Updated VoceChat server to version 0.4.0.
+    - Added support for ARM architecture.
     ## v0.3.57
-    - Update VoceChat server
+    - Fixed issue where data would be lost after a restart.
     ## v0.3.54
     - Initial release of VoceChat addon for Home Assistant
     - First version of VoceChat server integration
-  io.hass.addon.version: "v0.3.57"
+  io.hass.addon.version: "v0.4.0"
   io.hass.addon.name: "VoceChat Server"
   io.hass.addon.description: "VoceChat Server Add-on for Home Assistant with persistent data \n 关注微信号：老王杂谈说 获取更多内容吧"
   io.hass.addon.url: "https://github.com/djhui/hassio-addons"
