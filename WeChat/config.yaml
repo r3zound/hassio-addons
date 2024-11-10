@@ -11,19 +11,19 @@ arch:
 init: false
 startup: services
 ingress: true
-ingress_port: 3000
+ingress_port: 8888
 panel_icon: mdi:wechat
 map:
   - config:rw
 ports:
-  3000/tcp: 3000
+  8888/tcp: 8888
 ports_description:
-  3000/tcp: "WeChat Server"
+  8888/tcp: "WeChat Server"
 hassio_api: true
 hassio_role: manager
 options:
   data_path: "/config/addons_config/wechat-server/data"
 schema:
   data_path: str
-webui: "http://[HOST]:[PORT:3000]"
-watchdog: "http://[HOST]:[PORT:3000]"
+webui: "http://[HOST]:[PORT:8888]"
+watchdog: "http://[HOST]:[PORT:8888]"

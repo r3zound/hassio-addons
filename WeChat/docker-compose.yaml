@@ -1,6 +1,6 @@
 version: '3'
 services:
-  vocechat:
+  wechat:
     image: wechat-server:latest
     container_name: wechat-server
     build:
@@ -8,10 +8,10 @@ services:
       dockerfile: Dockerfile
 
     volumes:
-      - /share/data/docker/vocechat-server/data:/home/vocechat-server/data
+      - /share/data/docker/wechat-server/data:/home/wechat-server/data
       - /mnt/data/supervisor/addon_configs/:/addon_configs
     expose:
-      - 3002
+      - 8888
     ports:
-      - 3002:3002/tcp
+      - 8888:8888/tcp
     restart: always
