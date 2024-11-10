@@ -1,0 +1,29 @@
+name: "WeChat Server"
+version: "v1.0.0"
+slug: "wechat-server"
+#description: "WeChat Server Add-on for Home Assistant with persistent data. \n 关注微信号：老王杂谈说 获取更多内容吧"
+description: "不要安装,这是测试用的,关注微信号：<老王杂谈说> 获取更多内容吧"
+url: "https://github.com/djhui/hassio-addons"
+arch:
+  - amd64
+  - armhf
+  - aarch64
+init: false
+startup: services
+ingress: true
+ingress_port: 3000
+panel_icon: mdi:wechat
+map:
+  - config:rw
+ports:
+  3000/tcp: 3000
+ports_description:
+  3000/tcp: "WeChat Server"
+hassio_api: true
+hassio_role: manager
+options:
+  data_path: "/config/addons_config/wechat-server/data"
+schema:
+  data_path: str
+webui: "http://[HOST]:[PORT:3000]"
+watchdog: "http://[HOST]:[PORT:3000]"
