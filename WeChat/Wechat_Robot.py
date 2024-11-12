@@ -3,25 +3,31 @@ import sys
 import io
 import os
 from zhipuai import ZhipuAI
+import configparser
 
 # Set the encoding to handle Unicode characters
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
-# Fetch configuration from environment variables (Home Assistant injects them)
-TOKEN = os.getenv('TOKEN', 'WeRobot')  # Default to 'WeRobot' if not set
-HOST = os.getenv('HOST', '0.0.0.0')  # Default to '0.0.0.0' if not set
-APP_ID = os.getenv('APP_ID', "test")  
-ENCODING_AES_KEY = os.getenv('ENCODING_AES_KEY', "test")  
-ZHIPUAI_KEY = os.getenv('ZHIPUAI_KEY', "test") 
-PORT = os.getenv('PORT', 8888)  
-data_path = os.getenv('data_path')  # Path for addon data
+# Load configuration from the config.ini file
+config = configparser.ConfigParser()
+config.read('/config/addons_config/wechat-server/config.ini')
+
+HOST = config.get('server', 'host', fallback='0.0.0.0')  # Default to '0.0.0.0' if not set
+PORT = config.getint('server', 'port', fallback=8888)  # Default to 8888 if not set
+APP_ID = config.get('wechat', 'app_id', fallback='test')  
+TOKEN = config.get('wechat', 'token', fallback='WeRobot')  # Default to 'WeRobot' if not set
+ENCODING_AES_KEY = config.get('wechat', 'encoding_aes_key', fallback='test')  
+
+ZHIPUAI_KEY = config.get('zhipuai', 'zhipuai_api_key', fallback='test') 
 
 # Initialize WeRoBot with the token from the config
 robot = werobot.WeRoBot(token=TOKEN)
-robot.config['HOST'] = HOST
-robot.config['APP_ID'] = APP_ID
-robot.config['ENCODING_AES_KEY'] = ENCODING_AES_KEY
-robot.config['PORT'] = PORT
+robot.config.update({
+    'HOST': HOST,
+    'APP_ID': APP_ID,
+    'ENCODING_AES_KEY': ENCODING_AES_KEY,
+    'PORT': PORT
+})
 
 # Initialize ZhipuAI and set the API key
 client = ZhipuAI(api_key=ZHIPUAI_KEY)

@@ -19,6 +19,8 @@ ENV PATH="/opt/venv/bin:$PATH"
 
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh 
+COPY config.ini /config.ini 
+COPY Wechat_Robot.py /Wechat_Robot.py 
 RUN chmod +x /docker-entrypoint.sh 
 
 ENTRYPOINT [ "/docker-entrypoint.sh" ]

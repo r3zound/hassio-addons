@@ -1,16 +1,10 @@
-build_from:
-  aarch64: arm64v8/alpine:3.20.3
-  amd64: amd64/alpine:3.20.3
-  armhf: arm32v6/alpine:3.20.3
-  armv7: arm32v7/alpine:3.20.3
-  i386: i386/alpine:3.20.3
 labels:
   maintainer: "Desmond Dong"
   io.hass.addon.changelog: |
-    ## v0.1.1
+    ## v0.1.2
     - Updated WeChat Server addon for Home Assistant
-    - Improved configuration options and documentation
-  io.hass.addon.version: "v0.1.1"
+    - Enhanced performance and stability
+  io.hass.addon.version: "v0.1.2"
   io.hass.addon.name: "WeChat Server"
   io.hass.addon.description: "不要安装,这是测试用的,关注微信号：<老王杂谈说> 获取更多内容吧"
   io.hass.addon.url: "https://github.com/djhui/hassio-addons"
