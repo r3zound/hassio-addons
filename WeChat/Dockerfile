@@ -2,12 +2,12 @@
 FROM alpine:latest
 
 # Set environment variable for the data path (from addon configuration)
-ENV DATA_PATH /config/addons_config/wechat-server/
+ENV DATA_PATH ${data_path}
 ENV TOKEN ${TOKEN}
 ENV HOST ${HOST}
 ENV APP_ID ${APP_ID}
 ENV ENCODING_AES_KEY ${ENCODING_AES_KEY}
-ENV ZHIPUAI_KEY ${ZhipuAI}
+ENV ZHIPUAI_KEY ${ZHIPUAI_KEY}
 ENV PORT ${PORT}
 
 # 安装 Python3、pip 和必要的系统依赖
