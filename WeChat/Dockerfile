@@ -17,6 +17,8 @@ RUN python3 -m venv /opt/venv \
 # 设置 PATH 环境变量，让系统识别虚拟环境中的 Python 和 pip
 ENV PATH="/opt/venv/bin:$PATH"
 
+COPY  Wechat_Robot.py /Wechat_Robot.py
+COPY config.ini /config.ini
 
 COPY docker-entrypoint.sh / 
 RUN chmod +x /docker-entrypoint.sh 
