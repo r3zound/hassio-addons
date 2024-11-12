@@ -1,28 +1,26 @@
-# Start from Alpine
+# Start of Selection
 FROM alpine:latest
 
-# Install Python3, pip, and system dependencies
+
+# 安装 Python3、pip 和必要的系统依赖
 RUN apk add --no-cache python3 py3-pip python3-dev \
     && apk add --no-cache gcc libffi-dev musl-dev openssl-dev
 
-# Create and activate a virtual environment, then install Python packages
+# 创建并激活虚拟环境，然后安装 Python 包
 RUN python3 -m venv /opt/venv \
     && . /opt/venv/bin/activate \
     && /opt/venv/bin/python3 -m pip install --upgrade pip \
     && pip install --no-cache-dir werobot zhipuai
 
-# Set PATH to include the virtual environment's binaries
+
+
+# 设置 PATH 环境变量，让系统识别虚拟环境中的 Python 和 pip
 ENV PATH="/opt/venv/bin:$PATH"
 
-# Copy application and entrypoint script
-COPY Wechat_Robot.py /Wechat_Robot.py
-COPY docker-entrypoint.sh /docker-entrypoint.sh
 
-# Ensure entrypoint script is executable
-RUN chmod +x /docker-entrypoint.sh
+COPY docker-entrypoint.sh / 
+RUN chmod +x /docker-entrypoint.sh 
 
-# Set the working directory
-WORKDIR /config/addons_config/wechat-server
+CMD [ "/docker-entrypoint.sh" ]
 
-# Use docker-entrypoint.sh as the entrypoint, which will set environment variables
-CMD ["/docker-entrypoint.sh"]
+
