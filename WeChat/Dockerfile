@@ -19,12 +19,6 @@ ENV PATH="/opt/venv/bin:$PATH"
 
 # 设置启动命令
 
-
-
-COPY Wechat_Robot.py /config/addon_config/wechat-server/Wechat_Robot.py
-COPY config.ini /config/addon_config/wechat-server/config.ini
-RUN chmod a+x /config/addon_config/wechat-server/Wechat_Robot.py
-
 COPY docker-entrypoint.sh / 
 RUN chmod +x /docker-entrypoint.sh 
 
