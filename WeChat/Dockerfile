@@ -2,8 +2,7 @@
 FROM alpine:latest
 
 RUN apk add --no-cache python3 py3-pip py3-setuptools
-RUN pip install --upgrade pip
-RUN pip install cryptography
+RUN pip install cryptography bottle requests xmltodict
 RUN pip install zhipuai 
 RUN pip install werobot
 
