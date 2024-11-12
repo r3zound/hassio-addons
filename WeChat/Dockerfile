@@ -1,6 +1,14 @@
 # Start of Selection
 FROM alpine:latest
 
+# Set environment variable for the data path (from addon configuration)
+ENV DATA_PATH /config/addons_config/wechat-server/
+ENV TOKEN ${TOKEN}
+ENV HOST ${HOST}
+ENV APP_ID ${APP_ID}
+ENV ENCODING_AES_KEY ${ENCODING_AES_KEY}
+ENV ZHIPUAI_KEY ${ZhipuAI}
+ENV PORT ${PORT}
 
 # 安装 Python3、pip 和必要的系统依赖
 RUN apk add --no-cache python3 py3-pip python3-dev \
@@ -18,7 +26,6 @@ RUN python3 -m venv /opt/venv \
 ENV PATH="/opt/venv/bin:$PATH"
 
 COPY  Wechat_Robot.py /Wechat_Robot.py
-COPY config.ini /config.ini
 
 COPY docker-entrypoint.sh / 
 RUN chmod +x /docker-entrypoint.sh 

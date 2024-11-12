@@ -4,28 +4,35 @@
   "slug": "wechat-server",
   "description": "不要安装,这是测试用的,关注微信号：<老王杂谈说> 获取更多内容吧",
   "url": "https://github.com/djhui/hassio-addons",
-  "arch": ["amd64", "armhf", "armv7", "aarch64", "i386"],
+  "arch": [
+    "amd64",
+    "armhf",
+    "armv7",
+    "aarch64",
+    "i386"
+  ],
   "init": false,
   "startup": "application",
   "ingress": true,
   "ingress_port": 8888,
   "panel_icon": "mdi:wechat",
-  "map": ["config:rw"],
+  "map": [
+    "config:rw"
+  ],
   "ports": {
-    "8888/tcp": 8888,
+    "8888/tcp": 8888
   },
   "ports_description": {
-    "8888/tcp": "WeChat Server",
+    "8888/tcp": "WeChat Server"
   },
   "hassio_api": true,
   "hassio_role": "manager",
   "options": {
-    "TOKEN": "WeRobot",
+    "TOKEN": "your_wechat_token",
     "HOST": "0.0.0.0",
-    "APP_ID": "random",
-    "ENCODING_AES_KEY": "random",
-    "ZhipuAI": "random",
-    "PORT": "8080",
+    "APP_ID": "your_app_id",
+    "ENCODING_AES_KEY": "your_encoding_aes_key",
+    "ZhipuAI": "your_zhipuai_api_key",
     "data_path": "/config/addons_config/wechat-server/"
   },
   "schema": {
@@ -34,7 +41,6 @@
     "APP_ID": "str",
     "ENCODING_AES_KEY": "str",
     "ZhipuAI": "str",
-    "PORT": "str",
     "data_path": "str"
   },
   "webui": "http://[HOST]:[PORT:8888]",
