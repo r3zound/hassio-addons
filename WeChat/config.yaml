@@ -9,7 +9,7 @@ arch:
   - armhf
   - aarch64
 init: false
-startup: services
+startup: application
 ingress: true
 ingress_port: 8888
 panel_icon: mdi:wechat
