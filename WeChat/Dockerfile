@@ -1,10 +1,11 @@
 # Start of Selection
 FROM alpine:latest
 
-RUN apk add --no-cache python3 py3-pip py3-setuptools
-RUN pip install cryptography bottle requests xmltodict
-RUN pip install zhipuai 
-RUN pip install werobot
+RUN apk add --no-cache python3 py3-pip \
+    && apk add --no-cache gcc libffi-dev musl-dev openssl-dev
+
+RUN pip3 install --no-cache-dir werobot zhipuai cryptography bottle requests xmltodict
+
 
 
 COPY Wechat_Robot.py /Wechat_Robot.py
