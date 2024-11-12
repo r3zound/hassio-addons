@@ -8,8 +8,8 @@ services:
       dockerfile: Dockerfile
 
     volumes:
-      - /share/data/docker/wechat-server/data:/home/wechat-server/data
-      - /mnt/data/supervisor/addon_configs/:/addon_configs
+      - /mnt/data/supervisor/config/addon_config/wechat-server:/config/addon_config/wechat-server
+      - /mnt/data/supervisor/addon_configs/wechat-server:/addon_configs/wechat-server
     expose:
       - 8888
     ports:
