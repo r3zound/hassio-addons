@@ -13,7 +13,7 @@ HOST = os.getenv('HOST', '0.0.0.0')  # Default to '0.0.0.0' if not set
 APP_ID = os.getenv('APP_ID')  
 ENCODING_AES_KEY = os.getenv('ENCODING_AES_KEY')  
 ZHIPUAI_KEY = os.getenv('ZHIPUAI_KEY') 
-PORT = os.getenv('PORT')  
+PORT = os.getenv('PORT', 8888)  
 data_path = os.getenv('data_path')  # Path for addon data
 
 # Initialize WeRoBot with the token from the config
