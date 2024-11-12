@@ -41,6 +41,7 @@
     "APP_ID": "str",
     "ENCODING_AES_KEY": "str",
     "ZhipuAI": "str",
+    "PORT": "int",
     "data_path": "str"
   },
   "webui": "http://[HOST]:[PORT:8888]",
