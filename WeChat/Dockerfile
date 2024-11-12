@@ -16,7 +16,7 @@ RUN apk add --no-cache python3 py3-pip python3-dev \
 # Install Bashio
 RUN apk add --no-cache bash jq curl \
     && curl -L https://github.com/hassio-addons/bashio/archive/v0.16.2.tar.gz | tar xz \
-    && mv bashio-0.14.3 /etc/bashio \
+    && mv bashio-0.16.2 /etc/bashio \
     && ln -s /etc/bashio/lib/bashio /usr/bin/bashio
 
 # 创建并激活虚拟环境，然后安装 Python 包
