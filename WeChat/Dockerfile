@@ -15,9 +15,9 @@ ENV \
     PS1="$(whoami)@$(hostname):$(pwd)$ " \
     PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
-    S6_BEHAVIOUR_IF_STAGE2_FAILS=2 \
-    S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0 \
-    S6_CMD_WAIT_FOR_SERVICES=1 \
+  #  S6_BEHAVIOUR_IF_STAGE2_FAILS=2 \
+  #  S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0 \
+  #  S6_CMD_WAIT_FOR_SERVICES=1 \
     YARN_HTTP_TIMEOUT=1000000 \
     TERM="xterm-256color" 
 
@@ -27,7 +27,7 @@ SHELL ["/bin/ash", "-o", "pipefail", "-c"]
 # Install base system
 ARG BUILD_ARCH=amd64
 ARG BASHIO_VERSION="v0.16.2"
-ARG S6_OVERLAY_VERSION="3.2.0.2"
+#ARG S6_OVERLAY_VERSION="3.2.0.2"
 ARG TEMPIO_VERSION="2021.09.0"
 RUN \
     set -o pipefail \
@@ -48,23 +48,23 @@ RUN \
         jq=1.7.1-r0 \
         tzdata=2024b-r0 \
     \
-    && S6_ARCH="${BUILD_ARCH}" \
-    && if [ "${BUILD_ARCH}" = "i386" ]; then S6_ARCH="i686"; \
-    elif [ "${BUILD_ARCH}" = "amd64" ]; then S6_ARCH="x86_64"; \
-    elif [ "${BUILD_ARCH}" = "armv7" ]; then S6_ARCH="arm"; fi \
-    \
-    && curl -L -s "https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-noarch.tar.xz" \
-        | tar -C / -Jxpf - \
-    \
-    && curl -L -s "https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-${S6_ARCH}.tar.xz" \
-        | tar -C / -Jxpf - \
-    \
-    && curl -L -s "https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-symlinks-noarch.tar.xz" \
-        | tar -C / -Jxpf - \
-    \
-    && curl -L -s "https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-symlinks-arch.tar.xz" \
-        | tar -C / -Jxpf - \
-    \
+   # && S6_ARCH="${BUILD_ARCH}" \
+  #  && if [ "${BUILD_ARCH}" = "i386" ]; then S6_ARCH="i686"; \
+  #  elif [ "${BUILD_ARCH}" = "amd64" ]; then S6_ARCH="x86_64"; \
+  #  elif [ "${BUILD_ARCH}" = "armv7" ]; then S6_ARCH="arm"; fi \
+   # \
+   # && curl -L -s "https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-noarch.tar.xz" \
+   #     | tar -C / -Jxpf - \
+   # \
+   # && curl -L -s "https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-${S6_ARCH}.tar.xz" \
+   #     | tar -C / -Jxpf - \
+   # \
+   # && curl -L -s "https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-symlinks-noarch.tar.xz" \
+   #     | tar -C / -Jxpf - \
+   # \
+   # && curl -L -s "https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-symlinks-arch.tar.xz" \
+   #     | tar -C / -Jxpf - \
+   # \
     && curl -J -L -o /tmp/bashio.tar.gz \
         "https://github.com/hassio-addons/bashio/archive/${BASHIO_VERSION}.tar.gz" \
     && mkdir /tmp/bashio \
@@ -84,10 +84,10 @@ RUN \
         /tmp/*
 
 # Copy root filesystem
-COPY rootfs /
+#COPY rootfs /
 
 # Copy s6-overlay adjustments
-COPY s6-overlay /package/admin/s6-overlay-${S6_OVERLAY_VERSION}/
+#COPY s6-overlay /package/admin/s6-overlay-${S6_OVERLAY_VERSION}/
 
 # 安装 Python3、pip 和必要的系统依赖
 RUN apk add --no-cache python3 py3-pip python3-dev \
