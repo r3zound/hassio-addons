@@ -1,63 +1,31 @@
 import werobot
 import sys
 import io
-import configparser
-from bottle import Bottle, run, template, request, redirect
 from zhipuai import ZhipuAI
+import os
 
 # Set the encoding to handle Unicode characters
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
-# Read configuration from /config/addons_config/wechat-server/config.ini
-config = configparser.ConfigParser()
-config.read('/config/addons_config/wechat-server/config.ini')  # Updated path to config.ini
+# Read configuration from environment variables
+TOKEN = os.getenv('TOKEN', 'WeRobot')
+HOST = os.getenv('HOST', '0.0.0.0')
+APP_ID = os.getenv('APP_ID', 'random')
+ENCODING_AES_KEY = os.getenv('ENCODING_AES_KEY', 'random')
+ZhipuAI_key = os.getenv('ZhipuAI', 'random')
+PORT = os.getenv('PORT', '8080')
 
-# Ensure the required configuration keys are present
-TOKEN = config['DEFAULT'].get('TOKEN', 'WeRobot')
+# Initialize WeRoBot with the token from the config
 robot = werobot.WeRoBot(token=TOKEN)
-robot.config['HOST'] = config['DEFAULT'].get('HOST', '0.0.0.0')
-robot.config["APP_ID"] = config['DEFAULT'].get("APP_ID", 'random')
-robot.config['ENCODING_AES_KEY'] = config['DEFAULT'].get('ENCODING_AES_KEY', "random")
-api_key = config['DEFAULT'].get('ZhipuAI', "random")
+robot.config['HOST'] = HOST
+robot.config['APP_ID'] = APP_ID
+robot.config['ENCODING_AES_KEY'] = ENCODING_AES_KEY
 
-client = ZhipuAI(api_key=api_key)
-
-# Flask or Bottle Web Application for Config Editing
-app = Bottle()
-
-@app.route('/config', method=['GET', 'POST'])
-def config_page():
-    if request.method == 'POST':
-        # Get the updated values from the form
-        TOKEN = request.forms.get('TOKEN')
-        HOST = request.forms.get('HOST')
-        APP_ID = request.forms.get('APP_ID')
-        ENCODING_AES_KEY = request.forms.get('ENCODING_AES_KEY')
-        ZhipuAI_key = request.forms.get('ZhipuAI')
-
-        # Save the new values into the config file
-        config.set('DEFAULT', 'TOKEN', TOKEN)
-        config.set('DEFAULT', 'HOST', HOST)
-        config.set('DEFAULT', 'APP_ID', APP_ID)
-        config.set('DEFAULT', 'ENCODING_AES_KEY', ENCODING_AES_KEY)
-        config.set('DEFAULT', 'ZhipuAI', ZhipuAI_key)
-
-        with open('/config/addons_config/wechat-server/config.ini', 'w') as configfile:
-            config.write(configfile)
-
-        return redirect('/config')
-
-    # Render the current config in a form
-    return template('config_template', TOKEN=config['DEFAULT'].get('TOKEN', ''),
-                    HOST=config['DEFAULT'].get('HOST', ''),
-                    APP_ID=config['DEFAULT'].get('APP_ID', ''),
-                    ENCODING_AES_KEY=config['DEFAULT'].get('ENCODING_AES_KEY', ''),
-                    ZhipuAI=config['DEFAULT'].get('ZhipuAI', ''))
-
+# Initialize ZhipuAI with the API key
+client = ZhipuAI(ZhipuAI_key)
 
 @robot.text
 def echo(message):
-    # Use the AI model for response
     response1 = client.chat.completions.create(
         model="glm-4-plus",
         messages=[
@@ -67,16 +35,5 @@ def echo(message):
         ],
     )
     return response1.choices[0].message.content
-
-# Start the Bottle web server in a separate thread
-import threading
-
-def run_server():
-    run(app, host='0.0.0.0', port=8080)
-
-# Run the web server in a background thread
-server_thread = threading.Thread(target=run_server)
-server_thread.daemon = True
-server_thread.start()
 
 robot.run()

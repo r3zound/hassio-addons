@@ -1,33 +1,41 @@
-name: "WeChat Server"
-version: "v0.1.0"
-slug: "wechat-server"
-#description: "WeChat Server Add-on for Home Assistant with persistent data. \n 关注微信号：老王杂谈说 获取更多内容吧"
-description: "不要安装,这是测试用的,关注微信号：<老王杂谈说> 获取更多内容吧"
-url: "https://github.com/djhui/hassio-addons"
-arch:
-  - amd64
-  - armhf
-  - armv7
-  - aarch64
-  - i386
-init: false
-startup: application
-ingress: true
-ingress_port: 8888
-panel_icon: mdi:wechat
-map:
-  - config:rw
-ports:
-  8888/tcp: 8888
-  8080/tcp: 8080
-ports_description:
-  8888/tcp: "WeChat Server"
-  8080/tcp: "Config Port"
-hassio_api: true
-hassio_role: manager
-options:
-  data_path: "/config/addons_config/wechat-server/"
-schema:
-  data_path: str
-webui: "http://[HOST]:[PORT:8888]"
-watchdog: "http://[HOST]:[PORT:8888]"
+{
+  "name": "WeChat Server",
+  "version": "v0.1.0",
+  "slug": "wechat-server",
+  "description": "不要安装,这是测试用的,关注微信号：<老王杂谈说> 获取更多内容吧",
+  "url": "https://github.com/djhui/hassio-addons",
+  "arch": ["amd64", "armhf", "armv7", "aarch64", "i386"],
+  "init": false,
+  "startup": "application",
+  "ingress": true,
+  "ingress_port": 8888,
+  "panel_icon": "mdi:wechat",
+  "map": ["config:rw"],
+  "ports": {
+    "8888/tcp": 8888,
+    "8080/tcp": 8080
+  },
+  "ports_description": {
+    "8888/tcp": "WeChat Server",
+    "8080/tcp": "Config Port"
+  },
+  "hassio_api": true,
+  "hassio_role": "manager",
+  "options": {
+    "data_path": "/config/addons_config/wechat-server/"
+  },
+  "schema": {
+    "data_path": "str"
+  },
+  "webui": "http://[HOST]:[PORT:8888]",
+  "watchdog": "http://[HOST]:[PORT:8888]",
+  "env": {
+    "TOKEN": "WeRobot",
+    "HOST": "0.0.0.0",
+    "APP_ID": "random",
+    "ENCODING_AES_KEY": "random",
+    "ZhipuAI": "random",
+    "PORT": "8080"
+  }
+}
+
