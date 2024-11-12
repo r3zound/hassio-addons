@@ -1,37 +1,28 @@
-# Start of Selection
+# Start from Alpine
 FROM alpine:latest
 
-# Set environment variable for the data path (from addon configuration)
-ENV DATA_PATH ${data_path}
-ENV TOKEN ${TOKEN}
-ENV HOST ${HOST}
-ENV APP_ID ${APP_ID}
-ENV ENCODING_AES_KEY ${ENCODING_AES_KEY}
-ENV ZHIPUAI_KEY ${ZHIPUAI_KEY}
-ENV PORT ${PORT}
-
-# 安装 Python3、pip 和必要的系统依赖
+# Install Python3, pip, and system dependencies
 RUN apk add --no-cache python3 py3-pip python3-dev \
     && apk add --no-cache gcc libffi-dev musl-dev openssl-dev
 
-
-# 创建并激活虚拟环境，然后安装 Python 包
+# Create and activate a virtual environment, then install Python packages
 RUN python3 -m venv /opt/venv \
     && . /opt/venv/bin/activate \
     && /opt/venv/bin/python3 -m pip install --upgrade pip \
     && pip install --no-cache-dir werobot zhipuai
 
-
-
-# 设置 PATH 环境变量，让系统识别虚拟环境中的 Python 和 pip
+# Set PATH to include the virtual environment's binaries
 ENV PATH="/opt/venv/bin:$PATH"
 
-COPY  Wechat_Robot.py /Wechat_Robot.py
+# Copy application and entrypoint script
+COPY Wechat_Robot.py /Wechat_Robot.py
+COPY docker-entrypoint.sh /docker-entrypoint.sh
 
-COPY docker-entrypoint.sh / 
-RUN chmod +x /docker-entrypoint.sh 
+# Ensure entrypoint script is executable
+RUN chmod +x /docker-entrypoint.sh
 
-WORKDIR /config/addons_config/wechat-server 
-CMD [ "/docker-entrypoint.sh" ]
+# Set the working directory
+WORKDIR /config/addons_config/wechat-server
 
-
+# Use docker-entrypoint.sh as the entrypoint, which will set environment variables
+ENTRYPOINT ["/docker-entrypoint.sh"]
