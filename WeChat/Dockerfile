@@ -1,7 +1,6 @@
 # Start of Selection
 FROM alpine:latest
 
-FROM alpine:3.12
 
 # 安装 Python3、pip 和必要的系统依赖
 RUN apk add --no-cache python3 py3-pip python3-dev \
