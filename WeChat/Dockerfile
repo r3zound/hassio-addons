@@ -4,13 +4,14 @@ FROM alpine:latest
 FROM alpine:3.12
 
 # 安装 Python3、pip 和必要的系统依赖
-RUN apk add --no-cache python3 py3-pip \
+RUN apk add --no-cache python3 py3-pip python3-dev \
     && apk add --no-cache gcc libffi-dev musl-dev openssl-dev
 
 # 创建并激活虚拟环境，然后安装 Python 包
 RUN python3 -m venv /opt/venv \
     && . /opt/venv/bin/activate \
-    && pip install --no-cache-dir werobot zhipuai cryptography bottle requests xmltodict
+    && /opt/venv/bin/python3 -m pip install --upgrade pip \
+    && pip install --no-cache-dir werobot zhipuai
 
 
 

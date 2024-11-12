@@ -1,5 +1,5 @@
 name: "WeChat Server"
-version: "v1.0.0"
+version: "v0.1.0"
 slug: "wechat-server"
 #description: "WeChat Server Add-on for Home Assistant with persistent data. \n 关注微信号：老王杂谈说 获取更多内容吧"
 description: "不要安装,这是测试用的,关注微信号：<老王杂谈说> 获取更多内容吧"
