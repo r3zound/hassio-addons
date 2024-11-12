@@ -10,9 +10,9 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 # Fetch configuration from environment variables (Home Assistant injects them)
 TOKEN = os.getenv('TOKEN', 'WeRobot')  # Default to 'WeRobot' if not set
 HOST = os.getenv('HOST', '0.0.0.0')  # Default to '0.0.0.0' if not set
-APP_ID = os.getenv('APP_ID')  
-ENCODING_AES_KEY = os.getenv('ENCODING_AES_KEY')  
-ZHIPUAI_KEY = os.getenv('ZHIPUAI_KEY') 
+APP_ID = os.getenv('APP_ID', "test")  
+ENCODING_AES_KEY = os.getenv('ENCODING_AES_KEY', "test")  
+ZHIPUAI_KEY = os.getenv('ZHIPUAI_KEY', "test") 
 PORT = os.getenv('PORT', 8888)  
 data_path = os.getenv('data_path')  # Path for addon data
 
