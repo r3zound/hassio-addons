@@ -4,7 +4,8 @@ FROM alpine:latest
 RUN apk add --no-cache python3 py3-pip py3-setuptools
 RUN pip install zhipuai 
 RUN pip install werobot
-
+RUN pip install --upgrade pip
+RUN pip install cryptography
 
 COPY Wechat_Robot.py /Wechat_Robot.py
 COPY config.ini /config.ini
