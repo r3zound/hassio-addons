@@ -1,9 +1,9 @@
 # Start of Selection
-FROM alpine:3.12
+FROM alpine:latest
 
-RUN apk add --no-cache python3 py3-pip && \
-pip3 install zhipuai && \
-pip3 install werobot
+RUN apk add --no-cache python3 py3-pip py3-setuptools
+RUN pip install zhipuai 
+RUN pip install werobot
 
 
 COPY Wechat_Robot.py /Wechat_Robot.py
