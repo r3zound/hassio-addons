@@ -7,7 +7,9 @@ url: "https://github.com/djhui/hassio-addons"
 arch:
   - amd64
   - armhf
+  - armv7
   - aarch64
+  - i386
 init: false
 startup: application
 ingress: true
@@ -17,8 +19,10 @@ map:
   - config:rw
 ports:
   8888/tcp: 8888
+  8080/tcp: 8080
 ports_description:
   8888/tcp: "WeChat Server"
+  8080/tcp: "Config Port"
 hassio_api: true
 hassio_role: manager
 options:

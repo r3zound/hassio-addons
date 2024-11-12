@@ -6,24 +6,26 @@ labels:
     - First version of wechat server integration
   io.hass.addon.version: "v0.1.0"
   io.hass.addon.name: "WeChat Server"
-  io.hass.addon.description: "WeChat Server Add-on for Home Assistant with persistent data \n 关注微信号：老王杂谈说 获取更多内容吧"
+  io.hass.addon.description: "不要安装,这是测试用的,关注微信号：<老王杂谈说> 获取更多内容吧"
   io.hass.addon.url: "https://github.com/djhui/hassio-addons"
-  io.hass.addon.arch: "amd64, armhf, aarch64"
+  io.hass.addon.arch: "amd64, armhf, aarch64, armv7, i386"
   io.hass.addon.init: "false"
-  io.hass.addon.startup: "services"
+  io.hass.addon.startup: "application"
   io.hass.addon.ingress: "true"
   io.hass.addon.ingress_port: "8888"
-  io.hass.addon.panel_icon: "mdi:chat"
+  io.hass.addon.panel_icon: "mdi:wechat"
   io.hass.addon.map: |
-    - /config/addons_config/wechat-server:/home/wechat-server
+    - /config/addons_config/wechat-server:/config/addons_config/wechat-server
   io.hass.addon.ports: |
     8888/tcp: 8888
+    8080/tcp: 8080
   io.hass.addon.ports_description: |
     8888/tcp: "WeChat Server"
+    8080/tcp: "Config Port"
   io.hass.addon.hassio_api: "true"
   io.hass.addon.hassio_role: "manager"
   io.hass.addon.options: |
-    data_path: "/config/addons_config/wechat-server/data"
+    data_path: "/config/addons_config/wechat-server/"
   io.hass.addon.schema: |
     data_path: str
   io.hass.addon.image: "docker.io/privoce/wechat-server"
