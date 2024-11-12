@@ -14,12 +14,12 @@ config = configparser.ConfigParser()
 config.read('config.ini')  # Updated path to config.ini
 
 # Ensure the required configuration keys are present
-TOKEN = config['DEFAULT'].get('TOKEN')
+TOKEN = config['DEFAULT'].get('TOKEN','WeRobot')
 robot = werobot.WeRoBot(token=TOKEN)
 robot.config['HOST'] = config['DEFAULT'].get('HOST', '0.0.0.0')
-robot.config["APP_ID"] = config['DEFAULT'].get("APP_ID")
-robot.config['ENCODING_AES_KEY'] = config['DEFAULT'].get('ENCODING_AES_KEY')
-api_key = config['DEFAULT'].get('ZhipuAI')
+robot.config["APP_ID"] = config['DEFAULT'].get("APP_ID",'random')
+robot.config['ENCODING_AES_KEY'] = config['DEFAULT'].get('ENCODING_AES_KEY',"random")
+api_key = config['DEFAULT'].get('ZhipuAI',"random")
 
 client = ZhipuAI(api_key=api_key)
 #print (TOKEN, api_key)
