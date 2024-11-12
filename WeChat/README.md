@@ -7,6 +7,8 @@ This add-on allows you to run a WeChat server within your Home Assistant environ
 ## Features
 
 - 微信公众号后台
+- 支持多种架构: amd64, armhf, armv7, aarch64, i386
+- 提供简单的配置选项
 
 ## Installation
 
@@ -17,7 +19,17 @@ This add-on allows you to run a WeChat server within your Home Assistant environ
 
 ## Configuration
 
-The add-on doesn't require any manual configuration. However, you can adjust the following option if needed:
+The add-on doesn't require any manual configuration. However, you can adjust the following options if needed:
+
+The add-on can be configured using the following options in the `config.ini` file located at `/config/addons_config/wechat-server/config.ini`:
+
+After changing the configuration file, you need to restart the add-on for the changes to take effect.
+
+- `TOKEN`: your_wechat_token
+- `HOST`: 0.0.0.0
+- `APP_ID`: your_app_id
+- `ENCODING_AES_KEY`: your_encoding_aes_key
+- `ZhipuAI`: your_zhipuai_api_key
 
 ## Follow Us
 
