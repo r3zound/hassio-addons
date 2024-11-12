@@ -30,6 +30,7 @@
   "options": {
     "TOKEN": "your_wechat_token",
     "HOST": "0.0.0.0",
+    "PORT": 8888,
     "APP_ID": "your_app_id",
     "ENCODING_AES_KEY": "your_encoding_aes_key",
     "ZhipuAI": "your_zhipuai_api_key",
