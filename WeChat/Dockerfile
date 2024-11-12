@@ -29,4 +29,4 @@ RUN chmod a+x /Wechat_Robot.py
 
 # Install pip and required packages
 
-CMD [ "python3 /Wechat_Robot.py" ]
+CMD [ "python", "/Wechat_Robot.py" ]
