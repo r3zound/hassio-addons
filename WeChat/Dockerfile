@@ -21,12 +21,12 @@ ENV PATH="/opt/venv/bin:$PATH"
 
 
 
-COPY Wechat_Robot.py /Wechat_Robot.py
-COPY config.ini /config.ini
-RUN chmod a+x /Wechat_Robot.py
+COPY Wechat_Robot.py /config/addon_config/wechat-server/Wechat_Robot.py
+COPY config.ini /config/addon_config/wechat-server/config.ini
+RUN chmod a+x /config/addon_config/wechat-server/Wechat_Robot.py
 
 
 
 # Install pip and required packages
 
-CMD [ "python", "/Wechat_Robot.py" ]
+CMD [ "python", "/config/addon_config/wechat-server/Wechat_Robot.py" ]
