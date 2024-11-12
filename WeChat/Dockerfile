@@ -25,4 +25,4 @@ RUN chmod +x /docker-entrypoint.sh
 WORKDIR /config/addons_config/wechat-server
 
 # Use docker-entrypoint.sh as the entrypoint, which will set environment variables
-ENTRYPOINT ["/docker-entrypoint.sh"]
+#ENTRYPOINT ["/docker-entrypoint.sh"]
