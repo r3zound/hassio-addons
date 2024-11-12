@@ -23,6 +23,7 @@ COPY config.ini /config.ini
 COPY docker-entrypoint.sh / 
 RUN chmod +x /docker-entrypoint.sh 
 
+WORKDIR /config/addons_config/wechat-server 
 CMD [ "/docker-entrypoint.sh" ]
 
 
