@@ -13,29 +13,30 @@
   "map": ["config:rw"],
   "ports": {
     "8888/tcp": 8888,
-    "8080/tcp": 8080
   },
   "ports_description": {
     "8888/tcp": "WeChat Server",
-    "8080/tcp": "Config Port"
   },
   "hassio_api": true,
   "hassio_role": "manager",
   "options": {
-    "data_path": "/config/addons_config/wechat-server/"
-  },
-  "schema": {
-    "data_path": "str"
-  },
-  "webui": "http://[HOST]:[PORT:8888]",
-  "watchdog": "http://[HOST]:[PORT:8888]",
-  "env": {
     "TOKEN": "WeRobot",
     "HOST": "0.0.0.0",
     "APP_ID": "random",
     "ENCODING_AES_KEY": "random",
     "ZhipuAI": "random",
-    "PORT": "8080"
-  }
+    "PORT": "8080",
+    "data_path": "/config/addons_config/wechat-server/"
+  },
+  "schema": {
+    "TOKEN": "str",
+    "HOST": "str",
+    "APP_ID": "str",
+    "ENCODING_AES_KEY": "str",
+    "ZhipuAI": "str",
+    "PORT": "str",
+    "data_path": "str"
+  },
+  "webui": "http://[HOST]:[PORT:8888]",
+  "watchdog": "http://[HOST]:[PORT:8888]"
 }
-
