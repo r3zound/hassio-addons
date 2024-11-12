@@ -22,7 +22,7 @@ ports_description:
 hassio_api: true
 hassio_role: manager
 options:
-  data_path: "/config/addons_config/wechat-server/data"
+  data_path: "/config/addons_config/wechat-server/"
 schema:
   data_path: str
 webui: "http://[HOST]:[PORT:8888]"
