@@ -2,6 +2,7 @@ import werobot
 import sys
 import io
 import os
+import json
 from zhipuai import ZhipuAI
 import configparser
 
@@ -32,6 +33,13 @@ robot.config.update({
 # Initialize ZhipuAI and set the API key
 client = ZhipuAI(api_key=ZHIPUAI_KEY)
 
+# Load custom menu from JSON file
+def load_menu():
+    if os.path.exists('/config/addons_config/wechat-server/menu.json'):
+        with open('/config/addons_config/wechat-server/menu.json', 'r', encoding='utf-8') as f:
+            return json.load(f)
+    return None  # Return None if the file does not exist
+
 @robot.text
 def echo(message):
     response1 = client.chat.completions.create(
@@ -43,5 +51,12 @@ def echo(message):
         ],
     )
     return response1.choices[0].message.content
+
+@robot.menu
+def custom_menu():
+    menu = load_menu()
+    if menu is not None:
+        return menu
+    return []  # Return an empty menu if the JSON file does not exist
 
 robot.run()
