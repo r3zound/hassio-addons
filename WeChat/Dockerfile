@@ -3,14 +3,14 @@ FROM alpine:latest
 
 
 # 安装 Python3、pip 和必要的系统依赖
-RUN apk add --no-cache python3 py3-pip python3-dev \
-    && apk add --no-cache gcc libffi-dev musl-dev openssl-dev
-
-# 创建并激活虚拟环境，然后安装 Python 包
-RUN python3 -m venv /opt/venv \
-    && . /opt/venv/bin/activate \
-    && /opt/venv/bin/python3 -m pip install --upgrade pip \
-    && pip install --no-cache-dir werobot zhipuai
+RUN apk add --no-cache python3 py3-pip python3-dev gcc libffi-dev musl-dev openssl-dev tzdata \
+    && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    && echo "Asia/Shanghai" > /etc/timezone \
+    && python3 -m venv /venv \
+    && . /venv/bin/activate \
+    && pip install --upgrade pip \
+    && pip install --no-cache-dir werobot zhipuai \
+    && apk del tzdata  # Optional: remove tzdata to keep the image slim
 
 
 
