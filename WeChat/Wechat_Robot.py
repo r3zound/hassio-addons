@@ -41,7 +41,13 @@ def load_menu():
     if os.path.exists('/config/addons_config/wechat-server/menu.json'):
         with open('/config/addons_config/wechat-server/menu.json', 'r', encoding='utf-8') as f:
             return json.load(f)
-    return None  # Return None if the file does not exist
+    return None
+
+# Set the custom menu for the WeChat bot
+def set_menu():
+    menu_data = load_menu()
+    if menu_data:
+        robot.client.create_menu(menu_data)
 
 @robot.text
 def echo(message):
@@ -55,11 +61,7 @@ def echo(message):
     )
     return response1.choices[0].message.content
 
-@robot.menu
-def custom_menu():
-    menu = load_menu()
-    if menu is not None:
-        return menu
-    return []  # Return an empty menu if the JSON file does not exist
+# Set up the custom menu when the server starts
+set_menu()
 
 robot.run()
