@@ -62,6 +62,6 @@ def echo(message):
     return response1.choices[0].message.content
 
 # Set up the custom menu when the server starts
-set_menu()
+#set_menu()
 
 robot.run()
