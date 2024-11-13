@@ -13,22 +13,25 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 config = configparser.ConfigParser()
 config.read('/config/addons_config/wechat-server/config.ini')
 
-HOST = config.get('server', 'host', fallback='0.0.0.0')
-PORT = config.getint('server', 'port', fallback=8888)
-APP_ID = config.get('wechat', 'app_id', fallback='test')
-TOKEN = config.get('wechat', 'token', fallback='WeRobot')
-ENCODING_AES_KEY = config.get('wechat', 'encoding_aes_key', fallback='test')
+HOST = config.get('server', 'host', fallback='0.0.0.0')  # Default to '0.0.0.0' if not set
+PORT = config.getint('server', 'port', fallback=8888)  # Default to 8888 if not set
+APP_ID = config.get('wechat', 'app_id', fallback='test')  
+APP_SECRET = config.get('wechat', 'appsecret', fallback='your_appsecret')  # 获取appsecret配置
+TOKEN = config.get('wechat', 'token', fallback='WeRobot')  # Default to 'WeRobot' if not set
+ENCODING_AES_KEY = config.get('wechat', 'encoding_aes_key', fallback='test')  
 
-ZHIPUAI_KEY = config.get('zhipuai', 'zhipuai_api_key', fallback='test')
+ZHIPUAI_KEY = config.get('zhipuai', 'zhipuai_api_key', fallback='test') 
 
 # Initialize WeRoBot with the token from the config
 robot = werobot.WeRoBot(token=TOKEN)
 robot.config.update({
     'HOST': HOST,
     'APP_ID': APP_ID,
+    'APP_SECRET': APP_SECRET,  # 新增 appsecret 配置
     'ENCODING_AES_KEY': ENCODING_AES_KEY,
     'PORT': PORT
 })
+
 
 # Initialize ZhipuAI and set the API key
 client = ZhipuAI(api_key=ZHIPUAI_KEY)
@@ -38,15 +41,8 @@ def load_menu():
     if os.path.exists('/config/addons_config/wechat-server/menu.json'):
         with open('/config/addons_config/wechat-server/menu.json', 'r', encoding='utf-8') as f:
             return json.load(f)
-    return None
+    return None  # Return None if the file does not exist
 
-# Set the custom menu for the WeChat bot
-def set_menu():
-    menu_data = load_menu()
-    if menu_data:
-        robot.client.create_menu(menu_data)
-
-# Define the response for text messages
 @robot.text
 def echo(message):
     response1 = client.chat.completions.create(
@@ -59,8 +55,11 @@ def echo(message):
     )
     return response1.choices[0].message.content
 
-# Set up the custom menu when the server starts
-set_menu()
+@robot.menu
+def custom_menu():
+    menu = load_menu()
+    if menu is not None:
+        return menu
+    return []  # Return an empty menu if the JSON file does not exist
 
-# Run the robot
-robot.run(host=HOST, port=PORT)
+robot.run()
