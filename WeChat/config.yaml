@@ -44,5 +44,4 @@
     "data_path": "str"
   },
   "webui": "http://[HOST]:[PORT:8888]",
-  "watchdog": "http://[HOST]:[PORT:8888]"
 }
