@@ -2,28 +2,28 @@
 
 ## About
 
-This add-on allows you to run a WeChat server within your Home Assistant environment. WeChat Server is an open-source, self-hosted chat platform that provides a secure and customizable communication solution.
+This add-on enables you to host a WeChat server within your Home Assistant setup. It is an open-source, self-hosted chat platform offering a secure and customizable communication solution.
 
 ## Features
 
-- 微信公众号后台
-- 支持多种架构: amd64, armhf, armv7, aarch64, i386
-- 提供简单的配置选项
+- WeChat public account backend
+- Supports multiple architectures: amd64, armhf, armv7, aarch64, i386
+- Provides simple configuration options
 
 ## Installation
 
-1. Navigate to the Home Assistant Add-on Store
+1. Go to the Home Assistant Add-on Store
 2. Click on the three dots in the top right corner and select "Repositories"
-3. Add the following URL: `https://github.com/djhui/hassio-addons`
-4. Find the "WeChat Server" add-on in the list and click "Install"
+3. Add this URL: `https://github.com/djhui/hassio-addons`
+4. Locate the "WeChat Server" add-on in the list and click "Install"
 
 ## Configuration
 
-The add-on doesn't require any manual configuration. However, you can adjust the following options if needed:
+While the add-on doesn't require manual configuration, you can modify the following options if necessary:
 
-The add-on can be configured using the following options in the `config.ini` file located at `/config/addons_config/wechat-server/config.ini`:
+Configure the add-on using the options in the `config.ini` file located at `/config/addons_config/wechat-server/config.ini`:
 
-After changing the configuration file, you need to restart the add-on for the changes to take effect.
+After editing the configuration file, restart the add-on for the changes to take effect.
 
 - `TOKEN`: your_wechat_token
 - `HOST`: 0.0.0.0
@@ -33,9 +33,9 @@ After changing the configuration file, you need to restart the add-on for the ch
 
 ## Follow Us
 
-Stay updated with our latest developments:
-如果需要即时沟通,请扫码关注
+Stay informed with our latest updates:
+For instant communication, please scan the QR code to follow us
 
 ![QR Code](https://github.com/user-attachments/assets/5c74897a-e32a-4fcc-b41c-1fc0d76a2494)
 
-Scan the QR code above to follow us on social media.
+Scan the QR code above to connect with us on social media.

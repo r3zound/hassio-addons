@@ -1,16 +1,17 @@
 labels:
   maintainer: "Desmond Dong"
   io.hass.addon.changelog: |
-    ## v0.5.0
+    ## v0.6.0
     - Updated WeChat Server addon for Home Assistant
     - Enhanced performance and stability
-  io.hass.addon.version: "v0.5.0"
+    - Added APP_SECRET to configuration
+  io.hass.addon.version: "v0.6.0"
   io.hass.addon.name: "WeChat Server"
-  io.hass.addon.description: "不要安装,这是测试用的,关注微信号：<老王杂谈说> 获取更多内容吧"
+  io.hass.addon.description: "这是一个公众号后台，连接智能助理帮你回话。关注微信号：<老王杂谈说> 获取更多内容吧"
   io.hass.addon.url: "https://github.com/djhui/hassio-addons"
   io.hass.addon.arch: "amd64, armhf, aarch64, armv7, i386"
   io.hass.addon.init: "false"
-  io.hass.addon.startup: "application"
+  io.hass.addon.startup: "services"
   io.hass.addon.ingress: "true"
   io.hass.addon.ingress_port: "8888"
   io.hass.addon.panel_icon: "mdi:wechat"
@@ -23,8 +24,20 @@ labels:
   io.hass.addon.hassio_api: "true"
   io.hass.addon.hassio_role: "manager"
   io.hass.addon.options: |
+    TOKEN: "your_wechat_token"
+    HOST: "0.0.0.0"
+    APP_ID: "your_app_id"
+    APP_SECRET: "your_app_secret"
+    ENCODING_AES_KEY: "your_encoding_aes_key"
+    ZhipuAI: "your_zhipuai_api_key"
     data_path: "/config/addons_config/wechat-server/"
   io.hass.addon.schema: |
+    TOKEN: str
+    HOST: str
+    APP_ID: str
+    APP_SECRET: str
+    ENCODING_AES_KEY: str
+    ZhipuAI: str
     data_path: str
   io.hass.addon.image: "docker.io/privoce/wechat-server"
   io.hass.addon.webui: "http://[HOST]:[PORT:8888]"
