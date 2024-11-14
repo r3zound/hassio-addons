@@ -1,28 +1,29 @@
 # Start of Selection
-FROM alpine:latest
+FROM python:3.9.20-alpine3.20
 
+# 设置时区为上海
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    && echo "Asia/Shanghai" > /etc/timezone
 
-# 安装 Python3、pip 和必要的系统依赖
-RUN apk add --no-cache python3 py3-pip python3-dev gcc libffi-dev musl-dev openssl-dev tzdata \
-    && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
-    && echo "Asia/Shanghai" > /etc/timezone \
-    && apk del tzdata  # Optional: remove tzdata to keep the image slim
+# 安装必要的系统依赖
+RUN apk add --no-cache gcc libffi-dev musl-dev openssl-dev
 
+# 创建虚拟环境并安装 Python 包
 RUN python3 -m venv /opt/venv \
     && . /opt/venv/bin/activate \
     && /opt/venv/bin/python3 -m pip install --upgrade pip \
     && pip install --no-cache-dir werobot zhipuai
 
-
 # 设置 PATH 环境变量，让系统识别虚拟环境中的 Python 和 pip
 ENV PATH="/opt/venv/bin:$PATH"
 
+# 复制脚本和配置文件
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+COPY config.ini /config.ini
+COPY Wechat_Robot.py /Wechat_Robot.py
 
-COPY docker-entrypoint.sh /docker-entrypoint.sh 
-COPY config.ini /config.ini 
-COPY Wechat_Robot.py /Wechat_Robot.py 
-RUN chmod +x /docker-entrypoint.sh 
+# 给入口脚本添加执行权限
+RUN chmod +x /docker-entrypoint.sh
 
-ENTRYPOINT [ "/docker-entrypoint.sh" ]
-
-
+# 设置容器启动时执行的入口点
+ENTRYPOINT ["/docker-entrypoint.sh"]
