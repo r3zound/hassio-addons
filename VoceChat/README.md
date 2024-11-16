@@ -28,6 +28,6 @@ The add-on doesn't require any manual configuration. However, you can adjust the
 Stay updated with our latest developments:
 如果需要即时沟通,请扫码关注
 
-![QR Code](https://gitee.com/desmond_GT/hassio-addons/raw/main/WeChat_QRcode.png)
+![QR Code](../WeChat_QRCode.png)
 
 Scan the QR code above to follow us on social media!

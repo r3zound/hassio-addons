@@ -37,6 +37,6 @@ Stay informed with our latest updates:
 For instant communication, please scan the QR code to follow us
 扫描二维码关注我吧
 
-![QR Code](https://gitee.com/desmond_GT/hassio-addons/raw/main/WeChat_QRcode.png)
+![QR Code](../WeChat_QRCode.png)
 
 Scan the QR code above to connect with us on social media.
