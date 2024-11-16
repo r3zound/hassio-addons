@@ -14,6 +14,9 @@
   "ports": {
     "5244/tcp": 5244
   },
+    "map": [
+    "config:rw"
+  ],
   "ports_description": {
     "5244/tcp": "Web interface"
   },
