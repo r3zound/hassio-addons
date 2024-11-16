@@ -36,6 +36,6 @@ After editing the configuration file, restart the add-on for the changes to take
 Stay informed with our latest updates:
 For instant communication, please scan the QR code to follow us
 
-![QR Code](https://github.com/user-attachments/assets/5c74897a-e32a-4fcc-b41c-1fc0d76a2494)
+![QR Code](https://gitee.com/desmond_GT/hassio-addons/raw/main/WeChat_QRcode.png)
 
 Scan the QR code above to connect with us on social media.

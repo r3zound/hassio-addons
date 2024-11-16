@@ -46,6 +46,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 扫描下面二维码，关注我。有需要可以随时给我留言
 
-![QR Code](https://github.com/user-attachments/assets/5c74897a-e32a-4fcc-b41c-1fc0d76a2494)
+![QR Code](https://gitee.com/desmond_GT/hassio-addons/raw/main/WeChat_QRcode.png)
 
 扫描上面二维码，关注我。有需要可以随时给我留言
