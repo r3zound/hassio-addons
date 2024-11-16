@@ -1,0 +1,21 @@
+version: '3'
+services:
+  alist:
+    image: xhofe/alist-aria2:latest
+    container_name: alist
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command:
+      - "/alist"
+    volumes:
+      - /config/addons_config/alist:/opt/alist/data
+    expose:
+      - 5244
+    ports:
+      - 5244:5244/tcp
+    restart: always
+    environment:
+            - PUID=0
+            - PGID=0
+            - UMASK=022
