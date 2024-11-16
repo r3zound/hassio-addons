@@ -18,7 +18,7 @@ labels:
   io.hass.addon.ingress_port: "5244"
   io.hass.addon.panel_icon: "mdi:file"
   io.hass.addon.map: |
-    - /config/addons_config/alist:/home/alist
+    - /config/addons_config/Alist:/opt/alist
   io.hass.addon.ports: |
     5244/tcp: 5244
   io.hass.addon.ports_description: |
