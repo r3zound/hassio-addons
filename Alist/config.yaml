@@ -17,7 +17,7 @@
   "ports_description": {
     "5244/tcp": "Web interface"
   },
-  "image": "xhofe/alist:{version}",
+  "image": "xhofe/alist:latest",
   "webui": "http://[HOST]:[PORT:5244]",
   "options": {
     "ssl": false,
