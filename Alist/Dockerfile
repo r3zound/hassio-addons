@@ -2,6 +2,6 @@ ARG BUILD_FROM
 FROM ${BUILD_FROM}
 
 
+WORKDIR "/config/addons_config/Alist"
 
-
-RUN "/install.sh"
+ENTRYPOINT ["/docker-entrypoint.sh"]
