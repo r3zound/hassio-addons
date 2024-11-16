@@ -1,7 +1,7 @@
 build_from:
-  amd64: docker.io/xhofe/alist:latest
-  armhf: docker.io/xhofe/alist:latest
-  aarch64: docker.io/xhofe/alist:latest
+  amd64: docker.io/xhofe/alist-aria2:latest
+  armhf: docker.io/xhofe/alist-aria2:latest
+  aarch64: docker.io/xhofe/alist-aria2:latest
 labels:
   maintainer: "Desmond Dong"
   io.hass.addon.changelog: |
