@@ -103,7 +103,10 @@ def handle_unknown(message):
 #set_menu()
 @robot.subscribe
 def subscribe(message):
-    return "感谢关注我们的公众号！我们<老王杂谈说>的机器助理，我将为您提供优质的内容和服务。"
+    return "感谢关注我们的公众号！我是<老王杂谈说>的机器助理，我将为您提供优质的内容和服务。"
 
+@robot.unsubscribe
+def unsubscribe(message):
+    return "很遗憾您将离我们而去，希望下次还能见到您。"
 
 robot.run()
