@@ -18,7 +18,7 @@ PORT = config.getint('server', 'port', fallback=8888)  # Default to 8888 if not 
 APP_ID = config.get('wechat', 'app_id', fallback='aa')  
 APP_SECRET = config.get('wechat', 'appsecret', fallback='aa')  # 获取appsecret配置
 TOKEN = config.get('wechat', 'token', fallback='WeRobot')  # Default to 'WeRobot' if not set
-ENCODING_AES_KEY = config.get('wechat', 'encoding_aes_key', fallback='aa')  
+ENCODING_AES_KEY = config.get('wechat', 'encoding_aes_key', fallback='aaa')  
 
 ZHIPUAI_KEY = config.get('zhipuai', 'zhipuai_api_key', fallback='aa') 
 
