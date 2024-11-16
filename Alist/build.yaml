@@ -1,0 +1,38 @@
+build_from:
+  amd64: docker.io/xhofe/alist:latest
+  armhf: docker.io/xhofe/alist:latest
+  aarch64: docker.io/xhofe/alist:latest
+labels:
+  maintainer: "Desmond Dong"
+  io.hass.addon.changelog: |
+    ## v1.0.0
+    - Initial release of AList addon for Home Assistant
+  io.hass.addon.version: "1.0.0"
+  io.hass.addon.name: "AList"
+  io.hass.addon.description: "A file list program that supports multiple storage."
+  io.hass.addon.url: "https://github.com/xhofe/alist"
+  io.hass.addon.arch: "amd64, armhf, aarch64"
+  io.hass.addon.init: "false"
+  io.hass.addon.startup: "services"
+  io.hass.addon.ingress: "true"
+  io.hass.addon.ingress_port: "5244"
+  io.hass.addon.panel_icon: "mdi:file"
+  io.hass.addon.map: |
+    - /config/addons_config/alist:/home/alist
+  io.hass.addon.ports: |
+    5244/tcp: 5244
+  io.hass.addon.ports_description: |
+    5244/tcp: "Web interface"
+  io.hass.addon.hassio_api: "true"
+  io.hass.addon.hassio_role: "manager"
+  io.hass.addon.options: |
+    ssl: false
+    certfile: fullchain.pem
+    keyfile: privkey.pem
+  io.hass.addon.schema: |
+    ssl: bool
+    certfile: str
+    keyfile: str
+  io.hass.addon.image: "docker.io/xhofe/alist"
+  io.hass.addon.webui: "http://[HOST]:[PORT:5244]"
+  io.hass.addon.watchdog: "http://[HOST]:[PORT:5244]"
