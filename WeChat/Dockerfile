@@ -1,12 +1,12 @@
 # Start of Selection
-FROM python:3.9.20-alpine3.20
+FROM python:3.12.7-alpine3.20
 
 # 设置时区为上海
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone
 
 # 安装必要的系统依赖
-RUN apk add --no-cache gcc libffi-dev musl-dev openssl-dev
+#RUN apk add --no-cache gcc libffi-dev musl-dev openssl-dev
 
 # 创建虚拟环境并安装 Python 包
 RUN python3 -m venv /opt/venv \
