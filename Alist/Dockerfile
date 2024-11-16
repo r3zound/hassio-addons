@@ -4,4 +4,4 @@ FROM ${BUILD_FROM}
 
 
 
-RUN "bash /install.sh"
+RUN "/install.sh"
