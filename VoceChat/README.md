@@ -25,9 +25,9 @@ The add-on doesn't require any manual configuration. However, you can adjust the
 
 ## Follow Us
 
-Stay updated with our latest developments:
-如果需要即时沟通,请扫码关注
+扫描下面二维码，关注我。有需要可以随时给我留言
 
-![QR Code](../WeChat_QRCode.png)
+![QR Code](./WeChat_QRCode.png)
 
-Scan the QR code above to follow us on social media!
+扫描上面二维码，关注我。有需要可以随时给我留言
+
