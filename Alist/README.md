@@ -18,7 +18,7 @@ The following options are available for configuration:
 
 扫描下面二维码，关注我。有需要可以随时给我留言
 
-![QR Code](./WeChat_QRCode.png)
+![QR Code](../WeChat_QRCode.png)
 
 扫描上面二维码，关注我。有需要可以随时给我留言
 
