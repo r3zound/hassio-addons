@@ -100,9 +100,13 @@ def handle_unknown(message):
     #return reply_msg
 
 # Set up the custom menu when the server starts
-set_menu()
+try:
+    set_menu()
+except:
+    pass
 
 @robot.subscribe
+
 def subscribe(message):
     return "感谢关注我们的公众号！我是<老王杂谈说>的机器助理，我将为您提供优质的内容和服务。"
 
