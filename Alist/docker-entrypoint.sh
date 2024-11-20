@@ -29,3 +29,4 @@ if [ ! -d "/config/addons_config/Alist/data" ]; then
   ./alist  admin set admin
   cp -r /opt/alist/data /config/addons_config/Alist/data
 fi
+/config/addons_config/Alist/alist

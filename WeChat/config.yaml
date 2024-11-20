@@ -3,7 +3,7 @@
   "version": "v0.6.0",  # Updated version
   "slug": "wechat-server",
   "description": "这是一个公众号后台，连接智能助理帮你回话。关注微信号：<老王杂谈说> 获取更多内容吧",
-  "url": "https://github.com/djhui/hassio-addons",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzUzNTExMDE2Mg==&mid=2247484640&idx=1&sn=c7b7cf843b10b7d3261f464c3cdea7fb&chksm=fa8b339dcdfcba8be7e968136912e9d0f142c5c947dcc6d28f35fbacfe28c3c96288619c4d0f&token=61213738&lang=zh_CN#rd",
   "arch": [
     "amd64",
     "armhf",

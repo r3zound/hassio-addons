@@ -33,10 +33,10 @@ After editing the configuration file, restart the add-on for the changes to take
 
 ## Follow Us
 
-Stay informed with our latest updates:
-For instant communication, please scan the QR code to follow us
-扫描二维码关注我吧
+扫描下面二维码，关注我。有需要可以随时给我留言
 
-![QR Code](../WeChat_QRCode.png)
+![QR Code](https://github.com/djhui/hassio-addons/raw/main/WeChat_QRCode.png)
+![QR Code](https://gitee.com/desmond_GT/hassio-addons/raw/main/WeChat_QRCode.png)
 
-Scan the QR code above to connect with us on social media.
+扫描上面二维码，关注我。有需要可以随时给我留言
+
