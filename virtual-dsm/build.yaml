@@ -1,0 +1,10 @@
+
+labels:
+  org.opencontainers.image.title: "Home Assistant Add-on: Virtual DSM"
+  org.opencontainers.image.description: "Run Virtual DSM in Home Assistant"
+  org.opencontainers.image.source: "https://github.com/yourusername/hassio-addons"
+  org.opencontainers.image.licenses: "Apache-2.0"
+
+args:
+  TEMPIO_VERSION: "2021.09.0"
+  S6_OVERLAY_VERSION: "3.1.5.0" 

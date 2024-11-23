@@ -1,0 +1,17 @@
+services:
+    dsm:
+        container_name: dsm
+        image: vdsm/virtual-dsm:latest
+        environment:
+            DISK_SIZE: "16G"
+        devices:
+            - /dev/kvm
+        cap_add:
+            - NET_ADMIN
+        ports:
+            - 5000:5000
+        volumes:
+            - /var/dsm:/storage
+        stop_grace_period: 2m
+    devices:
+        - /dev/disk/by-uuid/db188500-00f0-455f-ada0-f36b696130cd:/disk2
