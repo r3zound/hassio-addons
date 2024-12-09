@@ -1,6 +1,6 @@
 # Start of Selection
 FROM python:3.13.1-alpine3.20
-
+WORKDIR /usr/src
 RUN set -x \
     && apk add --no-cache \
     bash \
@@ -31,7 +31,7 @@ RUN set -x \
 
 # 设置 PATH 环境变量，让系统识别虚拟环境中的 Python 和 pip
 ENV PATH="/opt/venv/bin:$PATH"
-
+WORKDIR /
 # 复制脚本和配置文件
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 COPY config.ini /config.ini
