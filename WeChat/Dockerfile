@@ -1,7 +1,17 @@
 # Start of Selection
 FROM python:3.13.1-alpine3.20
 
-RUN apk add --no-cache curl \
+RUN set -x \
+    && apk add --no-cache \
+    bash \
+    bind-tools \
+    ca-certificates \
+    curl \
+    jq \
+    libstdc++ \
+    tzdata \
+    xz \
+    apk add --no-cache curl \
     && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone \
     && mkdir -p /usr/src/bashio \
@@ -9,6 +19,11 @@ RUN apk add --no-cache curl \
         | tar -xzf - --strip 1 -C /usr/src/bashio \
     && mv /usr/src/bashio/lib /usr/lib/bashio \
     && ln -s /usr/lib/bashio/bashio /usr/bin/bashio \
+    \
+    && curl -L -f -s -o /usr/bin/tempio \
+        "https://github.com/home-assistant/tempio/releases/download/2024.11.2/tempio_${BUILD_ARCH}" \
+    && chmod a+x /usr/bin/tempio \
+    \
     && python3 -m venv /opt/venv \
     && . /opt/venv/bin/activate \
     && /opt/venv/bin/python3 -m pip install --upgrade pip \
