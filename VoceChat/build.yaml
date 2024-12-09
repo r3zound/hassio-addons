@@ -1,7 +1,7 @@
 build_from:
-  amd64: docker.io/privoce/vocechat-server:v0.4.0
-  armhf: docker.io/privoce/vocechat-server:latest-arm64
-  aarch64: docker.io/privoce/vocechat-server:latest-arm64
+  amd64: privoce/vocechat-server:v0.4.0
+  armhf: privoce/vocechat-server:latest-arm64
+  aarch64: privoce/vocechat-server:latest-arm64
 labels:
   maintainer: "Desmond Dong"
   io.hass.addon.changelog: |

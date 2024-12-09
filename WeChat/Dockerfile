@@ -1,4 +1,6 @@
-FROM homeassistant/base:latest
+ARG BUILD_FROM
+FROM $BUILD_FROM
+
 #FROM python:3.13.1-alpine3.20
 
 RUN apk add --no-cache python3 py-pip \
