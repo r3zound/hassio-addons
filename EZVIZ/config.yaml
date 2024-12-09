@@ -1,0 +1,41 @@
+{
+  "name": "EZVIZ Cloud Signaling Receiver",
+  "version": "v0.0.1",  # Updated version
+  "slug": "ezviz-cloud-receiver",
+  "description": "这是萤石云信令接收服务器，负责处理来自萤石云的信令消息。",
+  "url": "https://www.ezvizlife.com/",
+  "arch": [
+    "amd64",
+    "armhf",
+    "armv7",
+    "aarch64",
+    "i386"
+  ],
+  "init": false,
+  "startup": "services",
+  "ingress": true,
+  "ingress_port": 7777,
+  "panel_icon": "mdi:camera",
+  "map": [
+    "config:rw"
+  ],
+  "ports": {
+    "7777/tcp": 7777
+  },
+  "hassio_api": true,
+  "hassio_role": "manager",
+  "webui": "http://[HOST]:[PORT:8888]",
+  
+  "options": {
+    "mqtt_broker": "172.16.1.119",
+    "mqtt_port": 1883,
+    "mqtt_username": "user",
+    "mqtt_password": "passwd"
+  },
+  "schema": {
+    "mqtt_broker": "str",
+    "mqtt_port": "int",
+    "mqtt_username": "str",
+    "mqtt_password": "str"
+  }
+}

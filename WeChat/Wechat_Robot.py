@@ -8,7 +8,14 @@ import configparser
 
 # Set the encoding to handle Unicode characters
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+print (os.getenv("TOKEN"))
+print (os.getenv("APPID"))
+print (os.getenv("SECRET"))
+print (os.getenv("APPID"))
+print (os.getenv("SECRET"))
+print (os.getenv("ZHIPU_API_ID"))
 
+# Load the
 # Load configuration from the config.ini file
 config = configparser.ConfigParser()
 config.read('/config/addons_config/wechat-server/config.ini')
@@ -100,6 +107,9 @@ def handle_unknown(message):
     #return reply_msg
 
 # Set up the custom menu when the server starts
+
+
+# Set the custom menu when the server starts
 try:
     set_menu()
 except:
