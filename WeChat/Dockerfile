@@ -12,12 +12,6 @@ RUN set -x \
     tzdata \
     xz \
     curl \
-    \
-    && apk add --no-cache --virtual .build-deps \
-    build-base \
-    autoconf \
-    git \
-    \
     && if [ "${BUILD_ARCH}" = "armv7" ]; then \
         export S6_ARCH="arm"; \
     elif [ "${BUILD_ARCH}" = "i386" ]; then \
@@ -35,10 +29,6 @@ RUN set -x \
         | tar -xzf - --strip 1 -C /usr/src/bashio \
     && mv /usr/src/bashio/lib /usr/lib/bashio \
     && ln -s /usr/lib/bashio/bashio /usr/bin/bashio \
-    \
-    && curl -L -f -s -o /usr/bin/tempio \
-        "https://github.com/home-assistant/tempio/releases/download/2024.11.2/tempio_${BUILD_ARCH}" \
-    && chmod a+x /usr/bin/tempio \
     \
     && python3 -m venv /opt/venv \
     && . /opt/venv/bin/activate \
