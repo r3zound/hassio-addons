@@ -1,6 +1,5 @@
 # Start of Selection
-ARG BUILD_FROM
-FROM $BUILD_FROM
+FROM python:3.13.1-alpine3.20
 
 # 设置时区为上海
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
@@ -10,10 +9,9 @@ RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
 #RUN apk add --no-cache gcc libffi-dev musl-dev openssl-dev
 
 # 创建虚拟环境并安装 Python 包
-RUN apk add --no-cache python3 py-pip \
-    && python3 -m venv /opt/venv \
+RUN python3 -m venv /opt/venv \
     && . /opt/venv/bin/activate \
-    && /opt/venv/bin/python3 -m pip install --no-cache-dir --upgrade pip \
+    && /opt/venv/bin/python3 -m pip install --upgrade pip \
     && pip install --no-cache-dir werobot zhipuai
 
 # 设置 PATH 环境变量，让系统识别虚拟环境中的 Python 和 pip

@@ -1,5 +1,8 @@
 # Changelog
 
+## v0.6.1
+- Updated Python to 3.13.1
+
 ## v0.6.0
 - Updated WeChat Server addon for Home Assistant
 - Enhanced performance and stability
