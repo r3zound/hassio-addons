@@ -26,4 +26,4 @@ COPY Wechat_Robot.py /Wechat_Robot.py
 RUN chmod +x /docker-entrypoint.sh
 
 # 设置容器启动时执行的入口点
-ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["/docker-entrypoint.sh"]
