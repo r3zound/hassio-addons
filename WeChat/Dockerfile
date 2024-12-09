@@ -11,7 +11,7 @@ RUN set -x \
     libstdc++ \
     tzdata \
     xz \
-    apk add --no-cache curl \
+    curl \
     && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone \
     && mkdir -p /usr/src/bashio \
