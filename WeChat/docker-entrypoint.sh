@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/with-contenv bashio
 
 export TOKEN=$(bashio::config 'TOKEN')
 export HOST=$(bashio::config 'HOST')
