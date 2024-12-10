@@ -1,10 +1,9 @@
-ARG BUILD_FROM
-FROM $BUILD_FROM
+#FROM $BUILD_FROM
 
-#FROM python:3.13.1-alpine3.20
+FROM python:3.13.1-alpine3.20
 
-RUN apk add --no-cache python3 py-pip \
-    && python3 -m venv /opt/venv \
+#RUN apk add --no-cache python3 py-pip \
+RUN python3 -m venv /opt/venv \
     && . /opt/venv/bin/activate \
     && /opt/venv/bin/python3 -m pip install --no-cache-dir --upgrade pip \
     && pip install --no-cache-dir werobot zhipuai
@@ -21,4 +20,4 @@ COPY Wechat_Robot.py /Wechat_Robot.py
 RUN chmod +x /docker-entrypoint.sh
 
 # 设置容器启动时执行的入口点
-ENTRYPOINT ["bash","/docker-entrypoint.sh"]
+ENTRYPOINT ["/docker-entrypoint.sh"]
