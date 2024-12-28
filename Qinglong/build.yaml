@@ -1,0 +1,29 @@
+labels:
+  maintainer: "Desmond Dong"
+  io.hass.addon.changelog: |
+    ## v2.17.13
+    - Initial release of Qinglong addon for Home Assistant
+    - First version of Qinglong server integration
+  io.hass.addon.version: "v2.17.13"
+  io.hass.addon.name: "Qinglong Home Assistant Addon"
+  io.hass.addon.description: "A Home Assistant Addon for Qinglong."
+  io.hass.addon.url: "https://github.com/djhui/hassio-addons"
+  io.hass.addon.arch: "amd64, armhf, armv7, aarch64, i386"
+  io.hass.addon.init: "false"
+  io.hass.addon.startup: "services"
+  io.hass.addon.ingress: "true"
+  io.hass.addon.ingress_port: "5700"
+  io.hass.addon.panel_icon: "mdi:robot"
+  io.hass.addon.map: |
+    - /config/addons_config/qinglong:/ql/data
+  io.hass.addon.ports: |
+    5700/tcp: 5700
+  io.hass.addon.ports_description: |
+    5700/tcp: "Qinglong Server"
+  io.hass.addon.hassio_api: "true"
+  io.hass.addon.hassio_role: "manager"
+  io.hass.addon.options: |
+    data_location: "/config/addons_config/qinglong"
+  io.hass.addon.schema: |
+    data_location: str
+  io.hass.addon.webui: "http://[HOST]:[PORT:5700]"
