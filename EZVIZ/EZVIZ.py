@@ -8,7 +8,7 @@ logging.basicConfig(level=logging.INFO)
 log = logging.getLogger(__name__)
 
 # Callback functions for MQTT
-def on_connect(client, userdata, flags, rc):
+def on_connect(client, userdata, flags, rc, properties=None):
     log.info("Connected to MQTT broker with result code: %s", rc)
 
 def on_publish(client, userdata, mid):
