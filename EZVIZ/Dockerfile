@@ -11,8 +11,6 @@ RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
 
 COPY EZVIZ.py /EZVIZ.py
 
-# 给入口脚本添加执行权限
-RUN chmod +x /docker-entrypoint.sh
 
 # 设置容器启动时执行的入口点
 # Start of Selection
