@@ -9,6 +9,7 @@ RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && /opt/venv/bin/python3 -m pip install --upgrade pip \
     && pip install --no-cache-dir paho-mqtt
 
+ENV PATH="/opt/venv/bin:$PATH"
 COPY EZVIZ.py /EZVIZ.py
 
 

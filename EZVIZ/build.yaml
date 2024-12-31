@@ -15,8 +15,6 @@ labels:
   io.hass.addon.ingress: "true"
   io.hass.addon.ingress_port: "7777"
   io.hass.addon.panel_icon: "mdi:camera"
-  io.hass.addon.map: |
-    - /config/addons_config/ezviz-cloud-receiver:/config/addons_config/ezviz-cloud-receiver
   io.hass.addon.ports: |
     7777/tcp: 7777
   io.hass.addon.ports_description: |
