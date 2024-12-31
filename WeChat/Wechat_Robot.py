@@ -4,30 +4,22 @@ import io
 import os
 import json
 from zhipuai import ZhipuAI
-import configparser
 
-# Set the encoding to handle Unicode characters
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-print (os.getenv("TOKEN"))
-print (os.getenv("APPID"))
-print (os.getenv("SECRET"))
-print (os.getenv("APPID"))
-print (os.getenv("SECRET"))
-print (os.getenv("ZHIPU_API_ID"))
+# Load options from JSON file
+with open('/data/options.json', 'r', encoding='utf-8') as options_file:
+    options = json.load(options_file)
 
-# Load the
-# Load configuration from the config.ini file
-config = configparser.ConfigParser()
-config.read('/config/addons_config/wechat-server/config.ini')
+# Get variables from options
+HOST = options.get("HOST", "0.0.0.0")  # Default to '0.0.0.0' if not set
+PORT = options.get("ingress_port", 8888)  # Default to 8888 if not set
+TOKEN = options.get("TOKEN", "your_wechat_token")
+APP_ID = options.get("APP_ID", "your_app_id")
+APP_SECRET = options.get("APP_SECRET", "your_app_secret")
+ZHIPUAI_KEY = options.get("ZhipuAI", "your_zhipuai_api_key")
+ENCODING_AES_KEY = options.get("ENCODING_AES_KEY", "your_ENCODING_AES_KEY")
+SYSTEM_CONTENT = options.get("system_content", "None")
+USER_CONTENT = options.get("user_content", "None")
 
-HOST = config.get('server', 'host', fallback='0.0.0.0')  # Default to '0.0.0.0' if not set
-PORT = config.getint('server', 'port', fallback=8888)  # Default to 8888 if not set
-APP_ID = config.get('wechat', 'app_id', fallback='aa')  
-APP_SECRET = config.get('wechat', 'appsecret', fallback='aa')  # 获取appsecret配置
-TOKEN = config.get('wechat', 'token', fallback='WeRobot')  # Default to 'WeRobot' if not set
-ENCODING_AES_KEY = config.get('wechat', 'encoding_aes_key', fallback='aaa')  
-
-ZHIPUAI_KEY = config.get('zhipuai', 'zhipuai_api_key', fallback='aa') 
 
 # Initialize WeRoBot with the token from the config
 robot = werobot.WeRoBot(token=TOKEN)
@@ -47,8 +39,8 @@ def GLM(userid, content):
     response1 = client.chat.completions.create(
         model="glm-4-flash",
         messages=[
-            {"role": "system", "content": "你是我微信公众号的智能助理，以纯文本的方式对话，简洁明了，不长篇大论。你的名字叫《老王杂谈说》。你尊重每个跟你对话的对象，并且多用礼貌用语"},
-            {"role": "user", "content": "我是一位老王杂谈说的一个读者，喜欢看您这个公众号的文章"},
+            {"role": "system", "content": SYSTEM_CONTENT },
+            {"role": "user", "content": USER_CONTENT},
             {"role": "user", "content": content},
         ],
         user_id= userid

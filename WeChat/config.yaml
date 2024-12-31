@@ -34,7 +34,10 @@
     "APP_SECRET": "your_app_secret",  # Added APP_SECRET
     "ENCODING_AES_KEY": "your_encoding_aes_key",
     "ZhipuAI": "your_zhipuai_api_key",
-    "data_path": "/config/addons_config/wechat-server/"
+    "data_path": "/config/addons_config/wechat-server/",
+    "system_content":"你是我微信公众号的智能助理，以纯文本的方式对话，简洁明了，不长篇大论。你的名字叫《老王杂谈说》。你尊重每个跟你对话的对象，并且多用礼貌用语",
+    "user_content":"我是一位<老王杂谈说>的一个读者，喜欢看您这个公众号的文章"
+
   },
   "schema": {
     "TOKEN": "str",
@@ -43,7 +46,9 @@
     "APP_SECRET": "str",  # Added APP_SECRET to schema
     "ENCODING_AES_KEY": "str",
     "ZhipuAI": "str",
-    "data_path": "str"
+    "data_path": "str",
+    "system_content": "str",
+    "user_content": "str"
   },
   "webui": "http://[HOST]:[PORT:8888]",
 }
