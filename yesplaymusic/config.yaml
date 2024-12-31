@@ -3,7 +3,7 @@
   "version": "0.48-2",
   "slug": "yesplaymusic",
   "url": "https://mp.weixin.qq.com/s/48n8mq8wK2mgxr9JyyupuQ",
-  "description": "A web-based music player for Home Assistant. \n 关注微信号：老王杂谈说 获取更多内容吧"",
+  "description": "A web-based music player for Home Assistant. \n 关注微信号：老王杂谈说 获取更多内容吧",
   "arch": [
     "amd64",
     "armhf",

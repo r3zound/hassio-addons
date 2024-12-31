@@ -1,6 +1,6 @@
 name: Alist
 slug: alist
-description: '一个支持多种存储的文件列表程序，由 Gin 和 Solidjs 提供支持'
+description: '一个支持多种存储的文件列表程序'
 url: https://github.com/djhui/hassio-addons/tree/main/Alist
 version: 3.41.0
 image: wghaos/alist
