@@ -1,0 +1,54 @@
+{
+  "name": "WeChat Server",
+  "version": "v0.6.2",  # Updated version
+  "slug": "wechat-server",
+  "description": "这是一个公众号后台，连接智能助理帮你回话。关注微信号：<老王杂谈说> 获取更多内容吧",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzUzNTExMDE2Mg==&mid=2247484640&idx=1&sn=c7b7cf843b10b7d3261f464c3cdea7fb&chksm=fa8b339dcdfcba8be7e968136912e9d0f142c5c947dcc6d28f35fbacfe28c3c96288619c4d0f&token=61213738&lang=zh_CN#rd",
+  "arch": [
+    "amd64",
+    "armhf",
+    "armv7",
+    "aarch64",
+    "i386"
+  ],
+  "init": false,
+  "startup": "services",
+  "ingress": true,
+  "ingress_port": 8888,
+  "panel_icon": "mdi:wechat",
+  "map": [
+    "config:rw"
+  ],
+  "ports": {
+    "8888/tcp": 8888
+  },
+  "ports_description": {
+    "8888/tcp": "WeChat Server"
+  },
+  "hassio_api": true,
+  "hassio_role": "manager",
+  "options": {
+    "TOKEN": "your_wechat_token",
+    "HOST": "0.0.0.0",
+    "APP_ID": "your_app_id",
+    "APP_SECRET": "your_app_secret",  # Added APP_SECRET
+    "ENCODING_AES_KEY": "your_encoding_aes_key",
+    "ZhipuAI": "your_zhipuai_api_key",
+    "data_path": "/config/addons_config/wechat-server/",
+    "system_content":"你是我微信公众号的智能助理，以纯文本的方式对话，简洁明了，不长篇大论。你的名字叫《老王杂谈说》。你尊重每个跟你对话的对象，并且多用礼貌用语",
+    "user_content":"我是一位<老王杂谈说>的一个读者，喜欢看您这个公众号的文章"
+
+  },
+  "schema": {
+    "TOKEN": "str",
+    "HOST": "str",
+    "APP_ID": "str",
+    "APP_SECRET": "str",  # Added APP_SECRET to schema
+    "ENCODING_AES_KEY": "str",
+    "ZhipuAI": "str",
+    "data_path": "str",
+    "system_content": "str",
+    "user_content": "str"
+  },
+  "webui": "http://[HOST]:[PORT:8888]",
+}
