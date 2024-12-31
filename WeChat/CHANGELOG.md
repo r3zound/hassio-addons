@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.6.2
+- Updated WeChat Server addon for Home Assistant
+- Enhanced performance and stability
+- Added APP_SECRET to configuration
+- Added user ID recognition
+
 ## v0.6.1
 - Updated Python to 3.13.1
 

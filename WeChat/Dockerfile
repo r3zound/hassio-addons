@@ -13,7 +13,6 @@ ENV PATH="/opt/venv/bin:$PATH"
 
 # 复制脚本和配置文件
 COPY docker-entrypoint.sh /docker-entrypoint.sh
-COPY config.ini /config.ini
 COPY Wechat_Robot.py /Wechat_Robot.py
 
 # 给入口脚本添加执行权限
