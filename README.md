@@ -1,20 +1,6 @@
 # Home Assistant Add-ons Repository
 
-Welcome to the Home Assistant Add-ons repository by djhui! This repository contains custom add-ons for enhancing your Home Assistant experience.
-
-## Available Add-ons
-
-### VoceChat Server
-
-VoceChat is an open-source, self-hosted chat platform that provides a secure and customizable communication solution.
-
-**Features:**
-- Self-hosted chat server
-- Persistent data storage
-- Easy integration with Home Assistant
-- Secure communication
-- Customizable settings
-
+Welcome to the Home Assistant Add-ons repository by djhui! This repository contains custom add-ons designed to enhance your Home Assistant experience.
 ## Installation
 
 To add this repository to your Home Assistant instance:
@@ -33,6 +19,7 @@ Alternatively, you can click the button below to add the repository automaticall
 
 [![Add Addon to Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://github.com/djhui/hassio-addons)
 
+
 ## Support
 
 If you encounter any issues or have questions, please open an issue on the [GitHub repository](https://github.com/djhui/hassio-addons/issues).
@@ -43,11 +30,9 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Follow Me
 
-
 扫描下面二维码，关注我。有需要可以随时给我留言
 
 ![QR Code](https://github.com/djhui/hassio-addons/raw/main/WeChat_QRCode.png)
 ![QR Code](https://gitee.com/desmond_GT/hassio-addons/raw/main/WeChat_QRCode.png)
 
 扫描上面二维码，关注我。有需要可以随时给我留言
-

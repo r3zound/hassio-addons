@@ -1,21 +1,12 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 import logging
-import os
 import paho.mqtt.client as mqtt
 
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger(__name__)
-
-# Callback functions for MQTT
-def on_connect(client, userdata, flags, rc, properties=None):
-    log.info("Connected to MQTT broker with result code: %s", rc)
-
-def on_publish(client, userdata, mid):
-    log.info("Message published with mid: %s", mid)
 with open('/data/options.json', 'r', encoding='utf-8') as options_file:
     options = json.load(options_file)
-
 # Read MQTT configuration from environment variables
 mqtt_broker = options.get("mqtt_broker", "Homeassistant.local")
 mqtt_port = int(options.get("mqtt_port", 1883))
@@ -23,20 +14,19 @@ mqtt_topic = options.get("mqtt_topic", "EZVIZ")
 mqtt_username = options.get("mqtt_username", "user")
 mqtt_password = options.get("mqtt_password", "passwd")
 
+# MQTT callbacks
+def on_connect(client, userdata, flags, rc, properties=None):
+    log.info("Connected to MQTT broker with result code: %s", rc)
+
+def on_publish(client, userdata, mid, properties=None):
+    log.info("Message published with mid: %s", mid)
+
 # Initialize MQTT client with versioned callback API
 mqtt_client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
-
-# Register callbacks
 mqtt_client.on_connect = on_connect
 mqtt_client.on_publish = on_publish
-
-# Set MQTT username and password
 mqtt_client.username_pw_set(mqtt_username, mqtt_password)
-
-# Connect to the broker
 mqtt_client.connect(mqtt_broker, mqtt_port, 60)
-
-# Start the MQTT client loop
 mqtt_client.loop_start()
 
 # Helper function to recursively publish JSON to MQTT
