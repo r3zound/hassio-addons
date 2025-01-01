@@ -19,7 +19,7 @@ def on_connect(client, userdata, flags, rc, properties=None):
     log.info("Connected to MQTT broker with result code: %s", rc)
 
 def on_publish(client, userdata, mid, properties=None):
-     log.info("on_publish called with: client=%s, userdata=%s, mid=%s, properties=%s", client, userdata, mid, properties)
+    log.info("Message published with mid: %s", mid)
 
 # Initialize MQTT client with versioned callback API
 mqtt_client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
@@ -33,22 +33,22 @@ mqtt_client.loop_start()
 def publish_json(client, base_topic, key, value, retain=True):
     if isinstance(value, dict):
         for sub_key, sub_value in value.items():
-            publish_json(client, base_topic, f"{key}/{sub_key}", sub_value)
+            publish_json(client, base_topic, f"{key}/{sub_key}", sub_value, retain)
     elif isinstance(value, list):
         if not value:  # If the list is empty
             topic = f"{base_topic}/{key}"
-            result, mid = client.publish(topic, "[]")
+            result, mid = client.publish(topic, "[]", retain=retain)
             if result == mqtt.MQTT_ERR_SUCCESS:
                 log.info("Published empty list to topic: %s", topic)
             else:
                 log.error("Failed to publish to topic: %s", topic)
         else:
             for index, item in enumerate(value):
-                publish_json(client, base_topic, f"{key}/{index}", item)
+                publish_json(client, base_topic, f"{key}/{index}", item, retain)
     else:
         topic = f"{base_topic}/{key}"
         payload = str(value)  # Convert value to string
-        result, mid = client.publish(topic, payload)
+        result, mid = client.publish(topic, payload, retain=retain)
         if result == mqtt.MQTT_ERR_SUCCESS:
             log.info("Published to topic: %s with payload: %s", topic, payload)
         else:

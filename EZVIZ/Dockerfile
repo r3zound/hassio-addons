@@ -11,7 +11,7 @@ RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
 
 ENV PATH="/opt/venv/bin:$PATH"
 COPY EZVIZ.py /EZVIZ.py
-
+#WORKDIR /opt/venv
 
 # 设置容器启动时执行的入口点
 # Start of Selection
