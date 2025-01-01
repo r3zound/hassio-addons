@@ -25,8 +25,9 @@ mqtt_password = options.get("mqtt_password", "passwd")
 def on_connect(client, userdata, flags, rc, properties=None):
     log.info("Connected to MQTT broker with result code: %s", rc)
 
-def on_publish(client, userdata, mid, properties=None):
-    log.info("Message published with mid: %s", mid)
+def on_publish(client, userdata, mid, *args, **kwargs):
+    log.info("on_publish called with mid: %s, args: %s, kwargs: %s", mid, args, kwargs)
+
 
 # Initialize MQTT client with versioned callback API
 mqtt_client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
