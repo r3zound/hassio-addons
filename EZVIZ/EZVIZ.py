@@ -5,11 +5,18 @@ import paho.mqtt.client as mqtt
 
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger(__name__)
-with open('/data/options.json', 'r', encoding='utf-8') as options_file:
-    options = json.load(options_file)
+try:
+    with open('/data/options.json', 'r', encoding='utf-8') as options_file:
+        options = json.load(options_file)
+except FileNotFoundError:
+    log.error("Configuration file '/data/options.json' not found.")
+    options = {}
+except json.JSONDecodeError:
+    log.error("Configuration file '/data/options.json' contains invalid JSON.")
+    options = {}
 # Read MQTT configuration from environment variables
-mqtt_broker = options.get("mqtt_broker", "Homeassistant.local")
-mqtt_port = int(options.get("mqtt_port", 1883))
+mqtt_broker = options.get("mqtt_broker", "127.0.0.1")
+mqtt_port = options.get("mqtt_port", 1883)
 mqtt_topic = options.get("mqtt_topic", "EZVIZ")
 mqtt_username = options.get("mqtt_username", "user")
 mqtt_password = options.get("mqtt_password", "passwd")
