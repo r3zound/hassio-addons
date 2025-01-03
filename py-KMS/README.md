@@ -1,6 +1,7 @@
 # py-kms - Home Assistant Addon for KMS Activation
 
-py-kms 是一个专为 Home Assistant 设计的 KMS 服务器插件，旨在为 Windows 和 Office 提供激活服务。它支持多种架构，包括 aarch64 和 amd64，确保在不同的硬件平台上都能顺利运行。
+py-kms 是一个专为 Home Assistant 设计的 KMS 服务器插件，旨在为 Windows 和 Office 提供激活服务。它支持多种架构，包括 aarch64, amd64和arm64，确保在不同的硬件平台上都能顺利运行。
+
 
 ## 特性
 
