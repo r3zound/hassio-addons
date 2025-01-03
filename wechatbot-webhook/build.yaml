@@ -1,3 +1,8 @@
+build_from:
+  amd64: dannicool/docker-wechatbot-webhook:latest
+  armhf: dannicool/docker-wechatbot-webhook:latest
+  aarch64: dannicool/docker-wechatbot-webhook:latest
+
 labels:
   - name: "wechatbot-webhook"
     description: "一个支持个人号消息收发的微信机器人"
