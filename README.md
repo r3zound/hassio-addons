@@ -4,15 +4,15 @@
 
 ## ✨ 加载项介绍
 
-- [**py-kms**](https://github.com/djhui/hassio-addons/tree/main/py-kms): 专为 Home Assistant 设计的 KMS 服务器加载项，支持 Windows 和 Office 的激活服务。
-- [**WeChat Server**](https://github.com/djhui/hassio-addons/tree/main/WeChat): 微信公众号后台，接入AI对话。
-- [**alist**](https://github.com/djhui/hassio-addons/tree/main/alist): 高效的文件管理和分享工具，支持多种存储服务。
-- [**bumper**](https://github.com/djhui/hassio-addons/tree/main/bumper): 科沃斯扫地机器人私有化服务器。
-- [**ezviz**](https://github.com/djhui/hassio-addons/tree/main/ezviz): 监控和管理您的 EZVIZ 摄像头，提供实时视频流和通知。
-- [**mqttx-web**](https://github.com/djhui/hassio-addons/tree/main/mqttx-web): 基于 Web 的 MQTT 客户端，方便用户进行消息发布和订阅。
-- [**qinglong**](https://github.com/djhui/hassio-addons/tree/main/qinglong): 强大的任务调度和管理功能，支持多种脚本语言。
-- [**vocechat**](https://github.com/djhui/hassio-addons/tree/main/vocechat): 安全的私有聊天平台，支持多种消息类型和文件传输。
-- [**yesplaymusic**](https://github.com/djhui/hassio-addons/tree/main/yesplaymusic): 音乐播放和管理功能，网易云音乐无广告网页版。
+- 📦 [**py-KMS**](https://github.com/djhui/hassio-addons/tree/main/py-KMS): 专为 Home Assistant 设计的 KMS 服务器加载项，支持 Windows 和 Office 的激活服务。
+- 📨 [**WeChat**](https://github.com/djhui/hassio-addons/tree/main/WeChat): 微信公众号后台，接入AI对话。
+- 📁 [**Alist**](https://github.com/djhui/hassio-addons/tree/main/Alist): 高效的文件管理和分享工具，支持多种存储服务。
+- 🤖 [**Bumper**](https://github.com/djhui/hassio-addons/tree/main/bumper): 科沃斯扫地机器人私有化服务器。
+- 📹 [**Ezviz**](https://github.com/djhui/hassio-addons/tree/main/EZVIZ): 监控和管理您的 EZVIZ 摄像头，提供实时视频流和通知。
+- 🌐 [**Mqttx-Web**](https://github.com/djhui/hassio-addons/tree/main/mqttx-Web): 基于 Web 的 MQTT 客户端，方便用户进行消息发布和订阅。
+- ⏳ [**Qinglong**](https://github.com/djhui/hassio-addons/tree/main/Qinglong): 强大的任务调度和管理功能，支持多种脚本语言。
+- 💬 [**Vocechat**](https://github.com/djhui/hassio-addons/tree/main/Vocechat): 安全的私有聊天平台，支持多种消息类型和文件传输。
+- 🎵 [**Yesplaymusic**](https://github.com/djhui/hassio-addons/tree/main/yesplaymusic): 音乐播放和管理功能，网易云音乐无广告网页版。
 
 ## 📥 安装
 
