@@ -4,7 +4,11 @@
   "slug": "py-kms",
   "description": "这是py-kms，一个用来激活Windows和Office的服务器",
   "url": "https://github.com/djhui/hassio-addons",
-  "arch": ["aarch64", "amd64", "armv7"],
+  "arch": [
+    "aarch64",
+    "amd64",
+    "armv7"
+  ],
   "startup": "services",
   "image": "ghcr.io/thespad/py-kms",
   "boot": "auto",
@@ -24,5 +28,8 @@
     "PGID": "1000",
     "TZ": "Asia/Shanghai"
   },
-  "restart": "unless-stopped"
+  "restart": "unless-stopped",
+  "options": {},
+  "schema": {},
+  "log_level": "info"
 }
