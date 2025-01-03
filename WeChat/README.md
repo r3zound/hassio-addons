@@ -21,7 +21,7 @@ This add-on enables you to host a WeChat server within your Home Assistant setup
 
 While the add-on doesn't require manual configuration, you can modify the following options if necessary:
 
-Configure the add-on using the options in the `config.ini` file located at `/config/addons_config/wechat-server/config.ini`:
+Configure the add-on using the options in the configurations:
 
 After editing the configuration file, restart the add-on for the changes to take effect.
 
