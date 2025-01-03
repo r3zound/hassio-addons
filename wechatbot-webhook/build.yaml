@@ -1,7 +1,3 @@
-build_from:
-  amd64: dannicool/docker-wechatbot-webhook:latest
-  armhf: dannicool/docker-wechatbot-webhook:latest
-  aarch64: dannicool/docker-wechatbot-webhook:latest
 
 labels:
   - name: "wechatbot-webhook"
