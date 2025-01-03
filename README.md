@@ -1,34 +1,46 @@
-# Home Assistant Add-ons Repository
+# 🔔 Home Assistant 加载项库
 
-Welcome to the Home Assistant Add-ons repository by djhui! This repository contains custom add-ons designed to enhance your Home Assistant experience.
-## Installation
+欢迎来到 **djhui** 的 Home Assistant 加载项库！本库包含多个自定义加载项，旨在增强您的 Home Assistant 体验。
 
-To add this repository to your Home Assistant instance:
+## ✨ 加载项介绍
 
-1. Navigate to your Home Assistant instance.
-2. Go to **Settings** -> **Add-ons** -> **Add-on Store**.
-3. Click on the three dots in the top right corner and select **Repositories**.
-4. Copy and paste the following URL into the repository input field:
+- **py-kms**: 专为 Home Assistant 设计的 KMS 服务器加载项，支持 Windows 和 Office 的激活服务。
+- **WeChat Server**: 允许您在 Home Assistant 中托管微信公众号，提供安全和可定制的通信解决方案。
+- **alist**: 高效的文件管理和分享工具，支持多种存储服务。
+- **bumper**: 自动化备份解决方案，确保您的数据安全。
+- **ezviz**: 监控和管理您的 EZVIZ 摄像头，提供实时视频流和通知。
+- **mqttx-web**: 基于 Web 的 MQTT 客户端，方便用户进行消息发布和订阅。
+- **qinglong**: 强大的任务调度和管理功能，支持多种脚本语言。
+- **vocechat**: 安全的聊天平台，支持多种消息类型和文件传输。
+- **yesplaymusic**: 音乐播放和管理功能，支持多种音乐平台的集成。
+
+## 📥 安装
+
+要将此库添加到您的 Home Assistant 实例：
+
+1. 导航到您的 Home Assistant 实例。
+2. 转到 **设置** -> **加载项** -> **加载项商店**。
+3. 点击右上角的三个点，选择 **Repositories**。
+4. 将以下 URL 复制并粘贴到库输入字段中：
    ```
    https://github.com/djhui/hassio-addons
    ```
-5. Click **Add**.
-6. The add-ons from this repository will now be available in your add-on store.
+5. 点击 **添加**。
+6. 该库中的加载项现在将在您的加载项商店中可用。
 
-Alternatively, you can click the button below to add the repository automatically:
+您也可以点击下面的按钮自动添加库：
 
 [![Add Addon to Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://github.com/djhui/hassio-addons)
 
+## 🛠️ 支持
 
-## Support
+如果您遇到任何问题或有疑问，请在 [GitHub 仓库](https://github.com/djhui/hassio-addons/issues) 上提出问题或者公众号后台留言。
 
-If you encounter any issues or have questions, please open an issue on the [GitHub repository](https://github.com/djhui/hassio-addons/issues).
+## 📜 许可证
 
-## License
+本项目根据 MIT 许可证授权。有关详细信息，请参阅 [LICENSE](LICENSE) 文件。
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Follow Me
+## 📱 关注我
 
 扫描下面二维码，关注我。有需要可以随时给我留言
 
