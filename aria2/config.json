@@ -37,5 +37,5 @@
     "map": [
         "share:rw"
     ],
-    "webui": "http://[HOST]:[PORT:8080]"
+    "webui": "http://[HOST]:[PORT:8080]/webui-aria2/"
 }
