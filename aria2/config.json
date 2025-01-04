@@ -1,10 +1,12 @@
 {
     "name": "Aria2",
-    "version": "0.6",
+    "version": "0.6.1",
     "slug": "aria2",
     "description": "Aria2 download manager",
     "url": "https://github.com/djhui/hassio-addons",
     "startup": "services",
+    "hassio_role": "manager",
+    "panel_icon": "mdi:download",
     "ingress": true,
     "ingress_port": 8080,
     "arch": [
