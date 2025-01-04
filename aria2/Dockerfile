@@ -6,7 +6,6 @@ ENV LANG C.UTF-8
 # Setup base
 RUN apk add --no-cache -U --virtual .build-deps \
         git \
-        bash \
  && apk add --no-cache -U aria2 darkhttpd jq \
  && mkdir /webui \
  && git clone https://github.com/ziahamza/webui-aria2.git /tmp_webui \
@@ -18,4 +17,6 @@ COPY run.sh /
 
 RUN chmod a+x /run.sh
 
-ENTRYPOINT [ "/run.sh" ]
+CMD ["/bin/sh", "/run.sh"]
+
+
