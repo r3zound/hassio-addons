@@ -30,20 +30,22 @@
 1. 🔍 导航到您的 Home Assistant 实例。
 2. ⚙️ 转到 **设置** -> **加载项** -> **加载项商店**。
 3. 📂 点击右上角的三个点，选择 **Repositories**。
-4. 📋 将以下 URL 复制并粘贴到库输入字段中：
+4. 📋 将以下 URL 复制并粘贴到库输入字段中（二选一）：
    ```
    https://github.com/djhui/hassio-addons
+   https://gitee.com/desmond_GT/hassio-addons
    ```
 5. ➕ 点击 **添加**。
 6. ✅ 该库中的加载项现在将在您的加载项商店中可用。
 
-您也可以点击下面的按钮自动添加库：
+您也可以点击下面的按钮自动添加库（二选一）：
 
-[![Add Addon to Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://github.com/djhui/hassio-addons)
+[![Add Addon to Home Assistant Github](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://github.com/djhui/hassio-addons)
+[![Add Addon to Home Assistant Gitee](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://gitee.com/desmond_GT/hassio-addons)
 
 ## 🛠️ 支持
 
-如果您遇到任何问题或有疑问，请在 [GitHub 仓库](https://github.com/djhui/hassio-addons/issues) 上提出问题或者公众号后台留言。
+如果您遇到任何问题或有疑问，请在我公众号后台留言。
 
 ## 📜 许可证
 
