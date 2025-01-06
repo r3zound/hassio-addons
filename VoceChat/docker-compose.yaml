@@ -6,18 +6,18 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command:
-        "/docker-entrypoint.sh"
-        - "--network.bind"
-        - "0.0.0.0:3000"
-        - "--network.domain"
-        - "localhost"
-#    environment:
-#      - UID=1000
-#      - GID=1000
-#      - ADMIN_USER=admin
-#      - ADMIN_PASSWORD=123456
-#      - DOMAIN=localhost
+    command: 
+      - "/docker-entrypoint.sh"
+      - "--network.bind"
+      - "0.0.0.0:3000"
+      - "--network.domain"
+      - "localhost"
+    environment:
+      - UID=1000
+      - GID=1000
+      - ADMIN_USER=admin
+      - ADMIN_PASSWORD=123456
+      - DOMAIN=localhost
     volumes:
       - /share/data/docker/vocechat-server/data:/home/vocechat-server/data
       - /mnt/data/supervisor/addon_configs/:/addon_configs
