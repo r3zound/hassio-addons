@@ -1,4 +1,4 @@
-FROM alpine:3.21.0
+FROM docker.m.daocloud.io/library/alpine:3.21.0
 
 # Add env
 ENV LANG C.UTF-8

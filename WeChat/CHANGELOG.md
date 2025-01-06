@@ -1,5 +1,7 @@
 # Changelog
-
+## v0.6.3
+- 更新源到国内静像站点
+- 更新基础静像
 ## v0.6.2
 - Updated WeChat Server addon for Home Assistant
 - Enhanced performance and stability

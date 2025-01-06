@@ -1,5 +1,5 @@
 # Start of Selection
-FROM python:3.13.1-alpine3.21
+FROM docker.m.daocloud.io/library/python:3.13.1-alpine3.21
 
 # 设置时区为上海
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \

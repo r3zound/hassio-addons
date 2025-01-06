@@ -1,4 +1,4 @@
-FROM alpine:3.21.0
+FROM docker.m.daocloud.io/library/lpine:3.21.0
 
 
 ENV NODE_ENV=production
