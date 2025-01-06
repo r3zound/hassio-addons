@@ -10,7 +10,7 @@
     "armv7"
   ],
   "startup": "services",
-  "image": "ghcr.io/thespad/py-kms",
+  "image": "ghcr.nju.edu.cn/thespad/py-kms",
   "boot": "auto",
   "ingress": true,
   "ingress_port": 1688,
