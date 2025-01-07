@@ -2,11 +2,17 @@
   "version": "1.0",
   "name": "节点小宝",
   "slug": "jdxb",
-  "description": "A Home Assistant add-on for jdxb service.这是一个节点小宝客户端",
-  "arch": ["amd64", "i386"],
+  "description": "A Home Assistant add-on for jdxb service. 这是一个节点小宝客户端",
+  "arch": ["amd64", "i386", "aarch64"],
   "startup": "services",
+  "ingress": true,
+  "ingress_port": 9118,
+  "init": false,
   "hassio_api": true,
   "hassio_role": "manager",
+  "ports": {
+    "9118/tcp": 9118
+  },
   "boot": "auto",
   "restart": "always",
   "host_network": true
