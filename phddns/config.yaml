@@ -5,9 +5,8 @@
   "description": "A Home Assistant add-on for Oray's phddns service.这是一个花生壳客户端",
   "arch": ["amd64", "i386", "aarch64","armhf"],
   "startup": "services",
-  "hassio_api": true,
   "hassio_role": "manager",
-  "boot": "auto",
+  "boot": "manual",
   "options": {
   },
   "schema": {
