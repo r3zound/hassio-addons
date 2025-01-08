@@ -1,6 +1,6 @@
 # 🌐 phddns - 花生壳客户端
 
-phddns 是一个用于 Oray 的花生壳服务的 Home Assistant 插件。它支持多种架构，包括 amd64、i386 和 aarch64。该插件可以自动启动并在后台运行。
+phddns 是一个用于 Oray 的花生壳服务的 Home Assistant 插件。它支持多种架构，插件可以自动启动并在后台运行。
 
 ## ✨ 功能
 

@@ -9,7 +9,7 @@ ENV BUILD_ARCH=$BUILD_ARCH
 ENV DOWNLOAD_URLS="amd64=https://dl.oray.com/hsk/linux/phddns_5.3.0_amd64.deb \
                     aarch64=https://dl.oray.com/hsk/linux/phddns_5.1.0_rapi_aarch64.deb \
                     armhf=https://dl.oray.com/hsk/linux/phddns_5.1.0_rapi_armhf.deb \
-#                    armv7=https://dl.oray.com/hsk/linux/phddns_5.3.0_armv7.deb \
+                    armv7=https://dl.oray.com/hsk/linux/phddns_5.1.0_rapi_armhf.deb \
                     i386=https://dl.oray.com/hsk/linux/phddns_5.3.0_i386.deb"
 
 # 提取对应架构的下载链接并安装
