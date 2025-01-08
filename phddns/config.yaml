@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.2",
   "name": "phddns-花生壳",
   "slug": "phddns",
   "description": "A Home Assistant add-on for Oray's phddns service.这是一个花生壳客户端",
