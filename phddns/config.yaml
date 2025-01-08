@@ -1,9 +1,9 @@
 {
-  "version": "1.0",
+  "version": "1.0.1",
   "name": "phddns-花生壳",
   "slug": "phddns",
   "description": "A Home Assistant add-on for Oray's phddns service.这是一个花生壳客户端",
-  "arch": ["amd64", "i386", "aarch64"],
+  "arch": ["amd64", "i386", "aarch64","armhf"],
   "startup": "services",
   "hassio_api": true,
   "hassio_role": "manager",
