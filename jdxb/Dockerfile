@@ -15,7 +15,7 @@ ENV JDXB_i386=owjdxb_x86
 # 提取对应架构的下载链接并安装
 
 # 复制并设置运行脚本
-COPY "JDXB_${BUILD_ARCH}" /owjdxb
+COPY "${JDXB_${BUILD_ARCH}}" /owjdxb
 RUN chmod +x "/owjdxb/bin/owjdxb"
 COPY run.sh /run.sh
 RUN chmod +x /run.sh
