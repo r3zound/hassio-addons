@@ -1,4 +1,4 @@
-/usr/bin/phtunnel -l /var/log/phddns/phtunnel.log -c /data/phtunnel.json -r -i 11429 -k adf9fb5a1ad438b9  -f 127.0.0.1:1101 &
+/usr/bin/phtunnel -l /var/log/phddns/phtunnel.log -c /data/phtunnel.json -r -i 11431 -k 9bb2a2e255c5fd80 -e client-ua:HSKEMD/5.1.0/Raspi/20060501;vendor:Oray &
 
 
 
