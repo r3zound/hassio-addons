@@ -1,6 +1,7 @@
 {
   "version": "1.0.1",
   "name": "节点小宝",
+  "url": "https://mp.weixin.qq.com/s/P0HvAso-Gkdl-awv22si9w?token=940637692&lang=zh_CN",
   "slug": "jdxb",
   "description": "A Home Assistant add-on for jdxb service. 这是一个节点小宝客户端",
   "arch": ["amd64", "i386", "aarch64", "armv7", "armhf"],
