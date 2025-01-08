@@ -1,5 +1,5 @@
 {
-  "version": "1.0.3",
+  "version": "1.0.4",
   "name": "phddns-花生壳",
   "url": "https://mp.weixin.qq.com/s/P0HvAso-Gkdl-awv22si9w?token=940637692&lang=zh_CN",
   "slug": "phddns",
@@ -15,10 +15,8 @@
   "devices": [
     "/dev/net/tun"
   ],
-  "map": {
-    "options": {},
-    "schema": {}
-  },
+  "options": {},
+  "schema": {},
   "restart": "always",
   "host_network": true,
   "environment": {
