@@ -17,8 +17,6 @@
     "80/tcp": 7081
   },
   "webui": "http://[HOST]:[PORT:7081]",
-  "ingress": true,
-  "ingress_port": 80,
   "panel_icon": "mdi:music",
   "options": {},
   "schema": {}
