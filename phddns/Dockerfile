@@ -1,13 +1,12 @@
-# 基础镜像
-ARG BUILD_FROM
-FROM $BUILD_FROM
+# 使用固定的基础镜像
+FROM docker.m.daocloud.io/library/ubuntu:latest
 
 # 定义平台相关变量
 ARG BUILD_ARCH
 ENV BUILD_ARCH=$BUILD_ARCH
 
 # 安装 wget 并根据平台下载不同的文件
-RUN apt-get update && apt-get install -y wget \
+RUN apt update && apt install -y wget \
     && case "$BUILD_ARCH" in \
         "amd64") \
             wget -q "https://dl.oray.com/hsk/linux/phddns_5.3.0_amd64.deb" -O phddns.deb ;; \
@@ -23,7 +22,7 @@ RUN apt-get update && apt-get install -y wget \
             echo "Unsupported platform: $BUILD_ARCH" && exit 1 ;; \
     esac \
     && dpkg -i phddns.deb \
-    && apt-get clean \
+    && apt clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && rm phddns.deb
 
