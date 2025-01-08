@@ -139,11 +139,11 @@ add-on log: `{"addon":"core_tellstick","input":{"function":"list-sensors"}}`
   format (with tabs as separators, one device/sensor per line, no header lines.)
 
 - `"function":"on","device":"x"`
-  Turns on device. ’x�?could either be an integer of the device-id,
+  Turns on device. ’x’ could either be an integer of the device-id,
   or the name of the device.
 
 - `"function":"off","device":"x"`
-  Turns off device. ’x�?could either be an integer of the device-id,
+  Turns off device. ’x’ could either be an integer of the device-id,
   or the name of the device.
 
 ## Support

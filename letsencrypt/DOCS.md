@@ -382,7 +382,7 @@ on the DNS zone to be used for authentication.
 To obtain the ACME DNS API Key and Secret, follow the instructions here:
 <https://developer.godaddy.com/getstarted>
 
-**IMPORTANT**: GoDaddy limits DNS API access to customers with 10 or more domains and/or an active "Discount Domain Club �?Premier Membership" plan; the API will respond with a HTTP401 otherwise. See the [Terms of Use](https://developer.godaddy.com/getstarted) for more information.
+**IMPORTANT**: GoDaddy limits DNS API access to customers with 10 or more domains and/or an active "Discount Domain Club – Premier Membership" plan; the API will respond with a HTTP401 otherwise. See the [Terms of Use](https://developer.godaddy.com/getstarted) for more information.
 
 </details>
 
@@ -531,7 +531,7 @@ For security reasons, don't use your main account's credentials. Instead, add a 
 <details>
   <summary>CloudFlare</summary>
 
-Previously, Cloudflare’s “Global API Key�?was used for authentication, however this key can access the entire Cloudflare API for all domains in your account, meaning it could cause a lot of damage if leaked.
+Previously, Cloudflare’s “Global API Key” was used for authentication, however this key can access the entire Cloudflare API for all domains in your account, meaning it could cause a lot of damage if leaked.
 
 Cloudflare’s newer API Tokens can be restricted to specific domains and operations, and are therefore now the recommended authentication option.
 The API Token used for Certbot requires only the `Zone:DNS:Edit` permission for the zone in which you want a certificate.
