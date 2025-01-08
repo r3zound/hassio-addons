@@ -9,10 +9,13 @@ ENV BUILD_ARCH=$BUILD_ARCH
 RUN apt update && apt install -y wget \
     && case "$BUILD_ARCH" in \
         "aarch64") \
+            apt install systemd -y \ 
             wget -q "https://dl.oray.com/hsk/linux/phddns_5.1.0_rapi_aarch64.deb" -O phddns.deb ;; \
         "armhf") \
+            apt install systemd -y \
             wget -q "https://dl.oray.com/hsk/linux/phddns_5.1.0_rapi_armhf.deb" -O phddns.deb ;; \
         "armv7") \
+            apt install systemd -y \    
             wget -q "https://dl.oray.com/hsk/linux/phddns_5.1.0_rapi_armhf.deb" -O phddns.deb ;; \
         "i386") \
             wget -q "https://dl.oray.com/hsk/linux/phddns_5.3.0_i386.deb" -O phddns.deb ;; \
