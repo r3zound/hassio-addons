@@ -12,5 +12,8 @@
   "schema": {
   },
   "restart": "always",
-  "host_network": true
+  "host_network": true,
+  "environment": {
+    "TZ": "Asia/Shanghai"
+  }
 }
