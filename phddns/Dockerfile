@@ -1,22 +1,27 @@
-# 使用指定的基础镜像
-FROM docker.m.daocloud.io/library/ubuntu:latest
+# 基础镜像
+ARG BUILD_FROM
+FROM $BUILD_FROM
 
-# 架构相关变量
+# 定义平台相关变量
 ARG BUILD_ARCH
 ENV BUILD_ARCH=$BUILD_ARCH
 
-# 定义下载链接的映射
-ENV DOWNLOAD_URLS="amd64=https://dl.oray.com/hsk/linux/phddns_5.3.0_amd64.deb \
-                    aarch64=https://dl.oray.com/hsk/linux/phddns_5.1.0_rapi_aarch64.deb \
-                    armhf=https://dl.oray.com/hsk/linux/phddns_5.1.0_rapi_armhf.deb \
-                    armv7=https://dl.oray.com/hsk/linux/phddns_5.1.0_rapi_armhf.deb \
-                    i386=https://dl.oray.com/hsk/linux/phddns_5.3.0_i386.deb"
-
-# 提取对应架构的下载链接并安装
+# 安装 wget 并根据平台下载不同的文件
 RUN apt-get update && apt-get install -y wget \
-    && DOWNLOAD_URL=$(echo $DOWNLOAD_URLS | tr " " "\n" | grep "^$BUILD_ARCH=" | cut -d '=' -f 2) \
-    && if [ -z "$DOWNLOAD_URL" ]; then echo "Unsupported platform: $BUILD_ARCH" && exit 1; fi \
-    && wget -q "$DOWNLOAD_URL" -O phddns.deb \
+    && case "$BUILD_ARCH" in \
+        "amd64") \
+            wget -q "https://dl.oray.com/hsk/linux/phddns_5.3.0_amd64.deb" -O phddns.deb ;; \
+        "aarch64") \
+            wget -q "https://dl.oray.com/hsk/linux/phddns_5.1.0_rapi_aarch64.deb" -O phddns.deb ;; \
+        "armhf") \
+            wget -q "https://dl.oray.com/hsk/linux/phddns_5.1.0_rapi_armhf.deb" -O phddns.deb ;; \
+        "armv7") \
+            wget -q "https://dl.oray.com/hsk/linux/phddns_5.1.0_rapi_armhf.deb" -O phddns.deb ;; \
+        "i386") \
+            wget -q "https://dl.oray.com/hsk/linux/phddns_5.3.0_i386.deb" -O phddns.deb ;; \
+        *) \
+            echo "Unsupported platform: $BUILD_ARCH" && exit 1 ;; \
+    esac \
     && dpkg -i phddns.deb \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
@@ -28,4 +33,3 @@ RUN chmod +x /run.sh
 
 # 设置入口点
 ENTRYPOINT ["/bin/sh", "/run.sh"]
-
