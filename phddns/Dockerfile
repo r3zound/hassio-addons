@@ -9,19 +9,19 @@ ENV BUILD_ARCH=$BUILD_ARCH
 RUN apt update && apt install -y wget systemd \
     && case "$BUILD_ARCH" in \
         "aarch64") \
-            wget -q "https://dl.oray.com/hsk/linux/phddns_5.1.0_rapi_aarch64.deb" -O phddns.deb ;; \
+            wget -q "https://dl.oray.com/hsk/linux/phddns_5.1.0_rapi_aarch64.deb" ;; \
         "armhf") \
-            wget -q "https://dl.oray.com/hsk/linux/phddns_5.1.0_rapi_armhf.deb" -O phddns.deb ;; \
+            wget -q "https://dl.oray.com/hsk/linux/phddns_5.1.0_rapi_armhf.deb";; \
         "armv7") \
-            wget -q "https://dl.oray.com/hsk/linux/phddns_5.1.0_rapi_armhf.deb" -O phddns.deb ;; \
+            wget -q "https://dl.oray.com/hsk/linux/phddns_5.1.0_rapi_armhf.deb";; \
         "i386") \
-            wget -q "https://dl.oray.com/hsk/linux/phddns_5.3.0_i386.deb" -O phddns.deb ;; \
+            wget -q "https://dl.oray.com/hsk/linux/phddns_5.3.0_i386.deb";; \
         "amd64") \
-            wget -q "https://dl.oray.com/hsk/linux/phddns_5.3.0_amd64.deb" -O phddns.deb ;; \
+            wget -q "https://dl.oray.com/hsk/linux/phddns_5.3.0_amd64.deb";; \
         *) \
             echo "Unsupported platform: $BUILD_ARCH" && exit 1 ;; \
     esac \
-    && dpkg -i phddns.deb \
+    && dpkg -i phddns*.deb \
     && apt clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && rm phddns.deb
