@@ -2,6 +2,7 @@
 
 ## About
 
+这个软件不允许在Home Assistant嵌套页面中打开，必须在新页面中打开
 This add-on provides YesPlayMusic, a beautiful and powerful third-party NetEase Cloud Music client, within your Home Assistant environment. YesPlayMusic is a web-based music player that offers a clean interface and seamless music playback experience.
 
 ## Features
