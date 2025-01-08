@@ -24,7 +24,7 @@ RUN apt update && apt install -y wget systemd \
     && dpkg -i phddns*.deb \
     && apt clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
-    && rm phddns.deb
+    && rm phddns*.deb
 
 # 复制并设置运行脚本
 COPY run.sh /run.sh
