@@ -5,6 +5,10 @@
 如果您发现任何侵权内容，请随时与我联系以便删除。✉️  
 如果您有任何想法或建议，希望我制作成Addon的，请随时留言！💬  
 
+**<span style="color:red;">本库的内容都不需要魔法，如果用魔法反而可能会安装失败</span>**
+
+
+
 ## 🌟 本库的目标
 
 本库的目标有两个：
@@ -26,6 +30,7 @@
 - ⏳ [**Qinglong**](https://github.com/djhui/hassio-addons/tree/main/Qinglong): 强大的任务调度和管理功能，支持多种脚本语言。
 - 💬 [**Vocechat**](https://github.com/djhui/hassio-addons/tree/main/Vocechat): 安全的私有聊天平台，支持多种消息类型和文件传输。
 - 🎵 [**Yesplaymusic**](https://github.com/djhui/hassio-addons/tree/main/yesplaymusic): 音乐播放和管理功能，网易云音乐无广告网页版。
+- - 更多
 
 ## 📥 安装指南
 

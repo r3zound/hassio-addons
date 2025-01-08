@@ -1,5 +1,5 @@
 # 使用指定的基础镜像
-FROM docker.m.daocloud.io/library/ubuntu:latest
+FROM docker.m.daocloud.io/library/ubuntu:24.10
 
 # 架构相关变量
 ARG BUILD_ARCH
