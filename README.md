@@ -28,6 +28,7 @@
 以下是引用的加载项：
 
 - 📦 [**官方Addon**](https://github.com/home-assistant/addons): 这是一个官方的Addon，方便中国地区用户使用，以免魔法🔮
+- 📦 [**官方社区Addon**](https://github.com/hassio-addons/repository): 这是官方社区的Addon,目前还在测试中，希望有人能告诉我能不能用
 
 
 
