@@ -23,6 +23,7 @@ All Addon acceleration correspondence is as follows
 |---------------------|-------------------------|
 | ghcr.io             | ghcr.nju.edu.cn         |
 | docker.io           | docker.m.daocloud.io    |
+| lscr.io             | docker.m.daocloud.io    |
 | https://github.com  | https://gh-proxy.com     |
 
 ## 🌟 本库的目标
