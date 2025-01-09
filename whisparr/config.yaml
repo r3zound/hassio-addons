@@ -17,4 +17,4 @@ map:
 - media:rw
 ports:
   6969/tcp: 6969
-image: ghcr.nju.edu.cn/hassio-addons/whisparr/{arch}:stable
+image: ghcr.nju.edu.cn/hassio-addons/whisparr/{arch}

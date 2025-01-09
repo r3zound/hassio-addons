@@ -31,4 +31,4 @@ schema:
   ssl: bool
   certfile: str
   keyfile: str
-image: ghcr.nju.edu.cn/hassio-addons/traccar/{arch}:stable
+image: ghcr.nju.edu.cn/hassio-addons/traccar/{arch}

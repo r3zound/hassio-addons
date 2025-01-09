@@ -14,4 +14,4 @@ ports:
   3001/tcp: 3001
 ports_description:
   3001/tcp: Web interface
-image: ghcr.nju.edu.cn/hassio-addons/uptime-kuma/{arch}:stable
+image: ghcr.nju.edu.cn/hassio-addons/uptime-kuma/{arch}

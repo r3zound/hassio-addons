@@ -17,4 +17,4 @@ map:
 - media:rw
 ports:
   9696/tcp: 9696
-image: ghcr.nju.edu.cn/hassio-addons/prowlarr/{arch}:stable
+image: ghcr.nju.edu.cn/hassio-addons/prowlarr/{arch}
