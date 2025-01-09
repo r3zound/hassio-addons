@@ -36,7 +36,7 @@ RUN apt-get update \
     && cd ../.. \
     # Compile and install mosquitto
     && git clone --depth 1 -b "${MOSQUITTO_VERSION}" \
-       https://github.com/eclipse/mosquitto \
+       https://gh-proxy.com/github.com/eclipse/mosquitto \
     \
     && cd mosquitto \
     && make WITH_WEBSOCKETS=yes WITH_SRV=yes \
@@ -44,7 +44,7 @@ RUN apt-get update \
     && cd .. \
     # Compile and install mosquitto-go-auth
     && git clone --depth 1 -b "${MOSQUITTO_AUTH_VERSION}" \
-       https://github.com/iegomez/mosquitto-go-auth \
+       https://gh-proxy.com/github.com/iegomez/mosquitto-go-auth \
     \
     && cd mosquitto-go-auth \
     && sed -i 's/-I\/usr\/local\/include/-I\/usr\/include/' Makefile \

@@ -21,12 +21,12 @@ RUN \
         setuptools \
         wheel \
     && pip3 install --no-cache-dir \
-        "wyoming-piper @ https://github.com/rhasspy/wyoming-piper/archive/refs/tags/v${WYOMING_PIPER_VERSION}.tar.gz" \
+        "wyoming-piper @ https://gh-proxy.com/github.com/rhasspy/wyoming-piper/archive/refs/tags/v${WYOMING_PIPER_VERSION}.tar.gz" \
     \
     && ARCH="${BUILD_ARCH}" \
     && if [[ "${BUILD_ARCH}" = "aarch64" ]]; then ARCH="arm64"; fi \
     && curl -L -s \
-        "https://github.com/rhasspy/piper/releases/download/v${BINARY_PIPER_VERSION}/piper_${ARCH}.tar.gz" \
+        "https://gh-proxy.com/github.com/rhasspy/piper/releases/download/v${BINARY_PIPER_VERSION}/piper_${ARCH}.tar.gz" \
         | tar -zxvf - -C /usr/share \
     \
     && rm -rf /var/lib/apt/lists/*
