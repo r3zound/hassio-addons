@@ -17,6 +17,7 @@ All modifications and creations are aimed at allowing Chinese users to use vario
 本库存使用的加速静像站点为 🌐  
 All Addon acceleration correspondence is as follows
 
+**因为是通过国内静像的原因，有时候第一次安装会失败，请重试一次**
 
 | 原地址                | 国内加速地址                  |
 |---------------------|-------------------------|
