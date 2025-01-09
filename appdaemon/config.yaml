@@ -34,4 +34,4 @@ schema:
   - str
   init_commands:
   - str
-image: ghcr.nju.edu.cn/hassio-addons/appdaemon/{arch}
+image: ghcr.nju.edu.cn/hassio-addons/appdaemon/{arch}:stable
