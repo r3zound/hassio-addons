@@ -11,10 +11,10 @@ If you have any ideas or suggestions for addons you'd like me to create, please 
 所有的修改和创建的目的只是为了让中国的用户可以使用各种优秀的Addons而不用担心网络导致的无法使用  
 All modifications and creations are aimed at allowing Chinese users to use various excellent addons without worrying about network accessibility.  
 
-**本库的内容都不需要魔法，如果用魔法反而可能会安装失败** ❌
-**Do Not use any VPNs in China Mainland to install this addons**
+**本库的内容都不需要魔法，如果用魔法反而可能会安装失败** ❌  
+**Do not use any VPNs in Mainland China to install these addons.**
 
-本库存使用的加速静像站点为 🌐
+本库存使用的加速静像站点为 🌐  
 All Addon acceleration correspondence is as follows
 
 
@@ -28,7 +28,7 @@ All Addon acceleration correspondence is as follows
 
 本库的目标有两个：
 1. **持续丰富和扩展加载项的内容**（**进行中**）🔧。  
-   目前还在集成中，可能会导致安装失败。如果失败请让我知悉，我好更新
+   目前还在集成中，可能会导致安装失败。如果失败请让我知悉，我好更新。
 2. **让中国的 Home Assistant 用户能够在国内轻松安装所有加载项**，而无需使用任何翻墙工具。  
    这更符合中国用户的需求，哈哈。😄
 
@@ -37,7 +37,7 @@ All Addon acceleration correspondence is as follows
 以下是引用的加载项：
 
 - 📦 [**官方Addon**](https://github.com/home-assistant/addons): 这是一个官方的Addon，方便中国地区用户使用，以免魔法🔮
-- 📦 [**官方社区Addon**](https://github.com/hassio-addons/repository): 这是官方社区的Addon,目前还在测试中，希望有人能告诉我能不能用
+- 📦 [**官方社区Addon**](https://github.com/hassio-addons/repository): 这是官方社区的Addon，目前还在测试中，希望有人能告诉我能不能用。
 
 
 
