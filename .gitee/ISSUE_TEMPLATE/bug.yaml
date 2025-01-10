@@ -1,4 +1,4 @@
-name: 提交问题
+name: bug
 description: 当Addon不能工作时，请提交问题以帮助我们解决问题。
 title: "[issue]: "
 labels: ["issue"]
