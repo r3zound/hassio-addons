@@ -8,7 +8,7 @@ body:
       label: 请告诉你用的设备是什么
       value: |
         请告诉你用的设备是什么
-    - type: dropdown
+  - type: dropdown
     attributes:
       label: 请描述你的设备属于哪个分支
       options:
