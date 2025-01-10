@@ -1,7 +1,7 @@
-name: bug
+name: Bug 反馈
 description: 当Addon不能工作时，请提交问题以帮助我们解决问题。
-title: "[issue]: "
-labels: ["issue"]
+title: "[Bug]: "
+labels: ["bug"]
 body:
   - type: input
     attributes:
