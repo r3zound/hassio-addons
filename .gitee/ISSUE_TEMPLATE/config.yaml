@@ -1,7 +1,7 @@
-name: Bug 反馈
-description: 当你在代码中发现了一个 Bug，导致应用崩溃或抛出异常，或者有一个组件存在问题，或者某些地方看起来不对劲。
-title: "[Bug]: "
-labels: ["bug"]
+name: 提交问题
+description: 当Addon不能工作时，请提交问题以帮助我们解决问题。
+title: "[issue]: "
+labels: ["issue"]
 body:
   - type: input
     attributes:
