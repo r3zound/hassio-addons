@@ -3,12 +3,20 @@ description: 当你在代码中发现了一个 Bug，导致应用崩溃或抛出
 title: "[Bug]: "
 labels: ["bug"]
 body:
-  - type: textarea
+  - type: input
     attributes:
+      label: 请告诉你用的设备是什么
       value: |
         请告诉你用的设备是什么
-        描述你的设备属于哪个分支
-        ["amd64", "i386", "aarch64", "armv7", "armhf"]
+    - type: dropdown
+    attributes:
+      label: 请描述你的设备属于哪个分支
+      options:
+        - amd64
+        - i386
+        - aarch64
+        - armv7
+        - armhf
   - type: textarea
     attributes:
       label: 错误日志是什么
