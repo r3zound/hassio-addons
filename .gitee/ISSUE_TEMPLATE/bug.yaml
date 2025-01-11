@@ -8,6 +8,7 @@ body:
       label: 请告诉你用的设备是什么
       value: |
         请告诉你用的设备是什么
+
   - type: dropdown
     attributes:
       label: 请描述你的设备属于哪个分支
@@ -17,6 +18,24 @@ body:
         - aarch64
         - armv7
         - armhf
+  - type: input
+    attributes:
+      label: 请告诉我哪个Addon出现了问题
+      value: |
+        请告诉我哪个Addon出现了问题
+  - type: dropdown
+    attributes:
+      label: 请描述你的系统是什么
+      options:
+        - Home Assistant OS
+        - Docker版Home Assistant
+        - Home Assistant Supervised
+        - Home Assistant Core
+  - type: input
+    attributes:
+      label: 请告诉我你的Home Assistant Core的版本
+      value: |
+        请告诉我你的Home Assistant Core的版本
   - type: textarea
     attributes:
       label: 错误日志是什么
