@@ -7,6 +7,7 @@
     "startup": "services",
     "hassio_role": "manager",
     "panel_icon": "mdi:download",
+    "host_network": true,
     "ingress": true,
     "ingress_port": 8080,
     "arch": [
