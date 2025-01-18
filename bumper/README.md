@@ -1,27 +1,26 @@
-# Home Assistant Add-on: Bumper
+# Home Assistant 插件：Bumper
 
-A local server for Ecovacs Deebot devices.
 这是一个扫地机器人的本地服务器
 
-## About
+## 关于
 
-Bumper is a local server implementation for Ecovacs Deebot devices. It allows you to control your robot vacuum without relying on the Ecovacs cloud servers.
+Bumper 是 Ecovacs Deebot 设备的本地服务器实现。它允许您在不依赖 Ecovacs 云服务器的情况下控制您的扫地机器人。
 
-## Installation
+## 安装
 
-Follow these steps to get the add-on installed on your system:
+按照以下步骤在您的系统上安装插件：
 
-1. Navigate in your Home Assistant frontend to **Settings** -> **Add-on Store**
-2. Add this repository to your Home Assistant instance
-3. Install the "Bumper" add-on
-4. Configure the add-on (see configuration below)
-5. Start the add-on
+1. 在 Home Assistant 前端导航到 **设置** -> **插件商店**
+2. 将此仓库添加到您的 Home Assistant 实例
+3. 安装 "Bumper" 插件
+4. 配置插件（参见下文配置）
+5. 启动插件
 
-## Configuration
+## 配置
 
-The add-on can be configured via the Home Assistant frontend.
+可以通过 Home Assistant 前端配置插件。
 
-## Follow Us
+## 关注我们
 
 扫描下面二维码，关注我。有需要可以随时给我留言
 
@@ -29,3 +28,7 @@ The add-on can be configured via the Home Assistant frontend.
 ![QR Code](https://gitee.com/desmond_GT/hassio-addons/raw/main/WeChat_QRCode.png)
 
 扫描上面二维码，关注我。有需要可以随时给我留言
+
+## 引用
+
+此项目基于 [bumper](https://github.com/bmartin5692/bumper)。
