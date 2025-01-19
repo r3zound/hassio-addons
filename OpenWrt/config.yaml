@@ -1,0 +1,21 @@
+{
+  "name": "OpenWrt",
+  "version": "23.05.5",
+  "slug": "openwrt",
+  "description": "OpenWrt 未完善，仅供测试",
+  "arch": [
+    "aarch64",
+    "amd64",
+    "armv7",
+    "i386",
+    "armhf"
+  ],
+  "init": false,
+  "url": "https://openwrt.org/",
+  "panel_icon": "mdi:router-wireless",
+  "panel_admin": true,
+  "apparmor": false,
+  "ingress": false,
+  "hassio_api": true,
+  "host_network": true
+}
