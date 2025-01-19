@@ -6,7 +6,7 @@
 
 ## 关于
 
-此插件允许您将 OpenWrt 路由器集成到您的 Home Assistant 设置中。通过此插件，您可以直接从 Home Assistant 管理和监控您的 OpenWrt 路由器。
+此插件允许您将 OpenWrt 路由器集成到您的 Home Assistant 设置中。通过此插件，您可以直接从 Home Assistant 运行你的 OpenWrt 路由器。
 
 ## 安装
 
