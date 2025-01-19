@@ -2,7 +2,7 @@
   "name": "OpenWrt",
   "version": "23.05.5",
   "slug": "openwrt",
-  "description": "OpenWrt 未完善，仅供测试",
+  "description": "OpenWrt 未完善，仅供测试,所有数据都会在重启OpenWrt后丢失",
   "arch": [
     "aarch64",
     "amd64",
