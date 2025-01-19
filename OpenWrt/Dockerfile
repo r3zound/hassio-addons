@@ -8,8 +8,6 @@ RUN mkdir /var/lock && \
     uci set uhttpd.main.interpreter='.lua=/usr/bin/lua' && \
     uci commit uhttpd
 
-CMD [ "tmate" ]    
-
 USER root
 
 # using exec format so that /sbin/init is proc 1 (see procd docs)
