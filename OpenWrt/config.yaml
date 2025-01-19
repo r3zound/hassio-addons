@@ -84,5 +84,9 @@
     "share:rw",
     "media:rw",
     "ssl"
-  ]
+  ],
+    "environment": {
+    "TZ": "Asia/Shanghai",
+    "DATA_DIR": "/data"
+  }
 }
