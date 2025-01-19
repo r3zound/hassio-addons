@@ -17,6 +17,7 @@
   "apparmor": false,
   "ingress": false,
   "hassio_api": true,
+  "webui": "http://[HOST]:[PORT:80]",
   "host_network": true,
   "devices": [
     "/dev/dri",
