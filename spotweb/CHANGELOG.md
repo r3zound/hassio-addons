@@ -1,4 +1,5 @@
-## 1.5.8-2 (10-01-2025)
+## 1.5.8-5 (13-01-2025)
+- Allow non ssl servers
 - Use /usr/bin/maria instead of mysql
 
 ## 1.5.8 (21-12-2024)

@@ -1,6 +1,20 @@
+## 0.6.0-3 (19-01-2025)
+- Minor bugs fixed
+## 0.6.0-2 (19-01-2025)
+- Correct sqlite for //
+
+## 0.6.0 (18-01-2025)
+- Update to latest version from tphakala/birdnet-go (changelog : https://github.com/tphakala/birdnet-go/releases)
+
+## 20250103-10 (17-01-2025)
+- BREAKING CHANGE : improve implementation of addon options such as Birdsongs folder. Please check the log at first start if anything is different than you expected
+- WARNING : your files will move to the new Birdsongs folder in case of change
+- WARNING : your db will be modified in case of Birdsongs folder change to still allow access to files. A backup will always be created
+- Fix ingress issues
 
 ## 20250103 (11-01-2025)
 - Update to latest version from tphakala/birdnet-go (changelog : https://github.com/tphakala/birdnet-go/releases)
+
 ## 25-4 (29-12-2024)
 - Fixed https://github.com/alexbelgium/hassio-addons/issues/1687
 
