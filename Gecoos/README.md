@@ -1,4 +1,4 @@
-# 集客AC控制器 Home Assistant 插件 ![Gecoos Logo](http://file.cnrouter.com/Public/images/logo.png)
+# 集客AC控制器 Home Assistant 插件 ![Gecoos Logo](http://www.cnrouter.com/s/assets/images/resources/logo-1.png)
 
 这是一个用于集客AC控制器的 Home Assistant 插件。
 
