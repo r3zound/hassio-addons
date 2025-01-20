@@ -1,8 +1,4 @@
-ARG BUILD_FROM
-FROM $BUILD_FROM
-
-ARG BUILD_VERSION
-ARG BUILD_ARCH
+FROM docker.m.daocloud.io/library/alpine:3.21.0
 
 # Add env
 ENV LANG C.UTF-8
