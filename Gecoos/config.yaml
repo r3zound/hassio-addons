@@ -2,18 +2,15 @@
   "name": "集客AC控制器",
   "version": "2.2",
   "slug": "gecoos",
-  "description": "一个集客AC控制器的Home Assistant 加载项，测试中",
+  "description": "一个集客AC控制器的 Home Assistant 加载项，测试中",
   "url": "https://github.com/djhui/hassio-addons",
   "arch": ["aarch64", "amd64", "armv7", "armhf", "i386"],
   "startup": "services",
   "boot": "auto",
-  "init": false,
   "ingress": true,
   "ingress_port": 8080,
-  "host_api": true,
   "webui": "http://[HOST]:[PORT:8080]",
   "ports": {
-    "8080/tcp": 8080,
     "60650/tcp": 60650
   },
   "options": {
