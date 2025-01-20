@@ -11,7 +11,7 @@ RUN mkdir /var/lock && \
     uci commit uhttpd && \
     echo "config mount" >> /etc/config/fstab && \
     echo "    option target '/overlay'" >> /etc/config/fstab && \
-    echo "    option device '/data'" >> /etc/config/fstab && \
+    echo "    option device '/'" >> /etc/config/fstab && \
     echo "    option fstype 'overlayfs'" >> /etc/config/fstab && \
     echo "    option enabled '1'" >> /etc/config/fstab
 
