@@ -79,7 +79,6 @@
     "/dev/nvme2"
   ],
   "host_dbus": true,
-  "privileged": true,
   "map": [
     "config:rw",
     "share:rw",
