@@ -16,12 +16,19 @@
   "options": {
     "web_port": 8080,
     "api_port": 60650,
-    "showtip": 1
+    "showtip": 1,
+    "gin_mode": "release",
+    "debug": 0
   },
   "schema": {
     "web_port": "int",
     "api_port": "int",
-    "showtip": "int"
+    "showtip": "int",
+    "gin_mode": "str",
+    "debug": "int"
   },
-  "hassio_role": "manager"
+  "hassio_role": "manager",
+  "environment": {
+    "GIN_MODE": "{{ gin_mode }}"
+  }
 }
