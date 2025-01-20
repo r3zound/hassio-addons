@@ -14,14 +14,15 @@
   },
   "options": {
     "showtip": 1,
-    "debug": 0
+    "debug": 0,
+    "web_port": 8080,
+    "api_port": 60650
   },
   "ports_description": {
     "8080/tcp": "Web interface",
     "60650/tcp": "API interface"
   },
   "schema": {
-    "web_port": "int",
     "api_port": "int",
     "showtip": "int",
     "debug": "int"
