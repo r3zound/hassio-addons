@@ -9,7 +9,11 @@ RUN mkdir /var/lock && \
     opkg install uhttpd-mod-lua block-mount && \
     uci set uhttpd.main.interpreter='.lua=/usr/bin/lua' && \
     uci commit uhttpd && \
-    echo "config mount\n    option target '/overlay'\n    option device '/data'\n    option fstype 'overlayfs'\n    option enabled '1'" >> /etc/config/fstab
+    echo "config mount" >> /etc/config/fstab && \
+    echo "    option target '/overlay'" >> /etc/config/fstab && \
+    echo "    option device '/data'" >> /etc/config/fstab && \
+    echo "    option fstype 'overlayfs'" >> /etc/config/fstab && \
+    echo "    option enabled '1'" >> /etc/config/fstab
 
 USER root
 
