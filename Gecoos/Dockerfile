@@ -13,6 +13,7 @@ RUN DOWNLOAD_URL=$(jq -r ".args.DOWNLOAD_URL[\"$BUILD_ARCH\"]" /build.json) && \
     wget -O /ac "$DOWNLOAD_URL" && \
     chmod +x /ac
 
+
 # 拷贝启动脚本
 COPY run.sh /run.sh
 RUN chmod +x /run.sh
