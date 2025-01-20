@@ -1,23 +1,23 @@
-# 定义可用的构建参数
+# Define build-time arguments
 ARG BUILD_ARCH
 ARG DOWNLOAD_URL
-# 设置基础镜像
+
+# Set base image
 FROM docker.m.daocloud.io/library/alpine:3.21
 
+# Set environment variables for use later in the Dockerfile
+ENV BUILD_ARCH=$BUILD_ARCH
+ENV DOWNLOAD_URL=$DOWNLOAD_URL
+
+# Install necessary dependencies
 RUN apk add --no-cache wget jq
 
-# 下载对应架构的文件
-COPY build.json /build.json
-RUN echo "DOWNLOAD_URL=$DOWNLOAD_URL" && \
-    DOWNLOAD_URL=$(jq -r ".args.DOWNLOAD_URL[\"$BUILD_ARCH\"]" /build.json) && \
-    echo "Resolved DOWNLOAD_URL=$DOWNLOAD_URL" && \
-    wget -O /ac "$DOWNLOAD_URL" && \
-    chmod +x /ac
+# Download the file using the passed URL
+RUN wget -O /ac "$DOWNLOAD_URL" && chmod +x /ac
 
-
-# 拷贝启动脚本
+# Copy and prepare the run script
 COPY run.sh /run.sh
 RUN chmod +x /run.sh
 
-# 指定容器启动命令
+# Set default command
 CMD ["/run.sh"]
