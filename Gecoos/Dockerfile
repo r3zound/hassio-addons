@@ -1,19 +1,17 @@
-# Define build-time arguments
-ARG BUILD_ARCH
-ARG DOWNLOAD_URL
-
-# Set base image
 FROM docker.m.daocloud.io/library/alpine:3.21
 
-# Set environment variables for use later in the Dockerfile
-ENV BUILD_ARCH=$BUILD_ARCH
-ENV DOWNLOAD_URL=$DOWNLOAD_URL
-
-# Install necessary dependencies
 RUN apk add --no-cache wget jq
 
 # Download the file using the passed URL
-RUN wget -O /ac "$DOWNLOAD_URL" && chmod +x /ac
+RUN case $BUILD_ARCH in \
+    amd64) wget -O /ac "http://file.cnrouter.com/upload/gac/%E5%90%AB%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2%E7%89%88%E6%9C%AC%EF%BC%88%E4%B8%BB%E8%A6%81%E7%94%A8%E4%BA%8E%E7%8B%AC%E7%AB%8B%E4%BD%BF%E7%94%A8%EF%BC%89/ac_linux_amd64_V2.2_202501031919" && chmod +x /ac ;; \
+    aarch64) wget -O /ac "http://file.cnrouter.com/upload/gac/%E5%90%AB%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2%E7%89%88%E6%9C%AC%EF%BC%88%E4%B8%BB%E8%A6%81%E7%94%A8%E4%BA%8E%E7%8B%AC%E7%AB%8B%E4%BD%BF%E7%94%A8%EF%BC%89/ac_linux_arm64_V2.2_202501031919" && chmod +x /ac ;; \
+    armhf) wget -O /ac "http://file.cnrouter.com/upload/gac/%E5%90%AB%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2%E7%89%88%E6%9C%AC%EF%BC%88%E4%B8%BB%E8%A6%81%E7%94%A8%E4%BA%8E%E7%8B%AC%E7%AB%8B%E4%BD%BF%E7%94%A8%EF%BC%89/ac_linux_arm_V2.2_202501031919" && chmod +x /ac ;; \
+    armv7) wget -O /ac "http://file.cnrouter.com/upload/gac/%E5%90%AB%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2%E7%89%88%E6%9C%AC%EF%BC%88%E4%B8%BB%E8%A6%81%E7%94%A8%E4%BA%8E%E7%8B%AC%E7%AB%8B%E4%BD%BF%E7%94%A8%EF%BC%89/ac_linux_arm_V2.2_202501031919" && chmod +x /ac ;; \
+    i386) wget -O /ac "http://file.cnrouter.com/upload/gac/%E5%90%AB%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2%E7%89%88%E6%9C%AC%EF%BC%88%E4%B8%BB%E8%A6%81%E7%94%A8%E4%BA%8E%E7%8B%AC%E7%AB%8B%E4%BD%BF%E7%94%A8%EF%BC%89/ac_linux_386_V2.2_202501031919" && chmod +x /ac ;; \
+    *) echo "Unsupported architecture $BUILD_ARCH" && exit 1 ;; \
+    esac && \
+    chmod +x /ac
 
 # Copy and prepare the run script
 COPY run.sh /run.sh
