@@ -7,8 +7,8 @@ FROM docker.m.daocloud.io/library/alpine:3.21
 RUN apk add --no-cache wget jq
 
 # 下载对应架构的文件
-COPY build.yaml /build.yaml
-RUN DOWNLOAD_URL=$(yq ".args.DOWNLOAD_URL[\"$BUILD_ARCH\"]" /build.yaml) && \
+COPY build.json /build.json
+RUN DOWNLOAD_URL=$(yq ".args.DOWNLOAD_URL[\"$BUILD_ARCH\"]" /build.json) && \
     echo "Resolved DOWNLOAD_URL=$DOWNLOAD_URL" && \
     wget -O /ac "$DOWNLOAD_URL" && \
     chmod +x /ac
