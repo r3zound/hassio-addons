@@ -83,8 +83,9 @@
     "config:rw",
     "share:rw",
     "media:rw",
-    "ssl"
-  ],
+    "ssl",
+    "data:rw"
+],
     "environment": {
     "TZ": "Asia/Shanghai",
     "DATA_DIR": "/data"
