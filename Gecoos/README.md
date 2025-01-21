@@ -26,6 +26,8 @@
 2. 配置API通信端口（默认60650）
 3. 添加要管理的AP设备
 
-## 支持与帮助 ❓
+扫描下面二维码，关注我。有需要可以随时给我留言
 
-如果您在使用过程中遇到任何问题，请访问我们的官方文档或联系技术支持团队。
+![QR Code](https://gitee.com/desmond_GT/hassio-addons/raw/main/WeChat_QRCode.png)
+
+扫描上面二维码，关注我。有需要可以随时给我留言
