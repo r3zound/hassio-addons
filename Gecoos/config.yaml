@@ -24,7 +24,6 @@
   },
   "schema": {
     "api_port": "int",
-    "web_port": "int",
     "showtip": "int",
     "debug": "int",
     "token": "int",
