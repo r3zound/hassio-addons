@@ -80,10 +80,6 @@
   ],
   "host_dbus": true,
   "map": [
-    "config:rw",
-    "share:rw",
-    "media:rw",
-    "ssl",
     "data:rw"
 ],
     "environment": {
