@@ -4,12 +4,12 @@ cat << 'EOF' > /etc/init.d/overlay_setup
 START=00
 
 start() {
-    echo "Setting up OverlayFS for /etc and /usr..."
+    echo "Setting up OverlayFS for /"
 
-
+    mkdir -p /data/upper
 
     # Mount OverlayFS for /
-    mount -t overlay overlay -o lowerdir=/,upperdir=/data/,workdir=/data/ /
+    mount -t overlay overlay -o lowerdir=/,upperdir=/data/upper,workdir=/data/upper /
 
 
 EOF
