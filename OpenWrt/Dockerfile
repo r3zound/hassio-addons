@@ -11,19 +11,16 @@ EXPOSE 80
 #    cp -a /etc/ /data/etc/ && \
 #    rm -rf /etc && \
 #    ln -s /data/etc /etc
-
+COPY overlay_setup /etc/init.d/overlay_setup
 RUN mkdir /var/lock && \
     opkg update && \
-    opkg install uhttpd-mod-lua block-mount && \
+    opkg install uhttpd-mod-lua block-mount rsync && \
     uci set uhttpd.main.interpreter='.lua=/usr/bin/lua' && \
-    uci commit uhttpd 
+    uci commit uhttpd  && \
+    chmod +x /etc/init.d/overlay_setup && \
+    /etc/init.d/overlay_setup enable && \
+    /etc/init.d/overlay_setup start && \
 
-
-
-#COPY entrypoint.sh /entrypoint.sh
-#RUN chmod +x /entrypoint.sh
-    
-    
 USER root
-ENTRYPOINT ["/sbin/init"]
+ENTRYPOINT [ "/sbin/init" ]
 # using exec format so that /sbin/init is proc 1 (see procd docs)

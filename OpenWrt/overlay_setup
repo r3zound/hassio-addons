@@ -1,0 +1,15 @@
+cat << 'EOF' > /etc/init.d/overlay_setup
+#!/bin/sh /etc/rc.common
+# OverlayFS Setup Script
+START=00
+
+start() {
+    echo "Setting up OverlayFS for /etc and /usr..."
+
+
+
+    # Mount OverlayFS for /
+    mount -t overlay overlay -o lowerdir=/,upperdir=/data/,workdir=/data/ /
+
+
+EOF
