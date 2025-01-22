@@ -19,7 +19,7 @@ RUN mkdir /var/lock && \
     uci commit uhttpd  && \
     chmod +x /etc/init.d/overlay_setup && \
     /etc/init.d/overlay_setup enable && \
-    /etc/init.d/overlay_setup start && \
+    /etc/init.d/overlay_setup start 
 
 USER root
 ENTRYPOINT [ "/sbin/init" ]
