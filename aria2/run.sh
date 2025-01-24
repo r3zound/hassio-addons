@@ -14,6 +14,6 @@ if [ ! -f ${conf_file} ]; then
     touch ${conf_file}
 fi
 
-darkhttpd /webui/webui-aria2 --port 8080 &
+darkhttpd /web --port 8080 &
 
 aria2c --rpc-allow-origin-all --enable-rpc --rpc-secret=${secret} --rpc-listen-all --save-session=${session_file} --input-file=${session_file} --save-session-interval=30 --dir=${downloads} --conf-path=${conf_file} ${options}
