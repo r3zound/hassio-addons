@@ -9,7 +9,7 @@ RUN apk add --no-cache -U --virtual .build-deps \
  && apk add --no-cache -U aria2 darkhttpd jq \
  && mkdir /web \
  && git clone https://gh-proxy.com/github.com/ziahamza/webui-aria2.git /tmp_webui \
- && mv /tmp_webui/docs /webui \
+ && mv /tmp_webui/docs /web \
  && rm -rf /tmp_web \
  && apk del .build-deps
 
