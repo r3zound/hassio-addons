@@ -71,10 +71,9 @@
     "PGID": "0",
     "PUID": "0",
     "START_DOCKER": "false",
-    "TITLE": "Ubuntu XFCE webtop",
+    "TITLE": "Ubuntu KDE webtop",
     "shm_size": "1gb"
   },
-  "host_dbus": true,
   "image": "ghcr.nju.edu.cn/alexbelgium/webtop-{arch}",
   "ingress": true,
   "init": false,
@@ -90,7 +89,10 @@
     "PGID": 0,
     "PUID": 0,
     "additional_apps": "engrampa,libreoffice",
-    "data_location": "/config/data"
+    "certfile": "fullchain.pem",
+    "data_location": "/config/data",
+    "keyfile": "privkey.pem",
+    "use_own_certs": true
   },
   "panel_admin": false,
   "panel_icon": "mdi:monitor",
@@ -100,7 +102,7 @@
     "22/tcp": null,
     "23/tcp": null,
     "25/tcp": null,
-    "3000/tcp": 3000,
+    "3000/tcp": null,
     "3001/tcp": null,
     "3002/tcp": null,
     "53/tcp": null,
@@ -113,7 +115,7 @@
     "23/tcp": "TELNET",
     "25/tcp": "SMTP",
     "3000/tcp": "Web interface",
-    "3001/tcp": "custom port 1",
+    "3001/tcp": "Web interface https",
     "3002/tcp": "custom port 2",
     "53/tcp": "DNS",
     "80/tcp": "http"
@@ -131,17 +133,20 @@
     "PUID": "int",
     "TZ": "match([A-Z][a-z]*./[A-Z][a-z]*.)?",
     "additional_apps": "str?",
+    "certfile": "str",
     "cifsdomain": "str?",
     "cifspassword": "str?",
     "cifsusername": "str?",
     "data_location": "str?",
+    "keyfile": "str",
     "localdisks": "str?",
-    "networkdisks": "str?"
+    "networkdisks": "str?",
+    "use_own_certs": "bool?"
   },
   "slug": "webtop",
   "tmpfs": true,
   "udev": true,
   "url": "https://github.com/alexbelgium/hassio-addons",
-  "version": "0.2",
+  "version": "4.16-r0-ls94-9",
   "video": true
 }

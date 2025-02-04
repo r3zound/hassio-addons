@@ -1,6 +1,8 @@
+## 2025.01-11 (28-01-2025)
+- New audio player
+- Upgraded upstream code : various improvements
+
 ## 2025.01-7 (09-01-2025)
-- Minor bugs fixed
-## 2025.01-6 (09-01-2025)
 - Fix mqtt autodetect script
 
 ## 2025.01-4 (08-01-2025)

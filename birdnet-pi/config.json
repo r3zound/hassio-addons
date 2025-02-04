@@ -100,7 +100,6 @@
     "MQTT_PASSWORD_manual": "password?",
     "MQTT_PORT_manual": "int?",
     "MQTT_USER_manual": "str?",
-    "PROCESSED_FOLDER_ENABLED": "bool?",
     "TZ": "str?",
     "certfile": "str",
     "cifsdomain": "str?",
@@ -120,6 +119,6 @@
   "udev": true,
   "url": "https://github.com/alexbelgium/hassio-addons/tree/master/birdnet-pi",
   "usb": true,
-  "version": "2025.01-7",
+  "version": "2025.01-11",
   "video": true
 }

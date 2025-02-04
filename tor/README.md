@@ -1,47 +1,109 @@
-# Home Assistant Community Add-on: Tor
+## &#9888; Open Request : [✨ [REQUEST] qBittorrent Gluetun (opened 2024-12-10)](https://github.com/alexbelgium/hassio-addons/issues/1661) by [@xtian47](https://github.com/xtian47)
+## &#9888; Open Issue : [🐛 [Qbittorrent] cifusername and cifpassword seem to be switched (opened 2025-01-21)](https://github.com/alexbelgium/hassio-addons/issues/1737) by [@TomJansen](https://github.com/TomJansen)
+# Hass.io Add-ons: Tor with bridges
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+[![Donate][donation-badge]](https://www.buymeacoffee.com/alexbelgium)
+[![Donate][paypal-badge]](https://www.paypal.com/donate/?hosted_button_id=DZFULJZTP3UQA)
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+![Version](https://img.shields.io/badge/dynamic/json?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Ftor%2Fconfig.json)
+![Ingress](https://img.shields.io/badge/dynamic/json?label=Ingress&query=%24.ingress&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Ftor%2Fconfig.json)
+![Arch](https://img.shields.io/badge/dynamic/json?color=success&label=Arch&query=%24.arch&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Ftor%2Fconfig.json)
 
-[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/9c6cf10bdbba45ecb202d7f579b5be0e)](https://www.codacy.com/gh/alexbelgium/hassio-addons/dashboard?utm_source=github.com&utm_medium=referral&utm_content=alexbelgium/hassio-addons&utm_campaign=Badge_Grade)
+[![GitHub Super-Linter](https://img.shields.io/github/actions/workflow/status/alexbelgium/hassio-addons/weekly-supelinter.yaml?label=Lint%20code%20base)](https://github.com/alexbelgium/hassio-addons/actions/workflows/weekly-supelinter.yaml)
+[![Builder](https://img.shields.io/github/actions/workflow/status/alexbelgium/hassio-addons/onpush_builder.yaml?label=Builder)](https://github.com/alexbelgium/hassio-addons/actions/workflows/onpush_builder.yaml)
 
-[![Support Frenck on Patreon][patreon-shield]][patreon]
+[donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20(no%20paypal)-%23d32f2f?logo=buy-me-a-coffee&style=flat&logoColor=white
+[paypal-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20with%20Paypal-0070BA?logo=paypal&style=flat&logoColor=white
 
-Protect your privacy and access Home Assistant via Tor.
+_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+
+[![Stargazers repo roster for @alexbelgium/hassio-addons](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
+
+![downloads evolution](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/tor/stats.png)
 
 ## About
 
-This Tor add-on allows you to access you Home Assistant instance as an Onion site,
-trough [Tor's Hidden Service][tor-hidden-service] feature. With this feature
-enabled, you do not need to open your firewall ports or setup HTTPS to enable
-secure remote access.
+Extended version of the [Tor addon from Home Assistant Community repository](https://github.com/hassio-addons/addon-tor) by supporting multiples bridges protocols WebTunnel, Snowflake and OBFS.
 
-This is useful if you want to have:
+## Installation
 
-- Access your Home Assistant instance remotely without opening a firewall port
-  or setting up a VPN.
-- Don’t want to or know how to get an SSL/TLS certificate and HTTPS
-  configuration setup.
-- Want to block attackers from even being able to access/scan your port and
-  server at all.
-- Want to block anyone from knowing your home IP address and seeing your
-  traffic to your Home Assistant.
+The installation of this add-on is pretty straightforward and not different in comparison to installing any other add-on.
 
-The add-on also offers the possibility to open a Sock proxy into the
-Tor network. Allowing you to access Tor from any of your (SOCKS supporting)
-applications through your Home Assistant installation.
+1. Add my add-ons repository to your home assistant instance (in supervisor addons store at top right, or click button below if you have configured my HA)
+   [![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falexbelgium%2Fhassio-addons)
+1. Install this add-on.
+1. Click the `Save` button to store your configuration.
+1. Set the add-on options to your preferences
+1. Start the add-on.
+1. Check the logs of the add-on to see if everything went well.
+1. Open the webUI and adapt the software options
 
-[discord-shield]: https://img.shields.io/discord/478094546522079232.svg
-[discord]: https://discord.me/hassioaddons
-[forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
-[forum]: https://community.home-assistant.io/t/home-assistant-community-add-on-tor/33822?u=frenck
-[github-sponsors-shield]: https://frenck.dev/wp-content/uploads/2019/12/github_sponsor.png
-[github-sponsors]: https://github.com/sponsors/frenck
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2024.svg
-[patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
-[patreon]: https://www.patreon.com/frenck
-[project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
-[release-shield]: https://img.shields.io/badge/version-v5.0.1-blue.svg
-[release]: https://github.com/hassio-addons/addon-tor/tree/v5.0.1
+## Configuration
+
+You should follow to the initial guide for configuring base addon options. Here will described only extra options in comparisons with base:
+
+### Option: `bridges`
+
+> Ensure the option value is clear to avoid unintended use of transport plugins and bridges.
+
+Bridges are Tor relays that help you circumvent censorship.
+Access to bridges is provided by supported transport plugins:
+
+#### OBFS
+
+Because bridge addresses are not public, you will need to request them yourself. You have a few options:
+
+- Visit [Tor][tor-bridges-obfs4] project and follow the instructions, or
+- Email `bridges@torproject.org` from a Gmail, or Riseup email address
+- Send a message to @GetBridgesBot on Telegram. Tap on 'Start' or write /start or /bridges in the chat.
+
+For example:
+
+```yaml
+bridges:
+  - >-
+    obfs4 123.45.67.89:443 EFC6A00EE6272355C023862378AC77F935F091E4
+    cert=KkdWiWlfetJG9SFrzX8g1teBbgxtsc0zPiN5VLxqNNH+iudVW48CoH/XVXPQntbivXIqZA
+    iat-mode=0
+```
+
+#### Webtunnel
+
+Visit [Tor][tor-bridges-webtunnel] project and follow the instructions
+
+For example:
+
+```yaml
+bridges:
+  - >-
+    webtunnel 192.0.2.3:1
+    DEADBEEFDEADBEEFDEADBEEFDEADBEEFDEADBEEF
+    url=https://akbwadp9lc5fyyz0cj4d76z643pxgbfh6oyc-167-71-71-157.sslip.io/5m9yq0j4ghkz0fz7qmuw58cvbjon0ebnrsp0
+    ver=0.0.1
+```
+
+#### Snowflake
+
+What is [snowflake][what-is-snowflake], example:
+
+```yaml
+bridges:
+  - >-
+    snowflake 192.0.2.3:80 2B280B23E1107BB62ABFC40DDCC8824814F80A72
+    fingerprint=2B280B23E1107BB62ABFC40DDCC8824814F80A72
+    url=https://snowflake-broker.torproject.net/
+    ampcache=https://cdn.ampproject.org/
+    front=www.google.com
+    ice=stun:stun.l.google.com:19302,stun:stun.antisip.com:3478,stun:stun.bluesip.net:3478,stun:stun.dus.net:3478,stun:stun.epygi.com:3478,stun:stun.sonetel.com:3478,stun:stun.uls.co.za:3478,stun:stun.voipgate.com:3478,stun:stun.voys.nl:3478
+    utls-imitate=hellorandomizedalpn
+```
+
+## Support
+
+If you have in issue with your installation, please be sure to checkout github.
+
 [tor-hidden-service]: https://www.torproject.org/docs/hidden-services.html.en
+[tor-bridges-obfs4]: https://bridges.torproject.org/bridges/?transport=obfs4
+[tor-bridges-webtunnel]: https://bridges.torproject.org/bridges/?transport=webtunnel
+[what-is-snowflake]: https://support.torproject.org/censorship/what-is-snowflake/
