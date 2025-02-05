@@ -21,7 +21,7 @@ config-server=$(jq -r '.config-server' /data/options.json)
 if [ "$config_server" != "username" ]; then
     easytier-core -w ${config-server}
 else
-    easytier-core --instance-name ${instance_name} --hostname ${hostname} --ipv4 ${ipv4} --dhcp ${dhcp} --network-name ${network_name} --network-secret ${network_secret} --proxy-networks ${client_cidr} --default-protocol ${default_protocol} --dev-name ${dev_name} --disable-ipv6 ${disable-ipv6} --mtu ${mtu} --latency-first ${latency_first} --enable-exit-node ${enable_exit_node} --no-tun ${no_tun} --use-smoltcp ${use_smoltcp}
+    easytier-core --instance-name ${instance_name} --hostname ${hostname} --ipv4 ${ipv4} --dhcp ${dhcp} --network-name ${network_name} --network-secret ${network_secret} --proxy-networks ${proxy-networks} --default-protocol ${default_protocol} --dev-name ${dev_name} --disable-ipv6 ${disable-ipv6} --mtu ${mtu} --latency-first ${latency_first} --enable-exit-node ${enable_exit_node} --no-tun ${no_tun} --use-smoltcp ${use_smoltcp}
 fi
 
 

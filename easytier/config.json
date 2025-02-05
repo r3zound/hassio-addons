@@ -39,6 +39,7 @@
     "proxy-networks": "10.14.14.0/24",
     "default_protocol": "tcp",
     "dev_name": "/dev/net/tun",
+    "config_server": "username",
     "disable-ipv6": false,
     "mtu": 1360,
     "latency_first": false,
@@ -50,8 +51,8 @@
     ],
     "devices": [
       "/dev/net/tun"
-    ],
-    "config_server": "username"
+    ]
+  
   },
   "schema": {
     "instance_name": "str?",
