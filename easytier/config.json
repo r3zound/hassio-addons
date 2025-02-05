@@ -53,7 +53,7 @@
     "devices": [
       "/dev/net/tun"
     ],
-    "config_server": "username"  // Added config-server option
+    "config_server": "username"
   },
   "schema": {
     "instance_name": "str?",
@@ -73,6 +73,6 @@
     "no_tun": "bool?",
     "use_smoltcp": "bool?",
     "foreign_network_whitelist": "str?",
-    "config_server": "str?"  // Added schema for config-server option
+    "config_server": "str?"
   }
 }
