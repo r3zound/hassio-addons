@@ -1,9 +1,8 @@
 {
   "name": "EasyTier",
-  "version": "v2.1.2",
+  "version": "v2.2.0",
   "slug": "easytier",
   "description": "EasyTier 网络优化工具,未完成不要装",
-  "image": "easytier/easytier",
   "url": "https://github.com/djhui/hassio-addons",
   "init": false,
   "arch": [
@@ -35,19 +34,26 @@
     "hostname": "",
     "ipv4": "",
     "dhcp": false,
-    "network_name": "",
-    "network_secret": "",
+    "network_name": "your_network_name",
+    "network_secret": "secret",
     "client_cidr": "10.14.14.0/24",
     "default_protocol": "tcp",
-    "dev_name": "",
+    "dev_name": "/dev/net/tun",
     "enable_encryption": true,
     "enable_ipv6": true,
-    "mtu": 1380,
+    "mtu": 1360,
     "latency_first": false,
     "enable_exit_node": false,
     "no_tun": false,
     "use_smoltcp": false,
-    "foreign_network_whitelist": "*"
+    "foreign_network_whitelist": "*",
+    "privileged": [
+      "NET_ADMIN"
+    ],
+    "devices": [
+      "/dev/net/tun"
+    ],
+    "config_server": "username"  // Added config-server option
   },
   "schema": {
     "instance_name": "str?",
@@ -66,6 +72,7 @@
     "enable_exit_node": "bool?",
     "no_tun": "bool?",
     "use_smoltcp": "bool?",
-    "foreign_network_whitelist": "str?"
+    "foreign_network_whitelist": "str?",
+    "config_server": "str?"  // Added schema for config-server option
   }
 }
