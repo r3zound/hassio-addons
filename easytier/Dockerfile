@@ -1,5 +1,5 @@
 # 使用基础镜像
-FROM easytier/easytier:latest
+FROM easytier/easytier:v2.2.0
 
 
 
