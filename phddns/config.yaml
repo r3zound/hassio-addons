@@ -4,7 +4,7 @@
   "url": "https://mp.weixin.qq.com/s/P0HvAso-Gkdl-awv22si9w?token=940637692&lang=zh_CN",
   "slug": "phddns",
   "description": "A Home Assistant add-on for Oray's phddns service.这是一个花生壳客户端",
-  "arch": ["amd64", "i386", "aarch64", "armhf", "armv7"],
+  "arch": ["amd64", "i386"],
   "startup": "services",
   "hassio_role": "manager",
   "boot": "manual",

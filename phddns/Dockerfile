@@ -6,8 +6,7 @@ ARG BUILD_ARCH
 ENV BUILD_ARCH=$BUILD_ARCH
 
 # 安装 wget 并根据平台下载不同的文件
-RUN apt update && apt install -y wget systemd \
-    && case "$BUILD_ARCH" in \
+RUN case "$BUILD_ARCH" in \
         "aarch64") \
             wget -q "https://dl.oray.com/hsk/linux/phddns_5.1.0_rapi_aarch64.deb" ;; \
         "armhf") \
