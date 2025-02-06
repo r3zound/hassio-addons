@@ -17,6 +17,23 @@ enable_exit_node=$(jq -r '.enable_exit_node' /data/options.json)
 no_tun=$(jq -r '.no_tun' /data/options.json)
 use_smoltcp=$(jq -r '.use_smoltcp' /data/options.json)
 config-server=$(jq -r '.config-server' /data/options.json)
+echo instance_name
+echo hostname
+echo ipv4
+echo dhcp
+echo network_name
+echo network_secret
+echo proxy-networks
+echo default_protocol
+echo dev_name
+echo disable-ipv6
+echo mtu
+echo latency_first
+echo enable_exit_node
+echo no_tun
+echo use_smoltcp
+echo config-server
+
 
 if [ "$config_server" != "username" ]; then
     easytier-core -w ${config-server}
