@@ -1,5 +1,4 @@
-#!/bin/sh
-set -e
+#!/bin/ash
 
 instance_name=$(jq -r '.instance_name // "easytier"' /data/options.json)
 hostname=$(jq -r '.hostname' /data/options.json)
