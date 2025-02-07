@@ -13,6 +13,10 @@
   "ports": {
     "9118/tcp": 9118
   },
+  "devices": [
+    "/dev/net/tun"
+  ],
+  "webui": "[PROTO]://[HOST]:[PORT:9118]",
   "boot": "manual",
   "restart": "always",
   "host_network": true
