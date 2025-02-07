@@ -43,3 +43,8 @@ if [ "$config_server" != "username" ]; then
 else
     easytier-core "${args[@]}"
 fi
+
+while true; do
+    echo "hello world"
+    sleep 5
+done
