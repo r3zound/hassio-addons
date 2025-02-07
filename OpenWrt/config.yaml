@@ -1,6 +1,6 @@
 {
   "name": "OpenWrt",
-  "version": "23.05.5",
+  "version": "24.10",
   "slug": "openwrt",
   "description": "OpenWrt 未完善，仅供测试,所有数据都会在重启OpenWrt后丢失",
   "arch": [
@@ -13,11 +13,8 @@
   "init": false,
   "url": "https://openwrt.org/",
   "panel_icon": "mdi:router-wireless",
-  "panel_admin": true,
-  "apparmor": false,
-  "ingress": false,
-  "hassio_api": true,
-  "webui": "http://[HOST]:[PORT:80]",
+  "ingress": true,
+  "webui": "https://[HOST]:[PORT:443]",
   "host_network": true,
   "devices": [
     "/dev/dri",
@@ -78,12 +75,7 @@
     "/dev/nvme1",
     "/dev/nvme2"
   ],
-  "host_dbus": true,
-  "map": [
-    "data:rw"
-],
-    "environment": {
-    "TZ": "Asia/Shanghai",
-    "DATA_DIR": "/data"
+  "environment": {
+    "TZ": "Asia/Shanghai"
   }
 }
