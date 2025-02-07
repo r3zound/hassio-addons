@@ -16,7 +16,7 @@
   "devices": [
     "/dev/net/tun"
   ],
-  "webui": "[PROTO]://[HOST]:[PORT:9118]",
+  "webui": "[HTTP]://[HOST]:[PORT:9118]",
   "boot": "manual",
   "restart": "always",
   "host_network": true
