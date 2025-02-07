@@ -1,10 +1,10 @@
 {
     "build_from": {
-      "aarch64": "docker.1ms.run/openwrt/rootfs:aarch64_generic-v24.10",
-      "amd64": "docker.1ms.run/openwrt/rootfs:x86_64-v24.10",
-      "armv7": "docker.1ms.run/openwrt/rootfs:armsr-armv7-24.10",
-      "i386": "docker.1ms.run/openwrt/rootfs:i386_pentium-mmx-v24.10",
-      "armhf": "docker.1ms.run/openwrt/rootfs:armsr-armv7-v24.10"
+      "aarch64": "openwrt/rootfs:aarch64_generic-v24.10",
+      "amd64": "openwrt/rootfs:x86_64-v24.10",
+      "armv7": "openwrt/rootfs:armsr-armv7-24.10",
+      "i386": "openwrt/rootfs:i386_pentium-mmx-v24.10",
+      "armhf": "openwrt/rootfs:armsr-armv7-v24.10"
     }
 
   }
