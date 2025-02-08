@@ -68,6 +68,7 @@
     "TRUSTED_PROXIES": "**"
   },
   "image": "ghcr.nju.edu.cn/alexbelgium/fireflyiii_data_importer-{arch}",
+  "init": false,
   "map": [
     "addon_config:rw",
     "homeassistant_config:rw",
@@ -102,6 +103,6 @@
   "slug": "fireflyiii_data_importer",
   "udev": true,
   "url": "https://github.com/alexbelgium/hassio-addons",
-  "version": "20250126.1-2",
+  "version": "20250126.1-1",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]"
 }

@@ -23,14 +23,20 @@ FROM ${BUILD_FROM}
 # 2 Modify Image #
 ##################
 
+USER root
+
 # Set S6 wait time
 ENV S6_CMD_WAIT_FOR_SERVICES=1 \
     S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0 \
     S6_SERVICES_GRACETIME=0
 
-USER root
 #ENV FIREFLY_III_PATH="/data/firefly"
 #WORKDIR $FIREFLY_III_PATH
+
+#RUN \
+#    mkdir -p /scripts && \
+#    mv /etc/entrypoint.d/11-execute-things.sh /scripts/
+
 #RUN \
 #    # Change data location
 #    grep -rl "/var/www/html" /etc/ | xargs sed -i 's|/var/www/html|/data/firefly|g'
@@ -55,7 +61,7 @@ ADD "https://gh-proxy.com/raw.githubusercontent.com/alexbelgium/hassio-addons/ma
 RUN chmod 744 /ha_automodules.sh && /ha_automodules.sh "$MODULES" && rm /ha_automodules.sh
 
 # Manual apps
-ENV PACKAGES="cron"
+ENV PACKAGES="cron bash sudo"
 
 # Automatic apps & bashio
 ADD "https://gh-proxy.com/raw.githubusercontent.com/alexbelgium/hassio-addons/master/.templates/ha_autoapps.sh" "/ha_autoapps.sh"
@@ -66,16 +72,52 @@ RUN chmod 744 /ha_autoapps.sh && /ha_autoapps.sh "$PACKAGES" && rm /ha_autoapps.
 ################
 
 # Add entrypoint
-ENV S6_STAGE2_HOOK=/ha_entrypoint.sh
+#ENV S6_STAGE2_HOOK=/ha_entrypoint.sh
 ADD "https://gh-proxy.com/raw.githubusercontent.com/alexbelgium/hassio-addons/master/.templates/ha_entrypoint.sh" "/ha_entrypoint.sh"
 
 # Entrypoint modifications
 ADD "https://gh-proxy.com/raw.githubusercontent.com/alexbelgium/hassio-addons/master/.templates/ha_entrypoint_modif.sh" "/ha_entrypoint_modif.sh"
 RUN chmod 777 /ha_entrypoint.sh /ha_entrypoint_modif.sh && /ha_entrypoint_modif.sh && rm /ha_entrypoint_modif.sh
 
+# Adapt shebang
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+RUN \
+    # Run as www-data
+    sed -i "s|/usr|exec sudo -Eu www-data /usr|g" /etc/s6*/s6*/php-fpm/run && \
+    # Move execute things
+    mkdir -p /scripts && \
+    mv /etc/entrypoint.d/11-execute-things.sh /scripts/ && \
+    # Allow passwordless root
+    echo "www-data ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers && \
+    # Change output lots
+    sed -i "s|/proc/self/fd/2|/log_php|g" /etc/entrypoint.d/1-log-output-level.sh && \
+    grep -rl "/proc/self/fd/2" /usr/local/etc | while read -r files; do sed -i "s|/proc/self/fd/2|/log_php|g" "$files"; done && \
+    touch /log_php && chown www-data:www-data /log_php && \
+    # Adapt files
+    for files in /etc/cont-init.d/*; do sed -i "s|/usr/bin/with-contenv bashio|/usr/bin/env bashio|g" "$files"; done
+    #sed -i "s|/command/with-contenv bashio|/bin/bash bashio|g" /ha_entrypoint.sh && \
 
-ENTRYPOINT [ "/usr/bin/env" ]
-CMD [ "/ha_entrypoint.sh" ]
+    # Execute entrypoint
+    #sed -i "s|/usr/bin/env sh|/usr/bin/env bashio|g" /etc/entrypoint.d/11-execute-things.sh && \
+    #chmod 777 /ha_entrypoint.sh && \
+    #sed -i "1a sudo /./ha_entrypoint.sh" /etc/entrypoint.d/11-execute-things.sh
+#RUN cat /ha_entrypoint.sh && \
+#    sed -i "1i \#\!/bin/bash" /ha_entrypoint.sh
+
+# Entrypoint
+#RUN sed -i "1a \#\!/bin/bash bashio" /ha_entrypoint.sh
+#RUN echo "www-data ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers && \
+#    chown -R www-data:www-data /etc/cont-init.d/* && \
+#    chmod 777 /ha_entrypoint.sh && \
+#    sed -i "s| sh| bashio|g" /etc/entrypoint.d/11-execute-things.sh && \
+#    sed -i "1a source /ha_entrypoint.sh" /etc/entrypoint.d/11-execute-things.sh
+
+#ENV ha_entry_source="true"
+
+#USER www-data
+
+#ENTRYPOINT [ "/usr/bin/env" ]
+#CMD [ "/ha_entrypoint.sh" ]
 
 ############
 # 5 Labels #
