@@ -1,23 +1,30 @@
 # 🔔 Home Assistant Addon库
 
-🎉 欢迎来到 **djhui** 的 Home Assistant 加载项库！在这里，您将发现众多自定义加载项，✨  
-Welcome to **djhui**'s Home Assistant Addon repository! Here, you will find a variety of custom addons. ✨  
-部分加载项是我自己开发的，同时也引用了一些优秀的第三方库，主要基于 Docker 的静态镜像。🐳  
-Some addons are developed by me, while others are sourced from excellent third-party libraries, primarily based on static Docker images. 🐳  
-如果您发现任何侵权内容，请随时与我联系以便删除。✉️  
+
+🎉 **欢迎来到此 Home Assistant 加载项库！** 在这里，您将发现众多自定义加载项，✨  
+🌟 **Welcome to the Home Assistant Addon repository!** Here, you will find a variety of custom addons. ✨  
+🔧 **部分加载项是我自己开发的，同时也引用了一些优秀的第三方库，主要基于 Docker 的静态镜像。** 🐳  
+🔍 Some addons are developed by me, while others are sourced from excellent third-party libraries, primarily based on static Docker images. 🐳  
+⚠️ **如果您发现任何侵权内容，请随时与我联系以便删除。** ✉️  
 If you find any infringing content, please feel free to contact me for removal. ✉️  
-如果您有任何想法或建议，希望我制作成Addon的，请随时留言！💬  
+💡 **如果您有任何想法或建议，希望我制作成Addon的，请随时留言！** 💬  
 If you have any ideas or suggestions for addons you'd like me to create, please feel free to leave a message! 💬  
-所有的修改和创建的目的只是为了让中国的用户可以使用各种优秀的Addons而不用担心网络导致的无法使用  
+🌐 **所有的修改和创建的目的只是为了让中国的用户可以使用各种优秀的Addons而不用担心网络导致的无法使用。**  
 All modifications and creations are aimed at allowing Chinese users to use various excellent addons without worrying about network accessibility.  
 
-**本库的内容都不需要魔法，如果用魔法反而可能会安装失败** ❌  
+⚠️ **本库存只为了增强 Home Assistant 的功能而建立，任何使用里面的工具导致的任何问题以及自行研究导致的违规使用本人均不承担任何后果。**  
+**This repository is established solely to enhance the functionality of Home Assistant. I bear no responsibility for any issues arising from the use of the tools within or any violations resulting from personal research.**
+
+📍 **此站点仅为中国大陆地区所使用，如果您在境外，请使用下面这些原作者的链接。**  
+This site is intended for use only in mainland China. If you are outside the mainland, please use the links from the original authors below.  
+
+❌ **本库的内容都不需要魔法，如果用魔法反而可能会安装失败。**  
 **Do not use any VPNs in Mainland China to install these addons.**
 
-本库存使用的加速静像站点为 🌐  
-All Addon acceleration correspondence is as follows
+🚀 **本库存使用的加速静像站点为：** 🌐  
+All Addon acceleration correspondence is as follows:
 
-**因为是通过国内静像的原因，有时候第一次安装会失败，请重试一次**
+🔄 **因为是通过国内静像的原因，有时候第一次安装会失败，请重试一次。**  
 
 | 原地址                | 国内加速地址                  |
 |---------------------|-------------------------|
@@ -63,9 +70,11 @@ All Addon acceleration correspondence is as follows
 
 您也可以点击下面的按钮自动添加库（二选一）：
 
+**Gitee** [![Add Addon to Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://gitee.com/desmond_GT/hassio-addons) 🚀
+
 **Github** [![Add Addon to Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://github.com/djhui/hassio-addons) 🚀
 
-**Gitee** [![Add Addon to Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://gitee.com/desmond_GT/hassio-addons) 🚀
+
 
 ## 🛠️ 支持与反馈
 
