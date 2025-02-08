@@ -3,8 +3,7 @@ FROM $BUILD_FROM
 #VOLUME [ "/data" ]
 #EXPOSE 80
 
-RUN rm -rf /overylay && \
-    ln -s /data /overlay
+RUN mount --bind /data /overlay
 
 RUN mkdir /var/lock && \
     opkg update && \
