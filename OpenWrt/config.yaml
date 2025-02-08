@@ -76,6 +76,7 @@
     "/dev/nvme2"
   ],
   "environment": {
-    "TZ": "Asia/Shanghai"
+    "TZ": "Asia/Shanghai",
+    "HOME": "/data",
   }
 }
