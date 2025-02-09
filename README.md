@@ -50,6 +50,8 @@ All Addon acceleration correspondence is as follows:
 - 🌐 [**Community Addons**](https://github.com/hassio-addons/repository): 这是官方社区的Addon，目前还在测试中，希望有人能告诉我能否使用。
 - 🎨 [**Alexbelgium Addons**](https://github.com/alexbelgium/hassio-addons): 这是alexbelgium的Addons
 - 🌟 [**Jdeath Addons**](https://github.com/jdeath/homeassistant-addons)： 这是Jdeath的Addons
+- 🌐 [**Broadlink Manager**](https://github.com/t0mer/broadlinkmanager-docker): 这是Broadlink Manager的Addon，方便用户学习和发送IR/RF命令。
+
 
 
 
