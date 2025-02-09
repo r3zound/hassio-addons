@@ -1,0 +1,15 @@
+---
+version: 0.0.1
+slug: LocalSTTCN
+name: LocalSTTCN
+description: offline Speech-to-text service for Home Assistant
+url: https://github.com/home-assistant/addons/blob/master/LocalSTTCN
+arch:
+  - amd64
+init: false
+discovery:
+  - localstt
+ingress: true
+ports:
+  "6006/tcp": 6006
+image: docker.1ms.run/bailu166/k2fsa-stt:v0
