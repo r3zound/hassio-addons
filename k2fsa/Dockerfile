@@ -12,7 +12,8 @@ RUN \
     apt-get update && apt-get install -y --no-install-recommends wget bzip2 && \
     wget -q -c -4 --tries=10 https://github.com/k2-fsa/sherpa-onnx/releases/download/v1.10.43/sherpa-onnx-v1.10.43-linux-x64-static.tar.bz2 && \
     tar -xvf sherpa-onnx-v1.10.43-linux-x64-static.tar.bz2 -C /k2fsa/ && \
-    mv /k2fsa/sherpa-onnx-v1.10.43-linux-x64-static/bin/* /k2fsa/bin/ && \
+    mkdir -p /k2fsa/bin && \
+    mv /k2fsa/sherpa-onnx-v1.10.43-linux-x64-static/bin/* /k2fsa/bin && \
     rm -rf /k2fsa/sherpa-onnx-v1.10.43-linux-x64-static && \
     wget -q -c -4 --tries=10 -O /module/encoder-epoch-12-avg-4.onnx \
         https://huggingface.co/pkufool/icefall-asr-zipformer-streaming-wenetspeech-20230615/resolve/4519d431eebb33363c267e827fb9f65dcb200009/exp/encoder-epoch-12-avg-4.onnx && \
