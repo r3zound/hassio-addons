@@ -21,7 +21,7 @@ RUN \
     tar -xvf icefall-asr-zipformer-wenetspeech-20230615.tar.bz2 -C /tmp && \
     rm -rf icefall-asr-zipformer-wenetspeech-20230615.tar.bz2 && \
     mv /tmp/icefall-asr-zipformer-wenetspeech-20230615/data/lang_char/tokens.txt /k2fsa/module && \
-    rm -rf /tmp/icefall-asr-zipformer-wenetspeech-20230615/exp/*int* && \
+    rm -rf /tmp/icefall-asr-zipformer-wenetspeech-20230615/exp/*int8* && \
     mv /tmp/icefall-asr-zipformer-wenetspeech-20230615/exp/* /k2fsa/module && \
     apt remove -y wget bzip2 --purge && apt autoremove -y && \
     rm -rf /var/lib/apt/lists/* && apt-get clean
