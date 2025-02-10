@@ -13,7 +13,7 @@ RUN \
     wget -q -c -4 --tries=10 https://github.com/k2-fsa/sherpa-onnx/releases/download/v1.10.43/sherpa-onnx-v1.10.43-linux-x64-static.tar.bz2 && \
     tar -xvf sherpa-onnx-v1.10.43-linux-x64-static.tar.bz2 -C /k2fsa/ && \
     mkdir -p /k2fsa/bin && \
-    mv /k2fsa/sherpa-onnx-v1.10.43-linux-x64-static/bin/*offline* /k2fsa/bin && \
+    mv /k2fsa/sherpa-onnx-v1.10.43-linux-x64-static/bin/* /k2fsa/bin && \
     chmod +x /k2fsa/bin/* && \
     #chown -R root:root /k2fsa && \
     rm -rf /k2fsa/sherpa-onnx-v1.10.43-linux-x64-static* && \

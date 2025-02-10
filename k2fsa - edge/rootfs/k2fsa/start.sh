@@ -1,7 +1,7 @@
 #/bin/bash
 
 /k2fsa/bin/sherpa-onnx-offline-websocket-server \
-        --port=10300 \
+        --port=6006 \
         --num-work-threads=5 \
         --tokens=/module/tokens.txt \
         --encoder=/module/encoder-epoch-12-avg-4.onnx \

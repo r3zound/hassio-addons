@@ -11,4 +11,4 @@ discovery:
   - k2fsa
 ingress: true
 ports:
-  "10300/tcp": 10300
+  "6006/tcp": 6006
