@@ -7,8 +7,6 @@ description: offline Speech-to-text service for Home Assistant
 arch:
   - amd64
 init: false
-discovery:
-  - k2fsa
 ingress: true
 ports:
   "6006/tcp": 6006

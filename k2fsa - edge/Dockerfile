@@ -26,3 +26,4 @@ RUN \
     apt remove -y wget bzip2 --purge && apt autoremove -y && \
     rm -rf /var/lib/apt/lists/* && apt-get clean
 
+CMD [ "/k2fsa/init.sh" ]
