@@ -1,0 +1,14 @@
+---
+version: 0.0.1
+slug: k2fsa-edge
+name: k2fsa-edge
+description: offline Speech-to-text service for Home Assistant
+
+arch:
+  - amd64
+init: false
+discovery:
+  - k2fsa
+ingress: true
+ports:
+  "10300/tcp": 10300
