@@ -10,7 +10,7 @@ WORKDIR /k2fsa
 RUN apt update && \
     apt install -y --no-install-recommends wget bzip2 python3 python3-pip && \
     pip install /k2fsa/sherpa_onnx-1.10.43-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl && \
-    pip install numpy \
+    pip install numpy && \
     # 下载 ASR 模型，直接解压到目标目录，避免使用 /tmp 目录
     wget -q -O asr-model.tar.bz2 https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/icefall-asr-zipformer-wenetspeech-20230615.tar.bz2 && \
     mkdir -p /k2fsa/module && \
