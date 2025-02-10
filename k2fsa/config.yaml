@@ -1,9 +1,9 @@
 ---
 version: 0.0.1
-slug: LocalSTTCN
-name: LocalSTTCN
+slug: k2fsa
+name: k2fsa
 description: offline Speech-to-text service for Home Assistant
-url: https://github.com/home-assistant/addons/blob/master/LocalSTTCN
+
 arch:
   - amd64
 init: false
