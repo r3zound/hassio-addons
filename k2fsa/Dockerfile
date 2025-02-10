@@ -21,7 +21,3 @@ RUN \
         https://huggingface.co/pkufool/icefall-asr-zipformer-streaming-wenetspeech-20230615/resolve/4519d431eebb33363c267e827fb9f65dcb200009/exp/encoder-epoch-12-avg-4.int8.onnx && \
     rm -rf /var/lib/apt/lists/* && apt-get clean
 
-
-
-
-CMD [ "/k2fsa/init.sh" ]
