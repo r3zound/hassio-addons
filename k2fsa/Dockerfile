@@ -1,5 +1,5 @@
 
-FROM python:3.13.2
+FROM docker.m.daocloud.io/library/python:3.13.2
 
 COPY rootfs /
 RUN chmod +x /k2fsa/*.sh
