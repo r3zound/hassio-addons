@@ -10,7 +10,8 @@ WORKDIR /k2fsa
 RUN sed -i 's@/archive.ubuntu.com/@/mirrors.ustc.edu.cn/@g' /etc/apt/sources.list && \
     sed -i 's@/security.ubuntu.com/@/mirrors.ustc.edu.cn/@g' /etc/apt/sources.list && \
     apt update && \
-    apt install -y --no-install-recommends wget bzip2 && \
+    apt install -y --no-install-recommends wget bzip2 python3 python3-pip avahi-daemon && \
+    pip install wyoming && \
     \
     # 下载并解压 sherpa-onnx，避免额外的 mv 操作
     wget -q -O sherpa-onnx.tar.bz2 https://github.com/k2-fsa/sherpa-onnx/releases/download/v1.10.43/sherpa-onnx-v1.10.43-linux-x64-static.tar.bz2 && \

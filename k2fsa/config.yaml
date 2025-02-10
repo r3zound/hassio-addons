@@ -1,12 +1,15 @@
----
-version: 0.0.1
-slug: k2fsa
-name: k2fsa
-description: offline Speech-to-text service for Home Assistant
-
-arch:
-  - amd64
-init: false
-ingress: true
-ports:
-  "6006/tcp": 6006
+{
+  "version": "0.0.1",
+  "slug": "k2fsa",
+  "name": "k2fsa",
+  "description": "offline Speech-to-text service for Home Assistant",
+  "arch": [
+    "amd64"
+  ],
+  "init": false,
+  "ingress": true,
+  "ports": {
+    "6006/tcp": 6006,
+    "10300/tcp": 10300
+  }
+}
