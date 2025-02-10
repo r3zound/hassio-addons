@@ -1,5 +1,5 @@
 ---
-version: v0
+version: 0.0.1
 slug: LocalSTTCN
 name: LocalSTTCN
 description: offline Speech-to-text service for Home Assistant
@@ -8,7 +8,7 @@ arch:
   - amd64
 init: false
 discovery:
-  - localstt
+  - k2fsa
 ingress: true
 ports:
   "10300/tcp": 10300
