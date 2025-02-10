@@ -1,8 +1,7 @@
 ARG BUILD_FROM
 FROM ${BUILD_FROM}
 
-COPY module /
-COPY k2fsa /
+COPY rootfs /
 RUN chmod +x /k2fsa/init.sh
 
 WORKDIR /k2fsa
@@ -22,7 +21,6 @@ RUN \
     rm -rf /var/lib/apt/lists/* && apt-get clean
 
 
-WORKDIR /k2fsa
 
 
 CMD [ "/k2fsa/init.sh" ]
