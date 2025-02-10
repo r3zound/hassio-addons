@@ -9,7 +9,7 @@
 
 
 
-/k2fsa/bin/sherpa-onnx-offline-websocket-server \
+exec /k2fsa/bin/sherpa-onnx-offline-websocket-server \
         --port=10300 \
         --num-work-threads=5 \
         --tokens=/module/tokens.txt \
