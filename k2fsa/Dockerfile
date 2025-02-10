@@ -16,7 +16,7 @@ RUN \
     mv /k2fsa/sherpa-onnx-v1.10.43-linux-x64-static/bin/*offline* /k2fsa/bin && \
     chmod +x /k2fsa/bin/* && \
     #chown -R root:root /k2fsa && \
-    rm -rf /k2fsa/sherpa-onnx-v1.10.43-linux-x64-static && \
+    rm -rf /k2fsa/sherpa-onnx-v1.10.43-linux-x64-static* && \
     wget -q -c -4 --tries=10 -O /module/encoder-epoch-12-avg-4.onnx \
         https://huggingface.co/pkufool/icefall-asr-zipformer-streaming-wenetspeech-20230615/resolve/4519d431eebb33363c267e827fb9f65dcb200009/exp/encoder-epoch-12-avg-4.onnx && \
     wget -q -c -4 --tries=10 -O /module/decoder-epoch-12-avg-4.onnx \

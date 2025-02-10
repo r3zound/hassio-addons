@@ -7,5 +7,6 @@
         --encoder=/module/encoder-epoch-12-avg-4.onnx \
         --decoder=/module/decoder-epoch-12-avg-4.onnx \
         --joiner=/module/joiner-epoch-12-avg-4.onnx \
-        --max-batch-size=5
+        --max-batch-size=5 \
+        --debug
 
