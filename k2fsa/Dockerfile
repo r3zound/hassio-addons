@@ -6,24 +6,29 @@ RUN chmod +x /k2fsa/*.sh
 
 WORKDIR /k2fsa
 
-RUN \
-    sed -i 's@/archive.ubuntu.com/@/mirrors.ustc.edu.cn/@g' /etc/apt/sources.list && \
+# 使用 USTC 镜像加速 apt，安装必要工具，执行后立即清理
+RUN sed -i 's@/archive.ubuntu.com/@/mirrors.ustc.edu.cn/@g' /etc/apt/sources.list && \
     sed -i 's@/security.ubuntu.com/@/mirrors.ustc.edu.cn/@g' /etc/apt/sources.list && \
-    apt update && apt install -y --no-install-recommends wget bzip2 && \
-    wget -q -c -4 --tries=10 https://github.com/k2-fsa/sherpa-onnx/releases/download/v1.10.43/sherpa-onnx-v1.10.43-linux-x64-static.tar.bz2 && \
-    tar -xvf sherpa-onnx-v1.10.43-linux-x64-static.tar.bz2 -C /k2fsa/ && \
-    mkdir -p /k2fsa/bin && \
-    mv /k2fsa/sherpa-onnx-v1.10.43-linux-x64-static/bin/* /k2fsa/bin && \
+    apt update && \
+    apt install -y --no-install-recommends wget bzip2 && \
+    \
+    # 下载并解压 sherpa-onnx，避免额外的 mv 操作
+    wget -q -O sherpa-onnx.tar.bz2 https://github.com/k2-fsa/sherpa-onnx/releases/download/v1.10.43/sherpa-onnx-v1.10.43-linux-x64-static.tar.bz2 && \
+    tar -xjf sherpa-onnx.tar.bz2 --strip-components=1 -C /k2fsa/ && \
     chmod +x /k2fsa/bin/* && \
-    rm -rf /k2fsa/sherpa-onnx-v1.10.43-linux-x64-static* && \
+    rm -f sherpa-onnx.tar.bz2 && \
+    \
+    # 下载 ASR 模型，直接解压到目标目录，避免使用 /tmp 目录
+    wget -q -O asr-model.tar.bz2 https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/icefall-asr-zipformer-wenetspeech-20230615.tar.bz2 && \
     mkdir -p /k2fsa/module && \
-    wget -q -c -4 --tries=10 https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/icefall-asr-zipformer-wenetspeech-20230615.tar.bz2 && \
-    tar -xvf icefall-asr-zipformer-wenetspeech-20230615.tar.bz2 -C /tmp && \
-    rm -rf icefall-asr-zipformer-wenetspeech-20230615.tar.bz2 && \
-    mv /tmp/icefall-asr-zipformer-wenetspeech-20230615/data/lang_char/tokens.txt /k2fsa/module && \
-    rm -rf /tmp/icefall-asr-zipformer-wenetspeech-20230615/exp/*int8* && \
-    mv /tmp/icefall-asr-zipformer-wenetspeech-20230615/exp/* /k2fsa/module && \
-    apt remove -y wget bzip2 --purge && apt autoremove -y && \
-    rm -rf /var/lib/apt/lists/* && apt-get clean
+    tar -xjf asr-model.tar.bz2 -C /k2fsa/module --strip-components=3 icefall-asr-zipformer-wenetspeech-20230615/data/lang_char/tokens.txt && \
+    tar -xjf asr-model.tar.bz2 -C /k2fsa/module --strip-components=2 --wildcards '*/exp/*' && \
+    rm -f asr-model.tar.bz2 && \
+    \
+    # 清理不必要的软件包和缓存，减少镜像体积
+    apt remove -y wget bzip2 --purge && \
+    apt autoremove -y && \
+    rm -rf /var/lib/apt/lists/* && \
+    apt-get clean
 
 CMD [ "/k2fsa/init.sh" ]
