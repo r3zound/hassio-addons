@@ -22,5 +22,5 @@ RUN \
         https://huggingface.co/pkufool/icefall-asr-zipformer-streaming-wenetspeech-20230615/resolve/4519d431eebb33363c267e827fb9f65dcb200009/exp/decoder-epoch-12-avg-4.onnx && \
     wget -q -c -4 --tries=10 -O /module/joiner-epoch-12-avg-4.onnx \
         https://huggingface.co/pkufool/icefall-asr-zipformer-streaming-wenetspeech-20230615/resolve/4519d431eebb33363c267e827fb9f65dcb200009/exp/joiner-epoch-12-avg-4.onnx && \
-    rm -rf /var/lib/apt/lists/* && apt-get clean
+    rm -rf /var/cache/apk/* 
 
