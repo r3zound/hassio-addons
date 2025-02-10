@@ -9,7 +9,7 @@
     --decoder=module/decoder-epoch-12-avg-4.onnx \
     --joiner=module/joiner-epoch-12-avg-4.onnx \
     --max-batch-size=5 \
-    --debug &
+    --debug #&
 
 # 启动 Wyoming 适配器
-python3 /k2fsa/wyoming_sherpa.py
+#python3 /k2fsa/wyoming_sherpa.py
