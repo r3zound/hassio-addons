@@ -11,5 +11,4 @@ discovery:
   - localstt
 ingress: true
 ports:
-  "6006/tcp": 6006
-image: docker.1ms.run/bailu166/k2fsa-stt
+  "10300/tcp": 10300
