@@ -9,7 +9,8 @@ WORKDIR /k2fsa
 RUN \
     apk add --no-cache build-base cmake make protobuf libstdc++ gcompat && \
     pip install --upgrade pip setuptools wheel && \
-    pip install cmake sherpa-onnx numpy websockets && \
+    pip install cmake numpy websockets && \
+    pip install sherpa-onnx -f https://k2-fsa.github.io/sherpa/onnx/cpu-cn.html && \
     wget -q -c -4 --tries=10 https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/icefall-asr-zipformer-wenetspeech-20230615.tar.bz2 && \
     tar -xvf icefall-asr-zipformer-wenetspeech-20230615.tar.bz2 -C /tmp && \
     rm -rf icefall-asr-zipformer-wenetspeech-20230615.tar.bz2 && \
