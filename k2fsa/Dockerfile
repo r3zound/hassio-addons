@@ -7,7 +7,7 @@ RUN chmod +x /k2fsa/*.sh
 WORKDIR /k2fsa
 
 RUN \
-    apk add --no-cache build-base cmake onnxruntime protobuf libstdc++ && \
+    apk add --no-cache build-base cmake onnxruntime protobuf libstdc++ gcompat && \
     pip install --upgrade pip setuptools wheel && \
     pip install cmake sherpa-onnx numpy websockets && \
     wget -q -c -4 --tries=10 https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/icefall-asr-zipformer-wenetspeech-20230615.tar.bz2 && \
