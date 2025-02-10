@@ -2,7 +2,7 @@ ARG BUILD_FROM
 FROM ${BUILD_FROM}
 
 COPY rootfs /
-RUN chmod +x /k2fsa/init.sh
+RUN chmod +x /k2fsa/*.sh
 
 WORKDIR /k2fsa
 
