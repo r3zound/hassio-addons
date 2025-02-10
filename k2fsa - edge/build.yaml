@@ -1,6 +1,6 @@
 ---
 build_from:
-  amd64: debian:bookworm-slim
+  amd64: debian:bookworm
 #  aarch64: ghcr.nju.edu.cn/home-assistant/aarch64-base-debian:bullseye
 #codenotary:
 #  signer: notary@home-assistant.io
