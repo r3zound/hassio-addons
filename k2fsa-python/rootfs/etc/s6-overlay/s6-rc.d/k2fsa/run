@@ -1,0 +1,11 @@
+#!/command/with-contenv bashio
+# vim: ft=bash
+# shellcheck shell=bash
+# ==============================================================================
+# Start Whisper service
+# ==============================================================================
+
+while true; do
+    echo "hello world"
+    sleep 5
+done
