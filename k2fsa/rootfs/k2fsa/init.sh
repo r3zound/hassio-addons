@@ -14,10 +14,10 @@ fi
 /k2fsa/bin/sherpa-onnx-offline-websocket-server \
     --port=6006 \
     --num-work-threads=5 \
-    --tokens=module/tokens.txt \
-    --encoder=module/encoder-epoch-12-avg-4.onnx \
-    --decoder=module/decoder-epoch-12-avg-4.onnx \
-    --joiner=module/joiner-epoch-12-avg-4.onnx \
+    --tokens=/config/addons_config/k2fsa/tokens.txt \
+    --encoder=/config/addons_config/k2fsa/encoder-epoch-12-avg-4.onnx \
+    --decoder=/config/addons_config/k2fsa/decoder-epoch-12-avg-4.onnx \
+    --joiner=/config/addons_config/k2fsa/joiner-epoch-12-avg-4.onnx \
     --max-batch-size=5 \
     --debug #&
 
