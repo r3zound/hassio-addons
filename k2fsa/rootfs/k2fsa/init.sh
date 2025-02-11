@@ -12,14 +12,14 @@ else
 fi
 # 启动 Sherpa-ONNX WebSocket 服务器
 /k2fsa/bin/sherpa-onnx-offline-websocket-server \
-    --port=6006 \
-    --num-work-threads=5 \
+    --port 6006 \
+    --num-threads 5 \
     --tokens=/config/addons_config/k2fsa/tokens.txt \
     --encoder=/config/addons_config/k2fsa/encoder-epoch-12-avg-4.onnx \
     --decoder=/config/addons_config/k2fsa/decoder-epoch-12-avg-4.onnx \
     --joiner=/config/addons_config/k2fsa/joiner-epoch-12-avg-4.onnx \
-    --max-batch-size=5 \
-    --debug #&
+    --max-batch-size 5
+
 
 # 启动 Wyoming 适配器
 #python3 /k2fsa/wyoming_sherpa.py
