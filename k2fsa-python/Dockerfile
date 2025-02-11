@@ -4,8 +4,6 @@ FROM ${BUILD_FROM}
 COPY rootfs / 
 RUN chmod +x /k2fsa/*.sh
 
-COPY sherpa_onnx-1.10.43-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl /tmp/
-
 WORKDIR /k2fsa
 
 # 使用 USTC 镜像加速 apt，安装必要工具，执行后立即清理
