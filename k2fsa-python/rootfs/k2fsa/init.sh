@@ -17,10 +17,4 @@ fi
 
 
 # 启动 Sherpa-ONNX WebSocket 服务器
-/k2fsa/venv/bin/python /k2fsa/python-api-examples/streaming_server.py \
-    --port 6005 \
-    --tokens "/config/addons_config/k2fsa/tokens.txt" \
-    --encoder "/config/addons_config/k2fsa/encoder-epoch-12-avg-4.onnx" \
-    --decoder "/config/addons_config/k2fsa/decoder-epoch-12-avg-4.onnx" \
-    --joiner "/config/addons_config/k2fsa/joiner-epoch-12-avg-4.onnx" \
-    --max-batch-size 5
+/k2fsa/venv/bin/python /k2fsa/python-api-examples/streaming_server.py --port 6005 --tokens /config/addons_config/k2fsa/tokens.txt --encoder /config/addons_config/k2fsa/encoder-epoch-12-avg-4.onnx --decoder /config/addons_config/k2fsa/decoder-epoch-12-avg-4.onnx --joiner /config/addons_config/k2fsa/joiner-epoch-12-avg-4.onnx --model-type zipformer --max-batch-size 5

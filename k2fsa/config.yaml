@@ -1,5 +1,5 @@
 {
-  "version": "0.0.1",
+  "version": "0.0.2",
   "slug": "k2fsa",
   "name": "k2fsa",
   "description": "offline Speech-to-text service for Home Assistant",
@@ -13,6 +13,6 @@
     "10300/tcp": 10300
   },
   "map": [
-    "homeassistant_config:rw"
+    "config:rw"
   ]
 }

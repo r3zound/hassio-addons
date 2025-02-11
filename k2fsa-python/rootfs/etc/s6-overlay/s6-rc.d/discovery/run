@@ -1,8 +1,0 @@
-#!/command/with-contenv bashio
-# vim: ft=bash
-# shellcheck shell=bash
-# ==============================================================================
-# Sends discovery information to Home Assistant.
-# ==============================================================================
-declare config
-

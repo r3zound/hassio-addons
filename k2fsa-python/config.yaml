@@ -1,5 +1,5 @@
 {
-  "version": "0.0.1",
+  "version": "0.0.2",
   "slug": "k2fsa-python",
   "name": "k2fsa-python",
   "description": "offline Speech-to-text service for Home Assistant",
