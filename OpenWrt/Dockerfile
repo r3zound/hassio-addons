@@ -1,9 +1,5 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
-#VOLUME [ "/data" ]
-#EXPOSE 80
-
-RUN mount --bind /data /overlay
 
 RUN mkdir /var/lock && \
     opkg update && \
