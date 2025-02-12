@@ -1,7 +1,7 @@
 #!/bin/ash
-
-
-/etc/init.d/overlay_setup start
+opkg update
+mkdir -p /data/overlay
+mount --bind /data/overylay /
 /sbin/init
 
 
