@@ -7,7 +7,7 @@ RUN mount --bind /data /overlay
 
 RUN mkdir /var/lock && \
     opkg update && \
-    opkg install uhttpd-mod-lua block-mount && \
+    opkg install uhttpd-mod-lua block-mount kmod-loop && \
     uci set uhttpd.main.interpreter='.lua=/usr/bin/lua' && \
     uci commit uhttpd
 #    chmod +x /etc/init.d/overlay_setup && \
