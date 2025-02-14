@@ -1,5 +1,5 @@
 {
-  "name": "Hass Panel",
+  "name": "Hass Panel beta",
   "version": "v1.3.0",
   "slug": "hass_panel",
   "description": "一个基于 React 的智能家居控制面板",
