@@ -1,5 +1,5 @@
 ARG BUILD_FROM
-FROM docker.m.daocloud.io/b3log/siyuan
+FROM b3log/siyuan
 
 USER root
 COPY run.sh /

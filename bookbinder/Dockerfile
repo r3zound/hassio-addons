@@ -1,5 +1,5 @@
 ARG BUILD_FROM
-FROM docker.m.daocloud.io/node:current-alpine
+FROM node:current-alpine
 
 ARG BUILD_VERSION
 

@@ -7,7 +7,7 @@
   "description": "Useful tools for developer and people working in IT",
   "environment": {},
   "map": [],
-  "image": "ghcr.nju.edu.cn/corentinth/it-tools",
+  "image": "corentinth/it-tools",
   "version": "2024.10.22-7ca5933",
   "name": "IT-Tools",
   "options": {},

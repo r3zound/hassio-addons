@@ -1,4 +1,4 @@
-FROM docker.m.daocloud.io/mitmproxy/mitmproxy
+FROM mitmproxy/mitmproxy
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["mitmweb", "--set", "web_host=0.0.0.0","--set","confdir=/config"]
 

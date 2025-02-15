@@ -1,5 +1,5 @@
 name: n8n
-version: "1.73.1"
+version: "1.78.0"
 upstream: 1.62.4
 slug: n8n
 description: >-
@@ -21,7 +21,7 @@ environment:
     PGID: "1"
     N8N_SECURE_COOKIE: "false"
     TINI_SUBREAPER: "true"
-image: docker.m.daocloud.io/n8nio/n8n
+image: docker.n8n.io/n8nio/n8n
 boot: auto
 startup: services
 webui: "[PROTO:ssl]://[HOST]:[PORT:5678]"

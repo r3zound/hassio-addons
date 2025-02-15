@@ -5,7 +5,8 @@
   "repository": "jdeath/homeassistant-addons",
   "slug": "wikijs",
   "source": "github",
+  "github_exclude": "canary",
   "upstream_repo": "requarks/wiki",
   "upstream_version": "2.3.81",
-  "paused": "false"
+  "paused": "true"
 }
