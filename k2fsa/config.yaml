@@ -1,6 +1,7 @@
 {
   "version": "0.0.2",
   "slug": "k2fsa",
+  "codenotary": "djhhui@gmail.com",
   "name": "k2fsa",
   "description": "offline Speech-to-text service for Home Assistant",
   "arch": [

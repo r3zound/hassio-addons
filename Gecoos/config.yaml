@@ -2,6 +2,7 @@
   "name": "集客AC控制器",
   "version": "2.2",
   "slug": "gecoos",
+  "codenotary": "djhhui@gmail.com",
   "description": "一个集客AC控制器的 Home Assistant 加载项",
   "url": "https://github.com/djhui/hassio-addons",
   "arch": ["aarch64", "amd64", "armv7", "armhf", "i386"],
