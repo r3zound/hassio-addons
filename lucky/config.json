@@ -13,11 +13,5 @@
   "ports": {
     "16601/tcp": 16601
   },
-  "options": {
-    "config_server": ""
-  },
-  "schema": {
-    "config_server": "str"
-  },
   "webui": "http://[HOST]:[PORT:16601]"
 }
