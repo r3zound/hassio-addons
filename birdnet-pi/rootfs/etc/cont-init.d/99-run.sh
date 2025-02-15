@@ -1,13 +1,14 @@
 #!/command/with-contenv bashio
 # shellcheck shell=bash
-set -e
 
 ##############
 # SET SYSTEM #
 ##############
 
 bashio::log.info "Setting password for the user pi"
-echo "pi:$(bashio::config "pi_password")" | chpasswd
+if bashio::config.has_value "pi_password"; then
+    echo "pi:$(bashio::config "pi_password")" | chpasswd
+fi
 bashio::log.info "Password set successfully for user pi."
 
 bashio::log.info "Setting timezone :"
@@ -53,7 +54,7 @@ chmod +x "$HOME/BirdNET-Pi/scripts/restart_services.sh" >/dev/null
 "$HOME/BirdNET-Pi/scripts/restart_services.sh" >/dev/null
 
 # Start livestream services if enabled in configuration
-if bashio::config.true LIVESTREAM_BOOT_ENABLED; then
+if bashio::config.true "LIVESTREAM_BOOT_ENABLED"; then
     echo "... starting livestream services"
     systemctl enable icecast2 >/dev/null
     systemctl start icecast2.service >/dev/null

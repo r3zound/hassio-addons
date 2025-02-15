@@ -1,7 +1,18 @@
+## 15.7-29 (15-02-2025)
+- Minor bugs fixed
+## 15.7-28 (15-02-2025)
+- Minor bugs fixed
+## 15.7-27 (15-02-2025)
+- Major update, please backup first
+- Automatic handling of upgrades
+- Restore clean shutdown
+
 ## 15.7-16 (22-01-2025)
 - Minor bugs fixed
+
 ## 15.7-14 (15-01-2025)
 - Minor bugs fixed
+
 ## 15.7-13 (15-01-2025)
 - Redirect logs to addons log
 - Removed vector.rs installation script, it is now part of the upstream entrypoint

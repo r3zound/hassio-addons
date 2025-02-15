@@ -1,3 +1,13 @@
+## 1.126.1-4 (15-02-2025)
+- RISK OF BREAKING CHANGE : backup both immich & postgres before starting
+- RISK OF BREAKING CHANGE : rewrite and improve database creation tool using addon options (overwritting manual database creation)
+- SECURITY FIX : avoid hardcoding the postgres root password and change it if was already applied
+- Ensure host is reachable before starting
+- Autocorrect homeassistant.local to local ip
+- Align configuration with /addon_configs
+
+## 1.126.1 (15-02-2025)
+- Update to latest version from imagegenius/docker-immich (changelog : https://github.com/imagegenius/docker-immich/releases)
 
 ## 1.125.7 (01-02-2025)
 - Update to latest version from imagegenius/docker-immich (changelog : https://github.com/imagegenius/docker-immich/releases)

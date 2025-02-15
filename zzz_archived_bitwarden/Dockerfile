@@ -16,7 +16,7 @@
 
 ARG BUILD_FROM=ghcr.nju.edu.cn/hassio-addons/debian-base/amd64:7.1.0
 ARG BUILD_VERSION
-ARG BUILD_UPSTREAM="1.33.1"
+ARG BUILD_UPSTREAM="1.33.2"
 FROM "vaultwarden/server:${BUILD_UPSTREAM}" as vaultwarden
 FROM ${BUILD_FROM}
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
@@ -93,6 +93,7 @@ ARG BUILD_NAME
 ARG BUILD_REF
 ARG BUILD_REPOSITORY
 ARG BUILD_VERSION
+ENV BUILD_VERSION="${BUILD_VERSION}"
 LABEL \
     io.hass.name="${BUILD_NAME}" \
     io.hass.description="${BUILD_DESCRIPTION}" \
