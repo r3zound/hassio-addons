@@ -43,7 +43,7 @@ args=()
 #else
 #    easytier-core "${args[@]}"
 #fi
-easytier-core -w $config_server
+#easytier-core -w $config_server
 
 while true; do
     echo "hello world"
