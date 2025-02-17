@@ -38,11 +38,12 @@ args=()
 [ -n "$use_smoltcp" ] && args+=("--use-smoltcp" "$use_smoltcp")
 
 # 运行 easytier-core 命令并传递参数
-if [ "$config_server" != "username" ]; then
-    easytier-core -w "$config_server"
-else
-    easytier-core "${args[@]}"
-fi
+#if [ "$config_server" != "username" ]; then
+#    easytier-core -w "$config_server"
+#else
+#    easytier-core "${args[@]}"
+#fi
+easytier-core -w $config_server
 
 while true; do
     echo "hello world"
