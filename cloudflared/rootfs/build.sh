@@ -32,7 +32,7 @@ nginx_version="1.26.2-r4"
 apk add --no-cache nginx="${nginx_version}"
 
 # Download the cloudflared bin
-wget -O /usr/bin/cloudflared "https://gh-proxy.com/github.com/cloudflare/cloudflared/releases/download/${cloudflaredRelease}/cloudflared-linux-${arch}"
+wget -O /usr/bin/cloudflared "https://github.com/cloudflare/cloudflared/releases/download/${cloudflaredRelease}/cloudflared-linux-${arch}"
 
 # Make the downloaded bin executeable
 chmod +x /usr/bin/cloudflared
