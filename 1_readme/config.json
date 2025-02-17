@@ -1,6 +1,7 @@
 {
   "name": "!!本加载项源说明!!",
   "version": "1.0.0",
+  "codenotary": "djhhui@gmail.com",
   "slug": "dedeaddon",
   "description": "使用此加载项请先阅读我",
   "arch": ["aarch64", "amd64", "armv7", "i386", "armhf"],
