@@ -1,6 +1,13 @@
 #!/command/with-contenv bashio
 # shellcheck shell=bash
 
+# Save a copy of the script for further restarts
+if [ -f /etc/cont-init.d/99-run.sh ]; then
+    mkdir -p /etc/scripts-init
+    sed -i "s|/etc/cont-init.d|/etc/scripts-init|g" /ha_entrypoint.sh
+    cp /etc/cont-init.d/99-run.sh /etc/scripts-init/
+fi
+
 ##############
 # SET SYSTEM #
 ##############
@@ -61,4 +68,5 @@ if bashio::config.true "LIVESTREAM_BOOT_ENABLED"; then
     systemctl enable --now livestream.service >/dev/null
 fi
 
-bashio::log.info "Setup complete."
+# Start
+bashio::log.info "✅ Setup complete."

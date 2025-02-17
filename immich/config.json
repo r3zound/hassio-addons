@@ -10,6 +10,7 @@
   "description": "Self-hosted photo and video backup solution directly from your mobile phone",
   "devices": [
     "/dev/dri",
+    "/dev/dxg",
     "/dev/dri/card0",
     "/dev/dri/card1",
     "/dev/dri/renderD128",
@@ -132,6 +133,7 @@
     "cifspassword": "str?",
     "cifsusername": "str?",
     "data_location": "str",
+    "library_location": "str?",
     "localdisks": "str?",
     "networkdisks": "str?"
   },
@@ -141,6 +143,8 @@
   "slug": "immich",
   "udev": true,
   "url": "https://github.com/alexbelgium/hassio-addons",
-  "version": "1.126.1-4",
+  "usb": true,
+  "version": "1.126.1-7",
+  "video": true,
   "webui": "http://[HOST]:[PORT:8080]"
 }
