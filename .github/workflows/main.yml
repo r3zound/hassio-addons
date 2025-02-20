@@ -60,6 +60,15 @@ jobs:
 
       - run: |
           find addons/ -name ".*" -exec rm -rf {} +
+          mkdir -p "$DEST_DIR"
+          for ITEM in addons/*/*; do
+            if [ -f "$ITEM" ]; then
+                rm -f "$ITEM"
+            elif [ -d "$ITEM" ]; then
+              mv "$ITEM" "./"
+              echo "Moved directory: $ITEM to $DEST_DIR/"
+            fi
+          done
 
 
       - run: |
