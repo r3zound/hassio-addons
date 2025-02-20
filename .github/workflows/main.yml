@@ -64,7 +64,7 @@ jobs:
             if [ -f "$ITEM" ]; then
                 rm -f "$ITEM"
             elif [ -d "$ITEM" ]; then
-              mv "$ITEM" "./"
+              mv -f "$ITEM" "./"
               echo "Moved directory: $ITEM to $DEST_DIR/"
             fi
           done
