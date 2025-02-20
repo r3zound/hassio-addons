@@ -27,6 +27,18 @@ jobs:
           
           wget -O alexbelgium.zip https://github.com/alexbelgium/hassio-addons/archive/refs/heads/master.zip
           unzip -o alexbelgium.zip -d addons && rm alexbelgium.zip
+
+          wget -O Poeschl.zip https://github.com/Poeschl/Hassio-Addons/archive/refs/heads/main.zip
+          unzip -o Poeschl.zip -d addons && rm Poeschl.zip
+
+          wget -O erik73.zip https://github.com/erik73/hassio-addons/archive/refs/heads/master.zip
+          unzip -o erik73.zip -d addons && rm erik73.zip
+
+          wget -O einschmidt.zip https://github.com/einschmidt/hassio-addons/archive/refs/heads/main.zip
+          unzip -o einschmidt.zip -d addons && rm einschmidt.zip
+
+          wget -O FaserF.zip https://github.com/FaserF/hassio-addons/archive/refs/heads/master.zip
+          unzip -o FaserF.zip -d addons && rm FaserF.zip
           
         # wget -O jdeath.zip https://github.com/jdeath/homeassistant-addons/archive/refs/heads/main.zip
         # unzip -o jdeath.zip -d addons && rm jdeath.zip

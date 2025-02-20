@@ -49,9 +49,12 @@ All Addon acceleration correspondence is as follows:
 - 📚 [**Official Addons**](https://github.com/home-assistant/addons): 这是一个官方的Addon，方便中国地区用户使用，以免使用魔法🔮
 - 🌐 [**Community Addons**](https://github.com/hassio-addons/repository): 这是官方社区的Addon，目前还在测试中，希望有人能告诉我能否使用。
 - 🎨 [**Alexbelgium Addons**](https://github.com/alexbelgium/hassio-addons): 这是alexbelgium的Addons
-- 🌟 [**Jdeath Addons**](https://github.com/jdeath/homeassistant-addons)： 这是Jdeath的Addons
-- 🌐 [**Broadlink Manager**](https://github.com/t0mer/broadlinkmanager-docker): 这是Broadlink Manager的Addon，方便用户学习和发送IR/RF命令。
-
+- ⭐ [**Jdeath Addons**](https://github.com/jdeath/homeassistant-addons)： 这是Jdeath的Addons
+- 📡 [**Broadlink Manager**](https://github.com/t0mer/broadlinkmanager-docker): 这是Broadlink Manager的Addon，方便用户学习和发送IR/RF命令。
+- 🖌️ [**Poeschl Addons**](https://github.com/Poeschl/Hassio-Addons): 这是Poeschl的Addons
+- 🛠️ [**Erik73 Addons**](https://github.com/erik73/hassio-addons): 这是Erik73的Addons
+- 📦 [**Einschmidt Addons**](https://github.com/einschmidt/hassio-addons): 这是Einschmidt的Addons
+- 🚀 [**FaserF Addons**](https://github.com/FaserF/hassio-addons): 这是FaserF的Addons
 
 
 
