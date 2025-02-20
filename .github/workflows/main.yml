@@ -61,10 +61,13 @@ jobs:
       - run: |
           find addons/ -name ".*" -exec rm -rf {} +
           for ITEM in addons/*/*; do
+          BASENAME=$(basename "$ITEM") 
+          TARGET_PATH="./$BASENAME"
             if [ -f "$ITEM" ]; then
               rm -f "$ITEM"
               echo "Deleted $ITEM" 
             elif [ -d "$ITEM" ]; then
+              rm -rf "$TARGET_PATH"
               mv -f "$ITEM" "./" || echo "Failed to move directory: $ITEM"
               echo "Moved directory: $ITEM"
             fi
