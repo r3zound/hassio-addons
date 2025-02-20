@@ -70,7 +70,6 @@ jobs:
             fi
           done
 
-
       - run: |
           mkdir -p hass-panel
           wget -O hass-panel.zip https://github.com/mrtian2016/hass-panel/archive/refs/heads/main.zip
