@@ -1,0 +1,58 @@
+name: Sync Home Assistant Addons
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * *'  # 每天运行一次
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Download and Extract Addons
+        run: |
+          mkdir -p addons
+          wget -O official.zip https://github.com/home-assistant/addons/archive/refs/heads/master.zip
+          unzip -o official.zip -d addons && rm official.zip
+          
+          wget -O community.zip https://github.com/hassio-addons/repository/archive/refs/heads/master.zip
+          unzip -o community.zip -d addons && rm community.zip
+          
+          wget -O alexbelgium.zip https://github.com/alexbelgium/hassio-addons/archive/refs/heads/master.zip
+          unzip -o alexbelgium.zip -d addons && rm alexbelgium.zip
+          
+        # wget -O jdeath.zip https://github.com/jdeath/homeassistant-addons/archive/refs/heads/main.zip
+        # unzip -o jdeath.zip -d addons && rm jdeath.zip
+
+      - name: Replace URLs in Files
+        run: |
+          find addons -type f \( -name "*.yaml" -o -name "*.json" \) -exec sed -i \
+            -e 's|ghcr.io|ghcr.nju.edu.cn|g' \
+            -e 's|image: homeassistant|image: docker.m.daocloud.io/homeassistant|g' \
+            -e 's|lscr.io|docker.m.daocloud.io|g' {} +
+          
+          find addons -type f -name "Dockerfile" -exec sed -i \
+            -e 's|https://github.com|https://gh-proxy.com/github.com|g' \
+            -e 's|ADD "https://raw.githubusercontent.com|ADD "https://gh-proxy.com/raw.githubusercontent.com|g' \
+            -e 's|lscr.io|docker.m.daocloud.io|g' \
+            -e 's|ghcr.io|ghcr.nju.edu.cn|g' {} +
+
+      #- name: Run link.py if Necessary
+      #  run: |
+      #    if [ -f link.py ]; then python3 link.py; fi
+      #  working-directory: addons
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add .
+          git commit -m "Sync addons" || echo "No changes to commit"
+          git push
