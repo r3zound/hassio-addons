@@ -65,7 +65,7 @@ jobs:
               rm -f "$ITEM"
               echo "Deleted $ITEM" 
             elif [ -d "$ITEM" ]; then
-              mv -f "$ITEM" "./"
+              mv -f "$ITEM" "./" || echo "Failed to move directory: $ITEM"
               echo "Moved directory: $ITEM"
             fi
           done
