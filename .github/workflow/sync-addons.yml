@@ -48,6 +48,13 @@ jobs:
       #  run: |
       #    if [ -f link.py ]; then python3 link.py; fi
       #  working-directory: addons
+      - name: Download and Sync Hass Panel
+        run: |
+          mkdir -p hass-panel
+          wget -O hass-panel.zip https://github.com/mrtian2016/hass-panel/archive/refs/heads/main.zip
+          unzip -o hass-panel.zip -d hass-panel-temp && rm hass-panel.zip
+          mv -f hass-panel-temp/hass-panel-main/hass-panel/* hass-panel/
+          rm -rf hass-panel-temp
 
       - name: Commit and Push Changes
         run: |
