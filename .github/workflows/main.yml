@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 */1 * * *'
+    - cron: '0 */12 * * *'
   workflow_dispatch:
 
 jobs:
@@ -57,6 +57,12 @@ jobs:
       #  run: |
       #    if [ -f link.py ]; then python3 link.py; fi
       #  working-directory: addons
+
+      - run: |
+          find addons -mindepth 1 -type d ! -name '.*' -exec mv -t addons/ {} + && find addons -mindepth 1 -type f -delete
+          rm -rf addons/
+
+
       - run: |
           mkdir -p hass-panel
           wget -O hass-panel.zip https://github.com/mrtian2016/hass-panel/archive/refs/heads/main.zip
