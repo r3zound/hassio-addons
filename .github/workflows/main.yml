@@ -59,8 +59,8 @@ jobs:
       #  working-directory: addons
 
       - run: |
-          find addons -mindepth 1 -type d ! -name '.*' -exec mv -t addons/ {} + && find addons -mindepth 1 -type f -delete
-          rm -rf addons/
+          rsync -a addons/*/ ./
+          rm -rf addons
 
 
       - run: |
