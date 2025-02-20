@@ -1,0 +1,58 @@
+---
+name: Deploy to Github Pages
+
+# yamllint disable-line rule:truthy
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Upgrade pip
+        run: |
+          # install pip=>20.1 to use "pip cache dir"
+          python3 -m pip install --upgrade pip
+
+      - name: Get pip cache dir
+        id: pip-cache
+        run: echo "::set-output name=dir::$(pip cache dir)"
+
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.pip-cache.outputs.dir }}
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: python3 -m pip install -r ./requirements.txt
+
+      - run: |
+          mkdir -p docs
+          curl https://raw.githubusercontent.com/erik73/repository-beta/master/README.md --output docs/beta.md
+          curl https://raw.githubusercontent.com/erik73/repository-edge/master/README.md --output docs/edge.md
+          ln -sf ../README.md docs/index.md
+          ln -sf ../LICENSE.md docs/LICENSE.md
+          ln -sf ../CONTRIBUTING.md docs/contributing.md
+          ln -sf ../CODE_OF_CONDUCT.md docs/code-of-conduct.md
+          mkdocs build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4.0.0
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          external_repository: erik73/erik73.github.io
+          publish_branch: main
+          publish_dir: ./site
+          keep_files: true
