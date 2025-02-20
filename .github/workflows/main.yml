@@ -73,10 +73,12 @@ jobs:
           done
 
       - run: |
-          mkdir -p hass-panel
+          mkdir -p hass-panel hass-panel-beta
           wget -O hass-panel.zip https://github.com/mrtian2016/hass-panel/archive/refs/heads/main.zip
           unzip -o hass-panel.zip -d hass-panel-temp && rm hass-panel.zip
           mv -f hass-panel-temp/hass-panel-main/hass-panel/* hass-panel/
+          mv -f hass-panel-temp/hass-panel-main/hass-panel-beta/* hass-panel-beta/
+
           rm -rf hass-panel-temp
 
       - run: |
