@@ -4,7 +4,7 @@
   "slug": "hass_panel",
   "description": "一个基于 React 的智能家居控制面板",
   "url": "https://github.com/mrtian2016/hass-panel",
-  "image": "ghcr.io/mrtian2016/hass-panel",
+  "image": "ghcr.nju.edu.cn/mrtian2016/hass-panel",
   "arch": [
     "aarch64",
     "amd64",
@@ -13,10 +13,9 @@
   "startup": "application",
   "boot": "auto",
   "auth_api": true,
+  "hassio_api": true,
   "ingress": true,
-  "ingress_port": 5123,
   "ingress_stream": true,
-  "ingress_entry": "/",
   "panel_icon": "mdi:view-dashboard",
   "homeassistant_api": true,
   "init": false,
@@ -24,24 +23,18 @@
     "config:rw"
   ],
   "ports": {
-    "5123/tcp": 5123,
-    "5124/tcp": 5124
+    "5123/tcp": 5123
   },
   "ports_description": {
-    "5123/tcp": "Web界面",
-    "5124/tcp": "WebDAV"
+    "5123/tcp": "Web界面"
   },
   "webui": "http://[HOST]:[PORT:5123]",
   "options": {
     "hass_url": "http://homeassistant.local:8123",
-    "hass_token": "",
-    "webdav_username": "admin",
-    "webdav_password": "admin"
+    "hass_token": ""
   },
   "schema": {
     "hass_url": "str",
-    "hass_token": "str",
-    "webdav_username": "str",
-    "webdav_password": "str"
+    "hass_token": "str"
   }
 } 
