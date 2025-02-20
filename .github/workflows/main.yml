@@ -61,7 +61,7 @@ jobs:
       - run: |
           find addons/ -name ".*" -exec rm -rf {} +
           rsync -a addons/*/ ./
-          rm -rf addons
+        #  # rm -rf addons
 
 
       - run: |
