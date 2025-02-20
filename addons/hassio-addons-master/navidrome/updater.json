@@ -1,0 +1,8 @@
+{
+  "last_update": "18-01-2025",
+  "repository": "alexbelgium/hassio-addons",
+  "slug": "navidrome",
+  "source": "github",
+  "upstream_repo": "navidrome/navidrome",
+  "upstream_version": "0.54.4"
+}
