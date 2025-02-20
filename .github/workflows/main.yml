@@ -60,7 +60,6 @@ jobs:
 
       - run: |
           find addons/ -name ".*" -exec rm -rf {} +
-          mkdir -p "$DEST_DIR"
           for ITEM in addons/*/*; do
             if [ -f "$ITEM" ]; then
                 rm -f "$ITEM"
