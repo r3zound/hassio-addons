@@ -1,0 +1,10 @@
+{
+  "build_from": {
+    "aarch64": "docker.m.daocloud.io/linuxserver/plex-meta-manager:arm64v8-latest",
+    "amd64": "docker.m.daocloud.io/linuxserver/plex-meta-manager:amd64-latest",
+    "armv7": "docker.m.daocloud.io/linuxserver/plex-meta-manager:arm32v7-1.19.0"
+  },
+  "codenotary": {
+    "signer": "alexandrep.github@gmail.com"
+  }
+}
