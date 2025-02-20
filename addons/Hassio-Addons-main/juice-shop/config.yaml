@@ -1,0 +1,18 @@
+name: OWASP Juice Shop
+version: 1.2.1-migrate
+slug: juice-shop
+description: 🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository
+url: https://github.com/Poeschl/Hassio-Addons/tree/main/juice-shop
+arch:
+  - amd64
+image: ghcr.nju.edu.cn/poeschl-homeassistant-addons/juice-shop-{arch}
+init: false
+ports:
+  3000/tcp:
+ports_description:
+  3000/tcp: Port serving the Juice Shop (Not required for Supervisor Ingress)
+ingress: true
+ingress_port: 3000
+panel_title: OWASP Juice Shop
+panel_icon: mdi:basket
+homeassistant_api: true
