@@ -1,4 +1,4 @@
-# Home assistant add-on: Scrutiny Full Access
+# Home assistant add-on: Scrutiny
 
 [![Donate][donation-badge]](https://www.buymeacoffee.com/alexbelgium)
 [![Donate][paypal-badge]](https://www.paypal.com/donate/?hosted_button_id=DZFULJZTP3UQA)
@@ -18,7 +18,7 @@ _Thanks to everyone having starred my repo! To star it click on the image below,
 
 [![Stargazers repo roster for @alexbelgium/hassio-addons](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
 
-![downloads evolution](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/scrutiny_fa/stats.png)
+![downloads evolution](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/scrutiny/stats.png)
 
 ## About
 
@@ -111,7 +111,7 @@ rest:
         value_template: '{{ value_json.data.smart_results[0].attrs["198"].raw_value }}'
     binary_sensor:
       - name: "HDD - SMART Status"
-        value_template: "{{ bool(value_json.data.smart_results[0].Status) }}"
+        value_template: "{{ 1 if value_json.data.smart_results[0].Status in [1, 2] else 0 }}"
         device_class: problem
 ```
 

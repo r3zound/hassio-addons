@@ -1,4 +1,4 @@
-## 1.126.1-9 (17-02-2025)
+## 1.126.1-10 (18-02-2025)
 - Minor bugs fixed
 ## 1.126.1-7 (16-02-2025)
 - RISK OF BREAKING CHANGE : backup both immich & postgres before starting

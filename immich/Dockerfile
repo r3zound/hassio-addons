@@ -62,7 +62,7 @@ ADD "https://gh-proxy.com/raw.githubusercontent.com/alexbelgium/hassio-addons/ma
 RUN chmod 744 /ha_automodules.sh && /ha_automodules.sh "$MODULES" && rm /ha_automodules.sh
 
 # Manual apps
-ENV PACKAGES="sudo yamllint pip"
+ENV PACKAGES="sudo yamllint pip jq"
 
 # Automatic apps & bashio
 ADD "https://gh-proxy.com/raw.githubusercontent.com/alexbelgium/hassio-addons/master/.templates/ha_autoapps.sh" "/ha_autoapps.sh"
@@ -83,6 +83,7 @@ RUN chmod 777 /ha_entrypoint.sh /ha_entrypoint_modif.sh && /ha_entrypoint_modif.
 RUN sed -i "s|postgresql-16|postgresql-15|g" /etc/s6-overlay/s6-rc.d/init-test-run/run
 
 # Install dependencies
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update && apt-get install -y --no-install-recommends \
     lsb-release \
     wget \

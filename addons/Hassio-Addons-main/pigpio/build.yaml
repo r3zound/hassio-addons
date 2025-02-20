@@ -1,4 +1,0 @@
-build_from:
-  armhf: ghcr.nju.edu.cn/home-assistant/armhf-base-debian:bullseye
-  armv7: ghcr.nju.edu.cn/home-assistant/armv7-base-debian:bullseye
-  aarch64: ghcr.nju.edu.cn/home-assistant/aarch64-base-debian:bullseye
