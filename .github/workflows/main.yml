@@ -62,10 +62,11 @@ jobs:
           find addons/ -name ".*" -exec rm -rf {} +
           for ITEM in addons/*/*; do
             if [ -f "$ITEM" ]; then
-                rm -f "$ITEM"
+              rm -f "$ITEM"
+              echo "Deleted $ITEM" 
             elif [ -d "$ITEM" ]; then
               mv -f "$ITEM" "./"
-              echo "Moved directory: $ITEM to $DEST_DIR/"
+              echo "Moved directory: $ITEM"
             fi
           done
 
