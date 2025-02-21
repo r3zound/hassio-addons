@@ -36,7 +36,7 @@ EOF
 
 echo "Starting EasyTier"
 if [ -f /data/config.yaml ]; then
-    /usr/local/bin/easytier-core -c, "/data/config.yaml"
+    /usr/local/bin/easytier-core -c "/data/config.yaml"
 else
     /usr/local/bin/easytier-core -w
 fi
