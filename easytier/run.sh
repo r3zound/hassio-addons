@@ -33,6 +33,7 @@ cidr = "$cidr"
 
 EOF
 
-
+cat /data/config.yaml
+killall -9 easytier-core
 echo "Starting EasyTier"
 easytier-core -c /data/config.yaml
