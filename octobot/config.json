@@ -22,7 +22,7 @@
   "slug": "octobot",
   "startup": "services",
   "upstream": "2.0.8",
-  "url": "https://github.com/jdeath/homeassistant-addons",
+  "url": "https://gh-proxy.com/github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:5001]",
   "ingress": false,
   "ingress_port": 5001

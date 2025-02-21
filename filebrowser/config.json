@@ -126,6 +126,6 @@
   },
   "slug": "filebrowser",
   "udev": true,
-  "url": "https://github.com/alexbelgium/hassio-addons",
+  "url": "https://gh-proxy.com/github.com/alexbelgium/hassio-addons",
   "version": "2.23.0_14"
 }

@@ -21,7 +21,7 @@
   "slug": "5etools",
   "startup": "services",
   "upstream": "latest",
-  "url": "https://github.com/jdeath/homeassistant-addons",
+  "url": "https://gh-proxy.com/github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
   "panel_admin": false,
   "ingress": true,

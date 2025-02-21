@@ -91,6 +91,6 @@
   "slug": "elasticsearch",
   "startup": "services",
   "udev": true,
-  "url": "https://github.com/alexbelgium/hassio-addons/tree/master/elasticsearch",
+  "url": "https://gh-proxy.com/github.com/alexbelgium/hassio-addons/tree/master/elasticsearch",
   "version": "8.14.3"
 }

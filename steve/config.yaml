@@ -2,7 +2,7 @@ name: SteVe
 version: 2.0.20
 slug: steve
 description: OCPP server for EV charging stations
-url: https://github.com/erik73/addon-steve
+url: https://gh-proxy.com/github.com/erik73/addon-steve
 arch:
 - aarch64
 - amd64

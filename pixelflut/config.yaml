@@ -2,8 +2,8 @@ name: Pixelflut
 version: 1.2.2-migrate
 slug: pixelflut
 panel_icon: mdi:waves
-description: 🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository
-url: https://github.com/Poeschl/Hassio-Addons/tree/main/pixelflut
+description: 🚨 Addons are moved to https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/repository
+url: https://gh-proxy.com/github.com/Poeschl/Hassio-Addons/tree/main/pixelflut
 ingress: true
 ingress_port: 6080
 ingress_entry: vnc.html?autoconnect=true

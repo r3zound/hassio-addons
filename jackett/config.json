@@ -110,7 +110,7 @@
   },
   "slug": "jackett_nas",
   "udev": true,
-  "url": "https://github.com/alexbelgium/hassio-addons/tree/master/jackett",
+  "url": "https://gh-proxy.com/github.com/alexbelgium/hassio-addons/tree/master/jackett",
   "version": "0.22.1425",
   "webui": "http://[HOST]:[PORT:9117]"
 }

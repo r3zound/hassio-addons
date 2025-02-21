@@ -3,7 +3,7 @@ version: 1.5.2
 slug: piper
 name: Piper
 description: Text-to-speech with Piper
-url: https://github.com/home-assistant/addons/blob/master/piper
+url: https://gh-proxy.com/github.com/home-assistant/addons/blob/master/piper
 arch:
   - amd64
   - aarch64

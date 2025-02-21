@@ -144,7 +144,7 @@
   "slug": "webtop-kde",
   "tmpfs": true,
   "udev": true,
-  "url": "https://github.com/alexbelgium/hassio-addons",
+  "url": "https://gh-proxy.com/github.com/alexbelgium/hassio-addons",
   "version": "4.16-r0-ls95-3",
   "video": true
 }

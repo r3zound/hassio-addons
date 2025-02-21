@@ -2,7 +2,7 @@ name: Readarr
 version: 0.3.1
 slug: readarr
 description: Book Manager and Automation (Sonarr for Ebooks)
-url: https://github.com/hassio-addons/addon-readarr/tree/main/README.md
+url: https://gh-proxy.com/github.com/hassio-addons/addon-readarr/tree/main/README.md
 codenotary: codenotary@frenck.dev
 webui: http://[HOST]:[PORT:8787]
 init: false

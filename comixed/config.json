@@ -90,7 +90,7 @@
   },
   "slug": "comixed",
   "udev": true,
-  "url": "https://github.com/alexbelgium/hassio-addons",
+  "url": "https://gh-proxy.com/github.com/alexbelgium/hassio-addons",
   "version": "1.4",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:7171]"
 }

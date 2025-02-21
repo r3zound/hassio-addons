@@ -1,43 +1,30 @@
-ARG BUILD_FROM
-FROM $BUILD_FROM AS BUILD
+FROM mitmproxy/mitmproxy
+ENTRYPOINT ["docker-entrypoint.sh"]
+CMD ["mitmweb", "--set", "web_host=0.0.0.0","--set","confdir=/config"]
 
-RUN apk add --no-cache \
-        python3=3.8.10-r0  \
-        python3-dev=3.8.10-r0 \
-        py3-pip=20.1.1-r0 \
-        py3-wheel=0.34.2-r1 \
-        py3-six=1.15.0-r0 \
-        py3-parsing=2.4.7-r0 \
-        py3-certifi=2020.4.5.1-r0 \
-        py3-setuptools=47.0.0-r0 \
-        py3-cryptography=2.9.2-r0 \
-        py3-brotli=1.0.9-r1 \
-        py3-sortedcontainers=2.1.0-r3 \
-        py3-tornado=6.0.4-r0 \
-        py3-urwid=2.1.0-r0 \
-        py3-ruamel.yaml.clib=0.2.0-r0 \
-        build-base=0.5-r2 \
-        libffi=3.3-r2 \
-        libffi-dev=3.3-r2 \
-        libstdc++=9.3.0-r2 \
-        openssl=1.1.1n-r0 \
-        openssl-dev=1.1.1n-r0 &&\
-    pip3 install --no-cache-dir --user --upgrade mitmproxy==5.1.1
-
-
-FROM $BUILD_FROM AS RUNNING
-
-RUN apk add --no-cache \
-        python3=3.8.10-r0 \
-        ca-certificates=20211220-r0 \
-        haproxy=2.2.22-r0 \
-    && rm -rf /var/cache/apk/* /tmp/*
-
-COPY --from=BUILD /root/.local /root/.local
-COPY --from=BUILD /usr/lib/python3.8/site-packages /usr/lib/python3.8/site-packages
-
-ENV PATH /root/.local/bin:$PATH
-
-ENTRYPOINT [ "/init" ]
-CMD []
-COPY root /
+### LABELS
+ARG BUILD_ARCH
+ARG BUILD_DATE
+ARG BUILD_DESCRIPTION
+ARG BUILD_NAME
+ARG BUILD_REF
+ARG BUILD_REPOSITORY
+ARG BUILD_VERSION
+LABEL \
+    io.hass.name="${BUILD_NAME}" \
+    io.hass.description="${BUILD_DESCRIPTION}" \
+    io.hass.arch="${BUILD_ARCH}" \
+    io.hass.type="addon" \
+    io.hass.version=${BUILD_VERSION} \
+    maintainer="jdeath (https://gh-proxy.com/github.com/jdeath)" \
+    org.opencontainers.image.title="${BUILD_NAME}" \
+    org.opencontainers.image.description="${BUILD_DESCRIPTION}" \
+    org.opencontainers.image.vendor="Home Assistant Add-ons" \
+    org.opencontainers.image.authors="jdeath (https://gh-proxy.com/github.com/jdeath)" \
+    org.opencontainers.image.licenses="MIT" \
+    org.opencontainers.image.url="https://gh-proxy.com/github.com/jdeath" \
+    org.opencontainers.image.source="https://gh-proxy.com/github.com/${BUILD_REPOSITORY}" \
+    org.opencontainers.image.documentation="https://gh-proxy.com/github.com/${BUILD_REPOSITORY}/blob/main/README.md" \
+    org.opencontainers.image.created=${BUILD_DATE} \
+    org.opencontainers.image.revision=${BUILD_REF} \
+    org.opencontainers.image.version=${BUILD_VERSION}

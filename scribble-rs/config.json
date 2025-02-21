@@ -17,7 +17,7 @@
   "slug": "scribble-rs",
   "startup": "services",
   "upstream": "1.0",
-  "url": "https://github.com/jdeath/homeassistant-addons",
+  "url": "https://gh-proxy.com/github.com/jdeath/homeassistant-addons",
   "version": "v0.9.3",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
   "ingress": false

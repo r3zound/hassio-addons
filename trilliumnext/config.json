@@ -26,7 +26,7 @@
   "slug": "triliumnext",
   "startup": "services",
   "upstream": "v0.91.6",
-  "url": "https://github.com/jdeath/homeassistant-addons",
+  "url": "https://gh-proxy.com/github.com/jdeath/homeassistant-addons",
   "version": "v0.91.6",
   "ingress": true,
   "ingress_port": 8080,

@@ -2,8 +2,8 @@ name: VNC Viewer
 version: 1.6.2-migrate
 slug: vnc
 panel_icon: mdi:remote-desktop
-description: 🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository
-url: https://github.com/Poeschl/Hassio-Addons/tree/main/vnc-viewer
+description: 🚨 Addons are moved to https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/repository
+url: https://gh-proxy.com/github.com/Poeschl/Hassio-Addons/tree/main/vnc-viewer
 ingress: true
 ingress_port: 6080
 ingress_entry: vnc.html?autoconnect=true

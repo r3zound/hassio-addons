@@ -45,7 +45,7 @@
     "STORAGE_FOLDER": "str?"
   },
   "slug": "linkwarden",
-  "url": "https://github.com/alexbelgium/hassio-addons/tree/master/linkwarden",
+  "url": "https://gh-proxy.com/github.com/alexbelgium/hassio-addons/tree/master/linkwarden",
   "version": "2.9.3-2",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:3000]"
 }

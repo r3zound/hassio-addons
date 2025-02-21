@@ -31,7 +31,7 @@
     "GEMINI_API_KEY": "str?"
   },
   "slug": "immich_power_tools",
-  "url": "https://github.com/alexbelgium/hassio-addons",
+  "url": "https://gh-proxy.com/github.com/alexbelgium/hassio-addons",
   "version": "0.14.0-4",
   "webui": "http://[HOST]:[PORT:3000]"
 }

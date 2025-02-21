@@ -37,7 +37,7 @@
   "slug": "flatnotes",
   "startup": "application",
   "upstream": "1.0",
-  "url": "https://github.com/jdeath/homeassistant-addons/tree/main/flatnotes",
+  "url": "https://gh-proxy.com/github.com/jdeath/homeassistant-addons/tree/main/flatnotes",
   "version": "v5.4.1",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
   "init": false,

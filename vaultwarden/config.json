@@ -25,7 +25,7 @@
   "slug": "vaultwarden",
   "startup": "services",
   "upstream": "1.33.2",
-  "url": "https://github.com/jdeath/homeassistant-addons",
+  "url": "https://gh-proxy.com/github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:80]",
   "ingress": true,
   "ingress_port": 80

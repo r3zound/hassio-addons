@@ -1,8 +1,8 @@
 name: ICantBelieveItsNotValetudo
 version: 4.1.0-migrate
 slug: icantbelieveitsnotvaletudo
-description: 🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository
-url: https://github.com/Poeschl/Hassio-Addons/tree/main/ICantBelieveItsNotValetudo
+description: 🚨 Addons are moved to https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/repository
+url: https://gh-proxy.com/github.com/Poeschl/Hassio-Addons/tree/main/ICantBelieveItsNotValetudo
 arch:
   - armv7
   - aarch64

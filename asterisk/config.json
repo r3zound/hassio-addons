@@ -2,8 +2,8 @@
   "name": "Asterisk",
   "version": "1.1.1-migrate",
   "slug": "asterisk",
-  "description": "🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository",
-  "url": "https://github.com/Poeschl/Hassio-Addons/tree/main/asterisk",
+  "description": "🚨 Addons are moved to https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/repository",
+  "url": "https://gh-proxy.com/github.com/Poeschl/Hassio-Addons/tree/main/asterisk",
   "arch": [
     "armv7",
     "armhf",

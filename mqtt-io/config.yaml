@@ -3,7 +3,7 @@ version: 0.4.0
 slug: mqtt-io
 description: Expose GPIO modules and digital sensors via MQTT for remote control and
   monitoring.
-url: https://github.com/hassio-addons/addon-mqtt-io
+url: https://gh-proxy.com/github.com/hassio-addons/addon-mqtt-io
 codenotary: codenotary@frenck.dev
 arch:
 - aarch64

@@ -27,7 +27,7 @@
   "slug": "emulatorjs",
   "startup": "services",
   "upstream": "1.0",
-  "url": "https://github.com/jdeath/homeassistant-addons",
+  "url": "https://gh-proxy.com/github.com/jdeath/homeassistant-addons",
   "version": "1.9.2-ls157",
   "panel_admin": false,
   "ingress": true,

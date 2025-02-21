@@ -2,7 +2,7 @@ name: UniFi Network Application
 version: 4.0.2
 slug: unifi
 description: Manage your UniFi network using a web browser
-url: https://github.com/hassio-addons/addon-unifi
+url: https://gh-proxy.com/github.com/hassio-addons/addon-unifi
 codenotary: codenotary@frenck.dev
 webui: https://[HOST]:[PORT:8443]
 startup: services

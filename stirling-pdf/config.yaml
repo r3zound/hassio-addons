@@ -1,13 +1,13 @@
 name: "Stirling-PDF"
-version: "0.41.0"
-upstream: "0.41.0"
+version: "0.42.0"
+upstream: "0.42.0"
 slug: stirling-pdf
 description: >-
   A robust, locally hosted web-based PDF manipulation tool
 arch:
   - amd64
   - aarch64
-url: "https://github.com/jdeath/homeassistant-addons"
+url: "https://gh-proxy.com/github.com/jdeath/homeassistant-addons"
 ports:
   8080/tcp: 8080 
 ports_description:

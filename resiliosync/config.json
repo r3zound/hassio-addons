@@ -115,6 +115,6 @@
   },
   "slug": "resiliosync",
   "udev": true,
-  "url": "https://github.com/tyjtyj/hassio-addons",
+  "url": "https://gh-proxy.com/github.com/tyjtyj/hassio-addons",
   "version": "3.0.0.1409"
 }

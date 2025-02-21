@@ -33,7 +33,7 @@
   "slug": "geoipupdate",
   "startup": "services",
   "upstream": "v7.1.0",
-  "url": "https://github.com/jdeath/homeassistant-addons/geoipupdate",
+  "url": "https://gh-proxy.com/github.com/jdeath/homeassistant-addons/geoipupdate",
   "version": "v7.1.0",
   "ingress": false
 }

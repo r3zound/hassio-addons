@@ -1,8 +1,8 @@
 name: pigpio
 version: 1.5.3-migrate
 slug: pigpio
-description: 🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository
-url: https://github.com/Poeschl/Hassio-Addons/tree/main/pigpio
+description: 🚨 Addons are moved to https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/repository
+url: https://gh-proxy.com/github.com/Poeschl/Hassio-Addons/tree/main/pigpio
 arch:
   - armhf
   - armv7

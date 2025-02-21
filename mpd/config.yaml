@@ -2,8 +2,8 @@ name: MPD
 version: 1.7.3-migrate
 slug: mpd
 panel_icon: mdi:music-circle
-description: 🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository
-url: https://github.com/Poeschl/Hassio-Addons/tree/main/mpd
+description: 🚨 Addons are moved to https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/repository
+url: https://gh-proxy.com/github.com/Poeschl/Hassio-Addons/tree/main/mpd
 ingress: true
 ingress_port: 6680
 arch:

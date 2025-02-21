@@ -7,7 +7,7 @@ description: >-
 arch:
   - amd64
   - aarch64
-url: "https://github.com/jdeath/homeassistant-addons"
+url: "https://gh-proxy.com/github.com/jdeath/homeassistant-addons"
 ports:
   3111/tcp: 3111 
 ports_description:

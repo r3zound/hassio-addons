@@ -105,7 +105,7 @@
   },
   "slug": "booksonic-air_nas",
   "udev": true,
-  "url": "https://github.com/alexbelgium/hassio-addons/tree/master/booksonic_air",
+  "url": "https://gh-proxy.com/github.com/alexbelgium/hassio-addons/tree/master/booksonic_air",
   "version": "2201.1.0",
   "webui": "http://[HOST]:[PORT:4040]"
 }

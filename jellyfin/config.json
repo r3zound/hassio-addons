@@ -127,7 +127,7 @@
   },
   "slug": "jellyfin",
   "udev": true,
-  "url": "https://github.com/alexbelgium/hassio-addons",
+  "url": "https://gh-proxy.com/github.com/alexbelgium/hassio-addons",
   "version": "10.10.5",
   "video": true
 }

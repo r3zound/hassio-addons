@@ -3,7 +3,7 @@ version: 0.15.9
 slug: jupyterlablite
 description: Create documents containing live code, equations, visualizations, and
   explanatory text
-url: https://github.com/hassio-addons/addon-jupyterlab
+url: https://gh-proxy.com/github.com/hassio-addons/addon-jupyterlab
 codenotary: codenotary@frenck.dev
 ingress: true
 panel_icon: mdi:flask-outline

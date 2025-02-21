@@ -146,7 +146,7 @@
   ],
   "slug": "immich",
   "udev": true,
-  "url": "https://github.com/alexbelgium/hassio-addons",
+  "url": "https://gh-proxy.com/github.com/alexbelgium/hassio-addons",
   "usb": true,
   "version": "1.126.1-14",
   "video": true,

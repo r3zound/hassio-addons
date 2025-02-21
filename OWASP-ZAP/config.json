@@ -3,8 +3,8 @@
   "name": "OWASP ZAP",
   "version": "2.2.0-migrate",
   "slug": "owasp_zap",
-  "description": "🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository",
-  "url": "https://github.com/Poeschl/Hassio-Addons/tree/main/OWASP-ZAP",
+  "description": "🚨 Addons are moved to https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/repository",
+  "url": "https://gh-proxy.com/github.com/Poeschl/Hassio-Addons/tree/main/OWASP-ZAP",
   "arch": [
     "armv7",
     "amd64"

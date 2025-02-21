@@ -134,7 +134,7 @@
   ],
   "slug": "seafile",
   "udev": true,
-  "url": "https://github.com/alexbelgium/hassio-addons/tree/master/seafile",
+  "url": "https://gh-proxy.com/github.com/alexbelgium/hassio-addons/tree/master/seafile",
   "version": "testing",
   "webui": "http://[HOST]:[PORT:8000]"
 }

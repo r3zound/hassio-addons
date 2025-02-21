@@ -23,5 +23,5 @@
   "slug": "msrewardsfarmer",
   "startup": "services",
   "upstream": "1.1.0",
-  "url": "https://github.com/jdeath/homeassistant-addons"
+  "url": "https://gh-proxy.com/github.com/jdeath/homeassistant-addons"
 }

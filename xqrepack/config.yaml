@@ -4,7 +4,7 @@ slug: xqrepack
 description:
   These scripts allow you to modify the Xiaomi R3600 / RM1800 firmware
   image to make sure SSH and UART access is always enabled
-url: https://github.com/FaserF/hassio-addons/tree/master/xqrepack
+url: https://gh-proxy.com/github.com/FaserF/hassio-addons/tree/master/xqrepack
 arch:
   - armhf
   - armv7

@@ -23,7 +23,7 @@
   "slug": "ladder",
   "startup": "services",
   "upstream": "v0.0.21",
-  "url": "https://github.com/jdeath/homeassistant-addons",
+  "url": "https://gh-proxy.com/github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
   "ingress": false
 }

@@ -1,8 +1,8 @@
 name: rsync local
 version: 1.7.1-migrate
 slug: rsync-local
-description: 🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository
-url: https://github.com/Poeschl/Hassio-Addons/tree/main/rsync-local
+description: 🚨 Addons are moved to https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/repository
+url: https://gh-proxy.com/github.com/Poeschl/Hassio-Addons/tree/main/rsync-local
 arch:
   - armhf
   - armv7

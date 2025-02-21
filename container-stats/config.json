@@ -3,8 +3,8 @@
   "name": "Docker Container Stats",
   "version": "1.5.0-migrate",
   "slug": "container-stats",
-  "description": "🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository",
-  "url": "https://github.com/Poeschl/Hassio-Addons/tree/main/container-stats",
+  "description": "🚨 Addons are moved to https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/repository",
+  "url": "https://gh-proxy.com/github.com/Poeschl/Hassio-Addons/tree/main/container-stats",
   "arch": [
     "armhf",
     "armv7",

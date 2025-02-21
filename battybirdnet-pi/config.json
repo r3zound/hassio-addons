@@ -119,7 +119,7 @@
   "slug": "battybirdnet-pi",
   "tmpfs": true,
   "udev": true,
-  "url": "https://github.com/alexbelgium/hassio-addons/tree/master/battybirdnet-pi",
+  "url": "https://gh-proxy.com/github.com/alexbelgium/hassio-addons/tree/master/battybirdnet-pi",
   "usb": true,
   "version": "0.95",
   "video": true

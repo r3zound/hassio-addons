@@ -3,7 +3,7 @@ version: 3.0.1
 slug: mailserver
 description: Postfix and Dovecot mail server for Home Assistant, with Postfix Admin
   web interface
-url: https://github.com/erik73/hassio-addons
+url: https://gh-proxy.com/github.com/erik73/hassio-addons
 arch:
 - aarch64
 - amd64

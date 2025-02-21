@@ -4,7 +4,7 @@ breaking_versions: [5.3.0]
 slug: letsencrypt
 name: Let's Encrypt
 description: Manage certificate from Let's Encrypt
-url: https://github.com/home-assistant/addons/tree/master/letsencrypt
+url: https://gh-proxy.com/github.com/home-assistant/addons/tree/master/letsencrypt
 arch:
   - armhf
   - armv7

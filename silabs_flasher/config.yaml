@@ -4,7 +4,7 @@ slug: silabs_flasher
 name: Silicon Labs Flasher
 description: Silicon Labs firmware flasher add-on
 url: >
-  https://github.com/home-assistant/addons/tree/master/silabs_flasher
+  https://gh-proxy.com/github.com/home-assistant/addons/tree/master/silabs_flasher
 arch:
   - aarch64
   - amd64

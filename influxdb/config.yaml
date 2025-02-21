@@ -2,7 +2,7 @@ name: InfluxDB
 version: 5.0.2
 slug: influxdb
 description: Scalable datastore for metrics, events, and real-time analytics
-url: https://github.com/hassio-addons/addon-influxdb
+url: https://gh-proxy.com/github.com/hassio-addons/addon-influxdb
 codenotary: codenotary@frenck.dev
 ingress: true
 ingress_port: 1337

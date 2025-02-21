@@ -24,7 +24,7 @@
   "slug": "iclouddownloader",
   "startup": "services",
   "upstream": "1.26.1",
-  "url": "https://github.com/jdeath/homeassistant-addons/tree/main/iclouddownloader",
+  "url": "https://gh-proxy.com/github.com/jdeath/homeassistant-addons/tree/main/iclouddownloader",
   "version": "1.26.1",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
   "ingress": false,

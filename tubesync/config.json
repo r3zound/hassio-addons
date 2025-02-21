@@ -24,7 +24,7 @@
   "slug": "tubesync",
   "startup": "services",
   "upstream": "1.0",
-  "url": "https://github.com/jdeath/homeassistant-addons/tree/main/tubesync",
+  "url": "https://gh-proxy.com/github.com/jdeath/homeassistant-addons/tree/main/tubesync",
   "version": "v0.13.7",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:4848]",
   "init": false,

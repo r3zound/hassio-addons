@@ -2,7 +2,7 @@ name: Folding@home
 version: 0.7.2
 slug: foldingathome
 description: Fighting disease with a world wide distributed super computer
-url: https://github.com/hassio-addons/addon-foldingathome
+url: https://gh-proxy.com/github.com/hassio-addons/addon-foldingathome
 codenotary: codenotary@frenck.dev
 webui: http://[HOST]:[PORT:7396]
 arch:

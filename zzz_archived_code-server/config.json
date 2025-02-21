@@ -105,7 +105,7 @@
   },
   "slug": "code-server",
   "udev": true,
-  "url": "https://github.com/alexbelgium/hassio-addons/tree/master/coder-server",
+  "url": "https://gh-proxy.com/github.com/alexbelgium/hassio-addons/tree/master/coder-server",
   "version": "4.96.4",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8443]"
 }

@@ -79,7 +79,7 @@
   },
   "slug": "flaresolverr",
   "udev": true,
-  "url": "https://github.com/alexbelgium/hassio-addons",
+  "url": "https://gh-proxy.com/github.com/alexbelgium/hassio-addons",
   "version": "3.3.21",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8191]"
 }
