@@ -1,5 +1,5 @@
 
-#! /bin/ash
+#!/bin/sh
 
 
 # 获取 JSON 内容并提取数据
