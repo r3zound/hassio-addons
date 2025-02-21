@@ -21,5 +21,32 @@
   "host_network": true,
   "map": {
     "config": "rw"
+  },
+  "options": {
+    "easytier": {
+      "instance_name": "easytier",
+      "listeners": [
+        "tcp://0.0.0.0:11010",
+        "udp://0.0.0.0:11010",
+        "wg://0.0.0.0:11011"
+      ],
+      "instance_id": "efd108d6-0b2f-4d4c-9b97-81883f1f5152",
+      "rpc_portal": "0.0.0.0:0",
+      "network_name": "easytier",
+      "network_secret": "easytier",
+      "uri": "tcp://public.easytier.top:11010",
+      "cidr": "10.0.0.0/24"
+    }
+  },
+  "schema": {
+    "easytier": {
+      "instance_name": "str?",
+      "instance_id": "str?",
+      "rpc_portal": "str?",
+      "network_name": "str?",
+      "network_secret": "str?",
+      "uri": "str?",
+      "cidr": "str?"
+    }
   }
 }

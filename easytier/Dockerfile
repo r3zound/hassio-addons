@@ -1,5 +1,9 @@
 # 使用基础镜像
 FROM docker.1ms.run/easytier/easytier:v2.2.2
 
+COPY run.sh /run.sh
+RUN chmod a+x /run.sh
+
+RUN apk add --no-cache jq
 # 设置容器启动时执行的命令
-CMD ["-c", "/config/addons_config/easytier/config.yaml"]
+CMD ["/run.sh"]

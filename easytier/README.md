@@ -13,7 +13,7 @@
 安装完成后，您需要对 EasyTier 进行配置。请按照以下步骤操作：
 
 1. 访问 [配置生成器](https://easytier.cn/web/index.html#/config_generator) 生成您的配置文件。
-2. 将生成的配置文件放置于 `/config/addons_config/easytier/config.yaml`。
+2. 将生成的配置按格式填入配置标签里。
 3. 根据您的网络环境，编辑配置文件中的相关参数。
 
 ## 启动 EasyTier
