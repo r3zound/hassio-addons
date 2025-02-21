@@ -30,7 +30,7 @@ uri = "$uri"
 cidr = "$cidr"
 
 [flags]
-dev_name = "tun"
+
 EOF
 
 
