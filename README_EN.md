@@ -39,6 +39,8 @@ Excellent third-party libraries:
 - 🛠️ [**Erik73 Addons**](https://github.com/erik73/hassio-addons): Addons by Erik73
 - 📦 [**Einschmidt Addons**](https://github.com/einschmidt/hassio-addons): Addons by Einschmidt
 - 🚀 [**FaserF Addons**](https://github.com/FaserF/hassio-addons): Addons by FaserF
+- 🖥️ [**Hass Panel**](https://github.com/mrtian2016/hass-panel): A web panel for managing Home Assistant
+
 
 You can also click the button below to automatically add the repository (choose one):
 

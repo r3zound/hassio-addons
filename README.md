@@ -51,6 +51,8 @@
 - 🛠️ [**Erik73 Addons**](https://github.com/erik73/hassio-addons): Erik73 的加载项
 - 📦 [**Einschmidt Addons**](https://github.com/einschmidt/hassio-addons): Einschmidt 的加载项
 - 🚀 [**FaserF Addons**](https://github.com/FaserF/hassio-addons): FaserF 的加载项
+- 🖥️ [**Hass Panel**](https://github.com/mrtian2016/hass-panel): 一个用于管理 Home Assistant 的 Web 面板
+
 
 ## 📥 安装指南
 
