@@ -1,4 +1,12 @@
 # Changelog
+## 1.6.1
+- enabled the usage of own GitHub images
+
+## 1.6.0
+- Prepared using own GitHub image for backups & addon building
+-> This lowers the backup sizes for this addon
+-> Not yet activated, only everything has been prepared
+
 ## 1.5.6
 - Automatically updated addon-base to version v17.2.1
 

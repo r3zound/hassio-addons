@@ -1,7 +1,7 @@
 name: OpenSSL
-version: 1.5.23
+version: 1.6.1
 slug: openssl
-description: OpenSSL - Self signed certificates
+description: Generate self signed certificates
 url: https://gh-proxy.com/github.com/FaserF/hassio-addons/tree/master/openssl
 arch:
   - armhf
@@ -9,11 +9,9 @@ arch:
   - aarch64
   - amd64
   - i386
-startup: application
-boot: auto
+image: ghcr.nju.edu.cn/faserf/openssl-{arch}
 map:
   - ssl:rw
-ingress: false
 init: false
 options:
   website_name:

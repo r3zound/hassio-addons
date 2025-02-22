@@ -1,7 +1,7 @@
 name: bt-mqtt-gateway
-version: 1.5.5
+version: 1.6.0
 slug: bt-mqtt-gateway
-description: Bluetooth-MQTT-Gateway
+description: Bluetooth MQTT Gateway Server
 url: https://gh-proxy.com/github.com/FaserF/hassio-addons/tree/master/bt-mqtt-gateway
 host_network: true
 arch:
@@ -13,12 +13,10 @@ arch:
 startup: services
 services:
   - mqtt:want
-boot: auto
 map:
   - share
 init: false
 host_dbus: true
-ingress: false
 panel_icon: mdi:bluetooth-transfer
 options:
   config_path: "/share/bt-mqtt-gateway.yaml"

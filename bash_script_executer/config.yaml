@@ -1,7 +1,7 @@
 name: Bash Script Executer
-version: 1.6.23
+version: 1.7.1
 slug: bashscriptexecuter
-description: Execute your own bash scripts via Docker Container
+description: Execute your own bash scripts, inside this Homeassistant Addon
 url: https://gh-proxy.com/github.com/FaserF/hassio-addons/tree/master/bash_script_executer
 arch:
   - armhf
@@ -9,8 +9,7 @@ arch:
   - aarch64
   - amd64
   - i386
-startup: application
-boot: auto
+image: ghcr.nju.edu.cn/faserf/bash_script_executer-{arch}
 map:
   - share:rw
 init: false
