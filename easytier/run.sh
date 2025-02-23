@@ -1,6 +1,6 @@
 
-#!/bin/ash
-set -e
+#!/bin/sh
+
 
 # 获取 JSON 内容并提取数据
 hostname=$(hostname)
