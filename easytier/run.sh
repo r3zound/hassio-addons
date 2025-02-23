@@ -1,5 +1,5 @@
 
-#!/bin/sh
+#!/bin/ash
 set -e
 
 # 获取 JSON 内容并提取数据
