@@ -35,4 +35,4 @@ EOF
 ls /data -lh
 cat /data/config.yaml
 echo "Starting EasyTier"
-easytier-core -c /data/config.yaml
+exec easytier-core -c /data/config.yaml
