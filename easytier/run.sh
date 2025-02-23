@@ -1,6 +1,6 @@
 
 #!/bin/sh
-
+set -e
 
 # 获取 JSON 内容并提取数据
 hostname=$(hostname)
@@ -32,8 +32,7 @@ cidr = "$cidr"
 [flags]
 
 EOF
-
+ls /data -lh
 cat /data/config.yaml
-killall -9 easytier-core
 echo "Starting EasyTier"
 easytier-core -c /data/config.yaml
