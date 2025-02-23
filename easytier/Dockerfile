@@ -6,4 +6,4 @@ RUN chmod a+x /run.sh
 
 RUN apk add --no-cache jq
 # 设置容器启动时执行的命令
-ENTRYPOINT ["/run.sh"]
+CMD ["/bin/ash", "/run.sh"]
