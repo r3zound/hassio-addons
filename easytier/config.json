@@ -25,11 +25,6 @@
   "options": {
     "easytier": {
       "instance_name": "easytier",
-      "listeners": [
-        "tcp://0.0.0.0:11010",
-        "udp://0.0.0.0:11010",
-        "wg://0.0.0.0:11011"
-      ],
       "instance_id": "efd108d6-0b2f-4d4c-9b97-81883f1f5152",
       "rpc_portal": "0.0.0.0:0",
       "network_name": "easytier",
