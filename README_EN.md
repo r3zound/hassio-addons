@@ -1,4 +1,4 @@
-[English Version](README_EN.md) | [中文版本](README.md)
+[English](README_EN.md) | [中文](README.md)
 
 # 🔔 Home Assistant Addon
 
