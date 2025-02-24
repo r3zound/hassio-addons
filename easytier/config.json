@@ -30,7 +30,8 @@
       "network_name": "easytier",
       "network_secret": "easytier",
       "uri": "tcp://public.easytier.top:11010",
-      "cidr": "10.0.0.0/24"
+      "cidr": "10.0.0.0/24",
+      "dhcp": true
     }
   },
   "schema": {
@@ -41,7 +42,8 @@
       "network_name": "str?",
       "network_secret": "str?",
       "uri": "str?",
-      "cidr": "str?"
+      "cidr": "str?",
+      "dhcp": "bool?"
     }
   }
 }
