@@ -52,6 +52,8 @@
 - 📦 [**Einschmidt Addons**](https://github.com/einschmidt/hassio-addons): Einschmidt 的加载项
 - 🚀 [**FaserF Addons**](https://github.com/FaserF/hassio-addons): FaserF 的加载项
 - 🖥️ [**Hass Panel**](https://github.com/mrtian2016/hass-panel): 一个用于管理 Home Assistant 的 Web 面板
+- 🛠️ [**HACS Addons**](https://github.com/hacs/addons): HACS 的加载项，用于扩展 Home Assistant 的功能
+
 
 
 ## 📥 安装指南
