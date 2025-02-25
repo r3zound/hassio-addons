@@ -1,0 +1,15 @@
+---
+build_from:
+  aarch64: "ghcr.nju.edu.cn/linuxserver/healthchecks:3.9.20251230"
+  amd64: "ghcr.nju.edu.cn/linuxserver/healthchecks:3.9.20251230"
+labels:
+  maintainer: "bluemaex <homeassistant@blmx.de>"
+  org.opencontainers.image.authors: "bluemaex <homeassistant@blmx.de>"
+  org.opencontainers.image.licenses: "MIT License"
+  org.opencontainers.image.title: "Home Assistant Unofficial Add-on: healthchecks"
+  org.opencontainers.image.url: https://gh-proxy.com/github.com/bluemaex/home-assistant-addons
+  org.opencontainers.image.source: https://gh-proxy.com/github.com/bluemaex/home-assistant-addons/healthchecks
+  org.opencontainers.image.documentation: https://gh-proxy.com/github.com/bluemaex/home-assistant-addons/healthchecks/README.md
+  org.opencontainers.image.created: "2024-10-13T15:26:34Z"
+  org.opencontainers.image.revision: 6eb39baedc7fb48abff91142ab90ec6419127452
+  org.opencontainers.image.version: 3.1.2
