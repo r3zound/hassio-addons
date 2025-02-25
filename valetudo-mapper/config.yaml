@@ -1,14 +1,15 @@
 name: Valetudo Mapper
-version: 1.12.0-migrate
-slug: valetudomapper
-description: 🚨 Addons are moved to https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/repository
-url: https://gh-proxy.com/github.com/Poeschl/Hassio-Addons/tree/main/valetudo-mapper
+version: 1.12.0
+slug: valetudo-mapper
+description: This is a simple companion service for Valetudo RE which generates the
+  map pngs.
+url: https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/valetudo-mapper
 arch:
-  - armhf
-  - armv7
-  - aarch64
-  - amd64
-  - i386
+- armhf
+- armv7
+- aarch64
+- amd64
+- i386
 image: ghcr.nju.edu.cn/poeschl-homeassistant-addons/valetudo-mapper-{arch}
 init: false
 ports:
@@ -21,7 +22,7 @@ ingress_entry: api/map/image
 panel_title: Valetudo RE Floorplan
 panel_icon: mdi:floor-plan
 map:
-  - ssl
+- ssl
 schema:
   mapSettings:
     drawPath: bool?
@@ -78,9 +79,8 @@ options:
     topicPrefix: valetudo
     autoconfPrefix: homeassistant
     broker_url: mqtt://user:pass@foobar.example
-    caPath: ""
+    caPath: ''
     mapDataTopic: valetudo/rockrobo/map_data
     minMillisecondsBetweenMapUpdates: 10000
     publishMapImage: true
     publishMapData: false
-homeassistant_api: true

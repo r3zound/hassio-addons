@@ -1,18 +1,18 @@
 name: Pixelflut
-version: 1.2.2-migrate
+version: 1.2.2
 slug: pixelflut
 panel_icon: mdi:waves
-description: 🚨 Addons are moved to https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/repository
-url: https://gh-proxy.com/github.com/Poeschl/Hassio-Addons/tree/main/pixelflut
+description: Bring a Pixelflut canvas into your Smart Home
+url: https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/pixelflut
 ingress: true
 ingress_port: 6080
 ingress_entry: vnc.html?autoconnect=true
 arch:
-  - armv7
-  - armhf
-  - aarch64
-  - amd64
-  - i386
+- armv7
+- armhf
+- aarch64
+- amd64
+- i386
 image: ghcr.nju.edu.cn/poeschl-homeassistant-addons/pixelflut-{arch}
 init: false
 ports:
@@ -24,11 +24,10 @@ ports_description:
   1235/tcp: Provides json statistics about the running canvas
   5900/tcp: VNC access of the Pixelflut canvas
 options:
-  width: "1280"
-  height: "720"
+  width: '1280'
+  height: '720'
   description: Pixelflut
 schema:
   width: int(0,)
   height: int(0,)
   description: str
-homeassistant_api: true

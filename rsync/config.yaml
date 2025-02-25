@@ -1,14 +1,14 @@
 name: rsync
-version: 1.7.1-migrate
+version: 1.7.2
 slug: rsync
-description: 🚨 Addons are moved to https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/repository
-url: https://gh-proxy.com/github.com/Poeschl/Hassio-Addons/tree/main/rsync
+description: Sync folders to a remote machine via ssh and rsync.
+url: https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/rsync
 arch:
-  - armhf
-  - armv7
-  - aarch64
-  - amd64
-  - i386
+- armhf
+- armv7
+- aarch64
+- amd64
+- i386
 homeassistant: 0.115.0
 boot: manual
 init: false
@@ -16,26 +16,25 @@ image: ghcr.nju.edu.cn/poeschl-homeassistant-addons/rsync-{arch}
 ports: {}
 ports_description: {}
 map:
-  - share:rw
-  - config:rw
-  - backup:rw
-  - addons:rw
-  - ssl:rw
-  - media:rw
+- share:rw
+- config:rw
+- backup:rw
+- addons:rw
+- ssl:rw
+- media:rw
 schema:
   private_key_file: match(^/ssl/.+)
   username: str
   folders:
-    - source: str
-      destination: str
-      options: str?
+  - source: str
+    destination: str
+    options: str?
   remote_host: str
   remote_port: port?
 options:
   private_key_file: /ssl/rsync/id_rsa
   username: user
   folders:
-    - source: /config
-      destination: /home/user
-  remote_host: ""
-homeassistant_api: true
+  - source: /config
+    destination: /home/user
+  remote_host: ''

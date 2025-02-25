@@ -1,3 +1,5 @@
+Note: this is the full changelog of the versions deployed via the [previous mono-repository](https://github.com/Poeschl-HomeAssistant-Addons/repository/tree/41c02f85a6fffb328c21df76ace4e54ad0ee3466).
+
 ## 1.5.0 - 2022-04-05
 
 * 🔼 Update npm/nodejs to `14.19.0-r0`

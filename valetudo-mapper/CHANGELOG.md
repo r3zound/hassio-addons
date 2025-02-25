@@ -1,3 +1,5 @@
+Note: this is the full changelog of the versions deployed via the [previous mono-repository](https://github.com/Poeschl-HomeAssistant-Addons/repository/tree/41c02f85a6fffb328c21df76ace4e54ad0ee3466).
+
 ## 1.12.0 - 2024-01-13
 
 * 🔼 Update Valetudo-Mapper to commit `54aba35` (thanks @gerard33 #442)

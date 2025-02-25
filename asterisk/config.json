@@ -1,9 +1,9 @@
 {
   "name": "Asterisk",
-  "version": "1.1.1-migrate",
+  "version": "1.1.1",
   "slug": "asterisk",
-  "description": "🚨 Addons are moved to https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/repository",
-  "url": "https://gh-proxy.com/github.com/Poeschl/Hassio-Addons/tree/main/asterisk",
+  "description": "(Deprecated) Asterisk is an open source framework for building communications applications. Asterisk turns an ordinary computer into a communications server",
+  "url": "https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/asterisk",
   "arch": [
     "armv7",
     "armhf",
@@ -12,7 +12,10 @@
     "i386"
   ],
   "image": "ghcr.nju.edu.cn/poeschl-homeassistant-addons/asterisk-{arch}",
-  "map": ["share","config"],
+  "map": [
+    "share",
+    "config"
+  ],
   "ports": {
     "5060/tcp": 5060,
     "5060/udp": 5060,
@@ -29,7 +32,8 @@
     "config_files": []
   },
   "schema": {
-    "config_files": ["match(/(share|config)/.+)"]
-  },
-  "homeassistant_api": "true"
+    "config_files": [
+      "match(/(share|config)/.+)"
+    ]
+  }
 }

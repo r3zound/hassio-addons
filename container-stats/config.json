@@ -1,10 +1,9 @@
-
 {
   "name": "Docker Container Stats",
-  "version": "1.5.0-migrate",
+  "version": "1.5.0",
   "slug": "container-stats",
-  "description": "🚨 Addons are moved to https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/repository",
-  "url": "https://gh-proxy.com/github.com/Poeschl/Hassio-Addons/tree/main/container-stats",
+  "description": "(Deprecated) A web interface for viewing historical and current statistics per docker container",
+  "url": "https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/container-stats",
   "arch": [
     "armhf",
     "armv7",
@@ -32,6 +31,5 @@
   },
   "options": {
     "persistent": "true"
-  },
-  "homeassistant_api": "true"
+  }
 }

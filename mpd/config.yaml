@@ -1,25 +1,26 @@
 name: MPD
-version: 1.7.3-migrate
+version: 1.7.5
 slug: mpd
 panel_icon: mdi:music-circle
-description: 🚨 Addons are moved to https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/repository
-url: https://gh-proxy.com/github.com/Poeschl/Hassio-Addons/tree/main/mpd
+description: Music Player Daemon is a free and open source music player. It plays
+  audio files, organizes playlists and maintains a music database
+url: https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/mpd
 ingress: true
 ingress_port: 6680
 arch:
-  - armv7
-  - armhf
-  - aarch64
-  - amd64
-  - i386
+- armv7
+- armhf
+- aarch64
+- amd64
+- i386
 image: ghcr.nju.edu.cn/poeschl-homeassistant-addons/mpd-{arch}
 init: false
 audio: true
 devices:
-  - /dev/snd
+- /dev/snd
 map:
-  - share:rw
-  - media:rw
+- share:rw
+- media:rw
 ports:
   6680/tcp: null
   6600/tcp: 6600
@@ -40,4 +41,3 @@ schema:
   httpd_output: bool
   verbose: bool?
   custom_config: match(/share/mpd/.+)?
-homeassistant_api: true
