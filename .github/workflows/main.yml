@@ -24,7 +24,8 @@ jobs:
           wget -O einschmidt.zip https://github.com/einschmidt/hassio-addons/archive/refs/heads/main.zip &
           wget -O FaserF.zip https://github.com/FaserF/hassio-addons/archive/refs/heads/master.zip &
           wget -O jdeath.zip https://github.com/jdeath/homeassistant-addons/archive/refs/heads/main.zip &
-          wget -O hacs.zip https://github.com/hacs/addons/archive/refs/heads/main.zip
+          wget -O hacs.zip https://github.com/hacs/addons/archive/refs/heads/main.zip &
+          wget -O bluemaes.zip https://github.com/bluemaex/home-assistant-addons/archive/refs/heads/main.zip &
           wait
       - name: extract the addons
         run: |

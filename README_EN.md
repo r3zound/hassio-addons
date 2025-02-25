@@ -41,6 +41,8 @@ Excellent third-party libraries:
 - 🚀 [**FaserF Addons**](https://github.com/FaserF/hassio-addons): Addons by FaserF
 - 🖥️ [**Hass Panel**](https://github.com/mrtian2016/hass-panel): A web panel for managing Home Assistant
 - 🛠️ [**HACS Addons**](https://github.com/hacs/addons): Addons by HACS for extending Home Assistant functionality
+- 🛡️ [**Bluemaex Addons**](https://github.com/bluemaex/home-assistant-addons): Addons by Bluemaex
+
 
 
 
