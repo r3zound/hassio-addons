@@ -15,6 +15,6 @@ panel_icon: 'mdi:application-variable'
 boot: manual
 host_network: true
 options:
-  Authtoken: ""
+  Authtoken: "Authtoken"
 schema:
   Authtoken: str?
