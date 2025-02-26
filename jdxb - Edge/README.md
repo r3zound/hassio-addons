@@ -1,0 +1,34 @@
+# 🌐 节点小宝 - 客户端
+
+**节点小宝** 是一个用于内网穿透服务的 Home Assistant 插件。此版本支持 **amd64**、**i386** 和 **aarch64**。
+
+## ✨ 功能
+
+- ⚙️ **简单易用的配置**
+- 🔄 **支持内网穿透**
+
+## 📥 安装步骤
+
+1. 在 Home Assistant 中，打开 **“Add-ons”** 页面。
+2. 🔍 搜索 **“节点小宝”** 并点击安装。
+3. ▶️ 启动插件。
+4. 在日志里查看配对码
+
+## 📖 使用说明
+
+基础镜像是 **Ubuntu**。  
+[使用说明请按照节点小宝说明使用](https://iepose.com/helpcenter_v3/Docker%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B.html#x86_64)。
+
+## 📜 变更日志
+
+请查看 [CHANGELOG.md](CHANGELOG.md) 以获取更新信息。
+
+## 📄 许可证
+
+本项目遵循 **MIT 许可证**。
+
+📱 扫描下面的二维码，关注我！如有任何问题或建议，欢迎随时留言。
+
+![QR Code](https://gitee.com/desmond_GT/hassio-addons/raw/main/WeChat_QRCode.png)
+
+📱 扫描上面的二维码，关注我！期待与你的交流！
