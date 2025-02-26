@@ -2,6 +2,15 @@
 
 Cpolar 是一个安全的内网穿透工具，专为 Home Assistant 用户设计，帮助您轻松地将本地服务暴露到公网上。无论是家庭自动化的开发测试还是生产环境，Cpolar 都能为您提供稳定可靠的解决方案。
 
+## 🐳 基于官方镜像
+
+本加载项基于 Cpolar 官方 Docker 镜像构建，官方镜像地址：[probezy/cpolar](https://hub.docker.com/r/probezy/cpolar)
+
+官方安装教程参考：[Docker 容器安装 Cpolar](https://www.cpolar.com/blog/docker-container-installation-cpolar)
+
+我们在此基础上进行了优化和适配，使其能够更好地与 Home Assistant 集成，并提供更便捷的配置方式。
+
+
 ## ✨ 特性
 
 - 🔒 **安全性**: Cpolar 提供多种安全机制，确保您的数据传输安全。
