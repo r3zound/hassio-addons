@@ -1,29 +1,30 @@
 # 使用指定的基础镜像
-FROM docker.m.daocloud.io/library/ubuntu:24.10
+FROM docker.m.daocloud.io/library/alpine:3.21.3
 
-# 架构相关变量
+# 定义构建参数
 ARG BUILD_ARCH
-ENV BUILD_ARCH=$BUILD_ARCH
 
-# 定义下载链接的映射
-COPY owjdxb_x86 owjdxb_x86
-COPY owjdxb_a32 owjdxb_a32
-COPY owjdxb_a64 owjdxb_a64
+# 安装所需软件
+RUN apk add --no-cache wget unzip gcompat
 
-# 提取对应架构的下载链接并安装
-# 根据架构选择正确的文件并拷贝
-RUN case $BUILD_ARCH in \
-    amd64) mv /owjdxb_x86 /owjdxb ;; \
-    aarch64) mv /owjdxb_a64 /owjdxb ;; \
-    armhf) mv /owjdxb_a32 /owjdxb ;; \
-    armv7) mv /owjdxb_a32 /owjdxb ;; \
-    i386) mv /owjdxb_x86 /owjdxb ;; \
+# 设置工作目录
+WORKDIR /tmp
+
+# 根据架构下载对应文件
+RUN case "$BUILD_ARCH" in \
+    amd64) wget -O owjdxb.zip https://gh-proxy.com/raw.githubusercontent.com/djhui/hassio-addons/main/jdxb/owjdxb_x86.zip ;; \
+    aarch64) wget -O owjdxb.zip https://gh-proxy.com/raw.githubusercontent.com/djhui/hassio-addons/main/jdxb/owjdxb_a64.zip ;; \
+    armhf) wget -O owjdxb.zip https://gh-proxy.com/raw.githubusercontent.com/djhui/hassio-addons/main/jdxb/owjdxb_a32.zip ;; \
+    armv7) wget -O owjdxb.zip https://gh-proxy.com/raw.githubusercontent.com/djhui/hassio-addons/main/jdxb/owjdxb_a32.zip ;; \
+    i386) wget -O owjdxb.zip https://gh-proxy.com/raw.githubusercontent.com/djhui/hassio-addons/main/jdxb/owjdxb_x86.zip ;; \
     *) echo "Unsupported architecture $BUILD_ARCH" && exit 1 ;; \
     esac && \
-    rm -rf /owjdxb_* && \
-    chmod +x "/owjdxb/bin/owjdxb"
+    unzip owjdxb.zip && \
+    mv owjdxb /owjdxb && \
+    chmod +x "/owjdxb/bin/owjdxb" \
+    && rm -rf /tmp/*
 
-# 复制并设置run.sh脚本
+# 复制并设置 run.sh 脚本
 COPY run.sh /run.sh
 RUN chmod +x /run.sh
 
