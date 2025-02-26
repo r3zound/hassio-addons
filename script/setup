@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-mkdir -p /tmp
-ln -sf /supervisor_data /tmp/supervisor_data
-
-bash devcontainer_bootstrap

@@ -1,5 +1,5 @@
 ---
-url: https://esphome.io/
+url: https://next.esphome.io/
 arch:
 - amd64
 - aarch64
@@ -22,6 +22,7 @@ schema:
   streamer_mode: bool?
   home_assistant_dashboard_integration: bool?
   default_compile_process_limit: int(1,)?
+  esphome_fork: str?
   ssl: bool?
   certfile: str?
   keyfile: str?
@@ -30,10 +31,13 @@ backup_exclude:
 - '*/*/'
 init: false
 startup: services
-name: ESPHome Device Builder
-panel_title: ESPHome Builder
-version: 2025.2.1
-slug: esphome
-description: Build your own smart home devices using ESPHome, no programming experience
-  required.
+name: ESPHome Device Builder (dev)
+panel_title: ESPHome Builder (dev)
+version: 2025.3.0-dev20250226
+slug: esphome-dev
+description: Development version of ESPHome Device Builder
 image: ghcr.nju.edu.cn/esphome/esphome-hassio
+stage: experimental
+advanced: true
+options:
+  home_assistant_dashboard_integration: false

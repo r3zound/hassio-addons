@@ -1,5 +1,5 @@
 ---
-url: https://esphome.io/
+url: https://beta.esphome.io/
 arch:
 - amd64
 - aarch64
@@ -30,10 +30,13 @@ backup_exclude:
 - '*/*/'
 init: false
 startup: services
-name: ESPHome Device Builder
-panel_title: ESPHome Builder
+name: ESPHome Device Builder (beta)
+panel_title: ESPHome Builder (beta)
 version: 2025.2.1
-slug: esphome
-description: Build your own smart home devices using ESPHome, no programming experience
-  required.
+slug: esphome-beta
+description: Beta version of ESPHome Device Builder
 image: ghcr.nju.edu.cn/esphome/esphome-hassio
+stage: experimental
+advanced: true
+options:
+  home_assistant_dashboard_integration: false
