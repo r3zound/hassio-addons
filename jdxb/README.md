@@ -19,6 +19,8 @@
 基础镜像是 **Ubuntu**。  
 [使用说明请按照节点小宝说明使用](https://iepose.com/helpcenter_v3/Docker%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B.html#x86_64)。
 
+1.1.0 版本已经更改了基础静像，大大缩减尺寸，方便空间不足的朋友安装
+
 ## 📜 变更日志
 
 请查看 [CHANGELOG.md](CHANGELOG.md) 以获取更新信息。
