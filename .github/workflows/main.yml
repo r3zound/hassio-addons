@@ -29,6 +29,7 @@ jobs:
           wget -O expaso.zip https://github.com/expaso/hassos-addons/archive/refs/heads/main.zip &
           wget -O blakeblackshear.zip https://github.com/blakeblackshear/frigate-hass-addons/archive/refs/heads/main.zip &
           wget -O music-assistant.zip https://github.com/music-assistant/home-assistant-addon/archive/refs/heads/main.zip &
+          wget -O esphome.zip https://github.com/esphome/home-assistant-addon/archive/refs/heads/main.zip &
           wait
       - name: extract the addons
         run: |
