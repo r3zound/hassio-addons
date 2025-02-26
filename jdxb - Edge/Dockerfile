@@ -5,7 +5,7 @@ FROM docker.m.daocloud.io/library/alpine:3.21.3
 ARG BUILD_ARCH
 
 # 安装所需软件
-RUN apk add --no-cache wget unzip
+RUN apk add --no-cache wget unzip gcompat
 
 # 设置工作目录
 WORKDIR /tmp
@@ -21,7 +21,8 @@ RUN case "$BUILD_ARCH" in \
     esac && \
     unzip owjdxb.zip && \
     mv owjdxb /owjdxb && \
-    chmod +x "/owjdxb/bin/owjdxb"
+    chmod +x "/owjdxb/bin/owjdxb" \
+    && rm -rf /tmp/*
 
 # 复制并设置 run.sh 脚本
 COPY run.sh /run.sh
