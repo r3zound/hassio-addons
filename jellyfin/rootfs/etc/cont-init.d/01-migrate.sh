@@ -14,22 +14,31 @@ if [[ "$LOCATION" == "/share/jellyfin" ]] && [ ! -d /share/jellyfin ] && [ -d /h
     fi
 fi
 
-if [ -d /homeassistant/addons_config/jellyfin_migrated ]; then
-  mkdir -p /config/addons_config
-  ln -sf "$LOCATION" /config/addons_config/jellyfin
-  chown -R "$PUID:$PGID" "$LOCATION"
-fi
-
 # Migration to new /config logic
 if [[ "$LOCATION" == "/config/addons_config/"* ]]; then
     bashio::log.warning "Data folder was $LOCATION, it is migrated to /config/data. The previous folder is renamed to _migrated"    
     LOCATION="${LOCATION/config/homeassistant}"
     mkdir -p /config/data
     if [ -d "$LOCATION" ]; then
-        cp -rf "$LOCATION"/* /config/data/
+        cp -rn "$LOCATION"/* /config/data/
         mv "$LOCATION" "$LOCATION"_migrated
     fi
     bashio::addon.option "data_location" "/config/data"
+fi
+
+# Migrate old folder
+if [[ -d "/homeassistant/addons_config/jellyfin" ]]; then
+    bashio::log.warning "Data folder was found in /config/addons_config/jellyfin, it is migrated to $LOCATION. The previous folder is renamed to _migrated"
+    mkdir -p "$LOCATION"
+    cp -rn "/homeassistant/addons_config/jellyfin/*" "$LOCATION"/
+    mv /homeassistant/addons_config/jellyfin /homeassistant/addons_config/jellyfin_migrated
+fi
+
+# Legacy mode
+if [ -d /homeassistant/addons_config/jellyfin_migrated ]; then
+  mkdir -p /config/addons_config
+  ln -sf "$LOCATION" /config/addons_config/jellyfin
+  chown -R "$PUID:$PGID" "$LOCATION"
 fi
 
 # Migrate autoscripts
