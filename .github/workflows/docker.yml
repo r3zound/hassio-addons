@@ -1,0 +1,74 @@
+name: Extract and Download Docker Image
+
+on: [push]
+
+jobs:
+  extract-and-download-docker-image:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Extract Docker image from build.json
+      id: extract_json
+      run: |
+        if [ -f build.json ]; then
+          docker_image=$(jq -r '.docker_image // empty' build.json)
+          echo "::set-output name=docker_image::$docker_image"
+        fi
+
+    - name: Extract Docker image from build.yaml
+      id: extract_yaml
+      run: |
+        if [ -f build.yaml ]; then
+          docker_image=$(yq e '.docker_image // empty' build.yaml)
+          echo "::set-output name=docker_image::$docker_image"
+        fi
+
+    - name: Extract Docker image from Dockerfile
+      id: extract_dockerfile
+      run: |
+        if [ -f Dockerfile ]; then
+          docker_image=$(grep -oP '(?<=FROM\s)[^ ]+' Dockerfile)
+          echo "::set-output name=docker_image::$docker_image"
+        fi
+
+    - name: Extract Docker image from config.json
+      id: extract_config_json
+      run: |
+        if [ -f config.json ]; then
+          docker_image=$(jq -r '.docker_image // empty' config.json)
+          echo "::set-output name=docker_image::$docker_image"
+        fi
+
+    - name: Extract Docker image from config.yaml
+      id: extract_config_yaml
+      run: |
+        if [ -f config.yaml ]; then
+          docker_image=$(yq e '.docker_image // empty' config.yaml)
+          echo "::set-output name=docker_image::$docker_image"
+        fi
+
+    - name: Download Docker image
+      run: |
+        docker_image="${{ steps.extract_json.outputs.docker_image || steps.extract_yaml.outputs.docker_image || steps.extract_dockerfile.outputs.docker_image || steps.extract_config_json.outputs.docker_image || steps.extract_config_yaml.outputs.docker_image }}"
+        if [ -n "$docker_image" ]; then
+          echo "Downloading Docker image: $docker_image"
+          docker pull "$docker_image"
+          docker save "$docker_image" -o image.tar
+        else
+          echo "No Docker image found."
+        fi
+
+    - name: Commit Docker image to repository
+      run: |
+        if [ -f image.tar ]; then
+          git config --local user.name "github-actions"
+          git config --local user.email "github-actions@github.com"
+          git add image.tar
+          git commit -m "Add downloaded Docker image with exact tag"
+          git push
+        fi
+
+
