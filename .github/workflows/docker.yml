@@ -10,58 +10,77 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Extract Docker image from build.json
-      id: extract_json
+    - name: Detect Architecture
+      id: detect_arch
       run: |
+        arch=$(uname -m)
+        case "$arch" in
+          x86_64) ARCH="amd64" ;;
+          aarch64) ARCH="aarch64" ;;
+          armv7l) ARCH="armv7" ;;
+          armhf) ARCH="armhf" ;;
+          i386) ARCH="i386" ;;
+          *) ARCH="amd64" ;;  # 默认 x86_64
+        esac
+        echo "ARCH=$ARCH" >> $GITHUB_ENV
+
+    - name: Extract Docker Image
+      id: extract_docker_image
+      run: |
+        docker_image=""
+
+        # 先检查 build.json
         if [ -f build.json ]; then
           docker_image=$(jq -r '.docker_image // empty' build.json)
-          echo "::set-output name=docker_image::$docker_image"
         fi
 
-    - name: Extract Docker image from build.yaml
-      id: extract_yaml
-      run: |
-        if [ -f build.yaml ]; then
-          docker_image=$(yq e '.docker_image // empty' build.yaml)
-          echo "::set-output name=docker_image::$docker_image"
+        # 再检查 build.yaml
+        if [ -z "$docker_image" ] && [ -f build.yaml ]; then
+          docker_image=$(yq eval ".build_from.${ARCH} // \"\"" build.yaml)
         fi
 
-    - name: Extract Docker image from Dockerfile
-      id: extract_dockerfile
-      run: |
-        if [ -f Dockerfile ]; then
-          docker_image=$(grep -oP '(?<=FROM\s)[^ ]+' Dockerfile)
-          echo "::set-output name=docker_image::$docker_image"
+        # 如果前面没找到，才检查 Dockerfile
+        if [ -z "$docker_image" ] && [ -f Dockerfile ]; then
+          docker_image=$(grep -oP '(?<=^FROM\s)[^ ]+' Dockerfile)
         fi
 
-    - name: Extract Docker image from config.json
-      id: extract_config_json
-      run: |
-        if [ -f config.json ]; then
-          docker_image=$(jq -r '.docker_image // empty' config.json)
-          echo "::set-output name=docker_image::$docker_image"
-        fi
-
-    - name: Extract Docker image from config.yaml
-      id: extract_config_yaml
-      run: |
-        if [ -f config.yaml ]; then
-          docker_image=$(yq e '.docker_image // empty' config.yaml)
-          echo "::set-output name=docker_image::$docker_image"
-        fi
-
-    - name: Download Docker image
-      run: |
-        docker_image="${{ steps.extract_json.outputs.docker_image || steps.extract_yaml.outputs.docker_image || steps.extract_dockerfile.outputs.docker_image || steps.extract_config_json.outputs.docker_image || steps.extract_config_yaml.outputs.docker_image }}"
+        # 存入 GITHUB_ENV
         if [ -n "$docker_image" ]; then
-          echo "Downloading Docker image: $docker_image"
-          docker pull "$docker_image"
-          docker save "$docker_image" -o image.tar
+          echo "DOCKER_IMAGE=$docker_image" >> $GITHUB_ENV
+          echo "Found Docker image: $docker_image"
         else
           echo "No Docker image found."
         fi
 
-    - name: Commit Docker image to repository
+    - name: Extract Labels from Dockerfile
+      id: extract_labels
+      run: |
+        if [ -f Dockerfile ]; then
+          build_version=$(grep -oP '(?<=io.hass.version=)[^ ]+' Dockerfile | tr -d '"')
+          echo "BUILD_VERSION=$build_version" >> $GITHUB_ENV
+        fi
+
+    - name: Extract Build Arguments
+      id: extract_args
+      run: |
+        if [ -f Dockerfile ]; then
+          build_arch=$(grep -oP '(?<=^ARG BUILD_ARCH=)[^ ]+' Dockerfile || echo "")
+          build_ref=$(grep -oP '(?<=^ARG BUILD_REF=)[^ ]+' Dockerfile || echo "")
+          echo "BUILD_ARCH=$build_arch" >> $GITHUB_ENV
+          echo "BUILD_REF=$build_ref" >> $GITHUB_ENV
+        fi
+
+    - name: Download Docker Image
+      run: |
+        if [ -n "$DOCKER_IMAGE" ]; then
+          echo "Downloading Docker image: $DOCKER_IMAGE"
+          docker pull "$DOCKER_IMAGE"
+          docker save "$DOCKER_IMAGE" -o image.tar
+        else
+          echo "No Docker image found."
+        fi
+
+    - name: Commit Docker Image to Repository
       run: |
         if [ -f image.tar ]; then
           git config --local user.name "github-actions"
@@ -70,5 +89,3 @@ jobs:
           git commit -m "Add downloaded Docker image with exact tag"
           git push
         fi
-
-
