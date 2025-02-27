@@ -10,65 +10,52 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Detect Architecture
-      id: detect_arch
+    - name: Traverse all directories
+      id: traverse_directories
       run: |
-        arch=$(uname -m)
-        case "$arch" in
-          x86_64) ARCH="amd64" ;;
-          aarch64) ARCH="aarch64" ;;
-          armv7l) ARCH="armv7" ;;
-          armhf) ARCH="armhf" ;;
-          i386) ARCH="i386" ;;
-          *) ARCH="amd64" ;;  # 默认 x86_64
-        esac
-        echo "ARCH=$ARCH" >> $GITHUB_ENV
-
-    - name: Extract Docker Image
-      id: extract_docker_image
-      run: |
+        # 初始化 docker_image 为空
         docker_image=""
 
-        # 先检查 build.json
-        if [ -f build.json ]; then
-          docker_image=$(jq -r '.docker_image // empty' build.json)
-        fi
+        # 遍历所有子目录（排除隐藏目录）
+        for dir in $(find . -type d ! -path '*/\.*'); do
+          echo "Found directory: $dir"
+          
+          # 检查是否已有 Docker image，若有则跳过
+          if [ -z "$docker_image" ]; then
+            # 检查 build.json
+            if [ -f "$dir/build.json" ]; then
+              echo "Found build.json in $dir"
+              docker_image=$(jq -r '.docker_image // empty' "$dir/build.json")
+              if [ -n "$docker_image" ]; then
+                echo "docker_image found in build.json: $docker_image"
+                echo "DOCKER_IMAGE=$docker_image" >> $GITHUB_ENV
+                break  # 找到 Docker image 后停止遍历
+              fi
+            fi
 
-        # 再检查 build.yaml
-        if [ -z "$docker_image" ] && [ -f build.yaml ]; then
-          docker_image=$(yq eval ".build_from.${ARCH} // \"\"" build.yaml)
-        fi
+            # 检查 build.yaml
+            if [ -z "$docker_image" ] && [ -f "$dir/build.yaml" ]; then
+              echo "Found build.yaml in $dir"
+              docker_image=$(yq eval ".build_from.${ARCH} // \"\"" "$dir/build.yaml")
+              if [ -n "$docker_image" ]; then
+                echo "docker_image found in build.yaml: $docker_image"
+                echo "DOCKER_IMAGE=$docker_image" >> $GITHUB_ENV
+                break  # 找到 Docker image 后停止遍历
+              fi
+            fi
 
-        # 如果前面没找到，才检查 Dockerfile
-        if [ -z "$docker_image" ] && [ -f Dockerfile ]; then
-          docker_image=$(grep -oP '(?<=^FROM\s)[^ ]+' Dockerfile)
-        fi
-
-        # 存入 GITHUB_ENV
-        if [ -n "$docker_image" ]; then
-          echo "DOCKER_IMAGE=$docker_image" >> $GITHUB_ENV
-          echo "Found Docker image: $docker_image"
-        else
-          echo "No Docker image found."
-        fi
-
-    - name: Extract Labels from Dockerfile
-      id: extract_labels
-      run: |
-        if [ -f Dockerfile ]; then
-          build_version=$(grep -oP '(?<=io.hass.version=)[^ ]+' Dockerfile | tr -d '"')
-          echo "BUILD_VERSION=$build_version" >> $GITHUB_ENV
-        fi
-
-    - name: Extract Build Arguments
-      id: extract_args
-      run: |
-        if [ -f Dockerfile ]; then
-          build_arch=$(grep -oP '(?<=^ARG BUILD_ARCH=)[^ ]+' Dockerfile || echo "")
-          build_ref=$(grep -oP '(?<=^ARG BUILD_REF=)[^ ]+' Dockerfile || echo "")
-          echo "BUILD_ARCH=$build_arch" >> $GITHUB_ENV
-          echo "BUILD_REF=$build_ref" >> $GITHUB_ENV
-        fi
+            # 检查 Dockerfile
+            if [ -z "$docker_image" ] && [ -f "$dir/Dockerfile" ]; then
+              echo "Found Dockerfile in $dir"
+              docker_image=$(grep -oP '(?<=^FROM\s)[^ ]+' "$dir/Dockerfile")
+              if [ -n "$docker_image" ]; then
+                echo "docker_image found in Dockerfile: $docker_image"
+                echo "DOCKER_IMAGE=$docker_image" >> $GITHUB_ENV
+                break  # 找到 Docker image 后停止遍历
+              fi
+            fi
+          fi
+        done
 
     - name: Download Docker Image
       run: |
@@ -83,8 +70,8 @@ jobs:
     - name: Commit Docker Image to Repository
       run: |
         if [ -f image.tar ]; then
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions"
+          git config --local user.email "github-actions@github.com"
           git add image.tar
           git commit -m "Add downloaded Docker image with exact tag"
           git push
