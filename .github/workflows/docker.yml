@@ -14,58 +14,59 @@ jobs:
       id: traverse_directories
       run: |
         # 初始化 docker_image 为空
-        docker_image=""
+        docker_images=()
 
         # 遍历所有子目录（排除隐藏目录）
         for dir in $(find . -type d ! -path '*/\.*'); do
-          echo "Found directory: $dir"
-          
-          # 检查是否已有 Docker image，若有则跳过
-          if [ -z "$docker_image" ]; then
-            # 检查 build.json
-            if [ -f "$dir/build.json" ]; then
-              echo "Found build.json in $dir"
-              docker_image=$(jq -r '.docker_image // empty' "$dir/build.json")
-              if [ -n "$docker_image" ]; then
-                echo "docker_image found in build.json: $docker_image"
-                echo "DOCKER_IMAGE=$docker_image" >> $GITHUB_ENV
-                break  # 找到 Docker image 后停止遍历
-              fi
-            fi
+          echo "Processing directory: $dir"
 
-            # 检查 build.yaml
-            if [ -z "$docker_image" ] && [ -f "$dir/build.yaml" ]; then
-              echo "Found build.yaml in $dir"
-              docker_image=$(yq eval ".build_from.${ARCH} // \"\"" "$dir/build.yaml")
-              if [ -n "$docker_image" ]; then
-                echo "docker_image found in build.yaml: $docker_image"
-                echo "DOCKER_IMAGE=$docker_image" >> $GITHUB_ENV
-                break  # 找到 Docker image 后停止遍历
-              fi
+          # 检查 build.json
+          if [ -f "$dir/build.json" ]; then
+            echo "Found build.json in $dir"
+            docker_image=$(jq -r '.docker_image // empty' "$dir/build.json" || true)
+            if [ -n "$docker_image" ]; then
+              echo "docker_image found in build.json: $docker_image"
+              docker_images+=("$docker_image")
             fi
+          fi
 
-            # 检查 Dockerfile
-            if [ -z "$docker_image" ] && [ -f "$dir/Dockerfile" ]; then
-              echo "Found Dockerfile in $dir"
-              docker_image=$(grep -oP '(?<=^FROM\s)[^ ]+' "$dir/Dockerfile")
-              if [ -n "$docker_image" ]; then
-                echo "docker_image found in Dockerfile: $docker_image"
-                echo "DOCKER_IMAGE=$docker_image" >> $GITHUB_ENV
-                break  # 找到 Docker image 后停止遍历
-              fi
+          # 检查 build.yaml
+          if [ -z "$docker_image" ] && [ -f "$dir/build.yaml" ]; then
+            echo "Found build.yaml in $dir"
+            docker_image=$(yq eval ".build_from.${ARCH} // \"\"" "$dir/build.yaml" || true)
+            if [ -n "$docker_image" ]; then
+              echo "docker_image found in build.yaml: $docker_image"
+              docker_images+=("$docker_image")
+            fi
+          fi
+
+          # 检查 Dockerfile
+          if [ -z "$docker_image" ] && [ -f "$dir/Dockerfile" ]; then
+            echo "Found Dockerfile in $dir"
+            docker_image=$(grep -oP '(?<=^FROM\s)[^ ]+' "$dir/Dockerfile" || true)
+            if [ -n "$docker_image" ]; then
+              echo "docker_image found in Dockerfile: $docker_image"
+              docker_images+=("$docker_image")
             fi
           fi
         done
 
-    - name: Download Docker Image
+    - name: Download Docker Images
       run: |
-        if [ -n "$DOCKER_IMAGE" ]; then
-          echo "Downloading Docker image: $DOCKER_IMAGE"
-          docker pull "$DOCKER_IMAGE"
-          docker save "$DOCKER_IMAGE" -o image.tar
-        else
-          echo "No Docker image found."
-        fi
+        # 遍历所有找到的 Docker 镜像并尝试下载
+        for docker_image in "${docker_images[@]}"; do
+          echo "Attempting to download Docker image: $docker_image"
+          
+          # 尝试下载 Docker 镜像，如果失败，跳过该镜像并继续下一个
+          if docker pull "$docker_image" && docker save "$docker_image" -o image.tar; then
+            echo "Successfully downloaded Docker image: $docker_image"
+            break  # 如果下载成功，则停止
+          else
+            echo "Failed to download Docker image: $docker_image. Skipping..."
+            continue  # 下载失败时跳过该镜像，继续处理下一个
+          fi
+        done
+
 
     - name: Commit Docker Image to Repository
       run: |
