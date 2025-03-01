@@ -44,6 +44,7 @@ jobs:
           find addons -type f \( -name "*.yaml" -o -name "*.json" -o -name "Dockerfile" \) -exec sed -i \
             -e 's|ghcr.io|ghcr.nju.edu.cn|g' \
             -e 's|image: homeassistant|image: docker.m.daocloud.io/homeassistant|g' \
+            -e 's|docker.io|docker.m.daocloud.io|g' \
             -e 's|lscr.io|docker.m.daocloud.io|g' \
             -e 's|https://github.com|https://gh-proxy.com/github.com|g' \
             -e 's|ADD "https://raw.githubusercontent.com|ADD "https://gh-proxy.com/raw.githubusercontent.com|g' {} +
