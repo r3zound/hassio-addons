@@ -31,6 +31,7 @@ jobs:
           wget -O music-assistant.zip https://github.com/music-assistant/home-assistant-addon/archive/refs/heads/main.zip &
           wget -O esphome.zip https://github.com/esphome/home-assistant-addon/archive/refs/heads/main.zip &
           wget -O litinoveweedle.zip https://github.com/litinoveweedle/hassio-addons/archive/refs/heads/main.zip &
+          wget -O brenner-tobias.zip https://github.com/brenner-tobias/addon-cloudflared/archive/refs/heads/main.zip &
           wait
       - name: extract the addons
         run: |
