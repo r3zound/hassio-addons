@@ -32,6 +32,8 @@ jobs:
           wget -O esphome.zip https://github.com/esphome/home-assistant-addon/archive/refs/heads/main.zip &
           wget -O litinoveweedle.zip https://github.com/litinoveweedle/hassio-addons/archive/refs/heads/main.zip &
           wget -O brenner-tobias.zip https://github.com/brenner-tobias/addon-cloudflared/archive/refs/heads/main.zip &
+          wget -O sanderdw.zip https://github.com/sanderdw/hassio-addons/archive/refs/heads/master.zip &
+          wget -O dianlight.zip https://github.com/dianlight/hassio-addons/archive/refs/heads/master.zip &
           wait
       - name: extract the addons
         run: |
