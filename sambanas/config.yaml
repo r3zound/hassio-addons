@@ -1,14 +1,27 @@
 ---
 name: Samba NAS
-version: 12.3.2-nas
+version: 12.3.2-nas1
 slug: sambanas
-description: 这是一个可以挂载第2个硬盘的Samba NAS插件，支持多种架构，支持Home Assistant OS，支持Hass.io，支持Docker
-url: https://mp.weixin.qq.com/s/NlhblvGA2K2Sc20vv5Quuw?token=1446176653&lang=zh_CN
+description: Expose Home Assistant disc with SMB/CIFS
+url: https://gh-proxy.com/github.com/dianlight/hassio-addons/tree/master/sambanas
+codenotary: lucio.tarantino@gmail.com
 arch:
   - armv7
   - aarch64
   - amd64
 startup: initialize
+webui: http://[HOST]:[PORT:3000]/static/index.html
+ports:
+  3000/tcp: 3000
+ports_description:
+  3000/tcp: Web and API UI
+ingress: false
+ingress_port: 3000
+ingress_entry: static/index.html
+panel_icon: mdi:folder-network
+panel_title: Samba NAS
+panel_admin: true
+
 boot: auto
 init: false
 hassio_api: true
