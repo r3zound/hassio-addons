@@ -1,9 +1,9 @@
 name: xqrepack
-version: 1.7.0
+version: 1.7.1
 slug: xqrepack
 description:
   These scripts allow you to modify the different Xiaomi router firmware
-  images to make sure SSH and UART access is always enabled.
+  images to make sure SSH and UART access is always enabled
 url: https://gh-proxy.com/github.com/FaserF/hassio-addons/tree/master/xqrepack
 arch:
   - armhf
