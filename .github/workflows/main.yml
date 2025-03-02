@@ -71,6 +71,7 @@ jobs:
               echo "Moved directory: $ITEM"
             fi
           done
+          rm -rf whisparr
 
       - name: sync hass-panel
         run: |
