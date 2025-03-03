@@ -1,10 +1,13 @@
 #!/command/with-contenv bashio
 # shellcheck shell=bash
 
+set -eu
+
 # Save a copy of the script for further restarts
 if [ -f /etc/cont-init.d/99-run.sh ]; then
     mkdir -p /etc/scripts-init
     sed -i "s|/etc/cont-init.d|/etc/scripts-init|g" /ha_entrypoint.sh
+    sed -i "/ rm/d" /ha_entrypoint.sh
     cp /etc/cont-init.d/99-run.sh /etc/scripts-init/
 fi
 
@@ -12,15 +15,15 @@ fi
 # SET SYSTEM #
 ##############
 
+# Set password
 bashio::log.info "Setting password for the user pi"
 if bashio::config.has_value "pi_password"; then
     echo "pi:$(bashio::config "pi_password")" | chpasswd
 fi
 bashio::log.info "Password set successfully for user pi."
 
-bashio::log.info "Setting timezone :"
-
 # Use timezone defined in add-on options if available
+bashio::log.info "Setting timezone :"
 if bashio::config.has_value 'TZ'; then
     TZ_VALUE="$(bashio::config 'TZ')"
     if timedatectl set-timezone "$TZ_VALUE"; then
@@ -46,7 +49,11 @@ else
     else
         bashio::log.fatal "Couldn't set automatic timezone! Please set a manual one from the options."
     fi
-fi
+fi || true
+
+# Ensure minimal structure
+mkdir -p "$HOME"/BirdSongs/StreamData || true
+touch "$HOME"/BirdSongs/StreamData/analyzing_now.txt || true
 
 bashio::log.info "Starting system services"
 
