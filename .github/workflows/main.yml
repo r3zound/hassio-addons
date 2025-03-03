@@ -34,6 +34,7 @@ jobs:
           wget -O brenner-tobias.zip https://github.com/brenner-tobias/ha-addons/archive/refs/heads/main.zip &
           wget -O sanderdw.zip https://github.com/sanderdw/hassio-addons/archive/refs/heads/master.zip &
           wget -O dianlight.zip https://github.com/dianlight/hassio-addons/archive/refs/heads/master.zip &
+          wget -O hydroqc.zip https://gitlab.com/hydroqc/hydroqc-hass-addons/-/archive/main/hydroqc-hass-addons-main.zip &
           wait
       - name: extract the addons
         run: |
