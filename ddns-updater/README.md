@@ -1,6 +1,9 @@
 # 轻量级通用DDNS更新程序
 
 用于为多个DNS提供商保持DNS A和/或AAAA记录更新的程序
+> 本项目基于 [qdm12/ddns-updater](https://github.com/qdm12/ddns-updater) 制作，所有功能说明及使用文档均直接引用原作者文档内容。
+
+
 
 <img height="100" alt="DDNS Updater logo" src="https://raw.githubusercontent.com/qdm12/ddns-updater/master/readme/ddnsgopher.svg">
 
@@ -33,10 +36,8 @@
 
 ## 功能
 
-- 提供Docker镜像[`qmcgaw/ddns-updater`](https://hub.docker.com/r/qmcgaw/ddns-updater)和[`ghcr.io/qdm12/ddns-updater`]((https://github.com/qdm12/ddns-updater/pkgs/container/ddns-updater))
-- 提供[适用于Linux、Windows和MacOS的零依赖二进制文件](https://github.com/qdm12/ddns-updater/releases)
-- 🆕 在AUR中提供[`ddns-updater`](https://aur.archlinux.org/packages/ddns-updater) - 参见[#808](https://github.com/qdm12/ddns-updater/discussions/808)
-- 定期更新不同DNS提供商的A记录：
+
+- 支持以下DNS提供商的A记录：
 
 
 - [Aliyun](https://github.com/qdm12/ddns-updater/blob/master/docs/aliyun.md)
