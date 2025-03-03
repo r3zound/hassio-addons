@@ -1,0 +1,7 @@
+---
+build_from:
+  amd64: ghcr.nju.edu.cn/home-assistant/amd64-base-debian:bullseye
+  aarch64: ghcr.nju.edu.cn/home-assistant/aarch64-base-debian:bullseye
+
+args:
+  MICROSOFT_STT_VERSION: 1.2.1
