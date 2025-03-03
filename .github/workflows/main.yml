@@ -36,7 +36,8 @@ jobs:
           wget -O dianlight.zip https://github.com/dianlight/hassio-addons/archive/refs/heads/master.zip &
           wget -O hydroqc.zip https://gitlab.com/hydroqc/hydroqc-hass-addons/-/archive/main/hydroqc-hass-addons-main.zip &
           wget -O hass-broadlink-ac-mqtt.zip https://github.com/Arbuzov/hass-broadlink-ac-mqtt/archive/refs/heads/master.zip &
-          wget -O hugobloem.zip https://github.com/hugobloem/homeassistant-addons/archive/refs/heads/main.zip
+          wget -O hugobloem.zip https://github.com/hugobloem/homeassistant-addons/archive/refs/heads/main.zip &
+          wget -O haberda.zip https://github.com/haberda/hassio_addons/archive/refs/heads/master.zip &
           wait
       - name: extract the addons
         run: |
