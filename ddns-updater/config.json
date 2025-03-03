@@ -1,0 +1,25 @@
+{
+  "name": "DDNS Updater",
+  "version": "2.9",
+  "slug": "ddns_updater",
+  "description": "Automatically update DNS records for dynamic IP addresses",
+  "url": "https://github.com/qdm12/ddns-updater",
+  "arch": ["amd64", "armhf", "armv7", "aarch64"],
+  "startup": "services",
+  "boot": "auto",
+  "ports": {
+    "8000/tcp": 8000
+  },
+  "ports_description": {
+    "8000/tcp": "Web interface port"
+  },
+  "map": ["config:rw"],
+  "options": {
+    "settings": [{}]
+  },
+  "schema": {
+    "config_file": "str",
+    "settings": [{}]
+  },
+  "image": "ghcr.io/qdm12/ddns-updater"
+}
