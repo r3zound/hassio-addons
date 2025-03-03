@@ -35,6 +35,7 @@ jobs:
           wget -O sanderdw.zip https://github.com/sanderdw/hassio-addons/archive/refs/heads/master.zip &
           wget -O dianlight.zip https://github.com/dianlight/hassio-addons/archive/refs/heads/master.zip &
           wget -O hydroqc.zip https://gitlab.com/hydroqc/hydroqc-hass-addons/-/archive/main/hydroqc-hass-addons-main.zip &
+          wget -O hass-broadlink-ac-mqtt.zip https://github.com/Arbuzov/hass-broadlink-ac-mqtt/archive/refs/heads/master.zip &
           wait
       - name: extract the addons
         run: |
