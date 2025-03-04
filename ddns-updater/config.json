@@ -21,5 +21,9 @@
     "config_file": "str",
     "settings": [{}]
   },
-  "image": "ghcr.io/qdm12/ddns-updater"
+  "image": "ghcr.io/qdm12/ddns-updater",
+  "environment": {
+    "DATADIR": "/data" ,
+    "CONFIG_FILEPATH": "/data/config.json"
+  }
 }
