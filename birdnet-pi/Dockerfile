@@ -95,8 +95,8 @@ RUN \
     # Execute installer
     /./newinstaller.sh && \
     \
-    # Install dateparser
-    $PYTHON_VIRTUAL_ENV /usr/bin/pip3 install dateparser && \
+    # Install dateparser and resampy
+    $PYTHON_VIRTUAL_ENV /usr/bin/pip3 install dateparser resampy && \
     \
     # Adapt for lsio usage of /app
     if [ -d /app ]; then rm -r /app; fi && \
@@ -108,38 +108,7 @@ RUN \
     \
     # Cleanup
     apt-get clean all && \
-    rm -rf /var/lib/apt/lists/* && \
-    \
-    # Install resampy
-    $PYTHON_VIRTUAL_ENV /usr/bin/pip3 install resampy
-
-# Add PR
-#RUN \
-#    cd /home/pi/BirdNET-Pi && \
-#    git fetch origin pull/158/head:158 && \
-#    git checkout main && \
-#    git branch -D f-merge-prs || true && \
-#    git checkout -b f-merge-prs && \
-#    git merge 158 --no-edit && \
-#    git stash && \
-#    git checkout main && \
-#    git merge f-merge-prs && \
-#    git branch -d f-merge-prs && \
-#    git branch -d 158
-
-# Update with my repo if more recent
-#WORKDIR /home/pi
-#RUN \
-#    git clone https://gh-proxy.com/github.com/alexbelgium/BirdNET-Pi BirdNET-additions && \
-#    date1="$(cd BirdNET-Pi && git show -s --format=%ct HEAD | xargs -I{} date -d @{} +%Y-%m-%d)" && \
-#    timestamp1=$(date -d "$date1" +%s) && \
-#    date2=$(cd BirdNET-additions && git show -s --format=%ct HEAD | xargs -I{} date -d @{} +%Y-%m-%d) && \
-#    timestamp2=$(date -d "$date2" +%s) && \
-#    if [ $timestamp2 -gt $timestamp1 ]; then \
-#    	cp -Rf BirdNET-additions/* BirdNET-Pi/ && \
-#    	rm -r BirdNET-additions && \
-#    	sed -i "/find /d" BirdNET-Pi/scripts/update_birdnet_snippets.sh && \
-#    	./BirdNET-Pi/scripts/update_birdnet_snippets.sh; fi
+    rm -rf /var/lib/apt/lists/*
 
 ##################
 # 2 Modify Image #

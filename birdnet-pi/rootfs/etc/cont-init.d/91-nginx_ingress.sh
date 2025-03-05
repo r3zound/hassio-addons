@@ -2,6 +2,17 @@
 # shellcheck shell=bash
 set -e
 
+##################
+# ALLOW RESTARTS #
+##################
+
+if [ -f /etc/cont-init.d/99-run.sh ]; then
+    mkdir -p /etc/scripts-init
+    sed -i "s|/etc/cont-init.d|/etc/scripts-init|g" /ha_entrypoint.sh
+    sed -i "/ rm/d" /ha_entrypoint.sh
+    cp /etc/cont-init.d/99-run.sh /etc/scripts-init/
+fi
+
 #################
 # NGINX SETTING #
 #################
@@ -32,6 +43,9 @@ else
     exit 1
 fi
 
+# Disable log
+sed -i "/View Log/d" "$HOME/BirdNET-Pi/homepage/views.php"
+
 echo "... ensuring restricted area access"
 echo "${ingress_entry}" > /ingress_url
 
@@ -58,4 +72,3 @@ else
     bashio::log.error "Caddy update script not found: $caddy_update_script"
     exit 1
 fi
-

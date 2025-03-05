@@ -1,7 +1,8 @@
-## 2025.03.07 (04-03-2025)
-- Minor bugs fixed
-## 2025.03.06 (03-03-2025)
-- Minor bugs fixed
+## 2025.03.10 (04-03-2025)
+- [ALL] Fix stats bug
+- [ADDON] Fix clicking on links on dynamic graph
+- [ADDON] Allow statistics in ingress
+
 ## 2025.03.04 (03-03-2025)
 - [DOCKER] Allow files recovery on restart
 

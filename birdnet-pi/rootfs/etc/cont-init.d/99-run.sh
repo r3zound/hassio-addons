@@ -3,17 +3,16 @@
 
 set -eu
 
-# Save a copy of the script for further restarts
+##################
+# ALLOW RESTARTS #
+##################
+
 if [ -f /etc/cont-init.d/99-run.sh ]; then
     mkdir -p /etc/scripts-init
     sed -i "s|/etc/cont-init.d|/etc/scripts-init|g" /ha_entrypoint.sh
     sed -i "/ rm/d" /ha_entrypoint.sh
     cp /etc/cont-init.d/99-run.sh /etc/scripts-init/
 fi
-
-# Recreate folders if needed
-mkdir -p /tmp/StreamData /tmp/Processed
-chown pi:pi /tmp/StreamData /tmp/Processed
 
 ##############
 # SET SYSTEM #
