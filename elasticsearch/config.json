@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "自由开放、分布式、RESTful 搜索引擎",
+  "description": "自由开放、分布式、RESTful 搜索引擎。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "Convos 是一个运行在浏览器中的IRC客户端，将IRC体验带入21世纪。\n\n翻译成中文：\nConvos是一款运行在浏览器中的IRC客户端，它将IRC体验带入21世纪。",
+  "description": "Convos 是一个运行在浏览器中的IRC客户端，将IRC体验带入21世纪。",
   "environment": {
     "CONVOS_HOME": "/config/"
   },

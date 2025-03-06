@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Docker容器通过OpenVPN隧道运行Transmission种子客户端及其Web界面。\n\n翻译成中文：\n使用OpenVPN隧道运行的Docker容器中包含Transmission种子客户端及其Web界面。",
+  "description": "Docker容器通过OpenVPN隧道运行Transmission种子客户端及其Web界面。\n\n翻译：\n使用OpenVPN隧道运行的Docker容器中包含Transmission种子客户端及其Web界面。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

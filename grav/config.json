@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "快速、简单且灵活的基于文件的Web平台",
+  "description": "快速、简单且灵活的基于文件的Web平台。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

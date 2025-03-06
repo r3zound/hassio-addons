@@ -8,7 +8,7 @@
   ],
   "boot": "auto",
   "init": false,
-  "description": "这是一个命令行工具，用于下载所有iCloud照片。可能应该将其整合到其他系统中，但目前这个工具也能正常工作！",
+  "description": "这是一个命令行工具，用于下载所有iCloud照片。可能应该将其集成到其他应用中，但这个工具目前工作得很好！",
   "environment": {},
   "map": [
     "media:rw",

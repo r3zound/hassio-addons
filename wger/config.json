@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "管理你的个人锻炼、体重和饮食计划",
+  "description": "管理您的个人锻炼、体重和饮食计划。",
   "image": "ghcr.nju.edu.cn/alexbelgium/wger-{arch}",
   "map": [
     "share:rw",

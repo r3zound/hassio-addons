@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Python脚本来更新电影、节目和集合的元数据信息以及自动构建集合\n\n```python\n# Python脚本用于更新电影、节目的元数据信息和自动创建集合\nimport os\nfrom datetime import datetime\n\ndef update_metadata(movie_path):\n    # 更新电影或节目的元数据信息\n    pass  # 实现具体的更新逻辑\n\ndef create_collection(collection_name):\n    # 自动创建一个新的集合\n    pass  # 实现具体的创建逻辑\n\nif __name__ == \"__main__\":\n    # 主程序入口\n    movie_paths = [\"path/to/movie1\", \"path/to/movie2\"]\n    collection_names = [\"Collection1\", \"Collection2\"]\n\n    for path in movie_paths:\n        update_metadata(path)\n\n    for name in collection_names:\n        create_collection(name)\n```\n\n请注意，上述代码只是一个框架示例，你需要根据实际需求实现`update_metadata`和`create_collection`函数的具体逻辑。",
+  "description": "以下是将上述英文文本翻译为中文的内容：\n\nPython脚本来更新电影、节目和集合的元数据信息以及自动构建集合。\n\n请注意，这段文字已经非常简洁明了，没有多余的修饰或复杂的语法结构。因此，在翻译时保持了原文的意思和风格，尽量做到直译而非意译。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

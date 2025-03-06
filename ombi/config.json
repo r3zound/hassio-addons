@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "自托管Plex请求和用户管理系统\n\n请注意，由于“Plex”是专有软件名称，因此我无法直接翻译它。如果您需要将“Plex”翻译为中文，您可能希望使用其官方中文名称“派乐”，但这取决于您的具体需求和使用场景。如果“Plex”指的是一个通用概念或功能，那么您可以将其翻译为“流媒体服务器”或其他合适的术语。\n\n此外，“self-hosted”通常指“自托管的”，而“request and user management system”则可以翻译为“请求和用户管理系统”。因此，完整的翻译可能是：\n\n自托管的流媒体服务器请求和用户管理系统\n\n然而，这仍然依赖于“Plex”的具体含义和使用场景。如果您能提供更多的上下文信息，我可以为您提供更准确的翻译。",
+  "description": "自托管Plex请求和用户管理系统",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

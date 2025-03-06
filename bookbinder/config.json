@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "manual",
-  "description": "一个使用PDF-Lib作为后端库的重写Bookbinder格式的JS应用程序，用于装订书籍。",
+  "description": "一个基于Bookbinder的重写为使用PDF-Lib作为其后端库来格式化PDF的书装订JS应用程序。",
   "environment": {},
   "version": "v1.3.1",
   "name": "Book Binder JS",
