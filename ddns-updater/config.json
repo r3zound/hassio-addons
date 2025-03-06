@@ -18,7 +18,6 @@
     "settings": [{}]
   },
   "schema": {
-    "config_file": "str",
     "settings": [{}]
   },
   "image": "ghcr.io/qdm12/ddns-updater",
