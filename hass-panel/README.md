@@ -16,7 +16,7 @@
 
 ## 交流群
 
-<img src="https://i.imgur.com/ct6Tu5R.jpeg" width="300" alt="交流群" />
+<img src="https://i.imgur.com/jrRFIvT.jpeg" width="300" alt="交流群" />
 
 ## 主要特性
 
@@ -106,6 +106,7 @@ docker run \
 20. PVE监控卡片 (PVECard) - 虚拟机监控
 21. 服务器监控卡片 (ServerCard)
 22. 每日一言卡片 (DailyQuoteCard)
+23. 家庭人员状态卡片 (FamilyCard)
 
 ### 卡片管理
 
