@@ -61,7 +61,7 @@ jobs:
           set -e  # 如果一个命令失败，整个脚本会退出
           set -x  # 打印每个命令的执行情况
 
-          find ./addons -type f -name "config" | while read -r file; do
+          find ./addons -type f \( -name "config.yaml" -o -name "config.json" \) ! -path "*/.*/*" | while read -r file; do
 
             if file -b --mime-type "$file" | grep -q "json"; then
 
