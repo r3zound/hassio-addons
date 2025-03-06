@@ -3,7 +3,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "WhatsApp for Home Assistant\n\nWhatsApp for Home Assistant（WhatsApp为家庭助理）",
+  "description": "WhatsApp for Home Assistant\n\nWhatsApp for Home Assistant",
   "image": "ghcr.nju.edu.cn/alexbelgium/whatsapper-{arch}",
   "map": [
     "addon_config:rw",

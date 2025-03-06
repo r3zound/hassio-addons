@@ -2,7 +2,7 @@
   "name": "TellStick with Telldus Live",
   "version": "1.1.8",
   "slug": "tellsticklive",
-  "description": "TellStick 和 TellStick Duo 服务与 Telldus Live 配合使用",
+  "description": "TellStick 和 TellStick Duo 与 Telldus Live 一起提供服务。",
   "url": "https://gh-proxy.com/github.com/erik73/hassio-addons",
   "arch": [
     "aarch64",

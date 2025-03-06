@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "将应用程序（如 Sonarr、Sickrage、CouchPotato、Mylar 等）的查询转换为特定于追踪网站的 HTTP 查询，解析 HTML 响应，然后将结果发送回请求软件。\n\n请注意，这段文字已经非常简洁明了地表达了其功能，因此没有进行额外的简化或改写。",
+  "description": "将应用程序（如 Sonarr、Sickrage、CouchPotato、Mylar 等）的查询转换为特定于追踪网站的 HTTP 查询，解析 HTML 响应，然后将结果发送回请求软件。\n\n请注意，这段文字已经是非常简洁和准确的描述了该功能的工作原理。如果需要更详细的解释或进一步的信息，请告知我！",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

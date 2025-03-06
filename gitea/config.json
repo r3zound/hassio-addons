@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Git 管理系统",
+  "description": "Git 管理系统 Gitea 已集成到家庭自动化平台 Home Assistant 中。\n\nGitea 是一个开源的 Git 版本控制系统，它允许用户在本地或远程服务器上托管他们的代码仓库。Home Assistant 则是一个流行的智能家居自动化平台，可以控制各种设备和场景，如灯光、恒温器等。\n\n将 Gitea 集成到 Home Assistant 中，可以让用户轻松地在智能家居环境中管理和访问他们的代码仓库。例如，他们可以在家中使用 Home Assistant 控制和管理他们的 Gitea 服务器上的代码，或者通过 Home Assistant 监控和响应 Gitea 服务器的状态变化。\n\n这种集成可以为用户提供更多的灵活性和便利性，使他们能够更好地利用智能家居技术来管理自己的软件开发工作。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

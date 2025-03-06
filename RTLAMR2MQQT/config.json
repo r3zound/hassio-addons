@@ -2,7 +2,7 @@
   "name": "RTLAMR to MQTT Bridge",
   "version": "0.54",
   "slug": "rtlamr",
-  "description": "基于RTL_SDR/RTL_433的DVB-T USB调谐器上的RTL2832U的RF到MQTT桥接器\n\n请注意，由于我无法直接访问外部资源，因此可能无法提供最准确或最新的信息。如果您有其他问题或需要进一步的帮助，请随时告诉我！",
+  "description": "基于RTL_SDR/RTL_433的DVB-T USB调谐器上的RTL2832U的RF到MQTT网桥",
   "startup": "application",
   "boot": "auto",
   "map": [

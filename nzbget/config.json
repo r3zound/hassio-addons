@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Usenet下载器\n\n（注：由于“usenet”是专有名词，通常不进行直译，因此保持原词不变。）",
+  "description": "Usenet下载器\n\n（注：由于“usenet”是专有名词，通常不直接进行翻译，因此保持原词不变。）",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

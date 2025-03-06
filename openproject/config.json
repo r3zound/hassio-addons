@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "OpenProject for Home Assistant\n\n翻译为中文是：\n\n“OpenProject 家庭助理”",
+  "description": "OpenProject for Home Assistant\n\n翻译为中文是：\n\nOpenProject 家庭助理",
   "image": "ghcr.nju.edu.cn/alexbelgium/openproject-{arch}",
   "init": false,
   "map": [

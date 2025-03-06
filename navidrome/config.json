@@ -7,7 +7,7 @@
     "**/cache/**"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "纳维德罗姆（Navidrome）是用于家庭自动化平台Home Assistant的一个音乐流媒体插件。\n\n纳维德罗姆（Navidrome）是一款开源的音乐流媒体服务，它允许您在本地服务器上托管您的音乐库，并通过Web界面或客户端应用程序访问和管理这些音乐。它可以与Home Assistant集成，使您可以轻松地在智能家居环境中播放和控制音乐。\n\n要使用Navidrome与Home Assistant集成，您需要先安装并配置Navidrome，然后将其添加到Home Assistant中作为自定义组件。这样，您就可以通过Home Assistant的控制面板来浏览、播放和调整您的音乐收藏了。\n\n请注意，由于我无法直接看到图片中的具体内容，所以上述信息是基于对“Navidrome for Home Assistant”的一般了解提供的。如果您有其他问题或需要进一步的帮助，请随时告诉我！",
+  "description": "纳维德罗姆（Navidrome）是用于家庭自动化平台Home Assistant的一个音乐播放器插件。\n\n纳维德罗姆（Navidrome）是一款开源的音乐库管理和流媒体播放应用程序，它允许用户通过Web界面或命令行管理他们的音乐收藏，并从任何设备上流式传输音乐。它可以与Home Assistant集成，以便在智能家居环境中使用。\n\n要安装和配置Navidrome以供Home Assistant使用，您需要执行以下步骤：\n\n1. 安装Navidrome：\n   - 您可以通过Docker或其他方式安装Navidrome。如果您选择使用Docker，您可以运行以下命令来启动一个包含Navidrome的容器：\n     ```bash\n     docker run -d -p 4533:4533 --name navidrome \\\n       -v /path/to/your/music:/data \\\n       -e ND_USER=admin \\\n       -e ND_PASSWD=<password> \\\n       navidrome/navidrome:latest\n     ```\n   - 在此命令中，请将`/path/to/your/music`替换为您音乐的存储位置，并将`<password>`替换为您的密码。\n\n2. 配置Home Assistant以连接到Navidrome：\n   - 打开您的Home Assistant设置，导航到“Integrations”部分。\n   - 点击“Add Integration”，然后搜索“Navidrome”。\n   - 按照提示输入Navidrome的服务器地址、端口号以及访问权限信息。\n\n3. 使用Home Assistant控制音乐播放：\n   - 一旦成功集成，您就可以在Home Assistant中使用语音命令或图形界面来播放、暂停、切换歌曲等操作了。\n\n请注意，这只是一个基本的指南，具体的安装和配置过程可能会根据您的环境和需求有所不同。建议查阅Navidrome官方文档或相关社区论坛获取更详细的指导。",
   "image": "ghcr.nju.edu.cn/alexbelgium/navidrome-{arch}",
   "init": false,
   "map": [
