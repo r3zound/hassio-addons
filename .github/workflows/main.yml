@@ -92,7 +92,7 @@ jobs:
               echo "Translated description for $file (JSON): $translated_description"
     
                   # 使用 jq -i 直接替换文件中的 description 内容
-              jq -i ".description = \"$translated_description\"" "$file"
+              sed -i "s|description: |\ndescription: |\n$translated_description|" "$file"
     
             elif file -b --mime-type "$file" | grep -q "text"; then
                   # 处理类似 JSON 格式的文本文件，提取 description 字段的内容
