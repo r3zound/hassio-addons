@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "A self-hosted drag-and-drop file conversion server & file sharing tool that supports 86 file formats with 4 color schemes & 13 end-user selectable languages",
+  "description": "一个支持86种文件格式的自托管拖放式文件转换服务器和文件共享工具，具有4种颜色方案和13种可供最终用户选择的编程语言。\n\n请注意，由于图片中的文字模糊不清，我无法准确识别其中的内容。如果您能为我提供更清晰的图片或文本信息，我会尽力为您解答。",
   "environment": {},
   "map": [],
   "image": "zelon88/hrconvert2",

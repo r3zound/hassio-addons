@@ -3,7 +3,7 @@
     "aarch64",
     "amd64"
   ],
-  "description": "e-book manager",
+  "description": "电子书管理器",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "M3U Proxy for Plex DVR and Emby Live TV",
+  "description": "Plex DVR 和 Emby Live TV 的 M3U 代理\n\n（注：M3U 是一种常见的视频文件格式，用于列出媒体文件的播放列表。）",
   "environment": {
     "XTEVE_CONF": "/data/conf",
     "XTEVE_HOME": "/data"

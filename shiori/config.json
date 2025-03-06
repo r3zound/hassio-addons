@@ -4,7 +4,7 @@
     "armv7"
   ],
   "boot": "auto",
-  "description": "A simple bookmarks manager written in the Go language. Intended as a simple clone of Pocket.",
+  "description": "这是一个用Go语言编写的简单书签管理器，旨在作为Pocket的一个简单克隆版。",
   "environment": {
     "SHIORI_DIR": "/config/"
   },

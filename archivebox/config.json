@@ -7,7 +7,7 @@
     "i386"
   ],
   "boot": "auto",
-  "description": "ArchiveBox is a powerful, self-hosted internet archiving solution to collect, save, and view sites you want to preserve offline",
+  "description": "ArchiveBox 是一个强大的、自托管的互联网存档解决方案，用于收集、保存和查看您想要离线保留的网站。",
   "environment": {},
   "map": [
     "addon_config:rw"

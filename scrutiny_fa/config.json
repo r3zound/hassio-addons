@@ -5,7 +5,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Scrutiny WebUI for smartd S.M.A.R.T monitoring (Full Access)",
+  "description": "Smartd 的智能监控（完全访问）Web 用户界面\n\n请注意，由于“Scrutiny”这个词在上下文中可能不是标准术语或特定于某个项目/产品，因此我将其直接翻译为“检查”。如果需要更准确的翻译，请提供更多的上下文信息。\n\n此外，“S.M.A.R.T monitoring”指的是使用S.M.A.R.T技术对硬盘驱动器进行监测。“WebUI”是“Web User Interface”的缩写，表示网页用户界面。而“Full Access”则意味着完全访问权限。",
   "environment": {
     "COLLECTOR_API_ENDPOINT": "http://localhost:8080",
     "COLLECTOR_HOST_ID": "home_assistant"

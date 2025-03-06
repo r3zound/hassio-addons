@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Gitea for Home Assistant",
+  "description": "Git 管理系统",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

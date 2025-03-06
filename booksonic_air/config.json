@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "platform for accessing the audiobooks you own wherever you are",
+  "description": "访问您拥有的有声书的平台，无论你在哪里。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

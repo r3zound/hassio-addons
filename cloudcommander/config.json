@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Cloud Commander a file manager for the web with console and editor",
+  "description": "云命令行是一款网络文件管理器，带有控制台和编辑器。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

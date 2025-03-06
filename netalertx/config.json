@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "🖧🔍 WIFI / LAN scanner, intruder, and presence detector",
+  "description": "WIFI/LAN扫描器、入侵者和存在探测器",
   "environment": {
     "PGID": "102",
     "PORT": "20211",

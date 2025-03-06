@@ -4,7 +4,7 @@
     "armv7"
   ],
   "boot": "auto",
-  "description": "Retroarch Web",
+  "description": "RetroArch 网页\n\n（注：RetroArch 是一个开源的复古游戏模拟器软件，支持多种游戏机平台。）",
   "environment": {
     "TZ": "America/New_York"
   },

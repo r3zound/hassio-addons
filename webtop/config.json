@@ -5,7 +5,7 @@
   ],
   "audio": true,
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Full linux desktop environment accessible via any modern web browser",
+  "description": "通过现代网络浏览器可访问的全功能Linux桌面环境。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Nextcloud for Homeassistant",
+  "description": "Nextcloud for Home Assistant\n\nNextcloud for Home Assistant",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

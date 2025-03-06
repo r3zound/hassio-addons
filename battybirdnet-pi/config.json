@@ -5,7 +5,7 @@
   "audio": true,
   "backup": "cold",
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "A realtime acoustic bat & bird classification system for the Raspberry Pi 4/5 built on BattyBirdNET-Analyzer",
+  "description": "一个实时声学蝙蝠和鸟类分类系统，用于Raspberry Pi 4/5，基于BattyBirdNET-Analyzer构建。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

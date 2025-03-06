@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Piwigo is a photo gallery software for the web",
+  "description": "Piwigo 是一个用于网络的图片库软件。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

@@ -11,7 +11,7 @@
     "*/metadata/"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Distributed transcode automation using FFmpeg/HandBrake",
+  "description": "使用FFmpeg/HandBrake进行分布式转码自动化。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

@@ -2,10 +2,13 @@
   "name": "RTLAMR to MQTT Bridge",
   "version": "0.54",
   "slug": "rtlamr",
-  "description": "RF to MQTT Bridge based on RTL_SDR/RTL_433 for RTL2832U based DVB-T USB tuners",
+  "description": "基于RTL_SDR/RTL_433的DVB-T USB调谐器上的RTL2832U的RF到MQTT桥接器\n\n请注意，由于我无法直接访问外部资源，因此可能无法提供最准确或最新的信息。如果您有其他问题或需要进一步的帮助，请随时告诉我！",
   "startup": "application",
   "boot": "auto",
-  "map": ["config:rw", "ssl"],
+  "map": [
+    "config:rw",
+    "ssl"
+  ],
   "init": false,
   "url": "https://gh-proxy.com/github.com/jdeath/RTLAMR2MQQT/tree/master/RTLAMR2MQQT",
   "usb": true,
@@ -16,22 +19,20 @@
     "armv7",
     "i386"
   ],
-  "options":
-  {
+  "options": {
     "mqtt_host": "hassio.local",
     "mqtt_port": "1883",
     "mqtt_user": "",
     "mqtt_password": "",
-	"msgType": "scm",
-	"ids": "1234,1235"
+    "msgType": "scm",
+    "ids": "1234,1235"
   },
-  "schema":
-  {
+  "schema": {
     "mqtt_host": "str",
     "mqtt_port": "str",
     "mqtt_user": "str",
     "mqtt_password": "str",
-	"msgType": "str",
-	"ids":"str"
-   }
+    "msgType": "str",
+    "ids": "str"
+  }
 }

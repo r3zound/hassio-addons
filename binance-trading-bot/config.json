@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Automated Binance trading bot - Trade multiple cryptocurrencies. Buy low/sell high with Grid Trading. Integrated with TradingView technical analysis",
+  "description": "自动化的币安交易机器人 - 可同时交易多种加密货币。使用网格交易低买高卖。集成TradingView技术分析。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

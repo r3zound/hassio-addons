@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "FlexGet is a multipurpose automation tool for all of your media",
+  "description": "FlexGet 是一个用于所有媒体的多功能自动化工具。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
