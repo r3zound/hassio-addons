@@ -56,75 +56,70 @@ jobs:
             -e 's|https://github.com|https://gh-proxy.com/github.com|g' \
             -e 's|ADD "https://raw.githubusercontent.com|ADD "https://gh-proxy.com/raw.githubusercontent.com|g' {} +
 
-            - name: Replace description in config files
-            run: |
-              set -e  # 如果一个命令失败，整个脚本会退出
-              set -x  # 打印每个命令的执行情况
-              
-              # 遍历 addons 目录下的所有 config 文件
-              find ./addons -type f -name "config" | while read -r file; do
-                # 判断文件是否为 JSON 格式
-                if file -b --mime-type "$file" | grep -q "json"; then
-                  # 处理 JSON 文件，提取 description 字段的内容
-                  description=$(jq -r '.description' "$file")
+      - name: Replace description in config files
+        run: |
+          set -e  # 如果一个命令失败，整个脚本会退出
+          set -x  # 打印每个命令的执行情况
+
+          find ./addons -type f -name "config" | while read -r file; do
+
+            if file -b --mime-type "$file" | grep -q "json"; then
+
+              description=$(jq -r '.description' "$file")
+
+              if [ "$description" == "null" ]; then
+                echo "No description found in $file (JSON), skipping..."
+                continue
+              fi
+    
+
+              translated_description=$(curl --location 'https://open.bigmodel.cn/api/paas/v4/chat/completions' \
+                --header "Authorization: Bearer ${{ secrets.ZHIPUAI_KEY }}" \
+                --header 'Content-Type: application/json' \
+                --data "{
+                  \"model\": \"glm-4v-flash\",
+                  \"messages\": [
+                    {
+                      \"role\": \"user\",
+                      \"content\": \"翻译成中文：$description\"
+                    }
+                  ]
+                }" | jq -r '.choices[0].message.content')
+
+              echo "Translated description for $file (JSON): $translated_description"
+
+              jq -i ".description = \"$translated_description\"" "$file"
+    
+            elif file -b --mime-type "$file" | grep -q "text"; then
+
+              description=$(grep -oP '(?<=description: ).*' "$file")
                   
-                  # 如果 description 为空，则跳过
-                  if [ "$description" == "null" ]; then
-                    echo "No description found in $file (JSON), skipping..."
-                    continue
-                  fi
+
+              if [ -z "$description" ]; then
+                echo "No description found in $file (non-JSON), skipping..."
+                continue
+              fi
     
-                  # 调用 API 翻译 description 内容
-                  translated_description=$(curl --location 'https://open.bigmodel.cn/api/paas/v4/chat/completions' \
-                    --header "Authorization: Bearer ${{ secrets.ZHIPUAI_KEY }}" \
-                    --header 'Content-Type: application/json' \
-                    --data "{
-                      \"model\": \"glm-4v-flash\",
-                      \"messages\": [
-                        {
-                          \"role\": \"user\",
-                          \"content\": \"翻译成中文：$description\"
-                        }
-                      ]
-                    }" | jq -r '.choices[0].message.content')
+
+              translated_description=$(curl --location 'https://open.bigmodel.cn/api/paas/v4/chat/completions' \
+                --header "Authorization: Bearer ${{ secrets.ZHIPUAI_KEY }}" \
+                --header 'Content-Type: application/json' \
+                --data "{
+                  \"model\": \"glm-4v-flash\",
+                  \"messages\": [
+                    {
+                      \"role\": \"user\",
+                        \"content\": \"翻译成中文：$description\"
+                    }
+                  ]
+                }" | jq -r '.choices[0].message.content')
+
+              echo "Translated description for $file (non-JSON): $translated_description"
     
-                  # 输出翻译后的内容（可选）
-                  echo "Translated description for $file (JSON): $translated_description"
-    
-                  # 使用 jq -i 直接替换文件中的 description 内容
-                  jq -i ".description = \"$translated_description\"" "$file"
-    
-                elif file -b --mime-type "$file" | grep -q "text"; then
-                  # 处理类似 JSON 格式的文本文件，提取 description 字段的内容
-                  description=$(grep -oP '(?<=description: ).*' "$file")
-                  
-                  # 如果 description 为空，则跳过
-                  if [ -z "$description" ]; then
-                    echo "No description found in $file (non-JSON), skipping..."
-                    continue
-                  fi
-    
-                  # 调用 API 翻译 description 内容
-                  translated_description=$(curl --location 'https://open.bigmodel.cn/api/paas/v4/chat/completions' \
-                    --header "Authorization: Bearer ${{ secrets.ZHIPUAI_KEY }}" \
-                    --header 'Content-Type: application/json' \
-                    --data "{
-                      \"model\": \"glm-4v-flash\",
-                      \"messages\": [
-                        {
-                          \"role\": \"user\",
-                          \"content\": \"翻译成中文：$description\"
-                        }
-                      ]
-                    }" | jq -r '.choices[0].message.content')
-    
-                  # 输出翻译后的内容（可选）
-                  echo "Translated description for $file (non-JSON): $translated_description"
-    
-                  # 使用 sed 替换文本文件中的 description 内容
-                  sed -i "s|description: .*|description: $translated_description|" "$file"
-                fi
-              done
+
+              sed -i "s|description: .*|description: $translated_description|" "$file"
+            fi
+          done
 
 
       #- name: Run link.py if Necessary
