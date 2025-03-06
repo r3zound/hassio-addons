@@ -123,7 +123,7 @@ jobs:
     
                   # 使用 sed 替换文本文件中的 description 内容
                   # 替换为多行文本格式
-              sed -i "s|description: |\ndescription: |\n$translated_description|" "$file"
+              jq --arg description "$translated_description" '.description = $description' "$file" > temp.json && mv temp.json "$file"
             fi
           done
 
