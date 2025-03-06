@@ -84,7 +84,7 @@ jobs:
                         \"messages\": [
                           {
                             \"role\": \"user\",
-                            \"content\": \"翻译成中文：$description\"
+                            \"content\": \"只要帮我翻译成中文，不需要其它任何内容：$description\"
                           }
                         ]
                       }" | jq -r '.choices[0].message.content')
@@ -115,7 +115,7 @@ jobs:
                         \"messages\": [
                           {
                             \"role\": \"user\",
-                            \"content\": \"翻译成中文：$description\"
+                            \"content\": \"只要帮我翻译成中文，不需要其它任何内容：$description\"
                           }
                         ]
                       }" | jq -r '.choices[0].message.content')
