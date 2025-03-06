@@ -58,11 +58,7 @@ jobs:
 
       - name: Replace description in config files
         run: |
-              set -e  # 如果一个命令失败，整个脚本会退出
-              set -x  # 打印每个命令的执行情况
-              
-              # 遍历 addons 目录下的所有 config.yaml 和 config.json 文件，排除隐藏目录（以 . 开头的目录）
-              find ./addons -type f \( -name "config.yaml" -o -name "config.json" \) ! -path "*/.*/*" | while read -r file; do
+          find ./addons -type f \( -name "config.yaml" -o -name "config.json" \) ! -path "*/.*/*" | while read -r file; do
                 {
                   # 处理 JSON 文件
                   if file -b --mime-type "$file" | grep -q "json"; then
