@@ -7,7 +7,7 @@
     "i386"
   ],
   "boot": "auto",
-  "description": "TubeSync is a PVR (personal video recorder) for YouTube",
+  "description": "TubeSync 是一个用于 YouTube 的个人视频录像机（PVR）。",
   "environment": {},
   "map": [
     "config:rw"

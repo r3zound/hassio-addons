@@ -5,7 +5,7 @@
     "armv7"
   ],
   "boot": "auto",
-  "description": "Type Draw Type is like the telephone game (Chinese whispers), only with pictures",
+  "description": "图绘类型就像电话游戏（耳语游戏），只是用图片来传递信息。\n\n解释：\n- 图绘类型（Type Draw Type）是一种通过图画进行信息传递的游戏或活动。\n- 电话游戏（telephone game）通常是指一种口耳相传的游戏，其中参与者依次将一句话传给下一个人，最终结果往往与原始信息大相径庭。\n- 在图绘类型中，参与者使用图画而不是言语来传达信息，这可能导致信息的误解和变形，类似于电话游戏中信息的失真。",
   "environment": {},
   "name": "typedrawtype",
   "ports": {

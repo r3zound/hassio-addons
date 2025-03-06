@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "A full-featured, open source, state-of-the-art video surveillance software system",
+  "description": "这是一款功能齐全、开源、最先进的视频监控系统软件。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

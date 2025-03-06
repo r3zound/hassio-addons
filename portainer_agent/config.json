@@ -8,7 +8,7 @@
     "backups"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "An agent used to manage all the resources in a Swarm cluster",
+  "description": "代理用于管理Swarm集群中的所有资源。",
   "docker_api": true,
   "full_access": true,
   "hassio_api": true,

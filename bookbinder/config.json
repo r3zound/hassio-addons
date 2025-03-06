@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "manual",
-  "description": "A JS application to format PDFs for bookbinding, based on Bookbinder, rewritten to use PDF-Lib as its backend library",
+  "description": "一个使用PDF-Lib作为后端库的重写的基于Bookbinder的用于装订书籍格式化PDF的JavaScript应用程序。",
   "environment": {},
   "version": "v1.3.1",
   "name": "Book Binder JS",

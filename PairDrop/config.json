@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "Local file sharing in your browser. Inspired by Apple's AirDrop",
+  "description": "浏览器中的本地文件共享。受苹果公司AirDrop启发。",
   "environment": {
     "PUID": "1000",
     "PGID": "1000",

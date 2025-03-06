@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "A privacy-first, lightweight note-taking service. Easily capture and share your great thoughts.",
+  "description": "一个以隐私为先、轻量级的笔记服务。轻松捕捉和分享您的伟大想法。",
   "environment": {
     "MEMOS_DATA": "/config/"
   },

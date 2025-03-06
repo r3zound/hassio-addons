@@ -3,7 +3,7 @@
     "amd64"
   ],
   "boot": "manual",
-  "description": "Automatically get points for the MS Rewards program and does all the tasks for you (playing quizzes, searches, etc)",
+  "description": "自动获得MS奖励计划积分，并为你完成所有任务（玩测验、搜索等）。",
   "environment": {},
   "map": [
     "addon_config:rw"

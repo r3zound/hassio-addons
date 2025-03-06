@@ -3,7 +3,7 @@
     "amd64"
   ],
   "boot": "auto",
-  "description": "Speedtest",
+  "description": "速度测试",
   "environment": {},
   "name": "speedtest",
   "options": {},

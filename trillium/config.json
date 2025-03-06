@@ -3,7 +3,7 @@
     "amd64"
   ],
   "boot": "auto",
-  "description": "Trilium Notes is a hierarchical note taking application with focus on building large personal knowledge bases",
+  "description": "三叶草笔记是一款层次化的记事应用程序，专注于构建大型个人知识库。",
   "environment": {
     "TRILIUM_DATA_DIR": "/share/trillium"
   },

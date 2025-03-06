@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Calendar+Contacts server",
+  "description": "日历+联系人服务器",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

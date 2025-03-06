@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Self-hosted, ad-free, privacy-respecting metasearch engine",
+  "description": "自托管、无广告、尊重隐私的元搜索引擎",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Free, lightweight, and easy-to-use home server for your comics and ebooks",
+  "description": "免费、轻量级且易于使用的家庭服务器，用于管理和分享您的漫画和电子书。\n\n这个句子描述了一个软件或服务，它可以帮助用户在家中建立一个专门用来存储和管理漫画和电子书的个人服务器。该服务器具有以下特点：\n\n- **免费**：用户无需支付费用即可使用此服务器。\n- **轻量级**：意味着服务器对硬件要求不高，可以在普通家用电脑上运行，不会占用过多资源。\n- **易用性**：设计简单直观，即使是非技术爱好者也能轻松设置和使用。\n\n这样的服务器可以为用户提供一个安全、便捷的方式来保存和共享他们的数字收藏，同时保持数据的隐私和安全。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

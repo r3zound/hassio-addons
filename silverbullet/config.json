@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "Silver Bullet (SB) is an extensible, open source personal knowledge platform",
+  "description": "银弹（SB）是一个可扩展的开源个人知识平台。",
   "environment": {
     "SB_FOLDER": "/config/",
     "PUID": "0",

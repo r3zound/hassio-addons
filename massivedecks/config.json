@@ -2,12 +2,12 @@
   "arch": [
     "amd64",
     "aarch64",
-	"armhf",
-	"armv7",
-	"i386"
+    "armhf",
+    "armv7",
+    "i386"
   ],
   "boot": "auto",
-  "description": "Comedy party game based on Cards against Humanity",
+  "description": "这是一款基于《人类荒诞史》（Cards Against Humanity）的喜剧派对游戏。\n\n《人类荒诞史》是一款流行的桌上游戏，玩家使用带有讽刺和幽默语句的卡片来创建滑稽的场景。这款游戏的特色在于其无厘头和出人意料的回答选项，使得它成为聚会中非常受欢迎的游戏之一。",
   "environment": {},
   "name": "massivedecks",
   "ports": {

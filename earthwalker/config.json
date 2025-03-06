@@ -3,7 +3,7 @@
     "amd64"
   ],
   "boot": "auto",
-  "description": "Earthwalker is a game of a similar concept to GeoGuessr. You get dropped somewhere in the world in Google StreetView, and the goal is to you find out where you are and guess your location more precisely than all of your friends. You can play against the clock, restrict the game to an area, and more.",
+  "description": "地球漫步是一款类似于GeoGuessr的游戏。您会在Google街景中随机被放置在世界上的某个地方，目标是找出您的位置并比您的所有朋友更精确地猜测出您的位置。您可以与时间赛跑、限制游戏区域等。",
   "name": "earthwalker",
   "options": {},
   "ports": {

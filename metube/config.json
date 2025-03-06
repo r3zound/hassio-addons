@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "Web GUI for youtube-dl",
+  "description": "YouTube-dl 的 Web 图形用户界面（GUI）",
   "map": [
     "share:rw",
     "media:rw"

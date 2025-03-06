@@ -3,7 +3,7 @@
     "amd64",
     "aarch64"
   ],
-  "description": "Clientless remote desktop gateway",
+  "description": "客户端远程桌面网关",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

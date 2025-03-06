@@ -2,7 +2,7 @@
   "name": "Metabase",
   "version": "1.0.1",
   "slug": "metabase",
-  "description": "Meet the easy, open source way for everyone to ask questions and learn from data.",
+  "description": "遇见简单、开源的方式，让每个人都能提出问题并从数据中学习。",
   "url": "https://gh-proxy.com/github.com/sanderdw/hassio-addons/blob/master/metabase/README.md",
   "startup": "application",
   "ports": {
@@ -11,7 +11,10 @@
   "network": {
     "3000/tcp": "Web interface (Ingress not working yet)"
   },
-  "arch": ["aarch64", "amd64"],
+  "arch": [
+    "aarch64",
+    "amd64"
+  ],
   "map": [
     {
       "type": "backup",

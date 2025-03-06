@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "Inventory and organization system built for the Home User",
+  "description": "为家庭用户提供库存和组织系统。",
   "environment": {
     "HBOX_STORAGE_DATA": "/config",
     "HBOX_STORAGE_SQLITE_URL": "/config/homebox.db?_fk=1"

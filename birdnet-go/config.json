@@ -5,7 +5,7 @@
   ],
   "audio": true,
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Realtime BirdNET soundscape analyzer",
+  "description": "实时鸟类声音景观分析器",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

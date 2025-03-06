@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "collaborative bookmark manager to collect, organize, and preserve webpages and articles",
+  "description": "协作书签管理器用于收集、组织和保存网页和文章。",
   "environment": {
     "AUTHENTIK_CLIENT_ID": "CLIENT_ID",
     "AUTHENTIK_CLIENT_SECRET": "CLIENT_SECRET",

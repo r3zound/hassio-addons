@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "Ladder is a web proxy to help bypass paywalls. This is a selfhosted version of 1ft.io and 12ft.io. It is inspired by 13ft.",
+  "description": "梯子是一款网络代理工具，用于帮助绕过付费墙。这是1ft.io和12ft.io的自托管版本，灵感来源于13ft。",
   "environment": {},
   "map": [
     "share:ro"

@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Chromium as a service container",
+  "description": "铬作为服务容器",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

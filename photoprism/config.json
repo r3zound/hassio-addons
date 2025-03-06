@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "A server-based application for browsing, organizing and sharing your personal photo collection",
+  "description": "基于服务器的应用程序，用于浏览、组织和分享您的个人照片收藏。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

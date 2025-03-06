@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "A simple web application that lets you save the precious readable content of web pages you like and want to keep forever.",
+  "description": "一个简单的网络应用程序，它允许您保存您喜欢并希望永远保留的网页的有价值的可读内容。",
   "environment": {
     "READECK_SERVER_HOST": "0.0.0.0"
   },

@@ -4,11 +4,9 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "Redlib is a private front-end like Invidious but for Reddit",
-  "environment": {
-  },
-  "map": [
-  ],
+  "description": "红书（Redlib）是一款类似于Invidious的前端应用，但专用于Reddit。",
+  "environment": {},
+  "map": [],
   "version": "0.35.1",
   "name": "Redlib",
   "options": {},

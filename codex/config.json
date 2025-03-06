@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Web based comic archive browser and reader",
+  "description": "基于网络的漫画存档浏览器和阅读器。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

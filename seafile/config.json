@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "High performance file syncing and sharing, with also Markdown WYSIWYG editing, Wiki, file label and other knowledge management features",
+  "description": "高性能文件同步和共享，同时具有Markdown所见即所得编辑、Wiki、文件标签和其他知识管理功能。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

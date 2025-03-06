@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "Useful tools for developer and people working in IT",
+  "description": "开发者及从事IT工作的人士有用的工具。",
   "environment": {},
   "map": [],
   "image": "corentinth/it-tools",
