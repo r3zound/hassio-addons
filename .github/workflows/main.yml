@@ -60,19 +60,21 @@ jobs:
         run: |
           set -e  # 如果一个命令失败，整个脚本会退出
           set -x  # 打印每个命令的执行情况
-
+              
+              # 遍历 addons 目录下的所有 config.yaml 和 config.json 文件，排除隐藏目录（以 . 开头的目录）
           find ./addons -type f \( -name "config.yaml" -o -name "config.json" \) ! -path "*/.*/*" | while read -r file; do
-
+                # 处理 YAML 或 JSON 文件
             if file -b --mime-type "$file" | grep -q "json"; then
-
+                  # 处理 JSON 文件，提取 description 字段的内容
               description=$(jq -r '.description' "$file")
-
+                  
+                  # 如果 description 为空，则跳过
               if [ "$description" == "null" ]; then
                 echo "No description found in $file (JSON), skipping..."
                 continue
               fi
     
-
+                  # 调用 API 翻译 description 内容
               translated_description=$(curl --location 'https://open.bigmodel.cn/api/paas/v4/chat/completions' \
                 --header "Authorization: Bearer ${{ secrets.ZHIPUAI_KEY }}" \
                 --header 'Content-Type: application/json' \
@@ -85,22 +87,24 @@ jobs:
                     }
                   ]
                 }" | jq -r '.choices[0].message.content')
-
+    
+                  # 输出翻译后的内容（可选）
               echo "Translated description for $file (JSON): $translated_description"
-
+    
+                  # 使用 jq -i 直接替换文件中的 description 内容
               jq -i ".description = \"$translated_description\"" "$file"
     
             elif file -b --mime-type "$file" | grep -q "text"; then
-
-              description=$(grep -oP '(?<=description: ).*' "$file")
-                  
-
+                  # 处理类似 JSON 格式的文本文件，提取 description 字段的内容
+              description=$(grep -oP '(?<=description:\s*\|).+' "$file" | sed ':a;N;$!ba;s/\n/ /g')
+    
+                  # 如果 description 为空，则跳过
               if [ -z "$description" ]; then
                 echo "No description found in $file (non-JSON), skipping..."
                 continue
               fi
     
-
+                  # 调用 API 翻译 description 内容
               translated_description=$(curl --location 'https://open.bigmodel.cn/api/paas/v4/chat/completions' \
                 --header "Authorization: Bearer ${{ secrets.ZHIPUAI_KEY }}" \
                 --header 'Content-Type: application/json' \
@@ -109,15 +113,17 @@ jobs:
                   \"messages\": [
                     {
                       \"role\": \"user\",
-                        \"content\": \"翻译成中文：$description\"
+                      \"content\": \"翻译成中文：$description\"
                     }
                   ]
                 }" | jq -r '.choices[0].message.content')
-
+    
+                  # 输出翻译后的内容（可选）
               echo "Translated description for $file (non-JSON): $translated_description"
     
-
-              sed -i "s|description: .*|description: $translated_description|" "$file"
+                  # 使用 sed 替换文本文件中的 description 内容
+                  # 替换为多行文本格式
+              sed -i "s|description: |\ndescription: |\n$translated_description|" "$file"
             fi
           done
 
