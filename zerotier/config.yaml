@@ -1,7 +1,7 @@
 name: ZeroTier One
 version: 0.20.0
 slug: zerotier
-description: "使用虚拟网络层彻底简化您的网络。"
+description: "彻底简化您的网络，使用一个在所有地方都相同工作的虚拟网络层。"
   works the same everywhere
 url: https://gh-proxy.com/github.com/hassio-addons/addon-zerotier
 codenotary: codenotary@frenck.dev
@@ -13,7 +13,7 @@ arch:
 - armv7
 ports:
   9993/tcp: 9993
-ports_description: "使用虚拟网络层彻底简化您的网络。"
+ports_description: "彻底简化您的网络，使用一个在所有地方都相同工作的虚拟网络层。"
   9993/tcp: ZeroTier's primary port
 host_network: true
 privileged:

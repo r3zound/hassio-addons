@@ -2,7 +2,7 @@
   "name": "RPi MySensor Gateway",
   "version": "0.0.25",
   "slug": "rpi-mysensor-gw",
-  "description": "树莓派MySensors网关SPI附加组件！",
+  "description": "树莓派我的传感器网关SPI附加组件！",
   "url": "https://gh-proxy.com/github.com/dianlight/hassio-addons/tree/master/RPiMySensor",
   "arch": [
     "armhf",

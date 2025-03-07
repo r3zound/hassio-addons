@@ -2,7 +2,7 @@ name: "LiveBook"
 version: "0.15.2"
 upstream: "0.15.2"
 slug: livebook
-description: "翻译成中文是：“大于”。"
+description: "Livebook 是一个用于编写交互式和协作代码笔记本的网络应用程序。"
   Livebook is a web application for writing interactive and collaborative code notebooks
 arch:
   - amd64
@@ -10,7 +10,7 @@ arch:
 url: "https://gh-proxy.com/github.com/jdeath/homeassistant-addons"
 ports:
   8080/tcp: 8080
-ports_description: "翻译成中文是：“大于”。"
+ports_description: "Livebook 是一个用于编写交互式和协作代码笔记本的网络应用程序。"
   8080/tcp: "Web Interface"
 image: ghcr.nju.edu.cn/livebook-dev/livebook
 map:

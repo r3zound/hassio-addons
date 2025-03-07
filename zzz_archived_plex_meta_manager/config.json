@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "以下是将上述英文文本翻译为中文的内容：\n\nPython脚本用于更新电影、节目和集合的元数据信息以及自动构建集合。\n\n请注意，由于您没有提供具体的代码或上下文，我无法直接将这段文字翻译为一个完整的Python脚本。如果您需要编写一个这样的脚本，请提供更多的详细信息或功能要求。",
+  "description": "Python脚本来更新电影、节目和收藏集的元数据信息以及自动构建收藏集",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

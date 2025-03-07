@@ -1,7 +1,7 @@
 name: rsync
 version: 2.0.0
 slug: rsync
-description: Sync folders to a remote machine via ssh and rsync.
+description: "通过SSH和rsync将文件夹同步到远程机器。"
 url: https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/rsync
 arch:
 - armhf
@@ -14,7 +14,7 @@ boot: manual
 init: false
 image: ghcr.nju.edu.cn/poeschl-homeassistant-addons/rsync-{arch}
 ports: {}
-ports_description: {}
+ports_description: "通过SSH和rsync将文件夹同步到远程机器。"
 map:
 - type: share
   read_only: false

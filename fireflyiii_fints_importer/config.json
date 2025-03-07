@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "从您的FinTS支持的银行导入财务交易到Firefly III中。",
+  "description": "将您的FinTS支持的银行中的财务交易导入Firefly III。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

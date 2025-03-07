@@ -2,7 +2,7 @@
 name: ntopng
 version: "0.0.25"
 slug: ntopng
-description: "SohO自由开源软件（FOSS）和免费网络流量收集器ntopng"
+description: "SohO自由开源软件（FOSS）和免费的网络流量收集器ntopng"
 url: "https://gh-proxy.com/github.com/litinoveweedle/hassio-addons/tree/main/ntopng"
 image: "ghcr.nju.edu.cn/litinoveweedle/{arch}-ntopng"
 ingress: true
@@ -24,7 +24,7 @@ map:
 ports:
   80/tcp: null
   2055/udp: 2055
-ports_description: "SohO自由开源软件（FOSS）和免费网络流量收集器ntopng"
+ports_description: "SohO自由开源软件（FOSS）和免费的网络流量收集器ntopng"
   80/tcp: ntopng web interface (Not required for Ingress)
   2055/udp: NetFlow2NG NetFlow v9 collector
 auth_api: true

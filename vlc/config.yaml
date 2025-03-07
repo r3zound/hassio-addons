@@ -2,7 +2,7 @@
 version: 0.3.0
 slug: vlc
 name: VLC
-description: "将您的设备变成一个媒体播放器，使用VLC。"
+description: "将您的设备转换为使用VLC播放媒体。"
 url: https://gh-proxy.com/github.com/home-assistant/addons/tree/master/vlc
 arch:
   - amd64

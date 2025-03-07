@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "Bitwarden服务器API的替代实现，用Rust编写，与上游Bitwarden客户端兼容*，非常适合自托管部署，因为运行官方资源密集型服务可能不太理想。",
+  "description": "Bitwarden服务器API的替代实现，用Rust编写并与上游Bitwarden客户端兼容*，非常适合自托管部署，因为运行官方资源密集型服务可能不太理想。",
   "environment": {
     "DATA_FOLDER": "/config"
   },

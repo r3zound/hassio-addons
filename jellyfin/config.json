@@ -13,7 +13,7 @@
     "10.10.6*"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "一个自由软件媒体系统，让你能够控制管理和流式传输您的媒体。\n\n解释：\n- \"Free Software\" 意为“免费软件”，指的是可以自由使用、修改和分发的软件。\n- \"Media System\" 指的是处理多媒体内容的系统或平台。\n- \"puts you in control\" 表示该系统允许用户掌握主动权。\n- \"managing and streaming\" 分别指管理（组织和存储）以及流式传输（实时播放）媒体内容的功能。\n- \"your media\" 指的是用户的个人媒体文件，如视频、音频等。",
+  "description": "一个自由软件媒体系统，让你能够控制管理和流式传输你的媒体。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

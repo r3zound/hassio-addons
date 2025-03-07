@@ -5,7 +5,7 @@
   ],
   "audio": true,
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "实时鸟类声音景观分析器\n\n这个工具可以实时分析和识别环境中的鸟鸣声，并生成声音景观图。它可以帮助研究人员和爱好者监测和分析不同地点的鸟类活动情况。",
+  "description": "实时鸟类声音景观分析器\n\n请注意，由于“BirdNET”可能是某个特定产品或技术的名称，因此直接将其翻译为中文可能不准确或不合适。如果这是一个特定的品牌名或者技术术语，通常建议保留其原文名称以避免误解。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

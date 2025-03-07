@@ -2,7 +2,7 @@
 name: KNXD daemon
 version: "0.5.2"
 slug: knxd
-description: "Knxd守护进程可以通过Tpuart或USB总线适配器创建一个Knx/ip网关。"
+description: "KNXD守护进程可以通过TUART或USB总线适配器创建一个KNX/IP网关。"
 url: https://gh-proxy.com/github.com/da-anda/hass-io-addons/tree/main/knxd
 arch:
   - armhf
@@ -37,7 +37,7 @@ watchdog: "tcp://[HOST]:[PORT:6720]"
 ports:
   "6720/tcp": 6720
   "3671/udp": 3671
-ports_description: "Knxd守护进程可以通过Tpuart或USB总线适配器创建一个Knx/ip网关。"
+ports_description: "KNXD守护进程可以通过TUART或USB总线适配器创建一个KNX/IP网关。"
   "6720/tcp": "Required by knx interface and being able to access the KNX bus via ETS"
   "3671/udp": "Required by knx interface and being able to access the KNX bus via ETS"
 image: "ghcr.nju.edu.cn/da-anda/hass-io-addons-{arch}-addon-knxd"

@@ -2,7 +2,7 @@ name: "ConvertX"
 version: "v0.12.0"
 upstream: "v0.12.0"
 slug: convertx
-description: "翻译成中文是：“大于”。"
+description: "> - 一个自托管的在线文件转换器。支持831种不同的格式。使用TypeScript、Bun和Elysia编写。"
   A self-hosted online file converter. Supports 831 different formats. Written with TypeScript, Bun and Elysia
 arch:
   - amd64
@@ -10,7 +10,7 @@ arch:
 url: "https://gh-proxy.com/github.com/jdeath/homeassistant-addons"
 ports:
   3000/tcp: 3000
-ports_description: "翻译成中文是：“大于”。"
+ports_description: "> - 一个自托管的在线文件转换器。支持831种不同的格式。使用TypeScript、Bun和Elysia编写。"
   3000/tcp: "Web Interface"
 map:
   - type: addon_config
