@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "“Octobot 是一款强大的开源加密货币交易机器人。”",
+  "description": "奥克托机器人是一款强大的开源加密货币交易机器人。",
   "environment": {},
   "map": [
     "addon_config:rw"

@@ -1,7 +1,7 @@
 name: chrony
 version: 5.1.0
 slug: chrony
-description: "一个本地NTP（网络时间协议）服务器，用于摄像头等设备。"
+description: A local NTP (Network Time Protocol) server for cameras etc.
 url: https://gh-proxy.com/github.com/hassio-addons/addon-chrony
 codenotary: codenotary@frenck.dev
 startup: system
@@ -15,7 +15,7 @@ privileged:
 - SYS_TIME
 ports:
   123/udp: 123
-ports_description: "一个本地NTP（网络时间协议）服务器，用于摄像头等设备。"
+ports_description:
   123/udp: NTP; Network Time Protocol
 options:
   set_system_clock: true

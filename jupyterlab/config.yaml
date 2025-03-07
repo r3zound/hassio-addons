@@ -1,7 +1,7 @@
 name: JupyterLab
 version: 0.15.9
 slug: jupyterlablite
-description: Create documents containing live code, equations, visualizations, and
+description: "创建包含活代码、方程式、可视化图和解释性文本的文档。"
   explanatory text
 url: https://gh-proxy.com/github.com/hassio-addons/addon-jupyterlab
 codenotary: codenotary@frenck.dev

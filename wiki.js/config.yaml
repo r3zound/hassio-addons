@@ -1,7 +1,7 @@
 name: Wiki.JS
 version: 2.0.12
 slug: wikijs
-description: "最强大且可扩展的开源Wiki软件。"
+description: "最强大且可扩展的开源Wiki软件"
 url: https://gh-proxy.com/github.com/FaserF/hassio-addons/tree/master/wiki.js
 arch:
   #- aarch64 (nodejs does support aarch64, but nodejs musl not?)
@@ -30,6 +30,6 @@ schema:
 ports:
   3000/tcp: 3000
   3443/tcp: 3443
-ports_description: "最强大且可扩展的开源Wiki软件。"
+ports_description: "最强大且可扩展的开源Wiki软件"
   3000/tcp: HTTP Entrance port
   3443/tcp: HTTPS/SSL Entrance port

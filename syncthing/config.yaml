@@ -1,7 +1,7 @@
 name: Syncthing
 version: 1.19.6
 slug: syncthing
-description: "Syncthing 是一个去中心化的持续文件同步程序。"
+description: "Syncthing 是一种去中心化的持续文件同步程序。"
   way
 url: https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/syncthing
 arch:
@@ -17,7 +17,7 @@ ports:
   8384/tcp: null
   22000/tcp: 22000
   21027/udp: 21027
-ports_description: "Syncthing 是一个去中心化的持续文件同步程序。"
+ports_description: "Syncthing 是一种去中心化的持续文件同步程序。"
   8384/tcp: Web frontend (not needed with Ingress)
   22000/tcp: Sync protocol
   21027/udp: Discovery broadcast

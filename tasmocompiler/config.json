@@ -5,7 +5,7 @@
     "armv7"
   ],
   "boot": "auto",
-  "description": "一个简单的网络图形用户界面（GUI），允许您使用自己的设置编译令人惊叹的Tasmota固件。",
+  "description": "一个简单的网页图形用户界面（GUI），允许您使用自己的设置编译令人惊叹的Tasmota固件。",
   "environment": {
     "TZ": "America/New_York"
   },
