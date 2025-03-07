@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "阻止本地网络设备连接互联网。",
+  "description": "将本地网络设备与互联网断开连接",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

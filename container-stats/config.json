@@ -2,7 +2,7 @@
   "name": "Docker Container Stats",
   "version": "1.5.0",
   "slug": "container-stats",
-  "description": "（已弃用）一个用于查看每个Docker容器的历史和当前统计数据的Web界面",
+  "description": "（已弃用）一个用于查看每个Docker容器的历史和当前统计数据的网页界面",
   "url": "https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/container-stats",
   "arch": [
     "armhf",

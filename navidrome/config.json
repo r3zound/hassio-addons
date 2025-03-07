@@ -7,7 +7,7 @@
     "**/cache/**"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "纳维德罗姆（Navidrome）是用于家庭自动化平台Home Assistant的一个音乐播放器插件。\n\n纳维德罗姆（Navidrome）是一款开源的音乐流媒体服务器，它允许您在家中或办公室中轻松地管理和播放您的音乐收藏。通过集成到Home Assistant中，您可以方便地在智能家居环境中访问和管理您的音乐库。\n\n以下是使用纳维德罗姆作为Home Assistant插件的步骤：\n\n1. 安装Home Assistant：\n   - 首先，确保您已经安装了Home Assistant。如果您还没有安装，请参考官方文档进行安装。\n\n2. 安装纳维德罗姆插件：\n   - 打开Home Assistant界面，进入“Settings”> “Add-ons”> “Community Add-ons Store”。\n   - 在搜索框中输入“navidrome”，然后点击搜索按钮。\n   - 找到“Navidrome”插件后，点击“Install”按钮进行安装。\n\n3. 配置纳维德罗姆：\n   - 安装完成后，返回主界面，找到并打开“Navidrome”插件。\n   - 根据提示配置您的音乐库路径、数据库等必要信息。\n\n4. 使用纳维德罗姆：\n   - 配置完成后，您可以通过Home Assistant界面或其他支持Home Assistant的应用程序来访问和管理您的音乐库。\n   - 您可以创建播放列表、搜索歌曲、调整音量等操作。\n\n请注意，以上步骤可能因不同版本的Home Assistant和纳维德罗姆插件而有所不同。建议查阅最新的官方文档以获取最准确的信息。",
+  "description": "纳维德罗姆（Navidrome）是一款开源的音乐流媒体服务器，它允许用户在家中或办公室中存储、组织和分享他们的音乐收藏。Home Assistant 是一个智能家居自动化平台，它可以与各种设备和系统进行交互，以实现家庭自动化的功能。\n\n将 Navidrome 与 Home Assistant 集合在一起，可以实现以下功能：\n\n1. **音乐播放控制**：通过 Home Assistant 的界面或语音命令来控制 Navidrome 播放音乐。\n2. **音乐库集成**：在 Home Assistant 中显示和访问 Navidrome 中的音乐库。\n3. **场景和规则**：创建场景或规则，例如在特定时间自动播放某些音乐，或者在有人进入房间时开始播放背景音乐。\n4. **设备集成**：将 Navidrome 与其他智能家居设备（如智能音箱、电视等）集成，以便更方便地控制音乐播放。\n\n要实现这些功能，通常需要安装 Navidrome 在一台服务器上，并在 Home Assistant 中配置相应的插件或集成。具体的步骤可能会根据最新的软件版本和社区文档而有所不同。建议查阅官方文档或社区论坛获取最新和详细的指导。",
   "image": "ghcr.nju.edu.cn/alexbelgium/navidrome-{arch}",
   "init": false,
   "map": [

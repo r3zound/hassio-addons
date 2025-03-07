@@ -5,7 +5,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Smartd 的智能监控（完全访问）Web 界面\n\n这个标题表明这是一个用于 Smartmontools（S.M.A.R.T. 监控工具）的 Web 用户界面，并且它提供了对硬盘驱动器健康状态的全面访问。S.M.A.R.T.（Self-Monitoring, Analysis and Reporting Technology）技术允许计算机监测其内部硬盘驱动器的健康状况，从而在潜在故障发生前发出警告。\n\n“Scrutiny”可能是指该 Web 界面的名称或功能，而 “WebUI” 是指 Web User Interface（网络用户界面），意味着可以通过浏览器访问和操作。",
+  "description": "Smartd 的智能监控（完全访问）Web 界面\n\n注意：此翻译可能并不准确，因为“Scrutiny”可能是某个软件或工具的名字，需要根据上下文进行适当调整。",
   "environment": {
     "COLLECTOR_API_ENDPOINT": "http://localhost:8080",
     "COLLECTOR_HOST_ID": "home_assistant"

@@ -5,7 +5,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Smartd 的智能监控 Web 用户界面（WebUI）。\n\n请注意，这个描述可能需要根据上下文进行微调以获得更准确的翻译。例如，“WebUI”可以翻译为“网络用户界面”或“网页用户界面”。",
+  "description": "Smartd 的智能监控 Web 用户界面（WebUI）。\n\n请注意，由于“Scrutiny”这个词在上下文中可能不是标准的英文单词或术语，因此我无法确定其确切的含义。如果这是一个特定的软件、工具或项目的名称，请提供更多的上下文信息以便我能更准确地将其翻译为中文。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

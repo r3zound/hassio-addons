@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "自动登录并兑换Epic Games Store上的促销免费游戏。",
+  "description": "自动登录并兑换Epic Games商店的促销免费游戏。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

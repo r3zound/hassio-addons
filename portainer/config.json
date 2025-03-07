@@ -9,7 +9,7 @@
     "docker_config/cli-plugins"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "轻松管理您的Docker环境。",
+  "description": "管理您的Docker环境变得轻松。",
   "docker_api": true,
   "hassio_api": true,
   "image": "ghcr.nju.edu.cn/alexbelgium/portainer-{arch}",

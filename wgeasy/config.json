@@ -7,7 +7,7 @@
     "i386"
   ],
   "boot": "auto",
-  "description": "WireGuard 易用性：WireGuard 加上用户界面在一个程序中。\n\nWireGuard 是一种轻量级的虚拟专用网络（VPN）协议和实现，它以其简洁的设计、高性能和安全特性而受到关注。而“Easy”则暗示了该版本或工具提供了直观的用户界面（UI），使得使用 WireGuard 变得更加简单易行。将这两个元素结合在一起，意味着这个特定的 WireGuard 版本或工具集成了用户友好的图形界面，让用户可以轻松地配置和管理 VPN 连接，而不必深入理解复杂的命令行操作。这种集成旨在降低技术门槛，使普通用户也能方便地享受 WireGuard 提供的安全连接功能。",
+  "description": "WireGuard 易用性：将 WireGuard 和用户界面结合在一起。",
   "environment": {},
   "map": [
     "ssl:rw"

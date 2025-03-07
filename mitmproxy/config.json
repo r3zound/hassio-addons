@@ -3,7 +3,7 @@
   "version": "1.2.0",
   "slug": "mitmproxy",
   "panel_icon": "mdi:lan-connect",
-  "description": "(折旧) 一个免费的开源交互式HTTPS代理，用于拦截和检查网络流量。\n\n请注意，\"Depreciated\" 这个词在英文中并不常见，可能是 \"Deprecated\" 的误拼。\"Deprecated\" 意思是“已弃用的”，但在这个上下文中似乎不太合适。如果是指一个免费的开源交互式HTTPS代理工具，可以将其翻译为：\n\n（已弃用）一个免费的开源交互式HTTPS代理，用于拦截和检查网络流量。",
+  "description": "(折旧) 一个免费的开源交互式HTTPS代理程序，用于拦截和检查网络流量。\n\n翻译：一个免费的、开源的、交互式的HTTPS代理程序，可以用来拦截和检查网络流量。",
   "url": "https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/mitmproxy",
   "arch": [
     "armv7",

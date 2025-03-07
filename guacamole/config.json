@@ -3,7 +3,7 @@
     "amd64",
     "aarch64"
   ],
-  "description": "客户端远程桌面网关\n\n（注：这里的“clientless”指的是无需安装客户端软件即可访问远程桌面）",
+  "description": "客户端远程桌面网关\n\n（注：由于“clientless”一词在中文中并不常用，这里将其直译为“客户端”，但实际含义可能是指无需安装客户端软件即可访问远程桌面的功能。）",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
