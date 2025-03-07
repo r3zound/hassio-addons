@@ -1,7 +1,7 @@
 name: ICantBelieveItsNotValetudo
 version: 4.1.0
 slug: icantbelieveitsnotvaletudo
-description: "这是一个简单的伴侣服务，用于生成地图png文件。"
+description: 这是一款简单的伴侣服务，用于生成地图png文件。
   pngs.
 url: https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/ICantBelieveItsNotValetudo
 arch:
@@ -11,7 +11,7 @@ arch:
 - i386
 ports:
   8080/tcp: null
-ports_description: "这是一个简单的伴侣服务，用于生成地图png文件。"
+ports_description:
   8080/tcp: Port serving the floor plan (Not required for Supervisor Ingress)
 ingress: true
 ingress_port: 8080

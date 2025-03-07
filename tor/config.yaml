@@ -1,7 +1,7 @@
 name: Tor
 version: 6.0.0
 slug: tor
-description: "保护您的隐私并通过Tor访问Home Assistant。"
+description: 保护您的隐私并通过Tor访问Home Assistant。
 url: https://gh-proxy.com/github.com/hassio-addons/addon-tor
 codenotary: codenotary@frenck.dev
 startup: services
@@ -13,7 +13,7 @@ init: false
 ports:
   9050/tcp: 9050
   9080/tcp: 9080
-ports_description: "保护您的隐私并通过Tor访问Home Assistant。"
+ports_description:
   9050/tcp: Tor SOCKS proxy port
   9080/tcp: Tor HTTP proxy port
 map:

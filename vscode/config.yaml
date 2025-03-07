@@ -1,7 +1,7 @@
 name: Studio Code Server
 version: 5.18.3
 slug: vscode
-description: "功能齐全的Visual Studio Code（VSCode）体验已集成到Home Assistant前端中。"
+description: 功能齐全的Visual Studio Code（VSCode）体验已集成到Home Assistant前端中。
   Home Assistant frontend.
 url: https://gh-proxy.com/github.com/hassio-addons/addon-vscode
 codenotary: codenotary@frenck.dev

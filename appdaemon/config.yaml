@@ -1,7 +1,7 @@
 name: AppDaemon
 version: 0.16.7
 slug: appdaemon
-description: "使用AppDaemon 4.x为Home Assistant创建Python应用程序和仪表板。"
+description: 使用AppDaemon 4.x为Home Assistant创建Python应用程序和仪表板。
 url: https://gh-proxy.com/github.com/hassio-addons/addon-appdaemon
 codenotary: codenotary@frenck.dev
 webui: http://[HOST]:[PORT:5050]
@@ -14,7 +14,7 @@ homeassistant_api: true
 uart: true
 ports:
   5050/tcp: 5050
-ports_description: "使用AppDaemon 4.x为Home Assistant创建Python应用程序和仪表板。"
+ports_description:
   5050/tcp: AppDaemon
 map:
 - addon_config:rw

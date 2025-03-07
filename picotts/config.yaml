@@ -1,7 +1,7 @@
 name: PicoTTS
 version: 1.6.1
 slug: picotts
-description: "SVox 的文本到语音合成器，包含在 Android AOSP 中。"
+description: SVox的文本到语音合成器，包含在Android AOSP中。
 url: https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/picotts
 arch:
 - armhf
@@ -13,5 +13,5 @@ image: ghcr.nju.edu.cn/poeschl-homeassistant-addons/picotts-{arch}
 init: false
 ports:
   59126/tcp: 59126
-ports_description: "SVox 的文本到语音合成器，包含在 Android AOSP 中。"
+ports_description:
   59126/tcp: Http interface of the REST wrapper

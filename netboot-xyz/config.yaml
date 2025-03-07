@@ -1,7 +1,7 @@
 name: Netboot.xyz
 version: 1.8.2
 slug: netboot-xyz
-description: "PXE服务器在本地网络中部署操作系统。"
+description: PXE服务器在本地网络中部署操作系统
 url: https://gh-proxy.com/github.com/FaserF/hassio-addons/tree/master/netboot-xyz
 arch:
   - armhf
@@ -31,7 +31,7 @@ ports:
   "85": 85
   "3000": 3000
   69/udp: 69
-ports_description: "PXE服务器在本地网络中部署操作系统。"
+ports_description:
   "85": NGINX server for hosting assets
   "3000": Web configuration interface for netboot-xyz - DO NOT CHANGE!
   69/udp: TFTP Port - DO NOT CHANGE!

@@ -2,7 +2,7 @@
 name: syslog-ng
 version: 5.0.4
 slug: syslog-ng
-description: "syslog-ng 允许您灵活地收集、解析、分类、重写和关联来自整个基础设施的日志，并将它们存储或路由到日志分析工具中。"
+description: syslog-ng 允许您灵活地收集、解析、分类、重写和关联来自基础设施各个部分的日志，并将它们存储或路由到日志分析工具中。
   syslog-ng allows you to flexibly collect, parse, classify, rewrite
   and correlate logs from across your infrastructure and store or route
   them to log analysis tools
@@ -17,7 +17,7 @@ ports:
   5514/udp: 5514
   6601/tcp: 6601
   6514/tcp: 6514
-ports_description: "syslog-ng 允许您灵活地收集、解析、分类、重写和关联来自整个基础设施的日志，并将它们存储或路由到日志分析工具中。"
+ports_description:
   5514/udp: Syslog UDP
   6601/tcp: Syslog TCP
   6514/tcp: Syslog TLS

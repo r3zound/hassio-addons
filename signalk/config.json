@@ -6,7 +6,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "信号K中央服务器在船只上的实现。",
+  "description": "一个用于船只的中心服务器实现。",
   "devices": [
     "/dev/can0",
     "/dev/can1",

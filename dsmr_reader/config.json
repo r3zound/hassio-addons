@@ -2,7 +2,7 @@
   "name": "DSMR Reader",
   "version": "1.12.1",
   "slug": "dsmr_reader",
-  "description": "用于读取智能电表的DSMR P1端口（https://dsmr-reader.readthedocs.io）",
+  "description": "用于读取智能电表DSMR P1端口（https://dsmr-reader.readthedocs.io）",
   "arch": [
     "armhf",
     "armv7",

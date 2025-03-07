@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Overseerr 的 Jellyfin 支持 fork 版本",
+  "description": "Jellyfin支持的Overseerr分支",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

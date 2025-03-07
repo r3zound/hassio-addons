@@ -1,7 +1,7 @@
 name: Glances
 version: 0.21.1
 slug: glances
-description: "跨平台系统监控工具"
+description: 跨平台系统监控工具
 url: https://gh-proxy.com/github.com/hassio-addons/addon-glances
 codenotary: codenotary@frenck.dev
 ingress: true
@@ -16,7 +16,7 @@ arch:
 - armv7
 ports:
   80/tcp: null
-ports_description: "跨平台系统监控工具"
+ports_description:
   80/tcp: Web interface (Not required for Ingress)
 map:
 - addons

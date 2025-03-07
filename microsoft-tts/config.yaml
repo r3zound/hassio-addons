@@ -1,6 +1,6 @@
 ---
 name: "Microsoft TTS"
-description: "null"
+description: null
 version: "1.2.0"
 slug: "wyoming_microsoft_tts"
 init: false

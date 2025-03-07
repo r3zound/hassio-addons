@@ -5,7 +5,7 @@
   ],
   "audio": true,
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "实时鸟类声音景观分析器\n\n请注意，由于“BirdNET”可能是某个特定产品或技术的名称，因此直接将其翻译为中文可能不准确或不合适。如果这是一个特定的品牌名或者技术术语，通常建议保留其原文名称以避免误解。",
+  "description": "实时鸟类声音景观分析器",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

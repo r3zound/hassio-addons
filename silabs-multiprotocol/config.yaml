@@ -2,7 +2,7 @@
 version: 2.4.5
 slug: silabs_multiprotocol
 name: Silicon Labs Multiprotocol
-description: Zigbee and OpenThread multiprotocol add-on
+description: Zigbee和OpenThread多协议附加组件
 url: >
   https://gh-proxy.com/github.com/home-assistant/addons/tree/master/silabs-multiprotocol
 arch:

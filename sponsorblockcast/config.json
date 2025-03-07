@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "跳过所有本地Google Cast设备上的YouTube广告和赞助内容。",
+  "description": "跳过所有本地Google Cast设备上的YouTube广告和赞助内容",
   "environment": {},
   "host_network": true,
   "image": "ghcr.nju.edu.cn/alexbelgium/sponsorblockcast-{arch}",

@@ -2,7 +2,7 @@ name: Music Assistant Server (dev/nightly)
 # version number gets updated only when the mass base image updates!
 version: 1.2.3
 slug: music_assistant_dev
-description: "开发（ nightly）版本的音乐助理。此附加组件在启动时直接从git安装最新版本的分支。（可配置）。如果您想跟上最新的尖端开发，但需自行承担风险，不建议日常使用。只需重新启动附加组件以获取最新版本即可。"
+description: 开发（夜间）版本的Music Assistant。此插件会在启动时直接从git安装最新版本（可配置分支）。如果你想要跟上最新的边缘开发进度，但需自行承担风险，不建议日常使用。只需重新启动插件以获取最新版本。
   This add-on installs the latest version from the (configurable) branch directly from git at startup.
   Install this version if you want to keep up with the latest bleeding edge development but use it at your own risk, not recomended for daily use.
   Simply restart the add-on to fetch the latest version from source.

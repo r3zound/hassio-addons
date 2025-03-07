@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "云命令行是一款带有控制台和编辑器的网络文件管理器。",
+  "description": "云命令行是一款网络文件管理器，带有控制台和编辑器。\n\n翻译结果如下：\n\n云命令行是一款网络文件管理器，带有控制台和编辑器。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

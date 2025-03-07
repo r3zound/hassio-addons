@@ -2,7 +2,7 @@
 name: Rclone
 version: 3.1.5
 slug: rclone
-description: "Rclone 是一个用于同步文件和目录到各种提供商之间的命令行程序。"
+description: Rclone 是一个用于同步文件和目录到各种提供商的命令行程序。
   Rclone is a command line program to sync files and directories to and
   from various providers.
 arch:

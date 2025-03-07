@@ -1,7 +1,7 @@
 name: pigpio
 version: 1.5.3
 slug: pigpio
-description: "使用Pigpio在Home Assistant上控制PWM LED。"
+description: 使用 pigpio 在 Home Assistant 上控制 PWM LED
 url: https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/pigpio
 arch:
 - armhf
@@ -18,7 +18,7 @@ image: ghcr.nju.edu.cn/poeschl-homeassistant-addons/pigpio-{arch}
 init: false
 ports:
   8888/tcp: 8888
-ports_description: "使用Pigpio在Home Assistant上控制PWM LED。"
+ports_description:
   8888/tcp: The port to control pigpio
 schema:
   additional_options: str?

@@ -2,7 +2,7 @@ name: Mopidy
 version: 2.2.1
 slug: mopidy
 panel_icon: mdi:music-circle
-description: "Mopidy 音乐服务器"
+description: Mopidy 音乐服务器
 url: https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/mopidy
 webui: http://[HOST]:[PORT:6680]/iris
 arch:
@@ -23,7 +23,7 @@ map:
 ports:
   6680/tcp: 6680
   6600/tcp: 6600
-ports_description: "Mopidy 音乐服务器"
+ports_description:
   6680/tcp: Web Frontend
   6600/tcp: MDP Connection
 options:

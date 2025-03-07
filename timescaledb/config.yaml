@@ -1,7 +1,7 @@
 name: TimescaleDB
 version: 5.1.2
 slug: timescaledb
-description: "这是一个建立在PostgreSQL上的开源数据库，用于使用SQL的力量和便利性分析时间序列数据。"
+description: 一个开源数据库，基于PostgreSQL构建，用于使用SQL的力量和便利性分析时间序列数据。
   data with the power and convenience of SQL
 url: https://gh-proxy.com/github.com/expaso/hassos-addon-timescaledb
 codenotary: hans@expaso.nl
@@ -21,7 +21,7 @@ map:
 timeout: 60
 ports:
   5432/tcp: null
-ports_description: "这是一个建立在PostgreSQL上的开源数据库，用于使用SQL的力量和便利性分析时间序列数据。"
+ports_description:
   5432/tcp: PostgreSQL Port. Beware! This port may already be in use. Choose another
     port-number if the add-on won't start.
 options:

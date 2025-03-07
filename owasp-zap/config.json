@@ -2,7 +2,7 @@
   "name": "OWASP ZAP",
   "version": "2.2.0",
   "slug": "owasp-zap",
-  "description": "OWASP Zed Attack Proxy（ZAP）是世界上最受欢迎的开源安全工具之一，并由一支国际志愿者团队积极维护。",
+  "description": "OWASP Zed Attack Proxy（ZAP）是世界上一款最受欢迎的自由安全工具之一，并由一支国际志愿者团队积极维护。\n\n(折旧)",
   "url": "https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/owasp-zap",
   "arch": [
     "armv7",

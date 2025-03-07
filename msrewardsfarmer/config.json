@@ -3,7 +3,7 @@
     "amd64"
   ],
   "boot": "manual",
-  "description": "自动获得MS奖励计划积分，并为你完成所有任务（玩测验、搜索等）。",
+  "description": "自动为你获得MS奖励计划积分，并完成所有任务（如玩测验、搜索等）。",
   "environment": {},
   "map": [
     "addon_config:rw"

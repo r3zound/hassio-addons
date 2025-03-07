@@ -14,7 +14,9 @@ breaking_versions:
 panel_icon: "mdi:cctv"
 panel_title: Frigate
 slug: frigate-beta
-description: NVR with realtime local object detection for IP cameras
+description: $'NVR带有实时本地物体检测功能的IP摄像头
+
+（表情符号保持不变）'
 url: "https://gh-proxy.com/github.com/blakeblackshear/frigate"
 image: ghcr.nju.edu.cn/blakeblackshear/frigate
 startup: application

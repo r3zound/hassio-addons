@@ -1,7 +1,7 @@
 name: Bookstack
 version: 2.4.2
 slug: bookstack
-description: "简单免费的wiki软件"
+description: 简单免费的wiki软件
 url: https://gh-proxy.com/github.com/hassio-addons/addon-bookstack
 codenotary: codenotary@frenck.dev
 webui: '[PROTO:ssl]://[HOST]:[PORT:80]'
@@ -16,7 +16,7 @@ map:
 - ssl
 ports:
   80/tcp: 2665
-ports_description: "简单免费的wiki软件"
+ports_description:
   80/tcp: Web interface
 options:
   envvars: []

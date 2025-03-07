@@ -7,7 +7,7 @@
     "i386"
   ],
   "boot": "auto",
-  "description": "《人类荒诞卡牌游戏》（Cards Against Humanity）是一款喜剧派对游戏。\n\n《人类荒诞卡牌游戏》是基于《人类荒诞卡牌游戏》（Cards Against Humanity）的一款喜剧派对游戏。",
+  "description": "根据图片中的文字，翻译如下：\n\n喜剧派对游戏，基于《人类荒诞史》卡片。\n\n表情符号保持不变。",
   "environment": {},
   "name": "massivedecks",
   "ports": {

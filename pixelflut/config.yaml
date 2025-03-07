@@ -2,7 +2,7 @@ name: Pixelflut
 version: 1.2.2
 slug: pixelflut
 panel_icon: mdi:waves
-description: "将Pixelflut画布带入您的智能家居中。"
+description: 将Pixelflut画布带入您的智能家居中
 url: https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/pixelflut
 ingress: true
 ingress_port: 6080
@@ -19,15 +19,15 @@ ports:
   1234/tcp: 1234
   1235/tcp: null
   5900/tcp: null
-ports_description: "将Pixelflut画布带入您的智能家居中。"
+ports_description:
   1234/tcp: The Pixelflut port to send your requests
   1235/tcp: Provides json statistics about the running canvas
   5900/tcp: VNC access of the Pixelflut canvas
 options:
   width: '1280'
   height: '720'
-  description: "将Pixelflut画布带入您的智能家居中。"
+  description: Pixelflut
 schema:
   width: int(0,)
   height: int(0,)
-  description: "将Pixelflut画布带入您的智能家居中。"
+  description: str

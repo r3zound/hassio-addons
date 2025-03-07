@@ -2,7 +2,7 @@
 name: Grafana Loki
 version: 3.0.6
 slug: grafana-loki
-description: "Grafana Loki 是一个水平可扩展、高可用性、多租户日志聚合系统，灵感来源于 Prometheus。"
+description: Grafana Loki 是一个水平可扩展、高可用性、多租户日志聚合系统，灵感来源于 Prometheus。
   Grafana Loki is a horizontally-scalable, highly-available, multi-tenant log aggregation system inspired by Prometheus
 arch:
   - aarch64
@@ -13,7 +13,7 @@ url: https://gh-proxy.com/github.com/bluemaex/home-assistant-addons/tree/master/
 init: false
 ports:
   3100/tcp: 3100
-ports_description: "Grafana Loki 是一个水平可扩展、高可用性、多租户日志聚合系统，灵感来源于 Prometheus。"
+ports_description:
   3100/tcp: Loki listen port
 panel_icon: mdi:router-network
 map:

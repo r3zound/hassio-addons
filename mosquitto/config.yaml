@@ -2,7 +2,7 @@
 version: 6.5.0
 slug: mosquitto
 name: Mosquitto broker
-description: "开源MQTT代理服务器"
+description: 一个开源的MQTT代理服务器
 url: https://gh-proxy.com/github.com/home-assistant/addons/tree/master/mosquitto
 codenotary: notary@home-assistant.io
 arch:

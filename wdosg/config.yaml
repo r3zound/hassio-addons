@@ -2,7 +2,7 @@ name: wDOSg
 version: "v1.3.4"
 upstream: latest
 slug: wdosg
-description: "一个简单的Web服务器，用于管理和运行基于浏览器的DOS游戏。"
+description: 一个简单的Web服务器，用于管理和运行基于浏览器的DOS游戏。
   A Simple web server to manage and run DOS based games on browser
 arch:
   - amd64
@@ -10,7 +10,7 @@ arch:
 url: "https://gh-proxy.com/github.com/jdeath/homeassistant-addons"
 ports:
   3001/tcp: 3001 
-ports_description: "一个简单的Web服务器，用于管理和运行基于浏览器的DOS游戏。"
+ports_description:
   3001/tcp: "Web Interface"
 map:
   - type: addon_config

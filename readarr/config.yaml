@@ -1,7 +1,7 @@
 name: Readarr
 version: 0.3.1
 slug: readarr
-description: "书管理器和自动化（用于电子书的Sonarr）"
+description: 书管理器与自动化（用于电子书的Sonarr）
 url: https://gh-proxy.com/github.com/hassio-addons/addon-readarr/tree/main/README.md
 codenotary: codenotary@frenck.dev
 webui: http://[HOST]:[PORT:8787]

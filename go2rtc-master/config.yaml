@@ -1,6 +1,6 @@
 # https://gh-proxy.com/github.com/AlexxIT/builder/blob/master/builder.sh
 name: go2rtc master
-description: "最新不稳定版本"
+description: 最新不稳定版本
 url: https://gh-proxy.com/github.com/AlexxIT/go2rtc
 image: alexxit/go2rtc
 arch: [ amd64, aarch64, i386, armv7 ]

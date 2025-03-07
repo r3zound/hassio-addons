@@ -1,7 +1,13 @@
 name: tuya-convert BETA
 version: 0.1.1
 slug: tuya-convert
-description: "泰雅转换器 - 使用开源软件刷写泰雅/智能生活设备。测试版且不再维护！"
+description: $'图中的文字是：
+
+"Tuya Convert - Flash Tuya/Smart Life devices with open Source software. Beta and not being worked on anymore!"
+
+翻译为中文如下：
+
+“Tuya转换器 - 使用开源软件刷写Tuya/智能生活设备。这是一个测试版，不再被开发中！”'
 url: https://gh-proxy.com/github.com/FaserF/hassio-addons/tree/master/tuya-convert
 arch:
   - armhf

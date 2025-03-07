@@ -1,7 +1,7 @@
 name: Apache2 Minimal with MariaDB Client
 version: 2.12.2
 slug: apache2-minimal-mariadb
-description: "开源Web服务器，带有MariaDB客户端和一些PHP模块。"
+description: 开源Web服务器，带有MariaDB客户端和一些PHP模块。
 url: https://gh-proxy.com/github.com/FaserF/hassio-addons/tree/master/apache2-minimal-mariadb
 arch:
   - armhf
@@ -43,6 +43,6 @@ schema:
 ports:
   80/tcp: 80
   443/tcp: 8324
-ports_description: "开源Web服务器，带有MariaDB客户端和一些PHP模块。"
+ports_description:
   80/tcp: Web interface http
   443/tcp: SSL Web interface

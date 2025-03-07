@@ -1,7 +1,7 @@
 name: Z-Wave JS UI
 version: 3.22.0
 slug: zwavejs2mqtt
-description: "Z-Wave JS网关和控制器完全可配置"
+description: Z-Wave JS网关和控制器完全可配置
 url: https://gh-proxy.com/github.com/hassio-addons/addon-zwave-js-ui
 codenotary: codenotary@frenck.dev
 ingress: true
@@ -27,6 +27,6 @@ schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
 ports:
   3000/tcp: null
-ports_description: "Z-Wave JS网关和控制器完全可配置"
+ports_description:
   3000/tcp: Z-Wave JS communication
 image: ghcr.nju.edu.cn/hassio-addons/zwave-js-ui/{arch}

@@ -1,7 +1,7 @@
 name: Freenom-dns-updater
 version: 1.6.6
 slug: freenom-dns-updater
-description: "Freenom 注册商域名管理 - 更新 DNS 记录、管理（添加/更新/删除）域名的 DNS 记录、自动续费域名等。"
+description: Freenom 注册商域名管理 - 更新 DNS 记录、管理（添加/更新/删除）域名的 DNS 记录、自动续费域名等。
   Freenom Registrar Domain Management - update dns records, Manage (add/update/remove)
   a domain's dns record, auto renew domains and more.
 url: https://gh-proxy.com/github.com/FaserF/hassio-addons/tree/master/freenom-dns-updater

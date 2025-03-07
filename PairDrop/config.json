@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "浏览器中的本地文件共享。受苹果公司AirDrop的启发。",
+  "description": "浏览器中的本地文件共享。受苹果公司AirDrop启发。",
   "environment": {
     "PUID": "1000",
     "PGID": "1000",

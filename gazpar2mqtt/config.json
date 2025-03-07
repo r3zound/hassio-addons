@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "获取GRDF数据并将其发布到MQTT代理。\n\n请注意，由于“GRDF”可能是指某个特定的组织或系统，因此我无法直接将其翻译为中文。如果您能提供更多上下文或详细信息，我可以帮助您更准确地理解并翻译这个短语。",
+  "description": "获取GRDF数据并将其发布到MQTT代理。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

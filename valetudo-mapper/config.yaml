@@ -1,7 +1,7 @@
 name: Valetudo Mapper
 version: 1.12.0
 slug: valetudo-mapper
-description: "这是一个简单的伴侣服务，用于生成地图png文件，适用于Valetudo RE。"
+description: 这是一款为Valetudo RE生成的地图png文件的简单伴侣服务。
   map pngs.
 url: https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/valetudo-mapper
 arch:
@@ -14,7 +14,7 @@ image: ghcr.nju.edu.cn/poeschl-homeassistant-addons/valetudo-mapper-{arch}
 init: false
 ports:
   3000/tcp: null
-ports_description: "这是一个简单的伴侣服务，用于生成地图png文件，适用于Valetudo RE。"
+ports_description:
   3000/tcp: Port serving the floor plan (Not required for Ingress)
 ingress: true
 ingress_port: 3000

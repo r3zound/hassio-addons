@@ -1,7 +1,7 @@
 name: Network UPS Tools
 version: 0.14.1
 slug: nut
-description: "管理电池备份（不间断电源）设备"
+description: 管理电池备份（不间断电源）设备
 url: https://gh-proxy.com/github.com/hassio-addons/addon-nut
 codenotary: codenotary@frenck.dev
 startup: system
@@ -18,7 +18,7 @@ hassio_role: manager
 homeassistant_api: true
 ports:
   3493/tcp: null
-ports_description: "管理电池备份（不间断电源）设备"
+ports_description:
   3493/tcp: Network UPS Tools
 options:
   users:

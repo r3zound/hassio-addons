@@ -4,7 +4,7 @@
     "armv7"
   ],
   "boot": "auto",
-  "description": "Retroarch Web 翻译为中文是“复古架构网络”。",
+  "description": "RetroArch 网页\n\n（表情符号保持不变）",
   "environment": {
     "TZ": "America/New_York"
   },

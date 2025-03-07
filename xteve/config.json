@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Plex DVR和Emby Live TV的M3U代理\n\n请注意，由于“M3U”通常指的是一种视频文件格式（如M3U playlist），而“Proxy”在这里可能是指某种网络代理服务，因此这个短语的具体含义取决于上下文。如果这是一个软件或服务的名称，那么它可能是用于在Plex DVR和Emby Live TV之间传输流媒体内容的工具。然而，没有更多的上下文信息，很难给出一个准确的中文翻译。如果你能提供更多关于这个术语的信息或者它的具体用途，我会更准确地帮助你进行翻译。",
+  "description": "Plex DVR和Emby Live TV的M3U代理\n\n（表情符号保持不变）",
   "environment": {
     "XTEVE_CONF": "/data/conf",
     "XTEVE_HOME": "/data"
