@@ -76,7 +76,7 @@ jobs:
                         \"messages\": [
                           {
                             \"role\": \"user\",
-                            \"content\": \"帮我翻译成中文，不需要其它信息，只输出翻译结果：$description\"
+                            \"content\": \"帮我翻译成中文，不需要其它信息，只输出翻译结果，不需要翻译表情，表情按原来的位置输出即可：$description\"
                           }
                         ]
                       }" | jq -r '.choices[0].message.content')
@@ -96,13 +96,14 @@ jobs:
                         \"messages\": [
                           {
                             \"role\": \"user\",
-                            \"content\": \"帮我翻译成中文，不需要其它信息，只输出翻译结果：$description\"
+                            \"content\": \"帮我翻译成中文，不需要其它信息，只输出翻译结果，不需要翻译表情，表情按原来的位置输出即可：$description\"
                           }
                         ]
                       }" | jq -r '.choices[0].message.content')
           
                     echo "Translated description for $file (non-JSON): $translated_description"
-                    sed -i "s|description:.*|description: \"$translated_description\"|" "$file"
+                    safe_description=$(printf "%q" "$translated_description")
+                    sed -i "s|^description:.*|description: $safe_description|" "$file"
                   fi
                 } || {
                   echo "Error processing $file, skipping..."
