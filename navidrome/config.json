@@ -7,7 +7,7 @@
     "**/cache/**"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Navidrome for Home Assistant 的中文翻译是：\n\n“Navidrome为家庭助手”。",
+  "description": "Navidrome for Home Assistant 的意思是“为家庭助手（Home Assistant）的 Navidrome”。Navidrome 是一个开源的音乐流媒体服务器，而 Home Assistant 是一个智能家居自动化平台。将 Navidrome 集成到 Home Assistant 中，可以让用户通过他们的智能家居系统来访问和管理音乐库。",
   "image": "ghcr.nju.edu.cn/alexbelgium/navidrome-{arch}",
   "init": false,
   "map": [

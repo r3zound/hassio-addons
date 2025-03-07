@@ -7,7 +7,7 @@
     "i386"
   ],
   "boot": "auto",
-  "description": "积极生活数据人生，跟踪网站内容变化并通过Discord、Email、Slack、Telegram等70多种方式接收通知。",
+  "description": "积极管理你的数据生活，跟踪网站内容的更改并通过Discord、Email、Slack、Telegram等70多种方式接收通知。",
   "environment": {
     "PLAYWRIGHT_DRIVER_URL": "ws://db21ed7f-browserless-chrome:3000/?stealth=1&--disable-web-security=true",
     "FETCH_WORKERS": "1"

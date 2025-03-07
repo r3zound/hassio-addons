@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "扫描、索引并归档所有纸质文档。",
+  "description": "扫描、索引并归档所有纸质文件。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

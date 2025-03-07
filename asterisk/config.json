@@ -2,7 +2,7 @@
   "name": "Asterisk",
   "version": "1.1.1",
   "slug": "asterisk",
-  "description": "（已弃用）Asterisk 是一个用于构建通信应用程序的开源框架。Asterisk 可以将普通计算机变成通信服务器。",
+  "description": "（已弃用）Asterisk 是一个用于构建通信应用程序的开源框架。Asterisk 将一台普通的计算机变成了一台通信服务器。",
   "url": "https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/asterisk",
   "arch": [
     "armv7",

@@ -1,7 +1,9 @@
 name: bt-mqtt-gateway
 version: 1.6.1
 slug: bt-mqtt-gateway
-description: 蓝牙MQTT网关服务器
+description: $'蓝牙MQTT网关服务器
+
+请注意，这个翻译可能不是完全准确的，因为“Bluetooth MQTT Gateway Server”可能指的是一个特定的产品或服务。如果您需要更精确的翻译，请提供更多的上下文信息。'
 url: https://gh-proxy.com/github.com/FaserF/hassio-addons/tree/master/bt-mqtt-gateway
 host_network: true
 arch:

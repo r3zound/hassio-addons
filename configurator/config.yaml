@@ -2,7 +2,7 @@
 version: 5.8.0
 slug: configurator
 name: File editor
-description: 基于浏览器的简单文件编辑器，用于Home Assistant。
+description: 基于浏览器的简单文件编辑器，适用于Home Assistant。
 url: https://gh-proxy.com/github.com/home-assistant/addons/tree/master/configurator
 codenotary: notary@home-assistant.io
 arch:

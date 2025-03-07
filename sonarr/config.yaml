@@ -1,9 +1,7 @@
 name: Sonarr
 version: 0.3.2
 slug: sonarr
-description: $'新组（Newsgroups）和比特洪流（BitTorrent）用户的高级PVR
-
-注：由于“Smart PVR”是专有名词，我无法确定其确切的中文翻译。如果您需要更准确的翻译，请提供更多上下文或详细信息。'
+description: 新组用户和BitTorrent用户的智能PVR
 url: https://gh-proxy.com/github.com/hassio-addons/addon-sonarr/tree/main/README.md
 codenotary: codenotary@frenck.dev
 webui: http://[HOST]:[PORT:8989]

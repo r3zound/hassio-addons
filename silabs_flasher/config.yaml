@@ -4,7 +4,7 @@ slug: silabs_flasher
 name: Silicon Labs Flasher
 description: $'帮你翻译成中文：
 
-硅谷实验室固件烧录器附加组件'
+硅实验室固件烧录器附加组件'
 url: >
   https://gh-proxy.com/github.com/home-assistant/addons/tree/master/silabs_flasher
 arch:

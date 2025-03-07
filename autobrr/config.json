@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "下载自动化",
+  "description": "自动化下载",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "作为服务容器的Chromium\n\n请注意，这个翻译可能并不完全准确，因为“service container”在英语中通常指的是一种容器技术，用于运行和管理应用程序。如果需要更准确的翻译，请提供更多的上下文信息。",
+  "description": "作为服务容器的铬浏览器（Chromium）",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

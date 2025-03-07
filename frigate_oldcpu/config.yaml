@@ -5,7 +5,7 @@ panel_title: Frigate
 slug: frigate-oldcpu
 description: $'帮我翻译成中文：带实时本地物体检测功能的IP摄像头NVR
 
-（注：NVR是Network Video Recorder的缩写，即网络视频录像机。）'
+注：NVR是网络视频录像机（Network Video Recorder）的缩写。'
 url: "https://gh-proxy.com/github.com/blakeblackshear/frigate"
 startup: application
 boot: auto

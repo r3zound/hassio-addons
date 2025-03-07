@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "思源是一款以隐私优先的个人知识管理系统，支持精细粒度的区块级引用和Markdown所见即所得编辑。",
+  "description": "思源是一款以隐私优先的个人知识管理系统，支持细粒度区块级引用和Markdown所见即所得编辑。",
   "environment": {},
   "map": [
     "addon_config:rw"
