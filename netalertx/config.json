@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "🖧🔍 WIFI/LAN扫描器、入侵者检测器和存在探测器\n\n这个描述中包含了三个主要功能：\n\n1. **WIFI/LAN扫描器** - 用于搜索和识别可用的无线网络（WIFI）或局域网（LAN）连接。\n2. **入侵者检测器** - 监测并报告潜在的未经授权的网络访问尝试。\n3. **存在探测器** - 检测特定设备在网络中的存在状态。\n\n这些功能通常用于网络安全监控和管理。",
+  "description": "🖧🔍 WIFI/LAN扫描器、入侵者检测器和存在探测器",
   "environment": {
     "PGID": "102",
     "PORT": "20211",

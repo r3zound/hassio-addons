@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "浏览、阅读和下载使用现有Calibre数据库的电子书。",
+  "description": "浏览、阅读和下载现有Calibre数据库中的电子书。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

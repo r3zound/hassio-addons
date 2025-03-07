@@ -2,7 +2,7 @@
 name: ntopng
 version: "0.0.25"
 slug: ntopng
-description: SoHo 自由及免费的开源网络流量监控工具 ntopng 与 NetFlow 收集器。
+description: SohO自由开源和免费的网络流量收集器ntopng
 url: "https://gh-proxy.com/github.com/litinoveweedle/hassio-addons/tree/main/ntopng"
 image: "ghcr.nju.edu.cn/litinoveweedle/{arch}-ntopng"
 ingress: true

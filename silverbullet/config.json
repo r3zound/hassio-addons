@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "银弹（SB）是一个可扩展的开源个人知识平台。",
+  "description": "银弹（SB）是一款可扩展的开源个人知识平台。",
   "environment": {
     "SB_FOLDER": "/config/",
     "PUID": "0",

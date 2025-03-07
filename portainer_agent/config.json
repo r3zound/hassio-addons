@@ -8,7 +8,7 @@
     "backups"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "代理用于管理Swarm集群中的所有资源。",
+  "description": "管理Swarm集群中所有资源的代理。",
   "docker_api": true,
   "full_access": true,
   "hassio_api": true,

@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "BT客户端，可选VPN。",
+  "description": "Bittorrent客户端带有可选的VPN。",
   "devices": [
     "/dev/net/tun",
     "/dev/dri",

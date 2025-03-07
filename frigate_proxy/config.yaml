@@ -3,7 +3,7 @@ version: "1.5"
 panel_icon: "mdi:cctv"
 panel_title: Frigate
 slug: frigate-proxy
-description: Frigate的代理插件。
+description: 代理插件用于Frigate。
 url: "https://gh-proxy.com/github.com/blakeblackshear/frigate"
 startup: application
 boot: auto

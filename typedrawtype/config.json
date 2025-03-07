@@ -5,7 +5,7 @@
     "armv7"
   ],
   "boot": "auto",
-  "description": "“Type Draw Type”就像电话游戏（中国式悄悄话），只是用图片来代替。",
+  "description": "“Type Draw Type”就像电话游戏（中国式耳语），只是用图片代替文字。",
   "environment": {},
   "name": "typedrawtype",
   "ports": {

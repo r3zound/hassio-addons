@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Nextcloud for Home Assistant 的中文翻译是：\n\n“Nextcloud为家庭助手”。",
+  "description": "Nextcloud for Home Assistant 的意思是“Nextcloud为家庭助理”。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

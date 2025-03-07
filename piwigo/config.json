@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "皮维戈是一款网络相册软件。",
+  "description": "皮维戈（Piwigo）是一款网络照片画廊软件。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

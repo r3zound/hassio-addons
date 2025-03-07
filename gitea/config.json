@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Gitea for Home Assistant 的中文翻译是：\n\n“Git 仓库服务 Gitea 与家庭自动化系统 Home Assistant 的集成”。",
+  "description": "Gitea for Home Assistant 的中文翻译是：\n\n“Git 服务器为家庭助手”\n\n请注意，这里假设 \"Gitea\" 是一个开源的 Git 服务器的名称，而 \"Home Assistant\" 可能是指一个智能家居系统或应用程序。如果这些术语有特定的含义或上下文，请提供更多信息以便更准确地翻译。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

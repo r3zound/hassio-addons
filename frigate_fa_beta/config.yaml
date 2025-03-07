@@ -14,7 +14,7 @@ breaking_versions:
 panel_icon: "mdi:cctv"
 panel_title: Frigate
 slug: frigate-fa-beta
-description: 帮我翻译成中文：IP摄像机实时本地物体检测的NVR
+description: 帮我翻译成中文：IP摄像机实时本地物体检测的NVR（网络视频录像机）
 url: "https://gh-proxy.com/github.com/blakeblackshear/frigate"
 image: ghcr.nju.edu.cn/blakeblackshear/frigate
 startup: application

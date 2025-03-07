@@ -1,6 +1,6 @@
 # https://gh-proxy.com/github.com/AlexxIT/builder/blob/master/builder.sh
 name: go2rtc master hardware
-description: Intel（VAAPI/QSV）、AMD（VAAPI）和NVIDIA（CUDA）的硬件转码。
+description: 英特尔（VAAPI/QSV）、AMD（VAAPI）和英伟达（CUDA）的硬件转码。
 url: https://gh-proxy.com/github.com/AlexxIT/go2rtc
 image: alexxit/go2rtc
 arch: [ amd64 ]

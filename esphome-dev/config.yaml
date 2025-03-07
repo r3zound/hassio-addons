@@ -35,7 +35,7 @@ name: ESPHome Device Builder (dev)
 panel_title: ESPHome Builder (dev)
 version: 2025.3.0-dev20250307
 slug: esphome-dev
-description: ESPHome 设备构建器的开发版本。
+description: ESPHome 设备构建器开发版
 image: ghcr.nju.edu.cn/esphome/esphome-hassio
 stage: experimental
 advanced: true
