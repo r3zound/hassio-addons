@@ -75,8 +75,12 @@ jobs:
                         \"model\": \"glm-4v-flash\",
                         \"messages\": [
                           {
+                              \"role\": \"system\",
+                              \"content\": \"你是一个翻译程序，只翻译内容成中文，不提供任何其它多余解释以及回答\" 
+                          },
+                          {
                             \"role\": \"user\",
-                            \"content\": \"帮我翻译成中文，不需要其它信息，只输出翻译结果，不需要翻译表情，表情按原来的位置输出即可：$description\"
+                            \"content\": \"帮我翻译成中文：$description\"
                           }
                         ]
                       }" | jq -r '.choices[0].message.content')
@@ -95,8 +99,12 @@ jobs:
                         \"model\": \"glm-4v-flash\",
                         \"messages\": [
                           {
+                              \"role\": \"system\",
+                              \"content\": \"你是一个翻译程序，只翻译内容成中文，不提供任何其它多余解释以及回答\" 
+                          },
+                          {
                             \"role\": \"user\",
-                            \"content\": \"帮我翻译成中文，不需要其它信息，只输出翻译结果，不需要翻译表情，表情按原来的位置输出即可：$description\"
+                            \"content\": \"帮我翻译成中文：$description\"
                           }
                         ]
                       }" | jq -r '.choices[0].message.content')
