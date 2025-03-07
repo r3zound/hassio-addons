@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "过时了 - 请使用社区版。",
+  "description": "过时了 - 请使用社区版本",
   "image": "ghcr.nju.edu.cn/alexbelgium/vaultwarden-{arch}",
   "init": false,
   "map": [

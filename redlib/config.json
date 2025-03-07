@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "红书库（Redlib）是一款类似于Invidious的私人前端应用，但专用于Reddit。",
+  "description": "红书（Redlib）是一款类似于Invidious的私人前端应用，但专用于Reddit。",
   "environment": {},
   "map": [],
   "version": "0.35.1",

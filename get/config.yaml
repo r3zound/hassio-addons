@@ -4,16 +4,14 @@ slug: get
 image: "ghcr.nju.edu.cn/hacs/{arch}-addon-get"
 description: $'获取Home Assistant的HACS的最简单方法：
 
-1. 打开终端或命令提示符。
-2. 运行以下命令来安装HACS：
-   ```
-   pip install home-assistant-custom-components
-   ```
-3. 在Home Assistant中启用HACS插件。在Home Assistant设置页面中找到“Plugins”选项卡，然后选择“Custom Components”。确保勾选了“Enable Custom Components”复选框。
+1. 打开你的Home Assistant界面。
+2. 点击左上角的菜单按钮（通常是一个三横线的图标）。
+3. 在下拉菜单中找到并点击“Settings”（设置）。
+4. 在设置页面中，找到并点击“Add-ons”或“附加组件”。
+5. 在附加组件管理器中，搜索“HACS”。
+6. 找到HACS后，点击安装。
 
-4. 重启Home Assistant以使更改生效。
-
-现在你应该可以在Home Assistant中使用HACS了！'
+完成这些步骤后，HACS应该已经成功安装在您的Home Assistant系统中。您现在可以使用它来管理和更新您的Home Assistant插件和主题。'
 startup: once
 boot: manual
 url: "https://gh-proxy.com/github.com/hacs/addons/tree/main/get"

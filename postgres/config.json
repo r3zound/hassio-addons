@@ -6,7 +6,7 @@
   ],
   "backup": "cold",
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "PostgreSQL 15 支持pgvecto.rs",
+  "description": "PostgreSQL 15 支持 pgvecto.rs",
   "environment": {
     "CONFIG_LOCATION": "/config/postgresql.conf",
     "PGDATA": "/config/database"

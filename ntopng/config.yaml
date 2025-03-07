@@ -2,7 +2,7 @@
 name: ntopng
 version: "0.0.25"
 slug: ntopng
-description: SoHo FOSS & FREE ntopng 网络流收集器
+description: Soho自由开源软件（FOSS）和免费网络流量收集器ntopng。
 url: "https://gh-proxy.com/github.com/litinoveweedle/hassio-addons/tree/main/ntopng"
 image: "ghcr.nju.edu.cn/litinoveweedle/{arch}-ntopng"
 ingress: true

@@ -2,7 +2,7 @@ name: VNC Viewer
 version: 1.6.2
 slug: vnc-viewer
 panel_icon: mdi:remote-desktop
-description: Home Assistant中集成的无头VNC客户端。
+description: Home Assistant 中集成的无头 VNC 客户端。
 url: https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/vnc-viewer
 ingress: true
 ingress_port: 6080

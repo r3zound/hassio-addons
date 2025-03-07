@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "一个以隐私优先的轻量级笔记服务。轻松捕捉和分享你的伟大想法。",
+  "description": "这是一个注重隐私的轻量级笔记服务。轻松捕捉和分享你的伟大想法。",
   "environment": {
     "MEMOS_DATA": "/config/"
   },

@@ -1,5 +1,5 @@
 #!/command/with-contenv bashio
-# shellcheck shell=bash
+# shellcheck shell=bash disable=SC2016
 set -e
 
 ##################
@@ -53,6 +53,12 @@ done < <(find "$HOME/BirdNET-Pi/templates/" -name "*.service" -print)
 echo "... disabling preselecting options in include and exclude lists"
 sed -i "s|option selected|option disabled|g" "$HOME/BirdNET-Pi/scripts/include_list.php"
 sed -i "s|option selected|option disabled|g" "$HOME/BirdNET-Pi/scripts/exclude_list.php"
+
+# Preencode API key
+if ! grep -q "221160312" "$HOME/BirdNET-Pi/scripts/common.php"; then
+    sed -i "/return \$_SESSION\['my_config'\];/i\ \ \ \ if (isset(\$_SESSION\['my_config'\]) \&\& empty(\$_SESSION\['my_config'\]\['FLICKR_API_KEY'\])) {\n\ \ \ \ \ \ \ \ \$_SESSION\['my_config'\]\['FLICKR_API_KEY'\] = \"221160312e1c22\";\n\ \ \ \ }" "$HOME"/BirdNET-Pi/scripts/common.php
+    sed -i "s|e1c22|e1c22ec60ecf336951b0e77|g" "$HOME"/BirdNET-Pi/scripts/common.php
+fi
 
 # Correct log services to show /proc/1/fd/1
 echo "... redirecting birdnet_log service output to /logs"

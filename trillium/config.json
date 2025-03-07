@@ -3,7 +3,7 @@
     "amd64"
   ],
   "boot": "auto",
-  "description": "三叶草笔记是一款层次化的笔记应用程序，专注于构建大型个人知识库。",
+  "description": "三叶草笔记是一款注重构建大型个人知识库的层次化笔记应用程序。",
   "environment": {
     "TRILIUM_DATA_DIR": "/share/trillium"
   },

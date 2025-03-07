@@ -1,7 +1,7 @@
 name: Apache2
 version: 2.12.2
 slug: apache2
-description: 开源的Web服务器，使用PHP和MariaDB。
+description: 开源的带有PHP和MariaDB的网络服务器。
 url: https://gh-proxy.com/github.com/FaserF/hassio-addons/tree/master/apache2
 arch:
   - armhf

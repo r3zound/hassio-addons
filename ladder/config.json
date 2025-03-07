@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "梯子是一种网络代理，用于帮助绕过付费墙。这是一个自托管版本，基于1ft.io和12ft.io。它受到13ft的启发。",
+  "description": "梯子是一种网络代理，用于帮助绕过付费墙。这是1ft.io和12ft.io的自托管版本，灵感来源于13ft。",
   "environment": {},
   "map": [
     "share:ro"

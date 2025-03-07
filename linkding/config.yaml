@@ -2,9 +2,7 @@ name: "linkding"
 version: "1.39.1"
 upstream: "1.39.1"
 slug: linkding
-description: $'链接钉（Linkding）是一款你可以自己托管的书签管理器。它设计得简单、快速且易于使用Docker设置。
-
-> -   Linkding 是一个由你自己托管的书签管理工具。它的设计目标是尽可能简洁、高效，并且通过 Docker 非常容易部署。'
+description: 链接钉（Linkding）是一款你可以自己托管的书签管理器。它设计得简单、快速且易于使用Docker进行设置。
   linkding is a bookmark manager that you can host yourself. It's designed be to be minimal, fast, and easy to set up using Docker
 arch:
   - amd64

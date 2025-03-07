@@ -1,7 +1,7 @@
 name: OWASP Juice Shop
 version: 1.2.1
 slug: juice-shop
-description: 那家最值得信赖的在线商店。
+description: 最值得信赖的在线商店。
 url: https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/juice-shop
 arch:
 - amd64

@@ -3,7 +3,7 @@ version: 0.20.0
 slug: zerotier
 description: $'帮你翻译成中文：
 
-通过一个在所有地方都相同工作的虚拟网络层来彻底简化你的网络。'
+通过一个在各个地方都能正常工作的虚拟网络层来彻底简化你的网络。'
   works the same everywhere
 url: https://gh-proxy.com/github.com/hassio-addons/addon-zerotier
 codenotary: codenotary@frenck.dev

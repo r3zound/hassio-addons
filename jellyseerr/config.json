@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Jellyfin的Overseerr分支。",
+  "description": "Jellyfin支持的开源Overseerr分支。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

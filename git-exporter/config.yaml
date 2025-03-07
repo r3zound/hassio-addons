@@ -1,7 +1,7 @@
 name: Home Assistant Git Exporter
 version: 1.17.1
 slug: git-exporter
-description: 将您的Home Assistant配置导出到您选择的Git存储库中。
+description: 将您的所有Home Assistant配置导出到您选择的Git存储库中。
   your choice
 url: https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/git-exporter
 arch:

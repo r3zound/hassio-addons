@@ -3,7 +3,9 @@ version: 0.14.1
 panel_icon: "mdi:cctv"
 panel_title: Frigate
 slug: frigate-oldcpu
-description: 帮我翻译成中文：IP摄像头实时本地物体检测的NVR（网络视频录像机）
+description: $'帮我翻译成中文：带实时本地物体检测功能的IP摄像头NVR
+
+（注：NVR是Network Video Recorder的缩写，即网络视频录像机。）'
 url: "https://gh-proxy.com/github.com/blakeblackshear/frigate"
 startup: application
 boot: auto

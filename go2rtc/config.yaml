@@ -1,8 +1,6 @@
 # https://gh-proxy.com/github.com/AlexxIT/builder/blob/master/builder.sh
 name: go2rtc
-description: $'硬件转码Intel（VAAPI）和树莓派（V4L2）
-
-注：VAAPI是英特尔的视频加速API，而V4L2是Linux下的视频输入输出接口。'
+description: Intel（VAAPI）和Raspberry（V4L2）的硬件转码。
 url: https://gh-proxy.com/github.com/AlexxIT/go2rtc
 image: alexxit/go2rtc
 arch: [ amd64, aarch64, i386, armv7 ]

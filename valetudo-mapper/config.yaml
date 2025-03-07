@@ -1,7 +1,7 @@
 name: Valetudo Mapper
 version: 1.12.0
 slug: valetudo-mapper
-description: 这是一个简单的伴侣服务，用于生成地图png文件。
+description: 这是一个简单的伴侣服务，用于为Valetudo RE生成地图png文件。
   map pngs.
 url: https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/valetudo-mapper
 arch:

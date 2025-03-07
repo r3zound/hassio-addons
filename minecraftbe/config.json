@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "Minecraft 专用服务器",
+  "description": "《我的世界》专用服务器",
   "environment": {
     "EULA": "TRUE"
   },

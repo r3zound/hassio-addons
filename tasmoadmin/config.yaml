@@ -3,8 +3,7 @@ version: 0.31.4
 slug: sonweb
 description: $'帮我翻译成中文：集中管理所有您的Sonoff-Tasmota设备
 
-翻译结果：
-集中管理您所有的Sonoff-Tasmota设备。'
+（注：Sonoff-Tasmota是智能开关品牌）'
 url: https://gh-proxy.com/github.com/hassio-addons/addon-tasmoadmin
 codenotary: codenotary@frenck.dev
 webui: '[PROTO:ssl]://[HOST]:[PORT:9541]'

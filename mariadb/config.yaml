@@ -2,9 +2,7 @@
 version: 2.7.2
 slug: mariadb
 name: MariaDB
-description: $'SQL数据库服务器
-
-注：由于“SQL”是专有名词，所以直接使用原词。'
+description: 一个SQL数据库服务器。
 url: https://gh-proxy.com/github.com/home-assistant/addons/tree/master/mariadb
 arch:
   - armhf
