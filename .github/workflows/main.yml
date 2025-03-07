@@ -10,44 +10,60 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: download the addons
+      - name: Setup environment
         run: |
-          wget -O official.zip https://github.com/home-assistant/addons/archive/refs/heads/master.zip &
-          wget -O community.zip https://github.com/hassio-addons/repository/archive/refs/heads/master.zip &
-          wget -O alexbelgium.zip https://github.com/alexbelgium/hassio-addons/archive/refs/heads/master.zip &
-          wget -O Poeschl.zip https://github.com/Poeschl-HomeAssistant-Addons/repository/archive/refs/heads/main.zip &
-          wget -O erik73.zip https://github.com/erik73/hassio-addons/archive/refs/heads/master.zip &
-          wget -O einschmidt.zip https://github.com/einschmidt/hassio-addons/archive/refs/heads/main.zip &
-          wget -O FaserF.zip https://github.com/FaserF/hassio-addons/archive/refs/heads/master.zip &
-          wget -O jdeath.zip https://github.com/jdeath/homeassistant-addons/archive/refs/heads/main.zip &
-          wget -O hacs.zip https://github.com/hacs/addons/archive/refs/heads/main.zip &
-          wget -O bluemaes.zip https://github.com/bluemaex/home-assistant-addons/archive/refs/heads/main.zip &
-          wget -O expaso.zip https://github.com/expaso/hassos-addons/archive/refs/heads/main.zip &
-          wget -O blakeblackshear.zip https://github.com/blakeblackshear/frigate-hass-addons/archive/refs/heads/main.zip &
-          wget -O music-assistant.zip https://github.com/music-assistant/home-assistant-addon/archive/refs/heads/main.zip &
-          wget -O esphome.zip https://github.com/esphome/home-assistant-addon/archive/refs/heads/main.zip &
-          wget -O litinoveweedle.zip https://github.com/litinoveweedle/hassio-addons/archive/refs/heads/main.zip &
-          wget -O brenner-tobias.zip https://github.com/brenner-tobias/ha-addons/archive/refs/heads/main.zip &
-          wget -O sanderdw.zip https://github.com/sanderdw/hassio-addons/archive/refs/heads/master.zip &
-          wget -O dianlight.zip https://github.com/dianlight/hassio-addons/archive/refs/heads/master.zip &
-          wget -O hydroqc.zip https://gitlab.com/hydroqc/hydroqc-hass-addons/-/archive/main/hydroqc-hass-addons-main.zip &
-          wget -O hass-broadlink-ac-mqtt.zip https://github.com/Arbuzov/hass-broadlink-ac-mqtt/archive/refs/heads/master.zip &
-          wget -O hugobloem.zip https://github.com/hugobloem/homeassistant-addons/archive/refs/heads/main.zip &
-          wget -O haberda.zip https://github.com/haberda/hassio_addons/archive/refs/heads/master.zip &
-          wget -O AlexxIT.zip https://github.com/AlexxIT/hassio-addons/archive/refs/heads/master.zip &
-          wget -O da-anda.zip https://github.com/da-anda/hass-io-addons/archive/refs/heads/main.zip
+          sudo apt-get update
+          sudo apt-get install -y jq unzip wget
+
+      - name: Download addons
+        run: |
+          declare -A ADDONS=(
+            ["official"]="https://github.com/home-assistant/addons/archive/refs/heads/master.zip"
+            ["community"]="https://github.com/hassio-addons/repository/archive/refs/heads/master.zip"
+            ["alexbelgium"]="https://github.com/alexbelgium/hassio-addons/archive/refs/heads/master.zip"
+            ["Poeschl"]="https://github.com/Poeschl-HomeAssistant-Addons/repository/archive/refs/heads/main.zip"
+            ["erik73"]="https://github.com/erik73/hassio-addons/archive/refs/heads/master.zip"
+            ["einschmidt"]="https://github.com/einschmidt/hassio-addons/archive/refs/heads/main.zip"
+            ["FaserF"]="https://github.com/FaserF/hassio-addons/archive/refs/heads/master.zip"
+            ["jdeath"]="https://github.com/jdeath/homeassistant-addons/archive/refs/heads/main.zip"
+            ["hacs"]="https://github.com/hacs/addons/archive/refs/heads/main.zip"
+            ["bluemaes"]="https://github.com/bluemaex/home-assistant-addons/archive/refs/heads/main.zip"
+            ["expaso"]="https://github.com/expaso/hassos-addons/archive/refs/heads/main.zip"
+            ["blakeblackshear"]="https://github.com/blakeblackshear/frigate-hass-addons/archive/refs/heads/main.zip"
+            ["music-assistant"]="https://github.com/music-assistant/home-assistant-addon/archive/refs/heads/main.zip"
+            ["esphome"]="https://github.com/esphome/home-assistant-addon/archive/refs/heads/main.zip"
+            ["litinoveweedle"]="https://github.com/litinoveweedle/hassio-addons/archive/refs/heads/main.zip"
+            ["brenner-tobias"]="https://github.com/brenner-tobias/ha-addons/archive/refs/heads/main.zip"
+            ["sanderdw"]="https://github.com/sanderdw/hassio-addons/archive/refs/heads/master.zip"
+            ["dianlight"]="https://github.com/dianlight/hassio-addons/archive/refs/heads/master.zip"
+            ["hydroqc"]="https://gitlab.com/hydroqc/hydroqc-hass-addons/-/archive/main/hydroqc-hass-addons-main.zip"
+            ["hass-broadlink-ac-mqtt"]="https://github.com/Arbuzov/hass-broadlink-ac-mqtt/archive/refs/heads/master.zip"
+            ["hugobloem"]="https://github.com/hugobloem/homeassistant-addons/archive/refs/heads/main.zip"
+            ["haberda"]="https://github.com/haberda/hassio_addons/archive/refs/heads/master.zip"
+            ["AlexxIT"]="https://github.com/AlexxIT/hassio-addons/archive/refs/heads/master.zip"
+            ["da-anda"]="https://github.com/da-anda/hass-io-addons/archive/refs/heads/main.zip"
+          )
+
+          for addon in "${!ADDONS[@]}"; do
+            wget -O "${addon}.zip" "${ADDONS[$addon]}" &
+          done
           wait
-      - name: extract the addons
+
+      - name: Extract addons
         run: |
+          mkdir -p addons
           for file in *.zip; do
             unzip -o "$file" -d addons && rm "$file"
           done
 
-      - name: modify the addons download link to accelerate url
+      - name: Optimize download links
         run: |
           find addons -type f \( -name "*.yaml" -o -name "*.json" -o -name "Dockerfile" \) -exec sed -i \
             -e 's|ghcr.io|ghcr.nju.edu.cn|g' \
@@ -57,116 +73,71 @@ jobs:
             -e 's|https://github.com|https://gh-proxy.com/github.com|g' \
             -e 's|ADD "https://raw.githubusercontent.com|ADD "https://gh-proxy.com/raw.githubusercontent.com|g' {} +
 
-      - name: Replace description in config files
+      - name: Translate descriptions
         run: |
           find ./addons -type f \( -name "config.yaml" -o -name "config.json" \) ! -path "*/.*/*" | while read -r file; do
-                {
-                  # 处理 JSON 文件
-                  if file -b --mime-type "$file" | grep -q "json"; then
-                    # 提取 description 字段的内容
-                    description=$(jq -r '.description' "$file")
-                    
-                    # 如果 description 为空，则跳过
-                    if [ "$description" == "null" ]; then
-                      echo "No description found in $file (JSON), skipping..."
-                      continue
-                    fi
-          
-                    # 调用 API 翻译 description 内容
-                    translated_description=$(curl --location 'https://open.bigmodel.cn/api/paas/v4/chat/completions' \
-                      --header "Authorization: Bearer ${{ secrets.ZHIPUAI_KEY }}" \
-                      --header 'Content-Type: application/json' \
-                      --data "{
-                        \"model\": \"glm-4v-flash\",
-                        \"messages\": [
-                          {
-                            \"role\": \"user\",
-                            \"content\": \"只要帮我翻译成中文，不需要其它任何内容：$description\"
-                          }
-                        ]
-                      }" | jq -r '.choices[0].message.content')
-          
-                    # 输出翻译后的内容（可选）
-                    echo "Translated description for $file (JSON): $translated_description"
-          
-                    # 使用 jq 直接替换文件中的 description 内容
-                    jq --arg description "$translated_description" '.description = $description' "$file" > temp.json && mv temp.json "$file"
-                  
-                  # 处理非 JSON 格式的文本文件（如 YAML）
-                  elif file -b --mime-type "$file" | grep -q "text"; then
-                    # 提取 description 字段的内容（适用于 YAML 文件）
-                    if grep -q '^description:\s*|' "$file"; then
-                      # 处理 `description: |` 之后的多行内容
-                      description=$(awk '/^description:/ {flag=1; next} /^[a-zA-Z0-9]/ {flag=0} flag' "$file")
+            {
+              if file -b --mime-type "$file" | grep -q "json"; then
+                description=$(jq -r '.description' "$file")
+                [ "$description" == "null" ] && continue
+              else
+                if grep -q '^description:\s*|' "$file"; then
+                  description=$(awk '/^description:/ {flag=1; next} /^[a-zA-Z0-9]/ {flag=0} flag' "$file")
+                else
+                  description=$(grep -oP '(?<=^description:\s)(.+)' "$file")
+                fi
+              fi
 
-                    else
-                      # 处理 `description: ` 单行情况
-                      description=$(grep -oP '(?<=^description:\s)(.+)' "$file")
-                    fi
-          
-                    # 调用 API 翻译 description 内容
-                    translated_description=$(curl --location 'https://open.bigmodel.cn/api/paas/v4/chat/completions' \
-                      --header "Authorization: Bearer ${{ secrets.ZHIPUAI_KEY }}" \
-                      --header 'Content-Type: application/json' \
-                      --data "{
-                        \"model\": \"glm-4v-flash\",
-                        \"messages\": [
-                          {
-                            \"role\": \"user\",
-                            \"content\": \"只要帮我翻译成中文，不需要其它任何内容：$description\"
-                          }
-                        ]
-                      }" | jq -r '.choices[0].message.content')
-          
-                    # 输出翻译后的内容（可选）
-                    echo "Translated description for $file (non-JSON): $translated_description"
-          
-                    # 使用 sed 替换文本文件中的 description 内容
-                    # 确保对多行描述进行适当处理
-                    sed -i "s|description:.*|description: \"$translated_description\"|" "$file"
-                  fi
-                } || {
-                  # 如果上述处理失败，打印错误信息并跳过该文件
-                  echo "Error processing $file, skipping..."
-                  continue
-                }
-              done
-          
+              translated_description=$(curl -s --location 'https://open.bigmodel.cn/api/paas/v4/chat/completions' \
+                --header "Authorization: Bearer ${{ secrets.ZHIPUAI_KEY }}" \
+                --header 'Content-Type: application/json' \
+                --data "{
+                  \"model\": \"glm-4v-flash\",
+                  \"messages\": [
+                    {
+                      \"role\": \"user\",
+                      \"content\": \"只要帮我翻译成中文，不需要其它任何内容：$description\"
+                    }
+                  ]
+                }" | jq -r '.choices[0].message.content')
 
+              if file -b --mime-type "$file" | grep -q "json"; then
+                jq --arg description "$translated_description" '.description = $description' "$file" > temp.json && mv temp.json "$file"
+              else
+                sed -i "s|description:.*|description: \"$translated_description\"|" "$file"
+              fi
+            } || {
+              echo "Error processing $file, skipping..."
+              continue
+            }
+          done
 
-      #- name: Run link.py if Necessary
-      #  run: |
-      #    if [ -f link.py ]; then python3 link.py; fi
-      #  working-directory: addons
-
-      - name: remove the hidden files
+      - name: Clean up files
         run: |
           find addons/ -name ".*" -exec rm -rf {} +
           for ITEM in addons/*/*; do
-          BASENAME=$(basename "$ITEM") 
-          TARGET_PATH="./$BASENAME"
             if [ -f "$ITEM" ]; then
               rm -f "$ITEM"
-              echo "Deleted $ITEM" 
             elif [ -d "$ITEM" ]; then
+              BASENAME=$(basename "$ITEM")
+              TARGET_PATH="./$BASENAME"
               rm -rf "$TARGET_PATH"
               mv -f "$ITEM" "./" || echo "Failed to move directory: $ITEM"
-              echo "Moved directory: $ITEM"
             fi
           done
           rm -rf whisparr
 
-      - name: sync hass-panel
+      - name: Sync hass-panel
         run: |
           mkdir -p hass-panel hass-panel-beta
           wget -O hass-panel.zip https://github.com/mrtian2016/hass-panel/archive/refs/heads/main.zip
           unzip -o hass-panel.zip -d hass-panel-temp && rm hass-panel.zip
           mv -f hass-panel-temp/hass-panel-main/hass-panel/* hass-panel/
           mv -f hass-panel-temp/hass-panel-main/hass-panel-beta/* hass-panel-beta/
-
           rm -rf hass-panel-temp
 
-      - run: |
+      - name: Commit and push changes
+        run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .
