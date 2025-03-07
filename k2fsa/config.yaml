@@ -1,5 +1,5 @@
 {
-  "version": "0.0.2",
+  "version": "0.0.3",
   "slug": "k2fsa",
   "codenotary": "djhhui@gmail.com",
   "name": "k2fsa",
@@ -15,5 +15,8 @@
   },
   "map": [
     "config:rw"
+  ],
+  "backup_exclude": [
+    "/config/addons_config/k2fsa"
   ]
 }
