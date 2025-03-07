@@ -1,7 +1,7 @@
 name: UniFi Network Application
 version: 4.0.2
 slug: unifi
-description: Manage your UniFi network using a web browser
+description: "使用浏览器管理您的UniFi网络。"
 url: https://gh-proxy.com/github.com/hassio-addons/addon-unifi
 codenotary: codenotary@frenck.dev
 webui: https://[HOST]:[PORT:8443]
@@ -24,7 +24,7 @@ ports:
   8843/tcp: 8843
   8880/tcp: 8880
   10001/udp: 10001
-ports_description:
+ports_description: "使用浏览器管理您的UniFi网络。"
   161/udp: Used for SNMP Access
   1900/udp: L2 discoverable port
   3478/udp: Used for STUN

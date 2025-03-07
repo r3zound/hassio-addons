@@ -1,7 +1,7 @@
 name: Uptime Kuma
 version: 0.13.0
 slug: uptime-kuma
-description: It is a self-hosted monitoring tool like "Uptime Robot"
+description: "null"
 url: https://gh-proxy.com/github.com/hassio-addons/addon-uptime-kuma
 codenotary: codenotary@frenck.dev
 webui: http://[HOST]:[PORT:3001]
@@ -12,6 +12,6 @@ arch:
 - armv7
 ports:
   3001/tcp: 3001
-ports_description:
+ports_description: "null"
   3001/tcp: Web interface
 image: ghcr.nju.edu.cn/hassio-addons/uptime-kuma/{arch}

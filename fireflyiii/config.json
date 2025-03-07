@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "免费开源的个人财务管理软件。",
+  "description": "一个免费的开源个人财务管理软件",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

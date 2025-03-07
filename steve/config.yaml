@@ -1,7 +1,7 @@
 name: SteVe
 version: 2.0.20
 slug: steve
-description: OCPP server for EV charging stations
+description: "电动汽车充电站的Ocpp服务器"
 url: https://gh-proxy.com/github.com/erik73/addon-steve
 arch:
 - aarch64
@@ -16,7 +16,7 @@ services:
 ports:
   8180/tcp: 8180
   12801/tcp: null
-ports_description:
+ports_description: "电动汽车充电站的Ocpp服务器"
   8180/tcp: SteVe TCP port
   12801/tcp: SteVe SOAP return port
 hassio_api: true

@@ -1,8 +1,8 @@
 name: "linkding"
-version: "1.38.1"
-upstream: "1.38.1"
+version: "1.39.1"
+upstream: "1.39.1"
 slug: linkding
-description: >-
+description: "翻译为中文是“大于”。"
   linkding is a bookmark manager that you can host yourself. It's designed be to be minimal, fast, and easy to set up using Docker
 arch:
   - amd64
@@ -10,7 +10,7 @@ arch:
 url: "https://gh-proxy.com/github.com/jdeath/homeassistant-addons"
 ports:
   9090/tcp: 9090 
-ports_description:
+ports_description: "翻译为中文是“大于”。"
   9090/tcp: "Web Interface"
 map:
   - type: addon_config

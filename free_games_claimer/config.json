@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "自动在Epic Games商店、亚马逊Prime游戏和GOG上申领免费游戏。",
+  "description": "自动在Epic Games商店、亚马逊Prime游戏和GOG上申请新免费游戏。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

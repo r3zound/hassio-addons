@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "mqttui的网络图形用户界面（Web GUI）。\n\n请注意，我无法直接访问或下载外部资源，因此无法为您生成所需的图片。如果您有其他问题或需要帮助，请告诉我！",
+  "description": "mqttui的网络图形用户界面（Web GUI）",
   "environment": {},
   "map": [
     "share:rw"

@@ -10,7 +10,7 @@ arch:
   - amd64
   - i386
 boot: manual
-description: Scan for HDMI CEC devices
+description: "扫描HDMI CEC设备"
 image: docker.m.daocloud.io/homeassistant/{arch}-addon-cec_scan
 options: {}
 schema: {}

@@ -1,7 +1,7 @@
 name: Apache2
 version: 2.12.2
 slug: apache2
-description: Opensource Webserver with PHP and MariaDB
+description: "开源Web服务器，带有PHP和MariaDB。"
 url: https://gh-proxy.com/github.com/FaserF/hassio-addons/tree/master/apache2
 arch:
   - armhf
@@ -44,6 +44,6 @@ schema:
 ports:
   80/tcp: 80
   443/tcp: 8324
-ports_description:
+ports_description: "开源Web服务器，带有PHP和MariaDB。"
   80/tcp: Web interface http
   443/tcp: SSL Web interface

@@ -1,7 +1,7 @@
 name: Example
 version: 10.1.0
 slug: example
-description: Example add-on by Community Home Assistant Add-ons
+description: "社区家庭助手的示例插件"
 url: https://gh-proxy.com/github.com/hassio-addons/addon-example
 codenotary: codenotary@frenck.dev
 init: false

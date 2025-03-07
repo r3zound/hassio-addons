@@ -1,7 +1,7 @@
 name: rsync local
 version: 1.7.1
 slug: rsync-local
-description: Sync folders to a external usb drive with rsync.
+description: "使用rsync将文件夹同步到外部USB驱动器上。"
 url: https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/rsync-local
 arch:
 - armhf
@@ -14,7 +14,7 @@ boot: manual
 init: false
 image: ghcr.nju.edu.cn/poeschl-homeassistant-addons/rsync-local-{arch}
 ports: {}
-ports_description: {}
+ports_description: "使用rsync将文件夹同步到外部USB驱动器上。"
 map:
 - share:rw
 - config:rw

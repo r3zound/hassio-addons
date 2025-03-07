@@ -1,7 +1,7 @@
 name: AirCast
 version: 4.2.4
 slug: aircast
-description: AirPlay capabilities for your Chromecast devices.
+description: "Chromecast 设备的 AirPlay 功能。"
 url: https://gh-proxy.com/github.com/hassio-addons/addon-aircast
 codenotary: codenotary@frenck.dev
 startup: services

@@ -1,5 +1,5 @@
 name: SSH Tunnel
-description: Create SSH tunnel to public server
+description: "创建到公共服务器的SSH隧道。"
 url: https://gh-proxy.com/github.com/AlexxIT/hassio-addons/tree/master/ssh_tunnel
 arch: [ amd64, aarch64, i386, armv7, armhf ]
 

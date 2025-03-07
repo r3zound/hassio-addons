@@ -2,7 +2,7 @@ name: FreeBeeGee
 version: "0.24.0"
 upstream: 0.24.0
 slug: freebeegee
-description: >-
+description: "翻译为中文是：“大于”。"
   A virtual gaming tabletop you can host on your own server
 arch:
   - amd64
@@ -10,7 +10,7 @@ arch:
 url: "https://gh-proxy.com/github.com/jdeath/homeassistant-addons"
 ports:
   80/tcp: 8765 
-ports_description:
+ports_description: "翻译为中文是：“大于”。"
   80/tcp: "Web Interface"
 map:
   - type: addon_config

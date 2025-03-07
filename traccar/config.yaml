@@ -1,7 +1,7 @@
 name: Traccar
 version: 0.25.0
 slug: traccar
-description: Modern GPS Tracking Platform
+description: "现代GPS追踪平台"
 url: https://gh-proxy.com/github.com/hassio-addons/addon-traccar
 webui: '[PROTO:ssl]://[HOST]:[PORT:80]'
 codenotary: codenotary@frenck.dev
@@ -14,7 +14,7 @@ init: false
 host_network: true
 ports:
   80/tcp: 8082
-ports_description:
+ports_description: "现代GPS追踪平台"
   80/tcp: Web interface
 map:
 - addon_config:rw

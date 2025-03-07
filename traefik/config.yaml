@@ -2,7 +2,7 @@
 name: Traefik
 version: 4.2.5
 slug: traefik
-description: |
+description: "null"
   Traefik is a modern HTTP reverse proxy and load balancer that makes deploying
   microservices easy.
 arch:
@@ -15,7 +15,7 @@ url: https://gh-proxy.com/github.com/bluemaex/home-assistant-addons/tree/master/
 ports:
   80/tcp: 83
   443/tcp: 443
-ports_description:
+ports_description: "null"
   80/tcp: HTTP
   443/tcp: HTTPS
 init: false

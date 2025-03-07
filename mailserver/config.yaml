@@ -1,7 +1,7 @@
 name: Mailserver
 version: 3.0.1
 slug: mailserver
-description: Postfix and Dovecot mail server for Home Assistant, with Postfix Admin
+description: "后缀和Dovecot邮件服务器为Home Assistant，带有Postfix管理器"
   web interface
 url: https://gh-proxy.com/github.com/erik73/hassio-addons
 arch:
@@ -22,7 +22,7 @@ ports:
   465/tcp: 465
   587/tcp: 587
   993/tcp: 993
-ports_description:
+ports_description: "后缀和Dovecot邮件服务器为Home Assistant，带有Postfix管理器"
   25/tcp: SMTP
   465/tcp: SMTP
   587/tcp: SMTP

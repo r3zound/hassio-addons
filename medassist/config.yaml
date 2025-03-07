@@ -2,7 +2,7 @@ name: MedAssist
 version: "v0.16.2"
 upstream: v0.14.3test
 slug: medassist
-description: >-
+description: "翻译为中文是：“大于”。"
   MedAssist is a simple Node.js application made with love. It makes it easy to keep track of medication inventory and reorder on time by sending reminders.
 arch:
   - amd64
@@ -10,7 +10,7 @@ arch:
 url: "https://gh-proxy.com/github.com/jdeath/homeassistant-addons"
 ports:
   3111/tcp: 3111 
-ports_description:
+ports_description: "翻译为中文是：“大于”。"
   3111/tcp: "Web Interface"
 map:
   - type: addon_config

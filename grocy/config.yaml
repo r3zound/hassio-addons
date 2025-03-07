@@ -1,7 +1,7 @@
 name: Grocy
 version: 0.24.0
 slug: grocy
-description: ERP beyond your fridge! A groceries & household management solution for
+description: "ERP 超越你的冰箱！一个用于杂货和家庭管理的解决方案。"
   your home
 url: https://gh-proxy.com/github.com/hassio-addons/addon-grocy
 codenotary: codenotary@frenck.dev
@@ -18,7 +18,7 @@ map:
 - ssl
 ports:
   80/tcp: null
-ports_description:
+ports_description: "ERP 超越你的冰箱！一个用于杂货和家庭管理的解决方案。"
   80/tcp: Web interface (Not required for Ingress)
 options:
   culture: en

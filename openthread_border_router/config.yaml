@@ -2,7 +2,7 @@
 version: 2.13.0
 slug: openthread_border_router
 name: OpenThread Border Router
-description: OpenThread Border Router add-on
+description: "OpenThread Border Router插件"
 url: >-
   https://gh-proxy.com/github.com/home-assistant/addons/tree/master/openthread_border_router
 arch:
@@ -35,7 +35,7 @@ options:
 ports:
   8080/tcp: null
   8081/tcp: null
-ports_description:
+ports_description: "OpenThread Border Router插件"
   8080/tcp: OpenThread Web port
   8081/tcp: OpenThread REST API port
 schema:
