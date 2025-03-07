@@ -7,7 +7,7 @@
     "i386"
   ],
   "boot": "auto",
-  "description": "WireGuard 易用版：将 WireGuard 和用户界面集成在一起。",
+  "description": "WireGuard 易用性：WireGuard 与 UI 一体化",
   "environment": {},
   "map": [
     "ssl:rw"

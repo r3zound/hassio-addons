@@ -3,7 +3,7 @@ version: "1.5"
 panel_icon: "mdi:cctv"
 panel_title: Frigate
 slug: frigate-proxy
-description: Proxy addon for Frigate
+description: "代理插件用于Frigate。"
 url: "https://gh-proxy.com/github.com/blakeblackshear/frigate"
 startup: application
 boot: auto
@@ -15,7 +15,7 @@ ingress_entry: /
 panel_admin: false
 ports:
   5000/tcp: 5000
-ports_description:
+ports_description: "代理插件用于Frigate。"
   5000/tcp: Web interface (Not required for Hass.io Ingress)
 host_network: false
 devices: []

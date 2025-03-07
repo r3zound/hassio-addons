@@ -2,7 +2,7 @@
 version: 7.0.0
 slug: deconz
 name: deCONZ
-description: >-
+description: "翻译为中文是：“大于”。"
   Control a Zigbee network with ConBee or RaspBee by Dresden Elektronik.
 url: https://gh-proxy.com/github.com/home-assistant/addons/tree/master/deconz
 apparmor: false

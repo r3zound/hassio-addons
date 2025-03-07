@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "铬作为服务容器",
+  "description": "铬作为服务容器\n\n（注：此处的“Chromium”指的是一个开源项目名称，而不是指化学元素铬。如果需要更准确的翻译，请提供更多的上下文信息。）",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

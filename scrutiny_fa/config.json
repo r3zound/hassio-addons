@@ -5,7 +5,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Smartd智能监控（完全访问）WebUI监视器\n\n请注意，由于“Smartd”和“S.M.A.R.T”是专有名词，它们通常不进行翻译，而是保持其英文形式。",
+  "description": "Smartd 的 S.M.A.R.T 监控 Web 界面（完全访问）",
   "environment": {
     "COLLECTOR_API_ENDPOINT": "http://localhost:8080",
     "COLLECTOR_HOST_ID": "home_assistant"

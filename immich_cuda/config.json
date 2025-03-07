@@ -7,7 +7,7 @@
     "**/machine-learning/*"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "手机直接从移动设备上备份照片和视频的自托管解决方案。",
+  "description": "手机直接从您的移动设备上托管照片和视频备份解决方案。",
   "devices": [
     "/dev/dri",
     "/dev/dxg",

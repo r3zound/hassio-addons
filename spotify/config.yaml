@@ -1,7 +1,7 @@
 name: Spotify Connect
 version: 0.14.0
 slug: spotify
-description: Play Spotify music on your Home Assistant device
+description: "在您的Home Assistant设备上播放Spotify音乐。"
 url: https://gh-proxy.com/github.com/hassio-addons/addon-spotify-connect
 codenotary: codenotary@frenck.dev
 arch:

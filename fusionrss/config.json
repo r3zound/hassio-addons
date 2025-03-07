@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "轻量级RSS聚合器和阅读器",
+  "description": "一个轻量级的RSS聚合器和阅读器。",
   "environment": {
     "DB": "/config/fusion.db"
   },

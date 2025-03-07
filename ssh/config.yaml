@@ -1,7 +1,7 @@
 name: Advanced SSH & Web Terminal
 version: 20.0.2
 slug: ssh
-description: A supercharged SSH & Web Terminal access to your Home Assistant instance
+description: "一个超级充电的SSH和Web终端访问您的家庭助理实例。"
 url: https://gh-proxy.com/github.com/hassio-addons/addon-ssh
 codenotary: codenotary@frenck.dev
 startup: services
@@ -18,7 +18,7 @@ arch:
 - armv7
 ports:
   22/tcp: 22
-ports_description:
+ports_description: "一个超级充电的SSH和Web终端访问您的家庭助理实例。"
   22/tcp: SSH server port (make empty to disable)
 hassio_api: true
 hassio_role: manager

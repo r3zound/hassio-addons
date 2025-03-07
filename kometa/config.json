@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "以下是将上述文本翻译为中文的内容：\n\n```python\n更新电影、节目和集合元数据的Python脚本以及自动构建集合\n```\n\n请注意，这段文字已经非常简洁明了地表达了原意，因此没有进行进一步简化或改写。如果您需要更详细的解释或者有其他问题，请随时告诉我！",
+  "description": "Python脚本来更新电影、节目和收藏夹的元数据信息以及自动创建收藏夹",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

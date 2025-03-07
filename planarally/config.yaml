@@ -2,7 +2,7 @@ name: PlanarAlly
 version: "v2025.1.1"
 upstream: 2024.3 
 slug: planarally
-description: >-
+description: "翻译为中文是“大于”。"
   PlanarAlly is an opensource Virtual TableTop (VTT) web tool that aims to help you and your players discover the various fictive worlds out there. It's designed to be usable without any internet access to accommodate your dark dungeons and has a variety of features to enhance your immersion like lighting and vision.
 arch:
   - amd64
@@ -10,7 +10,7 @@ arch:
 url: "https://gh-proxy.com/github.com/jdeath/homeassistant-addons"
 ports:
   8000/tcp: 8000 
-ports_description:
+ports_description: "翻译为中文是“大于”。"
   8000/tcp: "Web Interface"
 map:
   - type: addon_config

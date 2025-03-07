@@ -2,7 +2,7 @@ arch:
 - aarch64
 - amd64
 codenotary: alexandrep.github@gmail.com
-description: Personal Relationship Manager
+description: "个人关系经理"
 devices:
 - "/dev/dri"
 - "/dev/dri/card0"
@@ -80,7 +80,7 @@ map:
 name: Monica
 ports:
   80/tcp: 8181
-ports_description:
+ports_description: "个人关系经理"
   80/tcp: webui
 schema: {
   "database": "list(sqlite|MariaDB_addon|Mysql_external)",

@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Nextcloud for Home Assistant\n\n这是 Nextcloud 与 Home Assistant 的组合或集成名称。",
+  "description": "这是“Nextcloud for Home Assistant”的英文短语，翻译成中文是：“Nextcloud为家庭助理”。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

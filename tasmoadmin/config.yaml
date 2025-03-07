@@ -1,7 +1,7 @@
 name: TasmoAdmin
 version: 0.31.4
 slug: sonweb
-description: Centrally manage all your Sonoff-Tasmota devices
+description: "集中管理所有您的Sonoff-Tasmota设备"
 url: https://gh-proxy.com/github.com/hassio-addons/addon-tasmoadmin
 codenotary: codenotary@frenck.dev
 webui: '[PROTO:ssl]://[HOST]:[PORT:9541]'
@@ -15,7 +15,7 @@ map:
 - ssl
 ports:
   9541/tcp: 9541
-ports_description:
+ports_description: "集中管理所有您的Sonoff-Tasmota设备"
   9541/tcp: TasmoAdmin web interface
 options:
   ssl: true

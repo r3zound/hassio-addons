@@ -1,7 +1,7 @@
 name: OpenSSL
 version: 1.6.2
 slug: openssl
-description: Generate self-signed certificates
+description: "生成自签名证书"
 url: https://gh-proxy.com/github.com/FaserF/hassio-addons/tree/master/openssl
 arch:
   - armhf

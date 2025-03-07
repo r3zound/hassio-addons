@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "麦莉（Mealie）是一款使用Vue构建的自托管食谱管理和膳食规划工具。",
+  "description": "麦莉是Vue构建的自托管食谱管理和膳食计划工具。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

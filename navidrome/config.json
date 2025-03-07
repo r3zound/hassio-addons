@@ -7,7 +7,7 @@
     "**/cache/**"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "纳维德罗姆（Navidrome）是一款开源的音乐流媒体服务器，它允许用户在本地网络中托管自己的音乐库，并通过各种客户端应用程序进行访问和播放。纳维德罗姆通常与家庭自动化系统如Home Assistant集成，以便通过语音控制或其他智能家居设备来管理音乐播放。\n\n纳维德罗姆支持多种音频格式，并提供标签编辑、专辑艺术管理等高级功能。它可以通过Web界面或命令行工具进行配置和管理，并且兼容多种操作系统，包括Linux、Windows和macOS。\n\n将纳维德罗姆集成到Home Assistant中，可以让用户通过Alexa、Google Assistant等智能音箱或智能家居控制器来控制音乐的播放和切换，实现更加便捷的音乐体验。",
+  "description": "纳维德罗姆（Navidrome）是用于家庭自动化平台Home Assistant的一个音乐流媒体应用程序。它允许您在您的智能家居环境中播放和管理本地或在线的音乐库。\n\n以下是关于Navidrome的一些关键点：\n\n1. **功能**：\n   - 支持多种音频格式，如MP3、FLAC和AAC等。\n   - 允许通过Web界面访问和管理音乐库。\n   - 支持多用户账户，每个用户可以有自己的播放列表和偏好设置。\n   - 提供搜索和过滤功能，方便查找特定歌曲或艺术家。\n   - 可以与Home Assistant集成，以便在智能家居系统中控制音乐播放。\n\n2. **安装和使用**：\n   - Navidrome通常作为容器部署在Linux服务器上，例如Docker或Kubernetes环境。\n   - 安装后，可以通过浏览器访问其Web界面进行配置和管理。\n   - 需要为Navidrome提供一个存储位置来存放音乐文件，并且需要网络权限以访问外部音乐服务（如果使用的话）。\n\n3. **兼容性**：\n   - Navidrome支持多种操作系统，包括Windows、macOS和各种Linux发行版。\n   - 它也可以运行在嵌入式设备上，如Raspberry Pi。\n\n4. **社区和文档**：\n   - Navidrome有活跃的开发者和社区支持，提供了详细的安装指南和技术文档。\n   - 用户可以在GitHub或其他社区平台上找到帮助和建议。\n\n总的来说，Navidrome是一个强大的工具，可以帮助你在家庭自动化系统中实现个性化的音乐体验。",
   "image": "ghcr.nju.edu.cn/alexbelgium/navidrome-{arch}",
   "init": false,
   "map": [

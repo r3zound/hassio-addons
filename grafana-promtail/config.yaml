@@ -2,7 +2,7 @@
 name: Grafana Promtail
 version: 3.0.6
 slug: grafana-promtail
-description: |
+description: "Promtail 是一个代理程序，它将本地日志的内容发送到私有 Loki 实例或 Grafana Cloud。"
   Promtail is an agent which ships the contents of local logs to a private Loki instance or Grafana Cloud.
 arch:
   - aarch64
@@ -18,7 +18,7 @@ ingress_entry: targets
 ports:
   9080/tcp: 9080
   1514/tcp: 1514
-ports_description:
+ports_description: "Promtail 是一个代理程序，它将本地日志的内容发送到私有 Loki 实例或 Grafana Cloud。"
   9080/tcp: Promtail listen port
   1514/tcp: Promtail Syslog port
 panel_icon: mdi:router-network

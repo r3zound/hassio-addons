@@ -2,7 +2,7 @@
 name: syslog-ng
 version: 5.0.4
 slug: syslog-ng
-description: |
+description: "null"
   syslog-ng allows you to flexibly collect, parse, classify, rewrite
   and correlate logs from across your infrastructure and store or route
   them to log analysis tools
@@ -17,7 +17,7 @@ ports:
   5514/udp: 5514
   6601/tcp: 6601
   6514/tcp: 6514
-ports_description:
+ports_description: "null"
   5514/udp: Syslog UDP
   6601/tcp: Syslog TCP
   6514/tcp: Syslog TLS
