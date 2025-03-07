@@ -42,8 +42,8 @@
 
 以下是引用的加载项：
 
-- 📚 [**Official Addons**](https://github.com/home-assistant/addons): 官方加载项，方便中国地区用户使用
-- 🌐 [**Community Addons**](https://github.com/hassio-addons/repository): 官方社区加载项，目前还在测试中
+- 📚 [**Official Addons**](https://github.com/home-assistant/addons): 官方加载项
+- 🌐 [**Community Addons**](https://github.com/hassio-addons/repository): 官方社区加载项
 - 🎨 [**Alexbelgium Addons**](https://github.com/alexbelgium/hassio-addons): Alexbelgium 的加载项
 - ⭐ [**Jdeath Addons**](https://github.com/jdeath/homeassistant-addons): Jdeath 的加载项
 - 📡 [**Broadlink Manager**](https://github.com/t0mer/broadlinkmanager-docker): 用于学习和发送红外/射频命令的加载项
@@ -54,6 +54,20 @@
 - 🖥️ [**Hass Panel**](https://github.com/mrtian2016/hass-panel): 一个用于管理 Home Assistant 的 Web 面板
 - 🛠️ [**HACS Addons**](https://github.com/hacs/addons): HACS 的加载项，用于扩展 Home Assistant 的功能
 - 🛡️ [**Bluemaex Addons**](https://github.com/bluemaex/home-assistant-addons): Bluemaex 的加载项
+- 🖼️ [**Expaso Addons**](https://github.com/expaso/hassos-addons): Expaso 的加载项
+- 📹 [**Frigate Addons**](https://github.com/blakeblackshear/frigate-hass-addons): Frigate 的加载项
+- 🎵 [**Music Assistant**](https://github.com/music-assistant/home-assistant-addon): 音乐助手加载项
+- 🏠 [**ESPHome**](https://github.com/esphome/home-assistant-addon): ESPHome 加载项
+- 🐝 [**Litinoveweedle Addons**](https://github.com/litinoveweedle/hassio-addons): Litinoveweedle 的加载项
+- 🛠️ [**Brenner-Tobias Addons**](https://github.com/brenner-tobias/ha-addons): Brenner-Tobias 的加载项
+- 🖥️ [**Sanderdw Addons**](https://github.com/sanderdw/hassio-addons): Sanderdw 的加载项
+- 💡 [**Dianlight Addons**](https://github.com/dianlight/hassio-addons): Dianlight 的加载项
+- 💧 [**Hydroqc Addons**](https://gitlab.com/hydroqc/hydroqc-hass-addons/): Hydroqc 的加载项
+- 📶 [**Broadlink AC MQTT**](https://github.com/Arbuzov/hass-broadlink-ac-mqtt): Broadlink AC MQTT 加载项
+- 🏡 [**Hugobloem Addons**](https://github.com/hugobloem/homeassistant-addons): Hugobloem 的加载项
+- 🛠️ [**Haberda Addons**](https://github.com/haberda/hassio_addons): Haberda 的加载项
+- 🖥️ [**AlexxIT Addons**](https://github.com/AlexxIT/hassio-addons): AlexxIT 的加载项
+- 🛠️ [**Da-anda Addons**](https://github.com/da-anda/hass-io-addons): Da-anda 的加载项
 
 
 

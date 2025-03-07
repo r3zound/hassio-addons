@@ -30,18 +30,32 @@ All Addon acceleration correspondence is as follows:
 
 Excellent third-party libraries:
 
-- 📚 [**Official Addons**](https://github.com/home-assistant/addons): Official Addons for users in China to use without VPN
-- 🌐 [**Community Addons**](https://github.com/hassio-addons/repository): Official community Addons, currently in testing phase
+- 📚 [**Official Addons**](https://github.com/home-assistant/addons): Official Addons
+- 🌐 [**Community Addons**](https://github.com/hassio-addons/repository): Official community Addons
 - 🎨 [**Alexbelgium Addons**](https://github.com/alexbelgium/hassio-addons): Addons by Alexbelgium
 - ⭐ [**Jdeath Addons**](https://github.com/jdeath/homeassistant-addons): Addons by Jdeath
 - 📡 [**Broadlink Manager**](https://github.com/t0mer/broadlinkmanager-docker): Broadlink Manager Addon for learning and sending IR/RF commands
-- 🖌️ [**Poeschl Addons**](https://github.com/Poeschl/Hassio-Addons): Addons by Poeschl
+- 🖌️ [**Poeschl Addons**](https://github.com/Poeschl-HomeAssistant-Addons/repository): Addons by Poeschl
 - 🛠️ [**Erik73 Addons**](https://github.com/erik73/hassio-addons): Addons by Erik73
 - 📦 [**Einschmidt Addons**](https://github.com/einschmidt/hassio-addons): Addons by Einschmidt
 - 🚀 [**FaserF Addons**](https://github.com/FaserF/hassio-addons): Addons by FaserF
 - 🖥️ [**Hass Panel**](https://github.com/mrtian2016/hass-panel): A web panel for managing Home Assistant
 - 🛠️ [**HACS Addons**](https://github.com/hacs/addons): Addons by HACS for extending Home Assistant functionality
 - 🛡️ [**Bluemaex Addons**](https://github.com/bluemaex/home-assistant-addons): Addons by Bluemaex
+- 🏠 [**Expaso Addons**](https://github.com/expaso/hassos-addons): Addons by Expaso
+- 📹 [**Frigate Addons**](https://github.com/blakeblackshear/frigate-hass-addons): Frigate Addons by Blake Blackshear
+- 🎵 [**Music Assistant**](https://github.com/music-assistant/home-assistant-addon): Music Assistant Addon
+- 🏠 [**ESPHome Addon**](https://github.com/esphome/home-assistant-addon): ESPHome Addon
+- 🌿 [**Litinoveweedle Addons**](https://github.com/litinoveweedle/hassio-addons): Addons by Litinoveweedle
+- 🛠️ [**Brenner-Tobias Addons**](https://github.com/brenner-tobias/ha-addons): Addons by Brenner-Tobias
+- 🏠 [**Sanderdw Addons**](https://github.com/sanderdw/hassio-addons): Addons by Sanderdw
+- 💡 [**Dianlight Addons**](https://github.com/dianlight/hassio-addons): Addons by Dianlight
+- ⚡ [**HydroQC Addons**](https://gitlab.com/hydroqc/hydroqc-hass-addons/): HydroQC Addons
+- 🌡️ [**Broadlink AC MQTT**](https://github.com/Arbuzov/hass-broadlink-ac-mqtt): Broadlink AC MQTT Addon
+- 🏠 [**Hugobloem Addons**](https://github.com/hugobloem/homeassistant-addons): Addons by Hugobloem
+- 🛠️ [**Haberda Addons**](https://github.com/haberda/hassio_addons): Addons by Haberda
+- 🏠 [**AlexxIT Addons**](https://github.com/AlexxIT/hassio-addons): Addons by AlexxIT
+- 🛠️ [**Da-anda Addons**](https://github.com/da-anda/hass-io-addons): Addons by Da-anda
 
 
 
