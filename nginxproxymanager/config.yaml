@@ -1,7 +1,7 @@
 name: Nginx Proxy Manager
 version: 1.0.1
 slug: nginxproxymanager
-description: 使用简单、强大的界面管理Nginx代理主机。
+description: 使用简单而强大的界面管理Nginx代理主机。
 url: https://gh-proxy.com/github.com/hassio-addons/addon-nginx-proxy-manager
 codenotary: codenotary@frenck.dev
 webui: http://[HOST]:[PORT:81]

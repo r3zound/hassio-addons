@@ -1,7 +1,7 @@
 name: Tailscale
 version: 0.25.0
 slug: tailscale
-description: 零配置VPN用于构建安全网络
+description: 零配置VPN用于构建安全网络。
 url: https://gh-proxy.com/github.com/hassio-addons/addon-tailscale
 codenotary: codenotary@frenck.dev
 ingress: true

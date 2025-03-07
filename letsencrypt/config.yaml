@@ -3,7 +3,11 @@ version: 5.4.3
 breaking_versions: [5.3.0]
 slug: letsencrypt
 name: Let's Encrypt
-description: 管理Let's Encrypt证书
+description: $'让我帮你翻译一下这句话：
+
+“管理Let's Encrypt证书”
+
+希望这对你有帮助！有其他问题也欢迎继续问我哦。'
 url: https://gh-proxy.com/github.com/home-assistant/addons/tree/master/letsencrypt
 arch:
   - armhf

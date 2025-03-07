@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "自托管的开源笔记应用程序",
+  "description": "自托管的开源笔记应用程序。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

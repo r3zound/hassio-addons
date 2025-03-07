@@ -1,9 +1,7 @@
 name: Example
 version: 10.1.0
 slug: example
-description: $'社区Home Assistant插件示例
-
-（微笑表情）'
+description: 社区家庭助手的示例插件。
 url: https://gh-proxy.com/github.com/hassio-addons/addon-example
 codenotary: codenotary@frenck.dev
 init: false

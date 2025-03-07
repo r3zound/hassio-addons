@@ -7,7 +7,7 @@
     "**/cache/**"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "纳维德罗姆为家庭助理",
+  "description": "Navidrome for Home Assistant 翻译为中文是“Navidrome 家庭助手”。",
   "image": "ghcr.nju.edu.cn/alexbelgium/navidrome-{arch}",
   "init": false,
   "map": [

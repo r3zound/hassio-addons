@@ -2,7 +2,7 @@
 name: Samba NAS
 version: 12.3.2-nas1
 slug: sambanas
-description: 暴露Home Assistant磁盘使用SMB/CIFS
+description: 将Home Assistant通过SMB/CIFS暴露出来。
 url: https://gh-proxy.com/github.com/dianlight/hassio-addons/tree/master/sambanas
 codenotary: lucio.tarantino@gmail.com
 arch:

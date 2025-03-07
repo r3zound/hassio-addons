@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Inadyn 是一个小巧简单的动态 DNS、DDNS 客户端，支持 HTTPS。它支持大量的动态 DNS 提供商（https://gh-proxy.com/github.com/troglobit/inadyn#supported-providers）。对于那些不支持的用户，你可以使用自定义提供商，如该项目文档所述（https://gh-proxy.com/github.com/nalipaz/hassio-addons/blob/master/README.md）。\n\n表情符号保持不变。",
+  "description": "Inadyn 是一个支持 HTTPS 的小型简单动态域名系统（Dynamic DNS, DDNS）客户端。它支持大量的动态 DNS 提供商（https://gh-proxy.com/github.com/troglobit/inadyn#supported-providers）。对于那些不支持的用户，您可以使用自定义提供商，具体方法请参考该项目文档（https://gh-proxy.com/github.com/nalipaz/hassio-addons/blob/master/README.md）。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

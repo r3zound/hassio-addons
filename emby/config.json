@@ -11,7 +11,7 @@
     "*/metadata/"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "一个免费的软件媒体系统，让你能够控制管理和流式传输您的媒体。",
+  "description": "一个免费软件媒体系统，让你能够控制管理和流式传输你的媒体。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

@@ -5,7 +5,7 @@
   ],
   "audio": true,
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "通过任何现代网络浏览器都可以访问的全功能Linux桌面环境。",
+  "description": "完整的Linux桌面环境可以通过任何现代网络浏览器访问。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

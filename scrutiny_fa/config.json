@@ -5,7 +5,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "SmartD智能监控WebUI（完全访问）",
+  "description": "请帮我把以下英文翻译成中文：\n\nScrutiny WebUI for smartd S.M.A.R.T monitoring (Full Access)\n\n翻译结果如下：\n\nSmartd S.M.A.R.T 监控的 Scrutiny 网页用户界面（完全访问权限）",
   "environment": {
     "COLLECTOR_API_ENDPOINT": "http://localhost:8080",
     "COLLECTOR_HOST_ID": "home_assistant"

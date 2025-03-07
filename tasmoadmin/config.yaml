@@ -1,7 +1,10 @@
 name: TasmoAdmin
 version: 0.31.4
 slug: sonweb
-description: 中央管理所有您的Sonoff-Tasmota设备
+description: $'帮我翻译成中文：集中管理所有您的Sonoff-Tasmota设备
+
+翻译结果：
+集中管理您所有的Sonoff-Tasmota设备。'
 url: https://gh-proxy.com/github.com/hassio-addons/addon-tasmoadmin
 codenotary: codenotary@frenck.dev
 webui: '[PROTO:ssl]://[HOST]:[PORT:9541]'

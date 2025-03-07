@@ -1,7 +1,7 @@
 name: Glances
 version: 0.21.1
 slug: glances
-description: 跨平台系统监控工具
+description: 跨平台系统监控工具。
 url: https://gh-proxy.com/github.com/hassio-addons/addon-glances
 codenotary: codenotary@frenck.dev
 ingress: true

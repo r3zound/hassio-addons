@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "自托管文件共享和协作平台",
+  "description": "自助托管文件共享和协作平台。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

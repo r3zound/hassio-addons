@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "网页监控、通知和变更检测",
+  "description": "网页监控、通知和变更检测。",
   "environment": {
     "LC_ALL": "en_US.UTF-8",
     "TIMEOUT": "60000"

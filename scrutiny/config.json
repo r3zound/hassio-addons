@@ -5,7 +5,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "SmartD智能硬盘监测Web界面\n\n（表情符号保持不变）",
+  "description": "智能硬盘监测工具smartd的Web用户界面（webUI）审查。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

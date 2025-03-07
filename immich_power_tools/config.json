@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "整理您的Immich图库的工具包。",
+  "description": "帮你翻译成中文：\n\n整理你的Immich图库的强大工具",
   "hassio_api": true,
   "image": "ghcr.nju.edu.cn/alexbelgium/immich-{arch}",
   "init": false,

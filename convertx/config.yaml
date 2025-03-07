@@ -2,7 +2,9 @@ name: "ConvertX"
 version: "v0.12.0"
 upstream: "v0.12.0"
 slug: convertx
-description: 一个自托管的在线文件转换器。支持831种不同的格式。使用TypeScript、Bun和Elysia编写。
+description: $'> - 一个自托管的在线文件转换器。支持831种不同格式。使用TypeScript、Bun和Elysia编写。
+
+请注意，这段文字是描述一个在线文件转换器的功能和技术栈。如果您需要更详细的解释或帮助，请告诉我！'
   A self-hosted online file converter. Supports 831 different formats. Written with TypeScript, Bun and Elysia
 arch:
   - amd64

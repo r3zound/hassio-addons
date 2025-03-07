@@ -2,7 +2,7 @@
 version: 7.0.0
 slug: matter_server
 name: Matter Server
-description: 家庭助理 Matter 支持的 Matter WebSockets 服务器。
+description: Matter WebSocket 服务器为家庭助手 Matter 支持。
 url: >-
   https://gh-proxy.com/github.com/home-assistant/addons/tree/master/matter_server
 arch:

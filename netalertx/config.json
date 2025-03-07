@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "WIFI/LAN扫描仪、入侵者和存在探测器",
+  "description": "🖧🔍 WIFI/LAN扫描器、入侵者检测器和存在探测器\n\n（注：这里的“WIFI/LAN scanner”指的是可以扫描无线网络和有线网络的设备或软件，“intruder”是指未经授权的访问者，“presence detector”则是指能够检测到某个物体或人的存在的装置。）",
   "environment": {
     "PGID": "102",
     "PORT": "20211",

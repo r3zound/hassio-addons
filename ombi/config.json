@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "自托管Plex请求和用户管理系统",
+  "description": "自助托管Plex请求和用户管理系统\n\n请注意，由于“self-hosted Plex”可能指的是一个特定的软件或服务，因此我无法直接将其翻译为中文。如果您需要将这个短语翻译为中文，请提供更多的上下文信息或者更具体的名称。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "环境音以集中和宁静为目的",
+  "description": "环境声音用于专注和宁静。",
   "environment": {},
   "map": [],
   "image": "ghcr.nju.edu.cn/remvze/moodist",

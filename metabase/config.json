@@ -2,7 +2,7 @@
   "name": "Metabase",
   "version": "1.0.1",
   "slug": "metabase",
-  "description": "遇见简单、开源的方式，让每个人都能提出问题并从数据中学习。",
+  "description": "以下是翻译：\n\n找到一种简单、开源的方式，让每个人都能提出问题并从数据中学习。",
   "url": "https://gh-proxy.com/github.com/sanderdw/hassio-addons/blob/master/metabase/README.md",
   "startup": "application",
   "ports": {

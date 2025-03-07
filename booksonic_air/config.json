@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "访问您拥有的有声书的平台，无论你在哪里。",
+  "description": "帮你翻译成中文：\n\n“无论你在哪里都可以访问你拥有的有声书的平台。”",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

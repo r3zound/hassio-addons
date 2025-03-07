@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "LinuxServer镜像上的BitTorrent客户端",
+  "description": "基于Linux服务器镜像的BitTorrent客户端。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

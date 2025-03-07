@@ -1,7 +1,7 @@
 name: Overseerr
 version: 0.1.0
 slug: overseerr
-description: Plex生态系统中的请求管理和媒体发现工具
+description: Plex生态系统中的请求管理和媒体发现工具。
 url: https://gh-proxy.com/github.com/hassio-addons/addon-overseerr/tree/main/README.md
 codenotary: codenotary@frenck.dev
 webui: http://[HOST]:[PORT:5055]

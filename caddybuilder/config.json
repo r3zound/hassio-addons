@@ -6,7 +6,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "Caddy Builder\n\n卡迪 builder",
+  "description": "Caddy Builder 翻译为中文是“卡迪 builder”。",
   "environment": {},
   "map": [
     "addon_config:rw"
