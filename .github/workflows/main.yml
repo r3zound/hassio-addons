@@ -76,7 +76,7 @@ jobs:
                         \"messages\": [
                           {
                             \"role\": \"user\",
-                            \"content\": \"只要帮我翻译成中文，不需要其它任何内容：$description\"
+                            \"content\": \"帮我翻译成中文，不需要其它信息，只输出翻译结果：$description\"
                           }
                         ]
                       }" | jq -r '.choices[0].message.content')
@@ -86,11 +86,7 @@ jobs:
                     jq --arg description "$translated_description" '.description = $description' "$file" > temp.json && mv temp.json "$file"
                   
                   elif file -b --mime-type "$file" | grep -q "text"; then
-                    if grep -q '^description:\s*|' "$file"; then
-                      description=$(awk '/^description:/ {flag=1; next} /^[a-zA-Z0-9]/ {flag=0} flag' "$file")
-                    else
-                      description=$(grep -oP '(?<=^description:\s)(.+)' "$file")
-                    fi
+                    description=$(awk '/^description:/ {found=1; sub(/^description:[ ]*[-|]*[ ]*/, ""); desc=$0; next} found && /^[^ ]/ {found=0} found {desc = desc " " $0} END {print desc}' "$file")
           
                     translated_description=$(curl -s --location 'https://open.bigmodel.cn/api/paas/v4/chat/completions' \
                       --header "Authorization: Bearer ${{ secrets.ZHIPUAI_KEY }}" \
@@ -100,7 +96,7 @@ jobs:
                         \"messages\": [
                           {
                             \"role\": \"user\",
-                            \"content\": \"只要帮我翻译成中文，不需要其它任何内容：$description\"
+                            \"content\": \"帮我翻译成中文，不需要其它信息，只输出翻译结果：$description\"
                           }
                         ]
                       }" | jq -r '.choices[0].message.content')
