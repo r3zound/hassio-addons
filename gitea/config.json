@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "GitLab for Home Assistant",
+  "description": "Git 网站为家庭助理",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

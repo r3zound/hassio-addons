@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "自动化的币安交易机器人 - 可交易多种加密货币。低买高卖网格交易。与TradingView技术分析集成。",
+  "description": "自动化的币安交易机器人 - 交易多种加密货币。使用网格交易低买高卖。集成了TradingView技术分析。\n\n请注意，由于我无法访问外部数据库或网络资源，因此无法获取关于“币安”的信息。如果您需要有关特定加密货币交易平台的信息，请告诉我，我会尽力为您提供帮助。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

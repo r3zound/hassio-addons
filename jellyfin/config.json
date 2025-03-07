@@ -13,7 +13,7 @@
     "10.10.6*"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "一个自由软件媒体系统，让你能够控制管理和流式传输您的媒体。\n\n翻译如下：\n\n一个自由软件媒体系统，让您能够控制和管理媒体的流式传输。",
+  "description": "一个自由软件媒体系统，让你能够控制管理和流式传输你的媒体。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

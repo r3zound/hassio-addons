@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "解压RAR文件以供Sonarr、Lidarr和Radarr使用。",
+  "description": "解压缩用于Sonarr、Lidarr和Radarr的RAR文件。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
