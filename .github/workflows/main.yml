@@ -1,11 +1,9 @@
 name: Sync Home Assistant Addons
 
 on:
-  push:
-    branches:
-      - main
   schedule:
-    - cron: '0 3 * * *'
+    - cron: '0 3 * * *'  # 每天 UTC 03:00（北京时间 11:00）运行
+  workflow_dispatch:  # 允许手动触发
 
 jobs:
   sync:
