@@ -57,6 +57,15 @@ jobs:
             -e 's|https://github.com|https://gh-proxy.com/github.com|g' \
             -e 's|ADD "https://raw.githubusercontent.com|ADD "https://gh-proxy.com/raw.githubusercontent.com|g' {} +
 
+      - name: Translate markdown files
+        run: |
+              npm install -g ai-markdown-translator
+    
+              find ./addons -type f \( -name "README.md" -o -name "DOCS.md" \) -print0 | xargs -0 -P 4 -I {} sh -c '
+              echo "Translating {}"
+              ai-markdown-translator -i "{}" -o "{}" -l "中文" 
+              '
+
       - name: Replace description in config files
         run: |
           find ./addons -type f \( -name "config.yaml" -o -name "config.json" \) ! -path "*/.*/*" | while read -r file; do
@@ -119,25 +128,8 @@ jobs:
                 }
               done
           
-      - name: Translate markdown files
-        run: |
-          npm install -g ai-markdown-translator
-
-          find ./addons -type f \( -name "README.md" -o -name "DOCS.md" \) -print0 | xargs -0 -P 4 -I {} sh -c '
-          echo "Translating {}"
-          ai-markdown-translator -i "{}" -o "{}" -l "中文"
 
 
-
-
-
-
-
-
-      #- name: Run link.py if Necessary
-      #  run: |
-      #    if [ -f link.py ]; then python3 link.py; fi
-      #  working-directory: addons
 
       - name: remove the hidden files
         run: |
