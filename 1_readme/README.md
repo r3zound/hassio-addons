@@ -37,8 +37,8 @@
 如果您觉得我花费大量时间维护这个库对您有帮助，欢迎请我喝杯奶茶，您的支持将是我持续改进的动力！
 
 <div style="display: flex; justify-content: space-between;">
-  <img src="https://gitee.com/desmond_GT/hassio-addons/raw/main/Ali_Pay.jpg" width="45%" />
-  <img src="https://gitee.com/desmond_GT/hassio-addons/raw/main/WeChat_Pay.jpg" width="45%" />
+  <img src="https://gitee.com/desmond_GT/hassio-addons/raw/main/Ali_Pay.jpg" height="593px" />
+  <img src="https://gitee.com/desmond_GT/hassio-addons/raw/main/WeChat_Pay.jpg" height="593px" />
 </div> 💖
 
 感谢您的支持与鼓励！

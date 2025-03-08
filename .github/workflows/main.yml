@@ -97,75 +97,67 @@ jobs:
             -e 's|ADD "https://raw.githubusercontent.com|ADD "https://gh-proxy.com/raw.githubusercontent.com|g' {} +
 
 
-      - name: Translate markdown files
-        run: |
-              npm install -g ai-markdown-translator
-              find ./addons -type f \( -name "README.md" -o -name "DOCS.md" \) -print0 | xargs -0 -P 4 -I {} sh -c '
-                timeout 30s ai-markdown-translator -i "{}" -o "{}" -l "中文" || echo "{} translation failed or timed out."
-              '
-          
-
       - name: Replace description in config files
         run: |
-          find ./addons -type f \( -name "config.yaml" -o -name "config.json" \) ! -path "*/.*/*" | while read -r file; do
-                {
-                  if file -b --mime-type "$file" | grep -q "json"; then
-                    description=$(jq -r '.description' "$file")
-                    if [ "$description" == "null" ]; then
-                      echo "No description found in $file (JSON), skipping..."
+              find ./addons -type f \( -name "config.yaml" -o -name "config.json" \) ! -path "*/.*/*" | while read -r file; do
+                    {
+                      if file -b --mime-type "$file" | grep -q "json"; then
+                        description=$(jq -r '.description' "$file")
+                        if [ "$description" == "null" ]; then
+                          echo "No description found in $file (JSON), skipping..."
+                          continue
+                        fi
+              
+                        translated_description=$(curl -s --location 'https://open.bigmodel.cn/api/paas/v4/chat/completions' \
+                          --header "Authorization: Bearer ${{ secrets.ZHIPUAI_KEY }}" \
+                          --header 'Content-Type: application/json' \
+                          --data "{
+                            \"model\": \"glm-4v-flash\",
+                            \"messages\": [
+                              {
+                                  \"role\": \"system\",
+                                  \"content\": \"你是一个翻译程序，只将我给你的内容翻译成中文，不提供任何其它多余解释以及回答\" 
+                              },
+                              {
+                                \"role\": \"user\",
+                                \"content\": \"$description\"
+                              }
+                            ]
+                          }" | jq -r '.choices[0].message.content')
+              
+                        echo "Translated description for $file (JSON): $translated_description"
+              
+                        jq --arg description "$translated_description" '.description = $description' "$file" > temp.json && mv temp.json "$file"
+                      
+                      elif file -b --mime-type "$file" | grep -q "text"; then
+                        description=$(awk '/^description:/ {found=1; sub(/^description:[ ]*[-|]*[ ]*/, ""); desc=$0; next} found && /^[^ ]/ {found=0} found {desc = desc " " $0} END {print desc}' "$file")
+              
+                        translated_description=$(curl -s --location 'https://open.bigmodel.cn/api/paas/v4/chat/completions' \
+                          --header "Authorization: Bearer ${{ secrets.ZHIPUAI_KEY }}" \
+                          --header 'Content-Type: application/json' \
+                          --data "{
+                            \"model\": \"glm-4v-flash\",
+                            \"messages\": [
+                              {
+                                  \"role\": \"system\",
+                                  \"content\": \"你是一个翻译程序，只将我给你的内容翻译成中文，不提供任何其它多余解释以及回答\" 
+                              },
+                              {
+                                \"role\": \"user\",
+                                \"content\": \"$description\"
+                              }
+                            ]
+                          }" | jq -r '.choices[0].message.content')
+              
+                        echo "Translated description for $file (non-JSON): $translated_description"
+                        safe_description=$(printf "%q" "$translated_description")
+                        sed -i "s|^description:.*|description: $safe_description|" "$file"
+                      fi
+                    } || {
+                      echo "Error processing $file, skipping..."
                       continue
-                    fi
-          
-                    translated_description=$(curl -s --location 'https://open.bigmodel.cn/api/paas/v4/chat/completions' \
-                      --header "Authorization: Bearer ${{ secrets.ZHIPUAI_KEY }}" \
-                      --header 'Content-Type: application/json' \
-                      --data "{
-                        \"model\": \"glm-4v-flash\",
-                        \"messages\": [
-                          {
-                              \"role\": \"system\",
-                              \"content\": \"你是一个翻译程序，只将我发给你的内容翻译成中文，不提供任何其它多余解释以及回答\" 
-                          },
-                          {
-                            \"role\": \"user\",
-                            \"content\": \"$description\"
-                          }
-                        ]
-                      }" | jq -r '.choices[0].message.content')
-          
-                    echo "Translated description for $file (JSON): $translated_description"
-          
-                    jq --arg description "$translated_description" '.description = $description' "$file" > temp.json && mv temp.json "$file"
-                  
-                  elif file -b --mime-type "$file" | grep -q "text"; then
-                    description=$(awk '/^description:/ {found=1; sub(/^description:[ ]*[-|]*[ ]*/, ""); desc=$0; next} found && /^[^ ]/ {found=0} found {desc = desc " " $0} END {print desc}' "$file")
-          
-                    translated_description=$(curl -s --location 'https://open.bigmodel.cn/api/paas/v4/chat/completions' \
-                      --header "Authorization: Bearer ${{ secrets.ZHIPUAI_KEY }}" \
-                      --header 'Content-Type: application/json' \
-                      --data "{
-                        \"model\": \"glm-4v-flash\",
-                        \"messages\": [
-                          {
-                              \"role\": \"system\",
-                              \"content\": \"你是一个翻译程序，只将我发给你的内容翻译成中文，不提供任何其它多余解释以及回答\\" 
-                          },
-                          {
-                            \"role\": \"user\",
-                            \"content\": \"$description\"
-                          }
-                        ]
-                      }" | jq -r '.choices[0].message.content')
-          
-                    echo "Translated description for $file (non-JSON): $translated_description"
-                    safe_description=$(printf "%q" "$translated_description")
-                    sed -i "s|^description:.*|description: $safe_description|" "$file"
-                  fi
-                } || {
-                  echo "Error processing $file, skipping..."
-                  continue
-                }
-              done
+                    }
+                  done
           
       - name: remove the hidden files
         run: |
