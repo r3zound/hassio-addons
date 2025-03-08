@@ -1,6 +1,7 @@
 {
   "name": "1本加载项源说明1",
   "version": "1.0.0",
+  "url": "https://gitee.com/desmond_GT/hassio-addons/blob/main/README.md",
   "codenotary": "djhhui@gmail.com",
   "slug": "dedeaddon",
   "description": "！！使用此加载项请先阅读我！！",
