@@ -45,6 +45,26 @@ jobs:
             unzip -o "$file" -d addons && rm "$file"
           done
 
+      - name: remove the hidden files
+        run: |
+            find addons/ -name ".*" -exec rm -rf {} +
+            for ITEM in addons/*/*; do
+            BASENAME=$(basename "$ITEM") 
+            TARGET_PATH="./$BASENAME"
+              if [ -f "$ITEM" ]; then
+                rm -f "$ITEM"
+                echo "Deleted $ITEM" 
+              elif [ -d "$ITEM" ]; then
+                rm -rf "$TARGET_PATH"
+                mv -f "$ITEM" "./" || echo "Failed to move directory: $ITEM"
+                echo "Moved directory: $ITEM"
+              fi
+            done
+            rm -rf whisparr # 删除无用的仓库
+
+
+
+
       - name: modify the addons download link to accelerate url
         run: |
           find addons -type f \( -name "*.yaml" -o -name "*.json" -o -name "Dockerfile" \) -exec sed -i \
@@ -128,24 +148,6 @@ jobs:
               done
           
 
-
-
-      - name: remove the hidden files
-        run: |
-          find addons/ -name ".*" -exec rm -rf {} +
-          for ITEM in addons/*/*; do
-          BASENAME=$(basename "$ITEM") 
-          TARGET_PATH="./$BASENAME"
-            if [ -f "$ITEM" ]; then
-              rm -f "$ITEM"
-              echo "Deleted $ITEM" 
-            elif [ -d "$ITEM" ]; then
-              rm -rf "$TARGET_PATH"
-              mv -f "$ITEM" "./" || echo "Failed to move directory: $ITEM"
-              echo "Moved directory: $ITEM"
-            fi
-          done
-          rm -rf whisparr
 
       - name: sync hass-panel
         run: |
