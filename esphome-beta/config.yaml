@@ -34,7 +34,7 @@ name: ESPHome Device Builder (beta)
 panel_title: ESPHome Builder (beta)
 version: 2025.2.2
 slug: esphome-beta
-description: ESPHome 设备构建器的测试版。
+description: ESPHome 设备构建器测试版
 image: ghcr.nju.edu.cn/esphome/esphome-hassio
 stage: experimental
 advanced: true

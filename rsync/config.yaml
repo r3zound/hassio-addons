@@ -1,7 +1,7 @@
 name: rsync
 version: 2.0.0
 slug: rsync
-description: 通过ssh和rsync将文件夹同步到远程机器。
+description: 通过SSH和rsync将文件夹同步到远程机器。
 url: https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/rsync
 arch:
 - armhf

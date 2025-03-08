@@ -6,7 +6,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "将“An implementation of a Signal K central server for boats”翻译为中文：\n\n“一个用于船只的Signal K中央服务器的实现”\n\n请注意，由于“implementation”一词在中文中可能有多种含义（如“实施”、“执行”等），因此这里选择了一个较为通用的翻译方式。如果您需要更具体的翻译，请告知我。",
+  "description": "将“An implementation of a Signal K central server for boats”翻译为中文是：“用于船只的Signal K中央服务器实现”。",
   "devices": [
     "/dev/can0",
     "/dev/can1",

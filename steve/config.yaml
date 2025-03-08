@@ -1,7 +1,7 @@
 name: SteVe
 version: 2.0.20
 slug: steve
-description: 电动汽车充电站的Ocpp服务器。
+description: 电动汽车充电站Ocpp服务器。
 url: https://gh-proxy.com/github.com/erik73/addon-steve
 arch:
 - aarch64

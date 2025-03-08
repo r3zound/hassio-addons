@@ -2,11 +2,11 @@ name: MedAssist
 version: "v0.16.2"
 upstream: v0.14.3test
 slug: medassist
-description: $'MedAssist 是一个用爱制作的简单 Node.js 应用。它通过发送提醒轻松跟踪药物库存和按时重新订购。
+description: $'MedAssist 是一个用爱制作的简单 Node.js 应用程序。它通过发送提醒，使跟踪药物库存和按时重新订购变得容易。
 
-> - 
+---
 
--'
+> -   MedAssist 是一个用爱制作的简单 Node.js 应用程序。它通过发送提醒，使跟踪药物库存和按时重新订购变得容易。'
   MedAssist is a simple Node.js application made with love. It makes it easy to keep track of medication inventory and reorder on time by sending reminders.
 arch:
   - amd64

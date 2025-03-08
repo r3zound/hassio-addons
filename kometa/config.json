@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "以下是将上述英文句子翻译为中文的版本：\n\nPython脚本来更新电影、节目和收藏夹的元数据信息，并自动创建收藏夹。",
+  "description": "以下是将上述英文翻译为中文的版本：\n\nPython脚本来更新电影、节目和收藏夹的元数据信息，并自动创建收藏夹。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

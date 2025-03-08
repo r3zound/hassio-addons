@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "🖧🔍 WIFI/LAN扫描器、入侵者和存在探测器\n\n这个短语描述了一个工具或设备，它能够扫描无线网络（WIFI）和有线局域网（LAN），检测潜在的入侵者，并探测是否存在未授权的连接。",
+  "description": "🖧🔍 WIFI/LAN扫描器、入侵者检测器和存在探测器",
   "environment": {
     "PGID": "102",
     "PORT": "20211",

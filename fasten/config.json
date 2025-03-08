@@ -3,7 +3,7 @@
     "amd64"
   ],
   "boot": "manual",
-  "description": "快速安全地将您的医疗保健提供者连接在一起，创建一个不会离开您手中的个人健康记录。",
+  "description": "快速安全地连接您的医疗保健提供者，创建一个不会离开您手中的个人健康记录。",
   "environment": {},
   "map": [
     "addon_config:rw"

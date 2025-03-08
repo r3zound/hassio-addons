@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "mqttui的Web图形用户界面。",
+  "description": "mqttui的Web图形用户界面",
   "environment": {},
   "map": [
     "share:rw"

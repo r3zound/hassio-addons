@@ -1,7 +1,7 @@
 name: MQTT IO
 version: 0.4.0
 slug: mqtt-io
-description: 通过MQTT暴露GPIO模块和数字传感器以实现远程控制和监控。
+description: 通过MQTT公开GPIO模块和数字传感器以远程控制和监控。
   monitoring.
 url: https://gh-proxy.com/github.com/hassio-addons/addon-mqtt-io
 codenotary: codenotary@frenck.dev
