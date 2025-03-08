@@ -1,38 +1,28 @@
-# Home Assistant Community Add-on: AppDaemon
+# Home Assistant 社区插件: AppDaemon
 
-[AppDaemon][appdaemon] is a loosely coupled, multithreaded, sandboxed Python
-execution environment for writing automation apps for Home Assistant home
-automation software. It also provides a configurable dashboard (HADashboard)
-suitable for wall mounted tablets.
+[AppDaemon][appdaemon] 是一个松耦合、多线程、沙箱式的 Python 执行环境，用于为 Home Assistant 家居自动化软件编写自动化应用程序。它还提供了一个可配置的仪表板（HADashboard），适合墙挂式平板电脑。
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Home Assistant add-on.
+这个插件的安装非常简单，与安装其他 Home Assistant 插件没有什么不同。
 
-1. Click the Home Assistant My button below to open the add-on on your Home
-   Assistant instance.
+1. 点击下面的 Home Assistant 我的按钮，以在您的 Home Assistant 实例中打开插件。
 
-   [![Open this add-on in your Home Assistant instance.][addon-badge]][addon]
+   [![在您的 Home Assistant 实例中打开此插件。][addon-badge]][addon]
 
-1. Click the "Install" button to install the add-on.
-1. Start the "AppDaemon" add-on
-1. Check the logs of the "AppDaemon" add-on to see if everything went well.
+1. 点击“安装”按钮以安装插件。
+1. 启动“AppDaemon”插件
+1. 检查“AppDaemon”插件的日志，以查看一切是否顺利。
 
-:information_source: Please note, the add-on is pre-configured to connect with
-Home Assistant. There is no need to create access tokens or to set your
-Home Assistant URL in the AppDaemon configuration.
+:information_source: 请注意，插件已预先配置以连接到 Home Assistant。无需创建访问令牌或在 AppDaemon 配置中设置您的 Home Assistant URL。
 
-This automatic handling of the URL and token conflicts with the
-[AppDaemon official documentation][appdaemon]. The official documentation
-will state `ha_url` and `token` options are required. For the add-on, however,
-this isn't needed.
+这种对 URL 和令牌的自动处理与 [AppDaemon 官方文档][appdaemon] 相冲突。官方文档将指出需要 `ha_url` 和 `token` 选项。然而，对于该插件，这并不是必需的。
 
-## Configuration
+## 配置
 
-**Note**: _Remember to restart the add-on when the configuration is changed._
+**注意**: _请记得在更改配置后重启插件。_
 
-Example add-on configuration:
+示例插件配置：
 
 ```yaml
 log_level: info
@@ -43,136 +33,99 @@ python_packages:
   - Pillow
 ```
 
-**Note**: _This is just an example, don't copy and past it! Create your own!_
+**注意**: _这只是一个示例，请不要复制粘贴！请创建您自己的！_
 
-### Option: `log_level`
+### 选项: `log_level`
 
-The `log_level` option controls the level of log output by the addon and can
-be changed to be more or less verbose, which might be useful when you are
-dealing with an unknown issue. Possible values are:
+`log_level` 选项控制插件的日志输出级别，可以更改为更详细或更简洁，这在处理未知问题时可能会很有用。可能的值包括：
 
-- `trace`: Show every detail, like all called internal functions.
-- `debug`: Shows detailed debug information.
-- `info`: Normal (usually) interesting events.
-- `warning`: Exceptional occurrences that are not errors.
-- `error`: Runtime errors that do not require immediate action.
-- `fatal`: Something went terribly wrong. Add-on becomes unusable.
+- `trace`: 显示每一个细节，如所有调用的内部函数。
+- `debug`: 显示详细的调试信息。
+- `info`: 正常（通常是）有趣的事件。
+- `warning`: 非错误的异常事件。
+- `error`: 不需要立即处理的运行时错误。
+- `fatal`: 出现严重错误。插件变得不可用。
 
-Please note that each level automatically includes log messages from a
-more severe level, e.g., `debug` also shows `info` messages. By default,
-the `log_level` is set to `info`, which is the recommended setting unless
-you are troubleshooting.
+请注意，每个级别自动包括来自更严重级别的日志消息，例如，`debug` 也会显示 `info` 消息。默认情况下，`log_level` 设置为 `info`，这是推荐的设置，除非您在排错。
 
-These log level also affects the log levels of the AppDaemon.
+这些日志级别也会影响 AppDaemon 的日志级别。
 
-### Option: `system_packages`
+### 选项: `system_packages`
 
-Allows you to specify additional [Alpine packages][alpine-packages] to be
-installed to your AppDaemon setup (e.g., `g++`. `make`, `ffmpeg`).
+允许您指定要安装到您的 AppDaemon 设置中的额外 [Alpine 包][alpine-packages]（例如，`g++`，`make`，`ffmpeg`）。
 
-**Note**: _Adding many packages will result in a longer start-up time
-for the add-on._
+**注意**: _添加许多包会导致插件启动时间变长。_
 
-### Option: `python_packages`
+### 选项: `python_packages`
 
-Allows you to specify additional [Python packages][python-packages] to be
-installed to your AppDaemon setup (e.g., `PyMySQL`. `Requests`, `Pillow`).
+允许您指定要安装到您的 AppDaemon 设置中的额外 [Python 包][python-packages]（例如，`PyMySQL`，`Requests`，`Pillow`）。
 
-**Note**: _Adding many packages will result in a longer start-up time
-for the add-on._
+**注意**: _添加许多包会导致插件启动时间变长。_
 
-#### Option: `init_commands`
+#### 选项: `init_commands`
 
-Customize your environment even more with the `init_commands` option.
-Add one or more shell commands to the list, and they will be executed every
-single time this add-on starts.
+通过 `init_commands` 选项进一步自定义您的环境。将一个或多个 shell 命令添加到列表中，它们会在每次启动该插件时执行。
 
-## AppDaemon and HADashboard configuration
+## AppDaemon 和 HADashboard 配置
 
-This add-on does not configure the AppDaemon or HADashboard for you.
-It does, however, create some sample files to get you started on the first run.
+该插件不会为您配置 AppDaemon 或 HADashboard。然而，它会创建一些示例文件，以帮助您在首次运行时入门。
 
-The configuration of the AppDaemon can be found in the add-on configuration
-folder of this add-on.
+AppDaemon 的配置可以在此插件的配置文件夹中找到。
 
-For more information about configuring AppDaemon, please refer to the
-extensive documentation they offer:
+有关配置 AppDaemon 的更多信息，请参阅他们提供的详细文档：
 
 <http://appdaemon.readthedocs.io/en/latest/>
 
-## Home Assistant access tokens and ha_url settings
+## Home Assistant 访问令牌和 ha_url 设置
 
-By default, this add-on ships without a `token` and without the `ha_url`
-in the `appdaemon.yaml` config file. **This is not an error!**
+默认情况下，该插件不带 `token` 也不带 `ha_url` 在 `appdaemon.yaml` 配置文件中。 **这不是一个错误！**
 
-The add-on takes care of these settings for you and you do not need to provide
-or set these in the AppDaemon configuration.
+插件会为您处理这些设置，您无需在 AppDaemon 配置中提供或设置这些。
 
-This automatic handling of the URL and token conflicts with the AppDaemon
-official documentation. The official documentation will state `ha_url` and
-`token` options are required. For the add-on, these aren't needed.
+这种 URL 和令牌的自动处理与 AppDaemon 官方文档相冲突。官方文档将指出需要 `ha_url` 和 `token` 选项。然而，对于该插件，这并不是必需的。
 
-However, you are free to set them if you want to override, however, in
-general usage, that should not be needed and is not recommended for this add-on.
+但是，您可以自由设置它们，如果您想要覆盖；然而，在一般使用中，这种设置通常不是必需的，并且不推荐用于该插件。
 
-## Changelog & Releases
+## 更新日志 & 发布
 
-This repository keeps a change log using [GitHub's releases][releases]
-functionality.
+该库使用 [GitHub 的发布][releases] 功能保持变更日志。
 
-Releases are based on [Semantic Versioning][semver], and use the format
-of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
-based on the following:
+发布基于 [语义版本控制][semver]，使用 `MAJOR.MINOR.PATCH` 格式。简而言之，版本将根据以下情况增加：
 
-- `MAJOR`: Incompatible or major changes.
-- `MINOR`: Backwards-compatible new features and enhancements.
-- `PATCH`: Backwards-compatible bugfixes and package updates.
+- `MAJOR`: 不兼容或重大更改。
+- `MINOR`: 向后兼容的新功能和增强。
+- `PATCH`: 向后兼容的错误修复和包更新。
 
-## Support
+## 支持
 
-Got questions?
+有问题？
 
-You have several options to get them answered:
+您有几种选择来获取答案：
 
-- The [Home Assistant Community Add-ons Discord chat server][discord] for add-on
-  support and feature requests.
-- The [Home Assistant Discord chat server][discord-ha] for general Home
-  Assistant discussions and questions.
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+- [Home Assistant 社区插件 Discord 聊天服务器][discord] 以获取插件支持和功能请求。
+- [Home Assistant Discord 聊天服务器][discord-ha] 用于一般的 Home Assistant 讨论和问题。
+- Home Assistant [社区论坛][forum]。
+- 加入 [Reddit 子版块][reddit] 在 [/r/homeassistant][reddit]
 
-You could also [open an issue here][issue] GitHub.
+您也可以 [在这里提出问题][issue] GitHub。
 
-## Authors & contributors
+## 作者 & 贡献者
 
-The original setup of this repository is by [Franck Nijhof][frenck].
+该库的最初设置由 [Franck Nijhof][frenck] 完成。
 
-For a full list of all authors and contributors,
-check [the contributor's page][contributors].
+有关所有作者和贡献者的完整列表，请查看 [贡献者页面][contributors]。
 
-## License
+## 许可
 
-MIT License
+MIT 许可证
 
-Copyright (c) 2021 - 2024 Franck Nijhof
+版权所有 (c) 2021 - 2024 Franck Nijhof
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+特此授予任何获得本软件及相关文档文件（“软件”）副本的人，免费处理该软件的权利，包括但不限于使用、复制、修改、合并、发布、分发、再授权和/或销售该软件副本的权利，并允许向其提供软件的人员这样做，须遵守以下条件：
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+上述版权声明和本许可声明应包括在所有副本或软件的实质性部分中。
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+该软件在“原样”基础上提供，不提供任何类型的担保，无论是明示或暗示，包括但不限于对适销性、特定用途适用性的担保和非侵权的担保。在任何情况下，作者或版权持有者均不对因使用该软件或其他交易引起的任何索赔、损害或其他责任承担责任，无论是在合同诉讼、侵权行为或其他方式中。
 
 [addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
 [addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_appdaemon&repository_url=https%3A%2F%2Fgithub.com%2Fhassio-addons%2Frepository

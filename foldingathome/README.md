@@ -1,22 +1,20 @@
-# Home Assistant社区插件：Folding@home
+# Home Assistant社区附加组件：Folding@home
 
-[![发布][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
+[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
 
-利用全球分布的超级计算机抗击疾病。
+通过全球分布的超级计算机抗击疾病。
 
 ## 关于
 
-Folding@home（FAH或F@h）是一个分布式计算项目，用于进行
-蛋白质动力学的分子动力学模拟。其初始重点是蛋白质折叠，但已转向更多生物医学问题，例如阿尔茨海默病、癌症、埃博拉和冠状病毒。
+Folding@home（FAH或F@h）是一个分布式计算项目，用于执行蛋白质动态的分子动力学模拟。其最初的重点是蛋白质折叠，但已转向更多生物医学问题，例如阿尔茨海默病、癌症、埃博拉和冠状病毒。
 
-该项目利用志愿者个人计算机的闲置处理资源，这些志愿者在其系统上安装了该软件。
+该项目利用安装了软件的志愿者个人电脑的空闲处理资源。
 
-现在，您可以将Home Assistant实例的闲置时间捐赠给
-Folding@home项目，帮助抗击这些疾病。
+现在，您可以将Home Assistant实例的空闲时间捐赠给Folding@home项目，帮助抗击这些疾病。
 
-加入Home Assistant Folding@home团队！（ID：247478）
+加入Home Assistant Folding@home团队！(id: 247478)
 
 ![Home Assistant前端中的Folding@home][screenshot]
 

@@ -1,4 +1,4 @@
-# Home Assistant 插件：Whisper
+# Home Assistant 插件: Whisper
 
 ![支持 aarch64 架构][aarch64-shield] ![支持 amd64 架构][amd64-shield]
 

@@ -1,11 +1,11 @@
-# Home Assistant 附加组件：freshrss
+# Home Assistant 插件：freshrss
 
-一个免费的，自我托管的新闻聚合器。
+一个免费的、自托管的订阅聚合器。
 
 ## 关于
 
-FreshRSS 是一个自我托管的 RSS 和 Atom 新闻聚合器。
-它轻量级、易于使用、功能强大且可定制。
+FreshRSS 是一个自托管的 RSS 和 Atom 订阅聚合器。
+它具有轻量级、易于使用、功能强大和可定制的特点。
 
 ![freshrss 预览][preview]
 

@@ -1,4 +1,4 @@
-# Home Assistant 社区附加组件：Plex 媒体服务器
+# Home Assistant Community Add-on: Plex 媒体服务器
 
 [![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
 
@@ -8,14 +8,14 @@
 
 [![Support Frenck on Patreon][patreon-shield]][patreon]
 
-您的录制媒体、直播电视、在线新闻和播客，美观有序，
-随时可以流式播放。
+您的录制媒体、直播电视、在线新闻和播客，完美组织，
+随时准备流媒体播放。
 
 ## 关于
 
-Plex 附加组件将您最喜爱的媒体聚集在一个地方，使其
-美观且易于享受。此附加组件提供的 Plex 媒体服务器，
-组织您的个人视频、音乐和照片收藏，
+Plex 插件将您最喜欢的媒体整合在一个地方，让它
+变得美观且便于享受。此插件提供的 Plex 媒体服务器
+组织您的个人视频、音乐和照片集合，
 并将其流式传输到您所有的设备。
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg

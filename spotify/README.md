@@ -4,17 +4,17 @@
 
 [![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
 
-[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
+[![通过 GitHub Sponsors 支持 Frenck][github-sponsors-shield]][github-sponsors]
 
-[![Support Frenck on Patreon][patreon-shield]][patreon]
+[![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
 
 在您的 Home Assistant 设备上播放 Spotify 音乐。
 
 ## 关于
 
-Home Assistant Spotify Connect 插件允许您使用运行 Home Assistant 的设备播放您的 Spotify 音乐。该插件使用 Spotify Connect 协议，使其作为可以被所有官方客户端控制的设备出现。
+Home Assistant 的 Spotify Connect 插件允许您使用运行 Home Assistant 的设备播放您的 Spotify 音乐。该插件使用 Spotify Connect 协议，使其显示为可以被所有官方客户端控制的设备。
 
-例如；在安装此插件的 Raspberry Pi 上运行 Home Assistant 将允许您通过 Pi 播放您的 Spotify 音乐。因此，您所需要做的就是将您的音响系统连接到 Pi！
+例如；在安装此插件的 Raspberry Pi 上运行 Home Assistant 将允许您通过 Pi 播放 Spotify 音乐。因此，您只需将音响系统连接到 Pi 即可！
 
 ![Spotify Connect][screenshot]
 

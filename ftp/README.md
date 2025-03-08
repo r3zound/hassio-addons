@@ -1,6 +1,6 @@
-# Home Assistant 社区附加组件: FTP
+# Home Assistant 社区附加组件：FTP
 
-[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
+[![版本][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
 [![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
@@ -12,11 +12,11 @@
 
 ## 关于
 
-FTP 协议有时可能会派上用场。虽然它比较古老，但仍然有其用途。例如，大多数 IP 摄像头仍支持通过 FTP 上传图像或视频。
+FTP 协议在某些情况下可能会派上用场。虽然它比较旧，但仍然有其用途。例如，大多数 IP 摄像头仍然支持通过 FTP 上传图片或视频。
 
-该附加组件以相对安全的方式为 Hass.io 提供 FTP 服务器。虽然 FTP 本质上并不完全安全（未加密），但此附加组件支持 FTP over SSL (FTPS) 并在其主目录中监禁（chroot）虚拟用户。
+这个附加组件为 Hass.io 提供了一个合理安全的 FTP 服务器。虽然 FTP 本身并不完全安全（因为没有加密），但这个附加组件支持 SSL 上的 FTP（FTPS）并将虚拟用户限制在他们的主目录中。
 
-当然，如果你真的需要，也可以使用此附加组件再次通过 FTP 访问你的 Home Assistant 配置。
+当然，如果你真的想，你也可以使用这个附加组件再次通过 FTP 访问你的 Home Assistant 配置。
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons

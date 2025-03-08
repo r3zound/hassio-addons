@@ -4,7 +4,7 @@
 
 ![支持 aarch64 架构][aarch64-shield] ![支持 amd64 架构][amd64-shield] ![支持 armhf 架构][armhf-shield] ![支持 armv7 架构][armv7-shield] ![支持 i386 架构][i386-shield]
 
-您可以使用此插件从 Git 仓库对您的 Home Assistant 配置文件进行 `git pull` 更新。
+您可以使用此插件从 Git 仓库对 Home Assistant 的配置文件进行 `git pull` 更新。
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg

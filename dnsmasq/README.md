@@ -1,4 +1,4 @@
-# Home Assistant 插件：Dnsmasq
+# Home Assistant 插件: Dnsmasq
 
 一个简单的 DNS 服务器。
 
@@ -6,7 +6,7 @@
 
 ## 关于
 
-设置和管理一个 Dnsmasq DNS 服务器。这允许您操作 DNS 请求。例如，您可以使您的 Home Assistant 域解析到您网络内部的地址。
+设置和管理一个 Dnsmasq DNS 服务器。这允许您操控 DNS 请求。例如，您可以让您的 Home Assistant 域使用您网络内的内部地址解析。
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg

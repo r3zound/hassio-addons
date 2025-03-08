@@ -1,6 +1,6 @@
 # ympd
 
-[ympd](https://ympd.org/) 是一个轻量级的 MPD（音乐播放器守护进程）网页客户端，它无需专用的网络服务器或像 PHP、NodeJS 或 Ruby 这样的解释器即可运行。它经过调整以最小化资源使用，仅需很少的依赖。
+[ympd](https://ympd.org/) 是一个轻量级的 MPD（音乐播放器守护进程）网页客户端，它可以在没有专用网络服务器或解释器（如 PHP、NodeJS 或 Ruby）的情况下运行。它经过优化以最小化资源使用，并且只需要非常少的依赖。
 
 [![Release][release-badge]][release]
 ![Addon Stage][stage-badge]

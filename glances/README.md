@@ -1,22 +1,22 @@
-# Home Assistant Community Add-on: Glances
+# Home Assistant社区插件：Glances
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
-[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
+[![通过GitHub Sponsors赞助Frenck][github-sponsors-shield]][github-sponsors]
 
-[![Support Frenck on Patreon][patreon-shield]][patreon]
+[![在Patreon支持Frenck][patreon-shield]][patreon]
 
-Glances 是一个用 Python 编写的跨平台系统监控工具。
+Glances是一个用Python编写的跨平台系统监控工具。
 
 ## 关于
 
-Glances 是一个跨平台的监控工具，旨在通过基于 Web 的界面在最小的空间内呈现最多的信息。
+Glances是一个跨平台的监控工具，旨在通过基于Web的界面在最小的空间内呈现尽可能多的信息。
 
-Glances 可以将所有系统统计信息导出到 InfluxDB，从而让您查看系统信息及其随时间的行为。
+Glances可以将所有系统统计数据导出到InfluxDB，让您能够查看所有系统信息及其随时间的行为。
 
-![Glances 截图][screenshot]
+![Glances截图][screenshot]
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons

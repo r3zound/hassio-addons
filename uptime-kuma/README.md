@@ -1,20 +1,20 @@
-# Home Assistant社区附加组件：Uptime Kuma
+# Home Assistant Community Add-on: Uptime Kuma
 
-[![版本][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
+[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
 [![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
-[![通过GitHub Sponsors赞助Frenck][github-sponsors-shield]][github-sponsors]
+[![通过 GitHub Sponsors 支持 Frenck][github-sponsors-shield]][github-sponsors]
 
-[![在Patreon上支持Frenck][patreon-shield]][patreon]
+[![在 Patreon 支持 Frenck][patreon-shield]][patreon]
 
-这是一个自托管的监控工具，类似于“Uptime Robot”。
+这是一款类似于“Uptime Robot”的自托管监控工具。
 
 ## 关于
 
-Uptime Kuma是一个开源监控工具，最好的比喻是一个自托管的商业服务变体，如“Uptime Robot”。
+Uptime Kuma 是一个开源监控工具，可以最好地比作一个自托管版本的商业服务，如“Uptime Robot”。
 
-它可以让你通过HTTP/S、TCP、DNS和其他协议监控服务，并且可以在服务停机时向你发送通知或触发Home Assistant自动化的Webhook。
+它使您能够通过 HTTP/S、TCP、DNS 和其他协议监控服务，并且可以在停机时向您发送通知或触发 Home Assistant 自动化 webhook。
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons

@@ -2,7 +2,7 @@
 version: 8.0.1
 slug: git_pull
 name: Git pull
-description: 简单的git拉取来更新本地配置。
+description: 简单执行git pull来更新本地配置。
 url: https://gh-proxy.com/github.com/home-assistant/addons/tree/master/git_pull
 advanced: true
 arch:

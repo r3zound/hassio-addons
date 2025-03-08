@@ -8,17 +8,17 @@
 
 [![Support Frenck on Patreon][patreon-shield]][patreon]
 
-Visual Studio Code，通过浏览器访问。
+通过浏览器访问的 Visual Studio Code。
 
 ## 关于
 
-这个插件运行 Visual Studio Code，允许您直接从 web 浏览器编辑您的 Home Assistant 配置，并且可以直接嵌入到 Home Assistant 前端 UI 中。
+此插件运行 Visual Studio Code，允许您直接从网页浏览器编辑您的 Home Assistant 配置，并且可以直接嵌入到 Home Assistant 前端 UI 中。
 
-Visual Studio Code 作为远程服务器运行，使用 `code-server`，提供完整的 VSCode 使用体验。
+Visual Studio Code 作为远程服务器使用 `code-server`，并提供完整的 VSCode 体验。
 
-该插件预装并预配置了 Home Assistant、MDI 图标和 YAML 扩展。这意味着自动补全功能可以立即使用，无需进行任何配置。
+该插件预装并预配置了 Home Assistant、MDI 图标和 YAML 扩展。这意味着自动补全可以立即工作，无需配置任何内容。
 
-![Home Assistant 前端中的 Studio Code 服务器][screenshot]
+![在 Home Assistant 前端中的 Studio Code 服务器][screenshot]
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons

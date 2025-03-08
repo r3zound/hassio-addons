@@ -1,10 +1,10 @@
-# Home Assistant 插件：Frigate（适用于旧的 x86_64 CPU）
+# Home Assistant 插件: Frigate (适用于旧款 x86_64 CPU)
 
-请参考 [发布说明](https://github.com/blakeblackshear/frigate/releases) 了解重大变更。
+请参考[发布说明](https://github.com/blakeblackshear/frigate/releases)以获取重大变化信息。
 
 ![支持 amd64 架构][amd64-shield]
 
-具有实时本地对象检测功能的 NVR，适用于 IP 摄像头。
+为 IP 摄像头提供实时本地物体检测的 NVR。
 
 您必须在 Home Assistant 配置目录的根目录中创建一个名为 `frigate.yml` 的配置文件。
 

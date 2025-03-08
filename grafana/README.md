@@ -1,24 +1,24 @@
-# Home Assistant Community Add-on: Grafana
+# Home Assistant 社区插件：Grafana
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+[![发布][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
-[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
+[![通过 GitHub Sponsors 支持 Frenck][github-sponsors-shield]][github-sponsors]
 
-[![Support Frenck on Patreon][patreon-shield]][patreon]
+[![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
 
-漂亮的分析和监控的开放平台。
+一个开放的平台，用于美观的分析和监控。
 
 ## 关于
 
-您所有指标的分析平台。
+适用于您所有指标的分析平台。
 
-Grafana 允许您查询、可视化、警报和理解您的指标，无论它们存储在哪里。创建、探索和分享仪表板。使用性感且引人注目的图表和其他数据可视化了解您的家庭自动化系统。
+Grafana 允许您查询、可视化、警报和了解您的指标，无论它们存储在哪里。创建、探索和分享仪表板。使用炫酷和引人入胜的图表，以及其他数据可视化，了解您的家庭自动化系统。
 
-将此附加组件与 InfluxDB 附加组件结合使用，可以获得强大的洞察力，了解您的家居状况。
+将此插件与 InfluxDB 插件结合使用，以获得对您家庭的强大洞察。
 
-![Grafana 在 Home Assistant 前端中的界面][screenshot]
+![Grafana 在 Home Assistant 前端中的展示][screenshot]
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons

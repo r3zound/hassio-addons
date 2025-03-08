@@ -1,15 +1,14 @@
-# Home Assistant 社区附加组件：Sonarr
+# Home Assistant Community Add-on: Sonarr
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
-为新闻组和种子用户提供智能 PVR。
+针对新闻组和比特流用户的智能PVR。
 
 ## 关于
 
-[Sonarr] 是一个针对 Usenet 和 BitTorrent 用户的 PVR。它可以监控多个 RSS
-源，以获取您喜欢节目最新集数，并将其抓取、分类和重命名。它还可以配置为在更高质量的格式可用时，自动升级已经下载的文件质量。
+[Sonarr] 是一款针对Usenet和BitTorrent用户的PVR。它可以监控您最喜欢的节目的多个RSS源，以获取新剧集，并会抓取、排序并重命名它们。它还可以配置为在更高质量的格式可用时，自动升级已经下载的文件的质量。
 
 [Sonarr]: https://sonarr.tv/
 

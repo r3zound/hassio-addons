@@ -1,14 +1,14 @@
-# Home Assistant 社区附加组件: SABnzbd
+# Home Assistant社区附加组件：SABnzbd
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
-免费的易于使用的二进制新闻阅读器。
+免费且简单的二进制新闻阅读器。
 
 ## 关于
 
-[SABnzbd] 是一个多平台的二进制新闻组下载器。该程序在后台工作，简化了从 [Usenet] 下载、验证和提取文件的过程。
+[SABnzbd]是一个跨平台的二进制新闻组下载器。该程序在后台运行，简化了从[Usenet]下载、验证和提取文件的过程。
 
 [SABnzbd]: https://sabnzbd.org/
 [Usenet]: http://en.wikipedia.org/wiki/Usenet

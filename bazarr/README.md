@@ -1,14 +1,14 @@
-# Home Assistant 社区附加组件: Bazarr
+# Home Assistant Community Add-on: Bazarr
 
-[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
+[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
 
 下载并管理 Sonarr 和 Radarr 的字幕。
 
 ## 关于
 
-[Bazarr] 是一个配合 [Sonarr] 和 [Radarr] 的辅助应用程序，可以根据您的需求管理和下载字幕。
+[Bazarr] 是一个伴随 [Sonarr] 和 [Radarr] 的应用程序，根据您的需求管理和下载字幕。
 
 [Bazarr]: https://www.bazarr.media/
 [Sonarr]: https://sonarr.tv/

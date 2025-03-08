@@ -10,9 +10,10 @@
 
 ## 关于
 
-一个自托管的网页IRC客户端，使用现代且简洁的界面，支持主题、推送通知、链接预览、文件上传等功能。完全跨平台且适合移动设备使用。
+一个自托管的网页IRC客户端，具有现代且简洁的界面，支持主题、推送通知、链接预览、文件上传等功能。全面支持跨平台和移动设备友好。
 
 ![截图][screenshot]
+
 
 [buymeacoffee-shield]: https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg
 [buymeacoffee]: https://www.buymeacoffee.com/timmo

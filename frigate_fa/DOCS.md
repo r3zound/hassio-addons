@@ -1,8 +1,8 @@
-您必须在 Home Assistant 配置目录的根目录下创建一个名为 `frigate.yml` 的配置文件。
+您必须在您的 Home Assistant 配置目录的根目录中创建一个名为 `frigate.yml` 的配置文件。
 
-Frigate 为任何支持 ffmpeg 的摄像头视频流提供实时物体检测。更详细的文档保留在 [这里](https://docs.frigate.video)。
+Frigate 为任何由 ffmpeg 支持的摄像头视频源提供实时物体检测。更详细的文档请参见 [这里](https://docs.frigate.video)。
 
-## 需要的依赖
+## 必需的依赖项
 
 - MQTT：Frigate 通过 MQTT 进行通信
 

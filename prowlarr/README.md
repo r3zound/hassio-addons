@@ -1,18 +1,17 @@
 # Home Assistant Community Add-on: Prowlarr
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
-Indexer manager/proxy built on the popular arr stack to integrate with your various PVR apps.
+基于流行的 arr 栈构建的索引器管理器/代理，以便与您的各种 PVR 应用程序集成。
 
-## About
+## 关于
 
-[Prowlarr] is an indexer manager/proxy built on the popular *arr .net/reactjs
-base stack to integrate with your various PVR apps. Prowlarr supports management
-of both Torrent Trackers and Usenet Indexers. It integrates seamlessly with
-Lidarr, Mylar3, Radarr, Readarr, and Sonarr offering complete management of
-your indexers with no per app Indexer setup required (it does it all).
+[Prowlarr] 是一个基于流行的 *arr .net/reactjs
+基础栈构建的索引器管理器/代理，旨在与您各种 PVR 应用程序集成。 Prowlarr 支持对 Torrent Tracker 和 Usenet Indexer 的管理。它可以与
+Lidarr、Mylar3、Radarr、Readarr 和 Sonarr 无缝集成，提供对
+您的索引器的完全管理，无需为每个应用程序单独设置索引器（它全都搞定）。
 
 [Prowlarr]: https://github.com/Prowlarr/Prowlarr
 

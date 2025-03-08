@@ -1,16 +1,17 @@
-# Home Assistant 社区插件: 日志查看器
+# Home Assistant Community Add-on: 日志查看器
 
-[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
+[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
 
-[![请我喝咖啡][buymeacoffee-shield]][buymeacoffee]
+[![Buy me a coffee][buymeacoffee-shield]][buymeacoffee]
 
 基于浏览器的 Home Assistant 日志工具。
 
 ## 关于
 
-轻松在您的网络浏览器中监控您的 Home Assistant 日志。提供自定义过滤功能，使区分不同类型的日志变得简单。
+轻松在您的网络浏览器中监控 Home Assistant 日志。提供自定义过滤功能，
+使区分不同类型的日志变得简单。
 
 [buymeacoffee-shield]: https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg
 [buymeacoffee]: https://www.buymeacoffee.com/dale3h

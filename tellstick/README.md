@@ -2,7 +2,9 @@
 
 > [!CAUTION]
 > **弃用通知**
-> 本插件依赖的库已经被放弃。其最后的活动是在 5 年前，并且无法在 3.15 以上的 Alpine 版本上构建。用户可以继续使用该插件，但将不接受任何问题或拉取请求。
+> 该插件所依赖的库已被废弃。最后一次活动是在 5
+> 年前，并且无法在 3.15 以上的 Alpine 版本中构建。用户可以继续
+> 使用该插件，但不会接受任何问题或拉取请求。
 
 TellStick 和 TellStick Duo 服务。
 
@@ -10,11 +12,12 @@ TellStick 和 TellStick Duo 服务。
 
 ## 关于
 
-此插件封装了 `telldus-core` 包，以提供您的 TellStick 和 TellStick Duo 的服务。
+该插件封装了 `telldus-core` 包，以暴露一个服务
+供您的 TellStick 和 TellStick Duo 使用。
 
-此集成允许用户添加与 433 MHz 通信的开关、灯光和传感器。有许多供应商（Capidi Elro、Intertechno、Nexa、Proove、Sartano 和 Viking）销售与 TellStick 兼容的产品。
+此集成允许用户添加与 433 MHz 通信的开关、灯和传感器。有许多供应商（Capidi Elro、Intertechno、Nexa、Proove、Sartano 和 Viking）正在销售与 TellStick 兼容的产品。
 
-欲了解更多详细信息，请查看 TellStick [协议列表][protocol-list]。
+有关更多细节，请查看 TellStick [协议列表][protocol-list]。
 
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg

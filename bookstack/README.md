@@ -1,4 +1,4 @@
-# Home Assistant Community Add-on: Bookstack
+# Home Assistant 社区附加组件：Bookstack
 
 [![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
@@ -6,11 +6,11 @@
 
 [![请给我买杯咖啡][buymeacoffee-shield]][buymeacoffee]
 
-Bookstack: 简单且免费的Wiki软件。
+Bookstack：简单且免费的 Wiki 软件。
 
 ## 关于
 
-BookStack 是一个简单、自托管、易于使用的信息组织和存储平台。
+BookStack 是一个简单、自托管、易于使用的平台，用于组织和存储信息。
 
 ![Bookstack 截图][screenshot]
 

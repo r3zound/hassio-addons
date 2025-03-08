@@ -1,22 +1,24 @@
-# Home Assistant 社区附加组件: WireGuard
+# Home Assistant 社区插件：WireGuard
 
-[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
+[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
 
-[![通过 GitHub Sponsors 支持 Frenck][github-sponsors-shield]][github-sponsors]
+[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
 
-[![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
+[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
 
-WireGuard: 快速、现代、安全的 VPN 隧道。
+[![Support Frenck on Patreon][patreon-shield]][patreon]
+
+WireGuard：快速、现代、安全的 VPN 隧道。
 
 ## 关于
 
-[WireGuard®][wireguard] 是一种极其简单但又快速且现代的 VPN，利用最先进的加密技术。它旨在比 IPsec 更快、更简单、更高效，并且避免了大量的麻烦。
+[WireGuard®][wireguard] 是一个极其简单但快速且现代的 VPN，它利用了最先进的加密技术。它旨在比 IPsec 更快、更简单、更精简和更实用，同时避免了大量的麻烦。
 
-它的性能显著高于 OpenVPN。WireGuard 设计为通用 VPN，适合在嵌入式接口和超级计算机上运行，适应多种不同的环境。
+它的性能意图比 OpenVPN 明显更高。WireGuard 被设计为一种通用 VPN，适用于嵌入式接口和超级计算机，适合多种不同的环境。
 
-最初发布于 Linux 内核，现在是跨平台的（Windows, macOS, BSD, iOS, Android），并且广泛可部署，包括通过 Hass.io 附加组件！
+最初为 Linux 内核发布，现在已经跨平台（Windows、macOS、BSD、iOS、Android）并广泛可部署，包括通过 Hass.io 插件！
 
-WireGuard 目前正在进行大量开发，但已经可以被认为是行业内最安全、最易于使用和最简单的 VPN 解决方案。
+WireGuard 正在积极开发中，但已经可以被视为行业中最安全、最易用和最简单的 VPN 解决方案。
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons

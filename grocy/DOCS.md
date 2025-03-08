@@ -1,39 +1,36 @@
 # Home Assistant Community Add-on: Grocy
 
-[Grocy][grocy] - ERP beyond your fridge is a powerful groceries & household
-management solution for your home, delivering features like:
+[Grocy][grocy] - 超出您冰箱的ERP是一个强大的家庭杂货和家庭管理解决方案，提供以下功能：
 
-- Stock management
-- Shopping list
-- Recipes
-- Chores & tasks
-- Inventory
-- and many more.
+- 库存管理
+- 购物清单
+- 食谱
+- 家务和任务
+- 库存
+- 还有更多。
 
-[Try out the online demo of Grocy][grocy-demo].
+[试用Grocy的在线演示][grocy-demo]。
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Home Assistant add-on.
+此附加组件的安装非常简单，与安装任何其他Home Assistant附加组件没有区别。
 
-1. Click the Home Assistant My button below to open the add-on on your Home
-   Assistant instance.
+1. 点击下面的Home Assistant My按钮以打开您的Home Assistant实例中的附加组件。
 
-   [![Open this add-on in your Home Assistant instance.][addon-badge]][addon]
+   [![在您的Home Assistant实例中打开此附加组件。][addon-badge]][addon]
 
-1. Click the "Install" button to install the add-on.
-1. Start the "Grocy" add-on.
-1. Check the logs of the "Grocy" add-on to see if everything went well.
-1. Click on the "OPEN WEB UI" button to get into the interface of Grocy.
-1. The default login is user: `admin` password: `admin`.
-1. Enjoy the add-on!
+2. 点击“安装”按钮以安装附加组件。
+3. 启动“Grocy”附加组件。
+4. 检查“Grocy”附加组件的日志，以查看一切是否正常。
+5. 点击“打开WEB界面”按钮进入Grocy的界面。
+6. 默认登录为用户：`admin` 密码：`admin`。
+7. 享受此附加组件！
 
-## Configuration
+## 配置
 
-**Note**: _Remember to restart the add-on when the configuration is changed._
+**注意**：_更改配置时，请记得重新启动附加组件。_
 
-Example add-on configuration:
+附加组件配置示例：
 
 ```yaml
 culture: en
@@ -63,87 +60,80 @@ certfile: fullchain.pem
 keyfile: privkey.pem
 ```
 
-**Note**: _This is just an example, don't copy and paste it! Create your own!_
+**注意**：_这只是一个示例，请勿复制粘贴！创建您自己的！_
 
-### Option: `log_level`
+### 选项：`log_level`
 
-The `log_level` option controls the level of log output by the addon and can
-be changed to be more or less verbose, which might be useful when you are
-dealing with an unknown issue. Possible values are:
+`log_level`选项控制附加组件的日志输出级别，可以更改为更详细或更简洁，这在您处理未知问题时可能很有用。可能值为：
 
-- `trace`: Show every detail, like all called internal functions.
-- `debug`: Shows detailed debug information.
-- `info`: Normal (usually) interesting events.
-- `warning`: Exceptional occurrences that are not errors.
-- `error`: Runtime errors that do not require immediate action.
-- `fatal`: Something went terribly wrong. Add-on becomes unusable.
+- `trace`：显示每个细节，如所有调用的内部函数。
+- `debug`：显示详细的调试信息。
+- `info`：正常（通常）有趣的事件。
+- `warning`：不属于错误的特殊情况。
+- `error`：运行时错误，不需要立即采取行动。
+- `fatal`：出现严重错误。附加组件变得无法使用。
 
-Please note that each level automatically includes log messages from a
-more severe level, e.g., `debug` also shows `info` messages. By default,
-the `log_level` is set to `info`, which is the recommended setting unless
-you are troubleshooting.
+请注意，每个级别自动包括来自更严重级别的日志消息，例如，`debug`还显示`info`消息。默认情况下，`log_level`设置为`info`，这是推荐的设置，除非您正在排查问题。
 
-### Option: `ssl`
+### 选项：`ssl`
 
-Enables/Disables SSL (HTTPS) on the web interface of Grocy
-Panel. Set it `true` to enable it, `false` otherwise.
+启用/禁用Grocy面板的SSL（HTTPS）。设置为`true`以启用，设置为`false`则禁用。
 
-### Option: `certfile`
+### 选项：`certfile`
 
-The certificate file to use for SSL.
+用于SSL的证书文件。
 
-**Note**: _The file MUST be stored in `/ssl/`, which is the default_
+**注意**：_文件必须存储在`/ssl/`中，这是默认值_
 
-### Option: `keyfile`
+### 选项：`keyfile`
 
-The private key file to use for SSL.
+用于SSL的私钥文件。
 
-**Note**: _The file MUST be stored in `/ssl/`, which is the default_
+**注意**：_文件必须存储在`/ssl/`中，这是默认值_
 
-### Option: `culture`
+### 选项：`culture`
 
-Is used for setting the language. Choose between:
+用于设置语言。可选择：
 
-- `ca` (Catalan)
-- `cs` (Czech)
-- `da` (Danish)
-- `de` (German)
-- `el_GR` (Greek - Greece)
-- `en` (English)
-- `en_GB` (English - United Kingdom)
-- `es` (Spanish)
-- `fi` (Finnish)
-- `fr` (French)
-- `he_IL` (Hebrew - Israel)
-- `hu` (Hungarian)
-- `it` (Italian)
-- `ja` (Japanese)
-- `ko_KR` (Korean - South Korea)
-- `nl` (Dutch)
-- `no` (Norwegian)
-- `pl` (Polish)
-- `pt_BR` (Portuguese - Brazil)
-- `pt_PT` (Portuguese - Portugal)
-- `ru` (Russian)
-- `sk_SK` (Slovak - Slovakia)
-- `sv_SE` (Swedish - Sweden)
-- `ta` (Tamil)
-- `tr` (Turkish)
-- `zh_CN` (Chinese - China)
-- `zh_TW` (Chinese - Taiwan)
+- `ca`（加泰罗尼亚语）
+- `cs`（捷克语）
+- `da`（丹麦语）
+- `de`（德语）
+- `el_GR`（希腊语 - 希腊）
+- `en`（英语）
+- `en_GB`（英语 - 英国）
+- `es`（西班牙语）
+- `fi`（芬兰语）
+- `fr`（法语）
+- `he_IL`（希伯来语 - 以色列）
+- `hu`（匈牙利语）
+- `it`（意大利语）
+- `ja`（日语）
+- `ko_KR`（韩语 - 韩国）
+- `nl`（荷兰语）
+- `no`（挪威语）
+- `pl`（波兰语）
+- `pt_BR`（葡萄牙语 - 巴西）
+- `pt_PT`（葡萄牙语 - 葡萄牙）
+- `ru`（俄语）
+- `sk_SK`（斯洛伐克语 - 斯洛伐克）
+- `sv_SE`（瑞典语 - 瑞典）
+- `ta`（泰米尔语）
+- `tr`（土耳其语）
+- `zh_CN`（中文 - 中国）
+- `zh_TW`（中文 - 台湾）
 
-### Option: `currency`
+### 选项：`currency`
 
-Determines the currency as displayed in the Grocy interface, specified by the
-ISO4217 three digit currency code.
+确定在Grocy界面中显示的货币，由ISO4217三位数货币代码指定。
 
-Examples: `USD`, `CAD`, `GBP` or `EUR`.
+示例：`USD`、`CAD`、`GBP`或`EUR`。
 
-### Option: `entry_page`
+### 选项：`entry_page`
 
-Allows you to specify an custom homepage if desired.
+如有需要，允许您指定自定义主页。
 
-You can use the one of the following values:
+您可以使用以下值之一：
 
 - `batteries`
 - `calendar`
@@ -155,13 +145,11 @@ You can use the one of the following values:
 - `stock`
 - `tasks`
 
-By default the homepage is set to the stock overview.
+默认情况下，主页设置为库存概览。
 
-### Option: `features`
+### 选项：`features`
 
-Is used for enable or disable features in Grocy. Disabled features
-are hidden from the web interface. The following features can be enabled
-or disabled:
+用于启用或禁用Grocy中的功能。禁用的功能在网页界面中隐藏。可以启用或禁用以下功能：
 
 - `batteries`
 - `calendar`
@@ -172,12 +160,11 @@ or disabled:
 - `stock`
 - `tasks`
 
-Set it `true` to enable it, `false` otherwise.
+设置为`true`以启用，设置为`false`则禁用。
 
-### Option: `tweaks`
+### 选项：`tweaks`
 
-These options are used to tweak part of the core behavior of Grocy.
-The following sub features can be enabled or disabled:
+这些选项用于调整Grocy的核心行为的某些部分。可以启用或禁用以下子特性：
 
 - `chores_assignment`
 - `multiple_shopping_lists`
@@ -188,84 +175,64 @@ The following sub features can be enabled or disabled:
 - `stock_product_opened_tracking`
 - `stock_count_opened_products_against_minimum_stock_amount`
 
-Set it `true` to enable it, `false` otherwise.
+设置为`true`以启用，设置为`false`则禁用。
 
-The following sub features can be set to specify a day (0-6), where 0 would
-equal Sunday:
+以下子特性可指定一个星期几（0-6），其中0表示星期日：
 
 - `calendar_first_day_of_week`
 - `meal_plan_first_day_of_week`
 
-### Option: `grocy_ingress_user`
+### 选项：`grocy_ingress_user`
 
-Allows you to specify a default ingress user if desired (e.g. `admin`).
+允许您指定一个默认的入口用户（例如`admin`）。
 
-If no ingress user is set, the default login authentication is used.
+如果未设置入口用户，则使用默认的登录身份验证。
 
-## Known issues and limitations
+## 已知问题和限制
 
-- Grocy support to provide custom lookup resources to lookup information
-  on the internet based on the product barcode. This is currently not yet
-  supported by the add-on.
+- Grocy支持提供自定义查找资源，以根据产品条形码在互联网上查找信息。当前尚未得到附加组件的支持。
 
-## Changelog & Releases
+## 更新日志和发布
 
-This repository keeps a change log using [GitHub's releases][releases]
-functionality.
+本仓库使用[GitHub的发布][releases]功能来保持变更日志。
 
-Releases are based on [Semantic Versioning][semver], and use the format
-of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
-based on the following:
+发布基于[语义版本控制][semver]，并采用`MAJOR.MINOR.PATCH`格式。简而言之，版本将根据以下内容进行递增：
 
-- `MAJOR`: Incompatible or major changes.
-- `MINOR`: Backwards-compatible new features and enhancements.
-- `PATCH`: Backwards-compatible bugfixes and package updates.
+- `MAJOR`：不兼容或重大更改。
+- `MINOR`：向后兼容的新功能和增强。
+- `PATCH`：向后兼容的错误修复和软件包更新。
 
-## Support
+## 支持
 
-Got questions?
+有问题吗？
 
-You have several options to get them answered:
+您有几种选择可以获得答案：
 
-- The [Home Assistant Community Add-ons Discord chat server][discord] for add-on
-  support and feature requests.
-- The [Home Assistant Discord chat server][discord-ha] for general Home
-  Assistant discussions and questions.
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+-  [Home Assistant Community Add-ons Discord聊天服务器][discord]，用于附加组件支持和功能请求。
+-  [Home Assistant Discord聊天服务器][discord-ha]，用于一般的Home Assistant讨论和问题。
+-  Home Assistant [社区论坛][forum]。
+-  加入[Reddit子版块][reddit]中的[/r/homeassistant][reddit]。
 
-You could also [open an issue here][issue] GitHub.
+您也可以在这里[打开一个问题][issue] GitHub。
 
-## Authors & contributors
+## 作者与贡献者
 
-The original setup of this repository is by [Franck Nijhof][frenck].
+本仓库的原始设置由[Franck Nijhof][frenck]完成。
 
-For a full list of all authors and contributors,
-check [the contributor's page][contributors].
+有关所有作者和贡献者的完整列表，
+请查看[贡献者页面][contributors]。
 
-## License
+## 许可证
 
-MIT License
+MIT许可证
 
-Copyright (c) 2019-2025 Franck Nijhof
+版权所有 (c) 2019-2025 Franck Nijhof
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+特此免费授权，任何获得本软件及相关文档文件（“软件”）副本的人，可以不受限制地处理该软件，包括但不限于使用、复制、修改、合并、发布、分发、再许可和/或出售该软件的副本，并允许被提供软件的人这样做，前提是满足以下条件：
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+上述版权声明和本权限声明应包含在所有副本或软件的实质性部分中。
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+本软件按“原样”提供，不做任何种类的担保，无论明示或暗示，包括但不限于对适销性、特定用途的适用性和不侵权的担保。在任何情况下，作者或版权持有人均不对因使用本软件或与本软件的其他交易而造成的任何索赔、损害或其他责任承担责任，无论是在合同诉讼、侵权诉讼或其他情况下。
 
 [addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
 [addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_grocy&repository_url=https%3A%2F%2Fgithub.com%2Fhassio-addons%2Frepository

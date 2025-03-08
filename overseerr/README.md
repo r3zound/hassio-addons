@@ -4,11 +4,11 @@
 
 [![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
 
-Plex生态系统的请求管理和媒体发现工具。
+用于 Plex 生态系统的请求管理和媒体发现工具。
 
 ## 关于
 
-[Overseerr]是一个多平台的二进制新闻组下载器。该程序在后台运行，并简化了从[Usenet]下载、验证和提取文件的过程。
+[Overseerr] 是一个多平台二进制新闻组下载器。该程序在后台运行，简化了从 [Usenet] 下载、验证和提取文件的过程。
 
 [Overseerr]: https://overseerr.org/
 [Usenet]: http://en.wikipedia.org/wiki/Usenet
