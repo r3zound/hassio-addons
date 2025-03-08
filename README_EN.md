@@ -80,6 +80,6 @@ You can also click the button below to automatically add the repository (choose 
 
 Scan the QR code below to follow me. Feel free to leave me a message anytime:
 
-![QR Code](https://gitee.com/desmond_GT/hassio-addons/raw/main/WeChat_QRCode.png) 📲
+<img src="https://gitee.com/desmond_GT/hassio-addons/raw/main/WeChat_QRCode.png" width="50%" /> 📲
 
 Thank you for your support and attention! ❤️

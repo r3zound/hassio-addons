@@ -120,6 +120,6 @@
 
 扫描下面二维码，关注我。有需要可以随时给我留言：
 
-![二维码](https://gitee.com/desmond_GT/hassio-addons/raw/main/WeChat_QRCode.png) 📲
+<img src="https://gitee.com/desmond_GT/hassio-addons/raw/main/WeChat_QRCode.png" width="50%" /> 📲
 
 感谢您的支持与关注！❤️
