@@ -61,7 +61,7 @@ jobs:
               if jq -e . "$file" >/dev/null 2>&1; then
                 jq -r '.version' "$file"
               else
-                grep -E '^\s*version:\s*' "$file" | head -1 | sed -E 's/^\s*version:\s*["]?([^"]*)["]?/\1/' | tr -d '\r'
+                grep -E '^\s*version:\s*' "$file" | awk -F ': ' '{print $2}' | tr -d '\r"'
               fi
             }
         
