@@ -57,7 +57,7 @@ jobs:
               if jq -e . "$file" >/dev/null 2>&1; then
                 jq -r '.version' "$file"
               else
-                grep -oP '^version:\s*\K[0-9.]+' "$file"
+                grep -E '^version:\s*' "$file" | awk -F': ' '{print $2}' | tr -d ' '
               fi
             }
         
