@@ -1,6 +1,6 @@
 ---
 name: "Microsoft STT"
-description: null
+description: "Microsoft STT"
 version: "1.2.1"
 slug: "wyoming_microsoft_stt"
 init: false
