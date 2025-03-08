@@ -13,8 +13,11 @@ jobs:
       - uses: actions/checkout@v4
 
 
-      - name: Install jq
-        run: sudo apt-get install jq -y
+      - name: Install dependencies
+        run: |
+          sudo apt-get install jq -y
+          npm install -g ai-markdown-translator
+
 
       - name: downloading addons
         run: |
@@ -43,11 +46,12 @@ jobs:
           wget -q -O AlexxIT.zip https://github.com/AlexxIT/hassio-addons/archive/refs/heads/master.zip &
           wget -q -O da-anda.zip https://github.com/da-anda/hass-io-addons/archive/refs/heads/main.zip &
           wait
-      - name: extract the addons
+      - name: extract the addons zip files and delete the zip files 
         run: |
           for file in *.zip; do
             unzip -o -q "$file" -d addons && rm "$file"
           done
+          find addons/ -name ".*" -exec rm -rf {} +
 
 
       - name: Check and clean up addons
@@ -57,7 +61,7 @@ jobs:
               if jq -e . "$file" >/dev/null 2>&1; then
                 jq -r '.version' "$file"
               else
-                grep -E '^version:\s*' "$file" | awk -F': ' '{print $2}' | tr -d ' '
+                grep -E '^\s*version:\s*' "$file" | head -1 | sed -E 's/^\s*version:\s*["]?([^"]*)["]?/\1/' | tr -d '\r'
               fi
             }
         
@@ -78,8 +82,7 @@ jobs:
                       echo "  Addon version: $addon_version"
                       echo "  Main version: $main_version"
                     else
-                      echo "Version match in $repo_name ($(basename "$sub_dir")): $addon_version"
-                      echo "Deleting $sub_dir"
+                      echo "Version match in $repo_name ($(basename "$sub_dir")): $addon_version, Deleting $sub_dir"
                       rm -rf "$sub_dir"
                     fi
                   fi
@@ -100,7 +103,7 @@ jobs:
 
       - name: Translate markdown files
         run: |
-              npm install -g ai-markdown-translator
+              
               find ./addons -type f \( -name "README.md" -o -name "DOCS.md" \) -print0 | xargs -0 -P 5 -I {} sh -c '
                 timeout 30s ai-markdown-translator -i "{}" -o "{}" -l "中文" || echo "{} translation failed or timed out."
               '
@@ -168,9 +171,8 @@ jobs:
                     }
                   done
           
-      - name: remove the hidden files
+      - name: copy addons to root directory and delete the temp directory
         run: |
-                  find addons/ -name ".*" -exec rm -rf {} +
                   for ITEM in addons/*/*; do
                   BASENAME=$(basename "$ITEM") 
                   TARGET_PATH="./$BASENAME"
