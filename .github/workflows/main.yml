@@ -81,7 +81,6 @@ jobs:
               npm install -g ai-markdown-translator
     
               find ./addons -type f \( -name "README.md" -o -name "DOCS.md" \) -print0 | xargs -0 -P 4 -I {} sh -c '
-              echo "Translating {}"
               timeout 60s ai-markdown-translator -i "{}" -o "{}" -l "中文" 
               '
 
