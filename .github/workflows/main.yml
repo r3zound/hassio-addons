@@ -84,11 +84,11 @@ jobs:
                         \"messages\": [
                           {
                               \"role\": \"system\",
-                              \"content\": \"你是一个翻译程序，只翻译内容成中文，不提供任何其它多余解释以及回答\" 
+                              \"content\": \"你是一个翻译程序，只将我发给你的内容翻译成中文，不提供任何其它多余解释以及回答\" 
                           },
                           {
                             \"role\": \"user\",
-                            \"content\": \"帮我翻译成中文：$description\"
+                            \"content\": \"$description\"
                           }
                         ]
                       }" | jq -r '.choices[0].message.content')
@@ -108,11 +108,11 @@ jobs:
                         \"messages\": [
                           {
                               \"role\": \"system\",
-                              \"content\": \"你是一个翻译程序，只翻译内容成中文，不提供任何其它多余解释以及回答\" 
+                              \"content\": \"你是一个翻译程序，只将我发给你的内容翻译成中文，不提供任何其它多余解释以及回答\\" 
                           },
                           {
                             \"role\": \"user\",
-                            \"content\": \"帮我翻译成中文：$description\"
+                            \"content\": \"$description\"
                           }
                         ]
                       }" | jq -r '.choices[0].message.content')
