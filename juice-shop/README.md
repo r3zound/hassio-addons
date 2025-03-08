@@ -1,6 +1,6 @@
 # OWASP Juice Shop
 
-[OWASP Juice Shop](https://owasp.org/www-project-juice-shop/) is probably the most modern and sophisticated insecure web application! It can be used in security trainings, awareness demos, CTFs and as a guinea pig for security tools! Juice Shop encompasses vulnerabilities from the entire OWASP Top Ten along with many other security flaws found in real-world applications!
+[OWASP Juice Shop](https://owasp.org/www-project-juice-shop/) 可能是最现代和最复杂的不安全Web应用程序！它可以用于安全培训、意识演示、CTF以及作为安全工具的实验对象！Juice Shop 包含整个 OWASP 十大中的漏洞以及在实际应用中发现的许多其他安全缺陷！
 
 ![Screenshots](https://raw.githubusercontent.com/bkimminich/juice-shop/main/screenshots/slideshow.gif)
 
@@ -9,7 +9,7 @@
 
 [![Donate][donation-badge]][donation-url]
 
-I ported it over as Home Assistant Addon as a fun project. Just in case you want to do the juice shop on your Home Assistant OS.
+我将它移植为 Home Assistant 插件，作为一个有趣的项目。以防你想在你的 Home Assistant 操作系统上使用 Juice Shop。
 
 
 [stage-badge]: https://img.shields.io/badge/Addon%20stage-stable-green.svg
@@ -19,4 +19,3 @@ I ported it over as Home Assistant Addon as a fun project. Just in case you want
 
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee-%23d32f2f?logo=buy-me-a-coffee&style=for-the-badge&logoColor=white
 [donation-url]: https://www.buymeacoffee.com/Poeschl
-

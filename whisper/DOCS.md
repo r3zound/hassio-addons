@@ -1,100 +1,95 @@
-# Home Assistant Add-on: Whisper
+# Home Assistant 插件：Whisper
 
-## Installation
+## 安装
 
-Follow these steps to get the add-on installed on your system:
+请按照以下步骤在您的系统上安装插件：
 
-1. Navigate in your Home Assistant frontend to **Settings** -> **Add-ons** -> **Add-on store**.
-2. Find the "Whisper" add-on and click it.
-3. Click on the "INSTALL" button.
+1. 在您的 Home Assistant 前端导航到 **设置** -> **插件** -> **插件商店**。
+2. 找到 "Whisper" 插件并点击它。
+3. 点击 "安装" 按钮。
 
-## How to use
+## 如何使用
 
-After this add-on is installed and running, it will be automatically discovered
-by the Wyoming integration in Home Assistant. To finish the setup,
-click the following my button:
+安装并运行此插件后，它将通过 Home Assistant 中的 Wyoming 集成自动被发现。要完成设置，请点击以下我的按钮：
 
-[![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=wyoming)
+[![打开您的 Home Assistant 实例并开始设置新的集成。](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=wyoming)
 
-Alternatively, you can install the Wyoming integration manually, see the
-[Wyoming integration documentation](https://www.home-assistant.io/integrations/wyoming/)
-for more information.
+另外，您可以手动安装 Wyoming 集成，请参阅 [Wyoming 集成文档](https://www.home-assistant.io/integrations/wyoming/) 以获取更多信息。
 
-## Configuration
+## 配置
 
-### Option: `language`
+### 选项：`language`
 
-Default language for the add-on. In Home Assist 2023.8+, multiple languages can be used simultaneously by different [Assist pipelines](https://www.home-assistant.io/voice_control/voice_remote_local_assistant/).
+插件的默认语言。在 Home Assistant 2023.8+ 版本中，不同的 [Assist 管道](https://www.home-assistant.io/voice_control/voice_remote_local_assistant/) 可以同时使用多种语言。
 
-If you select "auto", the model will run **much** slower but will auto-detect the spoken language.
+如果您选择 "auto"，模型将运行 **更慢**，但会自动检测所说的语言。
 
-[Performance of supported languages](https://github.com/openai/whisper#available-models-and-languages)
+[支持语言的性能](https://github.com/openai/whisper#available-models-and-languages)
 
-[List of two-letter language codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
+[两字母语言代码列表](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
 
-### Option: `model`
+### 选项：`model`
 
-Whisper model that will be used for transcription. Choose `custom` to use the model name in `custom_model`, which may be a HuggingFace model ID like "Systran/faster-distil-whisper-small.en".
+用于转录的 Whisper 模型。选择 `custom` 来使用 `custom_model` 中的模型名称，可能是像 "Systran/faster-distil-whisper-small.en" 的 HuggingFace 模型 ID。
 
-The default model is `auto`, which selects `tiny-int8` for ARM devices like the Raspberry Pi 4 and `base-int8` otherwise.
-Compressed models (`int8`) are slightly less accurate than their counterparts, but smaller and faster. [Distilled](https://github.com/huggingface/distil-whisper) models are not compressed, but are faster and smaller than their non-distilled counterparts.
+默认模型是 `auto`，它为像 Raspberry Pi 4 这样的 ARM 设备选择 `tiny-int8`，其他情况下选择 `base-int8`。
+压缩模型（`int8`）的准确率略低于其对应模型，但更小更快。[蒸馏](https://github.com/huggingface/distil-whisper) 模型没有压缩，但比其非蒸馏模型更快更小。
 
-Available models:
+可用模型：
 
-- `auto` (select based on CPU)
-- `tiny-int8` (compressed)
+- `auto`（基于 CPU 选择）
+- `tiny-int8`（压缩）
 - `tiny`
-- `tiny.en` (English only)
-- `base-int8` (compressed)
+- `tiny.en`（仅支持英语）
+- `base-int8`（压缩）
 - `base`
-- `base.en` (English only)
-- `small-int8` (compressed)
-- `distil-small.en` (distilled, English only)
+- `base.en`（仅支持英语）
+- `small-int8`（压缩）
+- `distil-small.en`（蒸馏，仅支持英语）
 - `small`
-- `small.en` (English only)
-- `medium-int8` (compressed)
-- `distil-medium.en` (distilled, English only)
+- `small.en`（仅支持英语）
+- `medium-int8`（压缩）
+- `distil-medium.en`（蒸馏，仅支持英语）
 - `medium`
-- `medium.en` (English only)
+- `medium.en`（仅支持英语）
 - `large`
 - `large-v1`
-- `distil-large-v2` (distilled, English only)
+- `distil-large-v2`（蒸馏，仅支持英语）
 - `large-v2`
-- `distil-large-v3` (distilled, English only)
+- `distil-large-v3`（蒸馏，仅支持英语）
 - `large-v3`
-- `turbo` (faster than `large-v3`)
+- `turbo`（比 `large-v3` 更快）
 
-### Option: `custom_model`
+### 选项：`custom_model`
 
-Path to a converted model directory, or a CTranslate2-converted Whisper model ID from the HuggingFace Hub like "Systran/faster-distil-whisper-small.en". 
+转换模型目录的路径，或 HuggingFace Hub 上的 CTranslate2 转换 Whisper 模型 ID，如 "Systran/faster-distil-whisper-small.en"。
 
-### Option: `beam_size`
+### 选项：`beam_size`
 
-Number of candidates to consider simultaneously during transcription (see [beam search](https://en.wikipedia.org/wiki/Beam_search)).
-The default value of `0` will automatically select `1` of ARM devices like the Raspberry Pi 4 and `5` otherwise.
+在转录过程中同时考虑的候选数量（见 [束搜索](https://en.wikipedia.org/wiki/Beam_search)）。默认值 `0` 将在像 Raspberry Pi 4 这样的 ARM 设备上自动选择 `1`，其他情况下选择 `5`。
 
-Increasing the beam size will increase accuracy at the cost of performance.
+增加束的大小将提高准确性，但会影响性能。
 
-### Option: `initial_prompt`
+### 选项：`initial_prompt`
 
-Description of audio that can help Whisper transcribe unusual words better.
-See [this discussion](https://github.com/openai/whisper/discussions/963) for an example.
+可以帮助 Whisper 更好地转录不寻常单词的音频描述。
+请查看 [此讨论](https://github.com/openai/whisper/discussions/963) 以获取示例。
 
-## Backups
+## 备份
 
-Whisper model files can be quite large, so they are automatically excluded from backups. The models will be re-downloaded when the backup is restored.
+Whisper 模型文件可能非常大，因此它们会自动从备份中排除。恢复备份时将重新下载这些模型。
 
-## Support
+## 支持
 
-Got questions?
+有问题吗？
 
-You have several options to get them answered:
+您有几种选择来获得答案：
 
-- The [Home Assistant Discord Chat Server][discord].
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+- [Home Assistant Discord 聊天服务器][discord]。
+- Home Assistant [社区论坛][forum]。
+- 加入 [/r/homeassistant][reddit] 的 [Reddit 子版块][reddit]。
 
-In case you've found an bug, please [open an issue on our GitHub][issue].
+如果您发现错误，请 [在我们的 GitHub 上打开问题][issue]。
 
 [discord]: https://discord.gg/c5DvZ4e
 [forum]: https://community.home-assistant.io

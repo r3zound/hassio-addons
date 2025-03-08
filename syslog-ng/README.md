@@ -1,18 +1,18 @@
-# Unofficial Home Assistant Add-ons: syslog-ng
+# 非官方 Home Assistant 插件：syslog-ng
 
 syslog-ng (<https://www.syslog-ng.com/products/open-source-log-management/>)
-bundled as an Home Assistant add-on.
+作为 Home Assistant 插件进行捆绑。
 
-## About
+## 关于
 
-syslog-ng allows you to flexibly collect, parse, classify, rewrite and correlate
-logs from across your infrastructure and store or route them to log analysis
-tools
+syslog-ng 允许您灵活地收集、解析、分类、重写和关联
+来自您基础设施的日志，并将它们存储或路由到日志分析
+工具中。
 
-## Final notes
+## 最后说明
 
-For information on how to configure this addon please refer to the
-[Documentation](DOCS.md) inside the addon page
+有关如何配置此插件的信息，请参阅
+插件页面内的 [文档](DOCS.md)。
 
-This project is not affiliated with syslog-ng, but simply a community effort.
-syslog-ng itself is distributed under the GPL/LGPL.
+该项目与 syslog-ng 并无关联，而只是一个社区努力。
+syslog-ng 本身根据 GPL/LGPL 分发。

@@ -1,19 +1,18 @@
 # Home Assistant Community Add-on: Bookstack
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
-[![Buy me a coffee][buymeacoffee-shield]][buymeacoffee]
+[![请给我买杯咖啡][buymeacoffee-shield]][buymeacoffee]
 
-Bookstack: Simple & Free Wiki Software.
+Bookstack: 简单且免费的Wiki软件。
 
-## About
+## 关于
 
-BookStack is a simple, self-hosted, easy-to-use platform for organising and
-storing information.
+BookStack 是一个简单、自托管、易于使用的信息组织和存储平台。
 
-![Bookstack screenshot][screenshot]
+![Bookstack 截图][screenshot]
 
 [buymeacoffee-shield]: https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg
 [buymeacoffee]: https://www.buymeacoffee.com/sinclairpaul

@@ -1,33 +1,24 @@
-# Home Assistant Community Add-on: Traccar
+# Home Assistant 社区插件：Traccar
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+[![发布][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
-[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
+[![通过 GitHub Sponsors 赞助 Frenck][github-sponsors-shield]][github-sponsors]
 
-[![Support Frenck on Patreon][patreon-shield]][patreon]
+[![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
 
-Modern GPS Tracking Platform.
+现代 GPS 跟踪平台。
 
-![Traccar in the Home Assistant Frontend][screenshot]
+![Home Assistant 前端中的 Traccar][screenshot]
 
-## About
+## 关于
 
-[Traccar][traccar] is a modern GPS Tracking Platform, which is now available
-as an Hass.io add-on and allows you to run your GPS Tracking software without
-any cloud.
+[Traccar][traccar] 是一个现代 GPS 跟踪平台，现在可以作为 Hass.io 插件使用，允许您在没有任何云服务的情况下运行您的 GPS 跟踪软件。
 
-Traccar supports more protocols and device models than any other GPS tracking
-system on the market, straight from your Hass.io instance. You can select GPS
-trackers from a variety of vendors from low-cost Chinese models to high-end
-quality brands.
+Traccar 支持的协议和设备型号比市场上任何其他 GPS 跟踪系统都多，直接来自您的 Hass.io 实例。您可以选择来自不同供应商的 GPS 跟踪器，从低成本的中国型号到高端品质品牌。
 
-Traccar also has native mobile apps available for Android and iOS platforms
-so that you can track those as well. AND! With the Home Assistant `traccar`
-integration (introduced in 0.83) the data in Traccar will be sent back into
-your Home Assistant instance as well.
-
+Traccar 还提供适用于 Android 和 iOS 平台的原生移动应用程序，您也可以跟踪这些设备。而且！通过 Home Assistant 的 `traccar` 集成（在 0.83 中引入），Traccar 中的数据将被发送回您的 Home Assistant 实例。
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons

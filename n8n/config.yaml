@@ -2,9 +2,9 @@ name: n8n
 version: "1.81.4"
 upstream: 1.62.4
 slug: n8n
-description: $'n8n 是一个可扩展的工作流程自动化工具。通过公平的代码分发模式，n8n 将始终拥有可见的源代码，可以自托管，并且允许您添加自己的自定义函数、逻辑和应用程序。n8n 的基于节点的做法使其非常灵活，使您可以连接一切到所有。
+description: $'n8n 是一个可扩展的工作流程自动化工具。凭借公平的代码分发模式，n8n 将始终拥有可见的源代码，可供自托管，并允许您添加自己的自定义函数、逻辑和应用程序。n8n 的基于节点的做法使其具有高度的灵活性，使您可以连接一切到所有。
 
-> - n8n 是一个可扩展的工作流自动化工具。采用公平的代码分发模型，n8n 始终保持源代码可见性，支持自托管，并允许用户添加自定义功能、逻辑和应用程序。其节点式方法使其高度通用，能够实现任意与一切的连接。'
+> - n8n 是一个可扩展的工作流自动化工具。通过公平的代码分发模型，n8n 始终保持源代码可见性，支持自托管，并允许您添加自定义功能、逻辑和应用程序。其节点式方法使其高度灵活，能够实现任意事物之间的连接。'
   n8n is an extendable workflow automation tool. With a fair-code distribution model, n8n will always have visible source code, be available to self-host, and allow you to add your own custom functions, logic and apps. n8n's node-based approach makes it highly versatile, enabling you to connect anything to everything.
 arch:
   - amd64

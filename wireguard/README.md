@@ -1,32 +1,22 @@
-# Home Assistant Community Add-on: WireGuard
+# Home Assistant 社区附加组件: WireGuard
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![通过 GitHub Sponsors 支持 Frenck][github-sponsors-shield]][github-sponsors]
 
-[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
+[![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
 
-[![Support Frenck on Patreon][patreon-shield]][patreon]
+WireGuard: 快速、现代、安全的 VPN 隧道。
 
-WireGuard: fast, modern, secure VPN tunnel.
+## 关于
 
-## About
+[WireGuard®][wireguard] 是一种极其简单但又快速且现代的 VPN，利用最先进的加密技术。它旨在比 IPsec 更快、更简单、更高效，并且避免了大量的麻烦。
 
-[WireGuard®][wireguard] is an extremely simple yet fast and modern VPN that
-utilizes state-of-the-art cryptography. It aims to be faster, simpler, leaner,
-and more useful than IPsec, while avoiding the massive headache.
+它的性能显著高于 OpenVPN。WireGuard 设计为通用 VPN，适合在嵌入式接口和超级计算机上运行，适应多种不同的环境。
 
-It intends to be considerably more performant than OpenVPN. WireGuard is
-designed as a general-purpose VPN for running on embedded interfaces and
-supercomputers alike, fit for many different circumstances.
+最初发布于 Linux 内核，现在是跨平台的（Windows, macOS, BSD, iOS, Android），并且广泛可部署，包括通过 Hass.io 附加组件！
 
-Initially released for the Linux kernel, it is now cross-platform (Windows,
-macOS, BSD, iOS, Android) and widely deployable,
-including via an Hass.io add-on!
-
-WireGuard is currently under heavy development, but already it might be
-regarded as the most secure, easiest to use, and the simplest VPN solution
-in the industry.
+WireGuard 目前正在进行大量开发，但已经可以被认为是行业内最安全、最易于使用和最简单的 VPN 解决方案。
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons

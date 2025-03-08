@@ -1,75 +1,75 @@
-# Home assistant add-on: Webtrees
+# 家庭助理附加组件：Webtrees
 
-[![Donate][donation-badge]](https://www.buymeacoffee.com/alexbelgium)
-[![Donate][paypal-badge]](https://www.paypal.com/donate/?hosted_button_id=DZFULJZTP3UQA)
+[![捐赠][donation-badge]](https://www.buymeacoffee.com/alexbelgium)
+[![捐赠][paypal-badge]](https://www.paypal.com/donate/?hosted_button_id=DZFULJZTP3UQA)
 
-![Version](https://img.shields.io/badge/dynamic/json?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fwebtrees%2Fconfig.json)
-![Ingress](https://img.shields.io/badge/dynamic/json?label=Ingress&query=%24.ingress&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fwebtrees%2Fconfig.json)
-![Arch](https://img.shields.io/badge/dynamic/json?color=success&label=Arch&query=%24.arch&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fwebtrees%2Fconfig.json)
+![版本](https://img.shields.io/badge/dynamic/json?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fwebtrees%2Fconfig.json)
+![入口](https://img.shields.io/badge/dynamic/json?label=Ingress&query=%24.ingress&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fwebtrees%2Fconfig.json)
+![架构](https://img.shields.io/badge/dynamic/json?color=success&label=Arch&query=%24.arch&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fwebtrees%2Fconfig.json)
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/9c6cf10bdbba45ecb202d7f579b5be0e)](https://www.codacy.com/gh/alexbelgium/hassio-addons/dashboard?utm_source=github.com&utm_medium=referral&utm_content=alexbelgium/hassio-addons&utm_campaign=Badge_Grade)
-[![GitHub Super-Linter](https://img.shields.io/github/actions/workflow/status/alexbelgium/hassio-addons/weekly-supelinter.yaml?label=Lint%20code%20base)](https://github.com/alexbelgium/hassio-addons/actions/workflows/weekly-supelinter.yaml)
-[![Builder](https://img.shields.io/github/actions/workflow/status/alexbelgium/hassio-addons/onpush_builder.yaml?label=Builder)](https://github.com/alexbelgium/hassio-addons/actions/workflows/onpush_builder.yaml)
+[![Codacy 徽章](https://app.codacy.com/project/badge/Grade/9c6cf10bdbba45ecb202d7f579b5be0e)](https://www.codacy.com/gh/alexbelgium/hassio-addons/dashboard?utm_source=github.com&utm_medium=referral&utm_content=alexbelgium/hassio-addons&utm_campaign=Badge_Grade)
+[![GitHub 超级代码检查器](https://img.shields.io/github/actions/workflow/status/alexbelgium/hassio-addons/weekly-supelinter.yaml?label=Lint%20code%20base)](https://github.com/alexbelgium/hassio-addons/actions/workflows/weekly-supelinter.yaml)
+[![构建工具](https://img.shields.io/github/actions/workflow/status/alexbelgium/hassio-addons/onpush_builder.yaml?label=Builder)](https://github.com/alexbelgium/hassio-addons/actions/workflows/onpush_builder.yaml)
 
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20(no%20paypal)-%23d32f2f?logo=buy-me-a-coffee&style=flat&logoColor=white
 [paypal-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20with%20Paypal-0070BA?logo=paypal&style=flat&logoColor=white
 
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢所有给我的项目点赞的人！要点赞，请点击下面的图片，然后它将在右上角。谢谢！_
 
-[![Stargazers repo roster for @alexbelgium/hassio-addons](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
+[![点赞者的 repo 名单 @alexbelgium/hassio-addons](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
 
-![downloads evolution](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/webtrees/stats.png)
+![下载演变](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/webtrees/stats.png)
 
-## About
+## 关于
 
-[webtrees](http://www.webtrees.net) is the web's leading online collaborative genealogy application.
+[webtrees](http://www.webtrees.net) 是最领先的在线协作家族谱应用程序。
 
-This addon is based on the docker image https://github.com/NathanVaughn/webtrees-docker
+此附加组件基于 docker 镜像 https://github.com/NathanVaughn/webtrees-docker
 
-## Configuration
+## 配置
 
-Webui can be found at <http://homeassistant:PORT>.
+Webui 可以在 <http://homeassistant:PORT> 找到。
 
-The name and password are defined through the startup wizard.
+用户名和密码通过启动向导定义。
 
-Options can be configured through two ways :
+选项可以通过两种方式配置：
 
-- Addon options
+- 附加组件选项
 
 ```yaml
-LANG: "en-US" # Default language for webtrees
-BASE_URL: "http://192.168.178.69" # The url with which you access webtrees
-DB_TYPE: "sqlite" # Your database type : sqlite for automatic configuration, or external for manual config
-CONFIG_LOCATION: location of the config.yaml (see below)
-localdisks: sda1 #put the hardware name of your drive to mount separated by commas, or its label. ex. sda1, sdb1, MYNAS...
-networkdisks: "//SERVER/SHARE" # optional, list of smb servers to mount, separated by commas
-cifsusername: "username" # optional, smb username, same for all smb shares
-cifspassword: "password" # optional, smb password
-trusted_headers: single address, or a range of addresses in CIDR format
-base_url_portless: base url without port
+LANG: "en-US" # webtrees 的默认语言
+BASE_URL: "http://192.168.178.69" # 访问 webtrees 的 url
+DB_TYPE: "sqlite" # 数据库类型：sqlite 为自动配置，或 external 为手动配置
+CONFIG_LOCATION: config.yaml 的位置（见下文）
+localdisks: sda1 # 将硬盘的硬件名称用逗号分隔列出以挂载，或使用其标签。例如：sda1, sdb1, MYNAS...
+networkdisks: "//SERVER/SHARE" # 可选，列出要挂载的 smb 服务器，使用逗号分隔
+cifsusername: "username" # 可选，smb 用户名，所有 smb 共享使用相同的
+cifspassword: "password" # 可选，smb 密码
+trusted_headers: 单个地址，或 CIDR 格式的地址范围
+base_url_portless: 不带端口的基础 url
 ```
 
 - Config.yaml
 
-Custom env variables can be added to the config.yaml file referenced in the addon options. Full env variables can be found here : https://github.com/linuxserver/docker-paperless-ng. It must be entered in a valid yaml format, that is verified at launch of the addon.
+可以将自定义环境变量添加到附加组件选项中引用的 config.yaml 文件中。完整的环境变量可以在这里找到：https://github.com/linuxserver/docker-paperless-ng。必须以有效的 yaml 格式输入，该格式在附加组件启动时会进行验证。
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in comparison to installing any other add-on.
+此附加组件的安装非常简单，与安装其他附加组件没有不同。
 
-1. Add my add-ons repository to your home assistant instance (in supervisor addons store at top right, or click button below if you have configured my HA)
-   [![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falexbelgium%2Fhassio-addons)
-1. Install this add-on.
-1. Click the `Save` button to store your configuration.
-1. Set the add-on options to your preferences
-1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
-1. Open the webUI and adapt the software options
+1. 将我的附加组件库添加到您的家庭助理实例中（在监督员附加组件商店的右上角，或如果您已配置我的家庭助理，请单击下面的按钮）
+   [![打开您的 Home Assistant 实例并显示带有特定库 URL 的添加附加组件库对话框。](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falexbelgium%2Fhassio-addons)
+1. 安装此附加组件。
+1. 点击 `保存` 按钮以存储您的配置。
+1. 设置附加组件选项以满足您的偏好
+1. 启动附加组件。
+1. 检查附加组件的日志以查看一切是否正常。
+1. 打开 webUI 并调整软件选项
 
-## Support
+## 支持
 
-Create an issue on github
+在 GitHub 上创建一个问题
 
-## Illustration
+## 插图
 
-![illustration](https://installatron.infomaniak.com/installatron//images/ss2_webtrees.jpg)
+![插图](https://installatron.infomaniak.com/installatron//images/ss2_webtrees.jpg)

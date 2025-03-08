@@ -1,18 +1,14 @@
-# Home Assistant Add-on: SiliconLabs Zigbee/OpenThread Multiprotocol Add-on
+# Home Assistant 插件：SiliconLabs Zigbee/OpenThread 多协议插件
 
-Zigbee/OpenThread Multiprotocol container for Silicon Labs based radios such as
-Home Assistant Yellow, Home Assistant SkyConnect, and Home Assistant Connect ZBT-1.
+用于 Silicon Labs 基于无线电的 Zigbee/OpenThread 多协议容器，如 Home Assistant Yellow、Home Assistant SkyConnect 和 Home Assistant Connect ZBT-1。
 
-![Supports armv7 Architecture][armv7-shield]
-![Supports aarch64 Architecture][aarch64-shield]
-![Supports amd64 Architecture][amd64-shield]
+![支持 armv7 架构][armv7-shield]
+![支持 aarch64 架构][aarch64-shield]
+![支持 amd64 架构][amd64-shield]
 
-## About
+## 关于
 
-This add-on allows you to use Zigbee and OpenThread protocol simultaneous on a
-single Silicon Labs based radio. The radio needs the RCP Multi-PAN firmware
-installed to support multiple IEEE 802.15.4 Personal Area Networks (PAN). The
-addon has been tested with EFR32 Series 2 based radios.
+该插件允许您在单个基于 Silicon Labs 的无线电上同时使用 Zigbee 和 OpenThread 协议。无线电需要安装 RCP Multi-PAN 固件以支持多个 IEEE 802.15.4 个人区域网络（PAN）。该插件已在基于 EFR32 第二系列的无线电上进行了测试。
 
 [armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg

@@ -1,92 +1,92 @@
-# Home assistant add-on: Paperless NGX
+# 家庭助手插件：Paperless NGX
 
-# ⚠️ It is recommended to use this new addon (https://github.com/BenoitAnastay/home-assistant-addons-repository). It is more robust and has more functions. ⚠️
+# ⚠️ 推荐使用这个新插件 (https://github.com/BenoitAnastay/home-assistant-addons-repository)。它更稳健，功能更多。 ⚠️
 
-Migration (thanks @eikeja) :
-- Install the new addon
-- Make a backup of the old Paperless directory. In my case "/addon_configs/db21ed7f_paperless_ng"
-- View the folder structure of the new instance, assign files from the old instance to the folders of the new instance.
+迁移（感谢 @eikeja）：
+- 安装新插件
+- 备份旧的 Paperless 目录。就我而言是 "/addon_configs/db21ed7f_paperless_ng"
+- 查看新实例的文件夹结构，将旧实例的文件分配到新实例的文件夹中。
 
-Start new Paperless - all data is there!
+启动新的 Paperless - 所有数据均在！
 
-Folder assignment:
+文件夹分配：
 /addon_configs/db21ed7f_paperless_ng/data → /addon_configs/ca5234a0_paperless-ngx/data
 
 /addon_configs/db21ed7f_paperless_ng/media → /share/paperless
 
-[![Donate][donation-badge]](https://www.buymeacoffee.com/alexbelgium)
-[![Donate][paypal-badge]](https://www.paypal.com/donate/?hosted_button_id=DZFULJZTP3UQA)
+[![捐赠][donation-badge]](https://www.buymeacoffee.com/alexbelgium)
+[![捐赠][paypal-badge]](https://www.paypal.com/donate/?hosted_button_id=DZFULJZTP3UQA)
 
-![Version](https://img.shields.io/badge/dynamic/json?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fpaperless_ngx%2Fconfig.json)
-![Ingress](https://img.shields.io/badge/dynamic/json?label=Ingress&query=%24.ingress&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fpaperless_ngx%2Fconfig.json)
-![Arch](https://img.shields.io/badge/dynamic/json?color=success&label=Arch&query=%24.arch&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fpaperless_ngx%2Fconfig.json)
+![版本](https://img.shields.io/badge/dynamic/json?label=版本&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fpaperless_ngx%2Fconfig.json)
+![入口](https://img.shields.io/badge/dynamic/json?label=入口&query=%24.ingress&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fpaperless_ngx%2Fconfig.json)
+![架构](https://img.shields.io/badge/dynamic/json?color=success&label=架构&query=%24.arch&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fpaperless_ngx%2Fconfig.json)
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/9c6cf10bdbba45ecb202d7f579b5be0e)](https://www.codacy.com/gh/alexbelgium/hassio-addons/dashboard?utm_source=github.com&utm_medium=referral&utm_content=alexbelgium/hassio-addons&utm_campaign=Badge_Grade)
+[![Codacy 徽章](https://app.codacy.com/project/badge/Grade/9c6cf10bdbba45ecb202d7f579b5be0e)](https://www.codacy.com/gh/alexbelgium/hassio-addons/dashboard?utm_source=github.com&utm_medium=referral&utm_content=alexbelgium/hassio-addons&utm_campaign=Badge_Grade)
 [![GitHub Super-Linter](https://github.com/alexbelgium/hassio-addons/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
-[![Builder](https://github.com/alexbelgium/hassio-addons/workflows/Builder/badge.svg)](https://github.com/alexbelgium/hassio-addons/actions/workflows/builder.yaml)
+[![构建器](https://github.com/alexbelgium/hassio-addons/workflows/Builder/badge.svg)](https://github.com/alexbelgium/hassio-addons/actions/workflows/builder.yaml)
 
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20(no%20paypal)-%23d32f2f?logo=buy-me-a-coffee&style=flat&logoColor=white
 [paypal-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20with%20Paypal-0070BA?logo=paypal&style=flat&logoColor=white
 
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢所有给我的仓库加星的人！要给它加星，请点击下方的图片，然后将其放在右上角。谢谢！_
 
 [![Stargazers repo roster for @alexbelgium/hassio-addons](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
 
-![downloads evolution](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/paperless_ngx/stats.png)
+![下载演变](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/paperless_ngx/stats.png)
 
-## About
+## 关于
 
-[Paperless NGX](https://github.com/paperless-ngx/paperless-ngx) is a document management system that transforms your physical documents into a searchable online archive so you can keep, well, less paper.
+[Paperless NGX](https://github.com/paperless-ngx/paperless-ngx) 是一个文档管理系统，可以将您的物理文档转换为可搜索的在线档案，以便您减少纸张使用。
 
-Alternative quality addon : https://github.com/BenoitAnastay/home-assistant-addons-repository/tree/main/paperless-ngx
+替代高品质插件 : https://github.com/BenoitAnastay/home-assistant-addons-repository/tree/main/paperless-ngx
 
-## Configuration
+## 配置
 
-Default username:password is admin:admin. Once logged in, you can change it from within the administration panel.
+默认的用户名:密码是 admin:admin。登录后，您可以在管理面板内更改它。
 
-Options can be configured through two ways :
+可以通过两种方式配置选项：
 
-- Addon options
+- 插件选项
 
 ```yaml
 PGID: user
 GPID: user
-localdisks: sda1 #put the hardware name of your drive to mount separated by commas, or its label. ex. sda1, sdb1, MYNAS...
-networkdisks: "<//SERVER/SHARE>" # list of smbv2/3 servers to mount (optional)
-cifsusername: "username" # smb username (optional)
-cifspassword: "password" # smb password (optional)
-CONFIG_LOCATION: Location of the config.yaml (see below)
-OCRLANG: eng fra #Any language can be set from this page (always three letters) [here](https://tesseract-ocr.github.io/tessdoc/Data-Files#data-files-for-version-400-november-29-2016).
-TZ: Europe/Paris # Sets a specific timezone
+localdisks: sda1 #将要挂载的硬盘名称用逗号分隔，或其标签。例如，sda1, sdb1, MYNAS...
+networkdisks: "<//SERVER/SHARE>" # 要挂载的 smbv2/3 服务器列表（可选）
+cifsusername: "用户名" # smb 用户名（可选）
+cifspassword: "密码" # smb 密码（可选）
+CONFIG_LOCATION: config.yaml 的位置（见下文）
+OCRLANG: eng fra # 此页面可以设置任何语言（始终三字母）[这里](https://tesseract-ocr.github.io/tessdoc/Data-Files#data-files-for-version-400-november-29-2016)。
+TZ: Europe/Paris # 设置特定时区
 ```
 
 - Config.yaml
 
-Custom env variables can be added to the config.yaml file referenced in the addon options. Full env variables can be found here : https://paperless-ngx.readthedocs.io/en/latest/configuration.html. It must be entered in a valid yaml format, that is verified at launch of the addon.
+可以将自定义环境变量添加到插件选项中引用的 config.yaml 文件。完整的环境变量可以在这里找到 : https://paperless-ngx.readthedocs.io/en/latest/configuration.html。必须以有效的 yaml 格式输入，该格式在插件启动时进行验证。
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in comparison to installing any other add-on.
+这个插件的安装非常简单，与安装其他插件没有区别。
 
-1. Add my add-ons repository to your home assistant instance (in supervisor addons store at top right, or click button below if you have configured my HA)
-   [![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falexbelgium%2Fhassio-addons)
-1. Install this add-on.
-1. Click the `Save` button to store your configuration.
-1. Set the add-on options to your preferences
-1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
-1. Open the webUI and adapt the software options
+1. 将我的插件库添加到您的家庭助手实例（在管理者插件商店右上方，或如果您配置了我的 HA，则点击下方的按钮）
+   [![打开您的家庭助手实例并展示添加插件库对话框，带有预填的特定库 URL。](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falexbelgium%2Fhassio-addons)
+2. 安装此插件。
+3. 点击 `保存` 按钮以存储您的配置。
+4. 根据您的偏好设置插件选项。
+5. 启动插件。
+6. 检查插件的日志以查看一切是否正常。
+7. 打开 webUI 并调整软件选项。
 
-## Integration with HA
+## 与 HA 的集成
 
-No specific integration, it is a self hosted system
+没有特别的集成，这是一个自托管系统。
 
-## Support
+## 支持
 
-Create an issue on github
+在 GitHub 上创建一个问题。
 
-## Illustration
+## 插图
 
 ---
 
-![illustration](https://paperless-ngx.readthedocs.io/en/latest/_images/documents-smallcards.png)
+![插图](https://paperless-ngx.readthedocs.io/en/latest/_images/documents-smallcards.png)

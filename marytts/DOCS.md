@@ -1,4 +1,4 @@
-# Configuration
+# 配置
 
 ```yaml
 language: de
@@ -6,13 +6,13 @@ language: de
 
 ### `language`
 
-One of the languages `de`, `en`, `fr`, `it`, `in`, `tu` and `lu`. This should be the same as you configured in Home Assistant.
-The voices are downloaded on demand.
+可选的语言之一 `de`、`en`、`fr`、`it`、`in`、`tu` 和 `lu`。这应该与您在 Home Assistant 中配置的相同。
+语音根据需求下载。
 
-### `voice` (optional)
+### `voice`（可选）
 
-This specifies an url for a custom voice pack. Make sure it is a zip and it contains the voice.jar inside a lib folder.
+这指定了自定义语音包的 URL。确保它是一个 zip 文件，并且里面包含 lib 文件夹中的 voice.jar。
 
-# UI
+# 用户界面
 
-The Demo-UI of MaryTTS can be accessed via `http://<hassio-address>:59125`.
+MaryTTS 的 Demo-UI 可通过 `http://<hassio-address>:59125` 访问。

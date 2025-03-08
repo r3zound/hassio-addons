@@ -1,85 +1,65 @@
-# Home Assistant Community Add-on: Overseerr
+# Home Assistant 社区插件：Overseerr
 
-Request management and media discovery tool for the Plex ecosystem.
+用于 Plex 生态系统的请求管理和媒体发现工具。
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Home Assistant add-on.
+这个插件的安装相当简单，与安装其他 Home Assistant 插件没有不同。
 
-1. Click the Home Assistant My button below to open the add-on on your Home
-   Assistant instance.
+1. 点击下面的 Home Assistant 我的按钮以在您的 Home Assistant 实例中打开该插件。
 
-   [![Open this add-on in your Home Assistant instance.][addon-badge]][addon]
+   [![在您的 Home Assistant 实例中打开此插件。][addon-badge]][addon]
 
-1. Click the "Install" button to install the add-on.
-1. Start the "Overseerr" add-on
-1. Check the logs of the "Overseerr" add-on to see if everything went well.
-1. Click "OPEN WEB UI" to open the Overseerr interface.
-1. Complete the wizard shown on screen.
+1. 点击“安装”按钮以安装该插件。
+1. 启动“Overseerr”插件
+1. 检查“Overseerr”插件的日志以查看是否一切正常。
+1. 点击“打开网页 UI”以打开 Overseerr 界面。
+1. 完成屏幕上显示的向导。
 
-## Configuration
+## 配置
 
-_This add-on does not require any configuration to run._
+_此插件不需要任何配置即可运行。_
 
-## Changelog & Releases
+## 更新日志与发布
 
-This repository keeps a change log using [GitHub's releases][releases]
-functionality.
+这个仓库使用 [GitHub 的发布][releases] 功能来保持变更日志。
 
-Releases are based on [Semantic Versioning][semver], and use the format
-of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
-based on the following:
+发布基于 [语义版本控制][semver]，采用格式 `MAJOR.MINOR.PATCH`。简而言之，版本将根据以下内容递增：
 
-- `MAJOR`: Incompatible or major changes.
-- `MINOR`: Backwards-compatible new features and enhancements.
-- `PATCH`: Backwards-compatible bugfixes and package updates.
+- `MAJOR`：不兼容或重大更改。
+- `MINOR`：向后兼容的新功能和增强。
+- `PATCH`：向后兼容的 bug 修复和软件包更新。
 
-## Support
+## 支持
 
-Got questions?
+有什么问题？
 
-You have several options to get them answered:
+您可以通过以下多种方式获得答案：
 
-- The [Home Assistant Community Add-ons Discord chat server][discord] for add-on
-  support and feature requests.
-- The [Home Assistant Discord chat server][discord-ha] for general Home
-  Assistant discussions and questions.
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+- [Home Assistant 社区插件 Discord 聊天服务器][discord] 以获取插件支持和功能请求。
+- [Home Assistant Discord 聊天服务器][discord-ha] 进行一般 Home Assistant 讨论和提问。
+- Home Assistant [社区论坛][forum]。
+- 加入 [Reddit 子论坛][reddit] 在 [/r/homeassistant][reddit]。
 
-You could also [open an issue here][issue] GitHub.
+您也可以 [在这里提出问题][issue] GitHub。
 
-## Authors & contributors
+## 作者与贡献者
 
-The original setup of this repository is by [Franck Nijhof][frenck].
+该仓库的原始设置由 [Franck Nijhof][frenck] 完成。
 
-For a full list of all authors and contributors,
-check [the contributor's page][contributors].
+要查看所有作者和贡献者的完整列表，请查看 [贡献者页面][contributors]。
 
-## License
+## 许可证
 
-MIT License
+MIT 许可证
 
-Copyright (c) 2024 Franck Nijhof
+版权所有 (c) 2024 Franck Nijhof
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+特此免费授权任何获得本软件及相关文档文件（“软件”）副本的人，在不受限制的情况下处理软件，包括但不限于使用、复制、修改、合并、发布、分发、再授权和/或出售软件副本的权利，并允许提供软件的人这样做，须遵守以下条件：
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+上述版权声明和此许可声明应包含在软件的所有副本或重要部分中。
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+软件是按“原样”提供的，不提供任何类型的明示或暗示的担保，包括但不限于对适销性、特定用途适用性和非侵权的担保。在任何情况下，作者或版权持有人均不对因软件或软件的使用或其他交易引起的任何索赔、损害或其他责任负责，无论是在合同、侵权或其他方面。
 
 [addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
 [addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_overseerr&repository_url=https%3A%2F%2Fgithub.com%2Fhassio-addons%2Frepository

@@ -1,36 +1,29 @@
-# Home Assistant Community Add-on: Tor
+# Home Assistant 社区附加组件：Tor
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+[![发布][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![在 Discord 上关注][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
-[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
+[![通过 GitHub Sponsors 赞助 Frenck][github-sponsors-shield]][github-sponsors]
 
-[![Support Frenck on Patreon][patreon-shield]][patreon]
+[![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
 
-Protect your privacy and access Home Assistant via Tor.
+保护您的隐私，并通过 Tor 访问 Home Assistant。
 
-## About
+## 关于
 
-This Tor add-on allows you to access you Home Assistant instance as an Onion site,
-trough [Tor's Hidden Service][tor-hidden-service] feature. With this feature
-enabled, you do not need to open your firewall ports or setup HTTPS to enable
-secure remote access.
+此 Tor 附加组件允许您作为洋葱站点访问您的 Home Assistant 实例，
+通过 [Tor 的隐蔽服务][tor-hidden-service] 特性。启用此功能后，
+您无需打开防火墙端口或设置 HTTPS 即可实现安全的远程访问。
 
-This is useful if you want to have:
+这在您想要的情况下非常有用：
 
-- Access your Home Assistant instance remotely without opening a firewall port
-  or setting up a VPN.
-- Don’t want to or know how to get an SSL/TLS certificate and HTTPS
-  configuration setup.
-- Want to block attackers from even being able to access/scan your port and
-  server at all.
-- Want to block anyone from knowing your home IP address and seeing your
-  traffic to your Home Assistant.
+- 远程访问您的 Home Assistant 实例，而无需打开防火墙端口或设置 VPN。
+- 不想或不知道如何获取 SSL/TLS 证书和 HTTPS 配置设置。
+- 想要阻止攻击者能够访问/扫描您的端口和服务器。
+- 想要阻止任何人知道您的家庭 IP 地址并看到您的 Home Assistant 流量。
 
-The add-on also offers the possibility to open a Sock proxy into the
-Tor network. Allowing you to access Tor from any of your (SOCKS supporting)
-applications through your Home Assistant installation.
+该附加组件还提供了在 Tor 网络中打开 Sock 代理的可能性。允许您通过 Home Assistant 安装从任何支持 SOCKS 的应用程序访问 Tor。
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons

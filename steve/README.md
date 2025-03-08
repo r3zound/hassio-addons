@@ -1,12 +1,12 @@
-# Home Assistant Add-on: SteVe
+# Home Assistant 插件：SteVe
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+[![发布][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-SteVe OCCP server.
+SteVe OCCP 服务器。
 
-## About
+## 关于
 
-Steve is an OCCP server for communicationg with charge points
+SteVe 是一个用于与充电点进行通信的 OCCP 服务器。
 
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2024.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg

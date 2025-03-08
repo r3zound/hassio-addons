@@ -1,76 +1,74 @@
-# RTLAMR to MQTT Bridge hass.io addon
-A hass.io addon for a software defined radio tuned to listen for 433MHz RF transmissions and republish the data via MQTT
+# RTLAMR 到 MQTT 网桥 hass.io 插件
+一个 hass.io 插件，用于软件定义无线电，调谐以监听 433MHz RF 传输，并通过 MQTT 重新发布数据。
 
-This hassio addon is based on biochemguy's (non-docker) setup: https://community.home-assistant.io/t/get-your-smart-electric-water-and-gas-meter-scm-readings-into-home-assistant-with-a-rtl-sdr
-This hass.io addon is based on James Fry' project here: https://github.com/james-fry/hassio-addons/tree/master/rtl4332mqtt
-which was based on Chris Kacerguis' project here: https://github.com/chriskacerguis/honeywell2mqtt,
-which is in turn based on Marco Verleun's rtl2mqtt image here: https://github.com/roflmao/rtl2mqtt
+这个 hassio 插件基于 biochemguy 的（非 docker）设置：https://community.home-assistant.io/t/get-your-smart-electric-water-and-gas-meter-scm-readings-into-home-assistant-with-a-rtl-sdr
+这个 hass.io 插件基于 James Fry 的项目：https://github.com/james-fry/hassio-addons/tree/master/rtl4332mqtt
+该项目基于 Chris Kacerguis 的项目：https://github.com/chriskacerguis/honeywell2mqtt，
+而 Chris Kacerguis 的项目又基于 Marco Verleun 的 rtl2mqtt 镜像：https://github.com/roflmao/rtl2mqtt
 
-Try some of my other addons at: https://github.com/jdeath/homeassistant-addons
-Currently have MeTube (youtube downloader), speedtest, emulatorjs (web based retro game console player)
+尝试我的其他插件：https://github.com/jdeath/homeassistant-addons
+目前有 MeTube（YouTube 下载器），speedtest，emulatorjs（基于网页的复古游戏控制台播放器）
 
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢所有为我的仓库点星的人！要点星，请点击下面的图像，然后它将出现在右上角。谢谢！_
 
 [![Stargazers repo roster for @jdeath/RTLAMR2MQQT](https://reporoster.com/stars/jdeath/RTLAMR2MQQT)](https://github.com/jdeath/RTLAMR2MQQT/stargazers)
 
-## Usage
+## 使用方法
 
-1) Install the addon. Do this by either:
- - downloading this repository and adding in a folder under /addons/ (eg. /addons/rtlamr2mqtt)
- - adding this respository to the Add-on Store
+1) 安装插件。可以通过以下任一方式进行：
+ - 下载此存储库并在 /addons/ 下添加文件夹（例如：/addons/rtlamr2mqtt）
+ - 将此存储库添加到附加组件商店
 
-2) Use addon configuration to configure:
-- mqtt_host (use number IP address, not hassio.local, localhost, 127.0.0.1, etc) . Also do not add port number here
+2) 使用插件配置进行配置：
+- mqtt_host（使用数字 IP 地址，不要使用 hassio.local、localhost、127.0.0.1 等）。这里也不要添加端口号
 - mqtt_port
 - mqtt_user
 - mqtt_password
 - msgType
 - ids
 
-3) Copy rtl2mqtt.sh to your hass.io config dir in a subdir called rtlamr2mqtt.
-i.e.
+3) 将 rtl2mqtt.sh 复制到您的 hass.io 配置目录中的一个名为 rtlamr2mqtt 的子目录中。
+即：
 .../config/rtlamr2mqtt/rtl2mqtt.sh
-This allows you to edit the start script if you need to make any changes.
+这允许您在需要进行任何更改时编辑启动脚本。
 
-If you are using a 64 bit version of hassio, add below line into the rtl2mqtt.sh:
+如果您使用的是 64 位版本的 hassio，请在 rtl2mqtt.sh 中添加以下行：
 ```
 export LD_LIBRARY_PATH=/usr/local/lib64
 ```
 
-If this is using too much processor, add the -duration=60s (or how every many seconds you want) tag to your the rtl2mqqt.sh script. Turns out rtlamr uses quite a bit of processor:
+如果这占用了过多的处理器，向 rtl2mqtt.sh 脚本添加 -duration=60s（或者您想要的任何秒数）标签。事实证明，rtlamr 占用了相当多的处理器：
 ```
 /go/bin/rtlamr -format json -msgtype=$MQTT_MSGTYPE -filterid=$MQTT_IDS -duration=60s | while read line
 ```
-also increase the sleep to however many seconds you want to wait until scanning again. I am using 60s of processing, then 5 mintutes (300s) of sleeping.
+同时增加等待再次扫描的睡眠时间到您想要的秒数。我使用的是 60 秒的处理时间，然后是 5 分钟（300 秒）的睡眠时间。
 
-NOTE that some people have reported issues using samba to copy the script. For some reason it does not get copied to the container on start up of the addon. If you see this issue, please scp the script to your hassio config folder, or ssh in and edit the file locally with vi/nano.
+注意，有些人报告在使用 samba 复制脚本时遇到问题。由于某种原因，它在插件启动时没有被复制到容器中。如果您看到此问题，请使用 scp 将脚本复制到您的 hassio 配置文件夹，或通过 ssh 进入并使用 vi/nano 本地编辑文件。
+
+4) 启动插件
 
 
-4) Start the addon
+## MQTT 数据
 
+发送到 MQTT 服务器的数据基于 biochemguy 的设置：readings/$DEVICEID/meter_reading
 
-## MQTT Data
+## 硬件
 
-Data to the MQTT server is based on biochemguy setup: readings/$DEVICEID/meter_reading
-
-## Hardware
-
-This has been tested and used with the following hardware (you can get it on Amazon)
+这已经在以下硬件上进行了测试和使用（您可以在亚马逊上购买）：
 
 - NooElec NESDR Nano 2+ Tiny Black RTL-SDR USB
-- RTL-SDR Blog R820T2 RTL2832U 1PPM TCXO SMA Software Defined Radio
+- RTL-SDR Blog R820T2 RTL2832U 1PPM TCXO SMA 软件定义无线电
 
 
-## Troubleshooting
+## 故障排除
 
-If you see this error:
+如果您看到此错误：
 
-> Kernel driver is active, or device is claimed by second instance of librtlsdr.
-> In the first case, please either detach or blacklist the kernel module
-> (dvb_usb_rtl28xxu), or enable automatic detaching at compile time.
+> 内核驱动程序处于活动状态，或设备被 librtlsdr 的第二个实例占用。
+> 在第一种情况下，请断开或将内核模块（dvb_usb_rtl28xxu）列入黑名单，
+> 或在编译时启用自动分离。
 
-Then run the following command on the host
+然后在主机上运行以下命令
 
 ```bash
 sudo rmmod dvb_usb_rtl28xxu rtl2832
-```

@@ -1,6 +1,6 @@
-# rsync local (Home Assistant Addon)
+# rsync 本地（Home Assistant 插件）
 
-Sync folders to a external usb drive with rsync.
+使用 rsync 将文件夹同步到外部 USB 驱动器。
 
 [![Release][release-badge]][release]
 ![Addon Stage][stage-badge]
@@ -15,4 +15,3 @@ Sync folders to a external usb drive with rsync.
 
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee-%23d32f2f?logo=buy-me-a-coffee&style=for-the-badge&logoColor=white
 [donation-url]: https://www.buymeacoffee.com/Poeschl
-

@@ -1,10 +1,10 @@
-# Home Assistant Add-on: DSMR Datalogger
-[![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fsanderdw%2Fhassio-addons)
-[![Community Forum][forum-shield]][forum]
+# Home Assistant 插件：DSMR 数据记录仪
+[![打开您的 Home Assistant 实例，并显示添加插件库对话框，预填特定的库 URL。](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fsanderdw%2Fhassio-addons)
+[![社区论坛][forum-shield]][forum]
 
-The datalogger only option of DSMR (https://dsmr-reader.readthedocs.io). This will install a datalogger that will forward telegrams to another fully installed instance of DSMR-reader, using its API.
+DSMR 的数据记录仪仅选项 (https://dsmr-reader.readthedocs.io)。这将安装一个数据记录仪，该记录仪将通过 API 将电报转发到另一个完全安装的 DSMR-reader 实例。
 
-[![GitHub Build Status](https://github.com/sanderdw/hassio-addons/workflows/DSMR%20Datalogger/badge.svg?logo=github)](https://github.com/sanderdw/hassio-addons/actions) ![addon-shield] ![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield] ![Supports armhf Architecture][armhf-shield] ![Supports armv7 Architecture][armv7-shield] ![Supports i386 Architecture][i386-shield]
+[![GitHub 构建状态](https://github.com/sanderdw/hassio-addons/workflows/DSMR%20Datalogger/badge.svg?logo=github)](https://github.com/sanderdw/hassio-addons/actions) ![addon-shield] ![支持 aarch64 架构][aarch64-shield] ![支持 amd64 架构][amd64-shield] ![支持 armhf 架构][armhf-shield] ![支持 armv7 架构][armv7-shield] ![支持 i386 架构][i386-shield]
 
 [addon-shield]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2Fsanderdw%2Fhassio-addons%2Fraw%2Frefs%2Fheads%2Fmaster%2Fdsmr_datalogger%2Fconfig.json&query=version&style=flat-square&label=Addon%20Version
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg?style=flat-square
@@ -15,32 +15,31 @@ The datalogger only option of DSMR (https://dsmr-reader.readthedocs.io). This wi
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg?style=for-the-badge
 [forum]: https://community.home-assistant.io/t/dsmr-datalogger-add-on-for-home-assistant/181123
 
-## Configure the repository
+## 配置库
 
-See config instructions here: https://github.com/sanderdw/hassio-addons
+请参见此处的配置说明：https://github.com/sanderdw/hassio-addons
 
-## Prepare API
-Make sure to prepare the API at the DSMR-reader instance you’ll forward the telegrams to. For more information configuring it, see the API settings (https://dsmr-reader.readthedocs.io/en/v5/reference/api.html).
+## 准备 API
+确保在您要转发电报的 DSMR-reader 实例上准备 API。有关配置的更多信息，请参阅 API 设置 (https://dsmr-reader.readthedocs.io/en/v5/reference/api.html)。
 
-## Configure the add-on
+## 配置插件
 
-The add-on needs to know where your P1 reader can be found, and therefore,
-you'll need to configure the add-on to point to the right device.
+该插件需要知道您的 P1 读取器的位置，因此，
+您需要配置插件以指向正确的设备。
 
-If you're using Home Assistant you may find the correct value for this on the
-`Supervisor -> System -> Host system -> Hardware` page.
+如果您使用的是 Home Assistant，您可能会在
+`Supervisor -> System -> Host system -> Hardware` 页面找到该正确值。
 
-1. When updated, please reset configuration to it's default first ("RESET TO DEFAULTS" on the Configuration tab after installing/updating).
-2. Replace `/dev/ttyUSBX` in the `DATALOGGER_SERIAL_PORT` option in the add-on configuration and specify
-   the device name.
-3. Specifiy the correct `http(s)://<YOUR_DSMR_HOST>:<PORT>` url in the `DATALOGGER_API_HOSTS` option in the add-on configuration.
-4. Replace `<YOUR_API_KEY>` in the `DATALOGGER_API_KEYS` option to your API key (see https://dsmr-reader.readthedocs.io/en/v4/api.html for help).
-5. Click on "SAVE" to save the add-on configuration.
-6. Start the add-on.
+1. 更新后，请先将配置重置为默认值（在安装/更新后“重置为默认值”在配置选项卡上）。
+2. 在插件配置中的 `DATALOGGER_SERIAL_PORT` 选项中替换 `/dev/ttyUSBX` 并指定
+   设备名称。
+3. 在插件配置中的 `DATALOGGER_API_HOSTS` 选项中指定正确的 `http(s)://<YOUR_DSMR_HOST>:<PORT>` URL。
+4. 在 `DATALOGGER_API_KEYS` 选项中替换 `<YOUR_API_KEY>` 为您的 API 密钥（请参见 https://dsmr-reader.readthedocs.io/en/v4/api.html 获取帮助）。
+5. 点击“保存”以保存插件配置。
+6. 启动插件。
 
-### Note for DSMR v2/3 try to use this configuration:
+### DSMR v2/3 的注意事项，请尝试使用以下配置：
 ```
 DATALOGGER_SERIAL_BAUDRATE: '9600'
 DATALOGGER_SERIAL_BYTESIZE: '7'
 DATALOGGER_SERIAL_PARITY: 'E'
-```

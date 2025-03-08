@@ -1,4 +1,4 @@
-# Home Assistant Community Add-on: Visual Studio Code
+# Home Assistant 社区插件：Visual Studio Code
 
 [![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
 
@@ -8,22 +8,17 @@
 
 [![Support Frenck on Patreon][patreon-shield]][patreon]
 
-Visual Studio Code, accessible through the browser.
+Visual Studio Code，通过浏览器访问。
 
-## About
+## 关于
 
-This add-on runs Visual Studio Code, allowing you to edit your Home Assistant
-configuration straight from the web browser and can be embedded straight
-into the Home Assistant frontend UI.
+这个插件运行 Visual Studio Code，允许您直接从 web 浏览器编辑您的 Home Assistant 配置，并且可以直接嵌入到 Home Assistant 前端 UI 中。
 
-Visual Studio Code runs as a remote server using `code-server`, and is a
-fully fledged VSCode experience.
+Visual Studio Code 作为远程服务器运行，使用 `code-server`，提供完整的 VSCode 使用体验。
 
-The add-on has the Home Assistant, MDI icons and YAML extensions pre-installed
-and pre-configured right out of the box. This means that auto-completion works
-instantly, without the need for configuring anything.
+该插件预装并预配置了 Home Assistant、MDI 图标和 YAML 扩展。这意味着自动补全功能可以立即使用，无需进行任何配置。
 
-![Studio Code Server in the Home Assistant Frontend][screenshot]
+![Home Assistant 前端中的 Studio Code 服务器][screenshot]
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons

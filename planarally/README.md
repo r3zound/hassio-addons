@@ -1,60 +1,61 @@
-# Home assistant add-on: PlanarAlly
+# Home assistant 插件: PlanarAlly
 
 # PlanarAlly
 
-A companion tool for when you travel into the planes.
+一个在你旅行到不同平面时的辅助工具。
 
-PlanarAlly is a web tool that adds virtual battlemaps with various extras to your TTRPG/D&D toolbox.
+PlanarAlly 是一个网页工具，为你的 TTRPG/D&D 工具箱添加虚拟战斗地图以及各种附加功能。
 
-Some key features are:
+一些关键特性包括：
 
-**Self hosting**: You can run this software wherever you like without having to rely on an external service\
-**Offline support**: This tool can be used in a completely offline set-up for when you play D&D in a dark dungeon.
+**自我托管**：你可以在任何地方运行这个软件，而无需依赖外部服务\
+**离线支持**：这个工具可以在完全离线的环境中使用，适合在黑暗地牢中玩 D&D。
 
-**Simple layers**: Organize your scenes in layers for easier management.\
-**Infinite canvas**: When a limited workspace is still not enough!\
-**Dynamic lighting**: Increase your immersion by working with light and shadows.\
-**Player vision**: Limit vision to what your token(s) can see. Is your companion in a different room, no light for you!\
-**Initiative tracker**: Simple initiative tracker\
-**Floors!**: Look down upon lower floors when standing on a balcony!
+**简单图层**：将你的场景按图层进行组织，以便于管理。\
+**无限画布**：当有限的工作空间仍然不够时！\
+**动态光照**：通过运用光与影来增强沉浸感。\
+**玩家视野**：将视野限制在你的棋子能看到的范围内。如果你的同伴在另一个房间，你就看不到光亮！\
+**先攻追踪器**：简单的先攻追踪器\
+**楼层！**：在阳台上俯视下层楼！
 
-This tool is provided free to use and is open source.
+这个工具可以免费使用，并且是开源的。
 
 
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢所有给我的仓库点赞的人！要点赞，请点击下面的图片，然后在右上角即可。谢谢！_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
-## About
+## 关于
 
-This addon uses the [docker image](https://github.com/Kruptein/PlanarAlly).
+这个插件使用了 [docker 镜像](https://github.com/Kruptein/PlanarAlly)。
 
-## Installation
+## 安装
 
-The installation of this add-on takes a few extra steps.
+安装此插件需要几个额外步骤。
 
-1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Click the `Save` button to store your configuration.
-1. Start the add-on.
-1. It will fail, that is ok
-1. Settings will be in `/addon_configs/2effc9b9_plannarally`
-1. ssh in to homeassistant type `chmod 2777 addon_configs/2effc9b9_plannarally`
-2. Start the add-on, it will start, but then stop the addon.
-1. edit `/addon_configs/2effc9b9_plannarally/server_config.cfg`
-1. Under `[General]` make the next two lines:
+1. [将我的 Hass.io 插件库][repository] 添加到你的 Hass.io 实例。
+1. 点击 `保存` 按钮以存储你的配置。
+1. 启动插件。
+1. 它会失败，这没关系。
+1. 设置将在 `/addon_configs/2effc9b9_plannarally` 中。
+1. SSH 进入 homeassistant，输入 `chmod 2777 addon_configs/2effc9b9_plannarally`
+2. 启动插件，它会启动，但之后会停止插件。
+1. 编辑 `/addon_configs/2effc9b9_plannarally/server_config.cfg`
+1. 在 `[General]` 下添加以下两行：
 
 ```
 save_file = /config/planar.sqlite
 assets_directory = /config/assets
 ```
-1. Restart the addon
-1. Open WebUI, should work via <your-ip>:port.
-## Configuration
+1. 重启插件
+1. 打开 WebUI，应该可以通过 <your-ip>:port 访问。
+
+## 配置
 
 ```
-port : 8080 #port you want to run on.
+port : 8080 #你想要运行的端口。
 ```
 
-Webui can be found at `<your-ip>:port`.
+Webui 可以在 `<your-ip>:port` 找到。
 
 [repository]: https://github.com/jdeath/homeassistant-addons

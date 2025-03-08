@@ -1,44 +1,30 @@
-# Home Assistant Community Add-on: Bitwarden RS
+# Home Assistant 社区插件：Bitwarden RS
 
-Bitwarden is an open-source password manager that can store sensitive
-information such as website credentials in an encrypted vault.
+Bitwarden 是一个开源密码管理器，能够将敏感信息如网站凭证存储在加密的保险库中。
 
-The Bitwarden platform offers a variety of client applications including
-a web interface, desktop applications, browser extensions and mobile apps.
+Bitwarden 平台提供了多种客户端应用程序，包括网页界面、桌面应用程序、浏览器扩展和移动应用。
 
-This add-on is based upon the lightweight and opensource
-[Bitwarden RS][bitwarden-rs] implementation, allowing you to self-host
-this amazing password manager.
+该插件基于轻量级开源的 [Bitwarden RS][bitwarden-rs] 实现，允许您自托管这个出色的密码管理器。
 
-Password theft is a serious problem. The websites and apps that you use are
-under attack every day. Security breaches occur and your passwords are stolen.
-When you reuse the same passwords everywhere hackers can easily access your
-email, bank, and other important accounts. USE A PASSWORD MANAGER!
+密码被盗是一个严重的问题。您使用的网站和应用程序每天都在遭受攻击。安全漏洞时常发生，您的密码可能会被盗。当您在各处重复使用相同的密码时，黑客就能轻易访问您的电子邮件、银行和其他重要账户。使用密码管理器吧！
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Home Assistant add-on.
+该插件的安装过程相当简单，与安装任何其他 Home Assistant 插件没有不同。
 
-1. Search for the "Bitwarden RS" add-on in the Supervisor add-on store and
-   install it.
-1. Start the "Bitwarden RS" add-on.
-1. Check the logs of the "Bitwarden RS" add-on to see if everything went
-   well and to get the admin token/password.
-1. Click the "OPEN WEB UI" button to open Bitwarden RS.
-1. Add `/admin` to the URL to access the admin panel, e.g.,
-   `http://hassio.local:7277/admin`. Log in using the admin token you got
-   in step 3.
-1. The admin/token in the logs is only shown until it is saved or changed.
-   Hit save in the admin panel to use the randomly generated password or
-   change it to one of your choosing.
-1. Be sure to store your admin token somewhere safe.
+1. 在 Supervisor 插件商店中搜索 "Bitwarden RS" 插件并进行安装。
+1. 启动 "Bitwarden RS" 插件。
+1. 检查 "Bitwarden RS" 插件的日志，查看一切是否正常，并获取管理员令牌/密码。
+1. 点击 "OPEN WEB UI" 按钮以打开 Bitwarden RS。
+1. 在 URL 中添加 `/admin` 以访问管理员面板，例如，`http://hassio.local:7277/admin`。使用第 3 步中获得的管理员令牌登录。
+1. 日志中的管理员/令牌仅在保存或更改之前显示。请在管理员面板中点击保存以使用随机生成的密码，或者将其更改为您选择的密码。
+1. 确保将您的管理员令牌安全存储。
 
-## Configuration
+## 配置
 
-**Note**: _Remember to restart the add-on when the configuration is changed._
+**注意**：_记得在更改配置后重启插件。_
 
-Example add-on configuration:
+插件配置示例：
 
 ```yaml
 log_level: info
@@ -48,123 +34,90 @@ keyfile: privkey.pem
 request_size_limit: 10485760
 ```
 
-**Note**: _This is just an example, don't copy and paste it! Create your own!_
+**注意**：_这只是一个示例，请不要复制粘贴！创建您自己的！_
 
-### Option: `log_level`
+### 选项：`log_level`
 
-The `log_level` option controls the level of log output by the addon and can
-be changed to be more or less verbose, which might be useful when you are
-dealing with an unknown issue. Possible values are:
+`log_level` 选项控制插件输出日志的级别，可以更改为更多或更少的详细信息，这在您处理未知问题时可能很有用。可能的值包括：
 
-- `trace`: Show every detail, like all called internal functions.
-- `debug`: Shows detailed debug information.
-- `info`: Normal (usually) interesting events.
-- `warning`: Exceptional occurrences that are not errors.
-- `error`: Runtime errors that do not require immediate action.
-- `fatal`: Something went terribly wrong. Add-on becomes unusable.
+- `trace`：显示每个细节，例如所有被调用的内部函数。
+- `debug`：显示详细的调试信息。
+- `info`：正常（通常）有趣的事件。
+- `warning`：异常但不是错误的发生。
+- `error`：不需要立即处理的运行时错误。
+- `fatal`：发生了严重错误。插件变得不可用。
 
-Please note that each level automatically includes log messages from a
-more severe level, e.g., `debug` also shows `info` messages. By default,
-the `log_level` is set to `info`, which is the recommended setting unless
-you are troubleshooting.
+请注意，每个级别自动包含来自更严重级别的日志消息，例如，`debug` 还会显示 `info` 消息。默认情况下，`log_level` 被设置为 `info`，这是建议的设置，除非您正在排查故障。
 
-### Option: `ssl`
+### 选项：`ssl`
 
-Enables/Disables SSL (HTTPS). Set it `true` to enable it, `false` otherwise.
+启用/禁用 SSL（HTTPS）。将其设置为 `true` 以启用，`false` 则相反。
 
-**Note**: _The SSL settings only apply to direct access and has no effect
-on the Ingress service._
+**注意**：_SSL 设置仅适用于直接访问，对 Ingress 服务没有影响。_
 
-### Option: `certfile`
+### 选项：`certfile`
 
-The certificate file to use for SSL.
+用于 SSL 的证书文件。
 
-**Note**: _The file MUST be stored in `/ssl/`, which is the default_
+**注意**：_该文件必须存储在 `/ssl/` 中，这是默认设置。_
 
-### Option: `keyfile`
+### 选项：`keyfile`
 
-The private key file to use for SSL.
+用于 SSL 的私钥文件。
 
-**Note**: _The file MUST be stored in `/ssl/`, which is the default_
+**注意**：_该文件必须存储在 `/ssl/` 中，这是默认设置。_
 
-### Option: `request_size_limit`
+### 选项：`request_size_limit`
 
-By default the API calls are limited to 10MB. This should be sufficient for
-most cases, however if you want to support large imports, this might be
-limiting you. On the other hand you might want to limit the request size to
-something smaller than that to prevent API abuse and possible DOS attack,
-especially if running with limited resources.
+默认情况下，API 调用限制为 10MB。这对于大多数情况来说应该足够，然而如果您想支持大文件导入，这可能会成为限制。另一方面，您可能希望将请求大小限制设置为更小的值，以防止 API 滥用和可能的 DOS 攻击，尤其是在资源有限的情况下。
 
-To set the limit, you can use this setting: 10MB would be `10485760`.
+要设置限制，可以使用此设置：10MB 为 `10485760`。
 
-## Known issues and limitations
+## 已知问题和限制
 
-- This add-on cannot support Ingress at this time due to technical limitations
-  of the Bitwarden Vault web interface.
-- Some web browsers, like Chrome, disallow the use of Web Crypto APIs in
-  insecure contexts. In this case, you might get an error like
-  `Cannot read property 'importKey'`. To solve this problem, you need to enable
-  SSL and access the web interface using HTTPS.
+- 由于 Bitwarden Vault 网页界面的技术限制，此插件目前不支持 Ingress。
+- 一些网页浏览器，如 Chrome，不允许在不安全的上下文中使用 Web Crypto API。在这种情况下，您可能会遇到错误，例如 `Cannot read property 'importKey'`。要解决此问题，您需要启用 SSL，并使用 HTTPS 访问网页界面。
 
-## Changelog & Releases
+## 更新记录和版本
 
-This repository keeps a change log using [GitHub's releases][releases]
-functionality. The format of the log is based on
-[Keep a Changelog][keepchangelog].
+该存储库使用 [GitHub 的版本][releases] 功能来维护变更日志。日志的格式基于 [保持变更日志][keepchangelog]。
 
-Releases are based on [Semantic Versioning][semver], and use the format
-of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
-based on the following:
+版本基于 [语义版本控制][semver]，使用 `MAJOR.MINOR.PATCH` 的格式。简而言之，版本将根据以下标准增量更新：
 
-- `MAJOR`: Incompatible or major changes.
-- `MINOR`: Backwards-compatible new features and enhancements.
-- `PATCH`: Backwards-compatible bugfixes and package updates.
+- `MAJOR`：不兼容或重大更改。
+- `MINOR`：向后兼容的新功能和改进。
+- `PATCH`：向后兼容的错误修复和包更新。
 
-## Support
+## 支持
 
-Got questions?
+有问题吗？
 
-You have several options to get them answered:
+您有几种方式可以获取答案：
 
-- The [Home Assistant Community Add-ons Discord chat server][discord] for add-on
-  support and feature requests.
-- The [Home Assistant Discord chat server][discord-ha] for general Home
-  Assistant discussions and questions.
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+- [Home Assistant 社区插件 Discord 聊天服务器][discord] 获取插件支持和功能请求。
+- [Home Assistant Discord 聊天服务器][discord-ha] 进行一般 Home Assistant 讨论和问题交流。
+- Home Assistant [社区论坛][forum]。
+- 加入 [/r/homeassistant][reddit] 的 [Reddit 子版块][reddit]。
 
-You could also [open an issue here][issue] GitHub.
+您还可以在 GitHub 上 [提交问题][issue]。
 
-## Authors & contributors
+## 作者和贡献者
 
-The original setup of this repository is by [Franck Nijhof][frenck].
+该存储库的最初设置由 [Franck Nijhof][frenck] 完成。
 
-For a full list of all authors and contributors,
-check [the contributor's page][contributors].
+有关所有作者和贡献者的完整列表，请查看 [贡献者页面][contributors]。
 
-## License
+## 许可证
 
-MIT License
+MIT 许可证
 
-Copyright (c) 2019-2020 Franck Nijhof
+版权所有 (c) 2019-2020 Franck Nijhof
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+特此免费授予任何获得本软件及相关文档文件（以下简称 "软件"）的人员使用软件的权利，无限制地处理软件，包括但不限于使用、复制、修改、合并、出版、分发、再许可和/或出售该软件的副本，并允许向其提供该软件的人这样做，需遵循以下条件：
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+上述版权声明和本许可声明必须包括在所有软件的副本或重要部分中。
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+本软件是按 "原样" 提供的，不存在任何种类的担保，无论是明示还是暗示，包括但不限于对适销性、特定用途适用性和非侵权的担保。在任何情况下，作者或版权持有人对于因使用软件或与软件的其他交易而产生的任何索赔、损害或其他责任均不承担责任。
 
 [bitwarden-rs]: https://github.com/dani-garcia/bitwarden_rs
 [contributors]: https://github.com/hassio-addons/addon-bitwarden/graphs/contributors

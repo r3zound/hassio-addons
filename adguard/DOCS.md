@@ -1,42 +1,35 @@
-# Home Assistant Community Add-on: AdGuard Home
+# Home Assistant 社区插件：AdGuard Home
 
-[AdGuard Home][adguard] is a network-wide ad-and-tracker blocking DNS server
-with parental control (adult content blocking) capabilities. Its purpose is to
-let you control your entire network and all your devices, and it does not
-require using a client-side program.
+[AdGuard Home][adguard] 是一个网络范围内的广告和跟踪器阻止 DNS 服务器，具有家长控制（成人内容阻止）功能。其目的是让您控制整个网络和所有设备，并且不需要使用客户端程序。
 
-AdGuard Home provides a beautiful, easy and feature-rich web interface to
-easily manage the filtering process and its settings.
+AdGuard Home 提供了一个美观、易于使用且功能丰富的 Web 界面，以便轻松管理过滤过程及其设置。
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Home Assistant add-on.
+此插件的安装非常简单，与安装任何其他 Home Assistant 插件没有不同。
 
-1. **Ensure your Home Assistant device has a
-   [static IP and static external DNS servers!](https://github.com/home-assistant/operating-system/blob/dev/Documentation/network.md#static-ip)**
-   This is important! You **WILL** end up having issues if you skip this step.
-   - Change this setting in Network:
-     [![Open your Home Assistant instance and manage your systems network configuration.](https://my.home-assistant.io/badges/network.svg)](https://my.home-assistant.io/redirect/network/)
-     (_Settings → System → Network
-     → Configure network interfaces → Your Interface → IPv4 → Static_)
-   - Please note, setting a fixed IP in your router is **NOT** static.
-1. Click the Home Assistant My button below to open the add-on on your Home
-   Assistant instance.
+1. **确保您的 Home Assistant 设备具有
+   [静态 IP 和静态外部 DNS 服务器！](https://github.com/home-assistant/operating-system/blob/dev/Documentation/network.md#static-ip)**
+   这很重要！如果跳过此步骤，您**将**遇到问题。
+   - 在网络中更改此设置：
+     [![打开您的 Home Assistant 实例并管理您的系统网络配置。](https://my.home-assistant.io/badges/network.svg)](https://my.home-assistant.io/redirect/network/)
+     （_设置 → 系统 → 网络 → 配置网络接口 → 您的接口 → IPv4 → 静态_）
+   - 请注意，在路由器中设置固定 IP 并不**等于**静态。
+2. 点击下面的 Home Assistant 我的按钮在您的 Home Assistant 实例中打开插件。
 
-   [![Open this add-on in your Home Assistant instance.][addon-badge]][addon]
+   [![在您的 Home Assistant 实例中打开此插件。][addon-badge]][addon]
 
-1. Click the "Install" button to install the add-on.
-1. Start the "AdGuard Home" add-on.
-1. Check the logs of the "AdGuard Home" to see if everything went well.
-1. Click the "OPEN WEB UI" button and log in with your Home Assistant account.
-1. Ready to go!
+3. 点击“安装”按钮以安装插件。
+4. 启动“AdGuard Home”插件。
+5. 检查“AdGuard Home”的日志，查看一切是否顺利。
+6. 点击“打开 Web UI”按钮，并使用您的 Home Assistant 账户登录。
+7. 准备就绪！
 
-## Configuration
+## 配置
 
-**Note**: _Remember to restart the add-on when the configuration is changed._
+**注意**：_配置更改时，请记得重启插件。_
 
-Example add-on configuration:
+插件配置示例：
 
 ```yaml
 log_level: info
@@ -45,120 +38,89 @@ certfile: fullchain.pem
 keyfile: privkey.pem
 ```
 
-**Note**: _This is just an example, don't copy and paste it! Create your own!_
+**注意**：_这只是一个示例，请不要复制粘贴！创建您自己的！_
 
-### Option: `log_level`
+### 选项：`log_level`
 
-The `log_level` option controls the level of log output by the addon and can
-be changed to be more or less verbose, which might be useful when you are
-dealing with an unknown issue. Possible values are:
+`log_level` 选项控制插件的日志输出级别，可以根据需要更改为更多或更少的详细信息，当您处理一个未知问题时，这可能会很有用。可能的值包括：
 
-- `trace`: Show every detail, like all called internal functions.
-- `debug`: Shows detailed debug information.
-- `info`: Normal (usually) interesting events.
-- `warning`: Exceptional occurrences that are not errors.
-- `error`: Runtime errors that do not require immediate action.
-- `fatal`: Something went terribly wrong. Add-on becomes unusable.
+- `trace`：显示每个细节，例如所有调用的内部函数。
+- `debug`：显示详细的调试信息。
+- `info`：正常（通常）有趣的事件。
+- `warning`：非错误的异常情况。
+- `error`：不需要立即采取行动的运行时错误。
+- `fatal`：发生了严重错误。插件变得不可用。
 
-Please note that each level automatically includes log messages from a
-more severe level, e.g., `debug` also shows `info` messages. By default,
-the `log_level` is set to `info`, which is the recommended setting unless
-you are troubleshooting.
+请注意，每个级别自动包含更严重级别的日志消息，例如，`debug` 也会显示 `info` 消息。默认情况下，`log_level` 设置为 `info`，这是推荐的设置，除非您在故障排除。
 
-### Option: `ssl`
+### 选项：`ssl`
 
-Enables/Disables SSL (HTTPS) on the add-on. Set it `true` to enable it,
-`false` otherwise.
+启用/禁用插件上的 SSL（HTTPS）。设置为 `true` 以启用它，设置为 `false` 则禁用。
 
-**Note**: _The SSL settings only apply to direct access and has no effect
-on the Ingress service._
+**注意**：_SSL 设置仅适用于直接访问，对 Ingress 服务没有影响。_
 
-### Option: `certfile`
+### 选项：`certfile`
 
-The certificate file to use for SSL.
+用于 SSL 的证书文件。
 
-**Note**: _The file MUST be stored in `/ssl/`, which is the default_
+**注意**：_文件必须存储在 `/ssl/` 中，这是默认设置_
 
-### Option: `keyfile`
+### 选项：`keyfile`
 
-The private key file to use for SSL.
+用于 SSL 的私钥文件。
 
-**Note**: _The file MUST be stored in `/ssl/`, which is the default_
+**注意**：_文件必须存储在 `/ssl/` 中，这是默认设置_
 
-### Option: `leave_front_door_open`
+### 选项：`leave_front_door_open`
 
-Adding this option to the add-on configuration allows you to disable
-authentication on the AdGuard Home by setting it to `true`.
+将此选项添加到插件配置中，允许您通过将其设置为 `true` 来禁用 AdGuard Home 的身份验证。
 
-**Note**: _We STRONGLY suggest, not to use this, even if this add-on is
-only exposed to your internal network. USE AT YOUR OWN RISK!_
+**注意**：_我们强烈建议不要使用此选项，即使此插件仅暴露于您的内部网络。请自行承担风险！_
 
-## Encryption Settings (Advanced Usage)
+## 加密设置（高级使用）
 
-Adguard allows the configuration of running DNS-over-HTTPS and DNS-over-
-TLS locally. If you configure these options please ensure to restart the
-addon afterwards. Also to use DNS-over-HTTPS correctly please ensure to
-configure SSL on the addon as well as in Adguard itself. Also consider
-that the addon and Adguard cannot use the same port for SSL.
+AdGuard 允许配置本地运行的 DNS-over-HTTPS 和 DNS-over-TLS。如果您配置了这些选项，请确保在之后重启插件。此外，要正确使用 DNS-over-HTTPS，请确保在插件和 AdGuard 本身中都配置 SSL。还要考虑插件和 AdGuard 不能使用相同的端口进行 SSL。
 
-## Changelog & Releases
+## 更新日志与发布
 
-This repository keeps a change log using [GitHub's releases][releases]
-functionality.
+本仓库使用 [GitHub 的发布][releases] 功能维护变更日志。
 
-Releases are based on [Semantic Versioning][semver], and use the format
-of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
-based on the following:
+发布基于 [语义版本控制][semver]，并使用 `MAJOR.MINOR.PATCH` 的格式。简而言之，版本将根据以下条件进行递增：
 
-- `MAJOR`: Incompatible or major changes.
-- `MINOR`: Backwards-compatible new features and enhancements.
-- `PATCH`: Backwards-compatible bugfixes and package updates.
+- `MAJOR`：不兼容或重大更改。
+- `MINOR`：向后兼容的新功能和增强功能。
+- `PATCH`：向后兼容的 bug 修复和包更新。
 
-## Support
+## 支持
 
-Got questions?
+有问题吗？
 
-You have several options to get them answered:
+您有几个选项可以获取答案：
 
-- The [Home Assistant Community Add-ons Discord chat server][discord] for add-on
-  support and feature requests.
-- The [Home Assistant Discord chat server][discord-ha] for general Home
-  Assistant discussions and questions.
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+- [Home Assistant 社区插件 Discord 聊天服务器][discord] 进行插件支持和功能请求。
+- [Home Assistant Discord 聊天服务器][discord-ha] 进行一般 Home Assistant 讨论和问题。
+- Home Assistant [社区论坛][forum]。
+- 加入 [Reddit 子版块][reddit] 在 [/r/homeassistant][reddit]。
 
-You could also [open an issue here][issue] GitHub.
+您也可以在这里 [提交问题][issue] GitHub。
 
-## Authors & contributors
+## 作者及贡献者
 
-The original setup of this repository is by [Franck Nijhof][frenck].
+本仓库的最初设置由 [Franck Nijhof][frenck] 完成。
 
-For a full list of all authors and contributors,
-check [the contributor's page][contributors].
+有关所有作者和贡献者的完整列表，请查看 [贡献者页面][contributors]。
 
-## License
+## 许可证
 
-MIT License
+MIT 许可证
 
-Copyright (c) 2019-2025 Franck Nijhof
+版权所有 (c) 2019-2025 Franck Nijhof
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+在此特此免费授予任何获得本软件及相关文档文件（"软件"）副本的人，使用软件的权利，包括但不限于使用、复制、修改、合并、发布、分发、再许可和/或销售软件副本以及允许提供软件的人这样做，不受任何限制，遵循以下条件：
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+上述版权声明和本许可声明应包含在软件的所有副本或重要部分中。
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+本软件是按 "原样" 提供的，没有任何形式的担保，无论是明示的还是暗示的，包括但不限于对适销性、特定用途适用性和非侵权的担保。在任何情况下，作者或版权持有人均不对因使用本软件或其他交易而引起的任何索赔、损害或其他责任负责，无论是在合同诉讼、侵权或其他情况下。
 
 [addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
 [addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_adguard&repository_url=https%3A%2F%2Fgithub.com%2Fhassio-addons%2Frepository

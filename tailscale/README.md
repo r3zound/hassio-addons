@@ -1,23 +1,21 @@
-# Home Assistant Community Add-on: Tailscale
+# Home Assistant 社区插件: Tailscale
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+[![发布][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
-[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
+[![通过 GitHub Sponsors 支持 Frenck][github-sponsors-shield]][github-sponsors]
 
-[![Support Frenck on Patreon][patreon-shield]][patreon]
+[![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
 
-Zero config VPN for building secure networks.
+零配置 VPN，用于构建安全网络。
 
-## About
+## 关于
 
-Tailscale is a zero config VPN, which installs on any device in minutes,
-including your Home Assistant instance.
+Tailscale 是一个零配置 VPN，可以在几分钟内安装到任何设备上，包括你的 Home Assistant 实例。
 
-Create a secure network between your servers, computers, and cloud instances.
-Even when separated by firewalls or subnets, Tailscale just works. Tailscale
-manages firewall rules for you, and works from anywhere you are.
+在你的服务器、计算机和云实例之间创建一个安全的网络。
+即使被防火墙或子网隔开，Tailscale 也能正常工作。Tailscale 为你管理防火墙规则，并且可以在你所在的任何地方工作。
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons

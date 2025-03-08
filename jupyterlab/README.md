@@ -1,4 +1,4 @@
-# Home Assistant Community Add-on: JupyterLab
+# Home Assistant 社区附加组件：JupyterLab
 
 [![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
 
@@ -8,22 +8,15 @@
 
 [![Support Frenck on Patreon][patreon-shield]][patreon]
 
-Create documents containing live code, equations, visualizations,
-and explanatory text.
+创建包含实时代码、方程式、可视化和说明文本的文档。
 
 ![The JupyterLab add-on][screenshot]
 
-## About
+## 关于
 
-JupyterLab is an open-source web application that allows you to create and share
-documents that contain live code, equations, visualizations and narrative text.
-Uses include: data cleaning and transformation, numerical simulation,
-statistical modeling, data visualization, machine learning, and much more.
+JupyterLab 是一个开源的 web 应用程序，允许您创建和分享包含实时代码、方程式、可视化和叙述文本的文档。用途包括：数据清理和转换、数值模拟、统计建模、数据可视化、机器学习等。
 
-This add-on runs JupyterLab, which is the next-generation user interface for
-Project Jupyter. It is an extensible environment for interactive and
-reproducible computing, based on the Jupyter Notebook and Architecture.
-
+这个附加组件运行 JupyterLab，这是 Project Jupyter 的下一代用户界面。它是一个可扩展的环境，用于交互式和可重复的计算，基于 Jupyter Notebook 和架构。
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons

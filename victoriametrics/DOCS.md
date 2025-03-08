@@ -1,37 +1,29 @@
-# Unofficial Home Assistant Add-ons: VictoriaMetrics
+# 非官方 Home Assistant 插件：VictoriaMetrics
 
-VictoriaMetrics bundled as an Home Assistant add-on.
+将 VictoriaMetrics 打包为 Home Assistant 插件。
 
 ## HomeAssistant
 
-To send data from Home Assistant to VictoriaMetrics, you can use either the
-[InfluxDB][integration-influxdb] or
-[Prometheus][integration-prometheus]
-integration.
+要将数据从 Home Assistant 发送到 VictoriaMetrics，您可以使用
+[InfluxDB][integration-influxdb] 或
+[Prometheus][integration-prometheus] 集成。
 
-You can configure it to your liking as you wish. Make sure to include/exclude
-the entities/domains as you wish.
+您可以根据您的喜好进行配置。确保根据需要包含/排除实体/域。
 
-### InfluxDB Specialites
+### InfluxDB 特殊说明
 
-Be aware of two things:
+请注意以下两点：
 
-1. VictoriaMetrics only saves integer and date values. It does not save
-   string values.
-1. What you choose as value for `measurement_attr`. This decides how you
-   create your series, if you want an own series for each entity you are best
-   with `entity_id`. For a series based on the `domain` or the `measurement`
-   you should choose the respective values.
-   Please refer to the [official Integration Documentation][integration-influxdb-measurement].
+1. VictoriaMetrics 仅保存整数和日期值。不保存字符串值。
+2. 您选择的 `measurement_attr` 值。这决定了您如何创建系列，如果您希望为每个实体创建一个单独的系列，最好使用 `entity_id`。对于基于 `domain` 或 `measurement` 的系列，您应该选择相应的值。
+   请参考 [官方集成文档][integration-influxdb-measurement]。
 
-To avoid having lot's of empty metrics it is important to tune
-`ignore_attributes` to exclude what you are not interested in. Here is an
-example of lots of exception. You can make these global or for each entity.
+为了避免产生大量空指标，重要的是调整 `ignore_attributes` 以排除您不感兴趣的内容。以下是许多例外的示例。您可以将其设为全局或针对每个实体。
 
 ```yaml
 influxdb:
   api_version: 1
-  host: <<<PLease use the hostname from the Addon Info Page>>>
+  host: <<<请使用插件信息页面中的主机名>>>
   port: 8428
   max_retries: 3
 
@@ -122,24 +114,20 @@ influxdb:
     - xy_color
 ```
 
-## Configuration
+## 配置
 
-### Retention
+### 保留
 
-Here you can specify how long VictoriaMetrics should keep it's data. You can set
-it to any string VictoriaMetrics Supports ([see documentation][documentation-metrics]).
-Default value is for the retention is `5y`.
+在这里，您可以指定 VictoriaMetrics 应该保留数据多久。您可以将其设置为任何 VictoriaMetrics 支持的字符串（[查看文档][documentation-metrics]）。
+默认值为保留为 `5y`。
 
-### Custom Start Arguments
+### 自定义启动参数
 
-You pass any commandline arguments the Server or the Agent supports via this
-text field. Go easy or wild. It's your choice.
+您可以通过此文本字段传递服务器或代理支持的任何命令行参数。轻松或狂野，您可以选择。
 
-### Custom Configuration Files
+### 自定义配置文件
 
-If you want to scrape the Prometheus endpoint from HomeAssistant or from any
-other service you can simply create a `prometheus.yaml` file in the specified
-configuration folder and it will be automatically imported:
+如果您想从 HomeAssistant 或任何其他服务抓取 Prometheus 端点，您只需在指定的配置文件夹中创建一个 `prometheus.yaml` 文件，它将被自动导入：
 
 ```yaml
 global:
@@ -152,15 +140,14 @@ scrape_configs:
     scrape_timeout: "4s"
     metrics_path: /api/prometheus
     authorization:
-      credentials: "<<Your Token>>"
+      credentials: "<<您的令牌>>"
     scheme: http
     static_configs:
       - targets: ["http://homeassistant:8123/api/prometheus"]
 ```
 
-If you need special configuration for VMAgent or the Server because of reasons:
-You can specify any files inside your HomeAssistant configuration path on the
-additional commandline parameters.
+如果由于某种原因需要 VMAgent 或服务器的特殊配置：
+您可以在附加命令行参数中指定 HomeAssistant 配置路径下的任何文件。
 
 [documentation-metrics]: https://github.com/VictoriaMetrics/VictoriaMetrics#retention
 [integration-influxdb]: https://www.home-assistant.io/integrations/influxdb/

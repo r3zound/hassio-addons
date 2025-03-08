@@ -1,13 +1,13 @@
-# Home Assistant Add-on: Frigate (For old x86_64 CPUs)
+# Home Assistant 插件：Frigate（适用于旧的 x86_64 CPU）
 
-Please reference the [release notes](https://github.com/blakeblackshear/frigate/releases) for breaking changes.
+请参考 [发布说明](https://github.com/blakeblackshear/frigate/releases) 了解重大变更。
 
-![Supports amd64 Architecture][amd64-shield]
+![支持 amd64 架构][amd64-shield]
 
-NVR with realtime local object detection for IP cameras.
+具有实时本地对象检测功能的 NVR，适用于 IP 摄像头。
 
-You must create a config file as `frigate.yml` in the root of your Home Assistant configuration directory.
+您必须在 Home Assistant 配置目录的根目录中创建一个名为 `frigate.yml` 的配置文件。
 
-[Documentation](https://docs.frigate.video)
+[文档](https://docs.frigate.video)
 
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg

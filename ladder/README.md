@@ -1,35 +1,34 @@
-# Home assistant add-on: Ladder
+# 家庭助手插件：Ladder
 
-Ladder is a web proxy to help bypass paywalls. This is a selfhosted version of 1ft.io and 12ft.io. It is inspired by 13ft.
+Ladder 是一个网络代理，帮助绕过付费墙。这是 1ft.io 和 12ft.io 的自托管版本。它受 13ft 的启发。
 
-Ladder is a work in progress, the ruleset is not filled in yet.
+Ladder 仍在不断完善中，规则集尚未填写。
 
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢每一个为我的仓库点赞的人！要点赞，请点击下面的图像，然后它将出现在右上角。谢谢！_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
-## About
+## 关于
 
-This addon is based on the [docker image](https://github.com/kubero-dev/ladder).
+此插件基于 [docker 镜像](https://github.com/kubero-dev/ladder)。
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Hass.io add-on.
+安装此插件非常简单，与安装任何其他 Hass.io 插件没有区别。
 
-1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install this add-on.
-1. Click the `Save` button to store your configuration.
-1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
-1. Open WebUI should work via <your-ip>:port.
+1. [将我的 Hass.io 插件库][repository]添加到你的 Hass.io 实例。
+1. 安装此插件。
+1. 点击 `Save` 按钮以保存你的配置。
+1. 启动插件。
+1. 检查插件的日志，以查看一切是否顺利。
+1. 通过 `<your-ip>:port` 打开 WebUI 应该可行。
 
-## Configuration
+## 配置
 
 ```
-port : 8080 #port you want to run on.
+port : 8080 #你想运行的端口。
 ```
 
-Webui can be found at `<your-ip>:port`.
+Webui 可以在 `<your-ip>:port` 找到。
 
 [repository]: https://github.com/jdeath/homeassistant-addons

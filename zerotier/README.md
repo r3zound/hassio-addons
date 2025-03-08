@@ -1,26 +1,20 @@
 # Home Assistant Community Add-on: ZeroTier One
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
-[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
+[![通过 GitHub Sponsors 支持 Frenck][github-sponsors-shield]][github-sponsors]
 
-[![Support Frenck on Patreon][patreon-shield]][patreon]
+[![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
 
-Radically simplify your network with a virtual networking layer that works
-the same everywhere.
+通过一个虚拟网络层，彻底简化您的网络，使其在任何地方都能以相同方式工作。
 
-## About
+## 关于
 
-ZeroTier delivers the capabilities of VPNs, SDN, and SD-WAN with a single
-system. Manage all your connected resources across both local and wide area
-networks as if the whole world is a single data center.
+ZeroTier 提供 VPN、SDN 和 SD-WAN 的功能，使用一个系统管理您的所有连接资源，无论是本地网络还是广域网，都可以像管理一个数据中心一样。
 
-People use ZeroTier to seamlessly connect laptops, desktops, phones,
-embedded devices, cloud resources, and apps any way they want anywhere they go.
-It transforms the entire world into a single data center, to which you
-can now add your Home Assistant instance using this add-on.
+人们使用 ZeroTier 以任何他们喜欢的方式、在任何他们去的地方，无缝连接笔记本电脑、台式机、手机、嵌入式设备、云资源和应用。它将整个世界转变为一个单一的数据中心，现在您可以使用这个附加组件将您的 Home Assistant 实例添加到其中。
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons

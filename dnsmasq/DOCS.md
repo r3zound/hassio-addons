@@ -1,26 +1,24 @@
-# Home Assistant Add-on: Dnsmasq
+# Home Assistant 插件：Dnsmasq
 
-## Installation
+## 安装
 
-Follow these steps to get the add-on installed on your system:
+按照以下步骤在您的系统上安装插件：
 
-1. Navigate in your Home Assistant frontend to **Settings** -> **Add-ons** -> **Add-on store**.
-2. Find the "Dnsmasq" add-on and click it.
-3. Click on the "INSTALL" button.
+1. 在您的 Home Assistant 前端导航到 **设置** -> **插件** -> **插件商店**。
+2. 找到 "Dnsmasq" 插件并点击它。
+3. 点击 "安装" 按钮。
 
-## How to use
+## 如何使用
 
-The add-on has a couple of options available. For more detailed instructions
-see below. The basic thing to get the add-on running would be:
+该插件有几个可用的选项。更详细的说明见下文。使插件运行的基本步骤是：
 
-1. Start the add-on.
+1. 启动插件。
 
-## Configuration
+## 配置
 
-The Dnsmasq add-on can be tweaked to your likings. This section
-describes each of the add-on configuration options.
+Dnsmasq 插件可以根据您的喜好进行调整。本节描述每个插件配置选项。
 
-Example add-on configuration:
+示例插件配置：
 
 ```yaml
 defaults:
@@ -41,103 +39,97 @@ services:
 log_queries: false
 ```
 
-### Option: `defaults` (required)
+### 选项：`defaults`（必需）
 
-The defaults are upstream DNS servers, where DNS requests that can't
-be handled locally, are forwarded to. By default it is configured to have
-Google's public DNS servers: `"8.8.8.8", "8.8.4.4"`.
+默认值是上游DNS服务器，无法在本地处理的DNS请求会转发到这些服务器。默认配置为使用Google的公共DNS服务器：`"8.8.8.8", "8.8.4.4"`。
 
-Port can be specified using # separator, eg. `"192.168.1.2#1053"`
+可以使用 `#` 分隔符指定端口，例如：`"192.168.1.2#1053"`。
 
-### Option: `forwards` (optional)
+### 选项：`forwards`（可选）
 
-This option allows you to list domain that are forwarded to a different
-(not the default) upstream DNS server.
+此选项允许您列出转发到不同（非默认）上游DNS服务器的域。
 
-#### Option: `forwards.domain`
+#### 选项：`forwards.domain`
 
-The domain to forward to a different upstream DNS server.
+要转发到不同上游DNS服务器的域名。
 
-#### Option: `forwards.server`
+#### 选项：`forwards.server`
 
-The DNS server to forward the request for this domain to.
+要将请求转发到该域的DNS服务器。
 
-### Option: `hosts` (optional)
+### 选项：`hosts`（可选）
 
-This option allows you to provide local static answer for your DNS server.
+此选项允许您为您的DNS服务器提供本地静态答案。
 
-This is helpful for making addresses resolve on your internal network and
-even override external domains to be answered with a local address.
+这对于在您的内部网络上解析地址非常有用，甚至可以覆盖外部域名，以返回本地地址。
 
-For example, one could set `myuser.duckdns.org` to resolve directly to a
-internal IP address, e.g., `192.168.1.10`. While outside of this network,
-it would resolve normally.
+例如，可以将 `myuser.duckdns.org` 直接解析为内部IP地址，例如 `192.168.1.10`。而在该网络之外，它将正常解析。
 
-This option allows you to create a so called: Split DNS.
+此选项允许您创建所谓的：分割DNS。
 
-#### Option: `hosts.host`
+#### 选项：`hosts.host`
 
-The hostname or domainname to resolve locally.
+要在本地解析的主机名或域名。
 
-#### Option: `hosts.ip`
+#### 选项：`hosts.ip`
 
-The IP address Dnsmasq should respond with in its DNS answer.
+Dnsmasq 应在其DNS回应中返回的IP地址。
 
-### Option: `services` (optional)
+### 选项：`services`（可选）
 
-This option allows you to provide srv-host records.
+此选项允许您提供 srv-host 记录。
 
-#### Option: `services.srv`
+#### 选项：`services.srv`
 
-The service to resolve.
+要解析的服务。
 
-#### Option: `services.host`
+#### 选项：`services.host`
 
-The host that contain the service.
+包含该服务的主机。
 
-#### Option: `services.port`
+#### 选项：`services.port`
 
-The port number for the service.
+该服务的端口号。
 
-#### Option: `services.priority`
+#### 选项：`services.priority`
 
-The priority for the service.
+该服务的优先级。
 
-#### Option: `services.weight`
+#### 选项：`services.weight`
 
-The weight for the service.
+该服务的权重。
 
-### Option: `cnames` (optional)
+### 选项：`cnames`（可选）
 
-This option allows you to provide cname records.
+此选项允许您提供 cname 记录。
 
-#### Option: `cnames.name`
+#### 选项：`cnames.name`
 
-The name to resolve.
+要解析的名称。
 
-#### Option: `cnames.target`
+#### 选项：`cnames.target`
 
-The target name. Note that this only works for targets which are names from DHCP or /etc/hosts. Give host "bert" another name, bertrand cname=bertand,bert
+目标名称。请注意，这仅适用于来自DHCP或/etc/hosts的名称。给主机 "bert" 另一个名称，bertrand cname=bertand,bert
 
-### Option: `log_queries` (required) 
+### 选项：`log_queries`（必需）
 
-Log all DNS requests. Defaults to `false`.
+记录所有DNS请求。默认为 `false`。
 
-### Option: `cache_size`
+### 选项：`cache_size`
 
-Sets the size of the Dnsmasq cache. The default setting is 150. If this is set to 0 this disables caching. Note that huge cache sizes can create performance problems.
+设置 Dnsmasq 缓存的大小。默认设置为150。如果设置为0，则禁用缓存。请注意，巨大的缓存大小可能会导致性能问题。
 
-## Support
+## 支持
 
-Got questions?
+有问题吗？
 
-You have several options to get them answered:
+您有几个选项可以获得答案：
 
-- The [Home Assistant Discord Chat Server][discord].
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+- [Home Assistant Discord 聊天服务器][discord]。
+- Home Assistant [社区论坛][forum]。
+- 加入 [Reddit 子论坛][reddit] 在 [/r/homeassistant][reddit]。
 
-In case you've found a bug, please [open an issue on our GitHub][issue].
+如果您发现了一个bug，请 [在我们的GitHub上打开一个问题][issue]。
 
 [discord]: https://discord.gg/c5DvZ4e
 [forum]: https://community.home-assistant.io

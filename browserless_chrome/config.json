@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "作为服务容器的铬（Chromium）",
+  "description": "铬作为服务容器",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -92,6 +92,6 @@
   "slug": "browserless_chrome",
   "udev": true,
   "url": "https://gh-proxy.com/github.com/alexbelgium/hassio-addons/tree/master/browserless_chrome",
-  "version": "2.25.1",
+  "version": "2.25.2",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:3000]/docs"
 }

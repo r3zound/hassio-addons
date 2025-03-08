@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "使用Enedis网关API将数据发送到您的MQTT代理（最新频道）。",
+  "description": "使用Enedis网关API向您的MQTT代理发送数据（最新频道）。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

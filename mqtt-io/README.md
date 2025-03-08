@@ -4,13 +4,11 @@
 
 [![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
 
-Expose GPIO modules and digital sensors via MQTT for remote control and monitoring.
+通过MQTT暴露GPIO模块和数字传感器以便远程控制和监控。
 
-## About
+## 关于
 
-Exposes general purpose inputs and outputs (GPIO), hardware sensors and serial
-devices to an MQTT server. Ideal for single-board computers such as
-the Raspberry Pi.
+将通用输入和输出（GPIO）、硬件传感器和串行设备暴露给MQTT服务器。非常适合单板计算机，如树莓派。
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons

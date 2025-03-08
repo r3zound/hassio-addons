@@ -1,22 +1,21 @@
-# Home assistant add-on: Bookbinder
+# Home assistant 插件：图书绑定器
 
-## Description
-A JS application to format PDFs for bookbinding, based on Bookbinder, rewritten to use PDF-Lib as its backend library.
+## 描述
+一个用于格式化 PDF 以进行图书绑定的 JS 应用程序，基于 Bookbinder，重写为使用 PDF-Lib 作为其后端库。
 
-Based on: https://github.com/momijizukamori/bookbinder-js
+基于： https://github.com/momijizukamori/bookbinder-js
 
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢每一个给我的仓库加星的人！要给它加星，请点击下面的图片，然后它会出现在右上角。谢谢！_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Hass.io add-on.
+此插件的安装非常简单，和安装任何其他 Hass.io 插件没有区别。
 
-1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install this add-on.
-1. Click the `Save` button to store your configuration.
+1. [将我的 Hass.io 插件库][repository] 添加到你的 Hass.io 实例。
+1. 安装此插件。
+1. 点击 `保存` 按钮以存储你的配置。
 
 [repository]: https://github.com/jdeath/homeassistant-addons

@@ -1,11 +1,10 @@
-# Home Assistant Add-on: Git pull
+# Home Assistant 插件：Git pull
 
-Load and update configuration files for Home Assistant from a Git repository.
+从 Git 仓库加载和更新 Home Assistant 的配置文件。
 
-![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield] ![Supports armhf Architecture][armhf-shield] ![Supports armv7 Architecture][armv7-shield] ![Supports i386 Architecture][i386-shield]
+![支持 aarch64 架构][aarch64-shield] ![支持 amd64 架构][amd64-shield] ![支持 armhf 架构][armhf-shield] ![支持 armv7 架构][armv7-shield] ![支持 i386 架构][i386-shield]
 
-You can use this add-on to `git pull` updates to your Home Assistant configuration files from a Git
-repository.
+您可以使用此插件从 Git 仓库对您的 Home Assistant 配置文件进行 `git pull` 更新。
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg

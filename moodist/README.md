@@ -1,34 +1,32 @@
-# Home assistant add-on: Moodist
+# Home assistant 插件：Moodist
 
-Ambient sounds for focus and calm.
+用于专注和冷静的环境声音。
 
-
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢所有为我的仓库点赞的人！要点赞，请点击下面的图片，然后它将出现在右上角。谢谢！_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
-## About
+## 关于
 
-This addon is based on the [docker image](https://github.com/remvze/moodist).
+这个插件基于 [docker 镜像](https://github.com/remvze/moodist)。
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Hass.io add-on.
+这个插件的安装非常简单，与安装任何其他 Hass.io 插件没有不同。
 
-1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install this add-on.
-1. Click the `Save` button to store your configuration.
-1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
-1. Open WebUI should work via ingress or <your-ip>:port.
+1. [将我的 Hass.io 插件库][repository]添加到你的 Hass.io 实例。
+1. 安装这个插件。
+1. 点击 `Save` 按钮以保存你的配置。
+1. 启动插件。
+1. 检查插件的日志以查看是否一切顺利。
+1. 打开的 WebUI 应该可以通过入口或 <your-ip>:port 访问。
 
-## Configuration
+## 配置
 
 ```
-port : 8081 #port you want to run on.
+port : 8081 #你希望运行的端口。
 ```
 
-Webui can be found at `<your-ip>:port`.
+Webui 可以在 `<your-ip>:port` 找到。
 
 [repository]: https://github.com/jdeath/homeassistant-addons

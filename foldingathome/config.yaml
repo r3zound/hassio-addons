@@ -1,7 +1,7 @@
 name: Folding@home
 version: 0.7.2
 slug: foldingathome
-description: 用全球分布的超计算机对抗疾病。
+description: 用全球分布式超级计算机对抗疾病。
 url: https://gh-proxy.com/github.com/hassio-addons/addon-foldingathome
 codenotary: codenotary@frenck.dev
 webui: http://[HOST]:[PORT:7396]

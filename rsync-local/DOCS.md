@@ -1,11 +1,10 @@
-## Security
+## 安全性
 
-In order to mount your external device the integrated AppArmor feature is disabled.
-This addon has access to the devices with the path from the available `external_device` config option!
+为了挂载你的外部设备，集成的 AppArmor 功能已被禁用。此插件可以访问具有可用 `external_device` 配置选项路径的设备！
 
-## Config
+## 配置
 
-Example config:
+示例配置：
 
 ```yaml
 folders:
@@ -18,26 +17,24 @@ external_device: ''
 
 ### `folders`
 
-The list of folders you want to sync with the remote machine.
+你想要与远程机器同步的文件夹列表。
 
 ### `folders` - `source`
 
-The source folder for rsync.
+rsync 的源文件夹。
 
-### `folders` - `options` (optional)
+### `folders` - `options`（可选）
 
-Use your own options for rsync. This string is replacing the default one and get directly to rsync. The default is `--archive --recursive --compress --delete --prune-empty-dirs`.
+使用你自己的 rsync 选项。该字符串将替代默认选项，直接传递给 rsync。默认选项为 `--archive --recursive --compress --delete --prune-empty-dirs`。
 
 ### `external_folder`
 
-The base folder on the external usb drive or usb stick for syncing the folders. Sub-folders with the folders from above will be created there.
-This path should not start with `/`.
+用于同步文件夹的外部 USB 驱动器或 USB 设备的基础文件夹。将会在这里创建包含上述文件夹的子文件夹。该路径不应以 `/` 开头。
 
 ### `external_device`
 
-If you need to pin down a specific device to make your backup too, here is the option. Per default the device is `/dev/sda1`.
-Make sure to adjust it when for example running Home Assistant from a external drive. The `sda1` will be a partition of the Home Assistant drive.
+如果你需要指定一个特定的设备进行备份，这里有这个选项。默认情况下设备为 `/dev/sda1`。确保在例如从外部驱动器运行 Home Assistant 时进行调整。`sda1` 将是 Home Assistant 驱动器的一个分区。
 
-If no device is specified all available devices will be displayed in the log. No sync takes place without device.
+如果未指定设备，所有可用设备将显示在日志中。没有设备时不进行同步。
 
-Available options: `/dev/sd[a-e][1-5]`
+可用选项：`/dev/sd[a-e][1-5]`

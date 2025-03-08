@@ -6,16 +6,13 @@
 
 [![Buy me a coffee][buymeacoffee-shield]][buymeacoffee]
 
-A self-hosted web IRC client.
+一个自托管的网页IRC客户端。
 
-## About
+## 关于
 
-A self-hosted web IRC client that uses a modern and sleek interface with
- support for theming, push notifications, link previews, file uploads and
- more. Fully cross-platform and mobile friendly.
+一个自托管的网页IRC客户端，使用现代且简洁的界面，支持主题、推送通知、链接预览、文件上传等功能。完全跨平台且适合移动设备使用。
 
-![Screenshot][screenshot]
-
+![截图][screenshot]
 
 [buymeacoffee-shield]: https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg
 [buymeacoffee]: https://www.buymeacoffee.com/timmo

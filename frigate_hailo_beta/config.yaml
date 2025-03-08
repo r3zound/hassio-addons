@@ -8,7 +8,7 @@ breaking_versions:
 panel_icon: "mdi:cctv"
 panel_title: Frigate
 slug: frigate-hailo-beta
-description: 帮我翻译成中文：带实时本地物体检测功能的IP摄像机NVR
+description: NVR具有实时本地对象检测功能的IP摄像头。
 url: "https://gh-proxy.com/github.com/blakeblackshear/frigate"
 image: ghcr.nju.edu.cn/blakeblackshear/frigate
 startup: application

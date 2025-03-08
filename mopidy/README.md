@@ -1,13 +1,13 @@
 # Mopidy
 
-Mopidy with plugins inside Home Assistant Supervisor.
+Mopidy 在 Home Assistant Supervisor 中的插件。
 
 [![Release][release-badge]][release]
 ![Addon Stage][stage-badge]
 
 [![Donate][donation-badge]][donation-url]
 
-It contains following extensions:
+它包含以下扩展：
 
 * [Mopidy-Iris](https://github.com/jaedb/iris)
 * [Mopidy-MPD](https://github.com/mopidy/mopidy-mpd)
@@ -22,4 +22,3 @@ It contains following extensions:
 
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee-%23d32f2f?logo=buy-me-a-coffee&style=for-the-badge&logoColor=white
 [donation-url]: https://www.buymeacoffee.com/Poeschl
-

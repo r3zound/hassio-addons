@@ -1,75 +1,62 @@
-# Home Assistant Community Add-on: Folding@home
+# Home Assistant 社区插件：Folding@home
 
-Folding@home (FAH or F@h) is a distributed computing project for performing
-molecular dynamics simulations of protein dynamics. Its initial focus was on
-protein folding but has shifted to more biomedical problems, such as Alzheimer's
-disease, cancer, Ebola and the coronavirus.
+Folding@home（FAH 或 F@h）是一个分布式计算项目，用于进行蛋白质动力学的分子动力学模拟。其初步重点是蛋白质折叠，但已转向更多的生物医学问题，如阿尔茨海默病、癌症、埃博拉病毒和冠状病毒。
 
-The project uses the idle processing resources of personal computers owned by
-volunteers who have installed the software on their systems.
+该项目利用了那些安装了该软件并由志愿者拥有的个人计算机的闲置处理资源。
 
-Now you can donate the idle time of your Home Assistant instance to the
-Folding@home project, helping to fight these diseases.
+现在，您可以将您 Home Assistant 实例的闲置时间捐赠给 Folding@home 项目，帮助对抗这些疾病。
 
-Join the Home Assistant Folding@home team! (id: 247478)
+加入 Home Assistant Folding@home 团队！(id: 247478)
 
-Team stats: <https://stats.foldingathome.org/team/247478>
+团队统计：<https://stats.foldingathome.org/team/247478>
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Home Assistant add-on.
+该插件的安装相当简单，与安装其他 Home Assistant 插件没有什么不同。
 
-1. Click the Home Assistant My button below to open the add-on on your Home
-   Assistant instance.
+1. 点击下面的 Home Assistant My 按钮，以在您的 Home Assistant 实例中打开该插件。
 
-   [![Open this add-on in your Home Assistant instance.][addon-badge]][addon]
+   [![在您的 Home Assistant 实例中打开此插件。][addon-badge]][addon]
 
-1. Click the "Install" button to install the add-on.
-1. Start the "Folding@home" add-on.
-1. Check the logs of the "Folding@home" to see if everything went well.
-1. Open the Web UI.
+1. 点击“安装”按钮以安装该插件。
+1. 启动“Folding@home”插件。
+1. 检查“Folding@home”的日志，查看一切是否正常。
+1. 打开 Web UI。
 
-**Note**: By default, the add-on joins the Home Assistant team (id: 247478).
+**注意**：默认情况下，该插件加入 Home Assistant 团队（id: 247478）。
 
-Team stats: <https://stats.foldingathome.org/team/247478>
+团队统计：<https://stats.foldingathome.org/team/247478>
 
-## Configuration
+## 配置
 
-**Note**: _Remember to restart the add-on when the configuration is changed._
+**注意**：_在更改配置时，请记得重新启动插件。_
 
-Example add-on configuration:
+示例插件配置：
 
 ```yaml
 log_level: info
 ```
 
-### Option: `log_level`
+### 选项：`log_level`
 
-The `log_level` option controls the level of log output by the addon and can
-be changed to be more or less verbose, which might be useful when you are
-dealing with an unknown issue. Possible values are:
+`log_level` 选项控制插件的日志输出级别，可以根据需要更改为更详细或更简洁，这在处理未知问题时可能会有用。可能的值如下：
 
-- `trace`: Show every detail, like all called internal functions.
-- `debug`: Shows detailed debug information.
-- `info`: Normal (usually) interesting events.
-- `warning`: Exceptional occurrences that are not errors.
-- `error`: Runtime errors that do not require immediate action.
-- `fatal`: Something went terribly wrong. Add-on becomes unusable.
+- `trace`：显示每一个细节，比如所有调用的内部函数。
+- `debug`：显示详细的调试信息。
+- `info`：正常（通常）有趣的事件。
+- `warning`：无错误的异常事件。
+- `error`：不需要立即采取行动的运行时错误。
+- `fatal`：发生了严重错误，插件变得无法使用。
 
-Please note that each level automatically includes log messages from a
-more severe level, e.g., `debug` also shows `info` messages. By default,
-the `log_level` is set to `info`, which is the recommended setting unless
-you are troubleshooting.
+请注意，每个级别自动包括来自更严重级别的日志消息，例如，`debug` 级别还会显示 `info` 消息。默认情况下，`log_level` 设置为 `info`，这是推荐的设置，除非您在排除故障。
 
-## Embedding into Home Assistant
+## 嵌入到 Home Assistant
 
-It is possible to embed the Folding@home interface directly into Home Assistant,
-allowing you to access it through the Home Assistant frontend.
+可以将 Folding@home 接口直接嵌入到 Home Assistant 中，允许您通过 Home Assistant 前端访问它。
 
-Home Assistant provides the `panel_iframe` integration, for these purposes.
+Home Assistant 提供了 `panel_iframe` 集成，用于这些目的。
 
-Example configuration:
+示例配置：
 
 ```yaml
 panel_iframe:
@@ -79,69 +66,50 @@ panel_iframe:
     url: http://addres.to.your.hass.io:7396
 ```
 
-## Known issues and limitations
+## 已知问题和限制
 
-- This add-on only runs on 64-bits intel-based computers. Folding@home does
-  not support ARM devices (e.g., a Raspberry Pi).
+- 此插件仅在 64 位英特尔架构的计算机上运行。Folding@home 不支持 ARM 设备（例如，树莓派）。
 
-## Changelog & Releases
+## 更新日志与版本
 
-This repository keeps a change log using [GitHub's releases][releases]
-functionality.
+该存储库使用 [GitHub 的发布][releases] 功能保持变更日志。
 
-Releases are based on [Semantic Versioning][semver], and use the format
-of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
-based on the following:
+版本基于 [语义版本控制][semver]，使用 `MAJOR.MINOR.PATCH` 格式。简而言之，版本将基于以下内容增加：
 
-- `MAJOR`: Incompatible or major changes.
-- `MINOR`: Backwards-compatible new features and enhancements.
-- `PATCH`: Backwards-compatible bugfixes and package updates.
+- `MAJOR`：不兼容或重大更改。
+- `MINOR`：向后兼容的新特性和增强。
+- `PATCH`：向后兼容的错误修复和包更新。
 
-## Support
+## 支持
 
-Got questions?
+有问题？
 
-You have several options to get them answered:
+您可以通过多种方式得到答案：
 
-- The [Home Assistant Community Add-ons Discord chat server][discord] for add-on
-  support and feature requests.
-- The [Home Assistant Discord chat server][discord-ha] for general Home
-  Assistant discussions and questions.
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+- [Home Assistant 社区插件 Discord 聊天服务器][discord] 以获取插件支持和功能请求。
+- [Home Assistant Discord 聊天服务器][discord-ha] 以获取一般 Home Assistant 讨论和问题。
+- Home Assistant [社区论坛][forum]。
+- 加入 [Reddit 子板块][reddit] 在 [/r/homeassistant][reddit]。
 
-You could also [open an issue here][issue] GitHub.
+您还可以在这里 [打开问题][issue] GitHub。
 
-## Authors & contributors
+## 作者与贡献者
 
-The original setup of this repository is by [Franck Nijhof][frenck].
+该存储库的最初设置由 [Franck Nijhof][frenck] 完成。
 
-For a full list of all authors and contributors,
-check [the contributor's page][contributors].
+有关所有作者和贡献者的完整列表，请查看 [贡献者页面][contributors]。
 
-## License
+## 许可证
 
-MIT License
+MIT 许可证
 
-Copyright (c) 2020-2024 Franck Nijhof
+版权所有 (c) 2020-2024 Franck Nijhof
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+特此免费授予任何获取该软件及附带文档文件（“软件”）的人员处理该软件的权限，包括不限于使用、复制、修改、合并、出版、分发、再许可和/或出售该软件的副本，并允许向其提供软件的人员这样做，遵循以下条件：
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+上述版权声明和本许可声明应包含在软件的所有副本或实质性部分中。
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+该软件是按“原样”提供的，不做任何形式的担保，无论是明示或暗示的，包括但不限于对适销性、特定用途的适用性和不侵权的担保。在任何情况下，作者或版权持有人均不对因使用该软件或与该软件的使用或其他交易有关的任何索赔、损害或其他责任负责，无论是在合同诉讼、侵权或其他方面。
 
 [addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
 [addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_foldingathome&repository_url=https%3A%2F%2Fgithub.com%2Fhassio-addons%2Frepository

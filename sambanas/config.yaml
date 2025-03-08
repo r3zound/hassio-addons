@@ -2,7 +2,13 @@
 name: Samba NAS
 version: 12.3.2-nas1
 slug: sambanas
-description: 将Home Assistant通过SMB/CIFS共享暴露出来。
+description: $'暴露Home Assistant磁盘使用SMB/CIFS
+
+解释：
+- "Expose" 意为“暴露”或“公开”，在此上下文中表示使Home Assistant的磁盘可用。
+- "Home Assistant" 是一个智能家居自动化平台。
+- "disc" 在此指代磁盘或存储设备。
+- "SMB/CIFS" 是一种网络文件共享协议，常用于Windows环境中的文件共享。'
 url: https://gh-proxy.com/github.com/dianlight/hassio-addons/tree/master/sambanas
 codenotary: lucio.tarantino@gmail.com
 arch:

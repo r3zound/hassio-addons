@@ -1,17 +1,17 @@
-# Home Assistant Community Add-on: KNXD
+# Home Assistant 社区插件：KNXD
 
-## Installation
+## 安装
 
-Follow these steps to get the add-on installed on your system:
+按照以下步骤在您的系统上安装插件：
 
-1. Navigate in your Home Assistant frontend to **Supervisor** -> **Add-on Store**.
-2. If you haven't added this add-on repository to your supervisor yet, click the menu icon in the top right corner, select **Repositories**, add `https://github.com/da-anda/hass-io-addons` as new repository and close the dialog again.
-3. Find the "KNXD" add-on and click it.
-4. Click on the "INSTALL" button.
+1. 在您的 Home Assistant 前端导航到 **Supervisor** -> **Add-on Store**。
+2. 如果您尚未将此插件库添加到您的 Supervisor，请单击右上角的菜单图标，选择 **Repositories**，添加 `https://github.com/da-anda/hass-io-addons` 作为新库，然后关闭对话框。
+3. 找到 "KNXD" 插件并点击它。
+4. 点击 "INSTALL" 按钮。
 
-## Configuration
+## 配置
 
-Add-on configuration:
+插件配置：
 
 ```yaml
     "address": "0.0.1",
@@ -22,50 +22,49 @@ Add-on configuration:
     "custom_config": ""
 ```
 
-### Options
-The description of these options is partly copied from the `knxd` [documentation](https://github.com/knxd/knxd/blob/master/doc/inifile.rst). You will find more examples and details there.
+### 选项
+这些选项的描述部分摘自 `knxd` [文档](https://github.com/knxd/knxd/blob/master/doc/inifile.rst)。您可以在那儿找到更多的示例和详细信息。
 
-#### Option `address`
+#### 选项 `address`
 
-The KNX address for the knxd deamon itself. Used e.g. for requests originating at the group cache.
+knxd 守护进程本身的 KNX 地址。例如，用于来自组缓存的请求。
 
-#### Option `client_address`
+#### 选项 `client_address`
 
-Address range to be distributed to client connections. Note that the length parameter indicates the number of addresses to be allocated.
+要分配给客户端连接的地址范围。请注意，长度参数表示要分配的地址数量。
 
-Example: 1.2.3:5 (This assigns addresses 1.2.3 through 1.2.7 to knxd's clients.)
+示例：1.2.3:5 (这将地址 1.2.3 到 1.2.7 分配给 knxd 的客户端。)
 
-#### Option `interface`
+#### 选项 `interface`
 
-The driver `knxd` should use as interface to talk to the KNX bus. The most common ones for the typical usecase of this add-on are:
+`knxd` 应使用的作为与 KNX 总线通信的接口。此插件的典型用例中最常用的是：
 
-- `tpuart` (for UART based KNX interfaces, like the one from Busware.de)
-- `usb` (for commercial USB KNX interfaces)
+- `tpuart`（用于基于 UART 的 KNX 接口，如来自 Busware.de 的接口）
+- `usb`（用于商业 USB KNX 接口）
 
-For a full list of all possible options see the [drivers section](https://github.com/knxd/knxd/blob/master/doc/inifile.rst#drivers) of the `knxd` documentation.
+有关所有可能选项的完整列表，请参见 `knxd` 文档的 [drivers section](https://github.com/knxd/knxd/blob/master/doc/inifile.rst#drivers)。
 
-#### Option: `device` (optional for some interfaces)
+#### 选项：`device`（对某些接口可选）
 
-The physical device address of your adapter in linux. Example:
+您适配器在 Linux 中的物理设备地址。示例：
 
-- **TPUART interface**: `/dev/ttyACM0`
-- **USB interface**: you can try leaving this blank in order for `knxd` to auto-detect your device. If it doesn't work when blank, try specifying a device address like `/dev/ttyAMA0`.  
+- **TPUART 接口**：`/dev/ttyACM0`
+- **USB 接口**：您可以尝试将其留空，以便 `knxd` 自动检测您的设备。如果留空时不起作用，请尝试指定设备地址，例如 `/dev/ttyAMA0`。
 
-Please note that the addresses are examples and might differ for your device. To find out the device address you have to SSH into your host OS (**NOT** the supervisor!) and check which devices are connected there.
+请注意，这些地址只是示例，您的设备可能不同。要找到设备地址，您必须 SSH 进入您的主机操作系统（**而不是** Supervisor！）并检查连接的设备。
 
-#### Option: `usb_filters` (optional)
+#### 选项：`usb_filters`（可选）
 
-When using an USB interface, you can specify additional filters to use. See the [filters section](https://github.com/knxd/knxd/blob/master/doc/inifile.rst#filters) of the official `knxd` documentation.
+使用 USB 接口时，您可以指定要使用的其他过滤器。有关更多信息，请参见官方 `knxd` 文档的 [filters section](https://github.com/knxd/knxd/blob/master/doc/inifile.rst#filters)。
 
-#### Option: `custom_config` (optional)
+#### 选项：`custom_config`（可选）
 
-Allows you to write your own, custom `knxd` ini configuration instead of using the prepared template from this add-on that makes use of all the other config options above.
+允许您编写自己的自定义 `knxd` ini 配置，而不是使用此插件提供的、利用上述所有其他配置选项的预制模板。
 
-Your custom configuration will replace the default configuration provided by this add-on and thus all the other config options above will be ignored. See the [knxd documentation](https://github.com/knxd/knxd/blob/master/doc/inifile.rst) for all possible configuration options.
+您的自定义配置将替换此插件提供的默认配置，因此上述所有其他配置选项将被忽略。有关所有可能的配置选项，请参见 [knxd 文档](https://github.com/knxd/knxd/blob/master/doc/inifile.rst)。
 
+## 支持
 
-## Support
+如果您有任何问题，请随时加入 HomeAssistant 社区并在 [插件主题](https://community.home-assistant.io/t/knxd-add-on-covert-your-knx-usb-interface-into-an-ip-interface-that-can-be-used-by-ha/38108/38) 中提问。
 
-If you have any questions, feel free to join the HomeAssistant community and ask your questions in the [add-on thread](https://community.home-assistant.io/t/knxd-add-on-covert-your-knx-usb-interface-into-an-ip-interface-that-can-be-used-by-ha/38108/38).
-
-If you found a bug, feel free to create a ticket on [Github](https://github.com/da-anda/hass-io-addons/issues)
+如果您发现了错误，请随时在 [Github](https://github.com/da-anda/hass-io-addons/issues) 创建一个问题单。

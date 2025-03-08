@@ -1,31 +1,31 @@
-# Home Assistant Add-on: CEC Scanner
+# Home Assistant 插件：CEC 扫描器
 
-## Installation
+## 安装
 
-Follow these steps to get the add-on installed on your system:
+按照以下步骤在您的系统上安装插件：
 
-1. Navigate in your Home Assistant frontend to **Settings** -> **Add-ons** -> **Add-on store**.
-2. Find the "CEC Scanner" add-on and click it.
-3. Click on the "INSTALL" button.
+1. 在您的 Home Assistant 前端中导航到 **设置** -> **插件** -> **插件商店**。
+2. 找到“CEC 扫描器”插件并点击它。
+3. 点击“安装”按钮。
 
-## How to use
+## 如何使用
 
-This add-on has no configuration and runs out of the box.
+该插件没有配置，开箱即用。
 
-1. Start the add-on.
-2. Check the add-on log output to see the result.
+1. 启动插件。
+2. 检查插件日志输出以查看结果。
 
-## Support
+## 支持
 
-Got questions?
+有问题吗？
 
-You have several options to get them answered:
+您有几种选择可以获得答案：
 
-- The [Home Assistant Discord Chat Server][discord].
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+- [Home Assistant Discord 聊天服务器][discord]。
+- Home Assistant [社区论坛][forum]。
+- 加入 [/r/homeassistant][reddit] 的 [Reddit 子版块][reddit]。
 
-In case you've found a bug, please [open an issue on our GitHub][issue].
+如果您发现了漏洞，请 [在我们的 GitHub 上提交问题][issue]。
 
 [discord]: https://discord.gg/c5DvZ4e
 [forum]: https://community.home-assistant.io

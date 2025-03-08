@@ -1,6 +1,6 @@
-# MaryTTS Addon
+# MaryTTS 附加组件
 
-The MaryTTS system as Home Assistant Supervisor Addon, to integrate a local TTS nicely.
+MaryTTS 系统作为 Home Assistant Supervisor 附加组件，完美集成本地 TTS。
 
 [![Release][release-badge]][release]
 ![Addon Stage][stage-badge]
@@ -15,4 +15,3 @@ The MaryTTS system as Home Assistant Supervisor Addon, to integrate a local TTS 
 
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee-%23d32f2f?logo=buy-me-a-coffee&style=for-the-badge&logoColor=white
 [donation-url]: https://www.buymeacoffee.com/Poeschl
-

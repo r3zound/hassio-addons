@@ -1,93 +1,70 @@
 # Home Assistant Community Add-on: Radarr
 
-Movie organizer/manager for usenet and torrent users.
+电影组织/管理工具，适用于usenet和torrent用户。
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Home Assistant add-on.
+这个附加组件的安装非常简单，与安装任何其他Home Assistant附加组件没有不同。
 
-1. Click the Home Assistant My button below to open the add-on on your Home
-   Assistant instance.
+1. 点击下面的 Home Assistant My 按钮，以在你的 Home Assistant 实例中打开该附加组件。
 
-   [![Open this add-on in your Home Assistant instance.][addon-badge]][addon]
+   [![在你的 Home Assistant 实例中打开这个附加组件。][addon-badge]][addon]
 
-1. Click the "Install" button to install the add-on.
-1. Start the "Radarr" add-on
-1. Check the logs of the "Radarr" add-on to see if everything went well.
-1. Click "OPEN WEB UI" to open the Radarr interface.
-1. Complete the wizard shown on screen.
+1. 点击“安装”按钮以安装附加组件。
+1. 启动“Radarr”附加组件
+1. 检查“Radarr”附加组件的日志，以查看一切是否顺利。
+1. 点击“打开网页界面”以打开Radarr界面。
+1. 完成屏幕上显示的向导。
 
-## Configuration
+## 配置
 
-_This add-on does not require any configuration to run._
+_此附加组件运行不需要任何配置。_
 
-## Known issues and limitations
+## 已知问题和限制
 
-- This add-on does not support Home Assistant's Ingress feature (aka, the
-  toggle that puts an add-on in the Home Assistant sidebar).
-  There are too many variables to take into account to make this work properly,
-  and if we would, it would be very easy to break. You could consider using an
-  iframe panel instead.
+- 此附加组件不支持 Home Assistant 的 Ingress 功能（即，将附加组件放入 Home Assistant 侧边栏的切换）。
+  考虑到太多变量，这使得很难让其正常工作，如果我们实现了，很容易会出现问题。你可以考虑使用 iframe 面板来替代。
 
-## Changelog & Releases
+## 更新日志与版本
 
-This repository keeps a change log using [GitHub's releases][releases]
-functionality.
+该仓库使用 [GitHub 的发布][releases] 功能维护更新日志。
 
-Releases are based on [Semantic Versioning][semver], and use the format
-of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
-based on the following:
+版本基于 [语义版本控制][semver]，并使用 `MAJOR.MINOR.PATCH` 的格式。简言之，版本将根据以下情况递增：
 
-- `MAJOR`: Incompatible or major changes.
-- `MINOR`: Backwards-compatible new features and enhancements.
-- `PATCH`: Backwards-compatible bugfixes and package updates.
+- `MAJOR`: 不兼容或重大更改。
+- `MINOR`: 向后兼容的新功能和增强。
+- `PATCH`: 向后兼容的错误修复和包更新。
 
-## Support
+## 支持
 
-Got questions?
+有问题吗？
 
-You have several options to get them answered:
+你有几种选择可以得到回答：
 
-- The [Home Assistant Community Add-ons Discord chat server][discord] for add-on
-  support and feature requests.
-- The [Home Assistant Discord chat server][discord-ha] for general Home
-  Assistant discussions and questions.
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+- [Home Assistant Community Add-ons Discord 聊天服务器][discord] 以获得附加组件支持和功能请求。
+- [Home Assistant Discord 聊天服务器][discord-ha] 用于一般 Home Assistant 讨论和问题。
+- Home Assistant [社区论坛][forum]。
+- 加入 [/r/homeassistant][reddit] 的 [Reddit 子版块][reddit]。
 
-You could also [open an issue here][issue] GitHub.
+你也可以在这里 [提交一个问题][issue] 到 GitHub。
 
-## Authors & contributors
+## 作者与贡献者
 
-The original setup of this repository is by [Franck Nijhof][frenck].
+此仓库的最初设置由 [Franck Nijhof][frenck] 完成。
 
-For a full list of all authors and contributors,
-check [the contributor's page][contributors].
+要查看所有作者和贡献者的完整列表，请查看 [贡献者页面][contributors]。
 
-## License
+## 许可
 
-MIT License
+MIT 许可
 
-Copyright (c) 2024-2025 Franck Nijhof
+版权所有 (c) 2024-2025 Franck Nijhof
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+特此免费授权任何获得本软件及相关文档文件（“软件”）副本的人，在不受限制的情况下使用软件，包括但不限于使用、复制、修改、合并、发布、分发、再许可和/或出售软件的副本，并允许向其提供软件的人这样做，符合以下条件：
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+上述版权声明和本许可声明应包含在所有软件的副本或重要部分中。
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+软件是按“现状”提供的，没有任何种类的明示或暗示担保，包括但不限于对适销性、特定用途的适用性和不侵权的担保。在任何情况下，作者或版权持有人均不对因使用软件或使用或其他交易中产生的任何索赔、损害或其他责任负责，无论是在合同、侵权等任何形式。
 
 [addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
 [addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_radarr&repository_url=https%3A%2F%2Fgithub.com%2Fhassio-addons%2Frepository

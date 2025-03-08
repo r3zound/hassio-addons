@@ -1,14 +1,14 @@
-## Precondition
+## 前提条件
 
-Make sure to have `rsync` installed on the remote machine. In case the addon gives you an `bash: rsync: command not found` in the logs `rsync` is missing there.
+确保在远程机器上安装了 `rsync`。如果插件在日志中给出 `bash: rsync: command not found`，则说明那里缺少 `rsync`。
 
-## Key files
+## 关键文件
 
-The addon generates its own key files when no file is found at the specified location. If you use your own key make sure it is passwordless.
+当指定位置未找到文件时，插件会生成自己的密钥文件。如果您使用自己的密钥，请确保它是无密码的。
 
-## Config
+## 配置
 
-Example config:
+示例配置：
 
 ```yaml
 private_key_file: /ssl/rsync/id_rsa
@@ -27,40 +27,40 @@ remote_host: ''
 
 ### `private_key_file`
 
-The private key for the authentification on the remote machine. It specifies also the location of the generated key-pair if no key file is found.
-The location of the file is fixed to the `/ssl` volume.
+用于在远程机器上进行身份验证的私钥。如果未找到密钥文件，它还指定生成的密钥对的位置。
+文件的位置固定在 `/ssl` 卷。
 
 ### `username`
 
-The username for the user on the remote machine the key is accepted.
+在远程机器上接受密钥的用户的用户名。
 
 ### `folders`
 
-The list of folders you want to sync with the remote machine.
+您要与远程机器同步的文件夹列表。
 
 ### `folders` - `local`
 
-The local folder for rsync.
+rsync 的本地文件夹。
 
 ### `folders` - `remote`
 
-The remote folder for rsync
+rsync 的远程文件夹
 
-### `folders` - `options` (optional)
+### `folders` - `options`（可选）
 
-Use your own options for rsync. This string is replacing the default one and get directly to rsync. The default is `--archive --recursive --compress --delete --prune-empty-dirs`.
+使用您自己的 rsync 选项。该字符串将替换默认值，并直接传递给 rsync。默认值为 `--archive --recursive --compress --delete --prune-empty-dirs`。
 
-### `folders` - `direction` (optional)
+### `folders` - `direction`（可选）
 
-Specify the direction of synchronization for each folder:
+指定每个文件夹的同步方向：
 
-- `push`: Copy from Home Assistant to the remote machine (default)
-- `pull`: Copy from the remote machine to Home Assistant
+- `push`: 从 Home Assistant 复制到远程机器（默认）
+- `pull`: 从远程机器复制到 Home Assistant
 
 ### `remote_host`
 
-The ip or host of the remote machine you want to connect to.
+您想要连接的远程机器的 IP 或主机。
 
-### `remote_port` (optional)
+### `remote_port`（可选）
 
-The ssh port on the remote machine. If not set the default `22` is assumed.
+远程机器上的 SSH 端口。如果未设置，则假定使用默认值 `22`。

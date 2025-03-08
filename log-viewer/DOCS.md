@@ -1,35 +1,31 @@
-# Home Assistant Community Add-on: Log Viewer
+# Home Assistant 社区插件：日志查看器
 
-Easily monitor your Home Assistant logs in your web browser. Custom filtering
-is available to make it simple to differentiate different types of logs.
+轻松地在您的网页浏览器中监控 Home Assistant 日志。提供自定义过滤功能，使您可以轻松区分不同类型的日志。
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Home Assistant add-on.
+此插件的安装非常简单，与安装其他 Home Assistant 插件没有区别。
 
-1. Click the Home Assistant My button below to open the add-on on your Home
-   Assistant instance.
+1. 点击下面的 Home Assistant 我的按钮以在您的 Home Assistant 实例中打开插件。
 
-   [![Open this add-on in your Home Assistant instance.][addon-badge]][addon]
+   [![在您的 Home Assistant 实例中打开此插件.][addon-badge]][addon]
 
-1. Click the "Install" button to install the add-on.
-1. Check the logs of the "Log Viewer" add-on to see if everything went well.
-1. Open the web UI for the "Log Viewer" add-on to start watching logs.
+1. 点击“安装”按钮以安装插件。
+1. 查看“日志查看器”插件的日志，以确认一切顺利进行。
+1. 打开“日志查看器”插件的网页用户界面以开始查看日志。
 
-**Tip:** To see more logs, be sure to enable the [`logger`][logger] integration
-in your Home Assistant `configuration.yaml`:
+**提示：**要查看更多日志，请确保在您的 Home Assistant `configuration.yaml` 中启用 [`logger`][logger] 集成：
 
 ```yaml
 logger:
   default: info
 ```
 
-## Configuration
+## 配置
 
-**Note**: _Remember to restart the add-on when the configuration is changed._
+**注意**：_记得在更改配置后重启插件。_
 
-Example add-on configuration:
+插件配置示例：
 
 ```yaml
 log_level: info
@@ -38,113 +34,85 @@ certfile: fullchain.pem
 keyfile: privkey.pem
 ```
 
-**Note**: _This is just an example, don't copy and paste it! Create your own!_
+**注意**：_这只是一个示例，请不要复制粘贴！创建您自己的！_
 
-### Option: `log_level`
+### 选项：`log_level`
 
-The `log_level` option controls the level of log output by the addon and can
-be changed to be more or less verbose, which might be useful when you are
-dealing with an unknown issue. Possible values are:
+`log_level` 选项控制插件的日志输出级别，可以更改为更详细或更简洁的输出，您在处理未知问题时可能会发现这很有用。可选值有：
 
-- `trace`: Show every detail, like all called internal functions.
-- `debug`: Shows detailed debug information.
-- `info`: Normal (usually) interesting events.
-- `warning`: Exceptional occurrences that are not errors.
-- `error`: Runtime errors that do not require immediate action.
-- `fatal`: Something went terribly wrong. Add-on becomes unusable.
+- `trace`：显示每个细节，如所有调用的内部函数。
+- `debug`：显示详细的调试信息。
+- `info`：正常（通常是）有趣的事件。
+- `warning`：不属于错误的特别情况。
+- `error`：不需要立即处理的运行时错误。
+- `fatal`：出现严重错误，插件变得无法使用。
 
-Please note that each level automatically includes log messages from a
-more severe level, e.g., `debug` also shows `info` messages. By default,
-the `log_level` is set to `info`, which is the recommended setting unless
-you are troubleshooting.
+请注意，每个级别自动包含来自更严重级别的日志消息，例如，`debug` 也会显示 `info` 消息。默认情况下，`log_level` 设置为 `info`，这是推荐的设置，除非您在排查问题。
 
-### Option: `ssl`
+### 选项：`ssl`
 
-Enables/Disables SSL on the Log Viewer. Set it `true` to enable it,
-`false` otherwise.
+启用/禁用日志查看器上的 SSL。将其设置为 `true` 以启用，`false` 则表示禁用。
 
-**Note**: _The SSL settings only apply to direct access and has no effect
-on the Ingress service._
+**注意**：_SSL 设置仅适用于直接访问，对 Ingress 服务没有影响。_
 
-### Option: `certfile`
+### 选项：`certfile`
 
-The certificate file to use for SSL.
+用于 SSL 的证书文件。
 
-**Note**: _The file MUST be stored in `/ssl/`, which is the default_
+**注意**：_文件必须存储在 `/ssl/` 中，这是默认位置_
 
-### Option: `keyfile`
+### 选项：`keyfile`
 
-The private key file to use for SSL.
+用于 SSL 的私钥文件。
 
-**Note**: _The file MUST be stored in `/ssl/`, which is the default_
+**注意**：_文件必须存储在 `/ssl/` 中，这是默认位置_
 
-### Option: `leave_front_door_open`
+### 选项：`leave_front_door_open`
 
-Adding this option to the add-on configuration allows you to disable
-authentication on the add-on by setting it to `true` and leaving the
-username and password empty.
+将此选项添加到插件配置中允许您通过将其设置为 `true` 并将用户名和密码留空来禁用插件的身份验证。
 
-**Note**: _We STRONGLY suggest, not to use this, even if this add-on is
-only exposed to your internal network. USE AT YOUR OWN RISK!_
+**注意**：_我们强烈建议不要使用此选项，即使此插件仅暴露给您的内部网络。风险自负其责！_
 
-## Changelog & Releases
+## 更新日志与发布
 
-This repository keeps a change log using [GitHub's releases][releases]
-functionality.
+该存储库使用 [GitHub 的版本][releases] 功能保持更改日志。
 
-Releases are based on [Semantic Versioning][semver], and use the format
-of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
-based on the following:
+发布基于 [语义版本控制][semver]，并使用 `MAJOR.MINOR.PATCH` 的格式。简而言之，版本将根据以下内容进行递增：
 
-- `MAJOR`: Incompatible or major changes.
-- `MINOR`: Backwards-compatible new features and enhancements.
-- `PATCH`: Backwards-compatible bugfixes and package updates.
+- `MAJOR`：不兼容或重大更改。
+- `MINOR`：向后兼容的新特性和增强功能。
+- `PATCH`：向后兼容的错误修复和包更新。
 
-## Support
+## 支持
 
-Got questions?
+有问题吗？
 
-You have several options to get them answered:
+您有几种方式可以获得解答：
 
-- The [Home Assistant Community Add-ons Discord chat server][discord] for add-on
-  support and feature requests.
-- The [Home Assistant Discord chat server][discord-ha] for general Home
-  Assistant discussions and questions.
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+- [Home Assistant 社区插件 Discord 聊天服务器][discord]，用于插件支持和功能请求。
+- [Home Assistant Discord 聊天服务器][discord-ha]，用于一般 Home Assistant 讨论和问题。
+- Home Assistant [社区论坛][forum]。
+- 加入 [Reddit 子版块][reddit] 在 [/r/homeassistant][reddit]
 
-You could also [open an issue here][issue] GitHub.
+您还可以在这里 [打开一个问题][issue] GitHub。
 
-## Authors & contributors
+## 作者与贡献者
 
-The original setup of this repository is by [Dale Higgs][dale3h].
+该存储库的原始设置由 [Dale Higgs][dale3h] 完成。
 
-For a full list of all authors and contributors,
-check [the contributor's page][contributors].
+有关所有作者和贡献者的完整列表，请查看 [贡献者页面][contributors]。
 
-## License
+## 许可证
 
-MIT License
+MIT 许可证
 
-Copyright (c) 2018-2024 Dale Higgs <@dale3h>
+版权所有 (c) 2018-2024 Dale Higgs <@dale3h>
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+特此免费向任何获得此软件及相关文档文件（“软件”）副本的人授予权利，允许不受限制地处理该软件，包括但不限于使用、复制、修改、合并、发布、分发、再许可和/或销售该软件的副本，并允许被提供软件的人这样做，受以下条件限制：
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+上述版权声明和本许可声明应包括在软件的所有副本或实质部分中。
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+软件是“按原样”提供的，没有任何种类的保证，无论是明示还是暗示，包括但不限于对适销性、特定用途适用性和不侵权的保证。在任何情况下，作者或版权持有人对任何索赔、损害或其他责任不承担责任，无论是在合同、侵权或其他方面的行动中，均源于、与软件或软件的使用或其他交易相关。
 
 [addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
 [addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_logviewer&repository_url=https%3A%2F%2Fgithub.com%2Fhassio-addons%2Frepository

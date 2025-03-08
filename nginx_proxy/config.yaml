@@ -3,7 +3,15 @@ version: 3.11.1
 hassio_api: true
 slug: nginx_proxy
 name: NGINX Home Assistant SSL proxy
-description: SSL/TLS代理
+description: $'SSL/TLS代理
+
+SSL/TLS代理是一种网络设备或软件应用程序，它充当客户端和服务器之间的中间人。它的主要功能是处理SSL/TLS加密和解密任务，从而保护数据在传输过程中的安全性和隐私性。
+
+SSL（Secure Sockets Layer）和TLS（Transport Layer Security）都是用于在网络通信中保护数据的协议。它们通过使用公钥加密技术来确保数据的机密性和完整性。然而，这些协议的加密和解密过程需要消耗大量的计算资源，特别是对于高流量的Web服务来说。
+
+因此，SSL/TLS代理被设计用来减轻服务器的工作负担，同时提高整体性能。当客户端向服务器发起请求时，代理首先接收并解密该请求，然后将其转发给服务器。同样地，当服务器响应时，代理会先对数据进行加密，然后再发送回客户端。
+
+此外，SSL/TLS代理还可以执行其他一些操作，如负载均衡、URL重写等。这些功能使得代理成为现代网络架构中的一个重要组成部分，尤其是在需要保证网络安全和数据保密的情况下。'
 url: https://gh-proxy.com/github.com/home-assistant/addons/tree/master/nginx_proxy
 arch:
   - armhf

@@ -1,10 +1,9 @@
-# Unofficial Home Assistant Add-ons: Unpoller
+# 非官方 Home Assistant 插件：Unpoller
 
-Rclone bundled as an Home Assistant add-on.
+将 Rclone 打包为 Home Assistant 插件。
 
-## How to use
+## 如何使用
 
-After installation you will need to provide either a configuration file or set
-Environment Variables.
+安装后，您需要提供配置文件或设置环境变量。
 
-For options and format see <https://unpoller.com/>
+有关选项和格式，请参见 <https://unpoller.com/>

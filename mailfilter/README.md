@@ -1,16 +1,16 @@
-# Home Assistant Add-on: Mailfilter
+# Home Assistant 插件：Mailfilter
 
 [![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
 
-Rspamd mailfilter with optional clamav antivirus...
-Please be careful! clamav uses huge amounts of memory!
-It is not recommended for devices under 6GB memory.
+带有可选 clamav 杀毒软件的 Rspamd 邮件过滤器...
+请小心！clamav 使用大量内存！
+不推荐在内存小于 6GB 的设备上使用。
 
-## About
+## 关于
 
-Important: This addon is requires that the Mailserver addon is installed!
+重要提示：安装此插件需要 Mailserver 插件！
 
-This addon is experimental, and provides a mailfilter for your mailserver.
+此插件为实验性插件，为您的邮件服务器提供邮件过滤功能。
 
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2024.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg

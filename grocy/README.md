@@ -1,30 +1,29 @@
-# Home Assistant Community Add-on: Grocy
+# Home Assistant 社区附加组件: Grocy
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
-[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
+[![通过 GitHub Sponsors 赞助 Frenck][github-sponsors-shield]][github-sponsors]
 
-[![Support Frenck on Patreon][patreon-shield]][patreon]
+[![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
 
-ERP beyond your fridge! A groceries & household management solution for your home.
+超越冰箱的 ERP！为您的家庭提供杂货和家务管理解决方案。
 
-## About
+## 关于
 
-[Grocy][grocy] - ERP beyond your fridge is a powerful groceries & household
-management solution for your home, delivering features like:
+[Grocy][grocy] - 超越冰箱的 ERP 是一个强大的杂货和家务管理解决方案，提供以下功能：
 
-- Stock management
-- Shopping list
-- Recipes
-- Chores & tasks
-- Inventory
-- and many more.
+- 库存管理
+- 购物清单
+- 食谱
+- 家务与任务
+- 库存清单
+- 以及更多。
 
-[Try out the online demo of Grocy][grocy-demo].
+[试用 Grocy 的在线演示][grocy-demo]。
 
-![Grocy screenshot][screenshot]
+![Grocy 截图][screenshot]
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons

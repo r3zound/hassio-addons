@@ -1,34 +1,26 @@
-# Home Assistant Community Add-on: Network UPS Tools
+# Home Assistant社区插件：网络不间断电源工具
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+[![发布][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
-[![Buy me a coffee][buymeacoffee-shield]][buymeacoffee]
+[![请我喝咖啡][buymeacoffee-shield]][buymeacoffee]
 
-A Network UPS Tools daemon to allow you to easily manage battery backup (UPS)
-devices connected to your Home Assistant machine.
+一个网络不间断电源工具守护进程，让您可以轻松管理连接到 Home Assistant 机器的电池备份(UPS)设备。
 
-## About
+## 关于
 
-The primary goal of the Network UPS Tools (NUT) project is to provide support
-for Power Devices, such as Uninterruptible Power Supplies, Power Distribution
-Units, Automatic Transfer Switch, Power Supply Units and Solar Controllers.
+网络不间断电源工具(NUT)项目的主要目标是为电源设备提供支持，例如不间断电源、配电单元、自动切换开关、电源供应单元和太阳能控制器。
 
-NUT provides many control and monitoring [features][nut-features], with a
-uniform control and management interface.
+NUT 提供许多控制和监控 [功能][nut-features]，具有统一的控制和管理接口。
 
-More than 140 different manufacturers, and several thousands models
-are [compatible][nut-compatible].
+超过 140 家不同的制造商和几千个型号是 [兼容][nut-compatible] 的。
 
-The Network UPS Tools (NUT) project is the combined effort of
-many [individuals and companies][nut-acknowledgements].
+网络不间断电源工具(NUT)项目是许多 [个人和公司][nut-acknowledgements] 的共同努力。
 
-Be sure to add the NUT integration after starting the add-on.
+确保在启动插件后添加 NUT 集成。
 
-For more information on how to configure the NUT Sensor in Home Assistant
-see the [NUT integration documentation][nut-ha-docs].
-
+有关如何在 Home Assistant 中配置 NUT 传感器的更多信息，请参见 [NUT 集成文档][nut-ha-docs]。
 
 [buymeacoffee-shield]: https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg
 [buymeacoffee]: https://www.buymeacoffee.com/dale3h

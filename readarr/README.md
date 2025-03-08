@@ -4,14 +4,11 @@
 
 [![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
 
-Book Manager and Automation (Sonarr for Ebooks).
+图书管理和自动化（电子书的 Sonarr）。
 
-## About
+## 关于
 
-[Readarr] is an ebook and audiobook collection manager for Usenet and BitTorrent
-users. It can monitor multiple RSS feeds for new books from your favorite
-authors and will grab, sort, and rename them. Note that only one type of a
-given book is supported.
+[Readarr] 是一个用于 Usenet 和 BitTorrent 用户的电子书和有声书收藏管理器。它可以监控来自您喜欢的作者的新书的多个 RSS 源，并会获取、整理和重命名它们。请注意，仅支持一种类型的特定书籍。
 
 [Readarr]: https://readarr.com
 

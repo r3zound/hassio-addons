@@ -1,9 +1,9 @@
-## Homeassistant Integration
+## Homeassistant 集成
 
-For easy integration I also published a [custom component](https://github.com/Poeschl/Remote-PicoTTS).
-Its available on the HACS for easy integration.
+为了便于集成，我还发布了一个 [自定义组件](https://github.com/Poeschl/Remote-PicoTTS)。  
+它可以在 HACS 上找到，便于集成。
 
-## Requests
+## 请求
 
 ### Ping
 
@@ -13,5 +13,5 @@ Its available on the HACS for easy integration.
 
 `http://ip:59126/speak?lang=<language>&text=<text>`
 
-`language` can be one of those `de-DE, en-GB, en-US, es-ES, fr-FR, it-IT`. If not set it defaults to `en-US`.
-`text` is the text you want to have sinthesized (url-encoded).
+`language` 可以是以下之一 `de-DE, en-GB, en-US, es-ES, fr-FR, it-IT`。如果不设置，则默认为 `en-US`。  
+`text` 是您希望合成的文本（url编码）。

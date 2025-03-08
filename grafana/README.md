@@ -8,21 +8,17 @@
 
 [![Support Frenck on Patreon][patreon-shield]][patreon]
 
-The open platform for beautiful analytics and monitoring.
+漂亮的分析和监控的开放平台。
 
-## About
+## 关于
 
-The analytics platform for all your metrics.
+您所有指标的分析平台。
 
-Grafana allows you to query, visualize, alert on and understand your metrics
-no matter where they are stored. Create, explore, and share dashboards. Learn
-about your Home Automation system using sexy and compelling graphs, and other
-data visualizations.
+Grafana 允许您查询、可视化、警报和理解您的指标，无论它们存储在哪里。创建、探索和分享仪表板。使用性感且引人注目的图表和其他数据可视化了解您的家庭自动化系统。
 
-Combine this add-on with the InfluxDB add-on to get insanely powerful
-insights to your home.
+将此附加组件与 InfluxDB 附加组件结合使用，可以获得强大的洞察力，了解您的家居状况。
 
-![Grafana in the Home Assistant Frontend][screenshot]
+![Grafana 在 Home Assistant 前端中的界面][screenshot]
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons

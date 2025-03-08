@@ -1,84 +1,84 @@
-## &#9888; Open Issue : [🐛 [Seafile] Download URLs seems incorrect (opened 2025-02-04)](https://github.com/alexbelgium/hassio-addons/issues/1753) by [@igorsantos07](https://github.com/igorsantos07)
-# Home assistant add-on: seafile
+## &#9888; 打开问题: [🐛 [Seafile] 下载链接似乎不正确 (打开于2025-02-04)](https://github.com/alexbelgium/hassio-addons/issues/1753) 由 [@igorsantos07](https://github.com/igorsantos07)
+# Home Assistant 插件: Seafile
 
-[![Donate][donation-badge]](https://www.buymeacoffee.com/alexbelgium)
-[![Donate][paypal-badge]](https://www.paypal.com/donate/?hosted_button_id=DZFULJZTP3UQA)
+[![捐赠][donation-badge]](https://www.buymeacoffee.com/alexbelgium)
+[![捐赠][paypal-badge]](https://www.paypal.com/donate/?hosted_button_id=DZFULJZTP3UQA)
 
-![Version](https://img.shields.io/badge/dynamic/json?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fseafile%2Fconfig.json)
-![Ingress](https://img.shields.io/badge/dynamic/json?label=Ingress&query=%24.ingress&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fseafile%2Fconfig.json)
-![Arch](https://img.shields.io/badge/dynamic/json?color=success&label=Arch&query=%24.arch&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fseafile%2Fconfig.json)
+![版本](https://img.shields.io/badge/dynamic/json?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fseafile%2Fconfig.json)
+![入口](https://img.shields.io/badge/dynamic/json?label=Ingress&query=%24.ingress&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fseafile%2Fconfig.json)
+![架构](https://img.shields.io/badge/dynamic/json?color=success&label=Arch&query=%24.arch&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fseafile%2Fconfig.json)
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/9c6cf10bdbba45ecb202d7f579b5be0e)](https://www.codacy.com/gh/alexbelgium/hassio-addons/dashboard?utm_source=github.com&utm_medium=referral&utm_content=alexbelgium/hassio-addons&utm_campaign=Badge_Grade)
+[![Codacy徽章](https://app.codacy.com/project/badge/Grade/9c6cf10bdbba45ecb202d7f579b5be0e)](https://www.codacy.com/gh/alexbelgium/hassio-addons/dashboard?utm_source=github.com&utm_medium=referral&utm_content=alexbelgium/hassio-addons&utm_campaign=Badge_Grade)
 [![GitHub Super-Linter](https://img.shields.io/github/actions/workflow/status/alexbelgium/hassio-addons/weekly-supelinter.yaml?label=Lint%20code%20base)](https://github.com/alexbelgium/hassio-addons/actions/workflows/weekly-supelinter.yaml)
-[![Builder](https://img.shields.io/github/actions/workflow/status/alexbelgium/hassio-addons/onpush_builder.yaml?label=Builder)](https://github.com/alexbelgium/hassio-addons/actions/workflows/onpush_builder.yaml)
+[![构建器](https://img.shields.io/github/actions/workflow/status/alexbelgium/hassio-addons/onpush_builder.yaml?label=Builder)](https://github.com/alexbelgium/hassio-addons/actions/workflows/onpush_builder.yaml)
 
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20(no%20paypal)-%23d32f2f?logo=buy-me-a-coffee&style=flat&logoColor=white
 [paypal-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20with%20Paypal-0070BA?logo=paypal&style=flat&logoColor=white
 
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢所有给我的仓库加星的朋友们！点击下面的图像为它加星，然后它会在右上角显示。谢谢！_
 
-[![Stargazers repo roster for @alexbelgium/hassio-addons](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
+[![@alexbelgium/hassio-addons 的 Stargazers 仓库名单](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
 
-![downloads evolution](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/seafile/stats.png)
+![下载趋势](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/seafile/stats.png)
 
-## About
-
----
-
-High performance file syncing and sharing, with also Markdown WYSIWYG editing, Wiki, file label and other knowledge management features.
-
-This addon is based on the docker image [https://hub.docker.com/r/franchetti/seafile-arm](https://hub.docker.com/r/franchetti/seafile-arm)
-
-## Installation
+## 关于
 
 ---
 
-The installation of this add-on is pretty straightforward and not different in comparison to installing any other add-on.
+高性能文件同步和分享，同时还具备 Markdown WYSIWYG 编辑、Wiki、文件标签及其他知识管理功能。
 
-1. Add my add-ons repository to your home assistant instance (in supervisor addons store at top right, or click button below if you have configured my HA)
-   [![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falexbelgium%2Fhassio-addons)
-1. Install this add-on.
-1. Click the `Save` button to store your configuration.
-1. Set the add-on options to your preferences
-1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
-1. Open the webUI and adapt the software options
+此插件基于 Docker 镜像 [https://hub.docker.com/r/franchetti/seafile-arm](https://hub.docker.com/r/franchetti/seafile-arm)
 
-## Configuration
+## 安装
 
 ---
 
-Webui can be found at <http://homeassistant:PORT>.
-The default username/password : described in the startup log.
-Configurations can be done through the app webUI, except for the following options
+此插件的安装相对简单，与安装其他任何插件相比没有不同。
 
-Default name : me@example.com
-Default password : a_very_secret_password
+1. 将我的插件仓库添加到你的 Home Assistant 实例中（在监督者插件商店的右上角，或者如果你已经配置了我的 HA，请点击下面的按钮）
+   [![打开你的 Home Assistant 实例并显示添加插件仓库对话框，预填特定的仓库 URL。](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falexbelgium%2Fhassio-addons)
+2. 安装此插件。
+3. 点击 `保存` 按钮以存储你的配置。
+4. 根据你的偏好设置插件选项。
+5. 启动插件。
+6. 查看插件日志以确认一切是否正常。
+7. 打开 webUI 并调整软件选项。
 
-If you store your database on a mounted drive, make sure to also host your sqlite database there : otherwise if there is an issue with the mount you'll lose your whole database (thanks @cokeman0)
+## 配置
+
+---
+
+Webui 可以在 <http://homeassistant:PORT> 找到。
+默认用户名/密码 : 在启动日志中描述。
+可以通过应用程序 webUI 进行配置，以下选项除外：
+
+默认名称 : me@example.com
+默认密码 : a_very_secret_password
+
+如果你将数据库存储在挂载驱动器上，请确保也在那里托管你的 sqlite 数据库：否则如果挂载出现问题，你将失去整个数据库（感谢 @cokeman0）
 
 ```yaml
 PGID: user
 GPID: user
 TZ: timezone
-PASSWORD: Optionally set a password for the gui
-CLI_ARGS: Optionally pass cli start arguments to seafile
-localdisks: sda1 #put the hardware name of your drive to mount separated by commas, or its label. ex. sda1, sdb1, MYNAS...
-networkdisks: "//SERVER/SHARE" # optional, list of smb servers to mount, separated by commas
-cifsusername: "username" # optional, smb username, same for all smb shares
-cifspassword: "password" # optional, smb password
-force_scheme_https: if you have issues accessing ingress with https, check this box to force https
-force_external_port: if you have issues accessing ingress with https, note here your external port used to access HA
+PASSWORD: 可选设置 GUI 密码
+CLI_ARGS: 可选传递 cli 启动参数给 seafile
+localdisks: sda1 #以逗号分隔放置要挂载的硬件名称，或其标签。例：sda1, sdb1, MYNAS...
+networkdisks: "//SERVER/SHARE" #可选，列出要挂载的 smb 服务器，以逗号分隔
+cifsusername: "username" #可选，smb 用户名，所有 smb 共享相同
+cifspassword: "password" #可选，smb 密码
+force_scheme_https: 如果在使用 https 访问入口时遇到问题，请勾选此框以强制使用 https
+force_external_port: 如果在使用 https 访问入口时遇到问题，请在此记录用于访问 HA 的外部端口
 ```
 
-## Support
+## 支持
 
-Create an issue on github
+在 GitHub 上创建一个问题。
 
-## Illustration
+## 插图
 
 ---
 
-![illustration](https://seafile.com/img/slider/artistdetails.png)
+![插图](https://seafile.com/img/slider/artistdetails.png)
 
 [repository]: https://github.com/alexbelgium/hassio-addons

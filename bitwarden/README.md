@@ -1,33 +1,26 @@
 # Home Assistant Community Add-on: Vaultwarden (Bitwarden)
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
-[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
+[![通过 GitHub Sponsors 支持 Frenck][github-sponsors-shield]][github-sponsors]
 
-[![Support Frenck on Patreon][patreon-shield]][patreon]
+[![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
 
-Open source password management solution.
+开源密码管理解决方案。
 
-## About
+## 关于
 
-Bitwarden is an open-source password manager that can store sensitive
-information such as website credentials in an encrypted vault.
+Bitwarden 是一个开源密码管理器，可以在加密保管库中存储敏感信息，例如网站凭据。
 
-The Bitwarden platform offers a variety of client applications including
-a web interface, desktop applications, browser extensions and mobile apps.
+Bitwarden 平台提供多种客户端应用程序，包括 web 界面、桌面应用、浏览器扩展和移动应用。
 
-This add-on is based upon the lightweight and opensource
-[Vaultwarden][vaultwarden] implementation, allowing you to self-host
-this amazing password manager.
+此附加组件基于轻量级的开源 [Vaultwarden][vaultwarden] 实现，允许您自托管这个惊人的密码管理器。
 
-Password theft is a serious problem. The websites and apps that you use are
-under attack every day. Security breaches occur and your passwords are stolen.
-When you reuse the same passwords everywhere hackers can easily access your
-email, bank, and other important accounts. USE A PASSWORD MANAGER!
+密码盗窃是一个严重的问题。您使用的网站和应用每天都在受到攻击。安全漏洞会发生，您的密码会被盗。当您在各处重复使用相同的密码时，黑客就可以轻松访问您的电子邮件、银行及其他重要账户。使用密码管理器！
 
-![Bitwarden Preview][screenshot]
+![Bitwarden 预览][screenshot]
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons

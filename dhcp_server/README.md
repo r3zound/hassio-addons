@@ -1,12 +1,12 @@
-# Home Assistant Add-on: DHCP server
+# Home Assistant 插件：DHCP 服务器
 
-A simple DHCP server.
+一个简单的 DHCP 服务器。
 
-![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield] ![Supports armhf Architecture][armhf-shield] ![Supports armv7 Architecture][armv7-shield] ![Supports i386 Architecture][i386-shield]
+![支持 aarch64 架构][aarch64-shield] ![支持 amd64 架构][amd64-shield] ![支持 armhf 架构][armhf-shield] ![支持 armv7 架构][armv7-shield] ![支持 i386 架构][i386-shield]
 
-This add-on provides a simple DHCP server for your network.
-It provides some basic needs, like, reserving IP addresses for your devices
-to ensure they always get assigned the same IP address.
+此插件为您的网络提供一个简单的 DHCP 服务器。
+它提供一些基本需求，比如为您的设备保留 IP 地址
+以确保它们始终获得相同的 IP 地址。
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg

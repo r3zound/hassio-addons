@@ -1,18 +1,14 @@
 # Home Assistant Community Add-on: Lidarr
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
-Looks and smells like Sonarr but made for music.
+看起来和闻起来像 Sonarr，但为音乐而制。
 
-## About
+## 关于
 
-[Lidarr] is a music collection manager for Usenet and BitTorrent users. It can
-monitor multiple RSS feeds for new tracks from your favorite artists and will
-grab, sort and rename them. It can also be configured to automatically upgrade
-the quality of files already downloaded when a better quality format becomes
-available.
+[Lidarr] 是一个为 Usenet 和 BitTorrent 用户设计的音乐收藏管理器。它可以监控多个 RSS 源，以获取您最喜爱的艺术家的新曲目，并自动抓取、排序和重命名它们。它还可以配置为在更高质量格式可用时自动升级已下载文件的质量。
 
 [Lidarr]: https://lidarr.audio/
 

@@ -1,25 +1,24 @@
-# ICantBelieveItsNotValetudo Addon
+# ICantBelieveItsNotValetudo 插件
 
-This is the adaption of [ICantBelieveItsNotValetudo](https://github.com/Hypfer/ICantBelieveItsNotValetudo) as a Supervisor addon.
-As of now ICantBelieveItsNotValetudo is archived, but this addon will try to maintain running the latest version as long as possible.
+这是 [ICantBelieveItsNotValetudo](https://github.com/Hypfer/ICantBelieveItsNotValetudo) 的 Supervisor 插件版本。
+目前 ICantBelieveItsNotValetudo 已被归档，但此插件将尽量保持运行最新版本尽可能长的时间。
 
-[![Release][release-badge]][release]
-![Addon Stage][stage-badge]
+[![发布][release-badge]][release]
+![插件状态][stage-badge]
 
-[![Donate][donation-badge]][donation-url]
+[![捐赠][donation-badge]][donation-url]
 
-## Config
+## 配置
 
-The configuration keys are identical to the [configuration of ICantBelieveItsNotValetudo](https://github.com/Hypfer/ICantBelieveItsNotValetudo/blob/main/README.md).
-Please get the meaning for them from there.
-It's normal that the structure of the addon differs from the official config file, this is nessesary because of the Supervisor Addon config structure.
+配置键与 [ICantBelieveItsNotValetudo 的配置](https://github.com/Hypfer/ICantBelieveItsNotValetudo/blob/main/README.md) 一致。
+请从那里获取它们的含义。
+插件的结构与官方配置文件不同是正常的，这是因为 Supervisor 插件配置结构所需。
 
-If you use the Mosquitto Addon in Home Assistant `core-mosquitto` can be used as broker address like this: `mqtt://<user>:<password>@core-mosquitto`. Keep in mind to set proper `mapDataTopic` value. As of Valetudo 2021.04.0, it's `${topicPrefix}/${identifier}/MapData/map-data`, which with default values is equal to `valetudo/rockrobo/MapData/map-data`.
+如果您在 Home Assistant 中使用 Mosquitto 插件，可以将 `core-mosquitto` 用作代理地址，如下所示：`mqtt://<user>:<password>@core-mosquitto`。请记得设置适当的 `mapDataTopic` 值。从 Valetudo 2021.04.0 开始，它是 `${topicPrefix}/${identifier}/MapData/map-data`，默认值等于 `valetudo/rockrobo/MapData/map-data`。
 
-## PNG image
+## PNG 图片
 
-The generated image will be served over the Supervisor Ingress feature. So the floor plan can be accessed via the build-in side panel and the auto-configured mqtt camera.
-
+生成的图像将通过 Supervisor Ingress 功能提供服务。因此，楼层平面图可以通过内置侧边面板和自动配置的 mqtt 摄像头访问。
 
 [stage-badge]: https://img.shields.io/badge/Addon%20stage-stable-green.svg
 
@@ -28,4 +27,3 @@ The generated image will be served over the Supervisor Ingress feature. So the f
 
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee-%23d32f2f?logo=buy-me-a-coffee&style=for-the-badge&logoColor=white
 [donation-url]: https://www.buymeacoffee.com/Poeschl
-

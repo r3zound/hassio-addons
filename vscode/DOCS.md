@@ -1,35 +1,27 @@
-# Home Assistant Community Add-on: Studio Code Server
+# Home Assistant 社区插件：Studio Code Server
 
-This add-on runs [code-server](https://github.com/coder/code-server), which
-gives you a Visual Studio Code experience straight from the browser. It allows
-you to edit your Home Assistant configuration directly from your web browser,
-directly from within the Home Assistant frontend.
+该插件运行 [code-server](https://github.com/coder/code-server)，为您提供直接从浏览器访问的 Visual Studio Code 体验。它允许您直接从网络浏览器，直接在 Home Assistant 前端中编辑您的 Home Assistant 配置。
 
-The add-on has the Home Assistant, MDI icons and YAML extensions pre-installed
-and pre-configured right out of the box. This means that auto-completion works
-instantly, without the need for configuring anything.
+该插件预先安装和配置了 Home Assistant、MDI 图标和 YAML 扩展。这意味着自动完成可以立即使用，无需任何配置。
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Home Assistant add-on.
+该插件的安装非常简单，与安装任何其他 Home Assistant 插件没有不同。
 
-1. Click the Home Assistant My button below to open the add-on on your Home
-   Assistant instance.
+1. 点击下面的 Home Assistant 我的按钮，以在您的 Home Assistant 实例中打开该插件。
 
-   [![Open this add-on in your Home Assistant instance.][addon-badge]][addon]
+   [![在您的 Home Assistant 实例中打开此插件。][addon-badge]][addon]
 
-1. Click the "Install" button to install the add-on.
-1. Start the "Studio Code Server" add-on.
-1. Check the logs of the "Studio Code Server" add-on to see if everything went
-   well.
-1. Click the "OPEN WEB UI" button to open Studio Code Server.
+2. 点击“安装”按钮以安装该插件。
+3. 启动“Studio Code Server”插件。
+4. 检查“Studio Code Server”插件的日志，以查看一切是否顺利。
+5. 点击“打开 web 界面”按钮以打开 Studio Code Server。
 
-## Configuration
+## 配置
 
-**Note**: _Remember to restart the add-on when the configuration is changed._
+**注意**：_更改配置时，请记得重启插件。_
 
-Example add-on configuration:
+示例插件配置：
 
 ```yaml
 log_level: info
@@ -40,139 +32,96 @@ init_commands:
   - ls -la
 ```
 
-**Note**: _This is just an example, don't copy and paste it! Create your own!_
+**注意**：_这只是一个示例，请不要复制和粘贴！创建您自己的！_
 
-### Option: `log_level`
+### 选项：`log_level`
 
-The `log_level` option controls the level of log output by the addon and can
-be changed to be more or less verbose, which might be useful when you are
-dealing with an unknown issue. Possible values are:
+`log_level` 选项控制插件的日志输出级别，可以将其更改为更详细或更简洁，在处理未知问题时可能会很有用。可能的值有：
 
-- `trace`: Show every detail, like all called internal functions.
-- `debug`: Shows detailed debug information.
-- `info`: Normal (usually) interesting events.
-- `warning`: Exceptional occurrences that are not errors.
-- `error`: Runtime errors that do not require immediate action.
-- `fatal`: Something went terribly wrong. Add-on becomes unusable.
+- `trace`：显示每个细节，如所有调用的内部函数。
+- `debug`：显示详细的调试信息。
+- `info`：正常（通常）有趣的事件。
+- `warning`：不是错误的异常情况。
+- `error`：不需要立即处理的运行时错误。
+- `fatal`：发生严重错误，插件变得不可用。
 
-Please note that each level automatically includes log messages from a
-more severe level, e.g., `debug` also shows `info` messages. By default,
-the `log_level` is set to `info`, which is the recommended setting unless
-you are troubleshooting.
+请注意，每个级别自动包含来自更高严重级别的日志消息，例如，`debug` 还显示 `info` 消息。默认情况下，`log_level` 设置为 `info`，这也是建议的设置，除非您正在进行故障排除。
 
-### Option: `config_path`
+### 选项：`config_path`
 
-This option allows you to override the default path the add-on will open
-when accessing the web interface. For example, use a different
-configuration directory like `/share/myconfig` instead of `/config`. If set
-to `/root` then all the common folders of HA such as `/config`, `/ssl`,
-`/share`, etc. will appear as subfolders for each access.
+此选项允许您覆盖插件在访问 Web 界面时要打开的默认路径。例如，使用不同的配置目录，如 `/share/myconfig` 而不是 `/config`。如果设置为 `/root`，则 HA 的所有常用文件夹，如 `/config`、`/ssl`、`/share` 等，将作为子文件夹出现在每次访问中。
 
-When not configured, the addon will automatically use the default: `/config`
+如果未配置，插件将自动使用默认值：`/config`
 
-### Option: `packages`
+### 选项：`packages`
 
-Allows you to specify additional [Ubuntu packages][ubuntu-packages] to be
-installed in your shell environment (e.g., Python, PHP, Go).
+允许您在 shell 环境中指定要安装的额外 [Ubuntu 软件包][ubuntu-packages]（例如，Python、PHP、Go）。
 
-**Note**: _Adding many packages will result in a longer start-up
-time for the add-on._
+**注意**：_添加许多包将导致插件启动时间变长。_
 
-### Option: `init_commands`
+### 选项：`init_commands`
 
-Customize your VSCode environment even more with the `init_commands` option.
-Add one or more shell commands to the list, and they will be executed every
-single time this add-on starts.
+使用 `init_commands` 选项进一步自定义您的 VSCode 环境。将一个或多个 shell 命令添加到列表中，每次插件启动时都会执行这些命令。
 
-## Resetting your VSCode settings to the add-on defaults
+## 重置您的 VSCode 设置为插件默认值
 
-The add-on updates your settings to be optimized for use with Home Assistant.
-As soon as you change a setting, the add-on will stop doing that since it
-might be destructive. However, in case you changed some things, but want to
-return to the defaults as delivered by this add-on, do the following:
+该插件会更新您的设置，以优化与 Home Assistant 的配合使用。一旦您更改了设置，插件将停止这样做，因为这可能是破坏性的。然而，如果您更改了一些内容，但想要恢复为此插件提供的默认设置，请执行以下操作：
 
-1. Open the Visual Studio Code editor.
-1. Click on `Terminal` in the top menu bar and click on `New Terminal`.
-1. Execute the following command in the terminal window: `reset-settings`.
-1. Done!
+1. 打开 Visual Studio Code 编辑器。
+2. 点击顶部菜单栏中的 `终端`，然后点击 `新终端`。
+3. 在终端窗口中执行以下命令：`reset-settings`。
+4. 完成！
 
-## Known issues and limitations
+## 已知问题和限制
 
-- Can this add-on run on a Raspberry Pi? Yes, but only if you run a 64 bits
-  operating system. Also, see point below.
-- This add-on currently only supports AMD64 and aarch64/ARM64 machines.
-  Although we support ARM devices, please be aware, that this add-on is quite
-  heavy to run, and requires quite a bit of RAM. We do not recommended to run
-  it on devices with less than 4Gb of memory.
-- "Visual Studio Code is unable to watch for file changes in this large
-  workspace" (error ENOSPC)
+- 此插件可以在树莓派上运行吗？是的，但前提是您运行的是 64 位操作系统。此外，请参见以下要点。
+- 该插件目前仅支持 AMD64 和 aarch64/ARM64 机器。虽然我们支持 ARM 设备，但请注意，该插件运行较重，需要相当多的 RAM。我们不建议在内存少于 4GB 的设备上运行。
+- “Visual Studio Code 无法监视此大型工作区中的文件更改”（错误 ENOSPC）
 
-  This issue is caused by your system not having enough file handles,
-  which causes VSCode to be unable to watch all your files. For HassOS,
-  currently the only option is to click on the little cog when the
-  notification appears and tell it to not show again. In case you have
-  a generic Linux setup (e.g., Ubuntu), follow this guide by Microsoft:
+  此问题是由于您的系统文件句柄不足，导致 VSCode 无法监视所有文件。对于 HassOS，目前唯一的选项是在通知出现时点击小齿轮，并告知其不再显示。如果您有一个通用的 Linux 设置（例如，Ubuntu），请按照 Microsoft 的指南操作：
 
   <https://code.visualstudio.com/docs/setup/linux#_visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc>
 
-## Changelog & Releases
+## 更新日志与版本
 
-This repository keeps a change log using [GitHub's releases][releases]
-functionality.
+该存储库使用 [GitHub 的发布][releases] 功能保留变更日志。
 
-Releases are based on [Semantic Versioning][semver], and use the format
-of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
-based on the following:
+版本基于 [语义版本控制][semver]，格式为 `MAJOR.MINOR.PATCH`。简而言之，版本将根据以下内容进行递增：
 
-- `MAJOR`: Incompatible or major changes.
-- `MINOR`: Backwards-compatible new features and enhancements.
-- `PATCH`: Backwards-compatible bugfixes and package updates.
+- `MAJOR`：不兼容或重大更改。
+- `MINOR`：向后兼容的新功能和增强。
+- `PATCH`：向后兼容的错误修复和包更新。
 
-## Support
+## 支持
 
-Got questions?
+有问题吗？
 
-You have several options to get them answered:
+您有几种选择可以获得解答：
 
-- The [Home Assistant Community Add-ons Discord chat server][discord] for add-on
-  support and feature requests.
-- The [Home Assistant Discord chat server][discord-ha] for general Home
-  Assistant discussions and questions.
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+- [Home Assistant 社区插件 Discord 聊天服务器][discord]，以获取插件支持和功能请求。
+- [Home Assistant Discord 聊天服务器][discord-ha]，进行一般的 Home Assistant 讨论和提问。
+- Home Assistant [社区论坛][forum]。
+- 加入 [Reddit 板块][reddit] [/r/homeassistant][reddit]
 
-You could also [open an issue here][issue] GitHub.
+您也可以在这里 [打开一个问题][issue] 提交到 GitHub。
 
-## Authors & contributors
+## 作者与贡献者
 
-The original setup of this repository is by [Franck Nijhof][frenck].
+该存储库的最初设置由 [Franck Nijhof][frenck] 完成。
 
-For a full list of all authors and contributors,
-check [the contributor's page][contributors].
+有关所有作者和贡献者的完整列表，请查看 [贡献者页面][contributors]。
 
-## License
+## 许可
 
-MIT License
+MIT 许可证
 
-Copyright (c) 2019-2025 Franck Nijhof
+版权所有 (c) 2019-2025 Franck Nijhof
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+特此授予任何获得本软件及其相关文档文件（“软件”）副本的人免费使用该软件的权利，并不受限制，包括不限于使用、复制、修改、合并、发布、分发、再授权和/或出售该软件的副本，以及允许向其提供软件的人这样做，但须遵守以下条件：
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+上述版权声明和本许可声明的副本应包含在所有软件的副本或实质性部分中。
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+本软件按“原样”提供，不提供任何形式的保证，明示或暗示，包括但不限于适销性、特定用途适用性和非侵权的保证。在任何情况下，作者或版权持有人均不对因使用本软件或与本软件的使用或其他交易相关的任何索赔、损害或其他责任承担责任，无论是在合同、侵权或其他方面。
 
 [addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
 [addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_vscode&repository_url=https%3A%2F%2Fgithub.com%2Fhassio-addons%2Frepository

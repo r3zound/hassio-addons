@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "这是一个简单的网络应用程序，它允许您保存您喜欢并希望永远保留的网页的有价值的可读内容。",
+  "description": "一个简单的网络应用程序，让您可以保存您喜欢并想要永远保留的网页的有价值的可读内容。",
   "environment": {
     "READECK_SERVER_HOST": "0.0.0.0"
   },

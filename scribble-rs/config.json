@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "Scribble.rs 是一个替代基于网络的绘图游戏 Skribbl.io 的选项。我对 Skribbl.io 主要有两个问题：广告和断开连接会导致失去分数。此外，自动选择单词也很烦人，引起了一些挫败感。",
+  "description": "Scribble.rs 是一个替代基于网络的绘图游戏 Skribbl.io 的选项。我对 Skribbl.io 主要有两个问题：广告和断开连接会导致失去分数。除此之外，自动选择单词也很烦人，引起了一些挫败感。",
   "name": "scribble-rs",
   "options": {},
   "ports": {

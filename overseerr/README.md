@@ -4,13 +4,11 @@
 
 [![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
 
-Request management and media discovery tool for the Plex ecosystem.
+Plex生态系统的请求管理和媒体发现工具。
 
-## About
+## 关于
 
-[Overseerr] is a multi-platform binary newsgroup downloader. The program works in
-the background and simplifies the downloading verifying and extracting of files
-from [Usenet].
+[Overseerr]是一个多平台的二进制新闻组下载器。该程序在后台运行，并简化了从[Usenet]下载、验证和提取文件的过程。
 
 [Overseerr]: https://overseerr.org/
 [Usenet]: http://en.wikipedia.org/wiki/Usenet

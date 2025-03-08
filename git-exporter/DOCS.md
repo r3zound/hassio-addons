@@ -1,10 +1,10 @@
-# Configuration
+# 配置
 
 ```yaml
 repository:
-  url: <path to your repository>
-  username: user
-  password: pass
+  url: <你的仓库路径>
+  username: 用户名
+  password: 密码
   pull_before_push: true
   commit_message: 'Home Assistant Git Exporter'
   branch_name: 'main'
@@ -34,97 +34,91 @@ dry_run: false
 
 ### `repository.url`
 
-Any https url to your git repository. (For now _no_ SSH)
+你的 git 仓库的任何 https url.（目前不支持 SSH）
 
-### `repository.email` (Optional)
+### `repository.email`（可选）
 
-The email address the commits author is using.
+提交作者使用的电子邮件地址。
 
 ### `repository.username`
 
-Your username for https authentication.
+你的 https 认证用户名。
 
 ### `repository.password`
 
-Your password or [__access token__](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) for your repository.
+你的仓库的密码或 [__访问令牌__](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)。
 
 ### `repository.pull_before_push`
 
-Should the repository be pulled first and commit the new state on top?
+是否先拉取仓库并将新状态提交到上面？
 
 ### `repository.commit_message`
 
-The commit message for the next commit.
+下一个提交的提交信息。
 
 ### `repository.branch_name`
 
-The working branch for the repository.
+仓库的工作分支。
 
-### `repository.ssl_verification` (Optional, default: true)
+### `repository.ssl_verification`（可选，默认：true）
 
-Use this to disable the ssl verification. Can be used for self-signed certificates. __Use this only when you know what you are doing__
-
+用于禁用 ssl 验证。可用于自签名证书。__仅在你知道自己在做什么时使用这个__。
 
 ### `export.lovelace`
 
-Enable / Disable the export for the lovelace config.
+启用/禁用 lovelace 配置的导出。
 
 ### `export.addons`
 
-Enable / Disable the export for the supervisor addons config.
+启用/禁用监督员插件配置的导出。
 
 ### `export.esphome`
 
-Enable / Disable the export for the esphome config.
+启用/禁用 esphome 配置的导出。
 
 ### `export.node_red`
 
-Enable / Disable the export for the Node-RED flows.
-Secure your credentials with [node-red-contrib-credentials](https://flows.nodered.org/node/node-red-contrib-credentials).
-
+启用/禁用 Node-RED 流程的导出。
+使用 [node-red-contrib-credentials](https://flows.nodered.org/node/node-red-contrib-credentials) 来保护你的凭据。
 
 ### `checks.enabled`
 
-Enable / Disable the checks in the exported files.
+启用/禁用导出文件中的检查。
 
 ### `checks.check_for_secrets`
 
-Add your secret values to the check.
+将你的秘密值添加到检查中。
 
 ### `checks.check_for_ips`
 
-Add pattern for ip and mac addresses to the search.
-
+将 ip 和 mac 地址的模式添加到搜索中。
 
 ### `exclude`
 
-The files / folders which should be excluded from the config export.
+应从配置导出中排除的文件/文件夹。
 
-Following folders and files are excluded from the sync per default:
+默认情况下，以下文件夹和文件会被排除在同步之外：
 
-* `secrets.yaml` (secrets are cleared)
+* `secrets.yaml`（秘密会被清除）
 * `.cloud`
 * `.storage`
 
 ### `secrets`
 
-Additional secrets which will be checked for.
-
+将检查的额外秘密。
 
 ### `allowed_secrets`
 
-Additional allowed secrets which will not make the secret check fail.
-
+将不会导致秘密检查失败的其他允许的秘密。
 
 ### `dry_run`
 
-Only show the changes and don't commit or push.
+仅显示更改，不提交或推送。
 
+## 已知限制
 
-## Known limitations
+`check_for_secrets` 使用 git 插件，该插件使用正则表达式进行模式匹配。
+该插件的一个限制是，在秘密中使用括号（如 `[`, `]`, `{`, `}` `(` 和 `)`) 可能会导致意外行为和崩溃。
 
-`check_for_secrets` Uses a git plugin that does pattern matching using regexes.
-A limitation of this plugin is that using brackets (like `[`, `]`, `{`, `}` `(` and `)`) in secrets can result in unexpected behaviour and crashes.
-
-If the addon fails during secrets checking with errors originating from grep (I.E. `grep: Unmatched [, [^, [:, [., or [=`),
-change the passwords that contain brackets or set `check_for_secrets` to `false`.
+如果在秘密检查期间插件出现错误（例如 `grep: Unmatched [, [^, [:, [., or [=`），
+请更改包含括号的密码或将 `check_for_secrets` 设置为 `false`。

@@ -1,43 +1,41 @@
-# Home assistant add-on: EmulatorJS
- In browser web based emulation portable to nearly any device for many retro consoles. A mix of emulators is used between Libretro and EmulatorJS.
+# 家庭助理插件：EmulatorJS
+ 在浏览器中基于网络的模拟，几乎可以在任何设备上运行，适用于许多复古控制台。使用的是Libretro和EmulatorJS之间的混合模拟器。
  
- 
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢每一个给我的仓库点星的人！点击下方的图片进行点星，之后它会显示在右上角。谢谢！_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
-## About
+## 关于
 
-This addon is based on the [docker image](https://github.com/linuxserver/docker-emulatorjs) from linuxserver. In browser web based emulation portable to nearly any device for many retro consoles. A mix of emulators is used between Libretro and EmulatorJS.
+这个插件基于来自linuxserver的[docker镜像](https://github.com/linuxserver/docker-emulatorjs)。在浏览器中基于网络的模拟，几乎可以在任何设备上运行，适用于许多复古控制台。使用的是Libretro和EmulatorJS之间的混合模拟器。
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Hass.io add-on.
+这个插件的安装相当简单，与安装任何其他Hass.io插件没有不同。
 
-1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install this add-on.
-1. Click the `Save` button to store your configuration.
-1. Make the directory /share/emulatorjs to store your games/art files
-1. Make the /share/emulatorjs/config and /share/emulatorjs/data
-1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
-1. Place roms in the correct folders in /share/emulatorjs/data/EMULATORNAME/roms
-1. Go to Admin port
-1. Click Scan for the Emulator you added games for
-1. Click Emulator box, Do Step 1 and Step 2
-1. Open WebUI should ingress the PlayerUI, go to your local homeassistant IP:port or the admin port.
-1. Your games should be available
-1. Consult official docs for setup support: https://github.com/linuxserver/docker-emulatorjs
-1. If starting addon results in wiping your setup, stop addon, and restart. Sometimes the mapping to /share/emulatorjs does not work
-2. 
-## Configuration
+1. [将我的Hass.io插件仓库][repository]添加到你的Hass.io实例中。
+1. 安装这个插件。
+1. 点击 `保存` 按钮以存储你的配置。
+1. 创建目录 /share/emulatorjs 来存储你的游戏/艺术文件
+1. 创建 /share/emulatorjs/config 和 /share/emulatorjs/data
+1. 启动插件。
+1. 检查插件的日志以查看一切是否顺利。
+1. 将rom文件放置在 /share/emulatorjs/data/EMULATORNAME/roms 的正确文件夹中
+1. 进入管理端口
+1. 点击扫描为你添加游戏的模拟器
+1. 点击模拟器框，执行步骤1和步骤2
+1. 打开WebUI应该进入PlayerUI，访问你的本地homeassistant IP:port或管理端口。
+1. 你的游戏应该可用
+1. 查阅官方文档以获取设置支持：https://github.com/linuxserver/docker-emulatorjs
+1. 如果启动插件导致清除你的设置，请停止插件，然后重启。有时映射到 /share/emulatorjs 不会生效。
+
+## 配置
 
 ```
-adminport : 3000 #port you want to run admin interface on.
-port: 89 # port you want to run frontend on
+adminport : 3000 #你想要运行管理界面的端口。
+port: 89 # 你想要运行前端的端口
 ```
 
-Webui can be found at `<your-ip>:port`. Should be available via ingress. The adminport is not available via ingress
+Webui可以在 `<your-ip>:port` 找到。应该可以通过入口访问。管理端口无法通过入口访问。
 
 [repository]: https://github.com/jdeath/homeassistant-addons

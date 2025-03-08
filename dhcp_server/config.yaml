@@ -2,7 +2,9 @@
 version: 1.4.0
 slug: dhcp_server
 name: DHCP server
-description: 一个简单的DHCP服务器。
+description: $'一个简单的DHCP服务器
+
+注：由于您没有给出具体的上下文，所以无法确定“simple”是形容词还是副词。如果需要更准确的翻译，请提供更多的信息或上下文。'
 url: https://home-assistant.io/addons/dhcp_server/
 codenotary: notary@home-assistant.io
 advanced: true

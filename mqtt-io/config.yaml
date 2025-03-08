@@ -1,7 +1,21 @@
 name: MQTT IO
 version: 0.4.0
 slug: mqtt-io
-description: 通过MQTT公开GPIO模块和数字传感器以远程控制和监控。
+description: $'通过MQTT暴露GPIO模块和数字传感器进行远程控制和监控。
+
+
+翻译：通过MQTT公开GPIO模块和数字传感器以实现远程控制与监测。
+
+解释：
+- Expose: 公开、暴露
+- GPIO modules: GPIO模块（通用输入/输出模块）
+- Digital sensors: 数字传感器
+- Via: 通过
+- MQTT: 一个消息传递协议，常用于物联网(IoT)设备之间的通信
+- Remote control: 远程控制
+- Monitoring: 监测
+
+总结：该句描述了如何使用MQTT协议来公开GPIO模块和数字传感器的功能，以便于远程访问和控制这些设备的性能。这通常在物联网应用中非常有用，因为它允许用户从远处管理和监视设备的状态和数据。'
   monitoring.
 url: https://gh-proxy.com/github.com/hassio-addons/addon-mqtt-io
 codenotary: codenotary@frenck.dev

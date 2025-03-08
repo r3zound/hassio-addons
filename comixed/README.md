@@ -1,1 +1,1 @@
-# Home assistant add-on: Comixed
+# Home assistant 插件: Comixed

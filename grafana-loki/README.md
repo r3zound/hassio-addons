@@ -1,19 +1,13 @@
-# Unofficial Home Assistant Add-ons: Loki
+# 非官方 Home Assistant 附加组件：Loki
 
-Loki (<https://grafana.com/oss/loki/>) bundled as an Home Assistant add-on.
+Loki (<https://grafana.com/oss/loki/>) 被打包为 Home Assistant 附加组件。
 
-## About
+## 关于
 
-Grafana Loki is a horizontally-scalable, highly-available, multi-tenant log
-aggregation system inspired by Prometheus. It is designed to be very cost
-effective and easy to operate. It does not index the contents of the logs, but
-rather a set of labels for each log stream. <https://grafana.com/oss/loki/>
+Grafana Loki 是一个水平可扩展、高可用性、多租户日志聚合系统，灵感来自 Prometheus。它旨在具有很高的性价比且易于操作。它不索引日志的内容，而是为每个日志流设置一组标签。<https://grafana.com/oss/loki/>
 
-## Final notes
+## 最后的说明
 
-For information on how to configure this addon please refer to the
-[Documentation](DOCS.md) inside the addon page
+有关如何配置此附加组件的信息，请参阅附加组件页面内的 [文档](DOCS.md)。
 
-This project is not affiliated with Loki, but simply a community effort. Loki
-itself is distributed under the
-[AGPLv3 license](https://www.gnu.org/licenses/agpl-3.0.de.html).
+该项目与 Loki 无关，仅仅是一个社区努力。Loki 本身是在 [AGPLv3 许可证](https://www.gnu.org/licenses/agpl-3.0.de.html) 下发布的。

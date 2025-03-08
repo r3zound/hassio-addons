@@ -1,17 +1,16 @@
-# Home Assistant Community Add-on: chrony
+# Home Assistant 社区附加组件：chrony
 
 [![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![Buy me a coffee][buymeacoffee-shield]][buymeacoffee] [![Community Forum][forum-shield]][forum]
 
-[![Buy me a coffee][buymeacoffee-shield]][buymeacoffee]
+[![Discord][discord-shield]][discord]
 
-chrony NTP Server.
+chrony NTP 服务器。
 
-## About
+## 关于
 
-An NTP server accesible by all hosts on the local network, useful for setting
-time on devices with controlled internet access (such as cameras).
+一个可以被本地网络上所有主机访问的 NTP 服务器，适用于在有控制的互联网访问的设备上（如摄像头）设置时间。
 
 [buymeacoffee-shield]: https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg
 [buymeacoffee]: https://www.buymeacoffee.com/sinclairpaul

@@ -1,17 +1,16 @@
-# Home Assistant Add-on: Mailserver
+# Home Assistant 附加组件：邮件服务器
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+[![发行][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-A mail server for Home Assistant.
-Provides Postfix, Postfix Admin web interface and Dovecot IMAP.
+为 Home Assistant 提供的邮件服务器。
+提供 Postfix、Postfix Admin 网页界面和 Dovecot IMAP。
 
-## About
+## 关于
 
-Important: This addon requires that the MariaDB addon is installed and running!
+重要提示：此附加组件需要安装并运行 MariaDB 附加组件！
 
-This addon is experimental, and provides a mailserver for your domain.
-It is also possible to configure additional email domains and accounts in the Postfixadmin
-web interface.
+此附加组件是实验性的，为您的域提供邮件服务器。
+还可以在 Postfixadmin 网页界面中配置其他电子邮件域和账户。
 
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2024.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg

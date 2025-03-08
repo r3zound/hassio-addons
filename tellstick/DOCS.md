@@ -1,162 +1,152 @@
-# Home Assistant Add-on: TellStick
+# Home Assistant 插件: TellStick
 
-## Installation
+## 安装
 
-Follow these steps to get the add-on installed on your system:
+按照以下步骤在您的系统上安装插件：
 
-1. Navigate in your Home Assistant frontend to **Settings** -> **Add-ons** -> **Add-on store**.
-2. Find the "TellStick" add-on and click it.
-3. Click on the "INSTALL" button.
+1. 在您的 Home Assistant 前端导航到 **设置** -> **插件** -> **插件商店**。
+2. 找到 "TellStick" 插件并点击它。
+3. 点击 "安装" 按钮。
 
-## How to use
+## 如何使用
 
-### Starting the add-on
+### 启动插件
 
-After installation you are presented with a default and example configuration,
-to alter this you must follow both the JSON format and also be aligned with
-the [valid parameters for Tellstick configuration file (tellstick.conf)][conf].
+安装后，您将看到默认和示例配置，
+要更改此配置，您必须遵循 JSON 格式并与
+[Tellstick 配置文件（tellstick.conf）的有效参数][conf] 对齐。
 
-1. Adjust the add-on configuration to match your devices. See the add-on
-   configuration options below for more details.
-2. Save the add-on configuration by clicking the "SAVE" button.
-3. Start the add-on.
+1. 调整插件配置以匹配您的设备。有关更多详细信息，请参见下面的插件配置选项。
+2. 点击 "保存" 按钮保存插件配置。
+3. 启动插件。
 
-### Home Assistant integration
+### Home Assistant 集成
 
-You will need to add internal communication details to the `configuration.yaml`
-file to enable the integration with the add-on.
+您需要向 `configuration.yaml` 文件添加内部通信详细信息，以启用与插件的集成。
 
 ```yaml
-# Example configuration.yaml entry
+# 示例 configuration.yaml 入口
 tellstick:
     host: core-tellstick
     port: [50800, 50801]
 ```
 
-To add lights, sensors and switches to Home Assistant, you need to follow the
-guidelines for each type individually that is described for Home Assistant.
+要将灯光、传感器和开关添加到 Home Assistant，您需要按照每种类型的指南，其中描述了 Home Assistant 的具体要求。
 
-For more information, check the Home Assistant documentation:
+有关更多信息，请查看 Home Assistant 文档：
 
 <https://www.home-assistant.io/components/tellstick/>
 
-## Configuration
+## 配置
 
-After installation you are presented with a default and example configuration,
-to alter this you must follow both the JSON format and also be aligned with
-the [valid parameters for Tellstick configuration file (tellstick.conf)][conf].
+安装后，您将看到默认和示例配置，
+要更改此配置，您必须遵循 JSON 格式并与
+[Tellstick 配置文件（tellstick.conf）的有效参数][conf] 对齐。
 
-Example add-on configuration:
+插件示例配置：
 
 ```yaml
 devices:
   - id: 1
-    name: Example device
+    name: 示例设备
     protocol: everflourish
     model: selflearning-switch
     house: A
     unit: '1'
   - id: 2
-    name: Example device two
+    name: 示例设备二
     protocol: everflourish
     model: selflearning-switch
     house: A
     unit: '2'
 ```
 
-Please note: After any changes have been made to the configuration,
-you need to restart the add-on for the changes to take effect.
+请注意：在对配置进行任何更改后，
+您需要重启插件以使更改生效。
 
-### Option: `devices` (required)
+### 选项: `devices`（必需）
 
-Add one or more devices entries to the add-on configuration for each
-device you'd like to add. Please note the comma separator between each
-device (see example above).
+向插件配置中添加一个或多个设备条目，以添加您希望的每个设备。请注意设备之间的逗号分隔符（见上面的示例）。
 
-#### Option: `devices.id` (required)
+#### 选项: `devices.id`（必需）
 
-A unique number / identifier that must be unique for each device.
+一个唯一的数字/标识符，必须对每个设备唯一。
 
-#### Option: `devices.name` (required)
+#### 选项: `devices.name`（必需）
 
-A name for your device, making it easier to identify it.
+您的设备的名称，让其更易于识别。
 
-#### Option: `devices.protocol` (required)
+#### 选项: `devices.protocol`（必需）
 
-This is the protocol the device uses. For a full list of supported protocols
-(and thus valid values for this configuration option), check the
-TellStick [protocol list][protocol-list].
+这是设备使用的协议。有关支持协议的完整列表
+（因此这个配置选项的有效值），请查看
+TellStick [协议列表][protocol-list]。
 
-#### Option: `devices.model` (optional)
+#### 选项: `devices.model`（可选）
 
-The model parameter is only used by some protocols where there exists different
-types of devices using the same protocol. This can be dimmers versus non-dimmers,
-codeswitch versus self-learning, etc.
+模型参数仅由某些协议使用，适用于使用相同协议的不同类型设备。这可以是调光器与非调光器、代码开关与自学习等。
 
-#### Option: `devices.house` (optional)
+#### 选项: `devices.house`（可选）
 
-Depending on protocol the values here can vary a lot to identify
-or group per house or type.
+根据协议，此处的值可以变化很大，以识别
+或按房屋或类型分组。
 
-#### Option: `devices.unit` (optional)
+#### 选项: `devices.unit`（可选）
 
-Unit identifier, in most cases a value between 1 to 16 and often used in
-combination with the house.
+单元标识符，在大多数情况下是 1 到 16 之间的值，通常与房屋结合使用。
 
-#### Option: `devices.fade` (optional)
+#### 选项: `devices.fade`（可选）
 
-Fade is either `true` or `false` and tells a dimmer if it should fade smooth
-or instant between values (only for IKEA protocol as it seems).
+Fade 为 `true` 或 `false`，告知调光器是否应在值之间平滑或立即渐变（似乎仅适用于 IKEA 协议）。
 
-#### Option: `devices.code` (optional)
+#### 选项: `devices.code`（可选）
 
-A number series based on ones and zeroes often used for dip-switch based devices.
+基于 1 和 0 的编号序列，通常用于基于翻转开关的设备。
 
-## Service calls
+## 服务调用
 
-If you wish to teach a self-learning device in your TellStick configuration:
+如果您希望在 TellStick 配置中教导一个自学习设备：
 
-Go to Home Assistant service call in Developer tools and select:
+转到 Home Assistant 开发者工具中的服务调用并选择：
 
-- Service: `hassio.addon_stdin`
-- Enter service Data:
+- 服务: `hassio.addon_stdin`
+- 输入服务数据:
   `{"addon":"core_tellstick","input":{"function":"learn","device":"1"}}`
 
-Replace `1` with the corresponding ID of the device in your TellStick configuration.
+将 `1` 替换为您 TellStick 配置中对应设备的 ID。
 
-You can also use this to list devices or sensors and read the output in the
-add-on log: `{"addon":"core_tellstick","input":{"function":"list-sensors"}}`
+您还可以使用此方法列出设备或传感器，并在插件日志中读取输出: `{"addon":"core_tellstick","input":{"function":"list-sensors"}}`
 
-### Supported service commands
+### 支持的服务命令
 
 - `"function":"list"`
-  List currently configured devices with name and device id and all discovered sensors.
-  
+  列出当前已配置的设备名称和设备 ID 以及所有发现的传感器。
+
 - `"function":"list-sensors"`
-  
+
 - `"function":"list-devices"`
-  Alternative devices/sensors listing: Shows devices and/or sensors using key=value
-  format (with tabs as separators, one device/sensor per line, no header lines.)
+  替代的设备/传感器列出方式：以 key=value 格式显示设备和/或传感器
+  （以制表符作为分隔符，每行一个设备/传感器，无标题行。）
 
 - `"function":"on","device":"x"`
-  Turns on device. ’x’ could either be an integer of the device-id,
-  or the name of the device.
+  打开设备。 ’x’ 可以是设备 ID 的整数，
+  或设备的名称。
 
 - `"function":"off","device":"x"`
-  Turns off device. ’x’ could either be an integer of the device-id,
-  or the name of the device.
+  关闭设备。 ’x’ 可以是设备 ID 的整数，
+  或设备的名称。
 
-## Support
+## 支持
 
-Got questions?
+有问题吗？
 
-You have several options to get them answered:
+您有几种方式可以获得回答：
 
-- The [Home Assistant Discord Chat Server][discord].
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+- [Home Assistant Discord 聊天服务器][discord]。
+- Home Assistant [社区论坛][forum]。
+- 加入 [Reddit 子版块][reddit] 在 [/r/homeassistant][reddit]。
 
-In case you've found a bug, please [open an issue on our GitHub][issue].
+如果您发现了一个错误，请在我们的 GitHub 上[报告问题][issue]。
 
 [conf]: http://developer.telldus.com/wiki/TellStick_conf
 [discord]: https://discord.gg/c5DvZ4e

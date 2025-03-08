@@ -1,26 +1,25 @@
-# Home Assistant Add-on: DHCP server
+# Home Assistant 插件：DHCP 服务器
 
-## Installation
+## 安装
 
-Follow these steps to get the add-on installed on your system:
+按照以下步骤在您的系统上安装插件：
 
-1. Navigate in your Home Assistant frontend to **Settings** -> **Add-ons** -> **Add-on store**.
-2. Find the "DHCP server" add-on and click it.
-3. Click on the "INSTALL" button.
-4. Modify configuration as needed
+1. 在您的 Home Assistant 前端中导航至 **设置** -> **插件** -> **插件商店**。
+2. 找到 "DHCP 服务器" 插件并点击它。
+3. 点击 "安装" 按钮。
+4. 根据需要修改配置。
 
-## How to use
+## 如何使用
 
-1. Set the `domain` option, e.g., `mynetwork.local`.
-2. Save the add-on configuration by clicking the "SAVE" button.
-3. Start the add-on.
+1. 设置 `domain` 选项，例如 `mynetwork.local`。
+2. 点击 "保存" 按钮以保存插件配置。
+3. 启动插件。
 
-## Configuration
+## 配置
 
-The DHCP server add-on can be tweaked to your likings. This section
-describes each of the add-on configuration options.
+DHCP 服务器插件可以根据您的喜好进行调整。此部分描述插件的每个配置选项。
 
-Example add-on configuration:
+示例插件配置：
 
 ```yaml
 domain: mynetwork.local
@@ -45,104 +44,91 @@ hosts:
     ip: 192.168.1.40
 ```
 
-### Option: `domain` (required)
+### 选项：`domain`（必需）
 
-Your network domain name, e.g., `mynetwork.local` or `home.local`
+您的网络域名，例如 `mynetwork.local` 或 `home.local`。
 
-### Option: `dns` (required)
+### 选项：`dns`（必需）
 
-The DNS servers your DHCP server gives to your clients. This option can
-contain a list of servers. By default, it is configured to have Google's
-public DNS servers: `"8.8.8.8", "8.8.4.4".
+您的 DHCP 服务器为客户端提供的 DNS 服务器。此选项可以包含服务器列表。默认配置为使用 Google 的公共 DNS 服务器：`"8.8.8.8", "8.8.4.4"`。
 
-### Option `ntp` (required)
+### 选项：`ntp`（必需）
 
-The NTP servers your DHCP server gives to your clients.  This option can
-contain a list of server.  By default, none are configured ([])
+您的 DHCP 服务器为客户端提供的 NTP 服务器。此选项可以包含服务器列表。默认情况下，没有配置 ([])
 
-### Option: `default_lease` (required)
+### 选项：`default_lease`（必需）
 
-The default time in seconds that the IP is leased to your client.
-Defaults to `86400`, which is one day.
+IP 地址租给客户端的默认时间（以秒为单位）。默认为 `86400`，即一天。
 
-### Option: `max_lease` (required)
+### 选项：`max_lease`（必需）
 
-The max time in seconds that the IP is leased to your client.
-Defaults to `172800`, which is two days.
+IP 地址租给客户端的最长时间（以秒为单位）。默认为 `172800`，即两天。
 
-### Option: `networks` (one item required)
+### 选项：`networks`（必需一项）
 
-This option defines settings for one or multiple networks for the DHCP server
-to hand out IP addresses for.
+此选项定义 DHCP 服务器为其分配 IP 地址的一项或多项网络设置。
 
-At least one network definition in your configuration is required for the
-DHCP server to work.
+您的配置中至少需要一个网络定义，才能使 DHCP 服务器正常工作。
 
-#### Option: `networks.subnet`
+#### 选项：`networks.subnet`
 
-Your network schema/subnet. For example, if your IP addresses are `192.168.1.x`
-the subnet becomes `192.168.1.0`.
+您的网络架构/子网。例如，如果您的 IP 地址是 `192.168.1.x`，则子网为 `192.168.1.0`。
 
-#### Option: `networks.netmask`
+#### 选项：`networks.netmask`
 
-Your network netmask. For example, if your IP addresses are `192.168.1.x` the
-netmask becomes `255.255.255.0`.
+您的网络子网掩码。例如，如果您的 IP 地址是 `192.168.1.x`，则子网掩码为 `255.255.255.0`。
 
-#### Option: `networks.range_start`
+#### 选项：`networks.range_start`
 
-Defines the start IP address for the DHCP server to lease IPs for.
-Use this together with the `range_end` option to define the range of IP
-addresses the DHCP server operates in.
+定义 DHCP 服务器租用 IP 的起始 IP 地址。与 `range_end` 选项一起使用，以定义 DHCP 服务器操作的 IP 地址范围。
 
-#### Option: `networks.range_end`
+#### 选项：`networks.range_end`
 
-Defines the end IP address for the DHCP server to lease IPs for.
+定义 DHCP 服务器租用 IP 的结束 IP 地址。
 
-#### Option: `networks.broadcast`
+#### 选项：`networks.broadcast`
 
-The broadcast address specific to the lease range. For example, if your
-IP addresses are `192.168.1.x`, the broadcast address is usually `192.168.1.255`.
+租用范围特定的广播地址。例如，如果您的 IP 地址是 `192.168.1.x`，则广播地址通常是 `192.168.1.255`。
 
-#### Option: `networks.gateway`
+#### 选项：`networks.gateway`
 
-Sets the gateway address for that the DHCP server hands out to its clients.
-This is usually the IP address of your router.
+设置 DHCP 服务器分配给其客户端的网关地址。通常是您的路由器的 IP 地址。
 
-#### Option: `networks.interface`
+#### 选项：`networks.interface`
 
-The network interface to listen to for this network, e.g., `end0`.
+该网络要监听的网络接口，例如 `end0`。
 
-### Option: `hosts` (optional)
+### 选项：`hosts`（可选）
 
-This option defines settings for one or host definitions for the DHCP server.
+此选项定义 DHCP 服务器的一个或多个主机定义设置。
 
-It allows you to fix a host to a specific IP address.
+它允许您将主机固定到特定的 IP 地址。
 
-By default, non are configured.
+默认情况下，没有配置任何主机。
 
-#### Option: `hosts.name`
+#### 选项：`hosts.name`
 
-The name of the hostname you'd like to fix an address for.
+您希望为其固定地址的主机名。
 
-#### Option: `hosts.mac`
+#### 选项：`hosts.mac`
 
-The MAC address of the client device.
+客户端设备的 MAC 地址。
 
-#### Option: `hosts.ip`
+#### 选项：`hosts.ip`
 
-The IP address you want the DHCP server to assign.
+您希望 DHCP 服务器分配的 IP 地址。
 
-## Support
+## 支持
 
-Got questions?
+有问题吗？
 
-You have several options to get them answered:
+您可以通过多种方式获得答案：
 
-- The [Home Assistant Discord Chat Server][discord].
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+- [Home Assistant Discord 聊天服务器][discord]。
+- Home Assistant [社区论坛][forum]。
+- 加入 [Reddit 子版块][reddit] 在 [/r/homeassistant][reddit]。
 
-In case you've found a bug, please [open an issue on our GitHub][issue].
+如果您发现了错误，请 [在我们的 GitHub 上打开一个问题][issue]。
 
 [discord]: https://discord.gg/c5DvZ4e
 [forum]: https://community.home-assistant.io

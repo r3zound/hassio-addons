@@ -1,34 +1,28 @@
-# Home Assistant Add-on: File editor
+# Home Assistant 附加组件: 文件编辑器
 
-Browser-based configuration file editor for Home Assistant.
+基于浏览器的 Home Assistant 配置文件编辑器。
 
-![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield] ![Supports armhf Architecture][armhf-shield] ![Supports armv7 Architecture][armv7-shield] ![Supports i386 Architecture][i386-shield]
+![支持 aarch64 架构][aarch64-shield] ![支持 amd64 架构][amd64-shield] ![支持 armhf 架构][armhf-shield] ![支持 armv7 架构][armv7-shield] ![支持 i386 架构][i386-shield]
 
-![Configurator in the Home Assistant Frontend][screenshot]
+![Home Assistant 前端中的配置器][screenshot]
 
-## About
+## 关于
 
-The File editor, formerly known as Configurator, is a small web-app (you access it via web browser) that provides a
-filesystem-browser and text-editor to modify files on the machine the File editor is
-running on.
+文件编辑器（之前称为配置器）是一个小型 Web 应用程序（您通过 Web 浏览器访问它），提供文件系统浏览器和文本编辑器，以修改文件，这些文件编辑器正在运行的机器上。
 
-It is powered by Ace editor, which supports syntax highlighting for various
-code/markup languages. YAML files (the default language for Home Assistant
-configuration files) will be automatically checked for syntax errors while editing.
+它由 Ace 编辑器提供支持，支持多种代码/标记语言的语法高亮。YAML 文件（Home Assistant 配置文件的默认语言）在编辑时会自动检查语法错误。
 
-## Features
+## 特性
 
-- Web-based editor to modify your files with syntax highlighting and YAML linting.
-- Upload and download files.
-- Stage, stash and commit changes in Git repositories, create and switch between
-  branches, push to remotes, view diffs.
-- Lists with available entities, triggers, events, conditions and services.
-- Restart Home Assistant directly with the click of a button. Reloading groups,
-  automations, etc. can be done as well. An API password is required.
-- Direct links to Home Assistant documentation and icons.
-- Execute shell commands within the add-on container.
-- Editor settings are saved in your browser.
-- And much more…
+- 基于网页的编辑器，可用语法高亮和 YAML 检查来修改您的文件。
+- 上传和下载文件。
+- 在 Git 仓库中暂存、存储和提交更改，创建和切换分支，推送到远程，查看差异。
+- 列出可用的实体、触发器、事件、条件和服务。
+- 通过点击按钮直接重启 Home Assistant。还可以重新加载组、自动化等。需要 API 密码。
+- 直接链接到 Home Assistant 文档和图标。
+- 在附加组件容器内执行 shell 命令。
+- 编辑器设置保存在您的浏览器中。
+- 以及更多…
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg

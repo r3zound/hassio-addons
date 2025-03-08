@@ -1,6 +1,6 @@
-## Config
+## 配置
 
-Example config:
+示例配置：
 
 ```yaml
 vnc_server_host: 192.168.0.23
@@ -8,12 +8,12 @@ vnc_server_host: 192.168.0.23
 
 ### `vnc_server_host`
 
-The hostname or ip address of the VNC server the addon should connect to.
+VNC 服务器的主机名或 IP 地址，插件应该连接到该服务器。
 
-### `vnc_server_port` (Optional)
+### `vnc_server_port`（可选）
 
-The remote port of the VNC server. (Default: `5900`)
+VNC 服务器的远程端口。（默认值：`5900`）
 
-### `vnc_server_password` (Optional)
+### `vnc_server_password`（可选）
 
-The password of the the VNC server. When not set and the connection requires a password, it is asked at connection time.
+VNC 服务器的密码。当未设置密码且连接需要密码时，将在连接时提示输入。

@@ -1,13 +1,13 @@
-This is the Hailo variant of the addon for the stable releases of Frigate. Please reference the [release notes](https://github.com/blakeblackshear/frigate/releases) for breaking changes.
+这是适用于Frigate稳定版本的Hailo插件变体。有关重大变化，请参考[发行说明](https://github.com/blakeblackshear/frigate/releases)。
 
-You must create a config file as `frigate.yml` in the root of your Home Assistant configuration directory.
+您必须在Home Assistant配置目录的根目录中创建一个名为`frigate.yml`的配置文件。
 
-Frigate brings realtime object detection to any camera video feed supported by ffmpeg. More detailed docs are maintained [here](https://docs.frigate.video).
+Frigate为任何受ffmpeg支持的摄像头视频源提供实时对象检测。更详细的文档可以在[这里](https://docs.frigate.video)找到。
 
-## Required Dependencies
+## 必需的依赖项
 
-- MQTT: Frigate communicates via MQTT
+- MQTT：Frigate通过MQTT进行通信
 
-## Support
+## 支持
 
-Please [open an issue](https://github.com/blakeblackshear/frigate/issues/new/choose) if you need support.
+如果您需要支持，请[打开一个问题](https://github.com/blakeblackshear/frigate/issues/new/choose)。

@@ -1,41 +1,40 @@
-# Home assistant add-on: Massive Decks
-Massive Decks is a free, open source comedy party game based on Cards against Humanity. Play with friends!
+# Home Assistant 附加组件：Massive Decks
+Massive Decks 是一款免费、开源的喜剧派对游戏，基于《人类的反抗》制作。和朋友一起玩吧！
 
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢所有给我的仓库加星的人！要加星，请点击下面的图片，然后它会出现在右上角。谢谢！_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
-## Features
+## 特性
 
- - Play together in the same room or online.
- - Use any device (Phone, PC, Chromecast, anything with a web browser).
- - You can set up a central screen, but you don't need to (no need to stream anything for other players online).
- - Custom decks (via [Many Decks][many-decks]).
- - Customise the rules:
-   - Custom cards.
-   - House rules.
-   - AI players.
-   - Custom time limits if you want them.
- - Spectators.
- - Keeps your game private by default, you can also set a game password if needed.
- - Community translations.
+ - 可以在同一个房间或在线一起玩。
+ - 使用任何设备（手机、PC、Chromecast，任何有网页浏览器的设备）。
+ - 你可以设置一个中央屏幕，但不需要这样做（不需要为其他在线玩家流式传输任何内容）。
+ - 自定义牌组（通过 [Many Decks][many-decks]）。
+ - 自定义规则：
+   - 自定义卡牌。
+   - 房规。
+   - AI 玩家。
+   - 如果需要，可以设置自定义时间限制。
+ - 观众。
+ - 默认情况下保持游戏私密，如有需要，您也可以设置游戏密码。
+ - 社区翻译。
 
 [many-decks]: https://decks.rereadgames.com/
 
-## About
+## 关于
 
-Based on https://github.com/Lattyware/massivedecks/
+基于 https://github.com/Lattyware/massivedecks/
 
-The game is open source software available under [the AGPLv3 license](LICENSE).
+该游戏是开源软件，依据 [AGPLv3 许可协议](LICENSE) 发布。
 
-## Installation
+## 安装
 
-This addon takes a while to build. This is because massivedecks splits server/client into two dockers and this addon merges those those manually from source!
+该附加组件的构建需要一些时间。这是因为 massive decks 将服务器/客户端分为两个 Docker，而这个附加组件则从源代码手动合并它们！
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Hass.io add-on.
+安装此附加组件相对简单，与安装任何其他 Hass.io 附加组件没有区别。
 
-1. Install this add-on (Will take a while to build).
-1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
-1. Open WebUI should load on IP:port
+1. 安装该附加组件（构建需要一些时间）。
+1. 启动附加组件。
+1. 检查附加组件的日志以查看一切是否顺利进行。
+1. 打开的 WebUI 应该在 IP:port 加载。

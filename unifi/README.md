@@ -1,27 +1,22 @@
-# Home Assistant Community Add-on: UniFi Network Application
+# Home Assistant 社区附加组件: UniFi 网络应用
 
 [![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
 
 [![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
 
-[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
+[![通过 GitHub Sponsors 支持 Frenck][github-sponsors-shield]][github-sponsors]
 
-[![Support Frenck on Patreon][patreon-shield]][patreon]
+[![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
 
-The UniFi Network Application allows you to manage your UniFi network
-using a web browser.
+UniFi 网络应用允许您使用网页浏览器管理您的 UniFi 网络。
 
-## About
+## 关于
 
-This add-on runs Ubiquiti Networks' UniFi Network Application software, which
-allows you to manage your UniFi network via the web browser. The add-on
-provides a single-click installation and run solution for Home Assistant,
-allowing users to get their network up, running, and updated, easily.
+该附加组件运行 Ubiquiti Networks 的 UniFi 网络应用软件，允许您通过网页浏览器管理您的 UniFi 网络。该附加组件为 Home Assistant 提供了一键安装和运行解决方案，使用户能够轻松启动、运行和更新他们的网络。
 
-This add-on supports all Home Assistant supported architectures, including the
-Raspberry Pi.
+此附加组件支持所有 Home Assistant 支持的架构，包括 Raspberry Pi。
 
-![UniFi Network Application][screenshot]
+![UniFi 网络应用][screenshot]
 
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg

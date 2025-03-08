@@ -1,25 +1,25 @@
-# Home Assistant Community Add-on: Tado Auto-Assist for Geofencing and Open Window Detection
-![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield] ![Supports armhf Architecture][armhf-shield] ![Supports armv7 Architecture][armv7-shield]
-![Project Maintenance][maintenance-shield]
+# Home Assistant Community Add-on: Tado 自动助手用于地理围栏和开窗检测
+![支持 aarch64 架构][aarch64-shield] ![支持 amd64 架构][amd64-shield] ![支持 armhf 架构][armhf-shield] ![支持 armv7 架构][armv7-shield]
+![项目维护][maintenance-shield]
 
-Tado Auto-Assist for Geofencing and Open Window Detection for Homeassistant OS
+Tado 自动助手用于地理围栏和开窗检测，适用于 Homeassistant OS
 
-## About
+## 关于
 
-A python script that automatically adjusts the temperature in your home at leaving or arriving based on your settings from tado app and automatically switch off the heating (activating Open Window Mode) in the room where tado TRV detects an open window.
+一个 Python 脚本，基于您在 tado 应用中的设置，自动调整您家的温度，在离开或到达时，并在 tado TRV 检测到开窗时，自动关闭加热（激活开窗模式）。
 
-## Installation
+## 安装
 
-[![FaserF Homeassistant Addons](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2FFaserF%2Fhassio-addons)
+[![FaserF Homeassistant 插件](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2FFaserF%2Fhassio-addons)
 <br />
-The installation of this add-on is pretty straightforward and not different in comparison to installing any other custom Home Assistant add-on.<br />
-Just click the link above or add my repo to the hassio addons repositorys: <https://github.com/FaserF/hassio-addons>
+该插件的安装非常简单，与安装任何其他自定义 Home Assistant 插件没有区别。<br />
+只需点击上面的链接或将我的仓库添加到 hassio 插件库: <https://github.com/FaserF/hassio-addons>
 
-## Configuration
+## 配置
 
-**Note**: _Remember to restart the add-on when the configuration is changed._
+**注意**: _记得在更改配置后重启插件。_
 
-Example add-on configuration:
+示例插件配置：
 
 ```yaml
 username: my@email.com
@@ -28,35 +28,35 @@ minTemp: 5
 maxTemp: 25
 ```
 
-**Note**: _This is just an example, don't copy and paste it! Create your own!_
+**注意**: _这只是一个示例，切勿复制粘贴！请创建您自己的！_
 
-### Option: `username`
+### 选项: `username`
 
-Defines your tado username (usually your email address).
+定义您的 tado 用户名（通常是您的电子邮件地址）。
 
-### Option: `password`
+### 选项: `password`
 
-Defines your tado password.
+定义您的 tado 密码。
 
-### Option: `minTemp`
+### 选项: `minTemp`
 
-Defines your minimal Temperature Tado should set. (Optional)
+定义 Tado 应设置的最低温度。（可选）
 
-### Option: `maxTemp`
+### 选项: `maxTemp`
 
-Defines your maximal Temperature Tado should set. (Optional)
+定义 Tado 应设置的最高温度。（可选）
 
-## Support
+## 支持
 
-Got questions or problems?
+有问题或疑问？
 
-You can [open an issue here][issue] GitHub.
-Please keep in mind, that this software is only tested on armv7 running on a Raspberry Pi 4.
+您可以在此处 [报告问题][issue] 到 GitHub。
+请记住，这个软件仅在 Raspberry Pi 4 的 armv7 上进行了测试。
 
-## Authors & contributors
+## 作者 & 贡献者
 
-The original program is from [adrianslabu]. For more informations, please visit this page: <https://github.com/adrianslabu/tado_aa>
-The hassio addon is brought to you by [FaserF].
+原始程序来自 [adrianslabu]。有关更多信息，请访问此页面: <https://github.com/adrianslabu/tado_aa>
+该 hassio 插件由 [FaserF] 带给您。
 
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2024.svg
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg

@@ -1,67 +1,52 @@
-# Home Assistant Community Add-on: Tautulli
+# Home Assistant 社区插件：Tautulli
 
-Tautulli is an application that you can run alongside your Plex Media Server
-to monitor activity, and track various statistics.
-Most importantly, these statistics include what has been watched,
-who watched it, when and where they watched it, and how it was watched.
-All statistics are presented in a nice and clean interface
-with many tables and graphs,
-which makes it easy to brag about your server to everyone else.
+Tautulli 是一个可以与您的 Plex 媒体服务器一起运行的应用程序，用于监控活动并跟踪各种统计信息。最重要的是，这些统计信息包括观看了什么、谁观看了、何时何地观看以及如何观看。所有统计信息都以美观简洁的界面呈现，包含许多表格和图形，使您可以轻松向其他人炫耀您的服务器。
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Home Assistant add-on.
+该插件的安装非常简单，与安装其他 Home Assistant 插件没有不同。
 
-1. Click the Home Assistant My button below to open the add-on on your Home
-   Assistant instance.
+1. 点击下面的 Home Assistant 我的按钮以在您的 Home Assistant 实例中打开插件。
 
-   [![Open this add-on in your Home Assistant instance.][addon-badge]][addon]
+   [![在您的 Home Assistant 实例中打开此插件。][addon-badge]][addon]
 
-1. Click the "Install" button to install the add-on.
-1. Start the "Tautulli" add-on
-1. Check the logs of the "Tautulli" add-on to see if everything went well.
-1. Click "OPEN WEB UI" to open the Tautulli website and follow the wizard.
+1. 点击“安装”按钮以安装插件。
+1. 启动“Tautulli”插件。
+1. 检查“Tautulli”插件的日志以查看一切是否顺利。
+1. 点击“打开 Web UI”以打开 Tautulli 网站并按照向导操作。
 
-**NOTE**: Starting the add-on might take a couple of minutes (especially the
-first time starting the add-on).
+**注意**：启动插件可能需要几分钟（特别是首次启动插件时）。
 
-## Configuration
+## 配置
 
-**Note**: _Remember to restart the add-on when the configuration is changed._
+**注意**：_在更改配置后，请及时重启插件。_
 
-Example add-on configuration:
+插件配置示例：
 
 ```yaml
 log_level: info
 ```
 
-### Option: `log_level`
+### 选项：`log_level`
 
-The `log_level` option controls the level of log output by the addon and can
-be changed to be more or less verbose, which might be useful when you are
-dealing with an unknown issue. Possible values are:
+`log_level` 选项控制插件的日志输出级别，可以根据需要进行更改，使其更加详细或简洁，这在处理未知问题时可能会很有用。可能的值有：
 
-- `trace`: Show every detail, like all called internal functions.
-- `debug`: Shows detailed debug information.
-- `info`: Normal (usually) interesting events.
-- `warning`: Exceptional occurrences that are not errors.
-- `error`: Runtime errors that do not require immediate action.
-- `fatal`: Something went terribly wrong. Add-on becomes unusable.
+- `trace`：显示每个细节，比如所有调用的内部函数。
+- `debug`：显示详细的调试信息。
+- `info`：正常（通常）感兴趣的事件。
+- `warning`：非错误的异常情况。
+- `error`：不需要立即处理的运行时错误。
+- `fatal`：出现了严重错误。插件变得不可用。
 
-Please note that each level automatically includes log messages from a
-more severe level, e.g., `debug` also shows `info` messages. By default,
-the `log_level` is set to `info`, which is the recommended setting unless
-you are troubleshooting.
+请注意，每个级别自动包括更严重级别的日志消息，例如，`debug` 也会显示 `info` 消息。默认情况下，`log_level` 设置为 `info`，这是推荐的设置，除非您正在进行故障排除。
 
-## Embedding into Home Assistant
+## 嵌入到 Home Assistant
 
-It is possible to embed Tautulli directly into Home Assistant, allowing you to
-access your Tautulli through the Home Assistant frontend.
+可以将 Tautulli 直接嵌入到 Home Assistant 中，使您能够通过 Home Assistant 前端访问您的 Tautulli。
 
-Home Assistant provides the `panel_iframe` integration, for these purposes.
+Home Assistant 提供了 `panel_iframe` 集成，供此目的使用。
 
-Example configuration:
+配置示例：
 
 ```yaml
 panel_iframe:
@@ -71,65 +56,47 @@ panel_iframe:
     url: http://addres.to.your.home.assistant:8181
 ```
 
-## Changelog & Releases
+## 更新日志与发布
 
-This repository keeps a change log using [GitHub's releases][releases]
-functionality.
+本存储库使用 [GitHub 的发布][releases] 功能维护变更日志。
 
-Releases are based on [Semantic Versioning][semver], and use the format
-of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
-based on the following:
+发布基于 [语义版本控制][semver]，格式为 `MAJOR.MINOR.PATCH`。简而言之，版本将根据以下内容递增：
 
-- `MAJOR`: Incompatible or major changes.
-- `MINOR`: Backwards-compatible new features and enhancements.
-- `PATCH`: Backwards-compatible bugfixes and package updates.
+- `MAJOR`：不兼容或重大更改。
+- `MINOR`：向后兼容的新功能和增强。
+- `PATCH`：向后兼容的错误修复和软件包更新。
 
-## Support
+## 支持
 
-Got questions?
+有问题吗？
 
-You have several options to get them answered:
+您有几种选择可以获得解答：
 
-- The [Home Assistant Community Add-ons Discord chat server][discord] for add-on
-  support and feature requests.
-- The [Home Assistant Discord chat server][discord-ha] for general Home
-  Assistant discussions and questions.
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+- 在 [Home Assistant 社区插件 Discord 聊天服务器][discord] 上获取插件支持和功能请求。
+- 在 [Home Assistant Discord 聊天服务器][discord-ha] 上进行一般 Home Assistant 讨论和提问。
+- Home Assistant [社区论坛][forum]。
+- 加入 [/r/homeassistant][reddit] 的 [Reddit 子版块][reddit]。
 
-You could also [open an issue here][issue] GitHub.
+您还可以在此处 [打开一个问题][issue] 在 GitHub 上。
 
-## Authors & contributors
+## 作者与贡献者
 
-The original setup of this repository is by [Joakim Sørensen][ludeeus].
+本存储库的最初设置由 [Joakim Sørensen][ludeeus] 完成。
 
-For a full list of all authors and contributors,
-check [the contributor's page][contributors].
+要查看所有作者和贡献者的完整列表，请查看 [贡献者页面][contributors]。
 
-## License
+## 许可证
 
-MIT License
+MIT 许可证
 
-- Copyright (c) 2018-2019 Joakim Sørensen
-- Copyright (c) 2019-2025 Franck Nijhof
+- 版权 (c) 2018-2019 Joakim Sørensen
+- 版权 (c) 2019-2025 Franck Nijhof
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+特此免费授予任何获得本软件及相关文档文件（“软件”）副本的人，在不受限制的情况下处理软件，包括但不限于使用、复制、修改、合并、发布、分发、再许可和/或销售软件副本的权利，以及允许提供软件的人遵守以下条件：
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+上述版权说明和本许可说明应包含在软件的所有副本或实质部分中。
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+该软件是按“原样”提供的，不提供任何类型的明确或隐含保证，特别是但不限于对适销性、特定目的适用性和不侵权的保证。在任何情况下，作者或版权持有人均不对因使用软件或与软件相关的使用或其他交易而引起的任何索赔、损害或其他责任负责，无论是在合同、侵权或其他方面。
 
 [addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
 [addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_tautulli&repository_url=https%3A%2F%2Fgithub.com%2Fhassio-addons%2Frepository
