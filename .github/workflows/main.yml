@@ -66,7 +66,7 @@ jobs:
               npm install -g ai-markdown-translator
     
               find ./addons -type f \( -name "README.md" -o -name "DOCS.md" \) -print0 | xargs -0 -P 4 -I {} sh -c '
-              timeout 60s ai-markdown-translator -i "{}" -o "{}" -l "中文" 
+              timeout 10s ai-markdown-translator -i "{}" -o "{}" -l "中文" 
               '
 
       - name: Replace description in config files
