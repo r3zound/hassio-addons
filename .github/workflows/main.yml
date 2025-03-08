@@ -12,6 +12,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+
+      - name: Install jq
+        run: sudo apt-get install jq -y
+
       - name: downloading addons
         run: |
           wget -q --show-progress -O official.zip https://github.com/home-assistant/addons/archive/refs/heads/master.zip &
@@ -45,9 +49,59 @@ jobs:
             unzip -o "$file" -d addons && rm "$file"
           done
 
+          
+      - name: Check and clean up addons
+        run: |
+          # 遍历 ./addons 目录下的所有文件夹
+          for addon_dir in ./addons/*/; do
+            # 获取文件夹名（例如：home-assistant-addons-main）
+            repo_name=$(basename "$addon_dir")
 
+            # 遍历该 repo 内的所有子文件夹，查找可能的 config.json 文件
+            for sub_dir in "./addons/$repo_name/"*/; do
+              # 查找 config.json 文件，假设它的名字可以变化
+              config_file=$(find "$sub_dir" -type f -name "config.json" -print -quit)
 
+              # 如果找到了 config.json 文件
+              if [[ -n "$config_file" ]]; then
+                # 构造另一个 repo 的 config.json 路径
+                main_config_path="./$repo_name/$(basename "$sub_dir")/config.json"
 
+                # 检查第二个 config.json 文件是否存在
+                if [[ -f "$main_config_path" ]]; then
+                  # 提取版本号
+                  addon_version=$(extract_version "$config_file")
+                  main_version=$(extract_version "$main_config_path")
+
+                  # 对比版本号
+                  if [[ "$addon_version" != "$main_version" ]]; then
+                    echo "Version mismatch in $repo_name ($(basename "$sub_dir")):"
+                    echo "  Addon version: $addon_version"
+                    echo "  Main version: $main_version"
+                  else
+                    echo "Version match in $repo_name ($(basename "$sub_dir")): $addon_version"
+                    # 删除 ./addons/$repo_name/$(basename "$sub_dir") 目录
+                    echo "Deleting $sub_dir"
+                    rm -rf "$sub_dir"
+                  fi
+                fi
+              fi
+            done
+          done
+
+          # 提取版本号的函数
+          extract_version() {
+            local file="$1"
+
+            # 如果文件是标准的 JSON 格式
+            if jq -e . "$file" >/dev/null 2>&1; then
+              # 使用 jq 提取 version 字段
+              jq -r '.version' "$file"
+            else
+              # 如果是非标准格式，使用 grep 和 awk 提取 version
+              grep -oP '^version:\s*\K[0-9.]+$' "$file"
+            fi
+          }
 
 
       - name: modify the addons download link to accelerate url
