@@ -64,10 +64,11 @@ jobs:
       - name: Translate markdown files
         run: |
               npm install -g ai-markdown-translator
-    
               find ./addons -type f \( -name "README.md" -o -name "DOCS.md" \) -print0 | xargs -0 -P 4 -I {} sh -c '
-              timeout 10s ai-markdown-translator -i "{}" -o "{}" -l "中文" 
+                echo "Translating {}"
+                timeout 10s ai-markdown-translator -i "{}" -o "{}" -l "中文" || echo "{} translation failed or timed out."
               '
+          
 
       - name: Replace description in config files
         run: |
