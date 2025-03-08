@@ -46,7 +46,7 @@ jobs:
       - name: extract the addons
         run: |
           for file in *.zip; do
-            unzip -o "$file" -d addons && rm "$file"
+            unzip -o -q "$file" -d addons && rm "$file"
           done
 
 
