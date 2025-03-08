@@ -50,40 +50,42 @@ jobs:
           done
 
 
-      - name: Check and clean up addons
-        run: |
-          for addon_dir in ./addons/*/; do
-            repo_name=$(basename "$addon_dir")
-            for sub_dir in "./addons/$repo_name/"*/; do
-              config_file=$(find "$sub_dir" -type f -name "config.json" -print -quit)
-              if [[ -n "$config_file" ]]; then
-                main_config_path="./$repo_name/$(basename "$sub_dir")/config.json"
-
-                if [[ -f "$main_config_path" ]]; then
-                  addon_version=$(extract_version "$config_file")
-                  main_version=$(extract_version "$main_config_path")
-
-                  if [[ "$addon_version" != "$main_version" ]]; then
-                    echo "Version mismatch in $repo_name ($(basename "$sub_dir")):"
-                    echo "  Addon version: $addon_version"
-                    echo "  Main version: $main_version"
-                  else
-                    echo "Version match in $repo_name ($(basename "$sub_dir")): $addon_version"
-                    echo "Deleting $sub_dir"
-                    rm -rf "$sub_dir"
+          - name: Check and clean up addons
+          run: |
+            extract_version() {
+              local file="$1"
+              if jq -e . "$file" >/dev/null 2>&1; then
+                jq -r '.version' "$file"
+              else
+                grep -oP '^version:\s*\K[0-9.]+' "$file"
+              fi
+            }
+        
+            for addon_dir in ./addons/*/; do
+              repo_name=$(basename "$addon_dir")
+              for sub_dir in "$addon_dir"*/; do
+                config_file=$(find "$sub_dir" -type f -name "config.json" -print -quit)
+                
+                if [[ -n "$config_file" ]]; then
+                  main_config_path="./addons/$repo_name/$(basename "$sub_dir")/config.json"
+        
+                  if [[ -f "$main_config_path" ]]; then
+                    addon_version=$(extract_version "$config_file")
+                    main_version=$(extract_version "$main_config_path")
+        
+                    if [[ "$addon_version" != "$main_version" ]]; then
+                      echo "Version mismatch in $repo_name ($(basename "$sub_dir")):"
+                      echo "  Addon version: $addon_version"
+                      echo "  Main version: $main_version"
+                    else
+                      echo "Version match in $repo_name ($(basename "$sub_dir")): $addon_version"
+                      echo "Deleting $sub_dir"
+                      rm -rf "$sub_dir"
+                    fi
                   fi
                 fi
-              fi
+              done
             done
-          done
-          extract_version() {
-            local file="$1"
-            if jq -e . "$file" >/dev/null 2>&1; then
-              jq -r '.version' "$file"
-            else
-              grep -oP '^version:\s*\K[0-9.]+$' "$file"
-            fi
-          }
 
 
       - name: modify the addons download link to accelerate url
