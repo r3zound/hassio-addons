@@ -58,6 +58,16 @@ Excellent third-party libraries:
 - 🛠️ [**Da-anda Addons**](https://github.com/da-anda/hass-io-addons): Addons by Da-anda
 
 
+## Translation Technology Explanation
+
+This repository employs advanced AI translation technology to provide a more user-friendly experience for Chinese users:
+
+- **Feature Introduction Translation**: Based on the Zhipu AI large model ([https://bigmodel.cn/](https://bigmodel.cn/))
+- **Document Processing Tool**: Using ai-markdown-translator ([https://github.com/h7ml/ai-markdown-translator](https://github.com/h7ml/ai-markdown-translator)) for intelligent conversion of Markdown documents
+
+⚠️ Friendly Reminder:  
+Due to the use of machine translation, there may be slight differences in some technical terms or expressions.
+
 
 
 You can also click the button below to automatically add the repository (choose one):

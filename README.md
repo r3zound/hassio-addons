@@ -70,6 +70,17 @@
 - 🛠️ [**Da-anda Addons**](https://github.com/da-anda/hass-io-addons): Da-anda 的加载项
 
 
+## 🌐 翻译技术说明
+
+本库采用先进的AI翻译技术，为国内用户提供更友好的中文体验：
+
+- **功能介绍翻译**：基于智谱AI大模型（[https://bigmodel.cn/](https://bigmodel.cn/)）
+- **文档处理工具**：使用ai-markdown-translator（[https://github.com/h7ml/ai-markdown-translator](https://github.com/h7ml/ai-markdown-translator)）进行Markdown文档的智能转换
+
+⚠️ 温馨提示：  
+由于采用机器翻译，部分专业术语或表达可能存在细微差异。
+
+
 
 
 ## 📥 安装指南
