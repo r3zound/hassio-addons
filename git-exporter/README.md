@@ -1,40 +1,37 @@
 # Home Assistant Git Exporter
 
-Export all of your Home Assistant configuration to a git repository of your choice.
-Can be used to show your Home Assistant setup in public repositories.
+将您所有的 Home Assistant 配置导出到您选择的 git 仓库中。
+可以用于在公共仓库中展示您的 Home Assistant 设置。
 
 [![Release][release-badge]][release]
 ![Addon Stage][stage-badge]
 
 [![Donate][donation-badge]][donation-url]
 
-# Functionality
+# 功能
 
-* Export Home Assistant configuration.
-* Export Supervisor Addon configuration.
-* Export Lovelace configuration.
-* Export ESPHome configurations.
-* Export Node-RED flows.
-* Check for plaintext secrets based on your `secrets.yaml` file and common patterns.
-* Check for plaintext ip and addresses in your config.
+* 导出 Home Assistant 配置。
+* 导出 Supervisor 插件配置。
+* 导出 Lovelace 配置。
+* 导出 ESPHome 配置。
+* 导出 Node-RED 流。
+* 根据您的 `secrets.yaml` 文件和常见模式检查明文秘密。
+* 检查您的配置中是否有明文 IP 和地址。
 
-# Example
+# 示例
 
-For an example take a look at my own [Home Assistant configuration](https://github.com/Poeschl/home-assistant-config).
-The folders there are gettings synced with this addon.
+有关示例，请查看我自己 [Home Assistant 配置](https://github.com/Poeschl/home-assistant-config)。
+那里的文件夹正在与此插件同步。
 
+# 徽章
 
-# Badge
-
-If you export your config with this addon and want to help me to spread it further, here is a badge you can embed in your README.
+如果您使用此插件导出配置并希望帮助我进一步传播，这里有一个徽章可以嵌入到您的 README 中。
 
 [![Home Assistant Git Exporter](https://img.shields.io/badge/Powered%20by-Home%20Assistant%20Git%20Exporter-%23d32f2f)](https://github.com/Poeschl/Hassio-Addons/tree/main/git-exporter)
 
 ```markdown
 [![Home Assistant Git Exporter](https://img.shields.io/badge/Powered%20by-Home%20Assistant%20Git%20Exporter-%23d32f2f)](https://github.com/Poeschl/Hassio-Addons/tree/main/git-exporter)
 ```
-
-
 
 [stage-badge]: https://img.shields.io/badge/Addon%20stage-stable-green.svg
 
@@ -43,4 +40,3 @@ If you export your config with this addon and want to help me to spread it furth
 
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee-%23d32f2f?logo=buy-me-a-coffee&style=for-the-badge&logoColor=white
 [donation-url]: https://www.buymeacoffee.com/Poeschl
-

@@ -1,8 +1,8 @@
-# PicoTTS (Hass.io Addon)
+# PicoTTS (Hass.io 插件)
 
-The [naggety/picotts](https://github.com/naggety/picotts) as Home Assistant Supervisor addon. (Useable on Raspberry Pi 3-)
+[440/naggety/picotts](https://github.com/naggety/picotts) 作为 Home Assistant Supervisor 插件。 (可用于 Raspberry Pi 3-)
 
-This addon executes the tts engine behind a webservice. It provides support for all default languages.
+这个插件执行后端的 tts 引擎并提供一个网络服务。它支持所有默认语言。
 
 [![Release][release-badge]][release]
 ![Addon Stage][stage-badge]
@@ -17,4 +17,3 @@ This addon executes the tts engine behind a webservice. It provides support for 
 
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee-%23d32f2f?logo=buy-me-a-coffee&style=for-the-badge&logoColor=white
 [donation-url]: https://www.buymeacoffee.com/Poeschl
-

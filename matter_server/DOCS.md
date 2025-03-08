@@ -1,52 +1,46 @@
-# Home Assistant Add-on: Matter Server
+# Home Assistant 插件：Matter Server
 
-## Installation
+## 安装
 
-Use the following steps to install this add-on.
+按照以下步骤安装此插件。
 
-1. Click the Home Assistant My button below to open the add-on page on your
-   Home Assistant instance.
+1. 点击下面的“Home Assistant 我的”按钮，以便在您的 Home Assistant 实例中打开插件页面。
 
-   [![Open this add-on in your Home Assistant instance.][addon-badge]][addon]
+   [![在您的 Home Assistant 实例中打开此插件。][addon-badge]][addon]
 
-1. Click the "Install" button to install the add-on.
+2. 点击“安装”按钮以安装插件。
 
-## How to use
+## 如何使用
 
-Start the Matter Server add-on to make the WebSocket available to Home
-Assistant Core. Install the [Matter integration][matter_integration]
-in Home Assistant Core.
+启动 Matter Server 插件，使 WebSocket 可用于 Home Assistant Core。在 Home Assistant Core 中安装 [Matter 集成][matter_integration]。
 
-### Access WebSocket interface externally (advanced)
+### 从外部访问 WebSocket 接口（高级）
 
-By default, the Python Matter Server's WebSocket interface is only exposed
-internally. It is still possible to enable access through the host interface
-To do so, click on "Show disabled ports" and enter a port (e.g. 5580) in the
-Matter Server WebSocket server port field.
+默认情况下，Python Matter Server 的 WebSocket 接口仅在内部暴露。仍然可以通过主机接口启用访问。为此，请点击“显示禁用的端口”，并在 Matter Server WebSocket 服务器端口字段中输入端口（例如 5580）。
 
-## Configuration
+## 配置
 
-Add-on configuration:
+插件配置：
 
-| Configuration       | Description                                                 |
-|---------------------|-------------------------------------------------------------|
-| log_level           | Logging level of the Matter Server component.               |
-| log_level_sdk       | Logging level for Matter SDK logs.                          |
-| beta                | Whether to install the latest beta version on startup       |
-| enable_test_net_dcl | Enable test-net DCL for PAA root certificates and other device information. |
-| bluetooth_adapter_id | Set BlueZ Bluetooth Controller ID (for local commissioning) |
+| 配置项               | 描述                                                       |
+|---------------------|------------------------------------------------------------|
+| log_level           | Matter Server 组件的日志级别。                            |
+| log_level_sdk       | Matter SDK 日志的日志级别。                               |
+| beta                | 是否在启动时安装最新的 beta 版本。                       |
+| enable_test_net_dcl | 为 PAA 根证书和其他设备信息启用测试网 DCL。              |
+| bluetooth_adapter_id | 设置 BlueZ 蓝牙控制器 ID（用于本地调试）。                |
 
-## Support
+## 支持
 
-Got questions?
+有问题？
 
-You have several options to get them answered:
+您可以通过以下几种方式获取答案：
 
-- The [Home Assistant Discord Chat Server][discord].
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+- [Home Assistant Discord 聊天服务器][discord]。
+- Home Assistant [社区论坛][forum]。
+- 加入 [/r/homeassistant][reddit] 的 [Reddit 子版块][reddit]。
 
-In case you've found a bug, please [open an issue on our GitHub][issue].
+如果您发现了一个错误，请 [在我们的 GitHub 上打开一个问题][issue]。
 
 [addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=core_matter_server
 [addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg

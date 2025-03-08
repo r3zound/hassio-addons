@@ -1,32 +1,31 @@
-# Home assistant add-on: tasmocompiler
- TasmoCompiler is a simple web GUI which allows you to compile fantastic Tasmota firmware with your own settings
- 
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+# Home assistant 插件：tasmocompiler
+ TasmoCompiler 是一个简单的网页 GUI，允许您使用自己的设置编译出精彩的 Tasmota 固件。
+
+_感谢所有给我的代码库点赞的人！要点赞，请点击下面的图片，然后它将在右上角。谢谢！_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
-## About
+## 关于
 
-This addon is based on the [docker image](https://hub.docker.com/r/benzino77/tasmocompiler) 
+这个插件是基于 [docker 镜像](https://hub.docker.com/r/benzino77/tasmocompiler) 
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Hass.io add-on.
+这个插件的安装相当简单，与安装其他 Hass.io 插件没有区别。
 
-1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install this add-on.
-1. Click the `Save` button to store your configuration.
-1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
-1. Go to the local IP:port . Ingress does not work for some reason
-1. Consult official docs for setup support: https://github.com/benzino77/tasmocompiler
-## Configuration
+1. [将我的 Hass.io 插件库][repository] 添加到您的 Hass.io 实例中。
+1. 安装这个插件。
+1. 点击 `Save` 按钮以保存您的配置。
+1. 启动插件。
+1. 检查插件的日志以确认一切正常。
+1. 转到本地 IP:端口。由于某种原因，Ingress 无法使用。
+1. 查阅官方文档以获取设置支持： https://github.com/benzino77/tasmocompiler
+## 配置
 
 ```
-port: 3000 # port you want to run frontend on
+port: 3000 # 您希望在其上运行前端的端口
 ```
 
-Webui can be found at `<your-ip>:port`.
+Webui 可以在 `<your-ip>:port` 找到。
 
 [repository]: https://github.com/jdeath/homeassistant-addons

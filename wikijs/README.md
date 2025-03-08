@@ -1,37 +1,37 @@
-# Home assistant add-on: Wiki.js
+# Home assistant 插件：Wiki.js
 
-A modern, lightweight and powerful wiki app built on NodeJS
+一个基于 NodeJS 的现代、轻量和强大的维基应用程序
 
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢所有为我的仓库加星的朋友们！要加星，请点击下面的图片，然后它将在右上角。谢谢！_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
-## About
+## 关于
 
-This addon uses the [docker image](https://github.com/requarks/wiki).
+这个插件使用 [docker 镜像](https://github.com/requarks/wiki)。
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Hass.io add-on.
+安装这个插件非常简单，与安装其他 Hass.io 插件没有什么不同。
 
-1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install this add-on.
-1. Click the `Save` button to store your configuration.
-1. Start the add-on. Add-on will error
-1. Copy default configuration [wikijs-config.yml](https://raw.githubusercontent.com/jdeath/homeassistant-addons/refs/heads/main/wikijs/wikijs-config.yml) (not config.yaml!) from this repo to /addon_configs/2effc9b9_wikijs (some people report they have a differnet numbers/letters before _wikijs, use whatever one shows up in your directory)
-1. SSh into your home assistant. type `chmod 2777 /addon_configs/2effc9b9_wikijs`
-1. start addon
-1. Check the logs of the add-on to see if everything went well.
-1. Open WebUI should work via <your-ip>:port.
-1. Settings and sqlite database will be in /addon_configs/2effc9b9_wikijs (mounted in addon as /config)
-1. Stop addon, edit settings.yaml file to change anything you need, such as changing to another database
-## Configuration
+1. [将我的 Hass.io 插件仓库][repository] 添加到您的 Hass.io 实例中。
+1. 安装这个插件。
+1. 点击 `Save` 按钮以保存您的配置。
+1. 启动插件。插件会出现错误。
+1. 从这个仓库复制默认配置 [wikijs-config.yml](https://raw.githubusercontent.com/jdeath/homeassistant-addons/refs/heads/main/wikijs/wikijs-config.yml)（不是 config.yaml！）到 /addon_configs/2effc9b9_wikijs（有些人报告他们在 _wikijs 之前有不同的数字/字母，请使用在您的目录中显示的那个）。
+1. 通过 SSH 进入您的家庭助手，输入 `chmod 2777 /addon_configs/2effc9b9_wikijs`。
+1. 启动插件。
+1. 检查插件的日志以查看是否一切正常。
+1. 打开 WebUI 应该可以通过 <your-ip>:port 访问。
+1. 设置和 sqlite 数据库将在 /addon_configs/2effc9b9_wikijs 中（在插件中挂载为 /config）。
+1. 停止插件，编辑 settings.yaml 文件以更改您需要的任何内容，例如更换为另一个数据库。
+
+## 配置
 
 ```
-port : 3000 #port you want to run on.
+port : 3000 #您想运行的端口。
 ```
 
-Webui can be found at `<your-ip>:port`.
+WebUI 可以在 `<your-ip>:port` 找到。
 
 [repository]: https://github.com/jdeath/homeassistant-addons

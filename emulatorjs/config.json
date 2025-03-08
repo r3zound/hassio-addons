@@ -4,7 +4,7 @@
     "armv7"
   ],
   "boot": "auto",
-  "description": "复古游戏机网络版。",
+  "description": "Retroarch网络版",
   "environment": {
     "TZ": "America/New_York"
   },

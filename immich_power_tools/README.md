@@ -1,3 +1,3 @@
-# Home assistant add-on: Immich Power Tools
+# 家庭助手插件：Immich Power Tools
 
 https://github.com/varun-raj/immich-power-tools

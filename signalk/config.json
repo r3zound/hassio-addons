@@ -6,7 +6,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "将“An implementation of a Signal K central server for boats”翻译为中文是：“用于船只的Signal K中央服务器实现”。",
+  "description": "翻译：为船只实现一个Signal K中央服务器。",
   "devices": [
     "/dev/can0",
     "/dev/can1",
@@ -54,6 +54,6 @@
   "udev": true,
   "url": "https://gh-proxy.com/github.com/alexbelgium/hassio-addons",
   "usb": true,
-  "version": "2.13.2",
+  "version": "2.13.4",
   "webui": "http://[HOST]:[PORT:3000]"
 }

@@ -1,31 +1,31 @@
-# Home assistant add-on: VirtualTabletop
+# Home assistant 插件：VirtualTabletop
 
-VTT is an open-source, free to use platform for creating and playing games.
+VTT 是一个开源、免费使用的平台，用于创建和玩游戏。
 
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢每一个给我的代码库星标的人！要星标，请点击下面的图片，然后会显示在右上角。谢谢！_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
-## About
+## 关于
 
-This addon is based on https://github.com/ArnoldSmith86/virtualtabletop. 
+此插件基于 https://github.com/ArnoldSmith86/virtualtabletop。
 
-This project aims to create a virtual tabletop in the browser where you can (re)create all board, dice and card games and play them without registration over the internet.
+该项目旨在创建一个虚拟桌面，在浏览器中可以 (重新) 创建所有棋盘、骰子和卡片游戏，并在不需要注册的情况下在互联网上进行游戏。
 
-You can host your own instance or go to [VirtualTabletop.io](https://virtualtabletop.io).
+您可以托管自己的实例或访问 [VirtualTabletop.io](https://virtualtabletop.io)。
 
-This project is inspired by [playingcards.io](https://playingcards.io).
+该项目的灵感来自于 [playingcards.io](https://playingcards.io)。
 
-This project aims to be able to import PCIO files and have them be immediately playable.
+该项目旨在能够导入 PCIO 文件并使其能够立即游玩。
 
-## Installation
+## 安装
 
-1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install this add-on.
-1. Start the add-on.
-1. It will fail, that is ok.
-1. Go to \\addon_configs\2effc9b9_virtualtabletop
-1. rename config.template.json to config.json
-1. edit config.json and enter the IP address of your local machine or the IP address of how you reverse proxy your machine.
-1. Restart addon
-1. Go to IP address.
+1. [将我的 Hass.io 插件仓库][repository] 添加到您的 Hass.io 实例。
+1. 安装此插件。
+1. 启动插件。
+1. 它会失败，这没关系。
+1. 转到 \\addon_configs\2effc9b9_virtualtabletop
+1. 将 config.template.json 重命名为 config.json
+1. 编辑 config.json 并输入您本地计算机的 IP 地址或您如何反向代理您的计算机的 IP 地址。
+1. 重启插件
+1. 转到 IP 地址。

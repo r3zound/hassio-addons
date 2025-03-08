@@ -1,51 +1,51 @@
-# Home assistant add-on: Trillium Next Notes
-Trilium Next Notes is a hierarchical note taking application with focus on building large personal knowledge bases. 
+# 家庭助手插件：Trillium Next Notes
+Trilium Next Notes 是一款层次化笔记应用，专注于构建大型个人知识库。 
  
  
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢每一位关注我的仓库的人！要关注它，请点击下面的图片，然后它会出现在右上角。谢谢！_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
-## Features
+## 功能
 
-* Notes can be arranged into arbitrarily deep tree. Single note can be placed into multiple places in the tree (see [cloning](https://triliumnext.github.io/Docs/Wiki/cloning-notes)
-* Rich WYSIWYG note editing including e.g. tables, images and [math](https://triliumnext.github.io/Docs/Wiki/text-notes) with markdown [autoformat](https://triliumnext.github.io/Docs/Wiki/text-notes#autoformat)
-* Support for editing [notes with source code](https://triliumnext.github.io/Docs/Wiki/code-notes), including syntax highlighting
-* Fast and easy [navigation between notes](https://triliumnext.github.io/Docs/Wiki/note-navigation), full text search and [note hoisting](https://triliumnext.github.io/Docs/Wiki/note-hoisting)
-* Seamless [note versioning](https://triliumnext.github.io/Docs/Wiki/note-revisions)
-* Note [attributes](https://triliumnext.github.io/Docs/Wiki/attributes) can be used for note organization, querying and advanced [scripting](https://triliumnext.github.io/Docs/Wiki/scripts)
-* [Synchronization](https://triliumnext.github.io/Docs/Wiki/synchronization) with self-hosted sync server
-  * there's a [3rd party service for hosting synchronisation server](https://trilium.cc/paid-hosting)
-* [Sharing](https://triliumnext.github.io/Docs/Wiki/sharing) (publishing) notes to public internet
-* Strong [note encryption](https://triliumnext.github.io/Docs/Wiki/protected-notes) with per-note granularity
-* Sketching diagrams with built-in Excalidraw (note type "canvas")
-* [Relation maps](https://triliumnext.github.io/Docs/Wiki/relation-map) and [link maps](https://triliumnext.github.io/Docs/Wiki/link-map) for visualizing notes and their relations
-* [Scripting](https://triliumnext.github.io/Docs/Wiki/scripts) - see [Advanced showcases](https://triliumnext.github.io/Docs/Wiki/advanced-showcases)
-* [REST API](https://triliumnext.github.io/Docs/Wiki/etapi) for automation
-* Scales well in both usability and performance upwards of 100 000 notes
-* Touch optimized [mobile frontend](https://triliumnext.github.io/Docs/Wiki/mobile-frontend) for smartphones and tablets
-* [Night theme](https://triliumnext.github.io/Docs/Wiki/themes)
-* [Evernote](https://triliumnext.github.io/Docs/Wiki/evernote-import) and [Markdown import & export](https://triliumnext.github.io/Docs/Wiki/markdown)
-* [Web Clipper](https://triliumnext.github.io/Docs/Wiki/web-clipper) for easy saving of web content
-
-
-## Installation
+* 笔记可以以任意深度的树形结构排列。单个笔记可以放置在树中的多个位置（参见 [克隆](https://triliumnext.github.io/Docs/Wiki/cloning-notes)）
+* 丰富的所见即所得笔记编辑，包括例如表格、图片和 [数学](https://triliumnext.github.io/Docs/Wiki/text-notes) 的 markdown [自动格式化](https://triliumnext.github.io/Docs/Wiki/text-notes#autoformat)
+* 支持编辑 [带有源代码的笔记](https://triliumnext.github.io/Docs/Wiki/code-notes)，包括语法高亮
+* 快速简便的 [笔记导航](https://triliumnext.github.io/Docs/Wiki/note-navigation)，全文搜索和 [笔记提升](https://triliumnext.github.io/Docs/Wiki/note-hoisting)
+* 无缝的 [笔记版本控制](https://triliumnext.github.io/Docs/Wiki/note-revisions)
+* 笔记 [属性](https://triliumnext.github.io/Docs/Wiki/attributes) 可用于笔记组织、查询和高级 [脚本编写](https://triliumnext.github.io/Docs/Wiki/scripts)
+* 与自托管同步服务器的 [同步](https://triliumnext.github.io/Docs/Wiki/synchronization)
+  * 有一个 [第三方服务用于托管同步服务器](https://trilium.cc/paid-hosting)
+* 将笔记 [共享](https://triliumnext.github.io/Docs/Wiki/sharing)（发布）到公共互联网
+* 强大的 [笔记加密](https://triliumnext.github.io/Docs/Wiki/protected-notes)，具有按笔记粒度
+* 使用内置的 Excalidraw 绘制图表（笔记类型为 "canvas"）
+* 用于可视化笔记及其关系的 [关系图](https://triliumnext.github.io/Docs/Wiki/relation-map) 和 [链接图](https://triliumnext.github.io/Docs/Wiki/link-map)
+* [脚本编写](https://triliumnext.github.io/Docs/Wiki/scripts) - 参见 [高级展示](https://triliumnext.github.io/Docs/Wiki/advanced-showcases)
+* 用于自动化的 [REST API](https://triliumnext.github.io/Docs/Wiki/etapi)
+* 在可用性和性能上良好扩展，可支持超过 100,000 个笔记
+* 触摸优化的 [移动前端](https://triliumnext.github.io/Docs/Wiki/mobile-frontend) 适用于智能手机和平板电脑
+* [夜间主题](https://triliumnext.github.io/Docs/Wiki/themes)
+* [Evernote](https://triliumnext.github.io/Docs/Wiki/evernote-import) 和 [Markdown 导入与导出](https://triliumnext.github.io/Docs/Wiki/markdown)
+* [Web Clipper](https://triliumnext.github.io/Docs/Wiki/web-clipper) 用于轻松保存网页内容
 
 
-1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install this add-on.
-1. Click the `Save` button to store your configuration.
-1. Start the add-on. It will fail, that is ok
-1. ssh in to your home assistant and run `chmod 2777 /2effc9b9/trilliumnext`
-1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
-1. Go to your local homeassistant IP:port admin port or ingress.
-1. Follow directions
+## 安装
+
+
+1. [将我的 Hass.io 插件仓库][repository] 添加到您的 Hass.io 实例。
+1. 安装此插件。
+1. 点击 `保存` 按钮以存储您的配置。
+1. 启动插件。它会失败，这没关系
+1. 通过 SSH 进入您的家庭助手并运行 `chmod 2777 /2effc9b9/trilliumnext`
+1. 启动插件。
+1. 检查插件的日志以查看一切是否顺利。
+1. 转到您的本地 homeassistant IP:port 管理端口或 ingress。
+1. 按照说明操作
 
 ```
-port : 8000 #port you want to run admin interface on.
+port : 8000 #您想要运行管理界面的端口。
 ```
 
-Webui can be found at `<your-ip>:port` or ingress.
+Webui 可以在 `<your-ip>:port` 或 ingress 中找到。
 
 [repository]: https://github.com/jdeath/homeassistant-addons

@@ -1,35 +1,33 @@
-# Home assistant add-on: Convos
+# Home assistant 插件：Convos
 
-Convos is an IRC client that runs in your browser and brings the IRC experience into the 21st century.
+Convos 是一个在浏览器中运行的 IRC 客户端，将 IRC 体验带入 21 世纪。
 
-
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢所有给我的代码库加星的人！要加星，请点击下面的图片，然后它会在右上角显示。谢谢！_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
-## About
+## 关于
 
-This addon is based on the [docker image](https://github.com/convos-chat/convos/).
+此插件基于 [docker 镜像](https://github.com/convos-chat/convos/)。
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Hass.io add-on.
+该插件的安装非常简单，与安装其他 Hass.io 插件没有区别。
 
-1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install this add-on.
-1. Click the `Save` button to store your configuration.
-1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
-1. Open WebUI should work via ingress or <your-ip>:port.
-1. Settings will be stored in /addons-config/2effc9b9_convos
+1. [将我的 Hass.io 插件代码库][repository]添加到您的 Hass.io 实例中。
+1. 安装此插件。
+1. 点击 `Save` 按钮以保存您的配置。
+1. 启动插件。
+1. 检查插件的日志以查看一切是否正常。
+1. 打开的 WebUI 应该可以通过 ingress 或 <your-ip>:port 访问。
+1. 设置将存储在 /addons-config/2effc9b9_convos。
 
-## Configuration
+## 配置
 
 ```
-port : 3000 #port you want to run on.
+port : 3000 #您想要运行的端口。
 ```
 
-Webui can be found at `<your-ip>:port`.
+Webui 可以在 `<your-ip>:port` 找到。
 
 [repository]: https://github.com/jdeath/homeassistant-addons

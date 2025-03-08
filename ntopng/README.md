@@ -1,11 +1,11 @@
-# Home Assistant Add-on: ntopng
+# Home Assistant 插件: ntopng
 
-Community version of ntopng with opensource netflow colletor netflow2nd
+ntopng 的社区版本，带有开源的 netflow 收集器 netflow2nd
 
-![Supports aarch64 Architecture][aarch64-shield]
-![Supports amd64 Architecture][amd64-shield]
-![Supports armv7 Architecture][armv7-shield]
-![Supports i386 Architecture][i386-shield]
+![支持 aarch64 架构][aarch64-shield]
+![支持 amd64 架构][amd64-shield]
+![支持 armv7 架构][armv7-shield]
+![支持 i386 架构][i386-shield]
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg

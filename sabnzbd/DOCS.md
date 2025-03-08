@@ -1,89 +1,69 @@
 # Home Assistant Community Add-on: SABnzbd
 
-Free and easy binary newsreader.
+免费的易用二进制新闻阅读器。
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Home Assistant add-on.
+此插件的安装相当简单，与安装任何其他 Home Assistant 插件并没有区别。
 
-1. Click the Home Assistant My button below to open the add-on on your Home
-   Assistant instance.
+1. 点击下面的 Home Assistant 我的按钮，以在您的 Home Assistant 实例中打开该插件。
 
-   [![Open this add-on in your Home Assistant instance.][addon-badge]][addon]
+   [![在您的 Home Assistant 实例中打开此插件。][addon-badge]][addon]
 
-1. Click the "Install" button to install the add-on.
-1. Start the "SABnzbd" add-on
-1. Check the logs of the "SABnzbd" add-on to see if everything went well.
-1. Click "OPEN WEB UI" to open the SABnzbd interface.
-1. Complete the wizard shown on screen.
+1. 点击“安装”按钮以安装该插件。
+1. 启动“SABnzbd”插件。
+1. 检查“SABnzbd”插件的日志，以查看一切是否顺利。
+1. 点击“打开网页界面”以打开 SABnzbd 界面。
+1. 完成屏幕上显示的向导。
 
-- Set the download folders to, for example,
-  `/media/sabnzbd/Donwloads/complete` and
+- 将下载文件夹设置为，例如，
+  `/media/sabnzbd/Donwloads/complete` 和
   `/media/sabnzbd/Donwloads/incomplete`
 
-## Configuration
+## 配置
 
-_This add-on does not require any configuration to run._
+_此插件在运行时不需要任何配置。_
 
-## Changelog & Releases
+## 更新日志与版本
 
-This repository keeps a change log using [GitHub's releases][releases]
-functionality.
+本仓库使用 [GitHub 的发布][releases] 功能保持变更日志。
 
-Releases are based on [Semantic Versioning][semver], and use the format
-of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
-based on the following:
+发布基于 [语义版本控制][semver]，使用 `MAJOR.MINOR.PATCH` 格式。简而言之，版本将根据以下内容进行递增：
 
-- `MAJOR`: Incompatible or major changes.
-- `MINOR`: Backwards-compatible new features and enhancements.
-- `PATCH`: Backwards-compatible bugfixes and package updates.
+- `MAJOR`: 不兼容或重大更改。
+- `MINOR`: 向后兼容的新功能和增强。
+- `PATCH`: 向后兼容的错误修复和包更新。
 
-## Support
+## 支持
 
-Got questions?
+有问题吗？
 
-You have several options to get them answered:
+您有几种方法可以获得解答：
 
-- The [Home Assistant Community Add-ons Discord chat server][discord] for add-on
-  support and feature requests.
-- The [Home Assistant Discord chat server][discord-ha] for general Home
-  Assistant discussions and questions.
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+- [Home Assistant Community Add-ons Discord 聊天服务器][discord] 以获取插件支持和功能请求。
+- [Home Assistant Discord 聊天服务器][discord-ha] 以获取一般 Home Assistant 讨论和问题。
+- Home Assistant [社区论坛][forum]。
+- 加入 [/r/homeassistant][reddit] 的 [Reddit 子论坛][reddit]。
 
-You could also [open an issue here][issue] GitHub.
+您还可以在这里 [打开一个问题][issue] GitHub。
 
-## Authors & contributors
+## 作者与贡献者
 
-The original setup of this repository is by [Franck Nijhof][frenck].
+此仓库最初由 [Franck Nijhof][frenck] 设置。
 
-For a full list of all authors and contributors,
-check [the contributor's page][contributors].
+有关所有作者和贡献者的完整列表，请查看 [贡献者页面][contributors]。
 
-## License
+## 许可证
 
-MIT License
+MIT 许可证
 
-Copyright (c) 2024-2025 Franck Nijhof
+版权所有 (c) 2024-2025 Franck Nijhof
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+特此免费授权任何获得本软件及相关文档文件（“软件”）副本的人，按以下条件自由处理该软件，包括但不限于使用、复制、修改、合并、发布、分发、再许可和/或出售该软件副本的权利，并允许向其提供软件的人这样做：
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+上述版权声明和本许可声明应包含在所有软件副本或实质性部分中。
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+该软件按"原样"提供，无任何形式的保证，明确或隐含，包括但不限于对适销性、特定用途适用性和非侵权的保证。在任何情况下，作者或版权持有人对因使用软件或与软件的使用或其他交易而引起的任何索赔、损害或其他责任不承担责任，无论是在合同诉讼、侵权或其他方面。
 
 [addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
 [addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_sabnzbd&repository_url=https%3A%2F%2Fgithub.com%2Fhassio-addons%2Frepository

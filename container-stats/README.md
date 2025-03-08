@@ -1,25 +1,24 @@
-# Docker Container Stats
+# Docker 容器状态
 
-It contains [Docker Container Stats](https://github.com/virtualzone/docker-container-stats) to monitor all running containers / addons.
+它包含 [Docker 容器状态](https://github.com/virtualzone/docker-container-stats)，用于监控所有运行的容器/插件。
 
-[![Release][release-badge]][release]
-![Addon Stage][stage-badge]
+[![发布][release-badge]][release]
+![插件阶段][stage-badge]
 
-[![Donate][donation-badge]][donation-url]
+[![捐赠][donation-badge]][donation-url]
 
-## 🧪 Experimental Addon
+## 🧪 实验性插件
 
-During long-term usage I noticed that the addon fills up all available memory when getting the data for a week.
-Especially on a Raspberry Pi with Home Assistant this means death in a few minutes.
-__Use this addon on your own risk!__
+在长期使用过程中，我注意到当获取一周的数据时，插件会占满所有可用内存。
+特别是在使用 Home Assistant 的 Raspberry Pi 上，这意味着几分钟内就会崩溃。
+__使用此插件需自担风险！__
 
-## Security
+## 安全
 
-Since the addon accesses the docker api, the security rating is this low.
-Unfortunately there is now way to access the docker api without disabling the *Protection Mode* of the addon.
-Technically with disabling it, the addon can access and control other addons and the core on a HA supervised system.
-But without it we can not retrieve the statistics of the running container and this addon don't work at all.
-
+由于插件访问 Docker API，因此安全评级较低。
+不幸的是，不禁用插件的 *保护模式*就无法访问 Docker API。
+从技术上讲，禁用后，插件可以访问和控制其他插件以及 HA 监督系统上的核心。
+但没有它，我们无法检索运行容器的统计信息，也就无法正常使用此插件。
 
 [stage-badge]: https://img.shields.io/badge/Addon%20stage-deprecated-lightgrey.svg
 
@@ -28,4 +27,3 @@ But without it we can not retrieve the statistics of the running container and t
 
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee-%23d32f2f?logo=buy-me-a-coffee&style=for-the-badge&logoColor=white
 [donation-url]: https://www.buymeacoffee.com/Poeschl
-

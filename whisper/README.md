@@ -1,10 +1,10 @@
-# Home Assistant Add-on: Whisper
+# Home Assistant 插件：Whisper
 
-![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield]
+![支持 aarch64 架构][aarch64-shield] ![支持 amd64 架构][amd64-shield]
 
-Home Assistant add-on that uses [faster-whisper](https://github.com/guillaumekln/faster-whisper/) for speech-to-text.
+Home Assistant 插件，使用 [faster-whisper](https://github.com/guillaumekln/faster-whisper/) 进行语音转文本。
 
-Part of the [Year of Voice](https://www.home-assistant.io/blog/2022/12/20/year-of-voice/).
+是 [语音之年](https://www.home-assistant.io/blog/2022/12/20/year-of-voice/) 的一部分。
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg

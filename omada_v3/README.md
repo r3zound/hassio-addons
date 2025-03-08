@@ -1,3 +1,3 @@
-Recommendation : please backup your database and migrated to this addon https://github.com/jkunczik/home-assistant-omada
+推荐：请备份您的数据库并迁移到这个插件 https://github.com/jkunczik/home-assistant-omada
 
-It is dedicated and seems in active development ; it should be more stable
+该插件是专用的并且似乎在积极开发中；它应该更加稳定。

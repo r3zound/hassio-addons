@@ -1,20 +1,19 @@
-# Unofficial Home Assistant Add-ons: Promtail
+# 非官方 Home Assistant 插件：Promtail
 
-Promtail (<https://grafana.com/oss/loki/>) bundled as an Home Assistant add-on.
+Promtail (<https://grafana.com/oss/loki/>) 打包为 Home Assistant 插件。
 
-## About
+## 关于
 
-Promtail is an agent which ships the contents of local logs to a private Loki
-instance or Grafana Cloud
+Promtail 是一个代理，它将本地日志的内容发送到私有 Loki 实例或 Grafana Cloud。
 
-## Final notes
+## 最后说明
 
-For information on how to configure this addon please refer to the
-[Documentation](DOCS.md) inside the addon page
+有关如何配置此插件的信息，请参阅插件页面中的
+[文档](DOCS.md)。
 
-This project is not affiliated with Promtail, but simply a community effort.
-Promtail itself is distributed under the
-[AGPLv3 license](https://www.gnu.org/licenses/agpl-3.0.de.html).
+该项目与 Promtail 并无关联，而仅仅是一个社区努力的结果。
+Promtail 本身是根据
+[AGPLv3 许可证](https://www.gnu.org/licenses/agpl-3.0.de.html) 分发的。
 
-(Forked from
-![https://github.com/mdegat01/addon-promtail/](https://github.com/mdegat01/addon-promtail/))
+（源自
+![https://github.com/mdegat01/addon-promtail/](https://github.com/mdegat01/addon-promtail/)）

@@ -1,17 +1,16 @@
-# Home Assistant Community Add-on: Log Viewer
+# Home Assistant 社区插件: 日志查看器
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
-[![Buy me a coffee][buymeacoffee-shield]][buymeacoffee]
+[![请我喝咖啡][buymeacoffee-shield]][buymeacoffee]
 
-Browser-based log utility for Home Assistant.
+基于浏览器的 Home Assistant 日志工具。
 
-## About
+## 关于
 
-Easily monitor your Home Assistant logs in your web browser. Custom filtering
-is available to make it simple to differentiate different types of logs.
+轻松在您的网络浏览器中监控您的 Home Assistant 日志。提供自定义过滤功能，使区分不同类型的日志变得简单。
 
 [buymeacoffee-shield]: https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg
 [buymeacoffee]: https://www.buymeacoffee.com/dale3h

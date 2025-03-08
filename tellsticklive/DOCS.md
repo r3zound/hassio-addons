@@ -1,164 +1,149 @@
-# Home Assistant TellStick with Telldus Live
+# Home Assistant TellStick 与 Telldus Live
 
-TellStick and TellStick Duo service with a possibility to export devices
-to Telldus Live!
+TellStick 和 TellStick Duo 服务，允许将设备导出到 Telldus Live！
 
-![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield]
-![Supports armhf Architecture][armhf-shield] ![Supports armv7 Architecture][armv7-shield]
-![Supports i386 Architecture][i386-shield]
+![支持 aarch64 架构][aarch64-shield] ![支持 amd64 架构][amd64-shield]
+![支持 armhf 架构][armhf-shield] ![支持 armv7 架构][armv7-shield]
+![支持 i386 架构][i386-shield]
 
-## About
+## 关于
 
-This add-on is a modification of the official TellStick addon.
-It adds the ability to have your devices and sensors published Telldus Live.
-See the official addon documentation for details on device setup.
+此附加组件是官方 TellStick 附加组件的修改版。
+它增加了将您的设备和传感器发布到 Telldus Live 的功能。
+有关设备设置的详细信息，请参见官方附加组件文档。
 
-## Installation
+## 安装
 
-Follow these steps to get the add-on installed on your system:
+按照以下步骤在您的系统上安装此附加组件：
 
-Add the repository `https://github.com/erik73/hassio-addons`.
-Find the "TellStick with Telldus Live" add-on and click it.
-Click on the "INSTALL" button.
+添加存储库 `https://github.com/erik73/hassio-addons`。
+找到 "TellStick 与 Telldus Live" 附加组件并点击它。
+点击 "安装" 按钮。
 
-## How to use
+## 如何使用
 
-### Starting the add-on
+### 启动附加组件
 
-After installation you are presented with an example configuration.
+安装后，您将看到一个示例配置。
 
-Adjust the add-on configuration to match your devices. See the official add-on
-configuration options for details.
-Save the add-on configuration by clicking the "SAVE" button.
-Start the add-on.
+调整附加组件配置以匹配您的设备。有关详细信息，请参见官方附加组件
+配置选项。
+通过点击 "保存" 按钮来保存附加组件配置。
+启动附加组件。
 
-### Home Assistant integration
+### Home Assistant 集成
 
-You can run the addon in Live-only mode. In that case, you configure the TelldusLive
-integration in HA once you have everything set up.
-If you want to run in local mode (the same way the official addon runs), you will
-need to add internal communication details to the `configuration.yaml`
-file to enable the integration with the add-on:
+您可以在仅限 Live 的模式下运行此附加组件。在这种情况下，您需要在设置完成后在 HA 中配置 TelldusLive
+集成。
+如果您想以本地模式运行（与官方附加组件运行的方式相同），您需要
+在 `configuration.yaml` 文件中添加内部通信细节以启用与附加组件的集成：
 
 ```yaml
-# Example configuration.yaml entry
+# 示例 configuration.yaml 条目
 tellstick:
   host: 32b8266a-tellsticklive
   port: [50800, 50801]
 ```
 
-## Configuration
+## 配置
 
-For device configuration, refer to the official addon instructions.
+有关设备配置，请参阅官方附加组件说明。
 
-All devices configured and working will be visible in your Telldus Live account when
-you have completed the configuration steps below.
+所有已配置并工作的设备将在您完成下面的配置步骤后显示在您的 Telldus Live 账户中。
 
-Example sensor configuration:
+示例传感器配置：
 
 ```yaml
 enablelive: false
 sensors:
   - id: 199
-    name: Example sensor
+    name: 示例传感器
     protocol: fineoffset
     model: temperature
   - id: 215
-    name: Example sensor two
+    name: 示例传感器二
     protocol: fineoffset
     model: temperaturehumidity
 ```
 
-Please note: After any changes have been made to the configuration,
-you need to restart the add-on for the changes to take effect.
+请注意：对配置进行任何更改后，您需要重新启动附加组件以使更改生效。
 
-### Option: `sensors` (required)
+### 选项： `sensors`（必需）
 
-Add one or more sensors entries to the add-on configuration for each
-sensor you'd like to add to Telldus Live.
+为您希望添加到 Telldus Live 的每个传感器在附加组件配置中添加一个或多个传感器条目。
 
-#### Option: `sensors.id` (required)
+#### 选项： `sensors.id`（必需）
 
-This is the id of the sensor. To find out what id to use you have to use the
-service call hassio.addon_stdin with the following data:
+这是传感器的 ID。要找出使用哪个 ID，您需要使用
+服务调用 hassio.addon_stdin，数据如下：
 `{"addon":"32b8266a_tellsticklive","input":{"function":"list-sensors"}}`
-Look in the addon log, and you should be able to find the id, protocol and model
-for your sensors.
+在附加组件日志中查找，您应该能够找到传感器的 ID、协议和型号。
 
-#### Option: `sensors.name` (required)
+#### 选项： `sensors.name`（必需）
 
-A name for your sensor, that will be displayed in Telldus Live.
+传感器的名称，将在 Telldus Live 中显示。
 
-#### Option: `sensors.protocol` (required)
+#### 选项： `sensors.protocol`（必需）
 
-This is the protocol the sensor uses. See above regarding service call to find
-this information.
+这是传感器使用的协议。有关此信息，请参见上述服务调用。
 
-#### Option: `sensors.model` (optional)
+#### 选项： `sensors.model`（可选）
 
-The model of the sensor. See above regarding the service call to find this information.
+传感器的型号。有关此信息，请参见上述服务调用。
 
-## Service calls
+## 服务调用
 
-See the official addon instructions.
+请参见官方附加组件说明。
 
-## How to enable the Telldus Live connection
+## 如何启用 Telldus Live 连接
 
-Once you are happy with the devices and sensors configuration it is time to establish
-the connection to Telldus Live, and generate an UUID that will be used to connect.
+当您对设备和传感器配置感到满意时，是时候建立
+与 Telldus Live 的连接，并生成将用于连接的 UUID。
 
-Set the config option:
+设置配置选项：
 
 ```yaml
 enable_live: true
 ```
 
-Restart the addon and look in the addon log.
-You will get a URL to visit in your browser to establish the connection
-between your Live account and this addon.
-That URL take you to Telldus Live, and you will be asked to login or create an account
-if you don´t have one.
+重新启动附加组件并查看附加组件日志。
+您将获得一个 URL，以便在浏览器中访问以建立
+您的 Live 账户与此附加组件之间的连接。
+该 URL 将带您到 Telldus Live，您将被要求登录或创建账户
+如果您还没有账户。
 
-Also make sure you copy the string after uuid= in the URL, and create the following
-config entry:
+还要确保复制 URL 中 uuid= 后的字符串，并创建以下
+配置条目：
 
 ```yaml
 live_uuid: de1333b5-154c-5342-87dc-6b7e0b2096ab
 ```
 
-The above is an example. Yours will look different.
+上面的内容是一个示例。您的将看起来不同。
 
-Finally, if you want to disable the local connection to HA, and get all of
-your devices from Telldus Live through the Telldus Live integration
-you have the set the following config option to false. In that case, you
-can remove all tellstick configuration from configuration.yaml.
+最后，如果您想禁用与 HA 的本地连接，并通过 Telldus Live 集成获取所有
+设备，则需要将以下配置选项设置为 false。在这种情况下，您可以从 configuration.yaml 中移除所有 tellstick 配置。
 
 ```yaml
 enable_local: false
 ```
 
-Once all this is complete, you can restart the addon, and your devices and
-sensors will appear in Telldus Live!
+完成所有这些步骤后，您可以重新启动附加组件，您的设备和
+传感器将出现在 Telldus Live 中！
 
 ```yaml
 live_delay: 10
 ```
 
-The above config options is by default set to 10 seconds. It is used
-to control how long to wait before establishing the connection to Telldus.
-This is important to set this to a higher value when new sensors has been
-added, because the sensors has to be found by your Telldus device before
-connecting.
-So in short, if new sensors has been added to your configuration, set it
-to for example 600 seconds. Once the sensors are found, and have been
-assigned the correct name in the Telldus Live system, it can be reduced
-to 10 seconds again.
+上述配置选项默认设置为 10 秒。它用于控制在建立与 Telldus 连接之前等待多长时间。
+在添加新传感器时，将其设置为更高的值非常重要，因为传感器必须在连接之前被您的 Telldus 设备找到。
+简而言之，如果新传感器已添加到您的配置中，将其设置为例如 600 秒。一旦传感器被找到，并在 Telldus Live 系统中分配了正确的名称，可以将其再次减少为 10 秒。
 
-## Support
+## 支持
 
-Got questions?
+有问题吗？
 
-You could [open an issue here][issue] GitHub.
+您可以在 [这里打开问题][issue] GitHub。
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg

@@ -1,35 +1,34 @@
-# Home Assistant Add-on: VLC 
+# Home Assistant 插件：VLC 
 
-## Installation
+## 安装
 
-Follow these steps to get the add-on installed on your system:
+按照以下步骤在您的系统上安装插件：
 
-1. Navigate in your Home Assistant frontend to **Settings** -> **Add-ons** -> **Add-on store**.
-2. Find the "VLC" add-on and click it.
-3. Click on the "INSTALL" button.
+1. 在您的 Home Assistant 前端导航至 **设置** -> **插件** -> **插件商店**。
+2. 找到 "VLC" 插件并点击它。
+3. 点击 "安装" 按钮。
 
-## How to use
+## 如何使用
 
-1. Start the add-on.
-2. Add the VLC Telnet integration to Home Assistant, see documentation:
+1. 启动插件。
+2. 将 VLC Telnet 集成添加到 Home Assistant，查看文档：
    <https://www.home-assistant.io/integrations/vlc_telnet>
 
+## 配置
 
-## Configuration
+请注意，在安装插件时预计会进行自动发现。如果没有发现 "通过 Telnet 的 VLC 媒体播放器" 集成，请确保删除任何过期的 "通过 Telnet 的 VLC 媒体播放器" 集成并重新安装插件以重新触发发现。
 
-Note that automatic discovery is expected when the add-on is being installed. If no "VLC media player via Telnet" integration is being discovered, make sure to remove any stale "VLC media player via Telnet" integrations and reinstall the add-on to trigger discovery again.
+## 支持
 
-## Support
+有问题吗？
 
-Got questions?
+您有几种选项可以得到答案：
 
-You have several options to get them answered:
+- [Home Assistant Discord 聊天服务器][discord]。
+- Home Assistant [社区论坛][forum]。
+- 加入 [/r/homeassistant][reddit] 的 [Reddit 子版块][reddit]。
 
-- The [Home Assistant Discord Chat Server][discord].
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
-
-In case you've found a bug, please [open an issue on our GitHub][issue].
+如果您发现了错误，请 [在我们的 GitHub 上打开一个问题][issue]。
 
 [discord]: https://discord.gg/c5DvZ4e
 [forum]: https://community.home-assistant.io

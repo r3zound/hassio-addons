@@ -1,21 +1,21 @@
-## Precondition
+## 前提条件
 
-Unfortunately there is now way to access the docker api without disabling the *Protection Mode* of the addon.
-Technically with disabling it, the addon can access and control other addons and the core on a HA supervised system.
-But without it we can not retrieve the statistics of the running container and this addon don't work at all.
+不幸的是，目前无法在不禁用插件的*保护模式*的情况下访问docker api。
+从技术上讲，禁用后，插件可以访问和控制HA监督系统上的其他插件和核心。
+但没有它，我们无法检索正在运行的容器的统计信息，并且这个插件完全无法工作。
 
-To make the addon work you have to disable the *Protection Mode* on the addon details page.
-**Only do this if you know what this means to your system**
+要使插件正常工作，您必须在插件详细信息页面上禁用*保护模式*。
+**只有在您知道这对您的系统意味着什么时才执行此操作**
 
-If you want to review the source of the contained application [here is your link](https://github.com/virtualzone/docker-container-stats).
-At the time of writing all docker related code is in `stats.js`.
+如果您想查看包含应用程序的源代码，[请点击这里](https://github.com/virtualzone/docker-container-stats)。
+在撰写本文时，所有与docker相关的代码都在`stats.js`中。
 
-## Config
+## 配置
 
 ### `persistent`
 
-Enable persistence of the collected data. If disabled the data vanish on addon stop.
+启用收集数据的持久性。如果禁用，数据将在插件停止时消失。
 
-### `update_interval` (Optional)
+### `update_interval`（可选）
 
-Set a custom update interval for the data in seconds. Defaults to `60` seconds.
+为数据设置自定义更新间隔（以秒为单位）。默认为`60`秒。

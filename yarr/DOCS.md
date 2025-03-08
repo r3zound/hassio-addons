@@ -1,69 +1,61 @@
-# Home Assistant Add-on: yarr
+# Home Assistant 插件：yarr
 
-Yet another rss reader
+又一个 RSS 阅读器
 
-## Installation
+## 安装
 
-Add this repository to your [Hass.io](https://home-assistant.io/hassio/) instance:
+将这个仓库添加到你的 [Hass.io](https://home-assistant.io/hassio/) 实例中：
 
 `https://github.com/einschmidt/hassio-addons`
 
-If you have trouble you can follow the [official docs](https://home-assistant.io/hassio/installing_third_party_addons/).
+如果遇到问题，可以参考 [官方文档](https://home-assistant.io/hassio/installing_third_party_addons/)。
 
-Then install the "yarr!" add-on.
+然后安装 "yarr!" 插件。
 
-## Configuration
+## 配置
 
-**Note**: _Remember to restart the add-on when the configuration is changed._
+**注意**：_记得在更改配置后重启插件。_
 
-### Option: `log_level`
+### 选项：`log_level`
 
-The `log_level` option controls the level of log output by the addon and can
-be changed to be more or less verbose, which might be useful when you are
-dealing with an unknown issue. Possible values are:
+`log_level` 选项控制插件的日志输出级别，可以根据需要设置为更详细或更简洁，这在处理未知问题时可能会很有用。可能的值有：
 
-- `trace`: Show every detail, like all called internal functions.
-- `debug`: Shows detailed debug information.
-- `info`: Normal (usually) interesting events.
-- `warning`: Exceptional occurrences that are not errors.
-- `error`: Runtime errors that do not require immediate action.
-- `fatal`: Something went terribly wrong. Add-on becomes unusable.
+- `trace`：显示所有细节，如所有调用的内部函数。
+- `debug`：显示详细的调试信息。
+- `info`：正常（通常是）有趣的事件。
+- `warning`：不属于错误的异常情况。
+- `error`：运行时错误，不需要立即采取行动。
+- `fatal`：发生了严重错误。插件变得不可用。
 
-Please note that each level automatically includes log messages from a
-more severe level, e.g., `debug` also shows `info` messages. By default,
-the `log_level` is set to `info`, which is the recommended setting unless
-you are troubleshooting.
+请注意，每个级别自动包含来自更严重级别的日志消息，例如，`debug` 还会显示 `info` 消息。默认情况下，`log_level` 被设置为 `info`，这是推荐的设置，除非你在进行故障排除。
 
-### Option: `login.username`
+### 选项：`login.username`
 
-Sets the login username for yarr. Can't be empty.
+设置 yarr 的登录用户名。不能为空。
 
-### Option: `login.password`
+### 选项：`login.password`
 
-Sets the login password for yarr. Can't be empty.
+设置 yarr 的登录密码。不能为空。
 
-### Option: `ssl`
+### 选项：`ssl`
 
-Enables/Disables SSL (HTTPS) on the web interface of yarr!
-Set it `true` to enable it, `false` otherwise.
+在 yarr 的 Web 界面上启用/禁用 SSL (HTTPS)！
+设置为 `true` 以启用，设置为 `false` 则禁用。
 
-### Option: `certfile`
+### 选项：`certfile`
 
-The certificate file to use for SSL.
+用于 SSL 的证书文件。
 
-**Note**: _The file MUST be stored in `/ssl/`, which is the default_
+**注意**：_该文件必须存储在 `/ssl/`，这是默认位置_
 
-### Option: `keyfile`
+### 选项：`keyfile`
 
-The private key file to use for SSL.
+用于 SSL 的私钥文件。
 
-**Note**: _The file MUST be stored in `/ssl/`, which is the default_
+**注意**：_该文件必须存储在 `/ssl/`，这是默认位置_
 
-### Option: `db_path`
+### 选项：`db_path`
 
-This option allows you to override the default db file storage path. For
-example, use a different configuration like `/share/yarr/yarr.db` instead of
-`/data/yarr.db`.
+此选项允许你覆盖默认的数据库文件存储路径。例如，可以使用不同的配置，如 `/share/yarr/yarr.db` 而不是 `/data/yarr.db`。
 
-When not configured, the addon will automatically use the
-default: `/data/yarr.db`
+如果不配置，插件将自动使用默认值：`/data/yarr.db`

@@ -8,17 +8,15 @@
 
 [![Support Frenck on Patreon][patreon-shield]][patreon]
 
-Glances is a cross-platform system monitoring tool written in Python.
+Glances 是一个用 Python 编写的跨平台系统监控工具。
 
-## About
+## 关于
 
-Glances is a cross-platform monitoring tool which aims to present a maximum of
-information in a minimum of space through a Web-based interface.
+Glances 是一个跨平台的监控工具，旨在通过基于 Web 的界面在最小的空间内呈现最多的信息。
 
-Glances can export all system statistics to InfluxDB, allowing you to look
-at all your system information and its behavior over time.
+Glances 可以将所有系统统计信息导出到 InfluxDB，从而让您查看系统信息及其随时间的行为。
 
-![Glances screenshot][screenshot]
+![Glances 截图][screenshot]
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons

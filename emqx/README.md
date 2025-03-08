@@ -1,30 +1,24 @@
-# Home Assistant Community Add-on: EMQX
+# Home Assistant 社区附加组件：EMQX
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
-[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
+[![通过 GitHub Sponsors 赞助 Frenck][github-sponsors-shield]][github-sponsors]
 
-[![Support Frenck on Patreon][patreon-shield]][patreon]
+[![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
 
-The most scalable open-source MQTT broker for IoT, IIoT, and connected vehicles.
+最具可扩展性的开源 MQTT 代理，用于物联网、工业物联网和联网车辆。
 
-## About
+## 关于
 
-[EMQX][emqx] is an Open-source MQTT broker with a high-performance real-time
-message processing engine, powering event streaming for IoT devices at massive
-scale. As the most scalable MQTT broker, EMQX can help you connect any device,
-at any scale (including your home).
+[EMQX][emqx] 是一款开源的 MQTT 代理，具有高性能的实时消息处理引擎，支持海量 IoT 设备的事件流处理。作为最具可扩展性的 MQTT 代理，EMQX 可以帮助您连接任何设备，适用于任何规模（包括您的家）。
 
-The [EMQX MQTT broker][emqx] is an advanced alternative to the Mosquitto MQTT
-broker/add-on that is generally used in Home Assistant. It has a UI
-to configure, manage, and debug your MQTT broker, clients, and traffic.
+[EMQX MQTT 代理][emqx] 是一般在 Home Assistant 中使用的 Mosquitto MQTT 代理/附加组件的高级替代品。它提供了一个 UI 用于配置、管理和调试您的 MQTT 代理、客户端和流量。
 
-While EMQX sells their product mainly as a cloud hosted product on their
-website, this add-on runs EMQX in a fully local, self-hosted environment.
+虽然 EMQX 主要将他们的产品作为云托管产品出售，但这个附加组件在一个完全本地、自托管的环境中运行 EMQX。
 
-![EMQX in the Home Assistant Frontend][screenshot]
+![EMQX 在 Home Assistant 前端中的显示][screenshot]
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons

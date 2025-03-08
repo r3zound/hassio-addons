@@ -1,15 +1,14 @@
 # Web UI
 
-To access the web ui of mitmproxy, visit `http://<host-ip>:8081` (or the port you configured).
-Currently there is no other method. Will change when [#3234](https://github.com/mitmproxy/mitmproxy/issues/3234) is fixed completly.
-
+要访问 mitmproxy 的 Web UI，访问 `http://<host-ip>:8081`（或您配置的端口）。  
+目前没有其他方法。当 [#3234](https://github.com/mitmproxy/mitmproxy/issues/3234) 完全修复时将会改变。
 
 # Configuration
 
-The configuration for the mitmproxy can be done via the key-value pairs in the addon configuration.
-Just add an new pair to the `options` array. _Please add all settings as strings!_
+mitmproxy 的配置可以通过附加配置中的键值对进行。  
+只需将一个新的对添加到 `options` 数组中。 _请将所有设置添加为字符串！_
 
-Example:
+示例：
 
 ```yaml
 options:
@@ -19,22 +18,20 @@ options:
     value: "/ssl/mycert.pem"
 ```
 
-The list with all possible settings can be found [here](https://docs.mitmproxy.org/stable/concepts-options/#available-options).
-If you need to write into a file, the `/share` folder is mapped into the addon.
-
+所有可能设置的列表可以在 [这里](https://docs.mitmproxy.org/stable/concepts-options/#available-options) 找到。  
+如果您需要写入文件，`/share` 文件夹已被映射到附加中。
 
 ## Certificates
 
-To access also the certificates of Home Assistant the `/ssl` folder is mapped in read-only.
-Notice that mitmproxy requests the certificates as pem files.
-
+要访问 Home Assistant 的证书，`/ssl` 文件夹已以只读方式映射。  
+请注意，mitmproxy 以 pem 文件的形式请求证书。
 
 ### Own ca certificate
 
-If you want your own ca signing the traffic the `custom_ca` option can be used.
-For more about the ca certificate requirements see [here](https://docs.mitmproxy.org/stable/concepts-certificates/#ca-and-cert-files)
+如果您希望自己的 CA 签名流量，可以使用 `custom_ca` 选项。  
+有关 CA 证书要求的更多信息，请参阅 [这里](https://docs.mitmproxy.org/stable/concepts-certificates/#ca-and-cert-files)
 
-Example:
+示例：
 
 ```yaml
 options:
@@ -43,10 +40,9 @@ options:
 custom_ca: /ssl/ca-cert.pem
 ```
 
-
 ## Fixed Settings
 
-There are also a few settings which are fixed to their values. Those are:
+还有一些设置是固定的，不能更改其值。这些是：
 
 * `web_host`
 * `web_port`
@@ -55,8 +51,7 @@ There are also a few settings which are fixed to their values. Those are:
 * `onboarding_host`
 * `onboarding_port`
 
-
 # Onboarding
 
-To install the mitmproxy ca as an trusted certificate authority the onboarding page can be accessed on `http://<host>:8082`.
-Notice that your trafic must be routed over mitmproxy to access the page.
+要将 mitmproxy CA 安装为受信任的证书授权，请访问 `http://<host>:8082` 的入门页面。  
+请注意，您的流量必须通过 mitmproxy 进行路由才能访问该页面。

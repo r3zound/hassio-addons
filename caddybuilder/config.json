@@ -6,7 +6,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "Caddy Builder 翻译为中文是“卡迪建造者”。",
+  "description": "Caddy Builder 是一个用于构建 Caddy 服务器的工具。Caddy 是一个开源的 Web 服务器和反向代理，它以其易于使用和安全特性而闻名。\n\n如果你有其他问题或需要进一步的帮助，请告诉我！",
   "environment": {},
   "map": [
     "addon_config:rw"

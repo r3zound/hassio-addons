@@ -1,58 +1,57 @@
-# Home assistant add-on: MyElectricalData
+# Home assistant 添加组件：MyElectricalData
 
-[![Donate][donation-badge]](https://www.buymeacoffee.com/alexbelgium)
-[![Donate][paypal-badge]](https://www.paypal.com/donate/?hosted_button_id=DZFULJZTP3UQA)
+[![捐赠][donation-badge]](https://www.buymeacoffee.com/alexbelgium)
+[![捐赠][paypal-badge]](https://www.paypal.com/donate/?hosted_button_id=DZFULJZTP3UQA)
 
-![Version](https://img.shields.io/badge/dynamic/json?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fenedisgateway2mqtt%2Fconfig.json)
-![Ingress](https://img.shields.io/badge/dynamic/json?label=Ingress&query=%24.ingress&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fenedisgateway2mqtt%2Fconfig.json)
-![Arch](https://img.shields.io/badge/dynamic/json?color=success&label=Arch&query=%24.arch&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fenedisgateway2mqtt%2Fconfig.json)
+![版本](https://img.shields.io/badge/dynamic/json?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fenedisgateway2mqtt%2Fconfig.json)
+![入口](https://img.shields.io/badge/dynamic/json?label=Ingress&query=%24.ingress&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fenedisgateway2mqtt%2Fconfig.json)
+![架构](https://img.shields.io/badge/dynamic/json?color=success&label=Arch&query=%24.arch&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fenedisgateway2mqtt%2Fconfig.json)
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/9c6cf10bdbba45ecb202d7f579b5be0e)](https://www.codacy.com/gh/alexbelgium/hassio-addons/dashboard?utm_source=github.com&utm_medium=referral&utm_content=alexbelgium/hassio-addons&utm_campaign=Badge_Grade)
-[![GitHub Super-Linter](https://img.shields.io/github/actions/workflow/status/alexbelgium/hassio-addons/weekly-supelinter.yaml?label=Lint%20code%20base)](https://github.com/alexbelgium/hassio-addons/actions/workflows/weekly-supelinter.yaml)
-[![Builder](https://img.shields.io/github/actions/workflow/status/alexbelgium/hassio-addons/onpush_builder.yaml?label=Builder)](https://github.com/alexbelgium/hassio-addons/actions/workflows/onpush_builder.yaml)
+[![Codacy 徽章](https://app.codacy.com/project/badge/Grade/9c6cf10bdbba45ecb202d7f579b5be0e)](https://www.codacy.com/gh/alexbelgium/hassio-addons/dashboard?utm_source=github.com&utm_medium=referral&utm_content=alexbelgium/hassio-addons&utm_campaign=Badge_Grade)
+[![GitHub 超级检查工具](https://img.shields.io/github/actions/workflow/status/alexbelgium/hassio-addons/weekly-supelinter.yaml?label=Lint%20code%20base)](https://github.com/alexbelgium/hassio-addons/actions/workflows/weekly-supelinter.yaml)
+[![构建器](https://img.shields.io/github/actions/workflow/status/alexbelgium/hassio-addons/onpush_builder.yaml?label=Builder)](https://github.com/alexbelgium/hassio-addons/actions/workflows/onpush_builder.yaml)
 
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20(no%20paypal)-%23d32f2f?logo=buy-me-a-coffee&style=flat&logoColor=white
 [paypal-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20with%20Paypal-0070BA?logo=paypal&style=flat&logoColor=white
 
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢所有为我的 repo 点赞的人！要点赞，请点击下面的图片，然后它会在右上角。谢谢！_
 
-[![Stargazers repo roster for @alexbelgium/hassio-addons](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
+[![@alexbelgium/hassio-addons 的星标用户](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
 
-![downloads evolution](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/enedisgateway2mqtt_dev/stats.png)
+![下载演变](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/enedisgateway2mqtt_dev/stats.png)
 
-## About
+## 关于
 
-MyElectricalData allows an automated access to your Enedis data. See its github for all informations : https://github.com/m4dm4rtig4n/myelectricaldata
+MyElectricalData 允许自动访问您的 Enedis 数据。有关所有信息，请查看其 GitHub：https://github.com/m4dm4rtig4n/myelectricaldata
 
-## Configuration
+## 配置
 
-Install, then start the addon a first time to initialize the templates.
+安装后，首次启动该组件以初始化模板。
 
-Options can be configured through two ways :
+选项可以通过两种方式进行配置：
 
-- Addon options
+- 组件选项
 
 ```yaml
-CONFIG_LOCATION: /config/myelectricaldata/config.yaml # Sets the location of the config.yaml (see below)
-mqtt_autodiscover: true # Shows in the log the detail of the mqtt local server (if available). It can then be added to the config.yaml file.
-TZ: Europe/Paris # Sets a specific timezone
+CONFIG_LOCATION: /config/myelectricaldata/config.yaml # 设置 config.yaml 的位置（见下文）
+mqtt_autodiscover: true # 在日志中显示 mqtt 本地服务器的详细信息（如果可用）。然后可以将其添加到 config.yaml 文件中。
+TZ: Europe/Paris # 设置特定时区
 ```
 
 - Config.yaml
-  Everything is configured using the config.yaml file found in /config/myelectricaldata/config.yaml.
+  所有配置均使用位于 /config/myelectricaldata/config.yaml 的 config.yaml 文件进行。
 
-The complete list of options can be seen here : https://github.com/m4dm4rtig4n/myelectricaldata/wiki/03.-Configuration
+完整的选项列表可以在此查看：https://github.com/m4dm4rtig4n/myelectricaldata/wiki/03.-Configuration
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Hass.io add-on.
+该组件的安装相当简单，与安装任何其他 Hass.io 组件没有区别。
 
-1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install this add-on.
-1. Click the `Save` button to store your configuration.
-1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
-1. Carefully configure the add-on to your preferences, see the official documentation for for that.
+1. [将我的 Hass.io 组件库][repository] 添加到您的 Hass.io 实例。
+1. 安装此组件。
+1. 单击 `Save` 按钮以保存您的配置。
+1. 启动该组件。
+1. 检查该组件的日志以查看一切是否正常。
+1. 仔细配置该组件以符合您的偏好，具体请参阅官方文档。
 
 [repository]: https://github.com/alexbelgium/hassio-addons

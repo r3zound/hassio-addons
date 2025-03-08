@@ -1,41 +1,39 @@
-# Home assistant add-on: ArchiveBox
+# 家庭助理插件：ArchiveBox
 
-**ArchiveBox is a powerful, self-hosted internet archiving solution to collect, save, and view sites you want to preserve offline.**
+**ArchiveBox 是一个强大的自托管互联网归档解决方案，用于收集、保存和查看您希望离线保留的网站。**
 
-**You can feed it URLs one at a time, or schedule regular imports** from browser bookmarks or history, feeds like RSS, bookmark services like Pocket/Pinboard, and more. See <a href="#input-formats">input formats</a> for a full list.
+**您可以逐个提供 URL，或定期从浏览器书签或历史记录、RSS 等 Feed、书签服务如 Pocket/Pinboard 等进行导入。查看<a href="#input-formats">输入格式</a>以获取完整列表。**
 
-**It saves snapshots of the URLs you feed it in several formats:** HTML, PDF, PNG screenshots, WARC, and more out-of-the-box, with a wide variety of content extracted and preserved automatically (article text, audio/video, git repos, etc.). See <a href="#output-formats">output formats</a> for a full list.
+**它以多种格式保存您提供的 URL 快照：**HTML、PDF、PNG 截图、WARC 等开箱即用，并自动提取和保存各种内容（文章文本、音频/视频、git 仓库等）。查看<a href="#output-formats">输出格式</a>以获取完整列表。
 
-The goal is to sleep soundly knowing the part of the internet you care about will be automatically preserved in durable, easily accessible formats [for decades](#background--motivation) after it goes down.
+目标是让您安心入睡，知道您关心的互联网部分将在关闭后以耐用、易于访问的格式[自动保存数十年](#background--motivation)。
 
-
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢每一个给我仓库点星的人！要点星，请单击下面的图像，然后它将在右上角。谢谢！_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
-Now stores data in /addon_configs/2effc9b9_archivebox
-## Key Features
+现在将数据存储在 /addon_configs/2effc9b9_archivebox
+## 主要特点
 
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Hass.io add-on.
+此插件的安装非常简单，与安装其他 Hass.io 插件没有区别。
 
-1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install this add-on.
+1. [将我的 Hass.io 插件库][repository]添加到您的 Hass.io 实例。
+1. 安装此插件。
 
 
-## Configuration
-1. ssh into homeassistant
-1. type "docker ps" to find container ID of archivebox
-1. type "docker exec -it CONTAINERID /bin/bash",
-1. type "su archivebox"
-1. type "cd /config/"
-1. type "archivebox manage createsuperuser" and enter information
-1. type "archivebox config --set SAVE_ARCHIVE_DOT_ORG=False" to set any extra configuration found here: https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration
-1. Go to http://localhomeassistantip:8000/ to use webUI. Ingress is not working
-1. Use a brookmarklet or browser extension to send links (or all activity) to archivebox
+## 配置
+1. SSH 登录到 homeassistant
+1. 输入“docker ps”以查找 archivebox 的容器 ID
+1. 输入“docker exec -it CONTAINERID /bin/bash”
+1. 输入“su archivebox”
+1. 输入“cd /config/”
+1. 输入“archivebox manage createsuperuser”并输入信息
+1. 输入“archivebox config --set SAVE_ARCHIVE_DOT_ORG=False”以设置此处的任何额外配置：https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration
+1. 转到 http://localhomeassistantip:8000/ 使用 webUI。Ingress 无法使用
+1. 使用书签工具或浏览器扩展将链接（或所有活动）发送到 archivebox
 
 
 [repository]: https://github.com/jdeath/homeassistant-addons

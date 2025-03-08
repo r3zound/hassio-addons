@@ -1,12 +1,12 @@
-# Home Assistant Add-on: DuckDNS
+# Home Assistant 插件：DuckDNS
 
-Automatically update your Duck DNS IP address with integrated HTTPS support via Let's Encrypt.
+通过 Let's Encrypt 自动更新您的 Duck DNS IP 地址，支持集成的 HTTPS。
 
-![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield] ![Supports armhf Architecture][armhf-shield] ![Supports armv7 Architecture][armv7-shield] ![Supports i386 Architecture][i386-shield]
+![支持 aarch64 架构][aarch64-shield] ![支持 amd64 架构][amd64-shield] ![支持 armhf 架构][armhf-shield] ![支持 armv7 架构][armv7-shield] ![支持 i386 架构][i386-shield]
 
-## About
+## 关于
 
-[Duck DNS][duckdns] is a free service that points a DNS (sub-domains of duckdns.org) to an IP of your choice. This add-on includes support for Let’s Encrypt and automatically creates and renews your certificates. You need to sign up for a Duck DNS account before using this add-on.
+[Duck DNS][duckdns] 是一个免费的服务，可以将 DNS（duckdns.org 的子域）指向您选择的 IP 地址。此插件支持 Let’s Encrypt，并自动创建和续订您的证书。在使用此插件之前，您需要注册一个 Duck DNS 账户。
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg

@@ -1,20 +1,20 @@
-![Project Stage][project-stage-shield]
-![Maintenance][maintenance-shield]
-[![License][license-shield]](https://github.com/expaso/hassos-addon-pgadmin4/blob/main/LICENSE)
+![项目阶段][project-stage-shield]
+![维护][maintenance-shield]
+[![许可证][license-shield]](https://github.com/expaso/hassos-addon-pgadmin4/blob/main/LICENSE)
 
-# Home Assistant Add-on: [pgAdmin 4](https://www.pgadmin.org/)
+# Home Assistant 插件: [pgAdmin 4](https://www.pgadmin.org/)
 
-<a href="https://www.buymeacoffee.com/expaso" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+<a href="https://www.buymeacoffee.com/expaso" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="请我喝咖啡" height="41" width="174"></a>
 
-## Introduction
+## 介绍
 
-pgAdmin is the most popular and feature rich Open Source administration and development platform for PostgreSQL, the most advanced Open Source database in the world.
+pgAdmin 是最流行且功能最丰富的开源 PostgreSQL 管理与开发平台，它是全球最先进的开源数据库。
 
-This Add-on can be used to control any postgreSQL databases on your network, incuding those served the TimescaleDB add-on, which can also install from the same addon-repository.
+此插件可用于控制您网络上的任何 PostgreSQL 数据库，包括使用 TimescaleDB 插件提供的数据库，该插件也可以从同一插件库中安装。
 
-## Configuation
+## 配置
 
-Example add-on configuration:
+示例插件配置：
 
 ```
  {
@@ -27,47 +27,44 @@ Example add-on configuration:
  }
 ```
 
-### Option: `ssl`
+### 选项: `ssl`
 
-Indicates if the add-on UI will be servd from port 80 or port 443 (using the provided certificates).
+指示插件 UI 将从端口 80 或端口 443（使用提供的证书）提供服务。
 
-### Option: `certfile`
+### 选项: `certfile`
 
-The filename of your SSL Certificate in the `ssl` folder.
+`ssl` 文件夹中您的 SSL 证书的文件名。
 
-### Option: `certfile`
+### 选项: `keyfile`
 
-The filename of your Private Key File in the `ssl` folder.
+`ssl` 文件夹中您的私钥文件的文件名。
 
-### Option: `system_packages`
+### 选项: `system_packages`
 
-Optional extra Alpine packages that will be installed during add-on startup.
-**Beware**: Adding a lot of packages could lead to long startup time.
+在插件启动期间将安装的可选额外 Alpine 软件包。
+**注意**：添加大量软件包可能导致启动时间较长。
 
-### Option: `init_commands`
+### 选项: `init_commands`
 
-Any extra commands that will be run during add-on startup.
+在插件启动期间将运行的任何额外命令。
 
-### Option: `leave_front_door_open`
+### 选项: `leave_front_door_open`
 
-Serves the website without protection of home-assistant user authentication.
+在没有家庭助手用户身份验证保护的情况下提供网站服务。
 
-**CAUTION!!**
+**警告!!**
 
-Setting this option is a potential security risk and should be avoided whenever possible.
-If you don't know what you are doing, just leave it off.
+设置此选项存在潜在的安全风险，应该尽量避免。如果您不知道自己在做什么，请保持此选项关闭。
 
-## Support
+## 支持
 
-- Got questions?
-  [Open an issue here][issues]
+- 有问题？
+  [在这里打开一个问题][issues]
 
-- For a general repository issue or add-on ideas? [Open an issue here][repo-issues]
+- 有一般仓库问题或插件想法？ [在这里打开一个问题][repo-issues]
 
 [issues]: https://github.com/expaso/hassos-addon-pgadmin4/issues
 [repo-issues]: https://github.com/expaso/hassos-addons/issues
-
-
 
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
 [release-shield]: https://img.shields.io/badge/version-v3.2.0-blue.svg

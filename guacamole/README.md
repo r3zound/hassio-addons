@@ -1,63 +1,63 @@
-# Home assistant add-on: guacamole
+# Home Assistant 插件: Guacamole
 
-[![Donate][donation-badge]](https://www.buymeacoffee.com/alexbelgium)
-[![Donate][paypal-badge]](https://www.paypal.com/donate/?hosted_button_id=DZFULJZTP3UQA)
+[![捐赠][donation-badge]](https://www.buymeacoffee.com/alexbelgium)
+[![捐赠][paypal-badge]](https://www.paypal.com/donate/?hosted_button_id=DZFULJZTP3UQA)
 
-![Version](https://img.shields.io/badge/dynamic/json?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fguacamole%2Fconfig.json)
-![Ingress](https://img.shields.io/badge/dynamic/json?label=Ingress&query=%24.ingress&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fguacamole%2Fconfig.json)
-![Arch](https://img.shields.io/badge/dynamic/json?color=success&label=Arch&query=%24.arch&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fguacamole%2Fconfig.json)
+![版本](https://img.shields.io/badge/dynamic/json?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fguacamole%2Fconfig.json)
+![入口](https://img.shields.io/badge/dynamic/json?label=Ingress&query=%24.ingress&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fguacamole%2Fconfig.json)
+![架构](https://img.shields.io/badge/dynamic/json?color=success&label=Arch&query=%24.arch&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fguacamole%2Fconfig.json)
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/9c6cf10bdbba45ecb202d7f579b5be0e)](https://www.codacy.com/gh/alexbelgium/hassio-addons/dashboard?utm_source=github.com&utm_medium=referral&utm_content=alexbelgium/hassio-addons&utm_campaign=Badge_Grade)
+[![Codacy 徽章](https://app.codacy.com/project/badge/Grade/9c6cf10bdbba45ecb202d7f579b5be0e)](https://www.codacy.com/gh/alexbelgium/hassio-addons/dashboard?utm_source=github.com&utm_medium=referral&utm_content=alexbelgium/hassio-addons&utm_campaign=Badge_Grade)
 [![GitHub Super-Linter](https://img.shields.io/github/actions/workflow/status/alexbelgium/hassio-addons/weekly-supelinter.yaml?label=Lint%20code%20base)](https://github.com/alexbelgium/hassio-addons/actions/workflows/weekly-supelinter.yaml)
-[![Builder](https://img.shields.io/github/actions/workflow/status/alexbelgium/hassio-addons/onpush_builder.yaml?label=Builder)](https://github.com/alexbelgium/hassio-addons/actions/workflows/onpush_builder.yaml)
+[![构建器](https://img.shields.io/github/actions/workflow/status/alexbelgium/hassio-addons/onpush_builder.yaml?label=Builder)](https://github.com/alexbelgium/hassio-addons/actions/workflows/onpush_builder.yaml)
 
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20(no%20paypal)-%23d32f2f?logo=buy-me-a-coffee&style=flat&logoColor=white
 [paypal-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20with%20Paypal-0070BA?logo=paypal&style=flat&logoColor=white
 
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢所有给我的仓库加星的人！如果要加星，请点击下面的图片，然后它将在右上角显示。谢谢！_
 
 [![Stargazers repo roster for @alexbelgium/hassio-addons](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
 
-![downloads evolution](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/guacamole/stats.png)
+![下载变化](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/guacamole/stats.png)
 
-## About
+## 关于
 
-[Apache Guacamole](https://guacamole.apache.org/) is a clientless remote desktop gateway. It supports standard protocols like VNC, RDP, and SSH. This container is only the backend server component needed to use The official or 3rd party HTML5 frontends.
+[Apache Guacamole](https://guacamole.apache.org/) 是一个无客户端的远程桌面网关。它支持标准协议如 VNC、RDP 和 SSH。此容器仅为使用官方或第三方 HTML5 前端所需的后端服务器组件。
 
-This addon is based on the docker image here : https://github.com/abesnier/docker-guacamole
+该插件基于此 Docker 镜像: https://github.com/abesnier/docker-guacamole
 
-## Configuration
+## 配置
 
-Webui can be found at <http://homeassistant:8080>.
+WebUI 可以在 <http://homeassistant:8080> 找到。
 
-The default username is guacadmin with password guacadmin.
+默认用户名是 guacadmin，密码是 guacadmin。
 
-Addons options :
+插件选项：
 
 ```yaml
-EXTENSIONS: auth-totp # see https://github.com/maxwaldorf/guacamole#enabling-extensions
-TZ: Europe/Paris # Sets a specific timezone
+EXTENSIONS: auth-totp # 参见 https://github.com/maxwaldorf/guacamole#enabling-extensions
+TZ: Europe/Paris # 设置特定时区
 ```
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in comparison to installing any other add-on.
+此插件的安装过程非常简单，和安装其他插件没有区别。
 
-1. Add my add-ons repository to your home assistant instance (in supervisor addons store at top right, or click button below if you have configured my HA)
-   [![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falexbelgium%2Fhassio-addons)
-1. Install this add-on.
-1. Click the `Save` button to store your configuration.
-1. Set the add-on options to your preferences
-1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
-1. Open the webUI and adapt the software options
+1. 将我的插件存储库添加到你的 Home Assistant 实例中（在超级管理员插件商店的右上角，或者如果你已经配置了我的 HA，请点击下面的按钮）
+   [![打开你的 Home Assistant 实例并显示添加插件存储库对话框，特定存储库 URL 自动填充。](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falexbelgium%2Fhassio-addons)
+1. 安装此插件。
+1. 点击 `保存` 按钮以保存你的配置。
+1. 根据你的偏好设置插件选项。
+1. 启动插件。
+1. 检查插件的日志以了解一切是否正常。
+1. 打开 WebUI 并调整软件选项。
 
-## Support
+## 支持
 
-Create an issue on github
+在 GitHub 上创建一个问题
 
-## Illustration
+## 插图
 
-![illustration](https://www.linuxserver.io/user/pages/content/images/2021/05/menu.png)
+![插图](https://www.linuxserver.io/user/pages/content/images/2021/05/menu.png)
 
 [repository]: https://github.com/alexbelgium/hassio-addons

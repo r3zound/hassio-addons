@@ -1,8 +1,8 @@
-# Home Assistant Add-on: VLC
+# Home Assistant 插件：VLC
 
-Allow Home Assistant to use your local device as Media Player.
+允许 Home Assistant 使用本地设备作为媒体播放器。
 
-![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield] ![Supports armhf Architecture][armhf-shield] ![Supports armv7 Architecture][armv7-shield] ![Supports i386 Architecture][i386-shield]
+![支持 aarch64 架构][aarch64-shield] ![支持 amd64 架构][amd64-shield] ![支持 armhf 架构][armhf-shield] ![支持 armv7 架构][armv7-shield] ![支持 i386 架构][i386-shield]
 
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg

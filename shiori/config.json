@@ -4,7 +4,7 @@
     "armv7"
   ],
   "boot": "auto",
-  "description": "用Go语言编写的简单书签管理器。旨在作为Pocket的简单克隆版。",
+  "description": "这是一个用Go语言编写的简单书签管理器。旨在作为Pocket的简单克隆版。",
   "environment": {
     "SHIORI_DIR": "/config/"
   },

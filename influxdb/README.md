@@ -8,21 +8,16 @@
 
 [![Support Frenck on Patreon][patreon-shield]][patreon]
 
-Scalable datastore for metrics, events, and real-time analytics.
+可扩展的指标、事件和实时分析数据存储。
 
-## About
+## 关于
 
-InfluxDB is an open source time series database optimized for high-write-volume.
-It's useful for recording metrics, sensor data, events,
-and performing analytics. It exposes an HTTP API for client interaction and is
-often used in combination with Grafana to visualize the data.
+InfluxDB 是一个开源时间序列数据库，优化用于高写入量。
+它适用于记录指标、传感器数据、事件，并执行分析。它公开一个用于客户端交互的 HTTP API，并且通常与 Grafana 结合使用来可视化数据。
 
-This add-on comes with Chronograf & Kapacitor pre-installed as well. Which
-gives you a nice InfluxDB admin interface for managing your users, databases,
-data retention settings, and lets you peek inside the database using the
-Data Explorer.
+此附加组件同样预装了 Chronograf 和 Kapacitor。这为您提供了一个良好的 InfluxDB 管理界面，以便管理用户、数据库、数据保留设置，并让您通过数据探测器查看数据库内部。
 
-![Chronograf in the Home Assistant Frontend][screenshot]
+![Home Assistant 前端中的 Chronograf][screenshot]
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons

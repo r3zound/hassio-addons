@@ -1,4 +1,4 @@
-# Configuration
+# 配置
 
 ```yaml
 media_folder: /media/mopidy/media
@@ -12,54 +12,53 @@ radio_net:
 
 ### `media_folder`
 
-This option let you specify an custom media folder.
+该选项允许您指定自定义媒体文件夹。
 
 ### `playlist_folder`
 
-This option let you specify an custom playlist folder.
+该选项允许您指定自定义播放列表文件夹。
 
 ### `locale`
 
-Your locale as 2x2 format. This used for the ui and also some extensions.
-Default is `en_US` A list of locale's is [here](https://github.com/umpirsky/locale-list/blob/main/data/en_US/locales.yaml).
+您的地区设置为2x2格式。此设置用于用户界面和一些扩展。
+默认值为`en_US`，地区列表在 [这里](https://github.com/umpirsky/locale-list/blob/main/data/en_US/locales.yaml)。
 
 ### `country`
 
-Your country as two letter country code. This used for the ui and also some extensions.
-Default here is is the code `en`.
+您的国家代码为两个字母。此设置用于用户界面和一些扩展。
+默认代码为`en`。
 
 ### `radio_net/language`
 
-The language text information is shown for radio stations. Possible options are: `net`, `at`, `de` , `dk`, `es`, `fr`, `it`, `pl`, `pt`, `se`.
+显示电台的语言文本信息。可能的选项有：`net`、`at`、`de`、`dk`、`es`、`fr`、`it`、`pl`、`pt`、`se`。
 
 ### `radio_net/favorite_radiostations`
 
-Your favorite radio station slugs for the radio.net Extension. [More about that setting](https://github.com/plintx/mopidy-radionet#configuration).
+您最喜欢的电台标识符，用于radio.net扩展。[有关该设置的更多信息](https://github.com/plintx/mopidy-radionet#configuration)。
 
-### `custom_config` (optional)
+### `custom_config` (可选)
 
-**If this is specified, all other options are ignored.**
+**如果指定了此项，所有其他选项将被忽略。**
 
-This option let you specify an custom configuration file for mopidy.
-To keep all MPD files in one place I restricted the path prefix to `/share/mopidy`
-Please use the default [mopidy.conf of the addon](https://github.com/Poeschl/Hassio-Addons/blob/main/mopidy/root/etc/mopidy-template.conf) as starting point.
+该选项允许您为mopidy指定自定义配置文件。
+为了将所有MPD文件放在一个地方，我将路径前缀限制为`/share/mopidy`
+请使用[插件的默认mopidy.conf](https://github.com/Poeschl/Hassio-Addons/blob/main/mopidy/root/etc/mopidy-template.conf)作为起始点。
 
-Working example:
+工作示例：
 
 ```yaml
 ...
 custom_config: /share/mopidy/mopidy.conf
 ```
 
+# 本地媒体
 
-# Local Media
+本地媒体可以存储在`/media`或`/share`上的任何文件夹中（可以通过samba插件访问）。
+默认情况下，媒体目录为`/media/mopidy/media`，播放列表的默认目录为`/media/mopidy/playlists`。
 
-Local media can be stored on any folder on `/media` or `/share` (which can be accessed through the samba addon).
-By default the directory for media is `/media/mopidy/media` and the default for playlists `/media/mopidy/playlists`.
+# 面板集成
 
-# Panel integration
-
-Since Mopidy-Iris don't play well (at least out-of-the-box) with the ingress feature Mopidy can be added to the side-panel in the configuration with those lines:
+由于Mopidy-Iris与入口功能（至少开箱即用）不兼容，因此可以通过以下行将Mopidy添加到配置的侧边面板中：
 
 ```yaml
 panel_iframe:
@@ -69,14 +68,12 @@ panel_iframe:
     url: 'http://<homeassistant-address>:6680/iris'
 ```
 
-
 # MPD
 
-To connect from Home Assistant use the following configuration:
+要从Home Assistant连接，请使用以下配置：
 
 ```yaml
 media_player:
   - platform: mpd
     host: 243ffc37-mopidy
     port: 6600
-```

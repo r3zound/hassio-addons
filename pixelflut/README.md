@@ -1,10 +1,8 @@
 # Pixelflut
 
-Pixelflut is a very simple (and inefficient) ASCII based network protocol to draw pixels on a screen.
-This multiplayer canvas is a known game for tech enthusiasts.
-More at [defnull/pixelflut](https://github.com/defnull/pixelflut)
+Pixelflut 是一个非常简单（且效率低下）的基于 ASCII 的网络协议，用于在屏幕上绘制像素。这个多人画布是技术爱好者们熟知的游戏。更多信息请访问 [defnull/pixelflut](https://github.com/defnull/pixelflut)
 
-The addon contains the [shoreline PixelFlut server](https://github.com/TobleMiner/shoreline) for playing and [noVnc](https://github.com/novnc/noVNC) to show the canvas inside Home Assistant.
+该插件包含 [shoreline PixelFlut 服务器](https://github.com/TobleMiner/shoreline) 以供游戏和 [noVnc](https://github.com/novnc/noVNC) 以在 Home Assistant 中显示画布。
 
 [![Release][release-badge]][release]
 ![Addon Stage][stage-badge]
@@ -19,4 +17,3 @@ The addon contains the [shoreline PixelFlut server](https://github.com/TobleMine
 
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee-%23d32f2f?logo=buy-me-a-coffee&style=for-the-badge&logoColor=white
 [donation-url]: https://www.buymeacoffee.com/Poeschl
-

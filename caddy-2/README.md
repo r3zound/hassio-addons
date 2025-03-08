@@ -1,10 +1,9 @@
-# Home Assistant Add-on: Caddy 2
+# Home Assistant 插件：Caddy 2
 
-Caddy 2 is a modern, powerful, enterprise-grade open-source web server designed for simplicity, security, and flexibility.
-It’s unique in its ability to automatically manage HTTPS by default, without any complex configuration.
+Caddy 2 是一个现代化、强大、企业级的开源网络服务器，旨在实现简洁、安全和灵活。
+它的独特之处在于能够默认自动管理 HTTPS，而无需任何复杂的配置。
 
-## About
+## 关于
 
-Caddy 2 simplifies and enhances your Home Assistant experience by automating much of the infrastructure management involved in running web services.
-With built-in HTTPS management, reverse proxy capabilities, and modular extensibility, Caddy can take care of many critical tasks.
-
+Caddy 2 通过自动化运行网络服务所需的大部分基础设施管理，简化并增强了您的 Home Assistant 体验。
+凭借内置的 HTTPS 管理、反向代理功能和模块化可扩展性，Caddy 可以处理许多关键任务。

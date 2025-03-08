@@ -1,26 +1,22 @@
-# Home Assistant Community Add-on: AdGuard Home
+# Home Assistant 社区插件：AdGuard Home
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+[![版本][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
-[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
+[![通过 GitHub Sponsors 支持 Frenck][github-sponsors-shield]][github-sponsors]
 
-[![Support Frenck on Patreon][patreon-shield]][patreon]
+[![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
 
-Network-wide ads & trackers blocking DNS server.
+网络范围内的广告和追踪器拦截 DNS 服务器。
 
-## About
+## 关于
 
-AdGuard Home is a network-wide ad-and-tracker blocking DNS server with
-parental control (adult content blocking) capabilities. Its purpose is to let
-you control your entire network and all your devices, and it does not require
-using a client-side program.
+AdGuard Home 是一个具有家长控制（成人内容拦截）功能的网络范围广告和追踪器拦截 DNS 服务器。它的目的是让您控制您的整个网络和所有设备，并且不需要使用客户端程序。
 
-AdGuard Home provides a beautiful, easy and feature-rich web interface to
-easily manage the filtering process and its settings.
+AdGuard Home 提供了一个美观、简洁且功能丰富的网络界面，以便轻松管理过滤过程及其设置。
 
-![AdGuard Home in the Home Assistant frontend][screenshot]
+![AdGuard Home 在 Home Assistant 前端的界面][screenshot]
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons

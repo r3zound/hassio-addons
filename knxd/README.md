@@ -1,18 +1,18 @@
 # Home Assistant Community: KNXD
 
-![Supports aarch64 Architecture][aarch64-shield]
-![Supports amd64 Architecture][amd64-shield]
-![Supports armhf Architecture][armhf-shield]
-![Supports armv7 Architecture][armv7-shield]
-![Supports i386 Architecture][i386-shield]
+![支持 aarch64 架构][aarch64-shield]
+![支持 amd64 架构][amd64-shield]
+![支持 armhf 架构][armhf-shield]
+![支持 armv7 架构][armv7-shield]
+![支持 i386 架构][i386-shield]
 
-## About
+## 关于
 
-`knxd` is a linux tool that can be used as router/gateway to talk to devices on a KNX bus. This add-on is providing the `knxd` daemon which you can use to create a KNX/IP gateway utilising TPUART or USB bus adapters from your home installation. So basically it can turn UART/USB interfaces into KNX IP-interfaces which you then can use in HomeAssistant or to program your KNX devices via ETS over ethernet. For more details see https://github.com/knxd/knxd.
+`knxd` 是一个 Linux 工具，可以用作路由器/网关与 KNX 总线上的设备进行通信。此附加组件提供了 `knxd` 守护进程，您可以使用它创建一个 KNX/IP 网关，利用 TPUART 或 USB 总线适配器用于您的家庭安装。因此，它基本上可以将 UART/USB 接口转换为 KNX IP 接口，然后您可以在 HomeAssistant 中使用它，或通过以太网使用 ETS 编程您的 KNX 设备。有关更多详细信息，请参见 https://github.com/knxd/knxd。
 
-## Installation and Configuration
+## 安装和配置
 
-See [documentation](DOCS.md)
+请参见 [文档](DOCS.md)
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg

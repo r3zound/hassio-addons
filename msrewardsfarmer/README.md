@@ -1,47 +1,45 @@
-# Home assistant add-on: MS Rewards Farmer
+# Home assistant 插件: MS Rewards Farmer
 
-## Description
-Automatically get points for the MS Rewards program and does all the tasks for you (playing quizzes, searches...)
+## 描述
+自动为 MS Rewards 计划获取积分，并为您完成所有任务（玩测验，搜索...）
 
-This is a dockerized version of [**@klept0**](https://github.com/klept0)'s fork of the MS-Rewards-Farmer (initially coded by [**@charlesbel**](https://github.com/charlesbel)). It runs completely headless in a docker environment with google chrome and xvfb as virtual display
+这是 [**@klept0**](https://github.com/klept0) 的 MS-Rewards-Farmer 分支的 Docker 版本（最初由 [**@charlesbel**](https://github.com/charlesbel) 编写）。它在 Docker 环境中完全无头运行，使用 Google Chrome 和 Xvfb 作为虚拟显示。
 
-Docker implantation leveraged the work of LtCMDstone Docker Image: https://github.com/LtCMDstone/MS-Rewards-Farmer-Docker
+Docker 实现利用了 LtCMDstone Docker 镜像的工作: https://github.com/LtCMDstone/MS-Rewards-Farmer-Docker
 
-This homeassistant version will update Chrome when installing/rebuilding addon. This will keep chrome up to date. I am probably doing something wrong, but the addon seems to work. If you have a cleaner way to build the addon, please do a PR.
+此 homeassistant 版本在安装/重建插件时将更新 Chrome。这将保持 Chrome 的最新状态。我可能做错了什么，但插件似乎可以正常工作。如果您有更好的构建插件的方法，请提个 PR。
 
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢所有给我的库加星的人！要加星，请点击下面的图片，然后它将在右上角。谢谢！_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
+## 安装
 
-## Installation
+此插件的安装相当简单，与安装任何其他 Hass.io 插件没有区别。
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Hass.io add-on.
+1. [将我的 Hass.io 插件库][repository] 添加到您的 Hass.io 实例。
+1. 安装此插件。
+1. 点击 `保存` 按钮以存储您的配置。
+1. 如果不是 `US`（美国）和 `en`（英语），请设置您的 GEO 和 LANG。
+1. 启动插件。它将失败，这是正常的。
+1. 转到 /addon-configs/2effc9b9_msrewardsfarmer。
+1. 用您的用户名和密码编辑 accounts.json。删除第二个条目。
+1. （可选）编辑 `/addon-configs/2effc9b9_msrewardsfarmer/config.yaml` 以发送通知（见下文）。
+1. 再次运行插件并检查日志。
+1. 确认工作后，使用自动化每天运行一次。
 
-1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install this add-on.
-1. Click the `Save` button to store your configuration.
-1. Set your GEO and LANG if not `US` (United States) and `en` (english)
-1. Start the add-on. It will fail, this is ok
-1. go to /addon-configs/2effc9b9_msrewardsfarmer
-1. Edit the accounts.json with your username and password. Delete the second entry.
-1. (Optional) Edit `/addon-configs/2effc9b9_msrewardsfarmer/config.yaml` to send a notification (see below)
-1. Run the addon again and check the logs
-1. After confirmed working, use an automation to run this once a day
+## GEO 和 Lang
+这必须正确设置，因为 MS 可能仅允许您每日从一个国家获得积分，从而有效禁用此农田或您获取积分的标准方式。
 
-## GEO and Lang
-This must be set correctly, because MS might only allows you to get points from one county a day, effectively disabling this farmer or your standard way of getting points.
+1. 转到 https://trends.google.com/trends/
+1. 更改您的国家/地区。URL 应该以 =XX 结尾，其中 XX 是要使用的 GEO 代码。必须大写。
+1. 语言默认为英语（en）。如果需要，请使用适当的代码更改语言。
 
-1. Go to https://trends.google.com/trends/
-1. Change your country. The URL should end with =XX wheere XX is the GEO code to use. Must be capitalized
-1. Language defaults to English (en). Use the proper code to change the language if desired
-
-## Automatic Running
-1. Create an automation to run this addon once a day (at a random time to avoid ban)
+## 自动运行
+1. 创建一个自动化以每天运行一次此插件（在随机时间以避免封禁）。
 
 ```
-alias: Start MS Rewards Farmer
+alias: 启动 MS Rewards Farmer
 description: ""
 trigger:
   - platform: time
@@ -55,34 +53,34 @@ action:
 mode: single
 ```
 
-# Sending a notification.
-1. edit `/addon-configs/2effc9b9_msrewardsfarmer/config.yaml`
-1. Configure the line for a notification
+# 发送通知
+1. 编辑 `/addon-configs/2effc9b9_msrewardsfarmer/config.yaml`
+1. 配置通知的行。
 
-It should look something like this for homeassistant notification:
+它应该看起来像这样以适应 homeassistant 通知：
 ```
 # config.yaml
 apprise:
   summary: ALWAYS
   urls:
-    - 'hassio://192.168.X.XX/eyXXXXXXXXXXXXXXXX.eyXXXXXXXXXXXXXXXXXxx'  # Replace with your actual Apprise service URLs
+    - 'hassio://192.168.X.XX/eyXXXXXXXXXXXXXXXX.eyXXXXXXXXXXXXXXXXXxx'  # 替换为您实际的 Apprise 服务 URL
 attempts:
 retries:
-  base_delay_in_seconds: 14 # base_delay_in_seconds * 2^max = 14.0625 * 2^6 = 900 = 15 minutes
+  base_delay_in_seconds: 14 # base_delay_in_seconds * 2^max = 14.0625 * 2^6 = 900 = 15 分钟
   max: 7
   strategy: EXPONENTIAL
 ```
-Where the `eyXXX.eyXXX` string is a Home Assistant Long-Lived Token. Long-lived access tokens can be created using the "Long-Lived Access Tokens" section at the bottom of a user's Home Assistant profile page.
+其中 `eyXXX.eyXXX` 字符串是 Home Assistant 的长期访问令牌。长期访问令牌可以在用户的 Home Assistant 配置文件页面底部的“长期访问令牌”部分中创建。
 
-More details here: `https://github.com/caronc/apprise/wiki/Notify_homeassistant`
+更多细节请访问: `https://github.com/caronc/apprise/wiki/Notify_homeassistant`
 
-# Add To Sidebar
-Since there is no WebUI, this cannot be shown in the sidebar. However you can add the following code to your Home Assistant `configuration.yaml` to show the log via a sidebar entry
+# 添加到侧边栏
+由于没有 WebUI，因此无法在侧边栏中显示。但您可以将以下代码添加到您的 Home Assistant `configuration.yaml` 中，以通过侧边栏条目显示日志。
 
 ```
 panel_custom:
   - name: panel_rewards
-    sidebar_title: Rewards
+    sidebar_title: 奖励
     sidebar_icon: mdi:medal
     url_path: 'hassio/addon/2effc9b9_msrewardsfarmer/logs'
     module_url: /api/hassio/app/entrypoint.js
@@ -90,10 +88,10 @@ panel_custom:
     require_admin: true
 ```
 
-# Issues
+# 问题
 
-If you are having issues first ask - did I make sure I have updated all of the files and cleared the sessions folder before running again?
+如果您遇到问题，请先问自己 - 在再次运行之前，我是否确保更新了所有文件并清除了会话文件夹？
 
-Still a work in progress and sometimes the farmer will crash or run slowly, as headless chrome can be buggy. Just run it again when crashes. Having a notification sent to home assistant makes this easy to see.
+仍在进行中，有时农田会崩溃或运行缓慢，因为无头 Chrome 可能会出现故障。当崩溃时再次运行即可。发送到 Home Assistant 的通知使其更易于查看。
 
 [repository]: https://github.com/jdeath/homeassistant-addons

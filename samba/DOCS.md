@@ -1,38 +1,38 @@
-# Home Assistant Add-on: Samba share
+# Home Assistant 插件：Samba 共享
 
-## Installation
+## 安装
 
-Follow these steps to get the add-on installed on your system:
+按照以下步骤在您的系统上安装插件：
 
-1. Navigate in your Home Assistant frontend to **Settings** -> **Add-ons** -> **Add-on store**.
-2. Find the "Samba share" add-on and click it.
-3. Click on the "INSTALL" button.
+1. 在 Home Assistant 前端中导航到 **设置** -> **插件** -> **插件商店**。
+2. 找到 "Samba 共享" 插件并点击它。
+3. 点击 "安装" 按钮。
 
-## How to use
+## 如何使用
 
-1. In the configuration section, set a username and password.
-   You can specify any username and password; these are not related in any way to the login credentials you use to log in to Home Assistant or to log in to the computer with which you will use Samba share.
-2. Review the enabled shares. Disable any you do not plan to use. Shares can be re-enabled later if needed.
+1. 在配置部分，设置用户名和密码。
+   您可以指定任何用户名和密码；这些与您用于登录 Home Assistant 或登录使用 Samba 共享的计算机的凭据没有任何关系。
+2. 检查已启用的共享。禁用任何您不打算使用的共享。如果需要，可以稍后重新启用共享。
 
-## Connection
+## 连接
 
-If you are on Windows you use `\\<IP_ADDRESS>\`, if you are on MacOS you use `smb://<IP_ADDRESS>` to connect to the shares.
+如果您使用 Windows 请使用 `\\<IP_ADDRESS>\`，如果您使用 MacOS 请使用 `smb://<IP_ADDRESS>` 连接到共享。
 
-This addon exposes the following directories over smb (samba):
+此插件通过 smb (samba) 暴露以下目录：
 
-Directory | Description
+目录 | 描述
 -- | --
-`addons` | This is for your local add-ons.
-`addon_configs` | This is for the configuration files of your add-ons.
-`backup` | This is for your backups.
-`config` | This is for your Home Assistant configuration.
-`media` | This is for local media files.
-`share` | This is for your data that is shared between add-ons and Home Assistant.
-`ssl` | This is for your SSL certificates.
+`addons` | 这是您的本地插件。
+`addon_configs` | 这是您的插件的配置文件。
+`backup` | 这是您的备份文件。
+`config` | 这是您的 Home Assistant 配置。
+`media` | 这是本地媒体文件。
+`share` | 这是在插件和 Home Assistant 之间共享的数据。
+`ssl` | 这是您的 SSL 证书。
 
-## Configuration
+## 配置
 
-Add-on configuration:
+插件配置：
 
 ```yaml
 workgroup: WORKGROUP
@@ -61,56 +61,52 @@ veto_files:
 compatibility_mode: false
 ```
 
-### Option: `workgroup` (required)
+### 选项：`workgroup`（必需）
 
-Change WORKGROUP to reflect your network needs.
+将 WORKGROUP 更改为反映您的网络需求。
 
-### Option: `local_master` (required)
+### 选项：`local_master`（必需）
 
-Enable to try and become a local master browser on a subnet.
+启用以尝试在子网中成为本地主浏览器。
 
-### Option: `username` (required)
+### 选项：`username`（必需）
 
-The username you would like to use to authenticate with the Samba server.
+您希望用于对 Samba 服务器进行身份验证的用户名。
 
-### Option: `password` (required)
+### 选项：`password`（必需）
 
-The password that goes with the username configured for authentication.
+与用于身份验证的用户名对应的密码。
 
-### Option: `enabled_shares` (required)
+### 选项：`enabled_shares`（必需）
 
-List of Samba shares that will be accessible. Any shares removed or commented out of the list will not be accessible.
+将可访问的 Samba 共享的列表。删除或注释掉列表中的任何共享将无法访问。
 
-### Option: `allow_hosts` (required)
+### 选项：`allow_hosts`（必需）
 
-List of hosts/networks allowed to access the shared folders.
+允许访问共享文件夹的主机/网络列表。
 
-### Option: `veto_files` (optional)
+### 选项：`veto_files`（可选）
 
-List of files that are neither visible nor accessible. Useful to stop clients
-from littering the share with temporary hidden files
-(e.g., macOS `.DS_Store` or Windows `Thumbs.db` files)
+不显示也不可访问的文件列表。用于防止客户端在共享中留下临时隐藏文件
+（例如，macOS 的 `.DS_Store` 或 Windows 的 `Thumbs.db` 文件）
 
-### Option: `compatibility_mode`
+### 选项：`compatibility_mode`
 
-Setting this option to `true` will enable old legacy Samba protocols
-on the Samba add-on. This might solve issues with some clients that cannot
-handle the newer protocols, however, it lowers security. Only use this
-when you absolutely need it and understand the possible consequences.
+将此选项设置为 `true` 将启用 Samba 插件上的旧遗留 Samba 协议。这可能解决一些无法处理新协议的客户端的问题，但会降低安全性。只有在绝对需要且了解可能后果时才使用此选项。
 
-Defaults to `false`.
+默认为 `false`。
 
-## Support
+## 支持
 
-Got questions?
+有问题吗？
 
-You have several options to get them answered:
+您可以通过以下几种方式找到答案：
 
-- The [Home Assistant Discord Chat Server][discord].
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+- Home Assistant [Discord 聊天服务器][discord]。
+- Home Assistant [社区论坛][forum]。
+- 加入 [/r/homeassistant][reddit] 的 [Reddit 子版块][reddit]。
 
-In case you've found a bug, please [open an issue on our GitHub][issue].
+如果您发现了错误，请 [在我们的 GitHub 上报告问题][issue]。
 
 [discord]: https://discord.gg/c5DvZ4e
 [forum]: https://community.home-assistant.io

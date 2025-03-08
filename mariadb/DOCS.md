@@ -1,26 +1,25 @@
-# Home Assistant Add-on: MariaDB
+# Home Assistant 插件：MariaDB
 
-## Installation
+## 安装
 
-Follow these steps to get the add-on installed on your system:
+按照以下步骤在您的系统上安装插件：
 
-1. Navigate in your Home Assistant frontend to **Settings** -> **Add-ons** -> **Add-on store**.
-2. Find the "MariaDB" add-on and click it.
-3. Click on the "INSTALL" button.
+1. 在 Home Assistant 前端导航到 **设置** -> **插件** -> **插件商店**。
+2. 找到 "MariaDB" 插件并点击它。
+3. 点击 "安装" 按钮。
 
-## How to use
+## 使用方法
 
-1. Set the `logins` -> `password` field to something strong and unique.
-2. Start the add-on.
-3. Check the add-on log output to see the result.
-4. Add the `recorder` integration to your Home Assistant configuration.
+1. 将 `logins` -> `password` 字段设置为强大且独特的密码。
+2. 启动插件。
+3. 检查插件日志输出以查看结果。
+4. 将 `recorder` 集成添加到您的 Home Assistant 配置中。
 
-## Add-on Configuration
+## 插件配置
 
-The MariaDB server add-on can be tweaked to your likings. This section
-describes each of the add-on configuration options.
+MariaDB 服务器插件可以根据您的喜好进行调整。本节描述了每个插件配置选项。
 
-Example add-on configuration:
+示例插件配置：
 
 ```yaml
 databases:
@@ -39,70 +38,66 @@ rights:
       - SELECT
 ```
 
-### Option: `databases` (required)
+### 选项：`databases`（必需）
 
-Database name, e.g., `homeassistant`. Multiple are allowed.
+数据库名称，例如 `homeassistant`。允许多个。
 
-### Option: `logins` (required)
+### 选项：`logins`（必需）
 
-This section defines a create user definition in MariaDB. [Create User][createuser] documentation.
+本节定义了在 MariaDB 中创建用户的定义。 [创建用户][createuser] 文档。
 
-### Option: `logins.username` (required)
+### 选项：`logins.username`（必需）
 
-Database user login, e.g., `homeassistant`. [User Name][username] documentation.
+数据库用户登录名，例如 `homeassistant`。 [用户名][username] 文档。
 
-### Option: `logins.password` (required)
+### 选项：`logins.password`（必需）
 
-Password for user login. This should be strong and unique.
+用户登录的密码。应为强大且独特的密码。
 
-### Option: `rights` (required)
+### 选项：`rights`（必需）
 
-This section grant privileges to users in MariaDB. [Grant][grant] documentation.
+本节授予 MariaDB 中用户的权限。 [授予][grant] 文档。
 
-### Option: `rights.username` (required)
+### 选项：`rights.username`（必需）
 
-This should be the same user name defined in `logins` -> `username`.
+应与 `logins` -> `username` 中定义的用户名相同。
 
-### Option: `rights.database` (required)
+### 选项：`rights.database`（必需）
 
-This should be the same database defined in `databases`.
+应与 `databases` 中定义的数据库相同。
 
-### Option: `rights.privileges` (optional)
+### 选项：`rights.privileges`（可选）
 
-A list of privileges to grant to this user from [grant][grant] like `SELECT` and `CREATE`.
-If omitted, grants `ALL PRIVILEGES` to the user. Restricting privileges of the user
-that Home Assistant uses is not recommended but if you want to allow other applications
-to view recorder data should create a user limited to read-only access on the database.
+要授予此用户的权限列表，来自 [grant][grant] 例如 `SELECT` 和 `CREATE`。如果省略，则授予用户 `ALL PRIVILEGES`。 不建议限制 Home Assistant 使用的用户的权限，但是如果您希望允许其他应用程序查看录音数据，则应创建一个只能对数据库进行只读访问的用户。
 
-### Option: `mariadb_server_args` (optional)
+### 选项：`mariadb_server_args`（可选）
 
-Some users have experienced [errors][migration-issues] during Home Assistant schema updates on large databases.
-Defining the recommended parameters can help if there is RAM available.
+某些用户在大型数据库上进行 Home Assistant 模式更新时遇到了 [错误][migration-issues]。 如果有可用的 RAM，定义推荐的参数可以帮助。
 
-Example: `--innodb_buffer_pool_size=512M`
+示例： `--innodb_buffer_pool_size=512M`
 
-## Home Assistant Configuration
+## Home Assistant 配置
 
-MariaDB will be used by the `recorder` and `history` components within Home Assistant. For more information about setting this up, see the [recorder integration][mariadb-ha-recorder] documentation for Home Assistant.
+MariaDB 将被 Home Assistant 中的 `recorder` 和 `history` 组件使用。有关设置此内容的更多信息，请参阅 Home Assistant 的 [recorder 集成][mariadb-ha-recorder] 文档。
 
-Example Home Assistant configuration:
+示例 Home Assistant 配置：
 
 ```yaml
 recorder:
   db_url: mysql://homeassistant:password@core-mariadb/homeassistant?charset=utf8mb4
 ```
 
-## Support
+## 支持
 
-Got questions?
+有问题吗？
 
-You have several options to get them answered:
+您有几种方式可以获得答案：
 
-- The [Home Assistant Discord Chat Server][discord].
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+- [Home Assistant Discord 聊天服务器][discord]。
+- Home Assistant [社区论坛][forum]。
+- 加入 [Reddit 子版块][reddit] 在 [/r/homeassistant][reddit]
 
-In case you've found a bug, please [open an issue on our GitHub][issue].
+如果您发现了错误，请 [在我们的 GitHub 上打开问题][issue]。
 
 [createuser]: https://mariadb.com/kb/en/create-user/
 [username]: https://mariadb.com/kb/en/create-user/#user-name-component

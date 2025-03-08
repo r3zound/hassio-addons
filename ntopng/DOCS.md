@@ -1,31 +1,30 @@
-# Li Tin O`ve Weedle Assistant Add-on: ntopng
+# Li Tin O`ve Weedle Assistant 插件: ntopng
 
-This is an ntopng add-on for Home Assistant.
-It includes opensource community version of ntopng 
-and opensource netflow collector implementation netflow2ng
+这是一个用于 Home Assistant 的 ntopng 插件。
+它包含了开源社区版本的 ntopng 
+和开源的 netflow 收集器实现 netflow2ng
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Home Assistant add-on.
+这个插件的安装非常简单，与安装任何其他 Home Assistant 插件没有区别。
 
-1. Click the Home Assistant My button below to open the add-on on your Home
-   Assistant instance.
+1. 点击下面的 Home Assistant 我的按钮，以在您的 Home
+   Assistant 实例中打开插件。
 
-   [![Open this add-on in your Home Assistant instance.][addon-badge]][addon]
+   [![在您的 Home Assistant 实例中打开此插件。][addon-badge]][addon]
 
-1. Click the "Install" button to install the add-on.
-1. Start the "Example" add-on.
-1. Check the logs of the "Example" add-on to see it in action.
+1. 点击“安装”按钮以安装插件。
+1. 启动“示例”插件。
+1. 检查“示例”插件的日志以查看它的运行情况。
 
-## Configuration
+## 配置
 
-Eventought this add-on is just an example add-on, it does come with some
-configuration options to play around with.
+尽管这个插件只是一个示例插件，但它确实包含一些
+配置选项供您玩耍。
 
-**Note**: _Remember to restart the add-on when the configuration is changed._
+**注意**: _更改配置后请记得重启插件。_
 
-ntopng add-on configuration:
+ntopng 插件配置：
 
 ```yaml
 log_level: info
@@ -44,81 +43,73 @@ geoip_account_id: 123456
 geoip_license_key: "Kdsalhdsl_lshahc_hskljd_as"
 ```
 
-### Option: `log_level`
+### 选项: `log_level`
 
-The `log_level` option controls the level of log output by the add-on and can
-be changed to be more or less verbose, which might be useful when you are
-dealing with an unknown issue. Possible values are:
+`log_level` 选项控制插件的日志输出级别，可以根据需要更改为更详细或更简洁，这可能在处理未知问题时很有用。可能的值包括：
 
-- `trace`: Show every detail, like all called internal functions.
-- `debug`: Shows detailed debug information.
-- `info`: Normal (usually) interesting events.
-- `warning`: Exceptional occurrences that are not errors.
-- `error`: Runtime errors that do not require immediate action.
-- `fatal`: Something went terribly wrong. Add-on becomes unusable.
+- `trace`: 显示每个细节，例如所有被调用的内部函数。
+- `debug`: 显示详细的调试信息。
+- `info`: 正常（通常）有趣的事件。
+- `warning`: 异常情况，但不是错误。
+- `error`: 运行时错误，不需要立即采取行动。
+- `fatal`: 发生严重错误。插件变得不可用。
 
-Please note that each level automatically includes log messages from a
-more severe level, e.g., `debug` also shows `info` messages. By default,
-the `log_level` is set to `info`, which is the recommended setting unless
-you are troubleshooting.
+请注意，每个级别自动包括来自更严重级别的日志消息，例如，`debug` 也会显示 `info` 消息。默认情况下，`log_level` 设置为 `info`，这是推荐的设置，除非您在进行故障排除。
 
-### Option: `ssl`
+### 选项: `ssl`
 
-### Option: `certfile`
+### 选项: `certfile`
 
-### Option: `keyfile`
+### 选项: `keyfile`
 
-### Option: `leave_front_door_open`
+### 选项: `leave_front_door_open`
 
-### Option: `ntop_auth`
+### 选项: `ntop_auth`
 
-### Option: `custom_scripts`
+### 选项: `custom_scripts`
 
-### Option: `dns_mode`
+### 选项: `dns_mode`
 
-### Option: `loacl_net`
+### 选项: `local_net`
 
-### Option: `export_flows`
+### 选项: `export_flows`
 
-### Option: `geoip_account_id`
+### 选项: `geoip_account_id`
 
-### Option: `geoip_license_key`
+### 选项: `geoip_license_key`
 
+## 更新日志与版本发布
 
-## Changelog & Releases
+这个仓库使用 [GitHub 的 releases][releases]
+功能来维护变更日志。
 
-This repository keeps a change log using [GitHub's releases][releases]
-functionality.
+版本基于 [语义版本控制][semver]，使用 `MAJOR.MINOR.PATCH` 的格式。简而言之，版本将根据以下内容递增：
 
-Releases are based on [Semantic Versioning][semver], and use the format
-of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
-based on the following:
+- `MAJOR`: 不兼容或重大更改。
+- `MINOR`: 向后兼容的新功能和增强。
+- `PATCH`: 向后兼容的错误修复和软件包更新。
 
-- `MAJOR`: Incompatible or major changes.
-- `MINOR`: Backwards-compatible new features and enhancements.
-- `PATCH`: Backwards-compatible bugfixes and package updates.
+## 支持
 
-## Support
+有问题吗？
 
-Got questions?
+您有几种方式可以获得答案：
 
-You have several options to get them answered:
+- Home Assistant [社区论坛][forum]。
+- 加入 [Reddit 子版块][reddit] 在 [/r/homeassistant][reddit]
 
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+您还可以在这里 [打开一个问题][issue] GitHub。
 
-You could also [open an issue here][issue] GitHub.
+## 作者与贡献者
 
-## Authors & contributors
-
-The original setup of this repository is by [Li Tin O`ve Weedle][litin].
+这个仓库的最初设置由 [Li Tin O`ve Weedle][litin] 完成。
 
 
-## License
+## 许可证
 
 Apache 2.0
 
-Copyright (c) 2023 Dominik Strnad
+版权 (c) 2023 Dominik Strnad
 
 [addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
 [addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_example&repository_url=https%3A%2F%2Fgithub.com%2Flitinoveweedle%2Fhassio-addons

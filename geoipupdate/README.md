@@ -1,45 +1,43 @@
-# Home assistant add-on: GeoIP Update
+# Home Assistant 插件：GeoIP 更新
 
-The GeoIP Update program performs automatic updates of GeoIP2 and GeoLite2 binary databases.
+GeoIP 更新程序执行 GeoIP2 和 GeoLite2 二进制数据库的自动更新。
 
-Desiged to work with @einschmidt Caddy2 Addon for Home Assistant `https://github.com/einschmidt/hassio-addons`
+设计用于与 @einschmidt 的 Caddy2 插件一起使用，访问 `https://github.com/einschmidt/hassio-addons`
 
-Note: Recent Caddy-2 update (v2.0) changed the config path to `/addon_configs/c80c7555_caddy-2`. If you were running with v1.x, save your configuration of this addon, uninstall, and reinstall, then replace your config but change the directory to above. This is needed because addon has to be rebuilt to be able to see the new directory
+注意：最近的 Caddy-2 更新（v2.0）将配置路径更改为 `/addon_configs/c80c7555_caddy-2`。如果您之前运行的是 v1.x，请保存该插件的配置，卸载并重新安装，然后替换您的配置，但将目录更改为上述路径。这是因为插件需要重建才能看到新的目录。
 
-Also need a custom caddy binary with `https://github.com/porech/caddy-maxmind-geolocation` setup. Use my `Caddy Builder` addon to make one.
+还需要设置带有 `https://github.com/porech/caddy-maxmind-geolocation` 的自定义 Caddy 二进制文件。请使用我的 `Caddy Builder` 插件来制作一个。
 
-Must setup license key at maxmind.com
+必须在 maxmind.com 上设置许可证密钥。
 
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢所有给我仓库加星的朋友！要加星请点击下面的图片，然后它会出现在右上角。谢谢！_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
-## About
+## 关于
 
-The Docker image is configured by environment variables. The following
-variables are required:
+Docker 镜像通过环境变量进行配置。以下变量是必需的：
 
-* `GEOIPUPDATE_EDITION_IDS` - List of space-separated database edition IDs.
-  Edition IDs may consist of letters, digits, and dashes. default "GeoLite2-ASN GeoLite2-City GeoLite2-Country".
+* `GEOIPUPDATE_EDITION_IDS` - 空格分隔的数据库版本 ID 列表。
+  版本 ID 可以由字母、数字和短划线组成。默认为 "GeoLite2-ASN GeoLite2-City GeoLite2-Country"。
 
-* `GEOIPUPDATE_ACCOUNT_ID` - Your MaxMind account ID (not your username).
+* `GEOIPUPDATE_ACCOUNT_ID` - 您的 MaxMind 账户 ID（不是用户名）。
 
-* `GEOIPUPDATE_LICENSE_KEY` - Your case-sensitive MaxMind license key (not your password).
+* `GEOIPUPDATE_LICENSE_KEY` - 您的区分大小写的 MaxMind 许可证密钥（不是密码）。
 
-* `GEOIPUPDATE_FREQUENCY` - The number of hours between `geoipupdate` runs.
-  If this is not set or is set to `0`, `geoipupdate` will run once and exit.
+* `GEOIPUPDATE_FREQUENCY` - `geoipupdate` 运行之间的小时数。
+  如果未设置或设置为 `0`，`geoipupdate` 将运行一次并退出。
 
-* `GEOIPUPDATE_DB_DIR` - The directory where geoipupdate will download the
-  databases. The default is `/addon_configs/c80c7555_caddy-2` to be consistent with new caddy-2 plugin.
+* `GEOIPUPDATE_DB_DIR` - geoipupdate 将下载数据库的目录。默认为 `/addon_configs/c80c7555_caddy-2`，以与新的 caddy-2 插件保持一致。
   
 [repository]: https://github.com/jdeath/homeassistant-addons
 
-## Usage
-Make a custom caddy build that includes `--with github.com/porech/caddy-maxmind-geolocation` and put it in `/share/caddy/` (v1.x) with the filename `caddy` or `/addon_configs/c80c7555_caddy-2` (v2.0)
+## 使用方法
+制作一个自定义的 Caddy 构建，包含 `--with github.com/porech/caddy-maxmind-geolocation`，并将其放置在 `/share/caddy/`（v1.x）中，文件名为 `caddy`，或放置在 `/addon_configs/c80c7555_caddy-2`（v2.0）中。
 
-Edit `/share/caddy/Caddyfile`
+编辑 `/share/caddy/Caddyfile`
 
-Add a GEOFilter block to allow certain countries and your local IP address. I found this online, so ask at Caddyforums if you need help.
+添加一个 GEOFilter 块以允许某些国家和您的本地 IP 地址。我在网上找到了这个，所以如果需要帮助，请在 Caddyforums 上询问。
 
 ```
 (GEOFILTER) {
@@ -54,7 +52,6 @@ Add a GEOFilter block to allow certain countries and your local IP address. I fo
 }
 ```
 
-Then add this line before any `reverse_proxy` directive
+然后在任何 `reverse_proxy` 指令之前添加这一行
 ```
 import GEOFILTER
-```

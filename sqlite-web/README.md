@@ -1,16 +1,16 @@
-# Home Assistant Community Add-on: SQLite Web
+# Home Assistant社区附加组件：SQLite Web
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
-Explore your Home-Assistant database from your web browser!
+通过您的网页浏览器探索您的Home Assistant数据库！
 
-## About
+## 关于
 
-This enables you to easily explore all tables and content that is saved in your database.
+这使您可以轻松探索保存到数据库中的所有表格和内容。
 
-![SQLite Web screenshot][screenshot]
+![SQLite Web 截图][screenshot]
 
 [discord-shield]: https://img.shields.io/discord/330944238910963714.svg
 [discord]: https://discord.gg/c5DvZ4e

@@ -1,63 +1,60 @@
-# Home Assistant Add-on: SteVe
+# Home Assistant 插件：SteVe
 
-SteVe OCCP server for communicationg with charge points
+SteVe OCCP 服务器用于与充电点进行通信
 
-![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield]
+![支持 aarch64 架构][aarch64-shield] ![支持 amd64 架构][amd64-shield]
 
-## About
+## 关于
 
-Important: This addon requires that the MariaDB add-on is installed and running!
+重要提示：此插件要求安装并运行 MariaDB 插件！
 
-This add-on is experimental.
-Steve is an OCCP server for communicationg with charge points
+此插件是实验性的。
+SteVe 是一个用于与充电点进行通信的 OCCP 服务器。
 
-## Installation
+## 安装
 
-Follow these steps to get the add-on installed on your system:
+按照以下步骤在您的系统上安装此插件：
 
-Add the repository `https://github.com/erik73/hassio-addons`.
-Find the "SteVe" add-on and click it.
-Click on the "INSTALL" button.
+添加仓库 `https://github.com/erik73/hassio-addons`。
+找到 "SteVe" 插件并点击它。
+点击 "INSTALL" 按钮。
 
-## How to use
+## 如何使用
 
-### Starting the add-on
+### 启动插件
 
-After installation you are presented with a default configuration.
+安装后，您将看到默认配置。
 
-Important: This addon requires that the MariaDB add-on is installed and running!
+重要提示：此插件要求安装并运行 MariaDB 插件！
 
-The only configuration that is needed is to provide the admin_user and admin_password.
-Save the add-on configuration by clicking the "SAVE" button.
-Start the add-on.
+所需的唯一配置是提供 admin_user 和 admin_password。
+通过点击 "SAVE" 按钮保存插件配置。
+启动插件。
 
-## Configuration
+## 配置
 
-Important: This addon requires that theMariaDB add-on is installed and running!
+重要提示：此插件要求安装并运行 MariaDB 插件！
 
-Example configuration:
+示例配置：
 
 ```yaml
 admin_user: admin
 admin_password: admin
 ```
 
-Please note: This add-on consumes lots of memory.
-The absolute minimum is 4GB of RAM intsalled in the host.
-Depending on other add-ons that are installed 4GB might not be enough.
+请注意：此插件消耗大量内存。
+主机上安装的绝对最低要求是 4GB 的 RAM。
+根据已安装的其他插件，4GB 可能不足够。
 
-It is also important to understand that the admin_user and admin_password can not be
-changed after the first start of the add-on, since the MariaDB database is created with
-these credentials the first time the add-on is started.
+同样重要的是要理解，admin_user 和 admin_password 在插件第一次启动后无法更改，因为 MariaDB 数据库是在插件首次启动时使用这些凭据创建的。
 
-There is no ingress support, so to reach the SteVe web interface you have to point your
-browser to http://<your.homeassistant.host.ip>:8180 to login in to SteVe.
+不支持内网访问，因此要访问 SteVe 的 Web 界面，您必须将浏览器指向 http://<your.homeassistant.host.ip>:8180 登录 SteVe。
 
-## Support
+## 支持
 
-Got questions?
+有问题吗？
 
-You could [open an issue here][issue] GitHub.
+您可以在这里 [打开一个问题][issue] GitHub。
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg

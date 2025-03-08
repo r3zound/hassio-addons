@@ -1,54 +1,46 @@
-# Unofficial Home Assistant Add-ons: Victoria Metrics
+# 非官方 Home Assistant 插件：Victoria Metrics
 
-Victoria Metrics (<https://github.com/VictoriaMetrics/VictoriaMetrics>) bundled
-as an Home Assistant add-on.
+Victoria Metrics (<https://github.com/VictoriaMetrics/VictoriaMetrics>) 被打包为一个 Home Assistant 插件。
 
 ![aarch64-shield](https://img.shields.io/badge/aarch64-yes-green)
 ![amd64-shield](https://img.shields.io/badge/amd64-yes-green)
 ![armv7-shield](https://img.shields.io/badge/armv7-yes-green)
 ![i386-shield](https://img.shields.io/badge/i386-yes-green)
 
-## Installation
+## 安装
 
-Follow these steps to get the add-on installed on your system:
+按照以下步骤在您的系统上安装插件：
 
-1. Navigate in your Home Assistant frontend to **Supervisor -> Add-on Store**
-1. Add this new repository by URL
+1. 在您的 Home Assistant 前端导航到 **Supervisor -> Add-on Store**
+1. 通过 URL 添加这个新仓库
    (`https://github.com/bluemaex/home-assistant-addons`)
-1. Find the "Unpoller" add-on and click on it.
-1. Click on the "INSTALL" button
-1. Read the Documentation inside the Addon
-1. Adapt your Configuration to your liking
-1. Start with long term tracking 👍
+1. 找到 "Unpoller" 插件并点击它。
+1. 点击 "INSTALL" 按钮
+1. 阅读插件内的文档
+1. 根据您的喜好调整配置
+1. 开始长期跟踪 👍
 
-## About
+## 关于
 
-VictoriaMetrics is a fast, cost-effective and scalable monitoring solution and
-time series database. It's a great choice if you want long term storage for your
-HomeAssistant Data and do custom evaluations longer than your default
-HomeAssistant Retention.
+VictoriaMetrics 是一个快速、经济有效且可扩展的监控解决方案和
+时间序列数据库。如果您想为您的 HomeAssistant 数据提供长期存储，并进行比默认
+HomeAssistant 保留策略更长时间的自定义评估，它是一个不错的选择。
 
-You can run this addon in two different ways:
+您可以通过两种不同方式运行此插件：
 
-### Server
+### 服务器
 
-Run an full
-[ultra efficent Time Series Database](https://github.com/VictoriaMetrics/VictoriaMetrics#prominent-features)
-Server even on low speced computers as the Raspberry PI.
+在低配置计算机（如 Raspberry PI）上运行一个完整的
+[超高效的时间序列数据库](https://github.com/VictoriaMetrics/VictoriaMetrics#prominent-features) 服务器。
 
-### Agent
+### 代理
 
-This add-on makes it easy to scrape (i.e. fetch) metrics locally, cache them in
-a local temporary database, and send them to your centralized Victoria Metrics
-Time Series Database Server as soon as is is reachable, thus allowing to have
-full data even if the database is down or unreachable at times.
+这个插件可以轻松地在本地抓取（即获取）指标，缓存它们到一个本地临时数据库，并在可访问时将它们发送到您的集中式 Victoria Metrics 时间序列数据库服务器，从而使您在数据库关闭或暂时无法访问时也能拥有完整的数据。
 
-## Final notes
+## 最后说明
 
-For information on how to configure this addon please refer to the
-[Documentation](DOCS.md) inside the addon page
+有关如何配置此插件的信息，请参考插件页面内的
+[文档](DOCS.md)
 
-This project is not affiliated with Victoria Metrics, the Victoria Metrics
-Maintainer Team, but simply a community effort. Victoria Metrics itself is
-distributed under the
-[Apache License 2.0](https://github.com/VictoriaMetrics/VictoriaMetrics/blob/master/LICENSE).
+该项目与 Victoria Metrics、Victoria Metrics 维护团队没有关联，仅仅是社区努力。Victoria Metrics 本身按照
+[Apache License 2.0](https://github.com/VictoriaMetrics/VictoriaMetrics/blob/master/LICENSE) 进行分发。

@@ -1,13 +1,13 @@
-# Home Assistant Add-on: Letsencrypt
+# Home Assistant 插件：Letsencrypt
 
-Let's Encrypt is a certificate authority that provides free X.509 certificates for Transport Layer Security encryption via an automated process designed to eliminate the hitherto complex process of manual creation, validation, signing, installation, and renewal of certificates for secure websites.
+Let's Encrypt 是一个证书颁发机构，提供免费的 X.509 证书用于通过自动化过程进行传输层安全加密，旨在消除之前手动创建、验证、签名、安装和续订安全网站证书的复杂过程。
 
-![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield] ![Supports armhf Architecture][armhf-shield] ![Supports armv7 Architecture][armv7-shield] ![Supports i386 Architecture][i386-shield]
+![支持 aarch64 架构][aarch64-shield] ![支持 amd64 架构][amd64-shield] ![支持 armhf 架构][armhf-shield] ![支持 armv7 架构][armv7-shield] ![支持 i386 架构][i386-shield]
 
-Setting up Letsencrypt allows you to use validated certificates for your webpages and web-interfaces.
-It requires you to own the domain you are requesting the certificate for.
+设置 Letsencrypt 允许您为网页和网络接口使用经过验证的证书。
+它要求您拥有请求证书的域名。
 
-The generated certificate can be used within others addons. By default the path and file for the certificates within other addons will refer to the files generated within this addon.
+生成的证书可以在其他插件中使用。默认情况下，其他插件中证书的路径和文件将引用在此插件中生成的文件。
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg

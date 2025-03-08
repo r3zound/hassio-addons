@@ -1,44 +1,42 @@
-# Home assistant add-on: Pairdrop
+# 家庭助手插件: Pairdrop
 
-PairDrop is a sublime alternative to AirDrop that works on all platforms. 
+PairDrop 是一个优秀的 AirDrop 替代方案，可在所有平台上运行。
 
-
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢每一个给我的仓库点星的人！要点星，请点击下面的图片，然后它会在右上角显示。谢谢！_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
-## About
+## 关于
 
-This addon is based on the [docker image](https://github.com/schlagmichdoch/PairDrop).
+这个插件基于 [docker 镜像](https://github.com/schlagmichdoch/PairDrop)。
 
-PairDrop is a sublime alternative to AirDrop that works on all platforms.
+PairDrop 是一个优秀的 AirDrop 替代方案，可在所有平台上运行。
 
-Send images, documents or text via peer to peer connection to devices in the same local network/Wi-Fi or to paired devices. As it is web based, it runs on all devices.
+通过点对点连接，将图像、文档或文本发送到同一局域网/Wi-Fi 中的设备或已配对的设备。由于它是基于网页的，因此可以在所有设备上运行。
 
-You want to quickly send a file from your phone to your laptop?
-You want to share photos in original quality with friends that use a mixture of Android and iOS?
-You want to share private files peer to peer between Linux systems?
-AirDrop is unreliable again?
-Send it with PairDrop!
+您想快速将文件从手机发送到笔记本电脑吗？
+您想与使用 Android 和 iOS 混合的朋友分享原始质量的照片吗？
+您想在 Linux 系统之间点对点分享私密文件吗？
+AirDrop 又不可靠了吗？
+用 PairDrop 发送吧！
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Hass.io add-on.
+这个插件的安装非常简单，与安装任何其他 Hass.io 插件没有区别。
 
-1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install this add-on.
-1. Click the `Save` button to store your configuration.
-1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
-1. Open WebUI should work via ingress or <your-ip>:port.
+1. [将我的 Hass.io 插件库][repository] 添加到您的 Hass.io 实例。
+1. 安装此插件。
+1. 点击 `Save` 按钮以保存您的配置。
+1. 启动插件。
+1. 检查插件的日志以查看一切是否正常。
+1. 打开 WebUI 应该可以通过 ingress 或 <your-ip>:port 访问。
 
-## Configuration
+## 配置
 
 ```
-port : 3000 #port you want to run on.
+port : 3000 #您想要运行的端口。
 ```
 
-Webui can be found at `<your-ip>:port`.
+Webui 可以在 `<your-ip>:port` 找到。
 
 [repository]: https://github.com/jdeath/homeassistant-addons

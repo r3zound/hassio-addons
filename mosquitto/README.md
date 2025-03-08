@@ -1,12 +1,12 @@
-# Home Assistant Add-on: Mosquitto broker
+# Home Assistant 插件：Mosquitto 代理
 
-MQTT broker for Home Assistant.
+用于 Home Assistant 的 MQTT 代理。
 
-![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield] ![Supports armhf Architecture][armhf-shield] ![Supports armv7 Architecture][armv7-shield] ![Supports i386 Architecture][i386-shield]
+![支持 aarch64 架构][aarch64-shield] ![支持 amd64 架构][amd64-shield] ![支持 armhf 架构][armhf-shield] ![支持 armv7 架构][armv7-shield] ![支持 i386 架构][i386-shield]
 
-## About
+## 关于
 
-You can use this add-on to install Eclipse Mosquitto, which is an open-source (EPL/EDL licensed) message broker that implements the MQTT protocol. Mosquitto is lightweight and is suitable for use on all devices from low power single board computers to full servers. For more information, please see [mosquitto].
+您可以使用此插件安装 Eclipse Mosquitto，这是一个开源（EPL/EDL 许可证）消息代理，实施 MQTT 协议。Mosquitto 轻量且适合在从低功耗单板计算机到完整服务器的所有设备上使用。有关更多信息，请参见 [mosquitto]。
 
 [mosquitto]: https://mosquitto.org
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg

@@ -1,10 +1,10 @@
-# Home Assistant Add-on: Frigate Proxy
+# Home Assistant 插件：Frigate 代理
 
-![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield] ![Supports armhf Architecture][armhf-shield] ![Supports armv7 Architecture][armv7-shield] ![Supports i386 Architecture][i386-shield]
+![支持 aarch64 架构][aarch64-shield] ![支持 amd64 架构][amd64-shield] ![支持 armhf 架构][armhf-shield] ![支持 armv7 架构][armv7-shield] ![支持 i386 架构][i386-shield]
 
-This addon creates a proxy to a Frigate server run separately from Home Assistant so that you can have the benefit of access in the sidebar without running Frigate as an addon.
+此插件创建一个代理，指向一个与 Home Assistant 分开运行的 Frigate 服务器，这样您就可以在侧边栏中访问 Frigate 的功能，而无需将 Frigate 作为插件运行。
 
-Note that this addon does not run Frigate itself.
+请注意，此插件不运行 Frigate 本身。
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg

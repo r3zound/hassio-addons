@@ -1,31 +1,28 @@
-# Unofficial Home Assistant Add-ons: UnPoller
+# 非官方 Home Assistant 插件：UnPoller
 
-UnPoller (<https://github.com/unpoller/unpoller>) bundled as an Home Assistant
-add-on.
+UnPoller (<https://github.com/unpoller/unpoller>) 打包为 Home Assistant 的一个插件。
 
-## Installation
+## 安装
 
-Follow these steps to get the add-on installed on your system:
+按照以下步骤在您的系统上安装此插件：
 
-1. Navigate in your Home Assistant frontend to **Supervisor -> Add-on Store**
-1. Add this new repository by URL
+1. 在您的 Home Assistant 前端导航到 **Supervisor -> Add-on Store**
+1. 通过 URL 添加这个新仓库
    (`https://github.com/bluemaex/home-assistant-addons`)
-1. Find the "Unpoller" add-on and click on it.
-1. Click on the "INSTALL" button
-1. Read the Documentation inside the Addon
-1. Adapt your Configuration to your liking
-1. Start with long term tracking 👍
+1. 找到 "Unpoller" 插件并点击它。
+1. 点击 "INSTALL" 按钮
+1. 阅读插件内的文档
+1. 根据您的喜好调整配置
+1. 开始进行长期跟踪 👍
 
-## About
+## 关于
 
-Collect your UniFi controller data and report it to an InfluxDB instance, or
-export it for Prometheus collection. <https://github.com/unpoller/unpoller>
+收集您的 UniFi 控制器数据并将其报告到 InfluxDB 实例，或为 Prometheus 收集导出数据。 <https://github.com/unpoller/unpoller>
 
-## Final notes
+## 最后说明
 
-For information on how to configure this addon please refer to the
-[Documentation](DOCS.md) inside the addon page
+有关如何配置此插件的信息，请参考插件页面中的
+[文档](DOCS.md)
 
-This project is not affiliated with UnPoller, but simply a community effort.
-UnPoller itself is distributed under the
-[MIT License](https://github.com/unpoller/unpoller/blob/master/LICENSE).
+该项目与 UnPoller 并无关联，仅是社区的努力。
+UnPoller 本身在 [MIT 许可证](https://github.com/unpoller/unpoller/blob/master/LICENSE) 下分发。

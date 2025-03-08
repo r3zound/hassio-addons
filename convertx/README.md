@@ -1,33 +1,32 @@
-# Home assistant add-on: ConvertX
+# Home assistant 插件：ConvertX
 
-A self-hosted online file converter. Supports 831 different formats. Written with TypeScript, Bun and Elysia
+一个自托管的在线文件转换器。支持 831 种不同的格式。使用 TypeScript、Bun 和 Elysia 编写
 
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢所有为我的仓库点星的人！要点星，请点击下面的图片，然后在右上角会出现。谢谢！_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
-## About
+## 关于
 
-This addon uses the [docker image](https://github.com/C4illin/ConvertX).
+这个插件使用了 [docker 镜像](https://github.com/C4illin/ConvertX)。
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Hass.io add-on.
+这个插件的安装非常简单，与安装任何其他 Hass.io 插件没有区别。
 
-1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install this add-on. 2 GB image will take a while to download
-1. Click the `Save` button to store your configuration.
-1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
-1. Open WebUI should work via ingress or <your-ip>:port.
-1. data will be in /addon_configs/2effc9b9_convertx
-## Configuration
+1. [将我的 Hass.io 插件仓库][repository] 添加到您的 Hass.io 实例。
+1. 安装此插件。2 GB 的镜像下载需要一些时间。
+1. 点击 `Save` 按钮以保存您的配置。
+1. 启动插件。
+1. 检查插件的日志以查看一切是否顺利。
+1. WebUI 应该可以通过入口或 <您的-ip>:端口 访问。
+1. 数据将位于 /addon_configs/2effc9b9_convertx
+## 配置
 
 ```
-port : 3000 #port you want to run on.
+port : 3000 #您希望运行的端口。
 ```
 
-Webui can be found at `<your-ip>:port`.
+Webui 可以在 `<您的-ip>:端口` 找到。
 
 [repository]: https://github.com/jdeath/homeassistant-addons

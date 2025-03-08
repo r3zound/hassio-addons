@@ -1,45 +1,44 @@
-# Home assistant add-on: Fusion RSS
+# 家助手插件：Fusion RSS
 
-A lightweight RSS feed aggregator and reader.
+一个轻量级的RSS订阅聚合器和阅读器。
 
-Key features include:
+主要功能包括：
 
-- Group, Bookmark, Search, Sniff feeds automatically
-- Import/Export OPML file
-- Support RSS, Atom, JSON types feed
-- Responsive, Light/Dark mode, PWA
-- Lightweight, Self-hosted friendly
-  - Built with Golang and SQLite, Deploy with a single binary
-  - Pre-built Docker image
-  - Uses about 80MB of memory
+- 自动分组、书签、搜索、嗅探订阅源
+- 导入/导出OPML文件
+- 支持RSS、Atom、JSON类型的订阅源
+- 响应式设计，支持亮/暗模式，PWA
+- 轻量级，自托管友好
+  - 使用Golang和SQLite构建，部署只需一个二进制文件
+  - 预构建的Docker镜像
+  - 大约使用80MB的内存
   
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢所有为我的仓库点赞的人！要点赞，请点击下面的图片，然后它会显示在右上角。谢谢！_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
-## About
+## 关于
 
-This addon is based on the [docker image](https://github.com/0x2E/fusion).
+此插件基于 [docker镜像](https://github.com/0x2E/fusion)。
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Hass.io add-on.
+此插件的安装相当简单，与安装任何其他Hass.io插件没有区别。
 
-1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install this add-on.
-1. Click the `Save` button to store your configuration.
-1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
-1. Open WebUI should work via ingress or <your-ip>:port.
-1. Your data is stored in /addon_configs/2effc9b9_fusionrss
+1. [将我的Hass.io插件仓库][repository]添加到您的Hass.io实例中。
+1. 安装此插件。
+1. 点击 `保存` 按钮以存储您的配置。
+1. 启动插件。
+1. 检查插件的日志以确保一切正常。
+1. 打开WebUI，应该可以通过入口或者<你的-ip>:port访问。
+1. 您的数据存储在 /addon_configs/2effc9b9_fusionrss
 
-## Configuration
+## 配置
 
 ```
-port : 8080 #port you want to run on.
+port : 8080 #您希望运行的端口。
 ```
 
-Webui can be found at `<your-ip>:port`.
+Webui可以在 `<你的-ip>:port` 找到。
 
 [repository]: https://github.com/jdeath/homeassistant-addons

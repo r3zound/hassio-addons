@@ -1,100 +1,73 @@
-# Home Assistant Community Add-on: Nginx Proxy Manager
+# Home Assistant社区插件：Nginx代理管理器
 
-This add-on enables you to easily forward incoming connections to anywhere,
-including free SSL, without having to know too much about Nginx
-or Let’s Encrypt.
+此插件使您能够轻松地将传入连接转发到任何地方，包括免费的SSL，而无需对Nginx或Let’s Encrypt了解太多。
 
-Forward your domain to your Home Assistant, add-ons, or websites running
-at home or anywhere else, straight from a simple, powerful interface.
+通过一个简单而强大的界面，将您的域名转发到您的Home Assistant、插件或在家或其他地方运行的网站。
 
-Want to protect the website with a username/password? Well, it can do that too!
-Enable authentication and create a list of usernames/password that can access
-that specific application.
+想用用户名/密码保护网站吗？当然，可以做到这一点！启用身份验证，并创建可以访问该特定应用程序的用户名/密码列表。
 
-For the power users, you can customize the behavior of each host in the
-Nginx proxy manager by providing additional Nginx directives.
+对于强大的用户，您可以通过提供额外的Nginx指令自定义Nginx代理管理器中每个主机的行为。
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Home Assistant add-on.
+此插件的安装非常简单，与安装任何其他Home Assistant插件没有不同。
 
-1. Click the Home Assistant My button below to open the add-on on your Home
-   Assistant instance.
+1. 点击下面的Home Assistant按钮以在您的Home Assistant实例中打开插件。
 
-   [![Open this add-on in your Home Assistant instance.][addon-badge]][addon]
+   [![在您的Home Assistant实例中打开此插件。][addon-badge]][addon]
 
-1. Click the "Install" button to install the add-on.
-1. Start the "Nginx Proxy Manager" add-on
-1. Check the logs of the "Nginx Proxy Manager" add-on to see if everything went well.
-1. Click the "OPEN WEB UI" button and login using:
+1. 点击“安装”按钮以安装插件。
+1. 启动“Nginx代理管理器”插件
+1. 检查“Nginx代理管理器”插件的日志，以查看一切是否正常。
+1. 点击“打开WEB UI”按钮并使用以下凭据登录：
    `admin@example.com` / `changeme`
-1. Forward port `443` (and optionally `80`) from your router to your
-   Home Assistant machine.
-1. Enjoy the add-on!
+1. 从路由器将端口`443`（可选`80`）转发到您的Home Assistant机器。
+1. 享受插件！
 
-## Configuration
+## 配置
 
-This add-on does not provide any configuration.
+此插件不提供任何配置。
 
-## Changelog & Releases
+## 更新日志和版本
 
-This repository keeps a change log using [GitHub's releases][releases]
-functionality.
+此存储库使用[GitHub的发布][releases]功能保持变更日志。
 
-Releases are based on [Semantic Versioning][semver], and use the format
-of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
-based on the following:
+版本基于[语义版本控制][semver]，使用`MAJOR.MINOR.PATCH`的格式。简而言之，版本将根据以下内容递增：
 
-- `MAJOR`: Incompatible or major changes.
-- `MINOR`: Backwards-compatible new features and enhancements.
-- `PATCH`: Backwards-compatible bugfixes and package updates.
+- `MAJOR`：不兼容或重大更改。
+- `MINOR`：向后兼容的新功能和增强。
+- `PATCH`：向后兼容的错误修复和包更新。
 
-## Support
+## 支持
 
-Got questions?
+有问题吗？
 
-You have several options to get them answered:
+您有几种选项可以获得答案：
 
-- The [Home Assistant Community Add-ons Discord chat server][discord] for add-on
-  support and feature requests.
-- The [Home Assistant Discord chat server][discord-ha] for general Home
-  Assistant discussions and questions.
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+- [Home Assistant社区插件Discord聊天服务器][discord]以获得插件支持和功能请求。
+- [Home Assistant Discord聊天服务器][discord-ha]以进行一般Home Assistant讨论和提问。
+- Home Assistant [社区论坛][forum]。
+- 加入[Reddit子版块][reddit]中的[/r/homeassistant][reddit]
 
-You could also [open an issue here][issue] GitHub.
+您也可以在这里[打开问题][issue] GitHub。
 
-## Authors & contributors
+## 作者与贡献者
 
-The original setup of this repository is by [Franck Nijhof][frenck].
+此存储库的原始设置由[Franck Nijhof][frenck]完成。
 
-For a full list of all authors and contributors,
-check [the contributor's page][contributors].
+要查看所有作者和贡献者的完整列表，请查看[贡献者页面][contributors]。
 
-## License
+## 许可证
 
-MIT License
+MIT许可证
 
-Copyright (c) 2019-2024 Franck Nijhof
+版权所有 (c) 2019-2024 Franck Nijhof
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+特此授予任何获取本软件及相关文档文件（以下简称“软件”）副本的人免费、无条件地使用、复制、修改、合并、发布、分发、再授权和/或出售软件副本的权利，并允许本软件的提供者在遵守下述条件的情况下这么做：
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+上述版权声明和本许可声明应包含在所有软件副本或重要部分中。
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+本软件按“原样”提供，不提供任何形式的保证，包括但不限于对适销性、特定用途的适用性和非侵权的保证。在任何情况下，作者或版权持有人对因使用软件或与软件的使用或其他交易相关的任何索赔、损害或其他责任不承担责任，无论是合同诉讼、侵权诉讼还是其他诉讼。
 
 [addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
 [addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_nginxproxymanager&repository_url=https%3A%2F%2Fgithub.com%2Fhassio-addons%2Frepository

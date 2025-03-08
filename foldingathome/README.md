@@ -1,27 +1,24 @@
-# Home Assistant Community Add-on: Folding@home
+# Home Assistant社区插件：Folding@home
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+[![发布][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
-Fighting disease with a world wide distributed super computer.
+利用全球分布的超级计算机抗击疾病。
 
-## About
+## 关于
 
-Folding@home (FAH or F@h) is a distributed computing project for performing
-molecular dynamics simulations of protein dynamics. Its initial focus was on
-protein folding but has shifted to more biomedical problems, such as Alzheimer's
-disease, cancer, Ebola and the coronavirus.
+Folding@home（FAH或F@h）是一个分布式计算项目，用于进行
+蛋白质动力学的分子动力学模拟。其初始重点是蛋白质折叠，但已转向更多生物医学问题，例如阿尔茨海默病、癌症、埃博拉和冠状病毒。
 
-The project uses the idle processing resources of personal computers owned by
-volunteers who have installed the software on their systems.
+该项目利用志愿者个人计算机的闲置处理资源，这些志愿者在其系统上安装了该软件。
 
-Now you can donate the idle time of your Home Assistant instance to the
-Folding@home project, helping to fight these diseases.
+现在，您可以将Home Assistant实例的闲置时间捐赠给
+Folding@home项目，帮助抗击这些疾病。
 
-Join the Home Assistant Folding@home team! (id: 247478)
+加入Home Assistant Folding@home团队！（ID：247478）
 
-![Folding@home in the Home Assistant Frontend][screenshot]
+![Home Assistant前端中的Folding@home][screenshot]
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons

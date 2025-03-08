@@ -1,76 +1,72 @@
-# Assist Microphone
+# 助手麦克风
 
-Use [Assist](https://www.home-assistant.io/voice_control/) voice assistant with a USB microphone. For example, a USB webcam.
+使用 [Assist](https://www.home-assistant.io/voice_control/) 语音助手与 USB 麦克风。例如，一个 USB 网络摄像头。
 
-## How to use
+## 如何使用
 
-After this add-on is installed and running, it will be automatically discovered
-by the Wyoming integration in Home Assistant. To finish the setup,
-click the following my button:
+安装并运行此附加组件后，它将被 Home Assistant 中的 Wyoming 集成自动发现。要完成设置，请点击以下我的按钮：
 
-[![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=wyoming)
+[![打开您的 Home Assistant 实例并开始设置新的集成。](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=wyoming)
 
-Alternatively, you can install the Wyoming integration manually, see the
-[Wyoming integration documentation](https://www.home-assistant.io/integrations/wyoming/)
-for more information.
+另外，您也可以手动安装 Wyoming 集成，详细信息请参见 [Wyoming 集成文档](https://www.home-assistant.io/integrations/wyoming/)。
 
-## Configuration
+## 配置
 
-### Option: `awake_wav`
+### 选项: `awake_wav`
 
-Path to WAV file to play when wake word is detected (empty to disable, default is `/usr/src/sounds/awake.wav`).
+唤醒词被检测时播放的 WAV 文件路径（为空则禁用，默认为 `/usr/src/sounds/awake.wav`）。
 
-### Option: `done_wav`
+### 选项: `done_wav`
 
-Path to WAV file to play when voice command is finished (empty to disable, default is `/usr/src/sounds/done.wav`).
+当语音命令完成时播放的 WAV 文件路径（为空则禁用，默认为 `/usr/src/sounds/done.wav`）。
 
-### Option: `timer_finished_wav`
+### 选项: `timer_finished_wav`
 
-Path to WAV file to play when timer is finished (empty to disable, default is `/usr/src/sounds/timer_finished.wav`).
+当计时器完成时播放的 WAV 文件路径（为空则禁用，默认为 `/usr/src/sounds/timer_finished.wav`）。
 
-### Option: `timer_repeat_count`
+### 选项: `timer_repeat_count`
 
-Number of times to repeat `timer_finished_wav` (default is 3).
+重复播放 `timer_finished_wav` 的次数（默认为 3）。
 
-### Option: `timer_repeat_delay`
+### 选项: `timer_repeat_delay`
 
-Delay before repeating `timer_finished_wav`, in seconds (default is 0.75).
+重复播放 `timer_finished_wav` 前的延迟，以秒为单位（默认为 0.75）。
 
-### Option: `noise_suppression`
+### 选项: `noise_suppression`
 
-Noise suppression level (0 is disabled, 4 is max). Disabled by default.
+噪音抑制级别（0 为禁用，4 为最大）。默认禁用。
 
-### Option: `auto_gain`
+### 选项: `auto_gain`
 
-Automatic volume boost for microphone (0 is disabled, 31 dbfs is max). Disabled by default.
+麦克风的自动音量增强（0 为禁用，31 dbfs 为最大）。默认禁用。
 
-### Option: `mic_volume_multiplier`
+### 选项: `mic_volume_multiplier`
 
-Multiply microphone volume by fixed value (1.0 = no change, 2.0 = twice as loud). 1.0 is the default.
+将麦克风音量乘以固定值（1.0 = 无更改，2.0 = 声音加倍）。1.0 为默认值。
 
-### Option: `sound_enabled`
+### 选项: `sound_enabled`
 
-Enables or disables output audio.
+启用或禁用音频输出。
 
-### Option: `sound_volume_multiplier`
+### 选项: `sound_volume_multiplier`
 
-Multiply sound output volume by fixed value (1.0 = no change, 2.0 = twice as loud). 1.0 is the default.
+将声音输出音量乘以固定值（1.0 = 无更改，2.0 = 声音加倍）。1.0 为默认值。
 
-### Option: `debug_logging`
+### 选项: `debug_logging`
 
-Enable debug logging.
+启用调试日志记录。
 
-## Support
+## 支持
 
-Got questions?
+有问题吗？
 
-You have several options to get them answered:
+您有几种选择可以获取答案：
 
-- The [Home Assistant Discord Chat Server][discord].
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+- [Home Assistant Discord 聊天服务器][discord]。
+- Home Assistant [社区论坛][forum]。
+- 加入 [/r/homeassistant][reddit] 的 [Reddit 子版块][reddit]。
 
-In case you've found an bug, please [open an issue on our GitHub][issue].
+如果您发现了一个 bug，请 [在我们的 GitHub 上打开一个问题][issue]。
 
 [discord]: https://discord.gg/c5DvZ4e
 [forum]: https://community.home-assistant.io

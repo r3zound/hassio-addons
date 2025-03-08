@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Nextcloud for Home Assistant 的意思是“Nextcloud为家庭助理”。",
+  "description": "翻译：家庭助手（Home Assistant）的 Nextcloud\n\n家庭助手（Home Assistant）是一款开源的家庭自动化平台，用于管理和控制智能家居设备。而 Nextcloud 是一个开源的云存储和协作平台，可以与各种应用程序集成，包括家庭助手。\n\n通过集成 Nextcloud 和家庭助手，用户可以在自己的家中创建一个集成的解决方案，以便轻松地访问和管理他们的文件、照片和其他数据，同时也可以通过家庭助手来控制和自动化智能家居设备。这种集成可以为用户提供更无缝和个性化的体验，使他们能够更好地管理他们的数字生活空间。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

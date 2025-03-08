@@ -1,16 +1,15 @@
-# Unofficial Home Assistant Add-ons: syslog-ng
+# 非官方 Home Assistant 附加组件：syslog-ng
 
-Healthchecks (<https://healthchecks.io/>) bundled as an Home Assistant add-on.
+Healthchecks (<https://healthchecks.io/>) 被打包为 Home Assistant 附加组件。
 
-## About
+## 关于
 
-Healthchecks is a watchdog for your cron jobs. It's a web server that listens
-for pings from your cron jobs, plus a web interface.
+Healthchecks 是一个监视你的定时任务的工具。它是一个监听来自你的定时任务的 ping 的网络服务器，并提供一个网络界面。
 
-## Final notes
+## 最后备注
 
-For information on how to configure this addon please refer to the
-[Documentation](DOCS.md) inside the addon page
+有关如何配置此附加组件的信息，请参阅附加组件页面中的
+[文档](DOCS.md)。
 
-This project is not affiliated with Healthchecks, but simply a community effort.
-Healthchecks itself is distributed under the BSD 3-Clause License.
+此项目与 Healthchecks 并没有关联，只是一个社区努力的结果。
+Healthchecks 本身是根据 BSD 3-Clause 许可证发布的。

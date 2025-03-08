@@ -1,6 +1,6 @@
-## Configuration
+## 配置
 
-Example config:
+示例配置：
 
 ```yaml
 width: 1280,
@@ -10,12 +10,12 @@ description: Pixelflut
 
 ### `width`
 
-The width of the Pixelflut canvas.
+Pixelflut 画布的宽度。
 
 ### `height`
 
-The height of the Pixelflut canvas.
+Pixelflut 画布的高度。
 
 ### `description`
 
-The text which is displayed on the top as description.
+显示在顶部的描述文本。

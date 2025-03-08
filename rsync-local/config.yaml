@@ -1,7 +1,7 @@
 name: rsync local
 version: 1.7.1
 slug: rsync-local
-description: 使用rsync将文件夹同步到外部USB驱动器。
+description: 使用rsync同步文件夹到外部USB驱动器。
 url: https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/rsync-local
 arch:
 - armhf

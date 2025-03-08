@@ -1,14 +1,14 @@
-# Home Assistant Add-on: NGINX Home Assistant SSL proxy
+# Home Assistant 插件：NGINX Home Assistant SSL 代理
 
-Sets up an SSL proxy with NGINX and redirects traffic from port 80 to 443.
+设置一个带有 NGINX 的 SSL 代理，并将流量从 80 端口重定向到 443 端口。
 
-![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield] ![Supports armhf Architecture][armhf-shield] ![Supports armv7 Architecture][armv7-shield] ![Supports i386 Architecture][i386-shield]
+![支持 aarch64 架构][aarch64-shield] ![支持 amd64 架构][amd64-shield] ![支持 armhf 架构][armhf-shield] ![支持 armv7 架构][armv7-shield] ![支持 i386 架构][i386-shield]
 
-## About
+## 关于
 
-Sets up an SSL proxy with NGINX web server. It is typically used to forward SSL internet traffic while allowing unencrypted local traffic to/from a Home Assistant instance.
+设置一个使用 NGINX 网页服务器的 SSL 代理。它通常用于转发 SSL 互联网流量，同时允许 Home Assistant 实例的未加密本地流量进出。
 
-Make sure you have generated a certificate before you start this add-on. The [Duck DNS](https://github.com/home-assistant/hassio-addons/tree/master/duckdns) add-on can generate a Let's Encrypt certificate that can be used by this add-on.
+确保在启动此插件之前已经生成了证书。[Duck DNS](https://github.com/home-assistant/hassio-addons/tree/master/duckdns) 插件可以生成可以由此插件使用的 Let's Encrypt 证书。
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg

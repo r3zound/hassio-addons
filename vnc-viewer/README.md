@@ -1,16 +1,15 @@
-# VNC Viewer
+# VNC 查看器
 
-Bundles the noVNC application inside an Home Assistant Addon. This allows the integration of any VNC server into Home Assistant.
+将 noVNC 应用程序打包到 Home Assistant 插件中。这允许将任何 VNC 服务器集成到 Home Assistant 中。
 
-[![Release][release-badge]][release]
-![Addon Stage][stage-badge]
+[![发布][release-badge]][release]
+![插件阶段][stage-badge]
 
-[![Donate][donation-badge]][donation-url]
+[![捐赠][donation-badge]][donation-url]
 
-## Note
+## 注意
 
-Currently only one connection is possible, if more are needed create or join the thread in the repository discussions.
-
+目前仅支持一个连接，如果需要更多，请在存储库讨论中创建或加入线程。
 
 [stage-badge]: https://img.shields.io/badge/Addon%20stage-stable-green.svg
 
@@ -19,4 +18,3 @@ Currently only one connection is possible, if more are needed create or join the
 
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee-%23d32f2f?logo=buy-me-a-coffee&style=for-the-badge&logoColor=white
 [donation-url]: https://www.buymeacoffee.com/Poeschl
-

@@ -1,29 +1,22 @@
 # Home Assistant Community Add-on: AirSonos
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+[![发布][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![通过 GitHub Sponsors 赞助 Frenck][github-sponsors-shield]][github-sponsors]
 
-[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
+[![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
 
-[![Support Frenck on Patreon][patreon-shield]][patreon]
+为您的 Sonos（和 UPnP）播放器提供 AirPlay 功能。
 
-AirPlay capabilities for your Sonos (and UPnP) players.
+## 关于
 
-## About
+苹果设备使用 AirPlay 将音频发送到其他设备，但这与 Sonos 播放器不兼容。这个插件尝试解决这个不兼容的问题。
 
-Apple devices use AirPlay to send audio to other devices, but this is not
-compatible with Sonos players. This add-on tries to solve this
-compatibility gap.
+它会检测您网络中的 Sonos 播放器，并为每个播放器创建虚拟 AirPlay 设备。它充当 AirPlay 客户端和真实 Sonos 设备之间的桥梁。
 
-It detects Sonos players in your network and creates virtual AirPlay
-devices for each of them. It acts as a bridge between the AirPlay client
-and the real Sonos device.
+由于 Sonos 使用 UPnP，该插件可能也适用于其他 UPnP 播放器（例如，较新的三星电视）。
 
-Since Sonos uses UPnP, the add-on might also work for other UPnP players
-(e.g., newer Samsung televisions).
-
-The AirCast add-on is based on the excellent [AirConnect][airconnect] project.
+AirCast 插件基于优秀的 [AirConnect][airconnect] 项目。
 
 [airconnect]: https://github.com/philippe44/AirConnect
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg

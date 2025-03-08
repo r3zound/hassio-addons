@@ -1,57 +1,56 @@
-# Home Assistant Add-on: Speech to phrase
+# Home Assistant 插件：语音转短语
 
-## Installation
+## 安装
 
-Follow these steps to get the add-on installed on your system:
+按照以下步骤在您的系统上安装该插件：
 
-1. Navigate in your Home Assistant frontend to **Settings** -> **Add-ons** -> **Add-on store**.
-2. Find the "Speech to phrase" add-on and click it.
-3. Click on the "INSTALL" button.
+1. 在您的 Home Assistant 前端导航到 **设置** -> **插件** -> **插件商店**。
+2. 找到 "语音转短语" 插件并点击它。
+3. 点击 "安装" 按钮。
 
-## How to use
+## 如何使用
 
-After this add-on is installed and running, it should automatically train itself based on your [exposed][] entities, areas, floors, and [sentence triggers][sentence trigger].
-The add-on will automatically re-train if necessary.
+在安装并运行此插件后，它应该会根据您的 [暴露][] 实体、区域、楼层和 [句子触发器][sentence trigger] 自动进行训练。
+如果需要，插件将自动重新训练。
 
-The add-on will be automatically discovered by the Wyoming integration in Home Assistant. To finish the setup, click the following my button:
+该插件将由 Home Assistant 中的 Wyoming 集成自动发现。要完成设置，请点击以下我的按钮：
 
-[![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=wyoming)
+[![打开您的 Home Assistant 实例并开始设置新的集成。](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=wyoming)
 
-Alternatively, you can install the Wyoming integration manually, see the
-[Wyoming integration documentation](https://www.home-assistant.io/integrations/wyoming/)
-for more information.
+或者，您也可以手动安装 Wyoming 集成，详细信息请参见
+[Wyoming 集成文档](https://www.home-assistant.io/integrations/wyoming/)。
 
-### Voice commands
+### 语音命令
 
-- [English](https://github.com/OHF-Voice/speech-to-phrase/blob/main/docs/english.md)
-- [Français (French)](https://github.com/OHF-Voice/speech-to-phrase/blob/main/docs/french.md)
-- [Deutsch (German)](https://github.com/OHF-Voice/speech-to-phrase/blob/main/docs/german.md)
-- [Nederlands (Dutch)](https://github.com/OHF-Voice/speech-to-phrase/blob/main/docs/dutch.md)
-- [Spanish (Español)](https://github.com/OHF-Voice/speech-to-phrase/blob/main/docs/spanish.md)
-- [Italian (Italiano)](https://github.com/OHF-Voice/speech-to-phrase/blob/main/docs/italian.md)
+- [英语](https://github.com/OHF-Voice/speech-to-phrase/blob/main/docs/english.md)
+- [法语 (Français)](https://github.com/OHF-Voice/speech-to-phrase/blob/main/docs/french.md)
+- [德语 (Deutsch)](https://github.com/OHF-Voice/speech-to-phrase/blob/main/docs/german.md)
+- [荷兰语 (Nederlands)](https://github.com/OHF-Voice/speech-to-phrase/blob/main/docs/dutch.md)
+- [西班牙语 (Español)](https://github.com/OHF-Voice/speech-to-phrase/blob/main/docs/spanish.md)
+- [意大利语 (Italiano)](https://github.com/OHF-Voice/speech-to-phrase/blob/main/docs/italian.md)
 
-### Custom sentences
+### 自定义句子
 
-You can add [custom sentences][] to `/share/speech-to-phrase/custom_sentences/<language>/sentences.yaml` where `<language>` is:
+您可以将 [自定义句子][] 添加到 `/share/speech-to-phrase/custom_sentences/<language>/sentences.yaml`，其中 `<language>` 为：
 
-* `en` - English
-* `fr` - French
-* `de` - German
-* `nl` - Dutch
-* `es` - Spanish
-* `it` - Italian
+* `en` - 英语
+* `fr` - 法语
+* `de` - 德语
+* `nl` - 荷兰语
+* `es` - 西班牙语
+* `it` - 意大利语
 
-## Support
+## 支持
 
-Got questions?
+有问题吗？
 
-You have several options to get them answered:
+您有多种方式可以获得答案：
 
-- The [Home Assistant Discord Chat Server][discord].
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+- [Home Assistant Discord 聊天服务器][discord]。
+- Home Assistant [社区论坛][forum]。
+- 加入 [/r/homeassistant][reddit] 的 [Reddit 子论坛][reddit]。
 
-In case you've found an bug, please [open an issue on our GitHub][issue].
+如果您发现了一个错误，请 [在我们的 GitHub 上报告问题][issue]。
 
 [discord]: https://discord.gg/c5DvZ4e
 [forum]: https://community.home-assistant.io

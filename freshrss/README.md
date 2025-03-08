@@ -1,12 +1,12 @@
-# Home Assistant Add-on: freshrss
+# Home Assistant 附加组件：freshrss
 
-A free, self-hostable feed aggregator.
+一个免费的，自我托管的新闻聚合器。
 
-## About
+## 关于
 
-FreshRSS is a self-hosted RSS and Atom feed aggregator.
-It is lightweight, easy to work with, powerful, and customizable.
+FreshRSS 是一个自我托管的 RSS 和 Atom 新闻聚合器。
+它轻量级、易于使用、功能强大且可定制。
 
-![freshrss preview][preview]
+![freshrss 预览][preview]
 
 [preview]: https://github.com/einschmidt/addon-freshrss/raw/main/images/freshrss.webp

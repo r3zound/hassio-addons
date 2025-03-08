@@ -1,9 +1,7 @@
 name: bt-mqtt-gateway
 version: 1.6.1
 slug: bt-mqtt-gateway
-description: $'蓝牙MQTT网关服务器
-
-注：MQTT（Message Queuing Telemetry Transport）是一种轻量级的发布/订阅消息传递协议，常用于物联网(IoT)设备之间的通信。而“网关”通常指的是连接不同网络或系统的设备，允许数据在这些网络之间传输。因此，“Bluetooth MQTT Gateway Server”可以理解为一种基于蓝牙的MQTT网关服务器，它可能用于将蓝牙设备的数据发送到MQTT消息队列中，或者从MQTT消息队列中接收数据并发送到蓝牙设备上。'
+description: 蓝牙MQTT网关服务器
 url: https://gh-proxy.com/github.com/FaserF/hassio-addons/tree/master/bt-mqtt-gateway
 host_network: true
 arch:

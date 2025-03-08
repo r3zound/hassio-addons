@@ -1,7 +1,7 @@
 name: xqrepack
 version: 1.7.1
 slug: xqrepack
-description: 这些脚本允许您修改不同的小米路由器固件镜像，以确保SSH和UART访问始终启用。
+description: 这些脚本允许您修改不同的小米路由器固件镜像，以确保始终启用SSH和UART访问。
   These scripts allow you to modify the different Xiaomi router firmware
   images to make sure SSH and UART access is always enabled
 url: https://gh-proxy.com/github.com/FaserF/hassio-addons/tree/master/xqrepack

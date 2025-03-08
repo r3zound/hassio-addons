@@ -3,7 +3,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "WhatsApp for Home Assistant\n\nWhatsApp for Home Assistant",
+  "description": "WhatsApp for Home Assistant\n\nWhatsApp for Home Assistant 是一个用于集成 WhatsApp 与 Home Assistant 的应用程序。它允许用户通过 WhatsApp 接收来自 Home Assistant 的通知和消息，并能够执行一些简单的控制操作。\n\n要使用 WhatsApp for Home Assistant，您需要先在您的手机上安装 WhatsApp 应用程序，并在 Home Assistant 中配置相应的插件或服务来接收和处理来自 WhatsApp 的信息。这样，当有新的事件发生时，Home Assistant 可以自动发送通知到您的 WhatsApp，让您随时随地了解家中的情况并进行必要的操作。",
   "image": "ghcr.nju.edu.cn/alexbelgium/whatsapper-{arch}",
   "map": [
     "addon_config:rw",

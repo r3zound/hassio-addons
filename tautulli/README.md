@@ -1,23 +1,20 @@
 # Home Assistant Community Add-on: Tautulli
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
-Monitoring and tracking tool for Plex Media Server.
+用于 Plex 媒体服务器的监控和跟踪工具。
 
-![Screenshot][screenshot]
+![截图][screenshot]
 
-## About
+## 介绍
 
-Tautulli is an application that you can run alongside your Plex Media Server
-to monitor activity, and track various statistics.
+Tautulli 是一款可以与你的 Plex 媒体服务器一起运行的应用程序，用于监控活动和跟踪各种统计数据。
 
-Most importantly, these statistics include what has been watched,
-who watched it, when and where they watched it, and how it was watched.
+最重要的是，这些统计数据包括了观看了什么，谁观看了，何时何地观看的，以及如何观看的。
 
-All statistics are presented in a nice and clean interface with many tables and
-graphs, which makes it easy to brag about your server to everyone else.
+所有统计数据都以美观简洁的界面呈现，包含许多表格和图表，使你可以轻松向其他人炫耀你的服务器。
 
 [discord-shield]: https://img.shields.io/discord/330944238910963714.svg
 [discord]: https://discord.gg/c5DvZ4e

@@ -1,31 +1,29 @@
-# Home assistant add-on: Scribble-rs
+# Home assistant 插件: Scribble-rs
 
-Scribble.rs is an alternative to the web-based drawing game skribbl.io. My main problems with skribbl.io were the ads and the fact that a disconnect would cause you to lose your points. On top of that, the automatic word choice was quite annoying and caused some frustration.
+Scribble.rs 是 web 基于的画画游戏 skribbl.io 的替代品。对我而言，使用 skribbl.io 的主要问题是广告和掉线会导致你失去积分。除此之外，自动的单词选择非常令人烦恼并造成一些挫折感。
 
-
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢所有给我的代码库点星的人！要给我点星，请点击下面的图像，然后它会在右上角显示。谢谢！_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
-## About
+## 关于
 
-This addon is based on https://github.com/scribble-rs/scribble.rs.
+这个插件基于 https://github.com/scribble-rs/scribble.rs。
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Hass.io add-on.
+这个插件的安装非常简单，与安装任何其他 Hass.io 插件没有区别。
 
-1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install this add-on.
-1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
-1. Open WebUI should work via ingress or <your-ip>:port.
+1. [将我的 Hass.io 插件代码库][repository] 添加到你的 Hass.io 实例。
+1. 安装这个插件。
+1. 启动插件。
+1. 检查插件的日志，以查看一切是否顺利。
+1. 打开的 WebUI 应该可以通过入口或 <your-ip>:port 访问。
 
-## Configuration
+## 配置
 
 ```
-port : 8080 #port you want to run on.
+port : 8080 #你想要运行的端口。
 ```
 
-Webui can be found at `<your-ip>:port`.
+Webui 可以在 `<your-ip>:port` 找到。

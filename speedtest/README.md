@@ -1,34 +1,33 @@
-# Home assistant add-on: Speedtest
+# Home assistant 插件：速度测试
 
-A self-hosted, lightweight speed test implemented in JavaScript, and based on Web Workers and XMLHttpRequest.
- 
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+一个自托管的、轻量级的速度测试，采用 JavaScript 实现，基于 Web Workers 和 XMLHttpRequest。
+
+_感谢所有关注我库的人！要关注它，请点击下面的图片，然后它会在右上角显示。谢谢！_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
-## About
+## 关于
 
-This addon is based on the [docker image](https://hub.docker.com/r/e7db/speedtest) . A self-hosted, lightweight speed test implemented in JavaScript 
+这个插件基于 [docker 镜像](https://hub.docker.com/r/e7db/speedtest)。一个自托管的、轻量级的速度测试，采用 JavaScript 实现。
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Hass.io add-on.
+该插件的安装非常简单，与安装其他 Hass.io 插件没有区别。
 
-1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install this add-on.
-1. Click the `Save` button to store your configuration.
-1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
-1. Open WebUI will not work if reverse proxy, go to your local homeassistant IP:port admin port.
-1. Consult official docs for setup support: https://hub.docker.com/r/e7db/speedtest
+1. [将我的 Hass.io 插件库][repository] 添加到你的 Hass.io 实例。
+1. 安装此插件。
+1. 点击 `保存` 按钮以存储配置。
+1. 启动插件。
+1. 检查插件的日志以查看是否一切正常。
+1. 如果使用反向代理，打开 WebUI 将无法使用，请访问本地 homeassistant 的 IP:port 管理端口。
+1. 请参考官方文档以获取设置支持：https://hub.docker.com/r/e7db/speedtest
 
-## Configuration
+## 配置
 
 ```
-port: 89 # port you want to run frontend on
+port: 89 # 你想要运行前端的端口
 ```
 
-Webui can be found at `<your-ip>:port`.
+Webui 可以在 `<your-ip>:port` 找到。
 
 [repository]: https://github.com/jdeath/homeassistant-addons

@@ -1,37 +1,37 @@
-# Home Assistant Add-on: Metabase
+# Home Assistant 插件：Metabase
 
-[![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fsanderdw%2Fhassio-addons)
-[![Community Forum][forum-shield]][forum]
+[![打开您的 Home Assistant 实例，并显示带有特定存储库 URL 预填充的添加插件仓库对话框。](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fsanderdw%2Fhassio-addons)
+[![社区论坛][forum-shield]][forum]
 
-Meet the easy, open source way for everyone to ask questions and learn from data. See for more information https://www.metabase.com.
+了解每个人都可以轻松使用的开源方式来提出问题和学习数据。有关更多信息，请参见 https://www.metabase.com。
 
-[![GitHub Build Status](https://github.com/sanderdw/hassio-addons/workflows/Metabase/badge.svg?logo=github)](https://github.com/sanderdw/hassio-addons/actions) ![metabase-shield] ![addon-shield] ![aarch64-shield] ![amd64-shield]
+[![GitHub 构建状态](https://github.com/sanderdw/hassio-addons/workflows/Metabase/badge.svg?logo=github)](https://github.com/sanderdw/hassio-addons/actions) ![metabase-shield] ![addon-shield] ![aarch64-shield] ![amd64-shield]
 
 ![Metabase](https://raw.githubusercontent.com/sanderdw/hassio-addons/master/images/metabase.png)
 
-## Configure the repository
+## 配置仓库
 
-See config instructions here: https://github.com/sanderdw/hassio-addons
+请参阅此处的配置说明： https://github.com/sanderdw/hassio-addons
 
-## Configure the add-on
+## 配置插件
 
-1. Database type options:
-   1. **H2**, skip the TimescaleDB addon installation and go to step 5
-   2. **Postgres**, continue with step 2
-2. Install PostgresDB (TimescaleDB) by Expaso: https://community.home-assistant.io/t/home-assistant-add-on-postgresql-timescaledb/198176.
-3. Add the `"metabase"` db as an exta database entry in the Configuration tab. No need to set it under timescale_enabled as well.
-4. Start TimescaleDB addon to initialize.
-5. Install this addon.
-6. Configure settings in the "Configuration" tab if defaults are changed by you.
-   1. For H2 use `MB_DB_TYPE=h2` in the configuration tab
-   2. For Postgres/TimescaleDB use `MB_DB_TYPE=postgres` in the configuration tab
-7. Start Metabase addon.
-8. Go to http://yourhomeassistant:7778 (wait untill add-on is initialized) - Note: Ingress not working yet.
-9. Walkthrough the Metabase setup.
-10. _Optional:_ Add the Home Assistant PostgreSQL DB (You need to have the recorder configured: https://www.home-assistant.io/integrations/recorder/)
-11. _Optional:_ Add the DSMR Reader PostgreSQL DB
-12. Add [any other](https://www.metabase.com/data_sources/) source supported by Metabase
-13. Explore!
+1. 数据库类型选项：
+   1. **H2**，跳过 TimescaleDB 插件安装，直接到第 5 步
+   2. **Postgres**，继续执行第 2 步
+2. 通过 Expaso 安装 PostgresDB (TimescaleDB)： https://community.home-assistant.io/t/home-assistant-add-on-postgresql-timescaledb/198176。
+3. 在配置标签中将 `"metabase"` 数据库添加为额外的数据库条目。无需在 timescale_enabled 下设置。
+4. 启动 TimescaleDB 插件进行初始化。
+5. 安装此插件。
+6. 如果您更改了默认设置，请在“配置”选项卡中配置设置。
+   1. 对于 H2，在配置标签中使用 `MB_DB_TYPE=h2`
+   2. 对于 Postgres/TimescaleDB，在配置标签中使用 `MB_DB_TYPE=postgres`
+7. 启动 Metabase 插件。
+8. 访问 http://yourhomeassistant:7778 （等待插件初始化） - 注意：Ingress 尚未工作。
+9. 完成 Metabase 设置向导。
+10. _可选：_ 添加 Home Assistant PostgreSQL 数据库（您需要配置录制器： https://www.home-assistant.io/integrations/recorder/）
+11. _可选：_ 添加 DSMR Reader PostgreSQL 数据库
+12. 添加 [Metabase 支持的任何其他](https://www.metabase.com/data_sources/) 数据源
+13. 探索！
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg?style=flat-square
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg?style=flat-square

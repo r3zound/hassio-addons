@@ -1,7 +1,9 @@
 name: Mailserver
 version: 3.0.1
 slug: mailserver
-description: Postfix和Dovecot邮件服务器为Home Assistant提供支持，并带有Postfix Admin Web界面。
+description: $'后置和Dovecot邮件服务器为Home Assistant，带有Postfix管理器Web界面
+
+翻译：Home Assistant的后置和Dovecot邮件服务器，使用Postfix管理员Web界面。'
   web interface
 url: https://gh-proxy.com/github.com/erik73/hassio-addons
 arch:
