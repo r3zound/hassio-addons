@@ -1,7 +1,7 @@
 name: AC MQTT proxy for home assistant
 version: 0.6.2
 slug: broadlink-ac-mqtt
-description: 提供家庭助手的交流MQTT代理。
+description: 提供家庭助理的AC MQTT代理。
 url: "https://gh-proxy.com/github.com/Arbuzov/hass-broadlink-ac-mqtt"
 arch:
   - aarch64

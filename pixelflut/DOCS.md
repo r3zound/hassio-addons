@@ -10,11 +10,11 @@ description: Pixelflut
 
 ### `width`
 
-Pixelflut 画布的宽度。
+Pixelflut画布的宽度。
 
 ### `height`
 
-Pixelflut 画布的高度。
+Pixelflut画布的高度。
 
 ### `description`
 

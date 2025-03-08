@@ -2,9 +2,7 @@
 version: 12.5.0
 slug: samba
 name: Samba share
-description: $'暴露Home Assistant文件夹使用SMB/CIFS
-
-请注意，这个翻译可能并不完全准确。如果需要更准确的翻译，请提供更多的上下文或详细信息。'
+description: 暴露Home Assistant文件夹使用SMB/CIFS。
 url: https://gh-proxy.com/github.com/home-assistant/addons/tree/master/samba
 codenotary: notary@home-assistant.io
 arch:

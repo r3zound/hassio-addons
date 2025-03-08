@@ -1,11 +1,11 @@
-# MaryTTS 附加组件
+# MaryTTS 插件
 
-MaryTTS 系统作为 Home Assistant Supervisor 附加组件，完美集成本地 TTS。
+MaryTTS 系统作为 Home Assistant 管理员插件，优雅地集成本地 TTS。
 
-[![Release][release-badge]][release]
-![Addon Stage][stage-badge]
+[![发布][release-badge]][release]
+![插件阶段][stage-badge]
 
-[![Donate][donation-badge]][donation-url]
+[![捐赠][donation-badge]][donation-url]
 
 
 [stage-badge]: https://img.shields.io/badge/Addon%20stage-stable-green.svg

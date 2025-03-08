@@ -1,9 +1,7 @@
 name: SQLite Web
 version: 4.3.1
 slug: sqlite-web
-description: $'探索你的SQLite数据库
-
-注意：由于您没有提供具体的上下文或问题，因此我只能给出一个通用的翻译。如果您有具体的问题或需要特定的翻译，请告诉我！'
+description: 探索你的SQLite数据库
 url: https://gh-proxy.com/github.com/hassio-addons/addon-sqlite-web/tree/main/README.md
 codenotary: codenotary@frenck.dev
 ingress: true

@@ -2,10 +2,10 @@
 
 使用 rsync 将文件夹同步到外部 USB 驱动器。
 
-[![Release][release-badge]][release]
-![Addon Stage][stage-badge]
+[![发布][release-badge]][release]
+![插件阶段][stage-badge]
 
-[![Donate][donation-badge]][donation-url]
+[![捐赠][donation-badge]][donation-url]
 
 
 [stage-badge]: https://img.shields.io/badge/Addon%20stage-stable-green.svg

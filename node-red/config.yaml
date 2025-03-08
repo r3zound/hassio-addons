@@ -1,9 +1,7 @@
 name: Node-RED
 version: 19.0.2
 slug: nodered
-description: $'物联网的基于流的编程
-
-请注意，由于您没有提供具体的上下文或背景信息，所以我的答案可能不是完全准确的。如果您能提供更多的细节，我会更好地帮助您。'
+description: 物联网的基于流的编程
 url: https://gh-proxy.com/github.com/hassio-addons/addon-node-red
 codenotary: codenotary@frenck.dev
 ingress: true

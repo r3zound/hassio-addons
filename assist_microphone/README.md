@@ -1,10 +1,10 @@
-# Home Assistant 插件: 辅助麦克风
+# Home Assistant 插件：助理麦克风
 
 ![支持 aarch64 架构][aarch64-shield] ![支持 amd64 架构][amd64-shield]
 
 Home Assistant 插件，使用本地 USB 麦克风来控制 [Assist](https://www.home-assistant.io/voice_control/)。
 
-是 [声音之年](https://www.home-assistant.io/blog/2022/12/20/year-of-voice/) 的一部分。
+是 [语音年度](https://www.home-assistant.io/blog/2022/12/20/year-of-voice/)的一部分。
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg

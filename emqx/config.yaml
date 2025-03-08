@@ -1,7 +1,7 @@
 name: EMQX
 version: 0.7.4
 slug: emqx
-description: 最可扩展的开源MQTT物联网代理。Mosquitto插件的替代品。
+description: 物联网最可扩展的开源MQTT代理。Mosquitto插件的替代品。
   the Mosquitto add-on
 url: https://gh-proxy.com/github.com/hassio-addons/addon-emqx
 codenotary: codenotary@frenck.dev

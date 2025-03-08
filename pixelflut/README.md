@@ -1,8 +1,8 @@
 # Pixelflut
 
-Pixelflut 是一个非常简单（且效率低下）的基于 ASCII 的网络协议，用于在屏幕上绘制像素。这个多人画布是技术爱好者们熟知的游戏。更多信息请访问 [defnull/pixelflut](https://github.com/defnull/pixelflut)
+Pixelflut 是一个非常简单（且效率低下）的基于 ASCII 的网络协议，用于在屏幕上绘制像素。这个多人画布是技术爱好者所熟知的游戏。更多信息请访问 [defnull/pixelflut](https://github.com/defnull/pixelflut)
 
-该插件包含 [shoreline PixelFlut 服务器](https://github.com/TobleMiner/shoreline) 以供游戏和 [noVnc](https://github.com/novnc/noVNC) 以在 Home Assistant 中显示画布。
+该附加组件包含 [shoreline PixelFlut 服务器](https://github.com/TobleMiner/shoreline) 以进行游戏，以及 [noVnc](https://github.com/novnc/noVNC) 用于在 Home Assistant 中显示画布。
 
 [![Release][release-badge]][release]
 ![Addon Stage][stage-badge]

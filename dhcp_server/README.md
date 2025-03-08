@@ -5,7 +5,7 @@
 ![支持 aarch64 架构][aarch64-shield] ![支持 amd64 架构][amd64-shield] ![支持 armhf 架构][armhf-shield] ![支持 armv7 架构][armv7-shield] ![支持 i386 架构][i386-shield]
 
 此插件为您的网络提供一个简单的 DHCP 服务器。
-它提供一些基本需求，比如为您的设备保留 IP 地址
+它提供一些基本功能，比如为您的设备保留 IP 地址，
 以确保它们始终获得相同的 IP 地址。
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg

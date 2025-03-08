@@ -1,15 +1,15 @@
-# VNC 查看器
+# VNC Viewer
 
-将 noVNC 应用程序打包到 Home Assistant 插件中。这允许将任何 VNC 服务器集成到 Home Assistant 中。
+将 noVNC 应用程序捆绑在 Home Assistant 插件中。 这允许将任何 VNC 服务器集成到 Home Assistant 中。
 
-[![发布][release-badge]][release]
-![插件阶段][stage-badge]
+[![Release][release-badge]][release]
+![Addon Stage][stage-badge]
 
-[![捐赠][donation-badge]][donation-url]
+[![Donate][donation-badge]][donation-url]
 
 ## 注意
 
-目前仅支持一个连接，如果需要更多，请在存储库讨论中创建或加入线程。
+目前只支持一个连接，如果需要更多连接，请在仓库讨论中创建或加入线程。
 
 [stage-badge]: https://img.shields.io/badge/Addon%20stage-stable-green.svg
 

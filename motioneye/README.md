@@ -1,4 +1,4 @@
-# Home Assistant Community Add-on: motionEye
+# Home Assistant社区插件：motionEye
 
 [![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
 
@@ -8,24 +8,24 @@
 
 [![Support Frenck on Patreon][patreon-shield]][patreon]
 
-Simple, elegant and feature-rich CCTV/NVR for your cameras.
+简单、优雅且功能丰富的监控摄像头/NVR。
 
-## About
+## 关于
 
-motionEye is a popular frontend to the camera software called motion. This add-on provides both, allowing you to add your camera's to your Hass.io setup.
+motionEye是一个流行的摄像头软件motion的前端。此插件提供了两者，允许您将摄像头添加到您的Hass.io设置中。
 
-motionEye is Open Source CCTV and NVR, that is elegant and really easy to use. It can be used as a Baby Monitor, Construction Site Montage Viewer, Store Camera DVR, Garden Security, and much more.
+motionEye是开源的监控和NVR，优雅且非常易于使用。它可以用作婴儿监视器、施工现场监控、商店摄像头 DVR、花园安全等。
 
-Some cool features of motionEye:
+motionEye的一些酷炫功能：
 
-- Support for a ridiculous amount of cameras, including IP cams.
-- Add multiple cameras by hooking up multiple motionEye instances together.
-  For example, by using MotionEyeOS on a Pi Zero + Pi camera in your network.
-- Supports uploading recording into Google Drive and Dropbox.
-- motion detection, including email notification and scheduling.
-- Can record continuously, motion, or timelapse, with retention settings.
+- 支持大量摄像头，包括IP摄像头。
+- 通过将多个motionEye实例连接在一起添加多个摄像头。
+  例如，通过在您的网络中使用Pi Zero + Pi摄像头运行MotionEyeOS。
+- 支持将录像上传到Google Drive和Dropbox。
+- 运动检测，包括电子邮件通知和调度。
+- 可以持续录制、运动或延时拍摄，并具有保留设置。
 
-![motionEye screenshot][screenshot]
+![motionEye 截图][screenshot]
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons

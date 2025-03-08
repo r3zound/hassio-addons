@@ -1,12 +1,12 @@
-# Home Assistant 社区附加组件: Z-Wave JS UI
+# Home Assistant Community Add-on: Z-Wave JS UI
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
-[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
+[![通过 GitHub Sponsors 支持 Frenck][github-sponsors-shield]][github-sponsors]
 
-[![Support Frenck on Patreon][patreon-shield]][patreon]
+[![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
 
 完全可配置的 Z-Wave JS 控制面板和 MQTT 网关。
 
@@ -14,17 +14,17 @@
 
 ## 关于
 
-Z-Wave JS UI 附加组件提供了一个额外的控制面板，允许您配置 Z-Wave 网络的每个方面。它提供了一个解耦的网关，可以通过 Z-Wave JS WebSockets（由 Home Assistant Z-Wave JS 集成使用）和 MQTT（甚至可以同时使用）进行通信。
+Z-Wave JS UI 插件提供了一个额外的控制面板，让你可以配置 Z-Wave 网络的每一个方面。它提供了一个解耦的网关，可以使用 Z-Wave JS WebSockets（由 Home Assistant Z-Wave JS 集成使用）和 MQTT 进行通信（甚至可以同时使用）。
 
-一些优点和使用案例：
+一些优势和使用案例：
 
 - 兼容 Home Assistant Z-Wave JS 集成。
-- 您的 Z-Wave 网络将在 Home Assistant 重启之间持续运行。
-- 您可以在 Z-Wave 网络上直接使用 Node-RED 等工具，同时它也可供 Home Assistant 使用。
-- 允许基于 [ESPHome.io][esphome] 的 ESP 设备直接响应或与您的 Z-Wave 网络协作。
-- 当发现时，它会与 Mosquitto 附加组件进行自我配置。
+- 在 Home Assistant 重启之间，你的 Z-Wave 网络将持续运行。
+- 你可以直接使用 Node-RED 等工具与 Z-Wave 网络协作，同时它也可以为 Home Assistant 提供服务。
+- 允许基于 [ESPHome.io][esphome] 的 ESP 设备直接回应或与 Z-Wave 网络进行交互。
+- 在找到时会自动与 Mosquitto 插件进行预配置。
 
-此附加组件使用 [Z-Wave JS UI][zwave-js-ui] 软件。
+该插件使用 [Z-Wave JS UI][zwave-js-ui] 软件。
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons

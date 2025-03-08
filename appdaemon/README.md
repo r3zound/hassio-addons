@@ -1,18 +1,18 @@
-# Home Assistant 社区附加组件：AppDaemon
+# Home Assistant 社区插件: AppDaemon
 
-[![发布][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
+[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
 
-[![通过 GitHub Sponsors 支持 Frenck][github-sponsors-shield]][github-sponsors]
+[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
 
-[![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
+[![Support Frenck on Patreon][patreon-shield]][patreon]
 
-用于 Home Assistant 的 Python 应用程序和 HADashboard
+为 Home Assistant 提供 Python 应用和 HADashboard
 
 ## 关于
 
-[AppDaemon][appdaemon] 是一个松散耦合、多线程、沙箱化的 Python 执行环境，用于为 Home Assistant 家庭自动化软件编写自动化应用程序。它还提供一个可配置的仪表板（HADashboard），适合用于墙上安装的平板电脑。
+[AppDaemon][appdaemon] 是一个松耦合的、多线程的、隔离的 Python 执行环境，用于为 Home Assistant 家庭自动化软件编写自动化应用。它还提供了一个可配置的仪表板（HADashboard），适合安装在墙上的平板电脑。
 
 ![HADashboard 截图][screenshot]
 

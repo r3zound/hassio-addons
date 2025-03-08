@@ -4,7 +4,7 @@
 
 Home Assistant 插件，使用 [openWakeWord](https://github.com/dscripka/openwakeword) 进行唤醒词检测。
 
-是 [语音之年](https://www.home-assistant.io/blog/2022/12/20/year-of-voice/) 的一部分。
+是 [声音之年](https://www.home-assistant.io/blog/2022/12/20/year-of-voice/) 的一部分。
 
 需要 Home Assistant 2023.9 或更高版本。
 

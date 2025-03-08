@@ -1,14 +1,14 @@
 # Home Assistant社区附加组件：SQLite Web
 
-[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
+[![Release][release-shield]][release] ![项目状态][project-stage-shield] ![项目维护][maintenance-shield]
 
 [![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
-通过您的网页浏览器探索您的Home Assistant数据库！
+从您的网络浏览器中探索您的Home Assistant数据库！
 
 ## 关于
 
-这使您可以轻松探索保存到数据库中的所有表格和内容。
+这使您能够轻松浏览存储在数据库中的所有表和内容。
 
 ![SQLite Web 截图][screenshot]
 

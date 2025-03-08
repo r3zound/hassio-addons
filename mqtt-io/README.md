@@ -1,14 +1,14 @@
 # Home Assistant Community Add-on: MQTT IO
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
-通过MQTT暴露GPIO模块和数字传感器以便远程控制和监控。
+通过 MQTT 暴露 GPIO 模块和数字传感器，以便进行远程控制和监控。
 
 ## 关于
 
-将通用输入和输出（GPIO）、硬件传感器和串行设备暴露给MQTT服务器。非常适合单板计算机，如树莓派。
+将通用输入输出（GPIO）、硬件传感器和串行设备暴露给 MQTT 服务器。非常适合单板计算机，如树莓派。
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons

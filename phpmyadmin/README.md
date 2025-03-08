@@ -1,20 +1,22 @@
-# Home Assistant社区插件：phpMyAdmin
+# Home Assistant Community Add-on: phpMyAdmin
 
 [![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-[![通过GitHub赞助支持Frenck][github-sponsors-shield]][github-sponsors]
+[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
-[![在Patreon上支持Frenck][patreon-shield]][patreon]
+[![通过 GitHub Sponsors 支持 Frenck][github-sponsors-shield]][github-sponsors]
 
-一个用于官方MariaDB插件的Web界面。
+[![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
+
+一个用于官方 MariaDB 插件的网页界面。
 
 ## 关于
 
-phpMyAdmin是用于MySQL和MariaDB的数据库管理工具。常用操作（管理数据库、表、列、关系、索引、用户、权限等）可以通过用户界面进行，同时您仍然可以直接执行任何SQL语句。
+phpMyAdmin 是一个用于 MySQL 和 MariaDB 的数据库管理工具。常用操作（管理数据库、表、列、关系、索引、用户、权限等）可以通过用户界面进行，同时您仍然可以直接执行任何 SQL 语句。
 
-此插件专为管理官方Home Assistant MariaDB插件而设计。
+该插件专门设计用于管理官方 Home Assistant MariaDB 插件。
 
-![phpMyAdmin截图][screenshot]
+![phpMyAdmin 截图][screenshot]
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons

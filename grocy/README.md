@@ -1,24 +1,24 @@
-# Home Assistant 社区附加组件: Grocy
+# Home Assistant Community Add-on: Grocy
 
-[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
+[![发布][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
 [![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
-[![通过 GitHub Sponsors 赞助 Frenck][github-sponsors-shield]][github-sponsors]
+[![通过 GitHub Sponsors 支持 Frenck][github-sponsors-shield]][github-sponsors]
 
-[![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
+[![在 Patreon 支持 Frenck][patreon-shield]][patreon]
 
-超越冰箱的 ERP！为您的家庭提供杂货和家务管理解决方案。
+超越你冰箱的 ERP！为您的家庭提供的杂货和家庭管理解决方案。
 
 ## 关于
 
-[Grocy][grocy] - 超越冰箱的 ERP 是一个强大的杂货和家务管理解决方案，提供以下功能：
+[Grocy][grocy] - 超越你冰箱的 ERP 是一个强大的杂货和家庭管理解决方案，为您的家庭提供如下功能：
 
 - 库存管理
 - 购物清单
 - 食谱
 - 家务与任务
-- 库存清单
+- 库存
 - 以及更多。
 
 [试用 Grocy 的在线演示][grocy-demo]。

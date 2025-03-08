@@ -1,22 +1,23 @@
-# Home Assistant 社区附加组件：JupyterLab
+# Home Assistant Community Add-on: JupyterLab
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
-[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
+[![通过 GitHub Sponsors 赞助 Frenck][github-sponsors-shield]][github-sponsors]
 
-[![Support Frenck on Patreon][patreon-shield]][patreon]
+[![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
 
-创建包含实时代码、方程式、可视化和说明文本的文档。
+创建包含实时代码、方程、可视化和解释性文本的文档。
 
-![The JupyterLab add-on][screenshot]
+![JupyterLab 插件][screenshot]
 
 ## 关于
 
-JupyterLab 是一个开源的 web 应用程序，允许您创建和分享包含实时代码、方程式、可视化和叙述文本的文档。用途包括：数据清理和转换、数值模拟、统计建模、数据可视化、机器学习等。
+JupyterLab 是一个开源网络应用程序，允许您创建和共享包含实时代码、方程、可视化和叙述文本的文档。使用场景包括：数据清理和转换、数值模拟、统计建模、数据可视化、机器学习等。
 
-这个附加组件运行 JupyterLab，这是 Project Jupyter 的下一代用户界面。它是一个可扩展的环境，用于交互式和可重复的计算，基于 Jupyter Notebook 和架构。
+此插件运行 JupyterLab，这是 Project Jupyter 的下一代用户界面。它是一个可扩展的环境，用于互动和可重复的计算，基于 Jupyter Notebook 和体系结构。
+
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons

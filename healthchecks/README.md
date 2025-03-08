@@ -1,15 +1,15 @@
-# 非官方 Home Assistant 附加组件：syslog-ng
+# 非官方 Home Assistant 插件：syslog-ng
 
-Healthchecks (<https://healthchecks.io/>) 被打包为 Home Assistant 附加组件。
+Healthchecks (<https://healthchecks.io/>) 打包为 Home Assistant 插件。
 
 ## 关于
 
-Healthchecks 是一个监视你的定时任务的工具。它是一个监听来自你的定时任务的 ping 的网络服务器，并提供一个网络界面。
+Healthchecks 是您定时任务的监控工具。它是一个监听来自您定时任务的 ping 的 网络服务器，并提供一个网页界面。
 
-## 最后备注
+## 最后的说明
 
-有关如何配置此附加组件的信息，请参阅附加组件页面中的
-[文档](DOCS.md)。
+有关如何配置此插件的信息，请参阅插件页面内的
+[文档](DOCS.md)
 
-此项目与 Healthchecks 并没有关联，只是一个社区努力的结果。
-Healthchecks 本身是根据 BSD 3-Clause 许可证发布的。
+该项目与 Healthchecks 并无关联，仅仅是社区的努力。
+Healthchecks 本身是在 BSD 3-Clause License 下发布的。

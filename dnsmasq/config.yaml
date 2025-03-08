@@ -2,9 +2,7 @@
 version: 1.8.1
 slug: dnsmasq
 name: Dnsmasq
-description: $'简单DNS服务器
-
-请注意，由于您没有给出具体的上下文或背景信息，这个翻译可能并不完全准确。如果您需要更精确的翻译，请提供更多的上下文或详细信息。'
+description: 一个简单的DNS服务器。
 url: https://gh-proxy.com/github.com/home-assistant/addons/tree/master/dnsmasq
 advanced: true
 arch:

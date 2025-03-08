@@ -1,24 +1,25 @@
 # Home Assistant 社区插件：TasmoAdmin
 
-[![发布][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
+[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
 
-[![通过 GitHub Sponsors 赞助 Frenck][github-sponsors-shield]][github-sponsors]
+[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
 
-[![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
+[![Support Frenck on Patreon][patreon-shield]][patreon]
 
-集中管理你所有的 Sonoff-Tasmota 设备。
+集中管理所有你的 Sonoff-Tasmota 设备。
 
 ## 关于
 
-TasmoAdmin（前身为 SonWEB）是一个管理 web 界面，用于集中管理所有闪存了 Sonoff-Tasmota 的设备。其一些功能包括：
+TasmoAdmin（前称 SonWEB）是一个管理网页界面，用于集中管理所有已闪存 Sonoff-Tasmota 的设备。
+它的一些功能包括：
 
-- 自动扫描网络并添加你的设备
-- 快速轻松查看所有设备的状态
+- 扫描你的网络并自动添加设备
+- 快速轻松查看你所有设备的状态
 - 从一个地方配置所有设备
-- 向一个或多个设备同时发送无线固件更新
-- 可以自动为你下载最新的固件
+- 一次性通过空中传输固件更新到一个或多个设备
+- 可以为你自动下载最新的固件
 
 ![TasmoAdmin 截图][screenshot]
 

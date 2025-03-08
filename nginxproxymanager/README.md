@@ -1,4 +1,4 @@
-# Home Assistant社区附加组件: Nginx Proxy Manager
+# Home Assistant 社区插件：Nginx 代理管理器
 
 [![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
 
@@ -8,19 +8,19 @@
 
 [![Support Frenck on Patreon][patreon-shield]][patreon]
 
-使用简单而强大的界面管理Nginx代理主机。
+通过简单而强大的界面管理 Nginx 代理主机。
 
 ## 关于
 
-此附加组件使您能够轻松将传入连接转发到任何地方，包括免费的SSL，而无需过多了解Nginx或Let’s Encrypt。
+此插件使您可以轻松地将传入连接转发到任何地方，包括免费的 SSL，而无需了解太多关于 Nginx 或 Let's Encrypt 的知识。
 
-直接通过简单而强大的界面将您的域名转发到您的Home Assistant、附加组件或在家或其他地方运行的网站。
+可以通过简单而强大的界面，将您的域名直接转发到您的 Home Assistant、插件或在家中或其他地方运行的网站。
 
-想用用户名/密码保护网站吗？好吧，它也可以做到这一点！启用身份验证，并创建可以访问特定应用程序的用户名/密码列表。
+想要用用户名/密码保护网站吗？没问题，它也可以做到！启用身份验证并创建可以访问该特定应用程序的用户名/密码列表。
 
-对于高级用户，您可以通过提供额外的Nginx指令来定制Nginx代理管理器中每个主机的行为。
+对于高级用户，您可以通过提供额外的 Nginx 指令来自定义 Nginx 代理管理器中每个主机的行为。
 
-![Nginx Proxy Manager 截图][screenshot]
+![Nginx 代理管理器截图][screenshot]
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons

@@ -1,7 +1,7 @@
 # MPD
 
-[MPD](https://www.musicpd.org/) 是一个免费且开源的音乐播放器。它可以播放音频文件、组织播放列表并维护音乐数据库。交互需要客户端软件。
-在这个插件中，有 [ympd](https://ympd.org/)，一个简单的网页前端用于交互。
+[MPD](https://www.musicpd.org/) 是一个免费和开源的音乐播放器。它播放音频文件、组织播放列表并维护音乐数据库。交互需要客户端软件。
+在这个插件内部，有一个 [ympd](https://ympd.org/)，这是一个用于交互的简单网页前端。
 
 [![Release][release-badge]][release]
 ![Addon Stage][stage-badge]

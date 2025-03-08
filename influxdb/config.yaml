@@ -1,7 +1,7 @@
 name: InfluxDB
 version: 5.0.2
 slug: influxdb
-description: 可扩展的数据存储系统，用于指标、事件和实时分析。
+description: 可扩展的数据存储库，用于指标、事件和实时分析。
 url: https://gh-proxy.com/github.com/hassio-addons/addon-influxdb
 codenotary: codenotary@frenck.dev
 ingress: true

@@ -4,13 +4,13 @@
 
 # Home Assistant 插件: [pgAdmin 4](https://www.pgadmin.org/)
 
-<a href="https://www.buymeacoffee.com/expaso" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="请我喝咖啡" height="41" width="174"></a>
+<a href="https://www.buymeacoffee.com/expaso" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="请我喝杯咖啡" height="41" width="174"></a>
 
 ## 介绍
 
-pgAdmin 是最流行且功能最丰富的开源 PostgreSQL 管理与开发平台，它是全球最先进的开源数据库。
+pgAdmin 是最流行、功能最丰富的 PostgreSQL 开源管理和开发平台，PostgreSQL 是世界上最先进的开源数据库。
 
-此插件可用于控制您网络上的任何 PostgreSQL 数据库，包括使用 TimescaleDB 插件提供的数据库，该插件也可以从同一插件库中安装。
+此插件可用于控制您网络上的任何 PostgreSQL 数据库，包括通过 TimescaleDB 插件提供的数据库，该插件也可以从同一附加库安装。
 
 ## 配置
 
@@ -29,20 +29,21 @@ pgAdmin 是最流行且功能最丰富的开源 PostgreSQL 管理与开发平台
 
 ### 选项: `ssl`
 
-指示插件 UI 将从端口 80 或端口 443（使用提供的证书）提供服务。
+指示插件 UI 将从 80 端口还是 443 端口提供服务（使用提供的证书）。
 
 ### 选项: `certfile`
 
-`ssl` 文件夹中您的 SSL 证书的文件名。
+您在 `ssl` 文件夹中 SSL 证书的文件名。
 
 ### 选项: `keyfile`
 
-`ssl` 文件夹中您的私钥文件的文件名。
+您在 `ssl` 文件夹中私钥文件的文件名。
 
 ### 选项: `system_packages`
 
-在插件启动期间将安装的可选额外 Alpine 软件包。
-**注意**：添加大量软件包可能导致启动时间较长。
+在插件启动期间将安装的可选额外 Alpine 包。
+
+**注意**: 添加大量包可能会导致启动时间延长。
 
 ### 选项: `init_commands`
 
@@ -50,18 +51,19 @@ pgAdmin 是最流行且功能最丰富的开源 PostgreSQL 管理与开发平台
 
 ### 选项: `leave_front_door_open`
 
-在没有家庭助手用户身份验证保护的情况下提供网站服务。
+在没有 Home Assistant 用户身份验证保护的情况下提供网站服务。
 
-**警告!!**
+**警告！！**
 
-设置此选项存在潜在的安全风险，应该尽量避免。如果您不知道自己在做什么，请保持此选项关闭。
+设置此选项是潜在的安全风险，应尽可能避免。
+如果您不知道自己在做什么，请不要启用此选项。
 
 ## 支持
 
-- 有问题？
+- 有问题吗？
   [在这里打开一个问题][issues]
 
-- 有一般仓库问题或插件想法？ [在这里打开一个问题][repo-issues]
+- 一般仓库问题或附加建议？ [在这里打开一个问题][repo-issues]
 
 [issues]: https://github.com/expaso/hassos-addon-pgadmin4/issues
 [repo-issues]: https://github.com/expaso/hassos-addons/issues

@@ -1,6 +1,6 @@
 # Mopidy
 
-Mopidy 在 Home Assistant Supervisor 中的插件。
+在 Home Assistant Supervisor 中带有插件的 Mopidy。
 
 [![Release][release-badge]][release]
 ![Addon Stage][stage-badge]

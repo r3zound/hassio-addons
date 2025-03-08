@@ -2,7 +2,7 @@ name: MPD
 version: 1.7.5
 slug: mpd
 panel_icon: mdi:music-circle
-description: 音乐播放器守护进程（Music Player Daemon）是一款免费且开源的音乐播放软件。它可以播放音频文件、组织播放列表并维护一个音乐数据库。
+description: 音乐播放器守护进程（Music Player Daemon）是一款免费开源的音乐播放软件。它可以播放音频文件、组织歌单和维护音乐数据库。
   audio files, organizes playlists and maintains a music database
 url: https://gh-proxy.com/github.com/Poeschl-HomeAssistant-Addons/mpd
 ingress: true

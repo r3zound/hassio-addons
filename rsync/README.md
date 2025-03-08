@@ -2,7 +2,7 @@
 
 通过 ssh 和 rsync 将文件夹同步到远程机器。
 
-[![Release][release-badge]][release]
+[![版本][release-badge]][release]
 ![插件阶段][stage-badge]
 
 [![捐赠][donation-badge]][donation-url]

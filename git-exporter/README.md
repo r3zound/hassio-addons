@@ -1,7 +1,6 @@
 # Home Assistant Git Exporter
 
-将您所有的 Home Assistant 配置导出到您选择的 git 仓库中。
-可以用于在公共仓库中展示您的 Home Assistant 设置。
+将您的 Home Assistant 配置导出到您选择的 git 仓库中。可用于在公共仓库中展示您的 Home Assistant 设置。
 
 [![Release][release-badge]][release]
 ![Addon Stage][stage-badge]
@@ -14,18 +13,17 @@
 * 导出 Supervisor 插件配置。
 * 导出 Lovelace 配置。
 * 导出 ESPHome 配置。
-* 导出 Node-RED 流。
-* 根据您的 `secrets.yaml` 文件和常见模式检查明文秘密。
-* 检查您的配置中是否有明文 IP 和地址。
+* 导出 Node-RED 流程。
+* 根据您的 `secrets.yaml` 文件和常见模式检查明文密钥。
+* 检查配置中的明文 IP 和地址。
 
 # 示例
 
-有关示例，请查看我自己 [Home Assistant 配置](https://github.com/Poeschl/home-assistant-config)。
-那里的文件夹正在与此插件同步。
+有关示例，请查看我自己的 [Home Assistant 配置](https://github.com/Poeschl/home-assistant-config)。那里的文件夹与此插件同步。
 
-# 徽章
+# 证章
 
-如果您使用此插件导出配置并希望帮助我进一步传播，这里有一个徽章可以嵌入到您的 README 中。
+如果您使用此插件导出配置并希望帮助我进一步传播，您可以在您的 README 中嵌入以下证章。
 
 [![Home Assistant Git Exporter](https://img.shields.io/badge/Powered%20by-Home%20Assistant%20Git%20Exporter-%23d32f2f)](https://github.com/Poeschl/Hassio-Addons/tree/main/git-exporter)
 

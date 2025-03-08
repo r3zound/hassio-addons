@@ -1,4 +1,4 @@
-# Home Assistant 插件: ntopng
+# Home Assistant 插件：ntopng
 
 ntopng 的社区版本，带有开源的 netflow 收集器 netflow2nd
 

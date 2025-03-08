@@ -2,9 +2,9 @@
 
 ```yaml
 repository:
-  url: <你的仓库路径>
-  username: 用户名
-  password: 密码
+  url: <你的代码库路径>
+  username: user
+  password: pass
   pull_before_push: true
   commit_message: 'Home Assistant Git Exporter'
   branch_name: 'main'
@@ -34,7 +34,7 @@ dry_run: false
 
 ### `repository.url`
 
-你的 git 仓库的任何 https url.（目前不支持 SSH）
+任何指向你的git代码库的https URL。(目前不支持SSH)
 
 ### `repository.email`（可选）
 
@@ -42,15 +42,15 @@ dry_run: false
 
 ### `repository.username`
 
-你的 https 认证用户名。
+你的https认证用户名。
 
 ### `repository.password`
 
-你的仓库的密码或 [__访问令牌__](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)。
+你的代码库的密码或[__访问令牌__](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)。
 
 ### `repository.pull_before_push`
 
-是否先拉取仓库并将新状态提交到上面？
+是否应该先拉取代码库并在顶部提交新状态？
 
 ### `repository.commit_message`
 
@@ -58,28 +58,30 @@ dry_run: false
 
 ### `repository.branch_name`
 
-仓库的工作分支。
+代码库的工作分支。
 
-### `repository.ssl_verification`（可选，默认：true）
+### `repository.ssl_verification`（可选，默认为true）
 
-用于禁用 ssl 验证。可用于自签名证书。__仅在你知道自己在做什么时使用这个__。
+使用此选项禁用ssl验证。可用于自签名证书。__仅在你知道自己在做什么时使用此选项__
+
 
 ### `export.lovelace`
 
-启用/禁用 lovelace 配置的导出。
+启用/禁用对lovelace配置的导出。
 
 ### `export.addons`
 
-启用/禁用监督员插件配置的导出。
+启用/禁用对supervisor addons配置的导出。
 
 ### `export.esphome`
 
-启用/禁用 esphome 配置的导出。
+启用/禁用对esphome配置的导出。
 
 ### `export.node_red`
 
-启用/禁用 Node-RED 流程的导出。
-使用 [node-red-contrib-credentials](https://flows.nodered.org/node/node-red-contrib-credentials) 来保护你的凭据。
+启用/禁用对Node-RED流程的导出。
+使用[node-red-contrib-credentials](https://flows.nodered.org/node/node-red-contrib-credentials)来保护你的凭据。
+
 
 ### `checks.enabled`
 
@@ -91,15 +93,16 @@ dry_run: false
 
 ### `checks.check_for_ips`
 
-将 ip 和 mac 地址的模式添加到搜索中。
+将ip和mac地址的模式添加到搜索中。
+
 
 ### `exclude`
 
 应从配置导出中排除的文件/文件夹。
 
-默认情况下，以下文件夹和文件会被排除在同步之外：
+默认情况下，以下文件夹和文件会被排除同步：
 
-* `secrets.yaml`（秘密会被清除）
+* `secrets.yaml`（秘密已被清除）
 * `.cloud`
 * `.storage`
 
@@ -109,16 +112,17 @@ dry_run: false
 
 ### `allowed_secrets`
 
-将不会导致秘密检查失败的其他允许的秘密。
+将被允许的额外秘密，不会导致秘密检查失败。
 
 ### `dry_run`
 
-仅显示更改，不提交或推送。
+仅显示更改，不进行提交或推送。
+
 
 ## 已知限制
 
-`check_for_secrets` 使用 git 插件，该插件使用正则表达式进行模式匹配。
-该插件的一个限制是，在秘密中使用括号（如 `[`, `]`, `{`, `}` `(` 和 `)`) 可能会导致意外行为和崩溃。
+`check_for_secrets`使用一个git插件，该插件使用正则表达式进行模式匹配。
+该插件的一个限制是，使用括号（如`[`，`]`，`{`，`}`，`(`和`)`）的秘密可能会导致意外行为和崩溃。
 
-如果在秘密检查期间插件出现错误（例如 `grep: Unmatched [, [^, [:, [., or [=`），
-请更改包含括号的密码或将 `check_for_secrets` 设置为 `false`。
+如果在秘密检查期间addon失败，并且错误来自grep（即`grep: Unmatched [, [^, [:, [., or [=`），
+请更改包含括号的密码或将`check_for_secrets`设置为`false`。

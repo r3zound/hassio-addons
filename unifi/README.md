@@ -1,22 +1,20 @@
-# Home Assistant 社区附加组件: UniFi 网络应用
+# Home Assistant 社区插件：UniFi 网络应用程序
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
-
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![发布][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
 [![通过 GitHub Sponsors 支持 Frenck][github-sponsors-shield]][github-sponsors]
 
 [![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
 
-UniFi 网络应用允许您使用网页浏览器管理您的 UniFi 网络。
+UniFi 网络应用程序允许您使用网页浏览器管理您的 UniFi 网络。
 
 ## 关于
 
-该附加组件运行 Ubiquiti Networks 的 UniFi 网络应用软件，允许您通过网页浏览器管理您的 UniFi 网络。该附加组件为 Home Assistant 提供了一键安装和运行解决方案，使用户能够轻松启动、运行和更新他们的网络。
+此插件运行 Ubiquiti Networks 的 UniFi 网络应用程序软件，允许您通过网页浏览器管理您的 UniFi 网络。该插件提供了一键安装和运行的解决方案，便于 Home Assistant 用户轻松启用、运行和更新他们的网络。
 
-此附加组件支持所有 Home Assistant 支持的架构，包括 Raspberry Pi。
+此插件支持所有 Home Assistant 支持的架构，包括 Raspberry Pi。
 
-![UniFi 网络应用][screenshot]
+![UniFi 网络应用程序][screenshot]
 
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
