@@ -8,44 +8,79 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    timeout-minutes: 60  # 添加超时限制
 
     steps:
       - uses: actions/checkout@v4
 
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            ~/.cache
+          key: ${{ runner.os }}-deps-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-deps-
 
       - name: Install dependencies
         run: |
           sudo apt-get install jq -y
           npm install -g ai-markdown-translator
 
-
       - name: downloading addons
         run: |
-          wget -q -O official.zip https://github.com/home-assistant/addons/archive/refs/heads/master.zip &
-          wget -q -O community.zip https://github.com/hassio-addons/repository/archive/refs/heads/master.zip &
-          wget -q -O alexbelgium.zip https://github.com/alexbelgium/hassio-addons/archive/refs/heads/master.zip &
-          wget -q -O Poeschl.zip https://github.com/Poeschl-HomeAssistant-Addons/repository/archive/refs/heads/main.zip &
-          wget -q -O erik73.zip https://github.com/erik73/hassio-addons/archive/refs/heads/master.zip &
-          wget -q -O einschmidt.zip https://github.com/einschmidt/hassio-addons/archive/refs/heads/main.zip &
-          wget -q -O FaserF.zip https://github.com/FaserF/hassio-addons/archive/refs/heads/master.zip &
-          wget -q -O jdeath.zip https://github.com/jdeath/homeassistant-addons/archive/refs/heads/main.zip &
-          wget -q -O hacs.zip https://github.com/hacs/addons/archive/refs/heads/main.zip &
-          wget -q -O bluemaes.zip https://github.com/bluemaex/home-assistant-addons/archive/refs/heads/main.zip &
-          wget -q -O expaso.zip https://github.com/expaso/hassos-addons/archive/refs/heads/main.zip &
-          wget -q -O blakeblackshear.zip https://github.com/blakeblackshear/frigate-hass-addons/archive/refs/heads/main.zip &
-          wget -q -O music-assistant.zip https://github.com/music-assistant/home-assistant-addon/archive/refs/heads/main.zip &
-          wget -q -O esphome.zip https://github.com/esphome/home-assistant-addon/archive/refs/heads/main.zip &
-          wget -q -O litinoveweedle.zip https://github.com/litinoveweedle/hassio-addons/archive/refs/heads/main.zip &
-          wget -q -O brenner-tobias.zip https://github.com/brenner-tobias/ha-addons/archive/refs/heads/main.zip &
-          wget -q -O sanderdw.zip https://github.com/sanderdw/hassio-addons/archive/refs/heads/master.zip &
-          wget -q -O dianlight.zip https://github.com/dianlight/hassio-addons/archive/refs/heads/master.zip &
-          wget -q -O hydroqc.zip https://gitlab.com/hydroqc/hydroqc-hass-addons/-/archive/main/hydroqc-hass-addons-main.zip &
-          wget -q -O hass-broadlink-ac-mqtt.zip https://github.com/Arbuzov/hass-broadlink-ac-mqtt/archive/refs/heads/master.zip &
-          wget -q -O hugobloem.zip https://github.com/hugobloem/homeassistant-addons/archive/refs/heads/main.zip &
-          wget -q -O haberda.zip https://github.com/haberda/hassio_addons/archive/refs/heads/master.zip &
-          wget -q -O AlexxIT.zip https://github.com/AlexxIT/hassio-addons/archive/refs/heads/master.zip &
-          wget -q -O da-anda.zip https://github.com/da-anda/hass-io-addons/archive/refs/heads/main.zip &
+          download_with_retry() {
+            local url=$1
+            local output=$2
+            local max_attempts=3
+            local attempt=1
+            
+            while [ $attempt -le $max_attempts ]; do
+              if wget -q -O "$output" "$url"; then
+                return 0
+              fi
+              echo "Attempt $attempt failed, retrying..."
+              ((attempt++))
+              sleep 5
+            done
+            return 1
+          }
+
+          declare -A REPOS=(
+            ["official"]="home-assistant/addons/master"
+            ["community"]="hassio-addons/repository/master"
+            ["alexbelgium"]="alexbelgium/hassio-addons/master"
+            ["Poeschl"]="Poeschl-HomeAssistant-Addons/repository/main"
+            ["erik73"]="erik73/hassio-addons/master"
+            ["einschmidt"]="einschmidt/hassio-addons/main"
+            ["FaserF"]="FaserF/hassio-addons/master"
+            ["jdeath"]="jdeath/homeassistant-addons/main"
+            ["hacs"]="hacs/addons/main"
+            ["bluemaes"]="bluemaex/home-assistant-addons/main"
+            ["expaso"]="expaso/hassos-addons/main"
+            ["blakeblackshear"]="blakeblackshear/frigate-hass-addons/main"
+            ["music-assistant"]="music-assistant/home-assistant-addon/main"
+            ["esphome"]="esphome/home-assistant-addon/main"
+            ["litinoveweedle"]="litinoveweedle/hassio-addons/main"
+            ["brenner-tobias"]="brenner-tobias/ha-addons/main"
+            ["sanderdw"]="sanderdw/hassio-addons/master"
+            ["dianlight"]="dianlight/hassio-addons/master"
+            ["hugobloem"]="hugobloem/homeassistant-addons/main"
+            ["haberda"]="haberda/hassio_addons/master"
+            ["AlexxIT"]="AlexxIT/hassio-addons/master"
+            ["da-anda"]="da-anda/hass-io-addons/main"
+          )
+          
+          for name in "${!REPOS[@]}"; do
+            download_with_retry "https://github.com/${REPOS[$name]}/archive/refs/heads/${REPOS[$name]##*/}.zip" "${name}.zip" &
+          done
+
+          # 特殊处理 hydroqc 仓库
+          download_with_retry "https://gitlab.com/hydroqc/hydroqc-hass-addons/-/archive/main/hydroqc-hass-addons-main.zip" "hydroqc.zip" &
+          
           wait
+
       - name: extract the addons zip files and delete the zip files 
         run: |
           for file in *.zip; do
@@ -53,153 +88,178 @@ jobs:
           done
           find addons/ -name ".*" -exec rm -rf {} +
 
-
       - name: Check and clean up addons
         run: |
-            extract_version() {
-              local file="$1"
-              if jq -e . "$file" >/dev/null 2>&1; then
-                jq -r '.version' "$file"
-              else
-                grep -E '^\s*version:\s*' "$file" | awk -F ': ' '{print $2}' | tr -d '\r"'
-              fi
-            }
+          extract_version() {
+            local file="$1"
+            if jq -e . "$file" >/dev/null 2>&1; then
+              jq -r '.version' "$file"
+            else
+              grep -E '^\s*version:\s*' "$file" | awk -F ': ' '{print $2}' | tr -d '\r"'
+            fi
+          }
+
+          total=$(find ./addons/*/ -maxdepth 1 -type d | wc -l)
+          current=0
+          
+          for addon_dir in ./addons/*/; do
+            ((current++))
+            echo "Processing $current/$total: $(basename "$addon_dir")"
+            
+            repo_name=$(basename "$addon_dir")
+            for sub_dir in "$addon_dir"*/; do
+              config_file=$(find "$sub_dir" -type f -name "config.json" -print -quit)
+              
+              if [[ -n "$config_file" ]]; then
+                main_config_path="./addons/$repo_name/$(basename "$sub_dir")/config.json"
         
-            for addon_dir in ./addons/*/; do
-              repo_name=$(basename "$addon_dir")
-              for sub_dir in "$addon_dir"*/; do
-                config_file=$(find "$sub_dir" -type f -name "config.json" -print -quit)
-                
-                if [[ -n "$config_file" ]]; then
-                  main_config_path="./addons/$repo_name/$(basename "$sub_dir")/config.json"
+                if [[ -f "$main_config_path" ]]; then
+                  addon_version=$(extract_version "$config_file")
+                  main_version=$(extract_version "$main_config_path")
         
-                  if [[ -f "$main_config_path" ]]; then
-                    addon_version=$(extract_version "$config_file")
-                    main_version=$(extract_version "$main_config_path")
-        
-                    if [[ "$addon_version" != "$main_version" ]]; then
-                      echo "Version mismatch in $repo_name ($(basename "$sub_dir")):"
-                      echo "  Addon version: $addon_version"
-                      echo "  Main version: $main_version"
-                    else
-                      echo "Version match in $repo_name ($(basename "$sub_dir")): $addon_version, Deleting $sub_dir"
-                      rm -rf "$sub_dir"
-                    fi
+                  if [[ "$addon_version" != "$main_version" ]]; then
+                    echo "Version mismatch in $repo_name ($(basename "$sub_dir")):"
+                    echo "  Addon version: $addon_version"
+                    echo "  Main version: $main_version"
+                  else
+                    echo "Version match in $repo_name ($(basename "$sub_dir")): $addon_version, Deleting $sub_dir"
+                    rm -rf "$sub_dir"
                   fi
                 fi
-              done
+              fi
             done
+          done
 
-
-      - name: modify the addons download link to accelerate url
+      - name: modify the addons download link
         run: |
-          find addons -type f \( -name "*.yaml" -o -name "*.json" -o -name "Dockerfile" \) -exec sed -i \
-            -e 's|ghcr.io|ghcr.nju.edu.cn|g' \
-            -e 's|image: homeassistant|image: docker.m.daocloud.io/homeassistant|g' \
-            -e 's|docker.io|docker.m.daocloud.io|g' \
-            -e 's|lscr.io|docker.m.daocloud.io|g' \
-            -e 's|https://github.com|https://gh-proxy.com/github.com|g' \
-            -e 's|ADD "https://raw.githubusercontent.com|ADD "https://gh-proxy.com/raw.githubusercontent.com|g' {} +
+          REPLACEMENTS=(
+            's|ghcr.io|ghcr.nju.edu.cn|g'
+            's|image: homeassistant|image: docker.m.daocloud.io/homeassistant|g'
+            's|docker.io|docker.m.daocloud.io|g'
+            's|lscr.io|docker.m.daocloud.io|g'
+            's|https://github.com|https://gh-proxy.com/github.com|g'
+            's|ADD "https://raw.githubusercontent.com|ADD "https://gh-proxy.com/raw.githubusercontent.com|g'
+          )
+          
+          find addons -type f \( -name "*.yaml" -o -name "*.json" -o -name "Dockerfile" \) -print0 | \
+            xargs -0 sed -i "${REPLACEMENTS[@]}"
 
       - name: Translate markdown files
         run: |
-              
-              find ./addons -type f \( -name "README.md" -o -name "DOCS.md" \) -print0 | xargs -0 -P 5 -I {} sh -c '
-                timeout 30s ai-markdown-translator -i "{}" -o "{}" -l "中文" || echo "{} translation failed or timed out."
-              '
+          translate_file() {
+            local file="$1"
+            local temp_file="${file}.tmp"
+            
+            if timeout 30s ai-markdown-translator -i "$file" -o "$temp_file" -l "中文"; then
+              mv "$temp_file" "$file"
+            else
+              echo "Failed to translate $file"
+              rm -f "$temp_file"
+              return 1
+            fi
+          }
           
+          export -f translate_file
+          find ./addons -type f \( -name "README.md" -o -name "DOCS.md" \) -print0 | \
+            xargs -0 -P "$(nproc)" -I {} bash -c 'translate_file "{}"'
 
       - name: Replace description in config files
         run: |
-              find ./addons -type f \( -name "config.yaml" -o -name "config.json" \) ! -path "*/.*/*" | while read -r file; do
-                    {
-                      if file -b --mime-type "$file" | grep -q "json"; then
-                        description=$(jq -r '.description' "$file")
-                        if [ "$description" == "null" ]; then
-                          echo "No description found in $file (JSON), skipping..."
-                          continue
-                        fi
+          find ./addons -type f \( -name "config.yaml" -o -name "config.json" \) ! -path "*/.*/*" | while read -r file; do
+            {
+              if file -b --mime-type "$file" | grep -q "json"; then
+                description=$(jq -r '.description' "$file")
+                if [ "$description" == "null" ]; then
+                  echo "No description found in $file (JSON), skipping..."
+                  continue
+                fi
+        
+                translated_description=$(curl -s --location 'https://open.bigmodel.cn/api/paas/v4/chat/completions' \
+                  --header "Authorization: Bearer ${{ secrets.ZHIPUAI_KEY }}" \
+                  --header 'Content-Type: application/json' \
+                  --data "{
+                    \"model\": \"glm-4v-flash\",
+                    \"messages\": [
+                      {
+                          \"role\": \"system\",
+                          \"content\": \"你是一个翻译程序，只将给你的内容翻译成中文，不需要任何其它多余解释以及回答，仅输出原文一致的翻译内容，每一次对话，你只输出一行内容\" 
+                      },
+                      {
+                        \"role\": \"user\",
+                        \"content\": \"翻译：$description\"
+                      }
+                    ]
+                  }" | jq -r '.choices[0].message.content')
+        
+                echo "Translated description for $file (JSON): $translated_description"
+        
+                jq --arg description "$translated_description" '.description = $description' "$file" > temp.json && mv temp.json "$file"
               
-                        translated_description=$(curl -s --location 'https://open.bigmodel.cn/api/paas/v4/chat/completions' \
-                          --header "Authorization: Bearer ${{ secrets.ZHIPUAI_KEY }}" \
-                          --header 'Content-Type: application/json' \
-                          --data "{
-                            \"model\": \"glm-4v-flash\",
-                            \"messages\": [
-                              {
-                                  \"role\": \"system\",
-                                  \"content\": \"你是一个翻译程序，只将给你的内容翻译成中文，不需要任何其它多余解释以及回答，仅输出原文一致的翻译内容，每一次对话，你只输出一行内容\" 
-                              },
-                              {
-                                \"role\": \"user\",
-                                \"content\": \"翻译：$description\"
-                              }
-                            ]
-                          }" | jq -r '.choices[0].message.content')
-              
-                        echo "Translated description for $file (JSON): $translated_description"
-              
-                        jq --arg description "$translated_description" '.description = $description' "$file" > temp.json && mv temp.json "$file"
-                      
-                      elif file -b --mime-type "$file" | grep -q "text"; then
-                        description=$(awk '/^description:/ {found=1; sub(/^description:[ ]*[-|]*[ ]*/, ""); desc=$0; next} found && /^[^ ]/ {found=0} found {desc = desc " " $0} END {print desc}' "$file")
-              
-                        translated_description=$(curl -s --location 'https://open.bigmodel.cn/api/paas/v4/chat/completions' \
-                          --header "Authorization: Bearer ${{ secrets.ZHIPUAI_KEY }}" \
-                          --header 'Content-Type: application/json' \
-                          --data "{
-                            \"model\": \"glm-4v-flash\",
-                            \"messages\": [
-                              {
-                                  \"role\": \"system\",
-                                  \"content\": \"你是一个翻译程序，只将给你的内容翻译成中文，不需要任何其它多余解释以及回答，仅输出原文一致的翻译内容，每一次对话，你只输出一行内容\" 
-                              },
-                              {
-                                \"role\": \"user\",
-                                \"content\": \"翻译：$description\"
-                              }
-                            ]
-                          }" | jq -r '.choices[0].message.content')
-              
-                        echo "Translated description for $file (non-JSON): $translated_description"
-                        safe_description=$(printf "%q" "$translated_description")
-                        sed -i "s|^description:.*|description: $safe_description|" "$file"
-                      fi
-                    } || {
-                      echo "Error processing $file, skipping..."
-                      continue
-                    }
-                  done
-          
+              elif file -b --mime-type "$file" | grep -q "text"; then
+                description=$(awk '/^description:/ {found=1; sub(/^description:[ ]*[-|]*[ ]*/, ""); desc=$0; next} found && /^[^ ]/ {found=0} found {desc = desc " " $0} END {print desc}' "$file")
+        
+                translated_description=$(curl -s --location 'https://open.bigmodel.cn/api/paas/v4/chat/completions' \
+                  --header "Authorization: Bearer ${{ secrets.ZHIPUAI_KEY }}" \
+                  --header 'Content-Type: application/json' \
+                  --data "{
+                    \"model\": \"glm-4v-flash\",
+                    \"messages\": [
+                      {
+                          \"role\": \"system\",
+                          \"content\": \"你是一个翻译程序，只将给你的内容翻译成中文，不需要任何其它多余解释以及回答，仅输出原文一致的翻译内容，每一次对话，你只输出一行内容\" 
+                      },
+                      {
+                        \"role\": \"user\",
+                        \"content\": \"翻译：$description\"
+                      }
+                    ]
+                  }" | jq -r '.choices[0].message.content')
+        
+                echo "Translated description for $file (non-JSON): $translated_description"
+                safe_description=$(printf "%q" "$translated_description")
+                sed -i "s|^description:.*|description: $safe_description|" "$file"
+              fi
+            } || {
+              echo "Error processing $file, skipping..."
+              continue
+            }
+          done
+
       - name: copy addons to root directory and delete the temp directory
         run: |
-                  for ITEM in addons/*/*; do
-                  BASENAME=$(basename "$ITEM") 
-                  TARGET_PATH="./$BASENAME"
-                    if [ -f "$ITEM" ]; then
-                      rm -f "$ITEM"
-                      echo "Deleted $ITEM" 
-                    elif [ -d "$ITEM" ]; then
-                      rm -rf "$TARGET_PATH"
-                      mv -f "$ITEM" "./" || echo "Failed to move directory: $ITEM"
-                      echo "Moved directory: $ITEM"
-                    fi
-                  done
-                  rm -rf whisparr # 删除无用的仓库
+          for ITEM in addons/*/*; do
+            BASENAME=$(basename "$ITEM") 
+            TARGET_PATH="./$BASENAME"
+            if [ -f "$ITEM" ]; then
+              rm -f "$ITEM"
+              echo "Deleted $ITEM" 
+            elif [ -d "$ITEM" ]; then
+              rm -rf "$TARGET_PATH"
+              mv -f "$ITEM" "./" || echo "Failed to move directory: $ITEM"
+              echo "Moved directory: $ITEM"
+            fi
+          done
+          rm -rf whisparr # 删除无用的仓库
 
       - name: sync hass-panel
         run: |
           mkdir -p hass-panel hass-panel-beta
-          wget -q -O hass-panel.zip https://github.com/mrtian2016/hass-panel/archive/refs/heads/main.zip
+          download_with_retry "https://github.com/mrtian2016/hass-panel/archive/refs/heads/main.zip" "hass-panel.zip"
           unzip -o hass-panel.zip -d hass-panel-temp && rm hass-panel.zip
           mv -f hass-panel-temp/hass-panel-main/hass-panel/* hass-panel/
           mv -f hass-panel-temp/hass-panel-main/hass-panel-beta/* hass-panel-beta/
-
           rm -rf hass-panel-temp
 
-      - run: |
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --quiet || echo "::set-output name=has_changes::true"
+          
+      - name: Commit and push changes
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "Sync addons" || echo "No changes to commit"
+          git commit -m "Sync addons"
           git push
