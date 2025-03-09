@@ -123,17 +123,13 @@ jobs:
             for addon_dir in ./addons/*/; do
               repo_name=$(basename "$addon_dir")
               for sub_dir in "$addon_dir"*/; do
-                echo $sub_dir
                 latest_file=$(find "$sub_dir" -maxdepth 1 -type f \( -name "config.json" -o -name "config.yaml" \) -print -quit)
                 current_path="./$(basename "$sub_dir")/$(basename "$latest_file")"
-                echo $latest_file
-                echo $current_path
                 latest_version=$(extract_version "$latest_file")
                 current_version=$(extract_version "$current_path")
                 if [[ "$latest_version" != "$current_version" ]]; then
                   echo "Version mismatch in $repo_name ($(basename "$sub_dir")):"
-                  echo "  latest version: $latest_version"
-                  echo "  current version: $current_version"
+                  echo $latest_version - $current_version
                 else
                   echo "Version match in $repo_name ($(basename "$sub_dir")): $latest_version, Deleting $sub_dir"
                   rm -rf "$sub_dir"
@@ -240,20 +236,16 @@ jobs:
 
       - name: sync hass-panel
         run: |
-          mkdir -p hass-panel hass-panel-beta
-          download_with_retry "https://github.com/mrtian2016/hass-panel/archive/refs/heads/main.zip" "hass-panel.zip"
-          unzip -o hass-panel.zip -d hass-panel-temp && rm hass-panel.zip
-          mv -f hass-panel-temp/hass-panel-main/hass-panel/* hass-panel/
-          mv -f hass-panel-temp/hass-panel-main/hass-panel-beta/* hass-panel-beta/
-          rm -rf hass-panel-temp
+            mkdir -p hass-panel hass-panel-beta
+            wget -q -O hass-panel.zip https://github.com/mrtian2016/hass-panel/archive/refs/heads/main.zip
+            unzip -o hass-panel.zip -d hass-panel-temp && rm hass-panel.zip
+            mv -f hass-panel-temp/hass-panel-main/hass-panel/* hass-panel/
+            mv -f hass-panel-temp/hass-panel-main/hass-panel-beta/* hass-panel-beta/
+            rm -rf hass-panel-temp
 
-      - name: Check for changes
-        id: changes
-        run: |
-          git diff --quiet || echo "::set-output name=has_changes::true"
+
           
       - name: Commit and push changes
-        if: steps.changes.outputs.has_changes == 'true'
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
