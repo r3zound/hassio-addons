@@ -1,32 +1,98 @@
-# Home Assistant Community Add-on: Plex 媒体服务器
+# ~~Home Assistant Community Add-on~~ Dianlight: Plex 媒体服务器
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+基于原始的 **Home Assistant Community Add-on: Plex 媒体服务器**
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![GitHub Release][releases-shield]][releases]
+![项目阶段][project-stage-shield]
+[![许可证][license-shield]](LICENSE.md)
 
-[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
+![支持 aarch64 架构][aarch64-shield]
+![支持 amd64 架构][amd64-shield]
+![支持 armhf 架构][armhf-shield]
+![支持 armv7 架构][armv7-shield]
+![支持 i386 架构][i386-shield]
 
-[![Support Frenck on Patreon][patreon-shield]][patreon]
+<!--
+[![GitLab CI][gitlabci-shield]][gitlabci]
+-->
+![项目维护][maintenance-shield]
+[![GitHub 活动][commits-shield]][commits]
 
-您的录制媒体、直播电视、在线新闻和播客，完美组织，
-随时准备流媒体播放。
+<!--
+[![Discord][discord-shield]][discord]
+[![社区论坛][forum-shield]][forum]
+-->
+
+<!--
+[![通过 GitHub 赞助支持 Frenck][github-sponsors-shield]][github-sponsors]
+
+[![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
+-->
+
+您的录制媒体、直播电视、在线新闻和播客，精美组织
+并准备好进行流媒体播放。
 
 ## 关于
 
-Plex 插件将您最喜欢的媒体整合在一个地方，让它
-变得美观且便于享受。此插件提供的 Plex 媒体服务器
-组织您的个人视频、音乐和照片集合，
-并将其流式传输到您所有的设备。
+Plex 插件将您最喜欢的媒体汇聚在一个地方，使其
+美观且易于享受。此插件提供的 Plex 媒体服务器，
+组织您的个人视频、音乐和照片集合
+并将其流式传输到您所有的设备上。
 
+[:books: 阅读完整的插件文档][docs]
+
+## 许可证
+
+MIT 许可证
+
+版权 (c) 2018-2020 Franck Nijhof, Lucio Tarantino
+
+特此免费授予任何获得本软件及相关文档文件（“软件”）的人员，处理
+该软件不受限制的权限，包括但不限于使用、复制、修改、合并、发布、分发、再授权和/或销售
+软件副本的权利，并允许向其提供软件的人员这样做，条件为：
+
+上述版权声明和此许可证声明应包含在软件的所有副本或重要部分中。
+
+本软件是按“原样”提供的，不附有任何形式的明示或暗示的保证，包括但不限于对适销性、
+特定用途适用性和非侵权的保证。在任何情况下，作者或版权持有人均不对由于
+该软件或使用或其他交易而产生的任何索赔、损害或其他责任负责，无论是在合同、侵权或其他方面。
+
+[aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
+[amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
+[armhf-shield]: https://img.shields.io/badge/armhf-no-red.svg
+[armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
+[commits-shield]: https://img.shields.io/github/commit-activity/y/dialight/addon-plex.svg
+[commits]: https://github.com/dialight/addon-plex/commits/master
+[contributors]: https://github.com/dialight/addon-plex/graphs/contributors
+<!--
+[discord-ha]: https://discord.gg/c5DvZ4e
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons
+-->
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
-[forum]: https://community.home-assistant.io/t/home-assistant-community-add-on-plex-media-server/54383?u=frenck
+<!--
+[forum]: https://community.home-assistant.io/t/community-hass-io-add-on-plex-media-server/54383?u=frenck
+[frenck]: https://github.com/frenck
 [github-sponsors-shield]: https://frenck.dev/wp-content/uploads/2019/12/github_sponsor.png
 [github-sponsors]: https://github.com/sponsors/frenck
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg
+[gitlabci-shield]: https://gitlab.com/dialight/addon-plex/badges/master/pipeline.svg
+[gitlabci]: https://gitlab.com/dialight/addon-plex/pipelines
+-->
+[home-assistant]: https://home-assistant.io
+[i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
+[issue]: https://github.com/dialight/addon-plex/issues
+[keepchangelog]: http://keepachangelog.com/en/1.0.0/
+[license-shield]: https://img.shields.io/github/license/dialight/addon-plex.svg
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2020.svg
+<!--
 [patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
 [patreon]: https://www.patreon.com/frenck
+-->
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
-[release-shield]: https://img.shields.io/badge/version-v3.6.3-blue.svg
-[release]: https://github.com/hassio-addons/addon-plex/tree/v3.6.3
+[reddit]: https://reddit.com/r/homeassistant
+[releases-shield]: https://img.shields.io/github/release/dialight/addon-plex.svg
+[releases]: https://github.com/dialight/addon-plex/releases
+[repository]: https://github.com/dialight/repository
+[semver]: http://semver.org/spec/v2.0.0.htm
+[webtools]: https://github.com/ukdtom/WebTools.bundle/wiki
+[docs]: https://github.com/dianlight/addon-plex/blob/master/plex/DOCS.md

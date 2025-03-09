@@ -1,4 +1,8 @@
+## 2025.03.21 (09-03-2025)
+- Minor bugs fixed
+## 2025.03.19 (08-03-2025)
 - [ALL] Default Flickr API key if not provided
+- [Non-avx2] Use tflite built with non-avx2 instructions
 
 ## 2025.03.18 (06-03-2025)
 - [ALL] Upgrade tflite from 2.11 to 2.17.1
