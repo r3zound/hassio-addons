@@ -111,14 +111,14 @@ jobs:
 
       - name: Check and clean up addons
         run: |
-            extract_version() {
-              local file="$1"
-              if jq -e . "$file" >/dev/null 2>&1; then
-                jq -r '.version' "$file"
-              else
-                grep -E '^\s*version:\s*' "$file" | awk -F ': ' '{print $2}' | tr -d '\r"'
-              fi
-            }
+          extract_version() {
+            local file="$1"
+            if jq -e . "$file" >/dev/null 2>&1; then
+              jq -r '.version' "$file"
+            else
+              grep -E '^\s*version:\s*' "$file" | awk -F ': ' '{print $2}' | tr -d '\r"'
+            fi
+          }
         
             for addon_dir in ./addons/*/; do
               repo_name=$(basename "$addon_dir")
@@ -130,15 +130,13 @@ jobs:
                 echo current_path # current file path
                 latest_version=$(extract_version "$latest_file")
                 current_version=$(extract_version "$current_path")
-                    if [[ "$latest_version" != "$current_version" ]]; then
-                      echo "Version mismatch in $repo_name ($(basename "$sub_dir")):"
-                      echo "  latest version: $latest_version"
-                      echo "  current version: $current_version"
-                    else
-                      echo "Version match in $repo_name ($(basename "$sub_dir")): $latest_version, Deleting $sub_dir"
-                      rm -rf "$sub_dir"
-                    fi
-                  fi
+                if [[ "$latest_version" != "$current_version" ]]; then
+                  echo "Version mismatch in $repo_name ($(basename "$sub_dir")):"
+                  echo "  latest version: $latest_version"
+                  echo "  current version: $current_version"
+                else
+                  echo "Version match in $repo_name ($(basename "$sub_dir")): $latest_version, Deleting $sub_dir"
+                  rm -rf "$sub_dir"
                 fi
               done
             done
