@@ -1,119 +1,325 @@
-# Home Assistant 插件：终端与 SSH
+# Home Assistant Community Add-on: Advanced SSH & Web Terminal
 
-## 安装
+This add-on allows you to log in to your Home Assistant instance using
+SSH or a Web Terminal, giving you to access your folders and
+also includes a command-line tool to do things like restart, update,
+and check your instance.
 
-请按照以下步骤在您的系统上安装该插件：
+This is an enhanced version of the provided
+[SSH add-on by Home Assistant][hass-ssh] and focuses on security,
+usability, flexibility and also provides access using a web interface.
 
-1. 此插件仅对“高级模式”用户可见。要启用高级模式，请前往 **个人资料** -> 并开启 **高级模式**。
-2. 在您的 Home Assistant 前端中导航至 **设置** -> **插件** -> **插件商店**。
-3. 查找“终端与 SSH”插件并点击它。
-4. 点击“安装”按钮。
+## WARNING
 
-## 如何使用
+The advanced SSH & Web Terminal add-on is very powerful and gives you access
+to almost all tools and hardware of your system.
 
-此插件为您的 Home Assistant 安装添加了两个主要功能：
+While this add-on is created and maintained with care and with security in mind,
+in the wrong or inexperienced hands, it could damage your system.
 
-- 一个您可以从浏览器使用的网络终端，以及
-- 允许使用 SSH 客户端连接到您的系统。
+## Features
 
-无论您是通过网页终端还是 SSH 客户端连接，您最终都会进入此插件的容器。Home Assistant 配置目录位于路径 `/config`。
+This add-on, of course, provides an SSH server, based on [OpenSSH][openssh] and
+a web-based Terminal (which can be included in your Home Assistant frontend) as
+well. Additionally, it comes out of the box with the following:
 
-该插件附带了 [Home Assistant CLI](https://www.home-assistant.io/common-tasks/os#home-assistant-via-the-command-line)。您可以使用以下命令进行尝试：
+- Access your command line right from the Home Assistant frontend!
+- A secure default configuration of SSH:
+  - Only allows login by the configured user, even if more users are created.
+  - Only uses known secure ciphers and algorithms.
+  - Limits login attempts to hold off brute-force attacks better.
+  - Many more security tweaks, _this addon passes all [ssh-audit] checks
+    without warnings!_
+    ![Result of SSH-Audit][ssh-audit-image]
+- Comes with an SSH compatibility mode option to allow older clients to connect.
+- Support for Mosh allowing roaming and supports intermittent connectivity.
+- SFTP support is disabled by default but is user configurable.
+- Compatible if Home Assistant was installed via the generic Linux installer.
+- Username is configurable, so `root` is no longer mandatory.
+- Persists custom SSH client settings & keys between add-on restarts
+- Log levels for allowing you to triage issues easier.
+- Hardware access to your audio, uart/serial devices and GPIO pins.
+- Runs with more privileges, allowing you to debug and test more situations.
+- Has access to the dbus of the host system.
+- Has the option to access the Docker instance running on the host system.
+- Runs on host level network, allowing you to open ports or run little daemons.
+- Have custom Alpine packages installed on start. This allows you to install
+  your favorite tools, which will be available every single time you log in.
+- Execute custom commands on add-on start so that you can customize the
+  shell to your likings.
+- [ZSH][zsh] as its default shell. Easier to use for the beginner, more advanced
+  for the more experienced user. It even comes preloaded with
+  ["Oh My ZSH"][ohmyzsh], with some plugins enabled as well.
+- Contains a sensible set of tools right out of the box: curl, Wget, RSync, GIT,
+  Nmap, Mosquitto client, MariaDB/MySQL client, Awake (“wake on LAN”), Nano,
+  Vim, tmux, and a bunch commonly used networking tools.
 
-```bash
-ha help
-```
+## Installation
 
-### 网络终端
+The installation of this add-on is pretty straightforward and not different in
+comparison to installing any other Home Assistant add-on.
 
-您可以通过点击该插件信息选项卡上的“打开 Web UI”按钮访问网络终端。如果您将“侧边栏显示”设置（在同一信息选项卡中找到）设置为“开启”，将会在侧边栏添加一个快捷方式，使您能够快速访问网络终端。
+1. Click the Home Assistant My button below to open the add-on on your Home
+   Assistant instance.
 
-要从 Web UI 复制文本：
-1. 按住 SHIFT 键。
-2. 使用鼠标选择要复制的文本。
-3. 松开左键后，文本将复制到您的系统剪贴板中。
+   [![Open this add-on in your Home Assistant instance.][addon-badge]][addon]
 
-要在 Web UI 中粘贴文本：
-1. 按 SHIFT + INSERT。
+1. Click the "Install" button to install the add-on.
+1. Configure the `username` and `password`/`authorized_keys` options.
+1. Start the "Advanced SSH & Web Terminal" add-on.
+1. Check the logs of the "Advanced SSH & Web Terminal" add-on to see if everything
+   went well.
 
-### SSH 服务器连接
+## Configuration
 
-默认情况下，网络的远程 SSH 访问是禁用的（详见下面的网络部分）。要使用 SSH 客户端（如 PuTTY 或 Linux 终端）连接，您需要为此插件提供额外的配置。要启用 SSH 连接，您需要：
+**Note**: _Remember to restart the add-on when the configuration is changed._
 
-- 提供身份验证凭据 - 密码或 SSH 密钥
-- 指定要绑定到 Home Assistant 主机上的 TCP 端口
-
-然后，您可以使用用户名 `root` 连接到指定的端口。请注意，启用 SSH 服务器可能会使您的 Home Assistant 系统的安全性降低，因为这可能会使互联网用户尝试访问您的系统。您系统的安全性还取决于您的网络设置、路由器设置、防火墙的使用等。一般建议，除非您理解其后果，否则不应启用插件的此部分。
-
-如果您启用使用 SSH 客户端连接到 SSH 服务器，强烈建议使用私钥/公钥进行登录。只要您妥善保管密钥的私密部分，这将使您的系统更难以被突破。因此，使用密码通常被认为是一种安全性较低的机制。要生成私钥/公钥 SSH 密钥，请按照 [Windows 的说明][keygen-windows] 和 [其他平台的说明][keygen]。
-
-**注意**：在执行上述说明时，请选择 ECDSA 作为 `生成密钥的类型`，而不是 RSA。RSA 不再被支持。
-
-启用密码登录将禁用基于密钥的登录。您不能同时运行这两种变体。
-
-## 配置
-
-插件配置：
+SSH add-on configuration:
 
 ```yaml
-authorized_keys:
-  - "ssh-rsa AKDJD3839...== my-key"
-password: ''
-apks: []
-server:
-  tcp_forwarding: false
+log_level: info
+ssh:
+  username: homeassistant
+  password: ""
+  authorized_keys:
+    - ssh-ed25519 AASDJKJKJFWJFAFLCNALCMLAK234234.....
+  sftp: false
+  compatibility_mode: false
+  allow_agent_forwarding: false
+  allow_remote_port_forwarding: false
+  allow_tcp_forwarding: false
+zsh: true
+share_sessions: true
+packages:
+  - build-base
+init_commands:
+  - ls -la
 ```
 
-### 选项：`apks`
+**Note**: _This is just an example, don't copy and paste it! Create your own!_
 
-要在插件容器中安装的其他软件包。
+### Option: `log_level`
 
-### 选项：`authorized_keys`
+The `log_level` option controls the level of log output by the addon and can
+be changed to be more or less verbose, which might be useful when you are
+dealing with an unknown issue. Possible values are:
 
-您希望接受登录的 **公钥**。您可以通过向列表中添加多个公钥来授权多个密钥。
+- `trace`: Show every detail, like all called internal functions.
+- `debug`: Shows detailed debug information.
+- `info`: Normal (usually) interesting events.
+- `warning`: Exceptional occurrences that are not errors.
+- `error`: Runtime errors that do not require immediate action.
+- `fatal`: Something went terribly wrong. Add-on becomes unusable.
 
-如果在添加您的密钥时遇到错误，可能是您尝试添加的公钥包含与 YAML 语法冲突的字符。尝试将您的密钥用双引号括起来以避免此问题。
+Please note that each level automatically includes log messages from a
+more severe level, e.g., `debug` also shows `info` messages. By default,
+the `log_level` is set to `info`, which is the recommended setting unless
+you are troubleshooting.
 
-### 选项：`password`
+Using `trace` or `debug` log levels puts the SSH and Terminal daemons into
+debug mode. While SSH is running in debug mode, it will be only able to
+accept one single connection at the time.
 
-为登录设置一个密码。**我们不推荐此变体**。
+### Option group `ssh`
 
-### 选项组 `server`
+---
 
-一些 SSH 服务器选项。
+The following options are for the option group: `ssh`. These settings
+only apply to the SSH daemon.
 
-#### 选项 `tcp_forwarding`
+#### Option `ssh`: `username`
 
-指定是否允许 TCP 端口转发（-L -R 等）。
+This option allows you to change to username the use when you log in via SSH.
+It is only utilized for the authentication; you will be the `root` user after
+you have authenticated. Using `root` as the username is possible, but not
+recommended. Usernames will be converted to lower case as per recommended
+practises.
 
-**注意**：_启用此选项会降低您的 SSH 服务器的安全性！然而，该警告是有争议的。_
+**Note**: _Due to limitations, you will need to set this option to `root` in
+order to be able to enable the SFTP capabilities._
 
-## 网络
+#### Option `ssh`: `password`
 
-这一部分仅与您想通过 SSH 客户端（例如 PuTTY 或 Linux 终端）连接到 Home Assistant 相关。为了从网络启用 SSH 远程访问，请在网络配置输入框中指定期望的 SSH TCP 服务器端口。您输入的数字将用于将该端口从主机映射到正在运行的“终端与 SSH”插件。SSH 协议使用的标准端口是 `22`。
+Sets the password to log in with. Leaving it empty would disable the possibility
+to authenticate with a password. We would highly recommend not to use this
+option from a security point of view.
 
-通过清除输入框、保存配置和重启插件，可以再次禁用远程 SSH 访问。
+#### Option `ssh` `authorized_keys`
 
-## 已知问题和限制
+Add one or more public keys to your SSH server to use with authentication.
+This is the recommended over setting a password.
 
-- 该插件不会允许您以 root 身份安装软件包或执行任何其他操作。
-  这在 Home Assistant 中是无效的。
+Please take a look at the awesome [documentation created by GitHub][github-ssh]
+about using public/private key pairs and how to create them.
 
-## 支持
+**Note**: _Please ensure the keys are specified as a list by pasting within the
+`[]` comma delimited._
 
-有问题？
+#### Option `ssh`: `sftp`
 
-您有几个选项可以获得答案：
+When set to `true` the addon will enable SFTP support on the SSH daemon.
+Please only enable it when you plan on using it.
 
-- [Home Assistant Discord 聊天服务器][discord]。
-- Home Assistant [社区论坛][forum]。
-- 加入 [Reddit 子版块][reddit] 在 [/r/homeassistant][reddit]。
+**Note**: _Due to limitations, you will need to set the username to `root` in
+order to be able to enable the SFTP capabilities._
 
-如果您发现了一个bug，请 [在我们的 GitHub 上打开一个问题][issue]。
+#### Option `ssh`: `compatibility_mode`
 
-[discord]: https://discord.gg/c5DvZ4e
-[forum]: https://community.home-assistant.io
-[issue]: https://github.com/home-assistant/addons/issues
-[keygen-windows]: https://www.digitalocean.com/community/tutorials/how-to-create-ssh-keys-with-putty-to-connect-to-a-vps
-[keygen]: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+This SSH add-on focuses on security and has therefore only enabled known
+secure encryption methods. However, some older clients do not support these.
+Setting this option to `true` will enable the original default set of methods,
+allowing those clients to connect.
+
+**Note**: _Enabling this option, lowers the security of your SSH server!_
+
+#### Option `ssh`: `allow_agent_forwarding`
+
+Specifies whether ssh-agent forwarding is permitted or not.
+
+**Note**: _Enabling this option, lowers the security of your SSH server!
+Nevertheless, this warning is debatable._
+
+#### Option `ssh`: `allow_remote_port_forwarding`
+
+Specifies whether remote hosts are allowed to connect to ports forwarded
+for the client.
+
+**Note**: _Enabling this affects all remote forwardings, so think carefully
+before doing this._
+
+#### Option `ssh`: `allow_tcp_forwarding`
+
+Specifies whether TCP forwarding is permitted or not.
+
+**Note**: _Enabling this option, lowers the security of your SSH server!
+Nevertheless, this warning is debatable._
+
+### Shared settings
+
+---
+
+The following options are shared between both the SSH and the Web Terminal.
+
+#### Option: `zsh`
+
+The add-on has ZSH pre-installed and configured as the default shell.
+However, ZSH might not be your preferred choice. By setting this option to
+`false`, you will disable ZSH and the add-on will fallback to Bash instead.
+
+#### Option: `share_sessions`
+
+By default, the terminal session between the web client and SSH is shared.
+This allows you to pick up where you left your terminal from either of those.
+
+This option allows you to disable this behavior by setting it to `false`, which
+effectively sets SSH to behave as it used to be.
+
+#### Option: `packages`
+
+Allows you to specify additional [Alpine packages][alpine-packages] to be
+installed in your shell environment (e.g., Python, Joe, Irssi).
+
+**Note**: _Adding many packages will result in a longer start-up
+time for the add-on._
+
+#### Option: `init_commands`
+
+Customize your shell environment even more with the `init_commands` option.
+Add one or more shell commands to the list, and they will be executed every
+single time this add-on starts.
+
+## Known issues and limitations
+
+- When SFTP is enabled, the username MUST be set to `root`.
+- If you want to use rsync for file transfer, the username MUST be set to
+  `root`.
+
+## Changelog & Releases
+
+This repository keeps a change log using [GitHub's releases][releases]
+functionality.
+
+Releases are based on [Semantic Versioning][semver], and use the format
+of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
+based on the following:
+
+- `MAJOR`: Incompatible or major changes.
+- `MINOR`: Backwards-compatible new features and enhancements.
+- `PATCH`: Backwards-compatible bugfixes and package updates.
+
+## Visual Studio Code Remote - SSH
+
+Setting the following parameters as is shown will allow you to connect to
+your Home Assistant instance using VSCode Remote - SSH:
+
+```yaml
+ssh:
+  allow_remote_port_forwarding: true
+  allow_tcp_forwarding: true
+```
+
+## Support
+
+Got questions?
+
+You have several options to get them answered:
+
+- The [Home Assistant Community Add-ons Discord chat server][discord] for add-on
+  support and feature requests.
+- The [Home Assistant Discord chat server][discord-ha] for general Home
+  Assistant discussions and questions.
+- The Home Assistant [Community Forum][forum].
+- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+
+You could also [open an issue here][issue] GitHub.
+
+## Authors & contributors
+
+The original setup of this repository is by [Franck Nijhof][frenck].
+
+For a full list of all authors and contributors,
+check [the contributors page][contributors].
+
+## License
+
+MIT License
+
+Copyright (c) 2017-2025 Franck Nijhof
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+[addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
+[addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_ssh&repository_url=https%3A%2F%2Fgithub.com%2Fhassio-addons%2Frepository
+[alpine-packages]: https://pkgs.alpinelinux.org/packages
+[contributors]: https://github.com/hassio-addons/addon-ssh/graphs/contributors
+[discord-ha]: https://discord.gg/c5DvZ4e
+[discord]: https://discord.me/hassioaddons
+[forum]: https://community.home-assistant.io/t/community-hass-io-add-on-ssh-web-terminal/33820?u=frenck
+[frenck]: https://github.com/frenck
+[github-ssh]: https://help.github.com/articles/connecting-to-github-with-ssh/
+[hass-ssh]: https://github.com/home-assistant/addons/tree/master/ssh
+[issue]: https://github.com/hassio-addons/addon-ssh/issues
+[ohmyzsh]: http://ohmyz.sh/
+[openssh]: https://www.openssh.com/
 [reddit]: https://reddit.com/r/homeassistant
+[releases]: https://github.com/hassio-addons/addon-ssh/releases
+[semver]: https://semver.org/spec/v2.0.0.html
+[ssh-audit-image]: https://github.com/hassio-addons/addon-ssh/raw/main/images/ssh-audit.png
+[ssh-audit]: https://github.com/jtesta/ssh-audit
+[zsh]: https://en.wikipedia.org/wiki/Z_shell
