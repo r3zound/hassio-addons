@@ -105,47 +105,116 @@ jobs:
           done
           find addons/ -name ".*" -exec rm -rf {} +
 
-      - name: Check and clean up addons
-        run: |
-          extract_version() {
-            local file="$1"
-            if jq -e . "$file" >/dev/null 2>&1; then
-              jq -r '.version' "$file"
-            else
-              grep -E '^\s*version:\s*' "$file" | awk -F ': ' '{print $2}' | tr -d '\r"'
-            fi
-          }
-
-          total=$(find ./addons/*/ -maxdepth 1 -type d | wc -l)
-          current=0
-          
-          for addon_dir in ./addons/*/; do
-            ((current++))
-            echo "Processing $current/$total: $(basename "$addon_dir")"
-            
-            repo_name=$(basename "$addon_dir")
-            for sub_dir in "$addon_dir"*/; do
-              config_file=$(find "$sub_dir" -type f -name "config.json" -print -quit)
-              
-              if [[ -n "$config_file" ]]; then
-                main_config_path="./addons/$repo_name/$(basename "$sub_dir")/config.json"
-        
-                if [[ -f "$main_config_path" ]]; then
-                  addon_version=$(extract_version "$config_file")
-                  main_version=$(extract_version "$main_config_path")
-        
-                  if [[ "$addon_version" != "$main_version" ]]; then
-                    echo "Version mismatch in $repo_name ($(basename "$sub_dir")):"
-                    echo "  Addon version: $addon_version"
-                    echo "  Main version: $main_version"
-                  else
-                    echo "Version match in $repo_name ($(basename "$sub_dir")): $addon_version, Deleting $sub_dir"
-                    rm -rf "$sub_dir"
-                  fi
-                fi
+          - name: Check and clean up addons
+          run: |
+            extract_version() {
+              local file="$1"
+              if [ ! -f "$file" ]; then
+                echo "Error: File not found - $file" >&2
+                return 1
+              }
+  
+              if jq -e . "$file" >/dev/null 2>&1; then
+                version=$(jq -r '.version // empty' "$file")
+              else
+                version=$(grep -E '^\s*version:\s*' "$file" | awk -F ': ' '{print $2}' | tr -d '\r"' || true)
               fi
+  
+              if [ -z "$version" ]; then
+                echo "Error: Could not extract version from $file" >&2
+                return 1
+              fi
+              echo "$version"
+            }
+  
+            process_addon() {
+              local addon_dir="$1"
+              local repo_name="$2"
+              
+              echo "Processing addon directory: $addon_dir"
+              
+              # 查找配置文件
+              local config_file=$(find "$addon_dir" -type f -name "config.json" -print -quit)
+              if [ -z "$config_file" ]; then
+                echo "No config.json found in $addon_dir"
+                return 0
+              }
+              
+              echo "Found config file: $config_file"
+              
+              # 构建主配置文件路径
+              local sub_dir_name=$(basename "$addon_dir")
+              local main_config_path="./addons/$repo_name/$sub_dir_name/config.json"
+              
+              if [ ! -f "$main_config_path" ]; then
+                echo "Main config not found: $main_config_path"
+                return 0
+              }
+              
+              # 提取版本号
+              local addon_version
+              local main_version
+              
+              if ! addon_version=$(extract_version "$config_file"); then
+                echo "Failed to extract addon version from $config_file"
+                return 1
+              fi
+              
+              if ! main_version=$(extract_version "$main_config_path"); then
+                echo "Failed to extract main version from $main_config_path"
+                return 1
+              }
+              
+              echo "Comparing versions:"
+              echo "  Addon: $addon_version"
+              echo "  Main:  $main_version"
+              
+              if [ "$addon_version" != "$main_version" ]; then
+                echo "Version mismatch in $repo_name ($sub_dir_name)"
+              else
+                echo "Version match ($addon_version), removing $addon_dir"
+                rm -rf "$addon_dir"
+              fi
+            }
+  
+            # 主处理逻辑
+            if [ ! -d "./addons" ]; then
+              echo "Error: addons directory not found"
+              exit 1
+            }
+  
+            total=$(find ./addons/*/ -maxdepth 1 -type d 2>/dev/null | wc -l)
+            current=0
+            failed=0
+  
+            echo "Found $total addon repositories to process"
+  
+            for addon_dir in ./addons/*/; do
+              if [ ! -d "$addon_dir" ]; then
+                echo "Warning: $addon_dir is not a directory"
+                continue
+              }
+  
+              ((current++))
+              repo_name=$(basename "$addon_dir")
+              echo "[$current/$total] Processing repository: $repo_name"
+  
+              # 处理仓库中的每个插件
+              while IFS= read -r sub_dir; do
+                if ! process_addon "$sub_dir" "$repo_name"; then
+                  ((failed++))
+                  echo "Failed to process $sub_dir"
+                fi
+              done < <(find "$addon_dir" -mindepth 1 -maxdepth 1 -type d 2>/dev/null)
             done
-          done
+  
+            echo "Processing complete:"
+            echo "Total repositories: $total"
+            echo "Failed operations: $failed"
+  
+            if [ $failed -gt 0 ]; then
+              echo "Warning: Some operations failed, but continuing..."
+            fi
 
       - name: modify the addons download link
         run: |
