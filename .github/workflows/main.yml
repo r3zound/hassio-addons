@@ -105,8 +105,8 @@ jobs:
           done
           find addons/ -name ".*" -exec rm -rf {} +
 
-          - name: Check and clean up addons
-          run: |
+      - name: Check and clean up addons
+        run: |
             extract_version() {
               local file="$1"
               if [ ! -f "$file" ]; then
