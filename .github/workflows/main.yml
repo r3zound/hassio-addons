@@ -30,56 +30,73 @@ jobs:
 
       - name: downloading addons
         run: |
-          download_with_retry() {
-            local url=$1
-            local output=$2
-            local max_attempts=3
-            local attempt=1
+          # 定义下载数组
+          declare -A downloads=(
+            ["official"]="home-assistant/addons:master"
+            ["community"]="hassio-addons/repository:master"
+            ["alexbelgium"]="alexbelgium/hassio-addons:master"
+            ["Poeschl"]="Poeschl-HomeAssistant-Addons/repository:main"
+            ["erik73"]="erik73/hassio-addons:master"
+            ["einschmidt"]="einschmidt/hassio-addons:main"
+            ["FaserF"]="FaserF/hassio-addons:master"
+            ["jdeath"]="jdeath/homeassistant-addons:main"
+            ["hacs"]="hacs/addons:main"
+            ["bluemaes"]="bluemaex/home-assistant-addons:main"
+            ["expaso"]="expaso/hassos-addons:main"
+            ["blakeblackshear"]="blakeblackshear/frigate-hass-addons:main"
+            ["music-assistant"]="music-assistant/home-assistant-addon:main"
+            ["esphome"]="esphome/home-assistant-addon:main"
+            ["litinoveweedle"]="litinoveweedle/hassio-addons:main"
+            ["brenner-tobias"]="brenner-tobias/ha-addons:main"
+            ["sanderdw"]="sanderdw/hassio-addons:master"
+            ["dianlight"]="dianlight/hassio-addons:master"
+            ["hugobloem"]="hugobloem/homeassistant-addons:main"
+            ["haberda"]="haberda/hassio_addons:master"
+            ["AlexxIT"]="AlexxIT/hassio-addons:master"
+            ["da-anda"]="da-anda/hass-io-addons:main"
+          )
+
+
+          # 下载函数
+          download() {
+            local name=$1
+            local repo_branch=$2
+            local repo=${repo_branch%:*}
+            local branch=${repo_branch#*:}
             
-            while [ $attempt -le $max_attempts ]; do
-              if wget -q -O "$output" "$url"; then
-                return 0
-              fi
-              echo "Attempt $attempt failed, retrying..."
-              ((attempt++))
-              sleep 5
-            done
-            return 1
+            if wget -q -O "${name}.zip" "https://github.com/${repo}/archive/refs/heads/${branch}.zip"; then
+              echo "✓ Downloaded: ${name}"
+            else
+              echo "✗ Failed to download: ${name}"
+              return 1
+            fi
           }
 
-          declare -A REPOS=(
-            ["official"]="home-assistant/addons/master"
-            ["community"]="hassio-addons/repository/master"
-            ["alexbelgium"]="alexbelgium/hassio-addons/master"
-            ["Poeschl"]="Poeschl-HomeAssistant-Addons/repository/main"
-            ["erik73"]="erik73/hassio-addons/master"
-            ["einschmidt"]="einschmidt/hassio-addons/main"
-            ["FaserF"]="FaserF/hassio-addons/master"
-            ["jdeath"]="jdeath/homeassistant-addons/main"
-            ["hacs"]="hacs/addons/main"
-            ["bluemaes"]="bluemaex/home-assistant-addons/main"
-            ["expaso"]="expaso/hassos-addons/main"
-            ["blakeblackshear"]="blakeblackshear/frigate-hass-addons/main"
-            ["music-assistant"]="music-assistant/home-assistant-addon/main"
-            ["esphome"]="esphome/home-assistant-addon/main"
-            ["litinoveweedle"]="litinoveweedle/hassio-addons/main"
-            ["brenner-tobias"]="brenner-tobias/ha-addons/main"
-            ["sanderdw"]="sanderdw/hassio-addons/master"
-            ["dianlight"]="dianlight/hassio-addons/master"
-            ["hugobloem"]="hugobloem/homeassistant-addons/main"
-            ["haberda"]="haberda/hassio_addons/master"
-            ["AlexxIT"]="AlexxIT/hassio-addons/master"
-            ["da-anda"]="da-anda/hass-io-addons/main"
-          )
-          
-          for name in "${!REPOS[@]}"; do
-            download_with_retry "https://github.com/${REPOS[$name]}/archive/refs/heads/${REPOS[$name]##*/}.zip" "${name}.zip" &
+          # 并行下载 GitHub 仓库
+          for name in "${!downloads[@]}"; do
+            download "$name" "${downloads[$name]}" &
           done
 
-          # 特殊处理 hydroqc 仓库
-          download_with_retry "https://gitlab.com/hydroqc/hydroqc-hass-addons/-/archive/main/hydroqc-hass-addons-main.zip" "hydroqc.zip" &
-          
+          # 特殊处理非 GitHub 仓库
+          wget -q -O "hydroqc.zip" "https://gitlab.com/hydroqc/hydroqc-hass-addons/-/archive/main/hydroqc-hass-addons-main.zip" &
+
+          # 等待所有下载完成
           wait
+
+          # 检查下载结果
+          echo "Checking downloads..."
+          failed=0
+          for zip in *.zip; do
+            if [ ! -s "$zip" ]; then
+              echo "Warning: $zip is empty or missing"
+              ((failed++))
+            fi
+          done
+
+          # 报告结果
+          total=$((${#downloads[@]} + 1))
+          success=$((total - failed))
+          echo "Download complete: $success/$total successful"
 
       - name: extract the addons zip files and delete the zip files 
         run: |
