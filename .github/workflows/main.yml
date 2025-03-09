@@ -128,10 +128,9 @@ jobs:
                 latest_version=$(extract_version "$latest_file")
                 current_version=$(extract_version "$current_path")
                 if [[ "$latest_version" != "$current_version" ]]; then
-                  echo "Version mismatch in $repo_name ($(basename "$sub_dir")):"
-                  echo $latest_version - $current_version
+                  echo "Version mismatch in $repo_name ($(basename "$sub_dir")): $latest_version - $current_version" # 只输出版本不一致的插件
                 else
-                  echo "Version match in $repo_name ($(basename "$sub_dir")): $latest_version, Deleting $sub_dir"
+                  # echo "Version match in $repo_name ($(basename "$sub_dir")): $latest_version, Deleting $sub_dir"
                   rm -rf "$sub_dir"
                 fi
               done
