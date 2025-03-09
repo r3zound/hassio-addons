@@ -123,21 +123,19 @@ jobs:
             for addon_dir in ./addons/*/; do
               repo_name=$(basename "$addon_dir")
               for sub_dir in "$addon_dir"*/; do
-                config_file=$(find "$sub_dir" -maxdepth 1 -type f \( -name "config.json" -o -name "config.yaml" \) -print -quit)
-                
-                if [[ -n "$config_file" ]]; then
-                  main_config_path="./$repo_name/$(basename "$sub_dir")/$(basename "$config_file")"
-        
-                  if [[ -f "$main_config_path" ]]; then
-                    addon_version=$(extract_version "$config_file")
-                    main_version=$(extract_version "$main_config_path")
-        
-                    if [[ "$addon_version" != "$main_version" ]]; then
+                echo sub_dir
+                latest_file=$(find "$sub_dir" -maxdepth 1 -type f \( -name "config.json" -o -name "config.yaml" \) -print -quit)
+                current_path="./$repo_name/$(basename "$sub_dir")/$(basename "$latest_file")"
+                echo latest_file # latest file path
+                echo current_path # current file path
+                latest_version=$(extract_version "$latest_file")
+                current_version=$(extract_version "$current_path")
+                    if [[ "$latest_version" != "$current_version" ]]; then
                       echo "Version mismatch in $repo_name ($(basename "$sub_dir")):"
-                      echo "  Addon version: $addon_version"
-                      echo "  Main version: $main_version"
+                      echo "  latest version: $latest_version"
+                      echo "  current version: $current_version"
                     else
-                      echo "Version match in $repo_name ($(basename "$sub_dir")): $addon_version, Deleting $sub_dir"
+                      echo "Version match in $repo_name ($(basename "$sub_dir")): $latest_version, Deleting $sub_dir"
                       rm -rf "$sub_dir"
                     fi
                   fi
