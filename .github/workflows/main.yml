@@ -103,77 +103,66 @@ jobs:
           for file in *.zip; do
             unzip -o -q "$file" -d addons && rm "$file"
           done
+      - name: Remove unwanted files
+        run: 
           find addons/ -name ".*" -exec rm -rf {} +
+          find addons/* -maxdepth 1 -type f -exec rm -f {} +
+
 
       - name: Check and clean up addons
         run: |
-              extract_version() {
-                local file="$1"
-                if jq -e . "$file" >/dev/null 2>&1; then
-                  jq -r '.version' "$file"
-                else
-                  grep -E '^\s*version:\s*' "$file" | awk -F ': ' '{print $2}' | tr -d '\r"'
-                fi
-              }
-          
-              for addon_dir in ./addons/*/; do
-                repo_name=$(basename "$addon_dir")
-                for sub_dir in "$addon_dir"*/; do
-                  config_file=$(find "$sub_dir" -type f -name "config.json" -print -quit)
-                  
-                  if [[ -n "$config_file" ]]; then
-                    main_config_path="./addons/$repo_name/$(basename "$sub_dir")/config.json"
-          
-                    if [[ -f "$main_config_path" ]]; then
-                      addon_version=$(extract_version "$config_file")
-                      main_version=$(extract_version "$main_config_path")
-          
-                      if [[ "$addon_version" != "$main_version" ]]; then
-                        echo "Version mismatch in $repo_name ($(basename "$sub_dir")):"
-                        echo "  Addon version: $addon_version"
-                        echo "  Main version: $main_version"
-                      else
-                        echo "Version match in $repo_name ($(basename "$sub_dir")): $addon_version, Deleting $sub_dir"
-                        rm -rf "$sub_dir"
-                      fi
+            extract_version() {
+              local file="$1"
+              if jq -e . "$file" >/dev/null 2>&1; then
+                jq -r '.version' "$file"
+              else
+                grep -E '^\s*version:\s*' "$file" | awk -F ': ' '{print $2}' | tr -d '\r"'
+              fi
+            }
+        
+            for addon_dir in ./addons/*/; do
+              repo_name=$(basename "$addon_dir")
+              for sub_dir in "$addon_dir"*/; do
+                config_file=$(find "$sub_dir" -maxdepth 1 -type f \( -name "config.json" -o -name "config.yaml" \) -print -quit)
+                
+                if [[ -n "$config_file" ]]; then
+                  main_config_path="./$repo_name/$(basename "$sub_dir")/$(basename "$config_file")"
+        
+                  if [[ -f "$main_config_path" ]]; then
+                    addon_version=$(extract_version "$config_file")
+                    main_version=$(extract_version "$main_config_path")
+        
+                    if [[ "$addon_version" != "$main_version" ]]; then
+                      echo "Version mismatch in $repo_name ($(basename "$sub_dir")):"
+                      echo "  Addon version: $addon_version"
+                      echo "  Main version: $main_version"
+                    else
+                      echo "Version match in $repo_name ($(basename "$sub_dir")): $addon_version, Deleting $sub_dir"
+                      rm -rf "$sub_dir"
                     fi
                   fi
-                done
+                fi
               done
+            done
   
 
-      - name: modify the addons download link
+      - name: modify the addons download link to accelerate url
         run: |
-          REPLACEMENTS=(
-            's|ghcr.io|ghcr.nju.edu.cn|g'
-            's|image: homeassistant|image: docker.m.daocloud.io/homeassistant|g'
-            's|docker.io|docker.m.daocloud.io|g'
-            's|lscr.io|docker.m.daocloud.io|g'
-            's|https://github.com|https://gh-proxy.com/github.com|g'
-            's|ADD "https://raw.githubusercontent.com|ADD "https://gh-proxy.com/raw.githubusercontent.com|g'
-          )
-          
-          find addons -type f \( -name "*.yaml" -o -name "*.json" -o -name "Dockerfile" \) -print0 | \
-            xargs -0 sed -i "${REPLACEMENTS[@]}"
+          find addons -type f \( -name "*.yaml" -o -name "*.json" -o -name "Dockerfile" \) -exec sed -i \
+            -e 's|ghcr.io|ghcr.nju.edu.cn|g' \
+            -e 's|image: homeassistant|image: docker.m.daocloud.io/homeassistant|g' \
+            -e 's|docker.io|docker.m.daocloud.io|g' \
+            -e 's|lscr.io|docker.m.daocloud.io|g' \
+            -e 's|https://github.com|https://gh-proxy.com/github.com|g' \
+            -e 's|ADD "https://raw.githubusercontent.com|ADD "https://gh-proxy.com/raw.githubusercontent.com|g' {} +
 
       - name: Translate markdown files
         run: |
-          translate_file() {
-            local file="$1"
-            local temp_file="${file}.tmp"
-            
-            if timeout 30s ai-markdown-translator -i "$file" -o "$temp_file" -l "中文"; then
-              mv "$temp_file" "$file"
-            else
-              echo "Failed to translate $file"
-              rm -f "$temp_file"
-              return 1
-            fi
-          }
-          
-          export -f translate_file
-          find ./addons -type f \( -name "README.md" -o -name "DOCS.md" \) -print0 | \
-            xargs -0 -P "$(nproc)" -I {} bash -c 'translate_file "{}"'
+                  
+                  find ./addons -type f \( -name "README.md" -o -name "DOCS.md" \) -print0 | xargs -0 -P 5 -I {} sh -c '
+                    timeout 30s ai-markdown-translator -i "{}" -o "{}" -l "中文" || echo "{} translation failed or timed out."
+                  '
+
 
       - name: Replace description in config files
         run: |

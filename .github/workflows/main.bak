@@ -68,10 +68,10 @@ jobs:
             for addon_dir in ./addons/*/; do
               repo_name=$(basename "$addon_dir")
               for sub_dir in "$addon_dir"*/; do
-                config_file=$(find "$sub_dir" -type f -name "config.json" -print -quit)
+                config_file=$(find "$sub_dir" -maxdepth 1 -type f \( -name "config.json" -o -name "config.yaml" \) -print -quit)
                 
                 if [[ -n "$config_file" ]]; then
-                  main_config_path="./addons/$repo_name/$(basename "$sub_dir")/config.json"
+                  main_config_path="./addons/$repo_name/$(basename "$sub_dir")/$(basename "$config_file")"
         
                   if [[ -f "$main_config_path" ]]; then
                     addon_version=$(extract_version "$config_file")
