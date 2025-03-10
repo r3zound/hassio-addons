@@ -1,0 +1,19 @@
+name: Lidarr
+version: 0.8.1
+slug: lidarr
+description: 看起来和闻起来都像Sonarr但是为音乐而做。
+url: https://gh-proxy.com/github.com/hassio-addons/addon-lidarr/tree/main/README.md
+codenotary: codenotary@frenck.dev
+webui: http://[HOST]:[PORT:8686]
+init: false
+arch:
+- aarch64
+- amd64
+- armv7
+map:
+- addon_config:rw
+- share:rw
+- media:rw
+ports:
+  8686/tcp: 8686
+image: ghcr.nju.edu.cn/hassio-addons/lidarr/{arch}
