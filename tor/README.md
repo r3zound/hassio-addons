@@ -1,35 +1,30 @@
-# Home Assistant 社区插件：Tor
+# Home Assistant 社区插件: Tor
 
 [![发布][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
+[![在 Discord 上联系][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
 [![通过 GitHub Sponsors 支持 Frenck][github-sponsors-shield]][github-sponsors]
 
 [![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
 
-保护您的隐私并通过 Tor 访问 Home Assistant。
+保护您的隐私，通过 Tor 访问 Home Assistant。
 
 ## 关于
 
-这个 Tor 插件允许您将 Home Assistant 实例作为 Onion 站点访问，
-通过 [Tor 的隐藏服务][tor-hidden-service] 功能。启用此功能后，
-您不需要打开防火墙端口或设置 HTTPS 以实现安全的远程访问。
+这个 Tor 插件允许您将 Home Assistant 实例作为 Onion 网站进行访问，
+通过 [Tor 的隐形服务][tor-hidden-service] 特性。启用此功能后，
+您无需打开防火墙端口或设置 HTTPS 以启用安全的远程访问。
 
-如果您想要：
+如果您希望：
 
-- 远程访问您的 Home Assistant 实例，而不需要打开防火墙端口
-  或设置 VPN。
-- 不想或者不知道如何获取 SSL/TLS 证书和 HTTPS
-  配置设置。
-- 想要阻止攻击者甚至能够访问/扫描您的端口和
-  服务器。
-- 想要阻止任何人知道您的家庭 IP 地址并查看您的
-  Home Assistant 流量。
+- 在不打开防火墙端口或设置 VPN 的情况下，远程访问您的 Home Assistant 实例。
+- 不想或不知道如何获取 SSL/TLS 证书和 HTTPS 配置。
+- 阻止攻击者能够访问/扫描您的端口和服务器。
+- 阻止任何人知道您的家庭 IP 地址以及看到您与 Home Assistant 的流量。
 
-该插件还提供了在 Tor 网络中打开 SOCKS 代理的可能性。
-允许您通过 Home Assistant 安装从任何 (支持 SOCKS 的)
-应用程序访问 Tor。
+该插件还提供了将Sock代理打开到
+Tor 网络的可能性。允许您通过您的 Home Assistant 安装从任何支持 (SOCKS) 的应用程序访问 Tor。
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons

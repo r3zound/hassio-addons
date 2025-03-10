@@ -1,14 +1,14 @@
-# 家庭助理社区插件：Radarr
+# Home Assistant Community Add-on: Radarr
 
 [![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
 
 [![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
 
-用于Usenet和torrent用户的电影组织/管理工具。
+电影组织/管理工具，适用于 Usenet 和 Torrent 用户。
 
 ## 关于
 
-[Radarr] 是针对Usenet和BitTorrent用户的电影收藏管理器。它可以监控多个RSS源以获取新电影，并将与客户端和索引器对接，以抓取、排序和重命名这些电影。它还可以配置为在库中存在的文件有更好的质量格式可用时，自动升级这些文件的质量。
+[Radarr] 是一款用于 Usenet 和 BitTorrent 用户的电影收藏管理器。它可以监控多个 RSS 源以获取新电影，并与客户端和索引器接口来抓取、排序和重命名这些电影。它也可以配置为在更高质量格式可用时，自动升级库中现有文件的质量。
 
 [Radarr]: https://radarr.video/
 

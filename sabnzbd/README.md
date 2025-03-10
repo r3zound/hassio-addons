@@ -4,11 +4,11 @@
 
 [![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
 
-免费且易用的二进制新闻阅读器。
+免费且易于使用的二进制新闻阅读器。
 
 ## 关于
 
-[SABnzbd] 是一个多平台的二进制新闻组下载器。该程序在后台运行，简化了从 [Usenet] 下载、验证和提取文件的过程。
+[SABnzbd] 是一个跨平台的二进制新闻组下载器。该程序在后台运行，简化了从 [Usenet] 下载、验证和提取文件的过程。
 
 [SABnzbd]: https://sabnzbd.org/
 [Usenet]: http://en.wikipedia.org/wiki/Usenet

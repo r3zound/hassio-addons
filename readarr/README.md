@@ -1,14 +1,14 @@
 # Home Assistant Community Add-on: Readarr
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+[![发布][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
-书籍管理和自动化（电子书的Sonarr）。
+书籍管理和自动化（针对电子书的Sonarr）。
 
 ## 关于
 
-[Readarr] 是一个针对 Usenet 和 BitTorrent 用户的电子书和有声书收藏管理器。它可以监控多个 RSS 源，获取你最喜欢作者的新书，并进行抓取、排序和重命名。请注意，只支持特定类型的书籍。
+[Readarr] 是一个面向Usenet和BitTorrent用户的电子书和有声书收藏管理器。它可以监控多个RSS源，获取您喜欢的作者的新书，并将其抓取、整理和重命名。请注意，仅支持单一类型的特定书籍。
 
 [Readarr]: https://readarr.com
 

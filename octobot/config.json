@@ -4,12 +4,12 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "翻译：Octobot 是一个强大的开源加密货币交易机器人。",
+  "description": "奥克托机器人是一款强大的开源加密货币交易机器人。",
   "environment": {},
   "map": [
     "addon_config:rw"
   ],
-  "version": "2.0.8",
+  "version": "2.0.9",
   "name": "octobot",
   "options": {},
   "ports": {
@@ -21,7 +21,7 @@
   "schema": {},
   "slug": "octobot",
   "startup": "services",
-  "upstream": "2.0.8",
+  "upstream": "2.0.9",
   "url": "https://gh-proxy.com/github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:5001]",
   "ingress": false,

@@ -1,35 +1,35 @@
-# Home Assistant 社区附加组件：pterodactyl 面板
-![支持 aarch64 架构][aarch64-shield] ![支持 amd64 架构][amd64-shield]
-![项目维护][maintenance-shield]
+# Home Assistant Community Add-on: pterodactyl Panel
+![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield]
+![Project Maintenance][maintenance-shield]
 
-pterodactyl 面板游戏服务器用于 Homeassistant OS
+pterodactyl Panel Gameserver for Homeassistant OS
 
-![Ingress 支持](../_images/pterodactyl/ingress.png)
+![Ingress Support](../_images/pterodactyl/ingress.png)
 
-## 关于
+## About
 
-**警告：目前仅有限工作。现在可以被视为测试版且不稳定。如果您的游戏服务器丢失等情况，请不要责怪我。**
-**对于我来说，我至今无法登录。似乎与 redis 有关，但我不太明白具体是什么。**
+**WARNING: Currently only limited working. Right now it can be considered beta and unstable. Don't blame me if your gameservers would be lost etc.**
+**For me I am unable to login until now. Seems to have something to do with redis, but I dont get what exactly.**
 
-Pterodactyl® 是一个免费、开源的游戏服务器管理面板，使用 PHP、React 和 Go 构建。Pterodactyl 考虑到安全性，在隔离的 Docker 容器中运行所有游戏服务器，同时向最终用户提供美观直观的用户界面。<br />
-不要再安于现状。让游戏服务器在您的平台上成为一流公民。
+Pterodactyl® is a free, open-source game server management panel built with PHP, React, and Go. Designed with security in mind, Pterodactyl runs all game servers in isolated Docker containers while exposing a beautiful and intuitive UI to end users.<br />
+Stop settling for less. Make game servers a first class citizen on your platform.
 
-## 安装
+## Installation
 
-[![FaserF Homeassistant 添加组件](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2FFaserF%2Fhassio-addons)
+[![FaserF Homeassistant Addons](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2FFaserF%2Fhassio-addons)
 <br />
-此附加组件的安装非常简单，和安装任何其他自定义 Home Assistant 附加组件没有区别。<br />
-只需点击上面的链接或将我的仓库添加到 hassio 添加组件仓库： <https://github.com/FaserF/hassio-addons>
+The installation of this add-on is pretty straightforward and not different in comparison to installing any other custom Home Assistant add-on.<br />
+Just click the link above or add my repo to the hassio addons repositorys: <https://github.com/FaserF/hassio-addons>
 
-## 配置
+## Configuration
 
-在安装此组件之前，需要 MariaDB 集成！
+The MariaDB Integration is needed before installing this one!
 
-然后在 MariaDB 附加组件中创建一个名为 "pterodactyl" 的新用户，具有对数据库 "panel" 的完全权限。
+Afterwards create a new user in the MariaDB Addon called "pterodactyl" with full permissions on the database "panel"
 
-**注意**：_在配置更改时，请记得重启附加组件。_
+**Note**: _Remember to restart the add-on when the configuration is changed._
 
-附加组件配置示例：
+Example add-on configuration:
 
 ```yaml
 password: your_MariaDB_password
@@ -38,7 +38,7 @@ certfile: itdoesntmatter_as_ssl_is_set_to_false
 keyfile: itdoesntmatter_as_ssl_is_set_to_false
 ```
 <br />
-推荐的附加组件配置示例：
+Recommended Example add-on configuration:
 
 ```yaml
 password: your_MariaDB_password
@@ -47,63 +47,75 @@ certfile: fullchain.pem
 keyfile: privkey.pem
 ```
 
-**注意**：_这只是一个示例，不要复制粘贴！请自己创建！_
+**Note**: _This is just an example, don't copy and paste it! Create your own!_
 
-### 选项：`password`
+### Option: `password`
 
-该选项是必需的。MariaDB "pterodactyl" 用户的密码。
+This option is required. The password for the mariadb "pterodactyl" user.
 
-### 选项：`ssl`
+### Option: `ssl`
 
-启用/禁用 Web 界面的 SSL（HTTPS）。
+Enables/Disables SSL (HTTPS) on the web interface.
 
-如果您需要自签名证书，请查看我的 openssl 附加组件： <https://github.com/FaserF/hassio-addons/tree/master/openssl>
+If you need a self-signed certificate, have a look at my openssl addon: <https://github.com/FaserF/hassio-addons/tree/master/openssl>
 
-**注意**：_文件必须存储在 `/ssl/` 目录下，这是默认位置。_
+**Note**: _The files MUST be stored in `/ssl/`, which is the default_
 
-### 选项：`reset_database`
+### Option: `reset_database`
 
-启用后可以重置 pterodactyl 的数据库文件。请注意此操作无法撤销！小心使用。
+Enables it to reset the database files for pterodactyl. Please not this action can not be undone! Use it with care.
 
-### 选项：`password`
+### Option: `password`
 
-该选项是必需的。您的 pterodactyl 用户的 MariaDB 密码。
+This option is required. Your MariaDB password for the pterodactyl user.
 
-**注意**：_文件必须存储在 `/share/` 文件夹中的某个位置。_
+**Note**: _The file MUST be stored somewhere within the `/share/` folder_
 
-## 默认登录凭据
+## Default Login Credentials
 
-电子邮件： <admin@example.com>
-用户名： admin
-密码： 在选项 `password` 中定义的密码
+E-Mail: <admin@example.com>
+Username: admin
+Password: the password defined in the option `password`
 
 ## Ingress
 
-该附加组件将支持 Homeassistant Ingress。到目前为止，它仍在进行中！
+This addon will support Homeassistant Ingress. Until now it is work in progress!
 
-## 支持
+## Support
 
-有问题或疑问？
+Got questions or problems?
 
-您可以在这里 [打开一个问题][issue] GitHub。
-请记住，该软件仅在 armv7 的 Raspberry Pi 4 上进行测试。
+You can [open an issue here][issue] GitHub.
+Please keep in mind, that this software is only tested on armv7 running on a Raspberry Pi 4.
 
-## 作者与贡献者
+## Authors & contributors
 
-原始程序来自 pterodactyl 项目。有关更多信息，请访问此页面： <https://pterodactyl.io/>
-该 hassio 附加组件由 [FaserF] 提供。
+The original program is from the pterodactyl Project. For more informatios please visit this page: <https://pterodactyl.io/>
+The hassio addon is brought to you by [FaserF].
 
-## 许可证
+## License
 
-MIT 许可证
+MIT License
 
-版权 (c) 2019-2022 FaserF 及 pterodactyl 项目
+Copyright (c) 2019-2022 FaserF & pterodactyl Project
 
-特此免费授予任何获得此软件及相关文档文件（以下简称“软件”）副本的人，允许其在不受限制的情况下处理该软件，包括但不限于使用、复制、修改、合并、发布、分发、再许可和/或销售软件副本，并且允许提供软件的人这样做，前提是满足以下条件：
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-上述版权声明和本许可声明应包含在所有软件副本或实质性部分中。
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-软件是“按原样”提供的，没有任何种类的保证，无论是明示或暗示，包括但不限于对适销性、特定用途的适用性以及不侵权的保证。在任何情况下，作者或版权持有者都不对因软件或软件使用或其他交易而引起的任何索赔、损害或其他责任承担责任，无论是合同诉讼、侵权还是其他原因。
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2023.svg
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg

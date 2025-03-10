@@ -1,14 +1,14 @@
 # Home Assistant 社区插件：Overseerr
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
-用于 Plex 生态系统的请求管理和媒体发现工具。
+Plex 生态系统的请求管理和媒体发现工具。
 
 ## 关于
 
-[Overseerr] 是一个多平台二进制新闻组下载器。该程序在后台运行，简化了从 [Usenet] 下载、验证和提取文件的过程。
+[Overseerr] 是一个多平台的二进制新闻组下载器。该程序在后台运行，简化从 [Usenet] 下载、验证和提取文件的过程。
 
 [Overseerr]: https://overseerr.org/
 [Usenet]: http://en.wikipedia.org/wiki/Usenet
