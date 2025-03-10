@@ -1,7 +1,7 @@
 name: Apache2 Minimal
-version: 2.12.2
+version: 2.12.3
 slug: apache2-minimal
-description: 开源的Web服务器，没有PHP和最小的额外模块。
+description: 开源Web服务器，没有PHP和最小的额外模块。
 url: https://gh-proxy.com/github.com/FaserF/hassio-addons/tree/master/apache2-minimal
 arch:
   - armhf

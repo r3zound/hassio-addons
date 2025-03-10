@@ -1,138 +1,254 @@
-# Home Assistant社区插件：Plex媒体服务器
+# ~~Home Assistant Community Add-on~~ Dianlight: Plex Media Server
 
-Plex插件将您最喜爱的媒体集合在一个地方，使其美观且易于享受。此插件提供的Plex媒体服务器，组织您的个人视频、音乐和照片集合，并将其流式传输到您所有的设备上。
+Based on original **Home Assistant Community Add-on: Plex Media Server**
 
-## 安装
+The plex add-on brings your favorite media together in one place, making it
+beautiful and easy to enjoy. The Plex Media Server provided by this addon,
+organizes your personal video, music, and photo collections
+and streams them to all of your devices.
 
-此插件的安装非常简单，与安装任何其他Home Assistant插件没有区别。
+## Installation
 
-1. 点击下面的Home Assistant我的按钮，打开您Home Assistant实例中的插件。
+The installation of this add-on is pretty straightforward and not different in
+comparison to installing any other Home Assistant add-on.
 
-   [![在您的Home Assistant实例中打开此插件。][addon-badge]][addon]
+1. Search for the “Plex Media Server” add-on in the dianlight add-on store
+   and install it.
+1. Surf to <https://www.plex.tv/claim> and get your claim token.
+1. Update the add-on config with the claim code you've got in the previous step.
+1. Save the add-on configuration.
+1. Start the "Plex Media Server" add-on.
+1. Check the logs of the "Plex Media Server" to see if everything went well.
+1. Login to the Plex admin interface and complete the setup process.
 
-1. 点击“安装”按钮以安装插件。
-1. 访问<https://www.plex.tv/claim>并获取您的索赔令牌。
-1. 使用您在上一步中获得的索赔代码更新插件配置。
-1. 保存插件配置。
-1. 启动“Plex媒体服务器”插件。
-1. 检查“Plex媒体服务器”的日志以查看一切是否顺利。
-1. 登陆到Plex管理界面并完成设置过程。
+**NOTE**: When adding media locations, please use `/share` as the base
+directory.
 
-**注意**：添加媒体位置时，请使用`/share`和`/media`作为基本目录。
+## Configuration
 
-## 配置
+**Note**: _Remember to restart the add-on when the configuration is changed._
 
-**注意**：_更改配置时，请记得重新启动插件。_
-
-示例插件配置：
+Example add-on configuration:
 
 ```yaml
 log_level: info
 claim_code: claim-cAMrqFrenckFU4x445Tn
+webtools: true
+networkdisks:
+ - //serverip/share
+cifsusername: hassio
+cifspassword: password 
+cifsversion: "3.0"
 ```
 
-**注意**：_这只是一个示例，请不要直接复制粘贴！请创建您自己的！_
+**Note**: _This is just an example, don't copy and paste it! Create your own!_
 
-### 选项：`log_level`
+### Option: `log_level`
 
-`log_level`选项控制插件的日志输出级别，可以更改为更加详细或减少详细，这在您处理未知问题时可能会有所帮助。可能的值为：
+The `log_level` option controls the level of log output by the addon and can
+be changed to be more or less verbose, which might be useful when you are
+dealing with an unknown issue. Possible values are:
 
-- `trace`: 显示每个细节，如所有调用的内部函数。
-- `debug`: 显示详细的调试信息。
-- `info`: 正常（通常）感兴趣的事件。
-- `warning`: 不是错误的异常事件。
-- `error`: 不需要立即采取行动的运行时错误。
-- `fatal`: 出现严重问题。插件变得不可用。
+- `trace`: Show every detail, like all called internal functions.
+- `debug`: Shows detailed debug information.
+- `info`: Normal (usually) interesting events.
+- `warning`: Exceptional occurrences that are not errors.
+- `error`:  Runtime errors that do not require immediate action.
+- `fatal`: Something went terribly wrong. Add-on becomes unusable.
 
-请注意，每个级别自动包含来自更严重级别的日志消息，例如，`debug`还会显示`info`消息。默认情况下，`log_level`设置为`info`，这是推荐设置，除非您正在进行故障排除。
+Please note that each level automatically includes log messages from a
+more severe level, e.g., `debug` also shows `info` messages. By default,
+the `log_level` is set to `info`, which is the recommended setting unless
+you are troubleshooting.
 
-### 选项：`claim_code`
+### Option: `claim_code`
 
-为了让您的服务器登录到您的Plex账户，它需要一个所谓的“索赔代码”。登录Plex允许Plex定位并连接到您的服务器，并解锁所有类型的功能。
+To allow your server to sign-in to your Plex account, it needs a so-called
+"Claim Code". Sign-ing into Plex allows Plex to locate and connect to
+your server and unlocks all kinds of features as well.
 
-要获取您的代码，请访问<https://www.plex.tv/claim>。
+In order to get your code surf to <https://www.plex.tv/claim>.
 
-此代码仅被插件使用一次。服务器成功通过Plex身份验证后，可以删除该代码。
+This code is only used once by the add-on. As soon as the
+server is successfully authenticated with Plex, the code may be removed.
 
-## 解决与Plex的连接问题
+### Option: `webtools`
 
-Plex的设置非常简单且容易。大多数设置会自动检测。尽管如此，它无法识别其在您家庭网络上的IP。这可能导致与一些Plex应用（例如，Samsung Tizen Plex应用）的连接问题。
+[WebTools][webtools] is a plug-in that contains a collection of tools
+for the Plex Media Server.
 
-这并不是Plex的错，而是因为这个插件运行的Docker生态系统。不过，Plex中有一个选项可以帮助解决这个问题，但稍显隐藏。
+Some of the tools:
 
-- 登录到Plex网页界面。
-- 转到设置。
-- 点击服务器选项卡。
-- 在左侧，选择“网络”。
-- 确保您查看的是高级视图。
-  右上角有一个“显示高级”按钮。
-- 将您的自定义网址添加到“自定义服务器访问网址”字段。
+- Manage Subs (Subtitles)
+- Logs (PMS)
+- UAS (Unsupported App Store)
+- FindMedia
+- PlayLists
+- TechInfo
 
-自定义网址是Plex客户端将使用的附加网址，以尝试连接到Plex。您可以列出多个网址，用逗号分隔。
+The plugin also allows you to add and install custom plugins.
 
-示例：
+Set this variable to `true` to enable it.
+
+### Option: `networkdisks`  <span style="color:red">PROTECTION MODE NEED TO DISABLED TO WORK</span>
+
+Is the list of networks share to mount at boot. The mounted driver is on `/<SERVER>/<SHARE>` directory.
+
+#### Option: `cifsusername` 
+
+The username to use to mount the network shares
+
+#### Option: `cifspassword` 
+
+The password used to mount the networks shares
+
+#### Option: `cifsversion`
+
+The version of cifs to use. Default `3.0`.
+Valid values are `3.0`, `2.1`, `2.0`, `1.0`. 
+
+## Solving connection issues with Plex
+
+Plex is pretty straightforward and pretty easy to set up. Most of the
+settings are detected automatically. Nevertheless, it fails to recognize
+its IP on your home network. This may cause connection issues with some
+Plex apps, e.g., the Samsung Tizen Plex app.
+
+This is not Plex its fault but is because of the Docker ecosystem, in
+which this add-on runs. Luckily, there is an option in Plex to help
+with that, but it is a little hidden.
+
+- Login to the Plex web interface.
+- Goto setting.
+- Click the server tab.
+- On the left side, choose "Network".
+- Be sure you are looking at the advanced view.
+  There is a button "Show Advanced" in the top right.
+- Add your custom URLs to "Custom server access URLs" field.
+
+The custom URLs are additional URLs Plex clients will use to try to connect
+to Plex. You can list multiple if you'd like, separated by a comma.
+
+Example:
 
 ```txt
 http://hassio.local:32400,http://192.168.1.88:32400,http://mydomain.duckdns.org:32400
 ```
 
-## 已知问题与限制
+## Port 1900 add-on conflicts
 
-- 该插件支持ARM架构的设备，然而，设备至少必须是ARMv7设备。（Raspberry Pi 1和Zero不支持）。
-- 此插件可以在Raspberry Pi上运行。虽然它仍然可能有用，但不要期望太多。一般来说，Pi缺乏处理能力，可能无法流式传输您的媒体；因此不建议在这种设备上使用此插件。
-- 此插件无法为您添加/挂载任何额外的USB或其他设备。这是Home Assistant的限制。如果您想使用额外的设备，您需要自己修改主机系统，这不受Home Assistant项目或社区插件团队的支持。
-- Plex Pass为您提供对新功能的独占访问，这些功能通过媒体服务器的Beta版本渠道提供。目前，这个“Beta”版本的运行不被此插件支持。
-- 此插件不支持Plex通过DLNA进行访问。
+Plex Media server uses port `1900` for access to the Plex DLNA Server. This port
+is also used by multiple other add-ons, like the AirSonos and UniFi add-ons.
 
-## 更新日志与发行版本
+In case they conflict, the Plex Media Server add-on will fail to start.
+The following error message is shown in the Hass.io system log:
 
-该存储库使用[GitHub的发行版本][releases]功能维护变更日志。
+```txt
+[hassio.docker] Can't start addon_40817795_plex: 500 Server Error:
+Internal Server Error ("driver failed programming external connectivity
+on endpoint addon_40817795_plex):
+Error starting userland proxy: listen udp 0.0.0.0:1900:
+bind: address already in use
+```
 
-发行版本基于[语义版本控制][semver]，使用`MAJOR.MINOR.PATCH`的格式。简而言之，版本将根据以下内容增量增加：
+You have two choices:
 
-- `MAJOR`: 不兼容或重大更改。
-- `MINOR`: 向后兼容的新特性和增强功能。
-- `PATCH`: 向后兼容的错误修复和包更新。
+- Disable or remove the conflicting add-on
+- Change the port number 1900 to something else.
 
-## 支持
+The last option will cause you to lose the DLNA capabilities of the
+Plex Media Server.
 
-有问题？
+## Known issues and limitations
 
-您可以通过几种方式获得解答：
+- This add-on does support ARM-based devices, nevertheless, they must
+  at least be an ARMv7 device. (Raspberry Pi 1 and Zero is not supported).
+- This add-on will be able to run on a Raspberry Pi. While it still can be
+  useful, don't expect too much. In general, the Pi lacks the processing power
+  and is probably not able to stream your media; therefore it is not
+  recommended using this add-on on such a device.
+- ~~This add-on cannot add/mount any additional USB or other devices for you.
+  This is a Hass.io limitation. In case you'd like to use extra devices,
+  you'll have to modify the host system yourself and is not supported by the
+  Hass.io or Community add-ons team.~~
+- A Plex Pass gives you exclusive access to new features, which are
+  available through a Beta version channel of the media server. At this
+  time, running this "Beta" version, is not supported by this add-on.
 
-- [Home Assistant社区插件Discord聊天服务器][discord]以获得插件支持和功能请求。
-- [Home Assistant Discord聊天服务器][discord-ha]进行一般Home Assistant讨论和问题。
-- Home Assistant [社区论坛][forum]。
-- 加入[Reddit子论坛][reddit]，在[/r/homeassistant][reddit]中。
+## Changelog & Releases
 
-您还可以在这里[打开一个问题][issue] GitHub。
+This repository keeps a change log using [GitHub's releases][releases]
+functionality. The format of the log is based on
+[Keep a Changelog][keepchangelog].
 
-## 作者与贡献者
+Releases are based on [Semantic Versioning][semver], and use the format
+of ``MAJOR.MINOR.PATCH``. In a nutshell, the version will be incremented
+based on the following:
 
-该存储库的初始设置由[Franck Nijhof][frenck]完成。
+- ``MAJOR``: Incompatible or major changes.
+- ``MINOR``: Backwards-compatible new features and enhancements.
+- ``PATCH``: Backwards-compatible bugfixes and package updates.
 
-有关所有作者和贡献者的完整列表，请查看[贡献者页面][contributors]。
+## Support
 
-## 许可
+Got questions?
 
-MIT许可证
+You have several options to get them answered:
 
-版权所有 (c) 2018-2025 Franck Nijhof
+<!--
+- The [Home Assistant Community Add-ons Discord chat server][discord] for add-on
+  support and feature requests.
+- The [Home Assistant Discord chat server][discord-ha] for general Home
+  Assistant discussions and questions.
+- The Home Assistant [Community Forum][forum].
+- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+-->
 
-特此免费授予任何获得此软件及相关文档文件（以下简称“软件”）副本的人以无限制地处理该软件，包括但不限于使用、复制、修改、合并、出版、分发、再许可和/或出售该软件的副本，以及允许提供软件的人这样做，但须符合以下条件：
+You could also [open an issue here][issue] GitHub.
 
-以上版权声明和本许可声明应包含在所有软件的副本或实质性部分中。
+## Authors & contributors
 
-该软件是按“原样”提供的，没有任何形式的保证，明示或暗示，包括但不限于对适销性、特定用途适用性和非侵权的保证。在任何情况下，作者或版权持有人均不对因使用或其他交易中产生的、与软件相关的、与软件或其使用或其他交易相关的任何索赔、损害或其他责任承担责任。
+The original setup of this repository is by [Franck Nijhof][frenck].
 
-[addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
-[addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_plex&repository_url=https%3A%2F%2Fgithub.com%2Fhassio-addons%2Frepository
-[contributors]: https://github.com/hassio-addons/addon-plex/graphs/contributors
+For a full list of all authors and contributors,
+check [the contributor's page][contributors].
+
+## License
+
+MIT License
+
+Copyright (c) 2018-2020 Franck Nijhof
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+[contributors]: https://github.com/dianlight/addon-plex/graphs/contributors
+<!--
 [discord-ha]: https://discord.gg/c5DvZ4e
 [discord]: https://discord.me/hassioaddons
 [forum]: https://community.home-assistant.io/t/home-assistant-community-add-on-plex-media-server/54383?u=frenck
 [frenck]: https://github.com/frenck
-[issue]: https://github.com/hassio-addons/addon-plex/issues
+-->
+[issue]: https://github.com/dianlight/addon-plex/issues
+[keepchangelog]: http://keepachangelog.com/en/1.0.0/
+<!--
 [reddit]: https://reddit.com/r/homeassistant
-[releases]: https://github.com/hassio-addons/addon-plex/releases
-[semver]: https://semver.org/spec/v2.0.0.html
+-->
+[releases]: https://github.com/dianlight/addon-plex/releases
+[semver]: http://semver.org/spec/v2.0.0.htm
+[webtools]: https://github.com/ukdtom/WebTools.bundle/wiki
