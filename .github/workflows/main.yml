@@ -124,7 +124,7 @@ jobs:
               repo_name=$(basename "$addon_dir")
               for sub_dir in "$addon_dir"*/; do
                 latest_file=$(find "$sub_dir" -maxdepth 1 -type f \( -name "config.json" -o -name "config.yaml" \) -print -quit)
-                current_path="./$(basename "$sub_dir")/$(basename "$latest_file")"
+                current_path="$(basename "$sub_dir")/$(basename "$latest_file")"
                 latest_version=$(extract_version "$latest_file")
                 current_version=$(extract_version "$current_path")
                 if [[ "$latest_version" != "$current_version" ]]; then
