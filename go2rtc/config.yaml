@@ -1,12 +1,12 @@
 # https://gh-proxy.com/github.com/AlexxIT/builder/blob/master/builder.sh
 name: go2rtc
-description: 英特尔（VAAPI）和树莓派（V4L2）的硬件转码
+description: 硬件转码Intel（VAAPI）和树莓派（V4L2）
 url: https://gh-proxy.com/github.com/AlexxIT/go2rtc
 image: alexxit/go2rtc
 arch: [ amd64, aarch64, i386, armv7 ]
 
 # https://developers.home-assistant.io/docs/add-ons/configuration
-version: 1.9.8
+version: 1.9.9
 slug: go2rtc
 init: false
 startup: system
