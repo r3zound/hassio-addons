@@ -1,6 +1,6 @@
 ---
 version: 9.16.0
-slug: ssh
+slug: ssh2
 name: Terminal & SSH
 description: 允许通过SSH远程登录到Home Assistant。
 url: https://gh-proxy.com/github.com/home-assistant/addons/tree/master/ssh
