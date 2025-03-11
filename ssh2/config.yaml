@@ -2,8 +2,8 @@
 version: 9.16.0
 slug: ssh
 name: Terminal & SSH
-description: Allow logging in remotely to Home Assistant using SSH
-url: https://github.com/home-assistant/addons/tree/master/ssh
+description: 允许通过SSH远程登录到Home Assistant。
+url: https://gh-proxy.com/github.com/home-assistant/addons/tree/master/ssh
 codenotary: notary@home-assistant.io
 advanced: true
 arch:
@@ -16,7 +16,7 @@ audio: true
 hassio_api: true
 hassio_role: manager
 host_dbus: true
-image: homeassistant/{arch}-addon-ssh
+image: docker.m.daocloud.io/homeassistant/{arch}-addon-ssh
 ingress: true
 init: false
 map:
