@@ -282,4 +282,3 @@ jobs:
           git add .
           git commit -m "Sync addons automatically at $(date +'%Y-%m-%d %H:%M:%S')"
           git push
-          fi
