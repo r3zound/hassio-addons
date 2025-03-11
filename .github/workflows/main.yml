@@ -132,6 +132,7 @@ jobs:
           rm -rf addons/repository-main/mitmproxy
           rm -rf addons/hassio-addons-master/plex
           rm -rf addons/hassio-addons-master/addon-plex
+          rm -rf addons/repository-master/whisparr
 
 
       - name: Check and clean up addons
@@ -256,7 +257,7 @@ jobs:
               echo "Moved directory: $ITEM"
             fi
           done
-          rm -rf whisparr _images # 删除无用的仓库
+          rm -rf whisparr _images scripts script template # 删除无用的仓库
 
 
       - name: sync hass-panel
