@@ -2,9 +2,7 @@ name: HACS极速版安装器
 version: "2.0.0"
 slug: hacs-china
 image: ghcr.nju.edu.cn/hacs-china/{arch}-addon-get
-description: $'最简单的HACS极速版安装方式
-
-（由于您没有提供具体的安装步骤或方法，我无法直接给出相应的翻译。如果您能提供更详细的信息，我会尽力帮助您进行翻译。）'
+description: 最简单的HACS极速版安装方式
 startup: once
 boot: manual
 url: https://gitee.com/hacs-china/addons/tree/china/get
