@@ -103,10 +103,35 @@ jobs:
           for file in *.zip; do
             unzip -o -q "$file" -d addons && rm "$file"
           done
+
+          mv addons/hassio-addons-master/bazarr addons/hassio-addons-master/bazarr-nas
+          mv addons/hassio-addons-master/lidarr addons/hassio-addons-master/lidarr_nas
+          mv addons/hassio-addons-master/radarr addons/hassio-addons-master/radarr_nas
+          mv addons/hassio-addons-master/readarr addons/hassio-addons-master/readarr_nas
+          mv addons/hassio-addons-master/sonarr addons/hassio-addons-master/sonarr_nas
+
+          mv addons/repository-master/ssh addons/repository-master/ssh2
+          sed -i 's/^slug: ssh$/slug: ssh2/' addons/repository-master/ssh2/config.yaml
+          mv addons/repository-master/overseerr addons/repository-master/overseerr-comunity
+          sed -i 's/^slug: overseerr$/slug: overseerr-0/' addons/repository-master/overseerr-comunity/config.yaml
+          mv addons/repository-master/prowlarr addons/repository-master/prowlarr-comunity
+          sed -i 's/^slug: prowlarr$/slug: prowlarr-0/' addons/repository-master/prowlarr-comunity/config.yaml
+          mv addons/repository-master/sabnzbd addons/repository-master/sabnzbd-comunity
+          sed -i 's/^slug: sabnzbd$/slug: sabnzbd-0/' addons/repository-master/sabnzbd-comunity/config.yaml
+          mv addons/repository-master/tor addons/repository-master/tor-comunity
+          sed -i 's/^slug: tor$/slug: tor-0/' addons/repository-master/tor-comunity/config.yaml
+
+
+
+
+
       - name: Remove unwanted files
         run: |
           find addons/ -name ".*" -exec rm -rf {} + 
           find addons/* -maxdepth 1 -type f -exec rm -f {} +
+          rm -rf addons/repository-main/mitmproxy
+          rm -rf addons/hassio-addons-master/plex
+          rm -rf addons/hassio-addons-master/addon-plex
 
 
       - name: Check and clean up addons
