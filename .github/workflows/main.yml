@@ -181,7 +181,7 @@ jobs:
         run: |
                   
                   find ./addons -type f \( -name "README.md" -o -name "DOCS.md" \) -print0 | xargs -0 -P 5 -I {} sh -c '
-                    timeout 30s ai-markdown-translator -i "{}" -o "{}" -l "中文" || echo "{} translation failed or timed out."
+                    timeout 90s ai-markdown-translator -i "{}" -o "{}" -l "Chinese" || echo "{} translation failed or timed out."
                   '
 
 
