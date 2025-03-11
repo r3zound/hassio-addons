@@ -54,7 +54,7 @@ jobs:
             ["haberda"]="haberda/hassio_addons:master"
             ["AlexxIT"]="AlexxIT/hassio-addons:master"
             ["da-anda"]="da-anda/hass-io-addons:main"
-            ["hacs-china"] = "hacs-china/addons:china"
+            ["hacs-china"]="hacs-china/addons:china"
           )
 
 
