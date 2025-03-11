@@ -56,6 +56,8 @@ Excellent third-party libraries:
 - 🛠️ [**Haberda Addons**](https://github.com/haberda/hassio_addons): Addons by Haberda
 - 🏠 [**AlexxIT Addons**](https://github.com/AlexxIT/hassio-addons): Addons by AlexxIT
 - 🛠️ [**Da-anda Addons**](https://github.com/da-anda/hass-io-addons): Addons by Da-anda
+- 🇨🇳 [**HACS China Addons**](https://github.com/hacs-china/addons): HACS China Edition Addons
+
 
 
 ## Translation Technology Explanation

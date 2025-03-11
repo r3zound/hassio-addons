@@ -68,6 +68,8 @@
 - 🛠️ [**Haberda Addons**](https://github.com/haberda/hassio_addons): Haberda 的加载项
 - 🖥️ [**AlexxIT Addons**](https://github.com/AlexxIT/hassio-addons): AlexxIT 的加载项
 - 🛠️ [**Da-anda Addons**](https://github.com/da-anda/hass-io-addons): Da-anda 的加载项
+- 🇨🇳 [**HACS China Addons**](https://github.com/hacs-china/addons): HACS 中国版加载项
+
 
 
 ## 🌐 翻译技术说明
