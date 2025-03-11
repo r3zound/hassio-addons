@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Gitea for Home Assistant\n\nGitea 是一个开源的代码托管平台，类似于 GitHub。Home Assistant 是一个智能家居自动化系统，用于管理和控制家庭设备。将 Gitea 与 Home Assistant 集成可以帮助用户在智能家居环境中管理他们的代码仓库和自动化任务。\n\n例如，你可以使用 Gitea 来存储你的 Home Assistant 配置文件、脚本和其他相关项目，并通过 Home Assistant 自动化这些项目的部署和管理。这样，你可以轻松地在不同的设备和平台上同步更新和更改，从而提高智能家居系统的灵活性和可扩展性。",
+  "description": "Gitea for Home Assistant",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "代理服务器绕过Cloudflare保护\n\n注：Cloudflare是云flare公司的简称，是一家全球性的CDN（内容分发网络）和DDoS攻击防护服务提供商。Cloudflare的保护措施通常用于防止恶意流量或攻击对网站造成影响。如果需要绕过这种保护，可能涉及违反法律或协议的行为，因此建议不要尝试这样做。在合法合规的前提下，可以考虑使用其他方法来访问受保护的网站或资源。",
+  "description": "代理服务器绕过Cloudflare保护",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",

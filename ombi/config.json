@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "自托管Plex请求和用户管理系统\n\n请注意，由于“Plex”是专有软件的名称，因此可能需要特定的许可或使用条款。此外，根据您所在的国家/地区，某些功能可能受到法律限制。在使用此类系统之前，请确保遵守所有适用的法律法规。如果您有任何其他问题或需要进一步的帮助，请随时告诉我！",
+  "description": "自托管Plex请求和用户管理系统",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
