@@ -259,6 +259,8 @@ jobs:
               rm -rf "$TARGET_PATH"
               mv -f "$ITEM" "./" || echo "Failed to move directory: $ITEM"
               echo "Moved directory: $ITEM"
+              git add .
+              git commit -m "$ITEM"
             fi
           done
           rm -rf whisparr _images scripts script template # 删除无用的仓库
