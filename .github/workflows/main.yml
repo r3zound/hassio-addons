@@ -249,6 +249,8 @@ jobs:
 
       - name: copy addons to root directory and delete the temp directory
         run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           for ITEM in addons/*/*; do
             BASENAME=$(basename "$ITEM") 
             TARGET_PATH="./$BASENAME"
@@ -260,7 +262,7 @@ jobs:
               mv -f "$ITEM" "./" || echo "Failed to move directory: $ITEM"
               echo "Moved directory: $ITEM"
               git add .
-              git commit -m "$ITEM"
+              git commit -m "added or updated $(basename "$ITEM") at $(date +'%Y-%m-%d %H:%M:%S')"
             fi
           done
           rm -rf whisparr _images scripts script template # 删除无用的仓库
@@ -279,11 +281,7 @@ jobs:
           
       - name: Commit and push changes
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           if ! git diff --quiet || ! git diff --staged --quiet; then
-            git add .
-            git commit -m "Sync addons automatically at $(date +'%Y-%m-%d %H:%M:%S')"
             git push
           else
             echo "No changes to commit."
