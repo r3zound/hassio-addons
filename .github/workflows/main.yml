@@ -122,8 +122,8 @@ jobs:
           mv addons/repository-master/tor addons/repository-master/tor-comunity
           sed -i 's/^slug: tor$/slug: tor-0/' addons/repository-master/tor-comunity/config.yaml
 
-          mv addons/addons-china/get addons/addons-china/get-china
-          sed -i 's/^slug: get$/slug: get-china/' addons/addons-china/get-china/config.yaml
+          mv addons/addons-china/get addons/addons-china/hacs-china
+          sed -i 's/^slug: get$/slug: hacs-china/' addons/addons-china/hacs-china/config.yaml
 
 
 
