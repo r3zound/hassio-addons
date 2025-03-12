@@ -26,9 +26,10 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get install jq -y
-          sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq
-          sudo chmod +x /usr/bin/yq
           npm install -g ai-markdown-translator
+        #  sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq
+        #  sudo chmod +x /usr/bin/yq
+          
 
       - name: downloading addons
         run: |
