@@ -26,7 +26,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get install jq -y
-          sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq
+          sudo wget -q https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq
           sudo chmod +x /usr/bin/yq
           npm install -g ai-markdown-translator
 
@@ -278,7 +278,7 @@ jobs:
               }
     
               # 遍历 ./addons/*/ 目录下的所有子目录
-              for addon_dir in ./addons/*/*/; do
+              find ./addons -type d | while read -r addon_dir; do
                   echo "Processing directory: $addon_dir"
                   
                   # 读取配置文件
@@ -290,6 +290,7 @@ jobs:
                   # 获取 build.json 文件中的镜像信息
                   build_json="$addon_dir/build.json"
                   if [[ -f "$build_json" ]]; then
+                      echo "Processing build.json in $addon_dir"
                       images=$(get_images_from_build_file "$build_json")
                       if [[ -n "$images" ]]; then
                           echo "Build images from build.json:"
@@ -308,6 +309,7 @@ jobs:
                   # 获取 build.yaml 文件中的镜像信息
                   build_yaml="$addon_dir/build.yaml"
                   if [[ -f "$build_yaml" ]]; then
+                      echo "Processing build.yaml in $addon_dir"
                       images=$(get_images_from_build_file "$build_yaml")
                       if [[ -n "$images" ]]; then
                           echo "Build images from build.yaml:"
@@ -326,6 +328,7 @@ jobs:
                   # 获取 Dockerfile 中的基础镜像
                   dockerfile_path="$addon_dir/Dockerfile"
                   if [[ -f "$dockerfile_path" ]]; then
+                      echo "Processing Dockerfile in $addon_dir"
                       image=$(get_docker_image_from_dockerfile "$dockerfile_path")
                       if [[ -n "$image" ]]; then
                           echo "Base image: $image"
@@ -335,7 +338,7 @@ jobs:
                           sed -i "s|$image|$modified_image|g" "$dockerfile_path"
                       fi
                   fi
-              done      
+              done
 
 #      - name: Translate markdown files
 #        run: |
