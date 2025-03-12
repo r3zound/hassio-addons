@@ -9,11 +9,9 @@
 
 💡 **如果您有任何想法或建议，希望我制作成Addon的，请随时留言！** 💬  
 
-🌐 **所有的修改和创建的目的只是为了让中国的用户可以使用各种优秀的Addons而不用担心网络导致的无法使用。**  
+🌐 **所有的修改和创建的目的只是为了让我们国人可以使用各种优秀的Addons而不用担心网络导致的无法使用。**  
 
 ⚠️ **本库存只为了增强 Home Assistant 的功能而建立，任何使用里面的工具导致的任何问题以及自行研究导致的违规使用本人均不承担任何后果。**  
-
-📍 **此站点仅为中国大陆地区所使用，如果您在境外，请使用下面这些原作者的链接。**  
 
 ❌ **本库的内容都不需要魔法，如果用魔法反而可能会安装失败。**  
 
@@ -36,8 +34,8 @@
 如果您觉得我花费大量时间维护这个库对您有帮助，欢迎请我喝杯奶茶，您的支持将是我持续改进的动力！
 
 <div style="display: flex; justify-content: space-between;">
-  <img src="https://gitee.com/desmond_GT/hassio-addons/raw/main/1_readme/Ali_Pay.jpg" height="593px" />
-  <img src="https://gitee.com/desmond_GT/hassio-addons/raw/main/1_readme/WeChat_Pay.jpg" height="593px" />
+  <img src="https://gitee.com/desmond_GT/hassio-addons/raw/main/1_readme/Ali_Pay.jpg" height="350px" />
+  <img src="https://gitee.com/desmond_GT/hassio-addons/raw/main/1_readme/WeChat_Pay.jpg" height="350px" />
 </div> 💖
 
 感谢您的支持与鼓励！
