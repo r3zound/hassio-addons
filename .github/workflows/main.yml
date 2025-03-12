@@ -292,16 +292,21 @@ jobs:
                   if [[ -f "$build_json" ]]; then
                       echo "Processing build.json in $addon_dir"
                       images=$(get_images_from_build_file "$build_json")
-                      images=$(jq -r '.build_from | to_entries[] | "\(.key) \(.value)"' build.json)
                       if [[ -n "$images" ]]; then
-                        echo "Build images from build.json:"
-                        echo "$images"
-                        while read -r arch old_image; do
-                          
-                          new_image="docker.1ms.run/${old_image#*/}" 
-                          echo "Arch: $arch, Old Image: $old_image New Image: $new_image"
-                          jq --arg arch "$arch" --arg new_image "$new_image" '.build_from[$arch] = $new_image' build.json > build.json.tmp && mv build.json.tmp build.json
-                        done <<< "$images"
+                          echo "Build images from build.json:"
+                          echo "$images"
+                          # 替换 build.json 中的镜像地址
+                          for image in $images; do
+                              echo "image: $image"
+                              arch=$(echo "$image" | cut -d: -f1)
+                              echo "arch: $arch"
+                              old_image=$(echo "$image" | cut -d: -f2- | xargs)
+                              echo "old_image: $old_image"
+                              new_image="docker.1ms.run/$old_image"
+                              echo "new_image: $new_image"
+                              echo "Replacing $old_image with $new_image for $arch in build.json"
+                              jq --arg arch "$arch" --arg new_image "$new_image" '.build_from[$arch] = $new_image' "$build_json" > tmp.$$.json && mv tmp.$$.json "$build_json"
+                          done
                       fi
                   fi
                   
