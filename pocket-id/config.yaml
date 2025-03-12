@@ -1,5 +1,5 @@
 name: Pocket ID
-version: 0.2.0
+version: 0.2.1
 slug: pocket-id
 description: 简单OIDC提供者用于密码认证。
 url: https://gh-proxy.com/github.com/einschmidt/addon-pocket-id
