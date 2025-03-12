@@ -299,7 +299,7 @@ jobs:
                           for image in $images; do
                               arch=$(echo "$image" | cut -d: -f1)
                               old_image=$(echo "$image" | cut -d: -f2- | xargs)
-                              new_image="docker.1ms.run/${old_image#docker.io/}"
+                              new_image="docker.1ms.run/$old_image"
                               echo "Replacing $old_image with $new_image for $arch in build.json"
                               jq --arg arch "$arch" --arg new_image "$new_image" '.build_from[$arch] = $new_image' "$build_json" > tmp.$$.json && mv tmp.$$.json "$build_json"
                           done
@@ -318,7 +318,7 @@ jobs:
                           for image in $images; do
                               arch=$(echo "$image" | cut -d: -f1)
                               old_image=$(echo "$image" | cut -d: -f2- | xargs)
-                              new_image="docker.1ms.run/${old_image#docker.io/}"
+                              new_image="docker.1ms.run/$old_image"
                               echo "Replacing $old_image with $new_image for $arch in build.yaml"
                               yq eval --inplace ".build_from[\"$arch\"] = \"$new_image\"" "$build_yaml"
                           done
@@ -332,14 +332,13 @@ jobs:
                       image=$(get_docker_image_from_dockerfile "$dockerfile_path")
                       if [[ -n "$image" ]]; then
                           echo "Base image: $image"
-                          modified_image="docker.1ms.run/${image#docker.io/}"
+                          modified_image="docker.1ms.run/$image"
                           echo "Modified image: $modified_image"
                           # 替换 Dockerfile 中的基础镜像
                           sed -i "s|$image|$modified_image|g" "$dockerfile_path"
                       fi
                   fi
               done
-
 #      - name: Translate markdown files
 #        run: |
 #                  
