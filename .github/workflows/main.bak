@@ -141,32 +141,32 @@ jobs:
           rm -rf addons/repository-master/whisparr
 
 
-      # - name: Check and clean up addons
-      #   run: |
-      #     extract_version() {
-      #       local file="$1"
-      #       if jq -e . "$file" >/dev/null 2>&1; then
-      #         jq -r '.version' "$file"
-      #       else
-      #         grep -E '^\s*version:\s*' "$file" | awk -F ': ' '{print $2}' | tr -d '\r"'
-      #       fi
-      #     }
-      #   
-      #       for addon_dir in ./addons/*/; do
-      #         repo_name=$(basename "$addon_dir")
-      #         for sub_dir in "$addon_dir"*/; do
-      #           latest_file=$(find "$sub_dir" -maxdepth 1 -type f \( -name "config.json" -o -name "config.yaml" \) -print -quit)
-      #           current_path="$(basename "$sub_dir")/$(basename "$latest_file")"
-      #           latest_version=$(extract_version "$latest_file")
-      #           current_version=$(extract_version "$current_path")
-      #           if [[ "$latest_version" != "$current_version" ]]; then
-      #             echo "Version mismatch in $repo_name ($(basename "$sub_dir")): $latest_version - $current_version" # 只输出版本不一致的插件
-      #           else
-      #             # echo "Version match in $repo_name ($(basename "$sub_dir")): $latest_version, Deleting $sub_dir"
-      #             rm -rf "$sub_dir"
-      #           end
-      #         done
-      #       done
+      - name: Check and clean up addons
+        run: |
+          extract_version() {
+            local file="$1"
+            if jq -e . "$file" >/dev/null 2>&1; then
+              jq -r '.version' "$file"
+            else
+              grep -E '^\s*version:\s*' "$file" | awk -F ': ' '{print $2}' | tr -d '\r"'
+            fi
+          }
+        
+            for addon_dir in ./addons/*/; do
+              repo_name=$(basename "$addon_dir")
+              for sub_dir in "$addon_dir"*/; do
+                latest_file=$(find "$sub_dir" -maxdepth 1 -type f \( -name "config.json" -o -name "config.yaml" \) -print -quit)
+                current_path="$(basename "$sub_dir")/$(basename "$latest_file")"
+                latest_version=$(extract_version "$latest_file")
+                current_version=$(extract_version "$current_path")
+                if [[ "$latest_version" != "$current_version" ]]; then
+                  echo "Version mismatch in $repo_name ($(basename "$sub_dir")): $latest_version - $current_version" # 只输出版本不一致的插件
+                else
+                  # echo "Version match in $repo_name ($(basename "$sub_dir")): $latest_version, Deleting $sub_dir"
+                  rm -rf "$sub_dir"
+                fi
+              done
+            done
   
 
       - name: modify the addons download link to accelerate url
@@ -179,170 +179,14 @@ jobs:
             -e 's|https://github.com|https://gh-proxy.com/github.com|g' \
             -e 's|ADD "https://raw.githubusercontent.com|ADD "https://gh-proxy.com/raw.githubusercontent.com|g' {} +
       
-      - name: Process Dockerfiles and build files
-        run: |
-              # 读取配置文件（json或yaml）
-              read_config_file() {
-                  local file_path="$1"
-                  local extension="${file_path##*.}"
-                  
-                  if [[ "$extension" == "json" ]]; then
-                      jq '.' "$file_path"
-                  else
-                      yq eval '.' "$file_path"
-                  fi
-              }
-    
-              # 从Dockerfile中获取基础镜像
-              get_docker_image_from_dockerfile() {
-                  local dockerfile_path="$1"
-                  local image=""
-                  
-                  while IFS= read -r line; do
-                      # 忽略注释和空行
-                      line=$(echo "$line" | xargs)
-                      [[ -z "$line" || "$line" == \#* ]] && continue
-                      
-                      if [[ "$line" == FROM* ]]; then
-                          # 处理多阶段构建的情况
-                          parts=($line)
-                          if [[ ${#parts[@]} -ge 2 ]]; then
-                              image="${parts[1]}"
-                              # 处理 AS 语法
-                              if [[ ${#parts[@]} -gt 2 && "${parts[2]}" == "AS" ]]; then
-                                  continue
-                              fi
-                              
-                              # 处理 ARG 变量
-                              if [[ "$image" == *\$\{* || "$image" == *\$* ]]; then
-                                  continue
-                              fi
-                              
-                              if ! should_skip_image "$image"; then
-                                  echo "$image"
-                                  return
-                              fi
-                          fi
-                      fi
-                  done < "$dockerfile_path"
-              }
-    
-              # 检查是否应该跳过该镜像
-              should_skip_image() {
-                  local image="$1"
-                  local skip_domains=(
-                      "ghcr.nju.edu.cn"
-                      "docker.m.daocloud.io"
-                      "docker.1ms.run"
-                      "\${BUILD_FROM}"
-                      "\$BUILD_FROM"
-                      "quay.io"
-                      "codeberg.org"
-                  )
-                  
-                  for domain in "${skip_domains[@]}"; do
-                      if [[ "$image" == *"$domain"* ]]; then
-                          return 0
-                      fi
-                  done
-                  
-                  return 1
-              }
-    
-              # 从build文件中获取所有架构的镜像信息
-              get_images_from_build_file() {
-                  local build_file="$1"
-                  local build_data=$(read_config_file "$build_file")
-                  
-                  if [[ -z "$build_data" || -z "$(echo "$build_data" | jq -r '.build_from')" ]]; then
-                      return
-                  fi
-                  
-                  local filtered_images=()
-                  local archs=$(echo "$build_data" | jq -r '.build_from | keys[]')
-                  
-                  for arch in $archs; do
-                      local image=$(echo "$build_data" | jq -r ".build_from[\"$arch\"]")
-                      # 跳过包含变量的镜像
-                      if [[ "$image" == *\$\{* || "$image" == *\$* ]]; then
-                          continue
-                      fi
-                      if ! should_skip_image "$image"; then
-                          filtered_images+=("$arch: $image")
-                      fi
-                  done
-                  
-                  if [[ ${#filtered_images[@]} -gt 0 ]]; then
-                      printf "%s\n" "${filtered_images[@]}"
-                  fi
-              }
-    
-              # 遍历 ./addons/*/ 目录下的所有子目录
-              for addon_dir in ./addons/*/; do
-                  echo "Processing directory: $addon_dir"
-                  
-                  # 读取配置文件
-                  config_file="$addon_dir/config.json"
-                  if [[ -f "$config_file" ]]; then
-                      read_config_file "$config_file"
-                  fi
-                  
-                  # 获取 build.json 文件中的镜像信息
-                  build_json="$addon_dir/build.json"
-                  if [[ -f "$build_json" ]]; then
-                      images=$(get_images_from_build_file "$build_json")
-                      if [[ -n "$images" ]]; then
-                          echo "Build images from build.json:"
-                          echo "$images"
-                          # 替换 build.json 中的镜像地址
-                          for image in $images; do
-                              arch=$(echo "$image" | cut -d: -f1)
-                              old_image=$(echo "$image" | cut -d: -f2- | xargs)
-                              new_image="docker.1ms.run/${old_image#docker.io/}"
-                              echo "Replacing $old_image with $new_image for $arch in build.json"
-                              jq --arg arch "$arch" --arg new_image "$new_image" '.build_from[$arch] = $new_image' "$build_json" > tmp.$$.json && mv tmp.$$.json "$build_json"
-                          done
-                      fi
-                  fi
-                  
-                  # 获取 build.yaml 文件中的镜像信息
-                  build_yaml="$addon_dir/build.yaml"
-                  if [[ -f "$build_yaml" ]]; then
-                      images=$(get_images_from_build_file "$build_yaml")
-                      if [[ -n "$images" ]]; then
-                          echo "Build images from build.yaml:"
-                          echo "$images"
-                          # 替换 build.yaml 中的镜像地址
-                          for image in $images; do
-                              arch=$(echo "$image" | cut -d: -f1)
-                              old_image=$(echo "$image" | cut -d: -f2- | xargs)
-                              new_image="docker.1ms.run/${old_image#docker.io/}"
-                              echo "Replacing $old_image with $new_image for $arch in build.yaml"
-                              yq eval --inplace ".build_from[\"$arch\"] = \"$new_image\"" "$build_yaml"
-                          done
-                      fi
-                  fi
-                  
-                  # 获取 Dockerfile 中的基础镜像
-                  dockerfile_path="$addon_dir/Dockerfile"
-                  if [[ -f "$dockerfile_path" ]]; then
-                      image=$(get_docker_image_from_dockerfile "$dockerfile_path")
-                      if [[ -n "$image" ]]; then
-                          echo "Base image: $image"
-                          modified_image="docker.1ms.run/${image#docker.io/}"
-                          echo "Modified image: $modified_image"
-                          # 替换 Dockerfile 中的基础镜像
-                          sed -i "s|$image|$modified_image|g" "$dockerfile_path"
-                      fi
-                  fi
-              done      
+      
 
-#      - name: Translate markdown files
-#        run: |
-#                  
-#                  find ./addons -type f \( -name "README.md" -o -name "DOCS.md" \) -print0 | xargs -0 -P 5 -I {} sh -c '
-#                    timeout 90s ai-markdown-translator -i "{}" -o "{}" -l "Chinese" || echo "{} translation failed or timed out."
-#                  '
+      - name: Translate markdown files
+        run: |
+                  
+                  find ./addons -type f \( -name "README.md" -o -name "DOCS.md" \) -print0 | xargs -0 -P 5 -I {} sh -c '
+                    timeout 90s ai-markdown-translator -i "{}" -o "{}" -l "Chinese" || echo "{} translation failed or timed out."
+                  '
 
 
       - name: Replace description in config files
