@@ -58,6 +58,14 @@ jobs:
             ["AlexxIT"]="AlexxIT/hassio-addons:master"
             ["da-anda"]="da-anda/hass-io-addons:main"
             ["hacs-china"]="hacs-china/addons:china"
+            ["t0bst4r"]="t0bst4r/home-assistant-addons:main"
+            ["adamoutler"]="adamoutler/HassOSConfigurator:main"
+            ["GollumDom"]="GollumDom/addon-repository:master"
+            ["thejeffreystone"]="thejeffreystone/hassio_addons:main"
+            ["joaofl"]="joaofl/hassio-addons:master"
+            ["habuild"]="habuild/hassio-addons:main"
+
+
           )
 
 
