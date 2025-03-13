@@ -57,6 +57,12 @@ Excellent third-party libraries:
 - 🏠 [**AlexxIT Addons**](https://github.com/AlexxIT/hassio-addons): Addons by AlexxIT
 - 🛠️ [**Da-anda Addons**](https://github.com/da-anda/hass-io-addons): Addons by Da-anda
 - 🇨🇳 [**HACS China Addons**](https://github.com/hacs-china/addons): HACS China Edition Addons
+- 🛠️ [**T0bst4r Addons**](https://github.com/t0bst4r/home-assistant-addons): Addons by T0bst4r
+- 🖥️ [**Adamoutler Addons**](https://github.com/adamoutler/HassOSConfigurator): Addons by Adamoutler
+- 🛠️ [**GollumDom Addons**](https://github.com/GollumDom/addon-repository): Addons by GollumDom
+- 🖥️ [**Thejeffreystone Addons**](https://github.com/thejeffreystone/hassio_addons): Addons by Thejeffreystone
+- 🛠️ [**Joaofl Addons**](https://github.com/joaofl/hassio-addons): Addons by Joaofl
+- 🖥️ [**Habuild Addons**](https://github.com/habuild/hassio-addons): Addons by Habuild
 
 
 

@@ -69,6 +69,12 @@
 - 🖥️ [**AlexxIT Addons**](https://github.com/AlexxIT/hassio-addons): AlexxIT 的加载项
 - 🛠️ [**Da-anda Addons**](https://github.com/da-anda/hass-io-addons): Da-anda 的加载项
 - 🇨🇳 [**HACS China Addons**](https://github.com/hacs-china/addons): HACS 中国版加载项
+- 🛠️ [**T0bst4r Addons**](https://github.com/t0bst4r/home-assistant-addons): T0bst4r 的加载项
+- 🖥️ [**Adamoutler Addons**](https://github.com/adamoutler/HassOSConfigurator): Adamoutler 的加载项
+- 🛠️ [**GollumDom Addons**](https://github.com/GollumDom/addon-repository): GollumDom 的加载项
+- 🖥️ [**Thejeffreystone Addons**](https://github.com/thejeffreystone/hassio_addons): Thejeffreystone 的加载项
+- 🛠️ [**Joaofl Addons**](https://github.com/joaofl/hassio-addons): Joaofl 的加载项
+- 🖥️ [**Habuild Addons**](https://github.com/habuild/hassio-addons): Habuild 的加载项
 
 
 
