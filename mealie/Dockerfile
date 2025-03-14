@@ -32,7 +32,7 @@ RUN mkdir tempdir && cd tempdir && git clone --branch "$MEALIE_VERSION" https://
     yarn generate
 
 # Stage 2: Build the Final Image
-FROM hkotel/mealie:latest
+FROM docker.1ms.run/hkotel/mealie:latest
 
 # Copy the rebuilt frontend files into the final image
 WORKDIR /mealie

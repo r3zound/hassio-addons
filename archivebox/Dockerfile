@@ -1,5 +1,5 @@
 ARG BUILD_FROM
-FROM archivebox/archivebox
+FROM docker.1ms.run/archivebox/archivebox
 
 VOLUME [ "/share" ]
 	

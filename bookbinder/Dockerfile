@@ -1,5 +1,5 @@
 ARG BUILD_FROM
-FROM node:current-alpine
+FROM docker.1ms.run/node:current-alpine
 
 ARG BUILD_VERSION
 

@@ -16,7 +16,7 @@
 
 ARG BUILD_FROM
 ARG BUILD_VERSION
-FROM wiserain/flexget:latest
+FROM docker.1ms.run/wiserain/flexget:latest
 
 ##################
 # 2 Modify Image #

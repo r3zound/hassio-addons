@@ -1,4 +1,4 @@
-FROM mitmproxy/mitmproxy
+FROM docker.1ms.run/mitmproxy/mitmproxy
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["mitmweb", "--set", "web_host=0.0.0.0","--set","confdir=/config"]
 

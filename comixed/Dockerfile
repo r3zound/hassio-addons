@@ -17,7 +17,7 @@
 ARG BUILD_FROM
 ARG BUILD_VERSION
 FROM ${BUILD_FROM} AS builder
-FROM openjdk:17-jdk-slim
+FROM docker.1ms.run/openjdk:17-jdk-slim
 RUN set +u && set +e && \
     apt-get update && \
     apt-get install -y --no-install-recommends \

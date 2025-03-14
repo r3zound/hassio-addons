@@ -15,7 +15,7 @@
 #################
 
 ARG BUILD_UPSTREAM="0.13.2"
-FROM m4dm4rtig4n/myelectricaldata:latest
+FROM docker.1ms.run/m4dm4rtig4n/myelectricaldata:latest
 
 
 ##################

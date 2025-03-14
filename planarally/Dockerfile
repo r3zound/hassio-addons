@@ -1,5 +1,5 @@
 ARG BUILD_FROM
-FROM kruptein/planarally
+FROM docker.1ms.run/kruptein/planarally
 	
 COPY --chown=9000:9000 run.sh /
 RUN chmod a+x /run.sh

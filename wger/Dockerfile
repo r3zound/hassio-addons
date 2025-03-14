@@ -16,7 +16,7 @@
 
 ARG BUILD_VERSION
 ARG BUILD_FROM
-FROM wger/devel:latest
+FROM docker.1ms.run/wger/devel:latest
 
 ##################
 # 2 Modify Image #

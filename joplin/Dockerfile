@@ -15,7 +15,7 @@
 #################
 ARG BUILD_FROM
 ARG BUILD_VERSION
-FROM florider89/joplin-server:latest
+FROM docker.1ms.run/florider89/joplin-server:latest
 
 ##################
 # 2 Modify Image #

@@ -14,7 +14,7 @@
 # 1 Build Image #
 #################
 
-FROM troglobit/inadyn:latest
+FROM docker.1ms.run/troglobit/inadyn:latest
 
 ##################
 # 2 Modify Image #

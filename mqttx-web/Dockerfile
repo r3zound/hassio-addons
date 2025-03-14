@@ -1,5 +1,5 @@
 # 使用 EMQX MQTTX Web 镜像作为基础镜像
-FROM emqx/mqttx-web:latest
+FROM docker.1ms.run/emqx/mqttx-web:latest
 
 # 设置工作目录
 WORKDIR /app

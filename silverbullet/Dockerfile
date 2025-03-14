@@ -1,5 +1,5 @@
 ARG BUILD_FROM
-FROM zefhemel/silverbullet
+FROM docker.1ms.run/zefhemel/silverbullet
 
 RUN apt update && apt install -y jq
 

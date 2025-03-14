@@ -1,5 +1,5 @@
 ARG BUILD_FROM
-FROM python:3.12-slim
+FROM docker.1ms.run/python:3.12-slim
 
 ARG BUILD_VERSION
 #ARG CHROME_VERSION="127.0.6533.119-1"

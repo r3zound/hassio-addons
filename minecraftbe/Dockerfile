@@ -1,5 +1,5 @@
 ARG BUILD_FROM
-FROM itzg/minecraft-bedrock-server
+FROM docker.1ms.run/itzg/minecraft-bedrock-server
 
 VOLUME [ "/share" ]
 

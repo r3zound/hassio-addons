@@ -17,7 +17,7 @@
 ARG BUILD_FROM
 ARG BUILD_VERSION
 ARG BUILD_UPSTREAM="1.36.35"
-FROM tritruongtr/zoneminder:latest
+FROM docker.1ms.run/tritruongtr/zoneminder:latest
 
 ##################
 # 2 Modify Image #

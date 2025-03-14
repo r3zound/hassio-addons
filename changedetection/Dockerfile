@@ -1,5 +1,5 @@
 ARG BUILD_FROM
-FROM dgtlmoon/changedetection.io
+FROM docker.1ms.run/dgtlmoon/changedetection.io
 
 VOLUME [ "/share" ]
 	

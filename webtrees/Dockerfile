@@ -16,7 +16,7 @@
 
 ARG BUILD_VERSION
 ARG BUILD_UPSTREAM="2.2.1"
-FROM nathanvaughn/webtrees:latest
+FROM docker.1ms.run/nathanvaughn/webtrees:latest
 
 ##################
 # 2 Modify Image #
