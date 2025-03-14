@@ -92,7 +92,15 @@
 ## 注意事项
 登录成功后，账号敏感信息将记录在 `/data/login_info.json` 文件中。程序请求数据时将优先使用记录的 token，以避免重复登录。
 
-## 感谢
-本项目大量参考其他项目的代码，感谢所有贡献者的努力与支持。
+## ☕ 赞助支持
+
+如果您觉得我花费大量时间维护这个库对您有帮助，欢迎请我喝杯奶茶，您的支持将是我持续改进的动力！
+
+<div style="display: flex; justify-content: space-between;">
+  <img src="https://gitee.com/desmond_GT/hassio-addons/raw/main/1_readme/Ali_Pay.jpg" height="350px" />
+  <img src="https://gitee.com/desmond_GT/hassio-addons/raw/main/1_readme/WeChat_Pay.jpg" height="350px" />
+</div> 💖
+
+感谢您的支持与鼓励！
 
 

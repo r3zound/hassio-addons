@@ -25,19 +25,20 @@ Cpolar 是一个安全的内网穿透工具，专为 Home Assistant 用户设计
 2. 在配置界面，设置您的 Authtoken 和其他选项。
 3. 启动 Cpolar 服务，享受安全的内网穿透。
 
-## 🔧 使用示例
 
-- 🌍 通过 Cpolar 将您的 Home Assistant 实例暴露到公网上，方便远程访问和控制。
-- 🔗 使用 Cpolar 进行外部服务的集成，例如远程监控和自动化。
-
-## 📞 反馈与支持
-
-如需帮助或反馈，请访问我们的 [GitHub 页面](https://github.com/djhui/hassio-addons) 或加入我们的社区。
-
----
 
 扫描下面二维码，关注我。有需要可以随时给我留言
 
 ![QR Code](https://gitee.com/desmond_GT/hassio-addons/raw/main/WeChat_QRCode.png)
 
-扫描上面二维码，关注我。有需要可以随时给我留言
+
+## ☕ 赞助支持
+
+如果您觉得我花费大量时间维护这个库对您有帮助，欢迎请我喝杯奶茶，您的支持将是我持续改进的动力！
+
+<div style="display: flex; justify-content: space-between;">
+  <img src="https://gitee.com/desmond_GT/hassio-addons/raw/main/1_readme/Ali_Pay.jpg" height="350px" />
+  <img src="https://gitee.com/desmond_GT/hassio-addons/raw/main/1_readme/WeChat_Pay.jpg" height="350px" />
+</div> 💖
+
+感谢您的支持与鼓励！
