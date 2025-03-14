@@ -98,20 +98,16 @@
 1. 🔍 导航到您的 Home Assistant 实例
 2. ⚙️ 转到 **设置** -> **加载项** -> **加载项商店**
 3. 📂 点击右上角的三个点，选择 **仓库**
-4. 📋 将以下 URL 复制并粘贴到库输入字段中（二选一）：
+4. 📋 将以下 URL 复制并粘贴到库输入字段中：
    ```
-   https://github.com/Desmond-Dong/hassio-addons
    https://gitee.com/desmond_GT/hassio-addons
    ```
 5. ➕ 点击 **添加**
 6. ✅ 该库中的加载项现在将在您的加载项商店中可用
 
-您也可以点击下面的按钮自动添加库（二选一）：
+您也可以点击下面的按钮自动添加库：
 
 **Gitee** [![添加加载项到 Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://gitee.com/desmond_GT/hassio-addons) 🚀
-
-**Github** [![添加加载项到 Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://github.com/Desmond-Dong/hassio-addons) 🚀
-
 ## 🛠️ 支持与反馈
 
 如果您在使用过程中遇到任何问题或有疑问，请在我的公众号后台留言，我会尽快回复您。📩
