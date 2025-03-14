@@ -1,7 +1,7 @@
 build_from:
-  amd64: homeassistant/amd64-base:latest
-  armhf: docker.1ms.run/homeassistant/armhf-base:latest
-  aarch64: docker.1ms.run/homeassistant/aarch64-base:latest
+  amd64: ghcr.nju.edu.cn/homeassistant/amd64-base:latest
+  armhf: ghcr.nju.edu.cn/homeassistant/armhf-base:latest
+  aarch64: ghcr.nju.edu.cn/homeassistant/aarch64-base:latest
 labels:
   maintainer: "Desmond Dong"
   io.hass.addon.changelog: |
