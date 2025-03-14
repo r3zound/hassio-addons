@@ -2,7 +2,7 @@ name: "Cpolar极点云"
 version: '3.3.18'
 slug: 'cpolar'
 description: 'Cpolar 安全的内网穿透工具'
-url: https://github.com/djhui/hassio-addons
+url: https://github.com/Desmond-Dong/hassio-addons
 init: false
 arch:
   - aarch64

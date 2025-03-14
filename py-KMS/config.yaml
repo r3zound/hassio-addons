@@ -4,7 +4,7 @@
   "slug": "py-kms",
   "description": "这是py-kms，一个用来激活Windows和Office的服务器",
   "codenotary": "djhhui@gmail.com",
-  "url": "https://github.com/djhui/hassio-addons",
+  "url": "https://github.com/Desmond-Dong/hassio-addons",
   "arch": [
     "aarch64",
     "amd64",

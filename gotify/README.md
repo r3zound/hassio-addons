@@ -29,6 +29,12 @@ Gotify 是一个简单的消息发送和接收服务器。它允许用户有效�
 
 不需要任何配置。
 
+## 📱 关注我
+
+扫描下面二维码，关注我。有需要可以随时给我留言：
+
+<img src="https://gitee.com/desmond_GT/hassio-addons/raw/main/WeChat_QRCode.png" width="50%" /> 📲
+
 ## ☕ 赞助支持
 
 如果您觉得我花费大量时间维护这个库对您有帮助，欢迎请我喝杯奶茶，您的支持将是我持续改进的动力！

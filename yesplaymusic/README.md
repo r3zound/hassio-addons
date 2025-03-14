@@ -18,7 +18,7 @@ This add-on provides YesPlayMusic, a beautiful and powerful third-party NetEase 
 
 1. Navigate to the Home Assistant Add-on Store
 2. Click on the three dots in the top right corner and select "Repositories"
-3. Add the following URL: `https://github.com/djhui/hassio-addons`
+3. Add the following URL: `https://github.com/Desmond-Dong/hassio-addons`
 4. Find the "YesPlayMusic" add-on in the list and click "Install"
 
 ## Usage
@@ -38,6 +38,12 @@ If you have any questions or need assistance, feel free to:
 扫描下面二维码，关注我。有需要可以随时给我留言
 
 ![QR Code](https://gitee.com/desmond_GT/hassio-addons/raw/main/WeChat_QRCode.png)
+
+## 📱 关注我
+
+扫描下面二维码，关注我。有需要可以随时给我留言：
+
+<img src="https://gitee.com/desmond_GT/hassio-addons/raw/main/WeChat_QRCode.png" width="50%" /> 📲
 
 ## ☕ 赞助支持
 

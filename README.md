@@ -100,7 +100,7 @@
 3. 📂 点击右上角的三个点，选择 **仓库**
 4. 📋 将以下 URL 复制并粘贴到库输入字段中（二选一）：
    ```
-   https://github.com/djhui/hassio-addons
+   https://github.com/Desmond-Dong/hassio-addons
    https://gitee.com/desmond_GT/hassio-addons
    ```
 5. ➕ 点击 **添加**
@@ -110,7 +110,7 @@
 
 **Gitee** [![添加加载项到 Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://gitee.com/desmond_GT/hassio-addons) 🚀
 
-**Github** [![添加加载项到 Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://github.com/djhui/hassio-addons) 🚀
+**Github** [![添加加载项到 Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://github.com/Desmond-Dong/hassio-addons) 🚀
 
 ## 🛠️ 支持与反馈
 
@@ -130,4 +130,13 @@
 
 <img src="https://gitee.com/desmond_GT/hassio-addons/raw/main/WeChat_QRCode.png" width="50%" /> 📲
 
-感谢您的支持与关注！❤️
+## ☕ 赞助支持
+
+如果您觉得我花费大量时间维护这个库对您有帮助，欢迎请我喝杯奶茶，您的支持将是我持续改进的动力！
+
+<div style="display: flex; justify-content: space-between;">
+  <img src="https://gitee.com/desmond_GT/hassio-addons/raw/main/1_readme/Ali_Pay.jpg" height="350px" />
+  <img src="https://gitee.com/desmond_GT/hassio-addons/raw/main/1_readme/WeChat_Pay.jpg" height="350px" />
+</div> 💖
+
+感谢您的支持与鼓励！

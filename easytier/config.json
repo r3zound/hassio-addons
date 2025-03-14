@@ -4,7 +4,7 @@
   "slug": "easytier",
   "codenotary": "djhhui@gmail.com",
   "description": "EasyTier 网络优化工具,未完成不要装",
-  "url": "https://github.com/djhui/hassio-addons",
+  "url": "https://github.com/Desmond-Dong/hassio-addons",
   "init": false,
   "arch": [
     "aarch64",

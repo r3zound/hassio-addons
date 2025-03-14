@@ -82,7 +82,7 @@ You can also click the button below to automatically add the repository (choose 
 
 **Gitee** [![Add Addon to Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://gitee.com/desmond_GT/hassio-addons) 🚀
 
-**Github** [![Add Addon to Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://github.com/djhui/hassio-addons) 🚀
+**Github** [![Add Addon to Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://github.com/Desmond-Dong/hassio-addons) 🚀
 
 ## 📱 Follow Me
 

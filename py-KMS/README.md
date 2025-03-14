@@ -23,10 +23,11 @@
 启动 **py-kms** 后，您可以通过 Home Assistant 的服务调用 KMS 服务进行激活。确保您的网络设置允许访问该服务，以便顺利进行激活。
 
 ---
+## 📱 关注我
 
-📱 扫描下面的二维码，关注我！如有任何问题或建议，欢迎随时留言。
+扫描下面二维码，关注我。有需要可以随时给我留言：
 
-![QR Code](https://gitee.com/desmond_GT/hassio-addons/raw/main/WeChat_QRCode.png)
+<img src="https://gitee.com/desmond_GT/hassio-addons/raw/main/WeChat_QRCode.png" width="50%" /> 📲
 
 ## ☕ 赞助支持
 

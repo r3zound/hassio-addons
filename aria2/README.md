@@ -21,11 +21,11 @@ rpc 连接的密钥。默认为 `123456789`。
 
 传递给 aria2c 的附加选项。必须以字典列表的格式输入，格式为： `{"name": "...", "value": "..."}`。
 
-扫描下面二维码，关注我。有需要可以随时给我留言
+## 📱 关注我
 
-![QR Code](https://gitee.com/desmond_GT/hassio-addons/raw/main/WeChat_QRCode.png)
+扫描下面二维码，关注我。有需要可以随时给我留言：
 
-扫描上面二维码，关注我。有需要可以随时给我留言
+<img src="https://gitee.com/desmond_GT/hassio-addons/raw/main/WeChat_QRCode.png" width="50%" /> 📲
 
 ## ☕ 赞助支持
 
@@ -36,4 +36,5 @@ rpc 连接的密钥。默认为 `123456789`。
   <img src="https://gitee.com/desmond_GT/hassio-addons/raw/main/1_readme/WeChat_Pay.jpg" height="350px" />
 </div> 💖
 
+感谢您的支持与鼓励！
 感谢您的支持与鼓励！

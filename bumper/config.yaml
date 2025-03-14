@@ -4,7 +4,7 @@
   "slug": "bumper",
   "codenotary": "djhhui@gmail.com",
   "description": "这是一个扫地机器人的局域网服务器。关注微信号：<老王杂谈说> 获取更多内容吧",
-  "url": "https://github.com/djhui/hassio-addons",
+  "url": "https://github.com/Desmond-Dong/hassio-addons",
   "arch": [
     "armhf",
     "armv7",

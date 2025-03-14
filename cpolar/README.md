@@ -27,10 +27,11 @@ Cpolar 是一个安全的内网穿透工具，专为 Home Assistant 用户设计
 
 
 
-扫描下面二维码，关注我。有需要可以随时给我留言
+## 📱 关注我
 
-![QR Code](https://gitee.com/desmond_GT/hassio-addons/raw/main/WeChat_QRCode.png)
+扫描下面二维码，关注我。有需要可以随时给我留言：
 
+<img src="https://gitee.com/desmond_GT/hassio-addons/raw/main/WeChat_QRCode.png" width="50%" /> 📲
 
 ## ☕ 赞助支持
 

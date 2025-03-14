@@ -7,7 +7,7 @@ labels:
   io.hass.addon.version: "v1.0.1"
   io.hass.addon.name: "py-KMS Home Assistant Addon"
   io.hass.addon.description: "A Home Assistant Addon for py-KMS."
-  io.hass.addon.url: "https://github.com/djhui/hassio-addons"
+  io.hass.addon.url: "https://github.com/Desmond-Dong/hassio-addons"
   io.hass.addon.arch: "amd64, armhf, armv7, aarch64, i386"
   io.hass.addon.init: "false"
   io.hass.addon.startup: "services"
