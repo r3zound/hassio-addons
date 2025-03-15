@@ -1,10 +1,7 @@
 name: "Snapclient"
 version: "0.9.1"
 slug: snapclient
-description: $'Snapclient for Snapcast
-
-Snapclient for Snapcast'
-  Snapclient for Snapcast
+description: "Snapclient for Snapcast"
 arch: 
   - aarch64
   - amd64
@@ -14,7 +11,7 @@ arch:
 # Sound
 audio: true
 devices:
- - /dev/snd
+  - /dev/snd
 
 init: false
 
