@@ -1,5 +1,5 @@
 name: "Rhasspy Junior"
-description: null
+description: "简单的离线语音助手"
 version: "0.2.2"
 url: "https://gh-proxy.com/github.com/rhasspy/rhasspy-junior"
 slug: "rhasspy_junior"
