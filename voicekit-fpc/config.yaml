@@ -1,5 +1,5 @@
 name: "Voice Kit FPC"
-description: null
+description: "Voice Kit False Positive Collector"
 version: "0.0.1"
 slug: "voicekit_fpc"
 init: false
