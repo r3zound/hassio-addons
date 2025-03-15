@@ -64,6 +64,11 @@ jobs:
             ["thejeffreystone"]="thejeffreystone/hassio_addons:main"
             ["joaofl"]="joaofl/hassio-addons:master"
             ["habuild"]="habuild/hassio-addons:main"
+            ["mincka"]="Mincka/ha-addons:main"
+            ["koying"]="koying/ha-addons:main"
+            ["rtl_433"]="pbkhrv/rtl_433-hass-addons:main"
+            ["loganmarchione"]="loganmarchione/hassos-addons:main"
+            ["torrserver"]="aatrubilin/hassio-torrserver:master"
 
 
           )
