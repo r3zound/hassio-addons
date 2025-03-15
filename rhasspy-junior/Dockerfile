@@ -1,4 +1,4 @@
-FROM rhasspy/junior-hass
+FROM docker.1ms.run/rhasspy/junior-hass
 
 RUN apt-get update && \
     apt-get install --yes --no-install-recommends \
