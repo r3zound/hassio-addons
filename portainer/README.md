@@ -1,117 +1,80 @@
-# Home Assistant 社区插件：Portainer
+# Home Assistant 插件：Portainer
 
-[![GitHub Release][releases-shield]][releases]
-![项目阶段][project-stage-shield]
-[![许可证][license-shield]](LICENSE.md)
+[![捐赠][donation-badge]](https://www.buymeacoffee.com/alexbelgium)
+[![捐赠][paypal-badge]](https://www.paypal.com/donate/?hosted_button_id=DZFULJZTP3UQA)
 
-![支持 aarch64 架构][aarch64-shield]
-![支持 amd64 架构][amd64-shield]
-![支持 armhf 架构][armhf-shield]
-![支持 armv7 架构][armv7-shield]
-![支持 i386 架构][i386-shield]
+![版本](https://img.shields.io/badge/dynamic/json?label=版本&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fportainer%2Fconfig.json)
+![Ingress](https://img.shields.io/badge/dynamic/json?label=Ingress&query=%24.ingress&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fportainer%2Fconfig.json)
+![架构](https://img.shields.io/badge/dynamic/json?color=success&label=架构&query=%24.arch&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fportainer%2Fconfig.json)
 
-[![Github Actions][github-actions-shield]][github-actions]
-![项目维护][maintenance-shield]
-[![GitHub 活动][commits-shield]][commits]
+[![Codacy 徽章](https://app.codacy.com/project/badge/Grade/9c6cf10bdbba45ecb202d7f579b5be0e)](https://www.codacy.com/gh/alexbelgium/hassio-addons/dashboard?utm_source=github.com&utm_medium=referral&utm_content=alexbelgium/hassio-addons&utm_campaign=Badge_Grade)
+[![GitHub Super-Linter](https://img.shields.io/github/actions/workflow/status/alexbelgium/hassio-addons/weekly-supelinter.yaml?label=Lint%20代码%20库)](https://github.com/alexbelgium/hassio-addons/actions/workflows/weekly-supelinter.yaml)
+[![构建器](https://img.shields.io/github/actions/workflow/status/alexbelgium/hassio-addons/onpush_builder.yaml?label=构建器)](https://github.com/alexbelgium/hassio-addons/actions/workflows/onpush_builder.yaml)
 
-[![Discord][discord-shield]][discord]
-[![社区论坛][forum-shield]][forum]
+[donation-badge]: https://img.shields.io/badge/请%20给我%20一杯%20咖啡%20(无%20paypal)-%23d32f2f?logo=buy-me-a-coffee&style=flat&logoColor=white
+[paypal-badge]: https://img.shields.io/badge/请%20给我%20一杯%20咖啡%20通过%20Paypal-0070BA?logo=paypal&style=flat&logoColor=white
 
-[![通过 GitHub Sponsors 支持 Frenck][github-sponsors-shield]][github-sponsors]
+源自： https://github.com/hassio-addons/addon-portainer  
+实现的更改：更新到最新版本；ingress；ssl；通过插件选项设置密码；允许手动覆盖
 
-[![在 Patreon 支持 Frenck][patreon-shield]][patreon]
+_感谢每一个关注我的仓库的人！要关注，请点击下面的图片，然后它会在右上角。谢谢！_
 
-轻松管理你的 Docker 环境。
+[![关注者名单 @alexbelgium/hassio-addons](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
 
-![Portainer Hass.io 插件](images/screenshot.png)
+![下载演变](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/portainer/stats.png)
 
 ## 关于
 
-Portainer 是一个开源的轻量级管理 UI，可以让你轻松管理 Docker 主机或 Docker 集群。
+---
 
-管理 Docker 从未如此简单。Portainer 提供了 Docker 的详细概述，并允许你管理容器、镜像、网络和卷。
+Portainer 是一个开源的轻量级管理界面，允许您轻松管理 Docker 主机或 Docker 集群。
 
-[:books: 阅读完整的插件文档][docs]
+管理 Docker 从未如此简单。Portainer 提供了 Docker 的详细概述，并允许您管理容器、镜像、网络和卷。
 
-## FORKED
+## 还原备份
 
-此插件已由其作者停止支持，不再从社区仓库提供。
-这是一个尽力而为的分支。
+打开插件选项并将密码设置为“空”。重启插件，将允许从备份中还原 Portainer。您需要将备份放在可访问的文件夹中，例如 /share，以便在插件中挂载。
 
-如果你运行 Home Assistant，请注意，运行额外的容器不是一个支持的用例，并将导致你的系统被标记为不受支持。
+## 警告
 
-## 警告 1
+Portainer 插件非常强大，几乎可以访问您的整个系统。虽然这个插件是精心创建和维护的，并考虑了安全性，但在错误或经验不足的用户手中，它可能会损坏您的系统。
 
-Portainer 插件非常强大，可以让你访问几乎整个系统。虽然该插件是在注重安全和维护的情况下创建的，但在不当或缺乏经验的手中，可能会损坏你的系统。
+## 安装
 
-## 警告 2
+---
 
-Portainer 插件用于调试 Home Assistant 及其容器。
-它并不是为了管理或部署你自己的软件或第三方容器而设计的。
+安装这个插件非常简单，与安装任何其他插件没有区别。
 
-**Home Assistant 不支持在 Home Assistant OS 或受监控安装类型上运行第三方容器。**
-忽视这一点会使你的系统被视为不受支持！
+1. 将我的插件库添加到您的 Home Assistant 实例（在监督的插件商店右上角，或如果您已配置了我的 HA，请单击下面的按钮）
+   [![打开您的 Home Assistant 实例并显示添加插件库对话框，带有特定的库 URL 预填。](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falexbelgium%2Fhassio-addons)
+2. 安装此插件。
+3. 单击 `保存` 按钮以保存您的配置。
+4. 根据您的偏好设置插件选项。
+5. 启动插件。
+6. 检查插件的日志，以查看一切是否正常。
+7. 打开 WebUI 并调整软件选项。
 
-## 支持
+## 配置
 
-有问题吗？
+---
 
-[在这里打开一个问题][issue] GitHub。
+WebUI 可以在 <http://homeassistant:port> 查找，或者在您的侧边栏中使用 Ingress。
+默认的用户名/密码：在启动日志中描述。
+配置可以通过应用程序 WebUI 进行，除了以下选项。
 
-## 贡献
+```yaml
+ssl: true/false
+certfile: fullchain.pem #ssl 证书，必须位于 /ssl
+keyfile: privkey.pem #ssl 私钥文件，必须位于 /ssl
+password: 定义管理员密码。如果保持为空，将允许手动还原以前的备份。至少需要 12 个字符。
+```
 
-这是一个活跃的开源项目。我们始终欢迎希望使用或贡献代码的人。
+## 支持 
 
-我们已经建立了一个单独的文档，包含我们的
-[贡献指南](github/CONTRIBUTING.md)。
+在 GitHub 上创建一个问题。
 
-感谢你的参与！:heart_eyes:
+## 插图
 
-## 作者与贡献者
+---
 
-本仓库的最初设定由 [Franck Nijhof][frenck] 完成。
-
-有关所有作者和贡献者的完整列表，
-请查看 [贡献者页面][contributors]。
-
-## 许可证
-
-MIT 许可证
-
-版权所有 (c) 2018-2021 Franck Nijhof
-
-特此免费向任何获得本软件及相关文档文件（以下简称“软件”）副本的人授予使用本软件的权利，无论有无限制，包括但不限于使用、复制、修改、合并、出版、分发、再许可及/或销售软件副本的权利，并允许被提供软件的人这样做，但须遵守以下条件：
-
-上述版权声明和本许可声明应包含在所有软件副本或重要部分中。
-
-该软件是按“原样”提供的，没有任何形式的担保，包括但不限于适销性、特定用途的适用性和非侵权。在任何情况下，作者或版权持有者对此软件或使用或其他交易所引起的任何索赔、损害或其他责任均不承担责任，无论是在合同、侵权或其他方面。
-
-[aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
-[amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
-[armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
-[armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
-[commits-shield]: https://img.shields.io/github/commit-activity/y/hassio-addons/addon-portainer.svg
-[commits]: https://github.com/hassio-addons/addon-portainer/commits/main
-[contributors]: https://github.com/hassio-addons/addon-portainer/graphs/contributors
-[discord-ha]: https://discord.gg/c5DvZ4e
-[discord-shield]: https://img.shields.io/discord/478094546522079232.svg
-[discord]: https://discord.me/hassioaddons
-[docs]: https://github.com/hassio-addons/addon-portainer/blob/main/portainer/DOCS.md
-[forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
-[forum]: https://community.home-assistant.io/t/home-assistant-community-add-on-portainer/68836?u=frenck
-[frenck]: https://github.com/frenck
-[github-actions-shield]: https://github.com/hassio-addons/addon-portainer/workflows/CI/badge.svg
-[github-actions]: https://github.com/hassio-addons/addon-portainer/actions
-[github-sponsors-shield]: https://frenck.dev/wp-content/uploads/2019/12/github_sponsor.png
-[github-sponsors]: https://github.com/sponsors/frenck
-[i386-shield]: https://img.shields.io/badge/i386-no-red.svg
-[issue]: https://github.com/hassio-addons/addon-portainer/issues
-[license-shield]: https://img.shields.io/github/license/hassio-addons/addon-portainer.svg
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2021.svg
-[patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
-[patreon]: https://www.patreon.com/frenck
-[project-stage-shield]: https://img.shields.io/badge/project%20stage-%20!%20DEPRECATED%20%20%20!-ff0000.svg
-[reddit]: https://reddit.com/r/homeassistant
-[releases-shield]: https://img.shields.io/github/release/hassio-addons/addon-portainer.svg
-[releases]: https://github.com/hassio-addons/addon-portainer/releases
-[repository]: https://github.com/hassio-addons/repository
+![插图](https://github.com/hassio-addons/addon-portainer/raw/main/images/screenshot.png)
