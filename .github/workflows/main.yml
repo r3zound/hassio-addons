@@ -69,7 +69,7 @@ jobs:
             ["rtl_433"]="pbkhrv/rtl_433-hass-addons:main"
             ["loganmarchione"]="loganmarchione/hassos-addons:main"
             ["torrserver"]="aatrubilin/hassio-torrserver:master"
-
+            ["rhasspy"]="rhasspy/hassio-addons:master"
 
           )
 
@@ -141,7 +141,9 @@ jobs:
           mv addons/addons-china/get addons/addons-china/hacs-china
           sed -i 's/^slug: get$/slug: hacs-china/' addons/addons-china/hacs-china/config.yaml
 
-
+          mv addons/hassio-addons-master/assist_microphone addons/hassio-addons-master/assist_microphone_rhasspy
+          sed -i 's/^slug: assist_microphone$/slug: assist_microphone_rhasspy/' addons/hassio-addons-master/assist_microphone_rhasspy/config.yaml
+          sed -i 's/^name: Assist Microphone$/name: Assist Microphone Rhasspy/' addons/hassio-addons-master/assist_microphone_rhasspy/config.yaml
 
 
 
