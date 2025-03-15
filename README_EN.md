@@ -63,6 +63,13 @@ Excellent third-party libraries:
 - 🖥️ [**Thejeffreystone Addons**](https://github.com/thejeffreystone/hassio_addons): Addons by Thejeffreystone
 - 🛠️ [**Joaofl Addons**](https://github.com/joaofl/hassio-addons): Addons by Joaofl
 - 🖥️ [**Habuild Addons**](https://github.com/habuild/hassio-addons): Addons by Habuild
+- 🛠️ [**Mincka Addons**](https://github.com/Mincka/ha-addons): Addons by Mincka
+- 🖥️ [**Koying Addons**](https://github.com/koying/ha-addons): Addons by Koying
+- 📡 [**RTL_433 Addons**](https://github.com/pbkhrv/rtl_433-hass-addons): RTL_433 Addons
+- 🛠️ [**Loganmarchione Addons**](https://github.com/loganmarchione/hassos-addons): Addons by Loganmarchione
+- 🚀 [**Torrserver Addons**](https://github.com/aatrubilin/hassio-torrserver): Torrserver Addons
+- 🗣️ [**Rhasspy Addons**](https://github.com/rhasspy/hassio-addons): Rhasspy Addons
+
 
 
 

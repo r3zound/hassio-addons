@@ -75,6 +75,14 @@
 - 🖥️ [**Thejeffreystone Addons**](https://github.com/thejeffreystone/hassio_addons): Thejeffreystone 的加载项
 - 🛠️ [**Joaofl Addons**](https://github.com/joaofl/hassio-addons): Joaofl 的加载项
 - 🖥️ [**Habuild Addons**](https://github.com/habuild/hassio-addons): Habuild 的加载项
+- 🛠️ [**Mincka Addons**](https://github.com/Mincka/ha-addons): Mincka 的加载项
+- 🖥️ [**Koying Addons**](https://github.com/koying/ha-addons): Koying 的加载项
+- 📡 [**RTL_433 Addons**](https://github.com/pbkhrv/rtl_433-hass-addons): RTL_433 的加载项
+- 🛠️ [**Loganmarchione Addons**](https://github.com/loganmarchione/hassos-addons): Loganmarchione 的加载项
+- 🚀 [**Torrserver Addons**](https://github.com/aatrubilin/hassio-torrserver): Torrserver 的加载项
+- 🗣️ [**Rhasspy Addons**](https://github.com/rhasspy/hassio-addons): Rhasspy 的加载项
+
+
 
 
 
