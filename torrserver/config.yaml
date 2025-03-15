@@ -1,0 +1,35 @@
+---
+name: TorrServer
+slug: torrserver
+description: TorrServer for home assistant 翻译为中文是“家庭助手Torrs服务器”。
+image: ghcr.nju.edu.cn/aatrubilin/hassio-torrserver/{arch}
+version: 1.2.0-MatriX.134
+url: https://gh-proxy.com/github.com/aatrubilin/hassio-torrserver
+codenotary: aatrubilin@gmail.com
+init: false
+auth_api: true
+arch:
+  - armv7
+  - armhf
+  - amd64
+  - i386
+  - aarch64
+map:
+  - addon_config:rw
+options:
+  httpauth: false
+  logins:
+    - username: homeassistant
+      password: homeassistant
+schema:
+  httpauth: bool
+  logins:
+    - username: str
+      password: password
+ingress: true
+ingress_port: 8090
+ports:
+  8090/tcp: 8090
+ports_description:
+  8090/tcp: TorrServer port
+startup: system

@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Jellyfin的Overseerr分支",
+  "description": "Jellyfin支持的Overseerr分支。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -94,6 +94,6 @@
   "slug": "jellyseerr",
   "udev": true,
   "url": "https://gh-proxy.com/github.com/alexbelgium/hassio-addons/tree/master/jellyseerr",
-  "version": "2.3.0",
+  "version": "2.5.0",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:5055]"
 }
