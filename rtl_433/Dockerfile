@@ -1,6 +1,6 @@
-ARG BUILD_FROM=ghcr.nju.edu.cn/home-assistant/amd64-base:3.19
+ARG BUILD_FROM
 FROM $BUILD_FROM as builder
-MAINTAINER pbkhrv@pm.me
+MAINTAINER koying@spax.pm
 
 ENV LANG C.UTF-8
 
@@ -14,12 +14,12 @@ RUN apk add --no-cache --virtual .buildDeps \
 
 WORKDIR /build
 
-RUN git clone https://gh-proxy.com/github.com/merbanan/rtl_433
+RUN git clone https://gh-proxy.com/github.com/koying/rtl_433
 WORKDIR ./rtl_433
 
 # Build a specific commit or tag.
-ARG rtl433GitRevision=23.11
-RUN git checkout ${rtl433GitRevision}
+ARG GitRevision=master
+RUN git checkout ${GitRevision}
 WORKDIR ./build
 RUN cmake ..
 RUN make -j 4
