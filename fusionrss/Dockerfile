@@ -1,5 +1,5 @@
 ARG BUILD_FROM
-FROM docker.1ms.run/rook1e404/fusion	
+FROM rook1e404/fusion	
 	
 COPY run.sh /
 RUN apt install -y jq

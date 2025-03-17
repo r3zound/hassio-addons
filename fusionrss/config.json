@@ -4,14 +4,14 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "轻量级RSS聚合器和阅读器。",
+  "description": "一个轻量级的RSS聚合器和阅读器。",
   "environment": {
     "DB": "/config/fusion.db"
   },
   "map": [
     "addon_config:rw"
   ],
-  "version": "0.8.15",
+  "version": "0.9.0",
   "name": "Fusion RSS",
   "options": {
     "PASSWORD": "rss123456"
@@ -27,7 +27,7 @@
   },
   "slug": "fusionrss",
   "startup": "services",
-  "upstream": "0.8.15",
+  "upstream": "0.9.0",
   "url": "https://gh-proxy.com/github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8081]",
   "ingress": false,

@@ -1,3 +1,5 @@
 ## What’s changed
 
-- Fix apparmor issue by removing apparmor file for now
+## 🐛 Bug fixes
+
+- Adapt script for new build packages @einschmidt (#8)
