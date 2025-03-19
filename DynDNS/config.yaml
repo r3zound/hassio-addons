@@ -1,7 +1,6 @@
 ---
 name: DynDNS
-description: >-  使用此附加组件，可以将各种动态域名服务（如DynDNS或DDNS）连接到您的Home Assistant实例。
-  With this add-on, various Dynamic DNS (DynDNS or DDNS) services can be connected to your Home Assistant instance.
+description: 使用此附加组件，可以将各种动态域名服务（如DynDNS或DDNS）连接到您的Home Assistant实例。
 url: "https://gh-proxy.com/github.com/Digi92/hassio-addon-repository/tree/main/DynDNS"
 version: 1.0.1
 image: "ghcr.nju.edu.cn/digi92/{arch}hassio-addon-dyndns"
