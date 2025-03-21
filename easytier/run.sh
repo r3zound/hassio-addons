@@ -1,8 +1,7 @@
 #!/bin/ash
 
-instance_name=$(jq -r '.instance_name // "easytier"' /data/options.json)
-hostname=$(hostname)
-instance_id=$(jq -r '.instance_id // "b96927a0-7ec1-4a7c-8487-e9bc6eaa176e"' /data/options.json)
+instance_name=$(hostname)
+#instance_id=$(jq -r '.instance_id // "b96927a0-7ec1-4a7c-8487-e9bc6eaa176e"' /data/options.json)
 ipv4=$(jq -r '.ipv4 // "1.1.1.1/24"' /data/options.json)
 dhcp=$(jq -r '.dhcp // false' /data/options.json)
 listeners=$(jq -r '.listeners // ["tcp://0.0.0.0:11010", "udp://0.0.0.0:11010", "wg://0.0.0.0:11011"]' /data/options.json)
@@ -24,9 +23,8 @@ use_smoltcp=$(jq -r '.use_smoltcp // true' /data/options.json)
 config_server=$(jq -r '.config_server // "username"' /data/options.json)
 
 args=""
-[ -n "$hostname" ] && args="$args --hostname $hostname"
 [ -n "$instance_name" ] && args="$args --instance-name $instance_name"
-[ -n "$instance_id" ] && args="$args --instance-id $instance_id"
+#[ -n "$instance_id" ] && args="$args --instance-id $instance_id"
 [ -n "$ipv4" ] && args="$args --ipv4 $ipv4"
 [ -n "$dhcp" ] && args="$args --dhcp $dhcp"
 [ -n "$listeners" ] && args="$args --listeners $listeners"

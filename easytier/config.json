@@ -35,10 +35,8 @@
   "boot": "manual",
   "host_network": true,
   "options": {
-    "instance_name": "easytier",
-    "instance_id": "b96927a0-7ec1-4a7c-8487-e9bc6eaa176e",
-    "ipv4": "1.1.1.1/24",
-    "dhcp": false,
+    "ipv4": "10.10.10.1/24",
+    "dhcp": true,
     "listeners": [
       "tcp://0.0.0.0:11010",
       "udp://0.0.0.0:11010",
@@ -62,8 +60,6 @@
     "config_server": "username"
   },
   "schema": {
-    "instance_name": "str?",
-    "instance_id": "str?",
     "ipv4": "str?",
     "dhcp": "bool?",
     "listeners": ["str?"],
