@@ -66,7 +66,7 @@
     "instance_id": "str?",
     "ipv4": "str?",
     "dhcp": "bool?",
-    "listeners": ["list(str)?"],
+    "listeners": ["str?"],
     "rpc_portal": "str?",
     "network_name": "str?",
     "network_secret": "str?",
