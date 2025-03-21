@@ -48,5 +48,6 @@ args=""
 if [ "$config_server" != "username" ]; then
     easytier-core -w "$config_server"
 else
+    echo "easytier-core $args"
     easytier-core $args
 fi
