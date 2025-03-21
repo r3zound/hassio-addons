@@ -40,9 +40,9 @@
     "ipv4": "1.1.1.1/24",
     "dhcp": false,
     "listeners": [
-        "tcp://0.0.0.0:11010",
-        "udp://0.0.0.0:11010",
-        "wg://0.0.0.0:11011"
+      "tcp://0.0.0.0:11010",
+      "udp://0.0.0.0:11010",
+      "wg://0.0.0.0:11011"
     ],
     "rpc_portal": "0.0.0.0:0",
     "network_name": "easytier",
@@ -84,3 +84,4 @@
     "use_smoltcp": "bool?",
     "config_server": "str?"
   }
+}
