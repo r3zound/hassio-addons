@@ -42,7 +42,7 @@ common_steps () {
 }
 
 # Check if MQTT service is available and not disabled
-if bashio::services.available 'mqtt' && ! bashio::config.true 'MQTT_DISABLED'; then
+if [[ -f "$HOME"/BirdNET-Pi/scripts/birdnet_analysis.py ]] && bashio::services.available 'mqtt' && ! bashio::config.true 'MQTT_DISABLED'; then
     bashio::log.green "---"
     bashio::log.blue "MQTT addon is active on your system! Birdnet-pi is now automatically configured to send its output to MQTT"
     bashio::log.blue "MQTT user : $(bashio::services "mqtt" "username")"
@@ -63,7 +63,7 @@ if bashio::services.available 'mqtt' && ! bashio::config.true 'MQTT_DISABLED'; t
     common_steps
 
 # Check if manual MQTT configuration is provided
-elif bashio::config.has_value "MQTT_HOST_manual" && bashio::config.has_value "MQTT_PORT_manual"; then
+elif [[ -f "$HOME"/BirdNET-Pi/scripts/birdnet_analysis.py ]] && bashio::config.has_value "MQTT_HOST_manual" && bashio::config.has_value "MQTT_PORT_manual"; then
     bashio::log.green "---"
     bashio::log.blue "MQTT is manually configured in the addon options"
     bashio::log.blue "Birdnet-pi is now automatically configured to send its output to MQTT"

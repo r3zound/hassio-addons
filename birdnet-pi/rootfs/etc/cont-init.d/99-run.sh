@@ -25,6 +25,9 @@ if bashio::config.has_value "pi_password"; then
 fi
 bashio::log.info "Password set successfully for user pi."
 
+# Ensure permissions
+chown pi:pi /usr/local/bin/*
+
 # Use timezone defined in add-on options if available
 bashio::log.info "Setting timezone :"
 if bashio::config.has_value 'TZ'; then
@@ -53,6 +56,10 @@ else
         bashio::log.fatal "Couldn't set automatic timezone! Please set a manual one from the options."
     fi
 fi || true
+
+# Fix timezone as per installer
+CURRENT_TIMEZONE="$(timedatectl show --value --property=Timezone)"
+[ -f /etc/timezone ] && echo "$CURRENT_TIMEZONE" | sudo tee /etc/timezone > /dev/null
 
 bashio::log.info "Starting system services"
 

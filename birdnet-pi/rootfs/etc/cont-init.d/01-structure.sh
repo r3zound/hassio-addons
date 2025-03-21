@@ -95,6 +95,15 @@ for file in "${CONFIG_FILES[@]}"; do
     sudo -u pi ln -fs "/config/$filename" "/etc/birdnet/$filename"
 done
 
+# Create thisrun.txt for legacy modes
+cp "$HOME"/BirdNET-Pi/birdnet.conf "$HOME"/BirdNET-Pi/scripts/thisrun.txt
+touch "$HOME"/BirdNET-Pi/scripts/lastrun.txt
+chown pi:pi "$HOME"/BirdNET-Pi/scripts/thisrun.txt
+chown pi:pi "$HOME"/BirdNET-Pi/scripts/lastrun.txt
+
+# Symlink
+chown pi:pi /usr/local/bin/*
+
 # Symlink BirdSongs folders
 for folder in By_Date Charts; do
     echo "... creating symlink for $BIRDSONGS_FOLDER/$folder"

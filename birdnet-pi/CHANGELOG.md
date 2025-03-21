@@ -1,3 +1,7 @@
+## 2025.03.24 (21-03-2025)
+- Minor bugs fixed
+## 2025.03.23 (15-03-2025)
+- Minor bugs fixed
 ## 2025.03.22 (13-03-2025)
 - [ALL] Use Nachtzuster universal tflite 2.17.1 runtimes allowing full compatibility with non avx cpu
 
