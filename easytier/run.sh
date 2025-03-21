@@ -17,7 +17,6 @@ enable_exit_node=$(jq -r '.enable_exit_node // true' /data/options.json)
 enable_kcp_proxy=$(jq -r '.enable_kcp_proxy // true' /data/options.json)
 latency_first=$(jq -r '.latency_first // true' /data/options.json)
 no_tun=$(jq -r '.no_tun // true' /data/options.json)
-proxy_forward_by_system=$(jq -r '.proxy_forward_by_system // true' /data/options.json)
 relay_all_peer_rpc=$(jq -r '.relay_all_peer_rpc // true' /data/options.json)
 use_smoltcp=$(jq -r '.use_smoltcp // true' /data/options.json)
 config_server=$(jq -r '.config_server // "username"' /data/options.json)
@@ -40,7 +39,6 @@ args=""
 [ "$enable_kcp_proxy" = "true" ] && args="$args --enable-kcp-proxy"
 [ "$latency_first" = "true" ] && args="$args --latency-first"
 [ "$no_tun" = "true" ] && args="$args --no-tun"
-[ "$proxy_forward_by_system" = "true" ] && args="$args --proxy-forward-by-system"
 [ "$relay_all_peer_rpc" = "true" ] && args="$args --relay-all-peer-rpc"
 [ "$use_smoltcp" = "true" ] && args="$args --use-smoltcp"
 

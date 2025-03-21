@@ -54,7 +54,6 @@
     "enable_kcp_proxy": false,
     "latency_first": false,
     "no_tun": false,
-    "proxy_forward_by_system": false,
     "relay_all_peer_rpc": false,
     "use_smoltcp": false,
     "config_server": "username"
@@ -75,7 +74,6 @@
     "enable_kcp_proxy": "bool?",
     "latency_first": "bool?",
     "no_tun": "bool?",
-    "proxy_forward_by_system": "bool?",
     "relay_all_peer_rpc": "bool?",
     "use_smoltcp": "bool?",
     "config_server": "str?"
