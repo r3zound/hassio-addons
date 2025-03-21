@@ -23,32 +23,32 @@ relay_all_peer_rpc=$(jq -r '.relay_all_peer_rpc // true' /data/options.json)
 use_smoltcp=$(jq -r '.use_smoltcp // true' /data/options.json)
 config_server=$(jq -r '.config_server // "username"' /data/options.json)
 
-args=()
-[ -n "$hostname" ] && args+=("--hostname" "$hostname")
-[ -n "$instance_name" ] && args+=("--instance-name" "$instance_name")
-[ -n "$instance_id" ] && args+=("--instance-id" "$instance_id")
-[ -n "$ipv4" ] && args+=("--ipv4" "$ipv4")
-[ -n "$dhcp" ] && args+=("--dhcp" "$dhcp")
-[ -n "$listeners" ] && args+=("--listeners" "$listeners")
-[ -n "$rpc_portal" ] && args+=("--rpc-portal" "$rpc_portal")
-[ -n "$network_name" ] && args+=("--network-name" "$network_name")
-[ -n "$network_secret" ] && args+=("--network-secret" "$network_secret")
-[ -n "$peer_uri" ] && args+=("--peer-uri" "$peer_uri")
-[ -n "$cidr" ] && args+=("--cidr" "$cidr")
-[ -n "$disable_kcp_input" ] && args+=("--disable-kcp-input" "$disable_kcp_input")
-[ -n "$disable_p2p" ] && args+=("--disable-p2p" "$disable_p2p")
-[ -n "$enable_encryption" ] && args+=("--enable-encryption" "$enable_encryption")
-[ -n "$enable_exit_node" ] && args+=("--enable-exit-node" "$enable_exit_node")
-[ -n "$enable_kcp_proxy" ] && args+=("--enable-kcp-proxy" "$enable_kcp_proxy")
-[ -n "$latency_first" ] && args+=("--latency-first" "$latency_first")
-[ -n "$no_tun" ] && args+=("--no-tun" "$no_tun")
-[ -n "$proxy_forward_by_system" ] && args+=("--proxy-forward-by-system" "$proxy_forward_by_system")
-[ -n "$relay_all_peer_rpc" ] && args+=("--relay-all-peer-rpc" "$relay_all_peer_rpc")
-[ -n "$use_smoltcp" ] && args+=("--use-smoltcp" "$use_smoltcp")
+args=""
+[ -n "$hostname" ] && args="$args --hostname $hostname"
+[ -n "$instance_name" ] && args="$args --instance-name $instance_name"
+[ -n "$instance_id" ] && args="$args --instance-id $instance_id"
+[ -n "$ipv4" ] && args="$args --ipv4 $ipv4"
+[ -n "$dhcp" ] && args="$args --dhcp $dhcp"
+[ -n "$listeners" ] && args="$args --listeners $listeners"
+[ -n "$rpc_portal" ] && args="$args --rpc-portal $rpc_portal"
+[ -n "$network_name" ] && args="$args --network-name $network_name"
+[ -n "$network_secret" ] && args="$args --network-secret $network_secret"
+[ -n "$peer_uri" ] && args="$args --peer-uri $peer_uri"
+[ -n "$cidr" ] && args="$args --cidr $cidr"
+[ -n "$disable_kcp_input" ] && args="$args --disable-kcp-input $disable_kcp_input"
+[ -n "$disable_p2p" ] && args="$args --disable-p2p $disable_p2p"
+[ -n "$enable_encryption" ] && args="$args --enable-encryption $enable_encryption"
+[ -n "$enable_exit_node" ] && args="$args --enable-exit-node $enable_exit_node"
+[ -n "$enable_kcp_proxy" ] && args="$args --enable-kcp-proxy $enable_kcp_proxy"
+[ -n "$latency_first" ] && args="$args --latency-first $latency_first"
+[ -n "$no_tun" ] && args="$args --no-tun $no_tun"
+[ -n "$proxy_forward_by_system" ] && args="$args --proxy-forward-by-system $proxy_forward_by_system"
+[ -n "$relay_all_peer_rpc" ] && args="$args --relay-all-peer-rpc $relay_all_peer_rpc"
+[ -n "$use_smoltcp" ] && args="$args --use-smoltcp $use_smoltcp"
 
-# 运行 easytier-core 命令并传递参数
+# Run easytier-core command with arguments
 if [ "$config_server" != "username" ]; then
     easytier-core -w "$config_server"
 else
-    easytier-core "${args[@]}"
+    easytier-core $args
 fi
