@@ -2,8 +2,8 @@
   "name": "EasyTier",
   "version": "v2.2.0",
   "slug": "easytier",
-  "description": "EasyTier 网络优化工具,未完成不要装",
-  "url": "https://github.com/djhui/hassio-addons",
+  "description": "EasyTier 优秀的开源组网工具",
+  "url": "https://github.com/desmond-dong/hassio-addons",
   "init": false,
   "arch": [
     "aarch64",
