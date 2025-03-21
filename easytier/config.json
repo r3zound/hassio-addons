@@ -1,10 +1,9 @@
 {
   "name": "EasyTier",
-  "version": "v2.2.2",
+  "version": "v2.2.0",
   "slug": "easytier",
-  "codenotary": "djhhui@gmail.com",
   "description": "EasyTier 网络优化工具,未完成不要装",
-  "url": "https://github.com/Desmond-Dong/hassio-addons",
+  "url": "https://github.com/djhui/hassio-addons",
   "init": false,
   "arch": [
     "aarch64",
@@ -16,34 +15,59 @@
   "devices": [
     "/dev/net/tun"
   ],
+  "ports": {
+    "11010/tcp": 11010,
+    "11010/udp": 11010,
+    "11011/tcp": 11011,
+    "11011/udp": 11011,
+    "11012/tcp": 11012,
+    "15888/tcp": 15888
+  },
+  "ports_description": {
+    "11010/tcp": "TCP listener",
+    "11010/udp": "UDP listener",
+    "11011/tcp": "WebSocket listener",
+    "11011/udp": "WireGuard listener",
+    "11012/tcp": "Secure WebSocket listener",
+    "15888/tcp": "RPC portal"
+  },
   "panel_icon": "mdi:application-variable",
   "boot": "manual",
   "host_network": true,
-  "map": {
-    "config": "rw"
-  },
   "options": {
-    "easytier": {
-      "instance_name": "easytier",
-      "instance_id": "efd108d6-0b2f-4d4c-9b97-81883f1f5152",
-      "rpc_portal": "0.0.0.0:0",
-      "network_name": "easytier",
-      "network_secret": "easytier",
-      "uri": "tcp://public.easytier.top:11010",
-      "cidr": "10.0.0.0/24",
-      "dhcp": true
-    }
+    "instance_name": "",
+    "hostname": "",
+    "ipv4": "",
+    "dhcp": false,
+    "network_name": "your_network_name",
+    "network_secret": "secret",
+    "proxy-networks": "10.14.14.0/24",
+    "default_protocol": "tcp",
+    "dev_name": "/dev/net/tun",
+    "config_server": "username",
+    "disable-ipv6": false,
+    "mtu": 1360,
+    "latency_first": false,
+    "enable_exit_node": false,
+    "no_tun": false,
+    "use_smoltcp": false
   },
   "schema": {
-    "easytier": {
-      "instance_name": "str?",
-      "instance_id": "str?",
-      "rpc_portal": "str?",
-      "network_name": "str?",
-      "network_secret": "str?",
-      "uri": "str?",
-      "cidr": "str?",
-      "dhcp": "bool?"
-    }
+    "instance_name": "str?",
+    "hostname": "str?",
+    "ipv4": "str?",
+    "dhcp": "bool?",
+    "network_name": "str?",
+    "network_secret": "str?",
+    "proxy-networks": "str?",
+    "default_protocol": "str?",
+    "dev_name": "str?",
+    "disable-ipv6": "bool?",
+    "mtu": "int?",
+    "latency_first": "bool?",
+    "enable_exit_node": "bool?",
+    "no_tun": "bool?",
+    "use_smoltcp": "bool?",
+    "config_server": "str?"
   }
 }
