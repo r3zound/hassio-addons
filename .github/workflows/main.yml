@@ -284,7 +284,7 @@ jobs:
               echo "Moved directory: $ITEM"
             fi
           done
-          rm -rf whisparr _images scripts script template # 删除无用的仓库
+          rm -rf whisparr _images scripts script template binance-trading-bot # 删除无用的仓库
 
 
       - name: sync hass-panel
