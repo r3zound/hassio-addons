@@ -4,10 +4,10 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "红书库（Redlib）是一款类似于Invidious的私人前端应用，但专用于Reddit。",
+  "description": "红书库是一款类似于Invidious的私人前端应用，但专用于Reddit。",
   "environment": {},
   "map": [],
-  "version": "0.35.1",
+  "version": "0.36.0",
   "name": "Redlib",
   "options": {},
   "ports": {
@@ -19,7 +19,7 @@
   "schema": {},
   "slug": "redlib",
   "startup": "services",
-  "upstream": "0.35.1",
+  "upstream": "0.36.0",
   "url": "https://gh-proxy.com/github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
   "ingress": false,

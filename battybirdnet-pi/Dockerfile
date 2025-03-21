@@ -2,7 +2,7 @@
 #  ALEXBELGIUM'S DOCKERFILE  #
 #============================#
 #           _.------.
-#       _.-`    ('>.-`"""-.
+#       _.-`    ('>.-`"""-.port
 # '.--'`       _'`   _ .--.)
 #    -'         '-.-';`   `
 #    ' -      _.'  ``'--.
@@ -18,6 +18,8 @@ ARG BUILD_VERSION
 ARG BUILD_FROM
 FROM ${BUILD_FROM}
 
+# Install locales
+RUN apt-get update && apt-get install --no-install-recommends -y locales && locale-gen en_US.UTF-8
 ENV DEBIAN_FRONTEND="noninteractive" \
     BIRDNET_USER="pi" \
     USER="pi" \
@@ -25,8 +27,9 @@ ENV DEBIAN_FRONTEND="noninteractive" \
     PGID=1000 \
     HOME="/home/pi" \
     XDG_RUNTIME_DIR="/run/user/1000" \
-    PYTHON_VIRTUAL_ENV="$HOME/BirdNET-Pi/birdnet/bin/python3" \
-    my_dir=/home/pi/BattyBirdNET-Analyzer/scripts
+    PYTHON_VIRTUAL_ENV="/home/pi/BirdNET-Pi/birdnet/bin/python3" \
+    my_dir=/home/pi/BirdNET-Pi/scripts \
+    LANGUAGE=en_US:en
 
 # Global LSIO modifications
 ADD "https://gh-proxy.com/raw.githubusercontent.com/alexbelgium/hassio-addons/master/.templates/ha_lsio.sh" "/ha_lsio.sh"
@@ -44,6 +47,11 @@ RUN \
     curl -f -L -s -S https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/master/files/docker/systemctl3.py -o /bin/systemctl && \
     chmod a+x /bin/systemctl && \
     \
+    # Correct for timedatectl
+    if [[ -f /usr/bin/timedatectl ]]; then rm -r /usr/bin/timedatectl; fi && \
+    curl -f -L -s -S https://raw.githubusercontent.com/alexbelgium/hassio-addons/refs/heads/master/birdnet-pi/rootfs/helpers/timedatectl -o /usr/bin/timedatectl && \
+    chmod 777 /usr/bin/timedatectl && \
+    \
     # Change user to pi and create /home/pi
     echo "setting users" && \
     if id abc >/dev/null 2>&1; then groupmod -o -g 101 abc && usermod -o -u 101 abc; fi && \
@@ -58,7 +66,7 @@ RUN \
     git config --global --add safe.directory '*' && \
     \
     # Download installer
-    curl -f -L -s -S "https://raw.githubusercontent.com/rdz-oss/BattyBirdNET-Pi/main/newinstaller.sh" -o /newinstaller.sh && \
+    curl -f -L -s -S "https://raw.githubusercontent.com/alexbelgium/BattyBirdNET-Pi/main/newinstaller.sh" -o /newinstaller.sh && \
     chmod 777 /newinstaller.sh && \
     \
     # Use installer to modify other scripts
@@ -67,10 +75,11 @@ RUN \
     sed -i "1a /./newinstallermod.sh" /newinstaller.sh && \
     echo '#!/bin/bash' >> /newinstallermod.sh && \
     # Remove all instances of sudo from all other scripts
-    echo 'for file in $(grep -srl "sudo" $HOME/BattyBirdNET-Analyzer/scripts); do sed -i "s|sudo ||" "$file"; done' >> /newinstallermod.sh && \
-    echo 'for file in $(grep -srl "my_dir" $HOME/BattyBirdNET-Analyzer/scripts); do sed -i "s|\$my_dir|/config|" "$file"; done' >> /newinstallermod.sh && \
+    echo 'for file in $(grep -srl "sudo" $HOME/BirdNET-Pi/scripts); do sed -i "s|sudo ||" "$file"; done' >> /newinstallermod.sh && \
+    echo 'for file in $(grep -srl "my_dir" $HOME/BirdNET-Pi/scripts); do sed -i "s|\$my_dir|/config|" "$file"; done' >> /newinstallermod.sh && \
     # Disable pulseaudio
-    echo 'for file in $(grep -srl "pulseaudio --start" $HOME/BattyBirdNET-Analyzer/scripts); do sed -i "/pulseaudio --start/d" "$file"; done' >> /newinstallermod.sh && \
+    echo 'for file in $(grep -srl "pulseaudio --start" $HOME/BirdNET-Pi/scripts); do sed -i "/pulseaudio --start/d" "$file"; done' >> /newinstallermod.sh && \
+    echo 'sed -i /timedatectl/d $HOME/BirdNET-pi/scripts/install_birdnet.sh' >> /newinstallermod.sh && \
     # Set permission
     chmod +x /newinstallermod.sh && \
     \
@@ -149,6 +158,10 @@ ADD "https://gh-proxy.com/raw.githubusercontent.com/alexbelgium/hassio-addons/ma
 # Entrypoint modifications
 ADD "https://gh-proxy.com/raw.githubusercontent.com/alexbelgium/hassio-addons/master/.templates/ha_entrypoint_modif.sh" "/ha_entrypoint_modif.sh"
 RUN chmod 777 /ha_entrypoint.sh /ha_entrypoint_modif.sh && /ha_entrypoint_modif.sh && rm /ha_entrypoint_modif.sh
+
+RUN \
+    # Remove not working elements
+    sed -i "1a exit 0" /etc/cont-init.d/33-mqtt.sh
 
 # Avoid config.yaml interference
 WORKDIR /config

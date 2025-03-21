@@ -1,36 +1,36 @@
-# Home Assistant 插件: n8n
+# Home assistant add-on: n8n
 
-n8n 是一个可扩展的工作流自动化工具。通过公平代码分发模型，n8n 将始终拥有可见的源代码，可以自托管，并允许您添加自己的自定义函数、逻辑和应用程序。n8n 的基于节点的方法使其高度灵活，能够将任何事物连接到一切。
+n8n is an extendable workflow automation tool. With a fair-code distribution model, n8n will always have visible source code, be available to self-host, and allow you to add your own custom functions, logic and apps. n8n's node-based approach makes it highly versatile, enabling you to connect anything to everything.
 
-功能未测试，但插件可以运行
+Functionality not tested, but addon does run
 
-_感谢每一个给我的仓库点星的人！要点星，请点击下面的图片，然后它将出现在右上角。谢谢！_
+_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
-## 关于
+## About
 
-该插件使用 [docker 镜像](https://github.com/n8n-io/n8n)。
+This addon uses the [docker image](https://github.com/n8n-io/n8n).
 
-## 安装
+## Installation
 
-1. [将我的 Hass.io 插件仓库][repository] 添加到您的 Hass.io 实例。
-1. 点击 `保存` 按钮以存储您的配置。
-1. 启动插件。
-1. 插件将失败，这没关系。
-1. 使用 ssh 进入您的 homeassistant 并运行 `chmod 2777 /addon_configs/2effc9b9_n8n`
-1. 启动插件
-1. 检查插件的日志以查看是否一切正常。
-1. 打开 WebUI 应该可以通过 <your-ip>:port 访问。
-1. 设置管理员账户
-1. 设置将在 /addon_configs/2effc9b9_n8n 中。
 
-## 配置
+1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
+1. Click the `Save` button to store your configuration.
+1. Start the add-on.
+1. Add-on will fail, that is ok
+1. ssh into your homeassistant and run `chmod 2777 /addon_configs/2effc9b9_n8n`
+1. start add-on
+1. Check the logs of the add-on to see if everything went well.
+1. Open WebUI should work via <your-ip>:port.
+1. Setup administrator account
+1. Settings will be in /addon_configs/2effc9b9_n8n
+## Configuration
 
 ```
-port : 5678 #您希望运行的端口。
+port : 5678 #port you want to run on.
 ```
 
-Webui 可以在 `<your-ip>:port` 找到。
+Webui can be found at `<your-ip>:port`.
 
 [repository]: https://github.com/jdeath/homeassistant-addons
