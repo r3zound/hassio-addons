@@ -37,11 +37,6 @@
   "options": {
     "ipv4": "10.10.10.1/24",
     "dhcp": true,
-    "listeners": [
-      "tcp://0.0.0.0:11010",
-      "udp://0.0.0.0:11010",
-      "wg://0.0.0.0:11011"
-    ],
     "rpc_portal": "0.0.0.0:0",
     "network_name": "easytier",
     "network_secret": "easytier",
@@ -61,7 +56,6 @@
   "schema": {
     "ipv4": "str?",
     "dhcp": "bool?",
-    "listeners": ["str?"],
     "rpc_portal": "str?",
     "network_name": "str?",
     "network_secret": "str?",

@@ -4,7 +4,7 @@ instance_name=$(hostname)
 #instance_id=$(jq -r '.instance_id // "b96927a0-7ec1-4a7c-8487-e9bc6eaa176e"' /data/options.json)
 ipv4=$(jq -r '.ipv4 // "1.1.1.1/24"' /data/options.json)
 dhcp=$(jq -r '.dhcp // false' /data/options.json)
-listeners=$(jq -r '.listeners // ["tcp://0.0.0.0:11010", "udp://0.0.0.0:11010", "wg://0.0.0.0:11011"]' /data/options.json | tr -d '\n')
+#listeners=$(jq -r '.listeners // ["tcp://0.0.0.0:11010", "udp://0.0.0.0:11010", "wg://0.0.0.0:11011"]' /data/options.json | tr -d '\n')
 rpc_portal=$(jq -r '.rpc_portal // "0.0.0.0:0"' /data/options.json)
 network_name=$(jq -r '.network_name // "easytier"' /data/options.json)
 network_secret=$(jq -r '.network_secret // "easytier"' /data/options.json)
@@ -26,7 +26,7 @@ args=""
 #[ -n "$instance_id" ] && args="$args --instance-id $instance_id"
 [ -n "$ipv4" ] && args="$args --ipv4 $ipv4"
 [ "$dhcp" = "true" ] && args="$args --dhcp"
-[ -n "$listeners" ] && args="$args --listeners $listeners"
+#[ -n "$listeners" ] && args="$args --listeners $listeners"
 [ -n "$rpc_portal" ] && args="$args --rpc-portal $rpc_portal"
 [ -n "$network_name" ] && args="$args --network-name $network_name"
 [ -n "$network_secret" ] && args="$args --network-secret $network_secret"
