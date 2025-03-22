@@ -1,7 +1,7 @@
 {
   "build_from": {
-    "aarch64": "docker.1ms.run/fireflyiii/data-importer:latest",
-    "amd64": "docker.1ms.run/fireflyiii/data-importer:latest"
+    "aarch64": "fireflyiii/data-importer:latest",
+    "amd64": "fireflyiii/data-importer:latest"
   },
   "codenotary": {
     "signer": "alexandrep.github@gmail.com"

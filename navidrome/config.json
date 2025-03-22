@@ -7,7 +7,7 @@
     "**/cache/**"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Navidrome for Home Assistant（纳维德罗姆为家庭助手）是一种集成在Home Assistant中的音乐流媒体服务。它允许用户通过语音命令或应用程序访问他们的音乐收藏，并与其他智能家居设备进行交互。",
+  "description": "Navidrome for Home Assistant\n\n纳维德罗姆为家庭助理",
   "image": "ghcr.nju.edu.cn/alexbelgium/navidrome-{arch}",
   "init": false,
   "map": [
@@ -59,6 +59,6 @@
   "slug": "navidrome",
   "udev": true,
   "url": "https://gh-proxy.com/github.com/alexbelgium/hassio-addons/tree/master/navidrome",
-  "version": "0.55.0",
+  "version": "0.55.1",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:4533]"
 }

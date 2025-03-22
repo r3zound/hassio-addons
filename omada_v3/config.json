@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "TP-Link Omada Controller 翻译为中文是“TP-Link Omada 控制器”。",
+  "description": "TP-Link Omada 控制器",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -111,6 +111,6 @@
   "slug": "omada_v3",
   "udev": true,
   "url": "https://gh-proxy.com/github.com/alexbelgium/hassio-addons",
-  "version": "5.3-amd64-2025-03-04",
+  "version": "5.3-amd64-2025-03-18",
   "webui": "http://[HOST]:[PORT:8088]"
 }
