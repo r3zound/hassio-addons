@@ -1,9 +1,12 @@
+## 31.0.2-2 (23-03-2025)
+- Fix permissions check
 
 ## 31.0.2 (22-03-2025)
 - Update to latest version from linuxserver/docker-nextcloud (changelog : https://github.com/linuxserver/docker-nextcloud/releases)
 
 ## 31.0.1 (15-03-2025)
 - Update to latest version from linuxserver/docker-nextcloud (changelog : https://github.com/linuxserver/docker-nextcloud/releases)
+
 ## 31.0.0-2 (13-03-2025)
 - New option : skip_permissions_check to skip permissions check
 

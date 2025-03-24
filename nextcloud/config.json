@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Nextcloud for Home assistant\n\n家庭助理的Nextcloud",
+  "description": "Nextcloud for Home Assistant",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -159,6 +159,6 @@
   "uart": true,
   "udev": true,
   "url": "https://gh-proxy.com/github.com/alexbelgium/hassio-addons/tree/master/nextcloud",
-  "version": "31.0.2",
+  "version": "31.0.2-2",
   "webui": "https://[HOST]:[PORT:443]"
 }

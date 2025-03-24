@@ -1,139 +1,45 @@
-# PostScript Printer Application
+# PostScript 打印机应用程序
 
-## INTRODUCTION
+## 介绍
 
-This repository contains a Printer Application for PostScript printers
-that uses [PAPPL](https://www.msweet.org/pappl) to support IPP
-printing from multiple operating systems. In addition, it uses the
-resources of [cups-filters
-2.x](https://github.com/OpenPrinting/cups-filters) (filter functions
-in libcupsfilters, libppd) and
-[pappl-retrofit](https://github.com/OpenPrinting/pappl-retrofit)
-(encapsulating classic CUPS drivers in Printer Applications). This
-work (or now the code of pappl-retrofit) is derived from the
-[hp-printer-app](https://github.com/michaelrsweet/hp-printer-app).
+此存储库包含一个针对 PostScript 打印机的打印机应用程序，该应用程序使用 [PAPPL](https://www.msweet.org/pappl) 来支持来自多个操作系统的 IPP 打印。此外，它利用 [cups-filters 2.x](https://github.com/OpenPrinting/cups-filters)（libcupsfilters、libppd 中的过滤器功能）和 [pappl-retrofit](https://github.com/OpenPrinting/pappl-retrofit)（将经典 CUPS 驱动程序封装在打印机应用程序中）的资源。此工作（或现有的 pappl-retrofit 代码）源自 [hp-printer-app](https://github.com/michaelrsweet/hp-printer-app)。
 
-Your contributions are welcome. Please post [issues and pull
-requests](https://github.com/OpenPrinting/ps-printer-app).
+欢迎您的贡献。请发布 [问题和拉取请求](https://github.com/OpenPrinting/ps-printer-app)。
 
-### This Printer Application is a working model for
+### 此打印机应用程序是一个工作模型
 
-- A non-raster Printer Application: Destination format is PostScript,
-  a high-level/vector format. Input data in PostScript or PDF is
-  accepted and needed conversion is done without any inbetween raster
-  steps.
+- 一个非点阵打印机应用程序：目标格式为 PostScript，这是一个高级/矢量格式。接受 PostScript 或 PDF 中的输入数据，并在没有任何中间点阵步骤的情况下进行必要的转换。
 
-- A Printer Application which uses the new filter functions of
-  cups-filters 2.x. Filter functions are library functions derived
-  from the CUPS filters and contain decades of development and
-  refinement starting from the introduction of CUPS in 2000.
+- 一个使用 cups-filters 2.x 新过滤器功能的打印机应用程序。过滤器功能是源自 CUPS 过滤器的库函数，从 2000 年 CUPS 引入开始，经过数十年的开发和改进。
 
-- A retro-fit Printer Application for classic CUPS drivers, in this
-  case the simplest form of only PPD files for PostScript printers. It
-  lists PPD files from repositories included in the Snap, loads the
-  PPD needed for the actual printer, extracts options from the PPD to
-  display them in the web interface, accepts job settings as IPP
-  attributes, and inserts the PostScript code provided by the PPD
-  correctly into the output data stream.
+- 一个经典 CUPS 驱动程序的改造打印机应用程序，在这种情况下，仅支持 PostScript 打印机的 PPD 文件的最简单形式。它列出了包含在 Snap 中的库中的 PPD 文件，加载实际打印机所需的 PPD，从 PPD 中提取选项以在网络界面中显示，接受作为 IPP 属性的作业设置，并正确地将 PPD 提供的 PostScript 代码插入到输出数据流中。
 
-- A Printer Application which does not pass through raw (input format
-  is printer's native format) jobs. To assure that always the
-  PostScript code of the PPD file is inserted into the output stream,
-  we call the printer's native format
-  "application/vnd.printer-specific" which does not exist as input
-  format, so "application/postscript" input is forced through the
-  pstops() filter function.
+- 一个不通过原始（输入格式为打印机的本机格式）作业的打印机应用程序。为确保始终将 PPD 文件的 PostScript 代码插入到输出流中，我们将打印机的本机格式称为“application/vnd.printer-specific”，该格式不存在作为输入格式，因此通过 pstops() 过滤器函数强制使用“application/postscript”输入。
 
-- An expandable Printer Application: The user can add PPD files via the
-  administration web interface to support additional printer models.
+- 一个可扩展的打印机应用程序：用户可以通过管理网页接口添加 PPD 文件，以支持其他打印机型号。
 
-Further properties are:
+进一步的属性有：
 
-- To avoid the need to re-invent the code for forking into sub-processes
-  so that we can pass data through a sequence of filters, we create a
-  filter function to send the data off to the printer and form a chain
-  of the actually converting filter function (one of pstops() and
-  pdftops()) with this filter function using the filterChain() filter
-  function.
+- 为了避免重新发明用于分叉到子进程的代码，以便我们可以通过一系列过滤器传递数据，我们创建了一个过滤器函数将数据发送到打印机，并使用 filterChain() 过滤器函数形成实际转换过滤器函数（pstops() 和 pdftops() 中的一个）与此过滤器函数的链。
 
-- For PWG/Apple Raster input we use raster callbacks so that the
-  processing is streaming, allowing for large and even infinitely long
-  jobs. We use libppd functions to insert the PPD option's PostScript
-  code in the output stream and the filterPOpen() function to create a
-  file descriptor for the libppd functions to send data off to the
-  device.
+- 对于 PWG/Apple Raster 输入，我们使用栅格回调，使得处理是流式的，允许处理大型甚至无限长的作业。我们使用 libppd 函数将 PPD 选项的 PostScript 代码插入到输出流中，并使用 filterPOpen() 函数为 libppd 函数创建一个文件描述符，以将数据发送到设备。
 
-- The PostScript Printer Application Snap has all PostScript PPD files
-  of the [foomatic-db](https://github.com/OpenPrinting/foomatic-db)
-  and [HPLIP](https://developers.hp.com/hp-linux-imaging-and-printing)
-  projects built-in, so most PostScript printer PPDs which usually
-  come with Linux Distributions. To avoid that this vast number of
-  PPDs blows up the size of the Snap, we highly compress them using
-  [pyppd](https://github.com/OpenPrinting/pyppd). Note that some PPDs
-  use certain CUPS filters for extra functionality. These filters are
-  included in the Snap, so the extra functionality is supported (in
-  most cases PIN-protected printing). The user can add additional PPDs
-  without needing to rebuild the Snap (see below).
+- PostScript 打印机应用程序 Snap 内置了 [foomatic-db](https://github.com/OpenPrinting/foomatic-db) 和 [HPLIP](https://developers.hp.com/hp-linux-imaging-and-printing) 项目的所有 PostScript PPD 文件，因此大多数通常与 Linux 发行版一起提供的 PostScript 打印机 PPD。为避免这个庞大的 PPD 数量增加 Snap 的大小，我们使用 [pyppd](https://github.com/OpenPrinting/pyppd) 对其进行高度压缩。请注意某些 PPD 使用特定的 CUPS 过滤器以获得额外功能。这些过滤器包含在 Snap 中，因此支持额外功能（在大多数情况下为 PIN 保护打印）。用户可以添加额外的 PPD，而无需重新构建 Snap（见下文）。
 
-- We use the printer's IEEE-1284 device ID to identify at first that
-  it is a PostScript printer (via CMD: field) to see whether it is
-  supported at all and only then check via make and model whether we
-  explicitly support it with a PPD. PostScript printers for which
-  there is no PPD get a generic PPD assigned. By the check of the CMD:
-  field before make/model lookup we assure that if PostScript is
-  provided by an add-on module that the module is actually installed.
+- 我们使用打印机的 IEEE-1284 设备 ID 首先识别它是一个 PostScript 打印机（通过 CMD: 字段）以查看它是否被支持，然后再通过制造商和型号检查我们是否明确支持它的 PPD。没有 PPD 的 PostScript 打印机将分配一个通用 PPD。通过在制造商/型号查找之前检查 CMD: 字段，我们确保如果 PostScript 是由附加模块提供的，则该模块实际上已安装。
 
-- Standard job IPP attributes are mapped to the PPD option settings
-  best fitting to them so that users can print from any type of client
-  (like for example a phone or IoT device) which only supports
-  standard IPP attributes and cannot retrive the PPD options. Trays,
-  media sizes, media types, and duplex can get mapped easily, but when
-  it comes to color and quality it gets more complex, as relevant
-  options differ a lot in the PPD files. Here we use an algorithm
-  which automatically (who wants hand-edit ~10000 PPDs for the
-  assignments) finds the right set of option settings for each
-  combination of `print-color-mode` (`color`/`monochrome`),
-  `print-quality` (`draft`/`normal`/`high`), and
-  `print-content-optimize`
-  (`auto`/`photo`/`graphics`/`text`/`text-and-graphics`) in the PPD of
-  the current printer. So you have easy access to the full quality or
-  speed of your printer without needing to deal with printer-specific
-  option settings (the original options are still accessible via web
-  admin interface).
+- 标准作业 IPP 属性被映射到最合适的 PPD 选项设置，以便用户可以从任何类型的客户端（例如手机或 IoT 设备）进行打印，后者仅支持标准 IPP 属性而无法检索 PPD 选项。纸盘、介质大小、介质类型和双面打印可以轻松映射，但当涉及到颜色和质量时会变得更加复杂，因为相关选项在 PPD 文件中差异很大。在这里，我们使用一个算法自动（谁想手动编辑 ~10000 个 PPD 进行分配）为当前打印机的 PPD 中的每个 `print-color-mode`（`color`/`monochrome`）、`print-quality`（`draft`/`normal`/`high`）和 `print-content-optimize`（`auto`/`photo`/`graphics`/`text`/`text-and-graphics`）组合找到正确的选项设置。因此，您可以轻松访问打印机的全部质量或速度，而无需处理特定于打印机的选项设置（原始选项仍可通过网络管理界面访问）。
 
-- The printer capabilities for a given printer model (a "driver" in
-  the Printer Application) are not static throughout the life of the
-  print queue set up in the Printer Application. The user can
-  configure via a page in the web admin interface which hardware
-  accessories (extra paper trays, duplex unit, finishers, ...) are
-  installed on the printer and the Printer Application updates the
-  driver data structure and with this the printer capabilities. The
-  response to a get-printer-attributes IPP request gets updated
-  appropriately.
+- 特定打印机型号（打印机应用程序中的“驱动程序”）的打印机功能在打印机应用程序中设置的打印队列的整个生命周期中不是静态的。用户可以通过网页管理界面中的页面配置打印机上安装了哪些硬件附件（额外纸盘、双面单元、整理器……），并且打印机应用程序会更新驱动程序数据结构以及打印机功能。对 get-printer-attributes IPP 请求的响应将适当地更新。
 
-- PostScript is a full-fledged programming language and many PostScript
-  printers allow querying settings of options and the presence of
-  installable hardware accessories executing appropriate PostScript
-  code. If a setting can get queried, the manufacturer puts the needed
-  PostScript code into the PPD file, together with the queriable option.
-  These queries are supported by the web interface of the Printer
-  Application.
+- PostScript 是一门功能强大的编程语言，许多 PostScript 打印机允许查询选项设置和可安装的硬件附件的存在，并执行相应的 PostScript 代码。如果可以查询设置，制造商会将所需的 PostScript 代码放入 PPD 文件中，以及可查询的选项。这些查询可以通过打印机应用程序的网页界面进行支持。
 
-- Available printer devices are discovered (and used) with CUPS'
-  backends and not with PAPPL's own backends. This way quirk
-  workarounds for USB printers with compatibility problems are used
-  (and are editable) and PostScript output can get sent to the printer
-  via IPP, IPPS (encrypted!), and LPD in addition to socket (usually
-  port 9100). The SNMP backend can get configured (community, address
-  scope).
+- 可用的打印设备通过 CUPS 的后端进行发现（和使用），而不是通过 PAPPL 自身的后端。这样便使用了 USB 打印机的兼容性问题的故障绕过（并且可编辑），并且除了插座（通常是 9100 端口）外，PostScript 输出还可以通过 IPP、IPPS（加密！）和 LPD 发送到打印机。可以配置 SNMP 后端（社区，地址范围）。
 
-- If you have an unusual system configuration or a personal firewall
-  your printer will perhaps not get discovered. In this situation the
-  fully manual "Network Printer" entry in combination with the
-  hostname/IP field can be helpful.
+- 如果您有不寻常的系统配置或个人防火墙，您的打印机可能无法被发现。在这种情况下，完全手动的“网络打印机”条目与主机名/IP 字段的组合可能会很有帮助。
 
 <!-- Begin Included Components -->
-## Included Components
+## 包含的组件
   - pappl v1.4.8
   - qpdf v11.9.1
   - ghostscript ghostpdl-10.05.0-test-base-001
@@ -146,17 +52,14 @@ Further properties are:
   - hplip debian/3.22.10+dfsg0-5
 <!-- End Included Components -->
 
-## LEGAL STUFF
+## 法律事项
 
-The PostScript Printer Application is Copyright © 2020 by Till Kamppeter.
+PostScript 打印机应用程序版权 © 2020 由 Till Kamppeter 拥有。
 
-It is derived from the HP PCL Printer Application, a first working model of
-a raster Printer Application using PAPPL. It is available here:
+它源自 HP PCL 打印机应用程序，这是一个使用 PAPPL 的点阵打印机应用程序的第一个工作模型。可以在这里获取：
 
 https://github.com/michaelrsweet/hp-printer-app
 
-The HP PCL Printer Application is Copyright © 2019-2020 by Michael R Sweet.
+HP PCL 打印机应用程序版权 © 2019-2020 由 Michael R Sweet 拥有。
 
-This software is licensed under the Apache License Version 2.0 with an exception
-to allow linking against GPL2/LGPL2 software (like older versions of CUPS).  See
-the files "LICENSE" and "NOTICE" for more information.
+此软件根据 Apache 许可证第 2.0 版授权，允许链接到 GPL2/LGPL2 软件（如较旧版本的 CUPS）。有关更多信息，请参见“LICENSE”和“NOTICE”文件。

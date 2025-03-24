@@ -1,5 +1,5 @@
 name: Ghostscript Printer
-version: 10.05.0-9-edge
+version: 10.05.0-10-edge
 slug: ghostscript-printer
 description: 支持使用Ghostscript打印机驱动程序的打印机和一些额外的过滤器。
 url: https://gh-proxy.com/github.com/Eskander/ha-addon-printer
