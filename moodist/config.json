@@ -4,11 +4,11 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "环境音用于集中和冷静。",
+  "description": "专注和宁静的环境音效。",
   "environment": {},
   "map": [],
   "image": "ghcr.nju.edu.cn/remvze/moodist",
-  "version": "v1.5.1",
+  "version": "v2.0.1",
   "name": "moodist",
   "options": {},
   "ports": {
@@ -20,7 +20,7 @@
   "schema": {},
   "slug": "moodist",
   "startup": "services",
-  "upstream": "v1.5.1",
+  "upstream": "v2.0.1",
   "url": "https://gh-proxy.com/github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
   "ingress": false,

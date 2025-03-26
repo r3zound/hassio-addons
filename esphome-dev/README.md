@@ -7,24 +7,25 @@
 
 ## 关于
 
-这个插件允许你通过 Home Assistant 来编写配置，并将你的微控制器
-变成智能家居设备，**无需编程经验**。
-你需要做的就是编写 YAML 配置文件；其余的（无线更新、编译）全部由 ESPHome 处理。
+这个附加组件允许你编写配置，并通过 Home Assistant 将你的微控制器
+直接转变为智能家居设备 **无需编程经验**。
+你所需要做的就是编写 YAML 配置文件；其余的（无线更新、编译）全部由 ESPHome 处理。
 
 <p align="center">
-<img title="ESPHome 设备构建器截屏" src="https://github.com/esphome/home-assistant-addon/raw/main/esphome-dev/images/screenshot.png" width="700px"></img>
+<img title="ESPHome 设备构建器截图" src="https://github.com/esphome/home-assistant-addon/raw/main/esphome-dev/images/screenshot.png" width="700px"></img>
 </p>
 
 [查看 ESPHome 文档][website]
 
 ## 示例
 
-使用 ESPHome，你可以从几行 YAML 直接生成自定义固件。例如，要包含一个 [DHT22][dht22]
-温湿度传感器，你只需在配置文件中添加 8 行 YAML：
+使用 ESPHome，你可以从几行 YAML 直接生成定制的
+固件。例如，要包含一个 [DHT22][dht22]
+温湿度传感器，你只需在你的配置文件中包含 8 行 YAML：
 
 <img title="ESPHome DHT 配置示例" src="https://github.com/esphome/home-assistant-addon/raw/main/esphome-dev/images/dht-example.png" width="500px"></img>
 
-然后只需点击上传，传感器就会神奇地出现在 Home Assistant 中：
+然后只需点击上传，传感器将神奇地出现在 Home Assistant 中：
 
 <img title="ESPHome Home Assistant 发现" src="https://github.com/esphome/home-assistant-addon/raw/main/esphome-dev/images/temperature-humidity.png" width="600px"></img>
 
