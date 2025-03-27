@@ -39,5 +39,14 @@
 </div> 💖
 
 感谢您的支持与鼓励！
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21c7d3b6f1c4ca40e066b4462383dee8";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 
 
