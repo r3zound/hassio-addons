@@ -72,8 +72,6 @@ RUN \
     # Remove all instances of sudo from all other scripts
     echo 'for file in $(grep -srl "sudo" $HOME/BirdNET-Pi/scripts); do sed -i "s|sudo ||" "$file"; done' >> /newinstallermod.sh && \
     echo 'for file in $(grep -srl "my_dir" $HOME/BirdNET-Pi/scripts); do sed -i "s|\$my_dir|/config|" "$file"; done' >> /newinstallermod.sh && \
-    # Disable pulseaudio
-    echo 'for file in $(grep -srl "pulseaudio --start" $HOME/BirdNET-Pi/scripts); do sed -i "/pulseaudio --start/d" "$file"; done' >> /newinstallermod.sh && \
     # Set permission
     chmod +x /newinstallermod.sh && \
     \
@@ -145,7 +143,7 @@ ADD "https://gh-proxy.com/raw.githubusercontent.com/alexbelgium/hassio-addons/ma
 RUN chmod 744 /ha_automodules.sh && /ha_automodules.sh "$MODULES" && rm /ha_automodules.sh
 
 # Manual apps
-ENV PACKAGES="alsa-utils libasound2-plugins mosquitto-clients"
+ENV PACKAGES="alsa-utils libasound2-plugins mosquitto-clients file"
 
 # Automatic apps & bashio
 ADD "https://gh-proxy.com/raw.githubusercontent.com/alexbelgium/hassio-addons/master/.templates/ha_autoapps.sh" "/ha_autoapps.sh"

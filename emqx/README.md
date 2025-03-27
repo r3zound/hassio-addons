@@ -8,15 +8,15 @@
 
 [![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
 
-适用于物联网、工业物联网和联网车辆的最可扩展开源 MQTT 代理。
+适用于物联网、工业物联网和连接车辆的最可扩展的开源 MQTT 代理。
 
 ## 关于
 
-[EMQX][emqx] 是一个开源 MQTT 代理，具有高性能的实时消息处理引擎，为大规模的物联网设备提供事件流服务。作为最可扩展的 MQTT 代理，EMQX 可以帮助您连接任何设备，无论规模如何（包括您的家庭）。
+[EMQX][emqx] 是一个开源的 MQTT 代理，具有高性能的实时消息处理引擎，为大规模物联网设备提供事件流服务。作为最可扩展的 MQTT 代理，EMQX 可以帮助您连接任何设备，无论规模如何（包括您的家）。
 
-[EMQX MQTT 代理][emqx] 是 Mosquitto MQTT 代理/插件的高级替代品，后者通常在 Home Assistant 中使用。它具有一个用户界面，用于配置、管理和调试您的 MQTT 代理、客户端和流量。
+[EMQX MQTT 代理][emqx] 是一个先进的替代方案，通常用于 Home Assistant 的 Mosquitto MQTT 代理/附加组件。它具有用户界面，用于配置、管理和调试您的 MQTT 代理、客户端和流量。
 
-尽管 EMQX 主要将其产品作为云托管产品在其网站上销售，但此插件在完全本地的自托管环境中运行 EMQX。
+虽然 EMQX 主要通过其网站销售云托管产品，但此插件在完全本地的自托管环境中运行 EMQX。
 
 ![EMQX 在 Home Assistant 前端][screenshot]
 
@@ -31,6 +31,6 @@
 [patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
 [patreon]: https://www.patreon.com/frenck
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
-[release-shield]: https://img.shields.io/badge/version-v0.7.4-blue.svg
-[release]: https://github.com/hassio-addons/addon-emqx/tree/v0.7.4
+[release-shield]: https://img.shields.io/badge/version-v0.7.5-blue.svg
+[release]: https://github.com/hassio-addons/addon-emqx/tree/v0.7.5
 [screenshot]: https://github.com/hassio-addons/addon-emqx/raw/main/images/screenshot.png

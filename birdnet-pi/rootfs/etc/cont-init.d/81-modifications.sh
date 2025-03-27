@@ -19,9 +19,28 @@ fi
 
 bashio::log.info "Adapting webui"
 
-# Remove services tab from webui
-echo "... removing System Controls from webui as should be used from HA"
-sed -i '/>System Controls/d' "$HOME/BirdNET-Pi/homepage/views.php"
+# HA specific elements
+######################
+
+if bashio::supervisor.ping 2>/dev/null; then
+    # Remove services tab from webui
+    echo "... removing System Controls from webui as should be used from HA"
+    sed -i '/>System Controls/d' "$HOME/BirdNET-Pi/homepage/views.php"
+
+    # Remove pulseaudio
+    echo "... disabling pulseaudio as managed by HomeAssistant"
+    for file in $(grep -srl "pulseaudio --start" $HOME/BirdNET-Pi/scripts); do
+        sed -i "s|! pulseaudio --check|pulseaudio --check|g" "$file"
+    done
+
+    # Check if port 80 is correctly configured
+    if [ -n "$(bashio::addon.port "80")" ] && [ "$(bashio::addon.port "80")" != 80 ]; then
+        bashio::log.fatal "The port 80 is enabled, but should still be 80 if you want automatic SSL certificates generation to work."
+    fi
+fi
+
+# General elements
+##################
 
 # Remove Ram drive option from webui
 echo "... removing Ram drive from webui as it is handled from HA"
@@ -39,12 +58,12 @@ done
 
 # Correct services to start as user pi
 echo "... updating services to start as user pi"
-if ! grep -q "/usr/bin/sudo" "$HOME/BirdNET-Pi/templates/birdnet_log.service"; then
+if ! grep -q "/usr/bin/sudo" "$HOME/BirdNET-Pi/templates/birdnet_analysis.service"; then
     while IFS= read -r file; do
         if [[ "$(basename "$file")" != "birdnet_log.service" ]]; then
             sed -i "s|ExecStart=|ExecStart=/usr/bin/sudo -u pi |g" "$file"
         fi
-    done < <(find "$HOME/BirdNET-Pi/templates/" -name "birdnet*.service" -print)
+    done < <(find "$HOME/BirdNET-Pi/templates/" -name "*net*.service" -print)
 fi
 
 # Send services log to container logs
@@ -97,20 +116,11 @@ if ! grep -q "/stats/" "$HOME/BirdNET-Pi/homepage/views.php"; then
     sed -i "s|/log|/log/|g" "$HOME/BirdNET-Pi/homepage/views.php"
 fi
 
-# Check if port 80 is correctly configured
-if [ -n "$(bashio::addon.port "80")" ] && [ "$(bashio::addon.port "80")" != 80 ]; then
-    bashio::log.fatal "The port 80 is enabled, but should still be 80 if you want automatic SSL certificates generation to work."
-fi
-
 # Correct systemctl path
 echo "... updating systemctl path"
 curl -f -L -s -S https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/master/files/docker/systemctl3.py -o /bin/systemctl || mv /helpers/systemctl3.py /bin/systemctl
 chown pi:pi /bin/systemctl
 chmod a+x /bin/systemctl
-
-# Improve streamlit cache
-#echo "... add streamlit cache"
-#sed -i "/def get_data/i \\@st\.cache_resource\(\)" "$HOME/BirdNET-Pi/scripts/plotly_streamlit.py"
 
 # Allow reverse proxy for streamlit
 echo "... allow reverse proxy for streamlit"
@@ -124,12 +134,23 @@ if [[ -f "$HOME/BirdNET-Pi/scripts/utils/reporting.py" ]]; then
 fi
 
 # Correct timedatectl path
-echo "updating timedatectl path"
+echo "... updating timedatectl path"
 if [[ -f /helpers/timedatectl ]]; then
     mv /helpers/timedatectl /usr/bin/timedatectl
     chown pi:pi /usr/bin/timedatectl
     chmod a+x /usr/bin/timedatectl
 fi
+
+# Set RECS_DIR
+echo "... setting RECS_DIR to /tmp"
+grep -rl "RECS_DIR" $HOME | while read -r file; do
+    sed -i "s|conf\['RECS_DIR'\]|'/tmp'|g" "$file"
+    sed -i "s|\$RECS_DIR|/tmp|g" "$file"
+    sed -i "s|\${RECS_DIR}|/tmp|g" "$file"
+    sed -i "/^RECS_DIR=/c RECS_DIR=/tmp" "$file"
+    sed -i "/^\$RECS_DIR=/c \$RECS_DIR=/tmp" "$file"
+done
+mkdir -p /tmp
 
 # Correct language labels according to birdnet.conf
 echo "... adapting labels according to birdnet.conf"
