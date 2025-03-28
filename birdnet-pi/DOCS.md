@@ -1,59 +1,59 @@
-# 麦克风注意事项
-关键要素是麦克风质量：Boya By-lm 40 或 clippy EM272（配有非常好的 aux-usb 转换器）是提高检测质量的关键。
-这里是我进行的一些示例测试（完整的讨论串也很有趣）： https://github.com/mcguirepr89/BirdNET-Pi/discussions/39#discussioncomment-9706951 
+# Microphone considerations
+The critical element is the microphone quality : a Boya By-lm 40 or clippy EM272 (with a very good aux-usb converter) is key to improve the quality of detections. 
+Here is some example tests I did (whole threads are really interesting also): https://github.com/mcguirepr89/BirdNET-Pi/discussions/39#discussioncomment-9706951 
 https://github.com/mcguirepr89/BirdNET-Pi/discussions/1092#discussioncomment-9706191
 
-我的推荐：
-- 最佳入门系统（< 50€）：Boya By-lm40（30€）+ deadcat（10€）
-- 最佳中端系统（< 150 €）：Clippy EM272 TRS/TRRS（55€）+ Rode AI micro trs/trrs 转 USB（70€）+ Rycote deadcat（27€）
-- 最佳高端系统（<400 €）：Clippy EM272 XLR（85€）或 LOM Ucho Pro（75€）+ Focusrite Scarlet 2i2 第四代（200€）+ Bubblebee Pro Extreme deadcat（45€）
+My recommendation :
+- Best entry system (< 50€) : Boya By-lm40 (30€) + deadcat (10 €)
+- Best middle end system (< 150 €) : Clippy EM272 TRS/TRRS (55€) + Rode AI micro trs/trrs to usb (70€) + Rycote deadcat (27€)
+- Best high end system (<400 €) : Clippy EM272 XLR (85€) or LOM Ucho Pro (75€) + Focusrite Scarlet 2i2 4th Gen (200€) + Bubblebee Pro Extreme deadcat (45€)
 
-欧洲高端麦克风的来源：
-- Clippy (EM272)：https://www.veldshop.nl/en/clippy-xlr-em272z1-mono-microphone.html
-- LOM (EM272)：https://store.lom.audio/collections/basicucho-series
-- Immersive sound (AOM5024)：https://immersivesoundscapes.com/earsight-standard-v2/
+Sources for high end microphones in Europe: 
+- Clippy (EM272) : https://www.veldshop.nl/en/clippy-xlr-em272z1-mono-microphone.html
+- LOM (EM272) : https://store.lom.audio/collections/basicucho-series
+- Immersive sound (AOM5024) : https://immersivesoundscapes.com/earsight-standard-v2/
 
-# 应用设置推荐
-我通过并行运行两个版本的 HA birdnet-pi 插件来测试了很多设置，使用相同的 rtsp 源，并比较参数的影响。
-我的结论并不普遍，因为它似乎高度依赖于所用地区和麦克风类型。例如，旧模型似乎在澳大利亚表现更好，而新模型在欧洲表现更好。
+# App settings recommendation
+I've tested lots of settings by running 2 versions of my HA birdnet-pi addon in parallel using the same rtsp feed, and comparing impact of parameters. 
+My conclusions aren't universal, as it seems to be highly dependent on the region and type of mic used. For example, the old model seems to be better in Australia, while the new one better in Europe.
 
-- 模型
-    - 版本：6k_v2,4 _(至少在欧洲表现更好，6k 在澳大利亚表现更好)_
-    - 物种范围模型：v1 _(取消选择 v2.4；在欧洲似乎更稳健)_
-    - 物种发生阈值：0,001 _(使用 v2.4 时为 0,00015；使用物种列表测试器检查正确值)_
-- 音频设置
-    - 默认
-    - 通道：1 _(实际上并不重要，因为分析是在单声道信号上进行的；1 允许减少保存的音频大小，但在我的经验中似乎会稍微使声谱图混乱)_
-    - 录音长度：18 _(因为我使用了 0,5 的重叠；所以它分析 0-3s；2,5-5,5s；5-8s；7,5-10,5；10-13；12,5-15,5；15-18)_
-    - 提取长度：9s _(可能是 6，但我喜欢听我的鸟 :-))_
-    - 音频格式：mp3 _(为什么要考虑其他格式)_
-- Birdnet-lite 设置
-    - 重叠：0,5s
-    - 最小置信度：0,7
-    - Sigmoid 灵敏度：1,25 _(我尝试过 1,00，但它给出了更多的假阳性；因为减少这个值会增加灵敏度)_
+- Model
+    - Version : 6k_v2,4 _(performs better in Europe at least, the 6k performs better in Australia)_
+    - Species range model : v1 _(uncheck v2.4 ; seems more robust in Europe)_
+    - Species occurence threshold : 0,001 _(was 0,00015 using v2.4 ; use the Species List Tester to check the correct value for you)_
+- Audio settings
+    - Default
+    - Channel : 1 _(doesn't really matter as analysis is made on mono signal ; 1 allows decreased saved audio size but seems to give slightly messed up spectrograms in my experience)_
+    - Recording Length : 18 _(that's because I use an overlap of 0,5 ; so it analysis 0-3s ; 2,5-5,5s ; 5-8s ; 7,5-10,5 ; 10-13 ; 12,5-15,5 ; 15-18)_
+    - Extraction Length : 9s _(could be 6, but I like to hear my birds :-))_
+    - Audio format : mp3 _(why bother with something else)_
+- Birdnet-lite settings
+    - Overlap : 0,5s
+    - Minimum confidence : 0,7
+    - Sigmoid sensitivity : 1,25 _(I've tried 1,00 but it gave much more false positives ; as decreasing this value increases sensitivity)_
 
-# 设置 RTSP 服务器
+# Set RTSP server
 
-灵感来自：https://github.com/mcguirepr89/BirdNET-Pi/discussions/1006#discussioncomment-6747450
+Inspired by : https://github.com/mcguirepr89/BirdNET-Pi/discussions/1006#discussioncomment-6747450
 
 <details>
-<summary>在你的桌面上</summary>
+<summary>On your desktop</summary>
    
-- 下载映像程序
-- 安装 raspbian lite 64
+- Download imager
+- Install raspbian lite 64
 </details>
 
 <details>
-<summary>通过 ssh，安装所需软件</summary>
+<summary>With ssh, install requisite softwares</summary>
 
 ### 
 ```
-# 更新
+# Update
 
 sudo apt-get update -y
 sudo apt-get dist-upgrade -y
 
-# 安装 RTSP 服务器
+# Install RTSP server
 sudo apt-get install -y micro ffmpeg lsof
 sudo -s cd /root && wget -c https://github.com/bluenviron/mediamtx/releases/download/v1.9.1/mediamtx_v1.9.1_linux_arm64v8.tar.gz -O - | sudo tar -xz
 ```
@@ -62,27 +62,27 @@ sudo -s cd /root && wget -c https://github.com/bluenviron/mediamtx/releases/down
 
 
 <details>
-<summary>配置音频</summary>
+<summary>Configure Audio</summary>
 
-### 找到合适的设备
+### Find right device
 ```
-# 列出音频设备
+# List audio devices
 arecord -l
 
-# 检查音频设备参数。示例：
+# Check audio device parameters. Example :
 arecord -D hw:1,0 --dump-hw-params
 ```
 
-### 添加启动脚本
+### Add startup script
 sudo nano startmic.sh && chmod +x startmic.sh
 ```
 #!/bin/bash
 echo "Starting birdmic"
 
-# 禁用千兆位 ethernet
+# Disable gigabit ethernet
 sudo ethtool -s eth0 speed 100 duplex full autoneg on
 
-# 检测 Scarlett 2i2 卡索引 - 仅在使用该卡时相关
+# Detect Scarlett 2i2 card index - relevant only if you use that card
 SCARLETT_INDEX=$(arecord -l | grep -i "Scarlett" | awk '{print $2}' | sed 's/://')
 
 if [ -z "$SCARLETT_INDEX" ]; then
@@ -90,23 +90,23 @@ if [ -z "$SCARLETT_INDEX" ]; then
     SCARLETT_INDEX="0"
 fi
 
-# 首先启动 mediamtx 并给它一些时间进行初始化
+# Start mediamtx first and give it a moment to initialize
 ./mediamtx & 
 sleep 5
     
-# 运行 ffmpeg
+# Run ffmpeg
 ffmpeg -nostdin -use_wallclock_as_timestamps 1 -fflags +genpts -f alsa -acodec pcm_s16be -ac 2 -ar 96000 \
 -i plughw:$SCARLETT_INDEX,0 -ac 2 -f rtsp -acodec pcm_s16be rtsp://localhost:8554/birdmic -rtsp_transport tcp \
 -buffer_size 512k 2>/tmp/rtsp_error &
 
-# 设置麦克风音量
+# Set microphone volume
 sleep 5
-MICROPHONE_NAME="Line In 1 Gain" # 适用于 Focusrite Scarlett 2i2
+MICROPHONE_NAME="Line In 1 Gain" # for Focusrite Scarlett 2i2
 sudo amixer -c 0 sset "$MICROPHONE_NAME" 40
 
 sleep 60
 
-# 如果存在，运行 focusrite 和 autogain 脚本
+# Run focusrite and autogain scripts if present
 if [ -f "$HOME/focusrite.sh" ]; then
     sudo python3 -u "$HOME/focusrite.sh" >/tmp/log_focusrite 2>/tmp/log_focusrite_error &
 fi
@@ -119,10 +119,10 @@ fi
 </details>
 
 <details>
-<summary>可选：使用 gstreamer 替代 ffmpeg</summary>
+<summary>Optional : use gstreamer instead of ffmpeg</summary>
 
 ```
-# 安装 gstreamer
+# Install gstreamer
 sudo apt-get update
 #sudo apt-get install -y \
 #  gstreamer1.0-rtsp \
@@ -136,7 +136,7 @@ sudo apt-get update
 apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-tools gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 gstreamer1.0-qt5 gstreamer1.0-pulseaudio -y
 ```
 
-创建一个名为 rtsp_audio_server.py 的脚本
+Create a script named rtsp_audio_server.py
 ```
 #!/usr/bin/env python3
 
@@ -151,38 +151,38 @@ gi.require_version('GstRtspServer', '1.0')
 
 from gi.repository import Gst, GstRtspServer, GLib
 
-# 初始化 GStreamer
+# Initialize GStreamer
 Gst.init(None)
 
-# 配置日志记录
+# Configure Logging
 LOG_FILE = "gst_rtsp_server.log"
 logging.basicConfig(
     filename=LOG_FILE,
     filemode='a',
     format='%(asctime)s %(levelname)s: %(message)s',
-    level=logging.DEBUG  # 设置为 DEBUG 以获取全面的日志记录
+    level=logging.DEBUG  # Set to DEBUG for comprehensive logging
 )
 logger = logging.getLogger(__name__)
 
 class AudioFactory(GstRtspServer.RTSPMediaFactory):
     def __init__(self):
         super(AudioFactory, self).__init__()
-        self.set_shared(True)          # 允许多个客户端访问流
-        self.set_latency(500)          # 增加延迟至 500ms 以提高流的稳定性
-        self.set_suspend_mode(GstRtspServer.RTSPSuspendMode.NONE)  # 当没有客户端连接时防止流的暂停
+        self.set_shared(True)          # Allow multiple clients to access the stream
+        self.set_latency(500)          # Increase latency to 500ms to improve stream stability
+        self.set_suspend_mode(GstRtspServer.RTSPSuspendMode.NONE)  # Prevent suspension of the stream when no clients are connected
         logger.debug("AudioFactory initialized: shared=True, latency=500ms, suspend_mode=NONE.")
 
     def do_create_element(self, url):
         """
-        创建并返回用于流音频的 GStreamer 管道。
+        Create and return the GStreamer pipeline for streaming audio.
         """
         pipeline_str = (
-            "alsasrc device=plughw:0,0 do-timestamp=true buffer-time=2000000 latency-time=1000000 ! "  # 增加缓冲区大小
-            "queue max-size-buffers=0 max-size-bytes=0 max-size-time=0 ! "         # 添加队列以处理缓冲管理
-            "audioconvert ! "                                # 将音频转换为合适的格式
-            "audioresample ! "                               # 如有必要重新采样音频
-            "audio/x-raw,format=S16BE,channels=2,rate=48000 ! "  # 设置音频属性（速率 = 48kHz）
-            "rtpL16pay name=pay0 pt=96"                     # RTP 的有效载荷
+            "alsasrc device=plughw:0,0 do-timestamp=true buffer-time=2000000 latency-time=1000000 ! "  # Increased buffer size
+            "queue max-size-buffers=0 max-size-bytes=0 max-size-time=0 ! "         # Add queue to handle buffer management
+            "audioconvert ! "                                # Convert audio to a suitable format
+            "audioresample ! "                               # Resample audio if necessary
+            "audio/x-raw,format=S16BE,channels=2,rate=48000 ! "  # Set audio properties (rate = 48kHz)
+            "rtpL16pay name=pay0 pt=96"                     # Payload for RTP
         )
         logger.debug(f"Creating GStreamer pipeline: {pipeline_str}")
         try:
@@ -198,34 +198,34 @@ class AudioFactory(GstRtspServer.RTSPMediaFactory):
 class GstServer:
     def __init__(self):
         self.server = GstRtspServer.RTSPServer()
-        self.server.set_service("8554")      # 设置 RTSP 服务器端口
-        self.server.set_address("0.0.0.0")   # 监听所有网络接口
+        self.server.set_service("8554")      # Set the RTSP server port
+        self.server.set_address("0.0.0.0")   # Listen on all network interfaces
         logger.debug("RTSP server configured: address=0.0.0.0, port=8554.")
 
         factory = AudioFactory()
         mount_points = self.server.get_mount_points()
-        mount_points.add_factory("/birdmic", factory)  # 安装点
+        mount_points.add_factory("/birdmic", factory)  # Mount point
         logger.debug("Factory mounted at /birdmic.")
 
-        self.server.attach(None)  # 将服务器附加到默认主上下文
+        self.server.attach(None)  # Attach the server to the default main context
         logger.info("RTSP server attached and running.")
 
 def main():
-    # 创建 GstServer 实例
+    # Create GstServer instance
     server = GstServer()
     print("RTSP server is running at rtsp://localhost:8554/birdmic")
     logger.info("RTSP server is running at rtsp://localhost:8554/birdmic")
 
-    # 设置主循环并进行适当的日志记录
+    # Set up the main loop with proper logging
     loop = GLib.MainLoop()
 
-    # 处理终止信号以确保优雅关机
+    # Handle termination signals to ensure graceful shutdown
     def shutdown(signum, frame):
         logger.info(f"Shutting down RTSP server due to signal {signum}.")
         print("\nShutting down RTSP server.")
         loop.quit()
 
-    # 注册信号处理程序以实现优雅终止
+    # Register signal handlers for graceful termination
     signal.signal(signal.SIGINT, shutdown)
     signal.signal(signal.SIGTERM, shutdown)
 
@@ -237,7 +237,7 @@ def main():
         logger.info("RTSP server has been shut down.")
 
 if __name__ == "__main__":
-    # 确保日志文件存在
+    # Ensure log file exists
     if not os.path.exists(LOG_FILE):
         open(LOG_FILE, 'w').close()
 
@@ -247,43 +247,44 @@ if __name__ == "__main__":
 </details>
 
 <details>
-<summary>可选：自动启动</summary>
+<summary>Optional : Startup automatically</summary>
 
 ```
 chmod +x startmic.sh
-crontab -e # 选择 nano 作为你的编辑器
+crontab -e # select nano as your editor
 ```
-在 `@reboot $HOME/startmic.sh` 中粘贴，然后保存并退出 nano。
-重启树莓派并使用 VLC 再次测试确保 RTSP 流是在线的。
+Paste in `@reboot $HOME/startmic.sh` then save and exit nano.
+Reboot the Pi and test again with VLC to make sure the RTSP stream is live.
 
 </details>
 
 <details>
-<summary>可选：禁用不必要的元素</summary>
+<summary>Optional : disable unecessary elements</summary>
 
-- 优化 config.txt
+- Optimize config.txt
 
 sudo nano /boot/firmware/config.txt
 ```
-# 启用音频和 USB 优化
-dtparam=audio=off          # 禁用默认的板载音频以防止冲突
-dtoverlay=disable-bt        # 禁用板载蓝牙以减少 USB 带宽使用
-dtoverlay=disable-wifi      # 禁用板载 wifi
-# 限制以太网为 100 Mbps（禁用千兆以太网）
+# Enable audio and USB optimizations
+dtparam=audio=off          # Disable the default onboard audio to prevent conflicts
+dtoverlay=disable-bt        # Disable onboard Bluetooth to reduce USB bandwidth usage
+dtoverlay=disable-wifi      # Disable onboard wifi
+# Limit Ethernet to 100 Mbps (disable Gigabit Ethernet)
 dtparam=eth_max_speed=100
-# USB 优化
-dwc_otg.fiq_fix_enable=1    # 启用 FIQ（快速中断）处理以提高 USB 性能
-max_usb_current=1           # 增加可用的 USB 电流（如果 Scarlett 是通过 USB 供电，则需要）
-# 其他音频设置（用于低延迟操作）
-avoid_pwm_pll=1             # 使用更稳定的 PLL 来获取音频时钟
-# 可选：HDMI 和其他设置可以在不需要时关闭
-hdmi_blanking=1             # 禁用 HDMI（节省电力并减少干扰）
+# USB optimizations
+dwc_otg.fiq_fix_enable=1    # Enable FIQ (Fast Interrupt) handling for improved USB performance
+max_usb_current=1           # Increase the available USB current (required if Scarlett is powered over USB)
+# Additional audio settings (for low-latency operation)
+avoid_pwm_pll=1             # Use a more stable PLL for the audio clock
+# Optional: HDMI and other settings can be turned off if not needed
+hdmi_blanking=1             # Disable HDMI (save power and reduce interference)
 ```
 
-- 禁用无用服务
+- Disable useless services
 
 ```
-# 禁用无用服务
+
+# Disable useless services
 sudo systemctl disable hciuart
 sudo systemctl disable bluetooth
 sudo systemctl disable triggerhappy
@@ -291,29 +292,29 @@ sudo systemctl disable avahi-daemon
 sudo systemctl disable dphys-swapfile
 sudo systemctl disable hciuart.service
 
-# 禁用蓝牙
+# Disable bluetooth
 for element in bluetooth btbcm hci_uart btintel btrtl btusb; do
     sudo sed -i "/$element/d" /etc/modprobe.d/raspi-blacklist.conf
     echo "blacklist $element" | sudo tee -a /etc/modprobe.d/raspi-blacklist.conf
 done
 
-# 禁用树莓派上的视频（包括 V4L2）
+# Disable Video (Including V4L2) on Your Raspberry Pi
 for element in bcm2835_v4l2 bcm2835_codec bcm2835_isp videobuf2_vmalloc videobuf2_memops videobuf2_v4l2 videobuf2_common videodev; do
     sudo sed -i "/$element/d" /etc/modprobe.d/raspi-blacklist.conf
     echo "blacklist $element" | sudo tee -a /etc/modprobe.d/raspi-blacklist.conf
 done
 
-# 禁用 WiFi 电源管理
+# Disable WiFi Power Management
 sudo iw dev wlan0 set power_save off
 for element in brcmfmac brcmutil; do
     sudo sed -i "/$element/d" /etc/modprobe.d/raspi-blacklist.conf
     echo "blacklist $element" | sudo tee -a /etc/modprobe.d/raspi-blacklist.conf
 done
 
-# 禁用 USB 电源管理
+# Disable USB Power Management
 echo 'on' | sudo tee /sys/bus/usb/devices/usb*/power/control
 
-# 防止树莓派进入省电模式
+# Preventing the Raspberry Pi from Entering Power-Saving Mode
 sudo apt update
 sudo apt install -y cpufrequtils
 echo 'GOVERNOR="performance"' | sudo tee /etc/default/cpufrequtils
@@ -325,7 +326,7 @@ sudo systemctl stop ondemand
 </details>
 
 <details>
-<summary>可选：安装 Focusrite 驱动程序</summary>
+<summary>Optional : install Focusrite driver</summary>
     
 ```
 sudo apt-get install make linux-headers-$(uname -r)
@@ -344,7 +345,7 @@ dmesg | grep -A 5 -B 5 -i focusrite
 </details>
 
 <details>
-<summary>可选：添加 RAM 磁盘</summary>
+<summary>Optional : add RAM disk</summary>
     
 ```
 sudo cp /usr/share/systemd/tmp.mount /etc/systemd/system/tmp.mount
@@ -355,93 +356,94 @@ sudo systemctl start tmp.mount
 </details>
 
 <details>
-<summary>可选：Focusrite Scarlett 2i2 配置</summary>
+<summary>Optional : Configuration for Focusrite Scarlett 2i2</summary>
 
-在 "$HOME/focusrite.sh" 中添加此内容 && chmod +x "$HOME/focusrite.sh"
+Add this content in "$HOME/focusrite.sh" && chmod +x "$HOME/focusrite.sh"
 ```
 #!/bin/bash
 
-# 设置捕获的 PCM 控制
-sudo amixer -c 0 cset numid=31 'Analogue 1'  # 'PCM 01' - 设置为 'Analogue 1'
-sudo amixer -c 0 cset numid=32 'Analogue 1'  # 'PCM 02' - 设置为 'Analogue 1'
-sudo amixer -c 0 cset numid=33 'Off'         # 'PCM 03' - 禁用
-sudo amixer -c 0 cset numid=34 'Off'         # 'PCM 04' - 禁用
+# Set PCM controls for capture
+sudo amixer -c 0 cset numid=31 'Analogue 1'  # 'PCM 01' - Set to 'Analogue 1'
+sudo amixer -c 0 cset numid=32 'Analogue 1'  # 'PCM 02' - Set to 'Analogue 1'
+sudo amixer -c 0 cset numid=33 'Off'         # 'PCM 03' - Disabled
+sudo amixer -c 0 cset numid=34 'Off'         # 'PCM 04' - Disabled
 
-# 设置 DSP 输入控制（未使用，设置为关闭）
+# Set DSP Input controls (Unused, set to Off)
 sudo amixer -c 0 cset numid=29 'Off'         # 'DSP Input 1'
 sudo amixer -c 0 cset numid=30 'Off'         # 'DSP Input 2'
 
-# 将 Line In 1 配置为单声道设置的主输入
-sudo amixer -c 0 cset numid=8 'Off'          # 'Line In 1 Air' - 保持为 'Off'
-sudo amixer -c 0 cset numid=14 off           # 'Line In 1 Autogain' - 禁用
-sudo amixer -c 0 cset numid=6 'Line'         # 'Line In 1 Level' - 设置级别为 'Line'
-sudo amixer -c 0 cset numid=21 on            # 'Line In 1 Safe' - 启用以避免剪辑/噪声影响？
+# Configure Line In 1 as main input for mono setup
+sudo amixer -c 0 cset numid=8 'Off'          # 'Line In 1 Air' - Keep 'Off'
+sudo amixer -c 0 cset numid=14 off           # 'Line In 1 Autogain' - Disabled
+sudo amixer -c 0 cset numid=6 'Line'         # 'Line In 1 Level' - Set level to 'Line'
+sudo amixer -c 0 cset numid=21 on           # 'Line In 1 Safe' - Enabled to avoid clipping / noise impact ?
 
-# 禁用 Line In 2 以最小化干扰（如果未使用）
+# Disable Line In 2 to minimize interference (if not used)
 sudo amixer -c 0 cset numid=9 'Off'          # 'Line In 2 Air'
-sudo amixer -c 0 cset numid=17 off           # 'Line In 2 Autogain' - 禁用
-sudo amixer -c 0 cset numid=16 0             # 'Line In 2 Gain' - 将增益设置为 0（静音）
-sudo amixer -c 0 cset numid=7 'Line'         # 'Line In 2 Level' - 设置为 'Line'
-sudo amixer -c 0 cset numid=22 off           # 'Line In 2 Safe' - 禁用
+sudo amixer -c 0 cset numid=17 off           # 'Line In 2 Autogain' - Disabled
+sudo amixer -c 0 cset numid=16 0             # 'Line In 2 Gain' - Set gain to 0 (mute)
+sudo amixer -c 0 cset numid=7 'Line'         # 'Line In 2 Level' - Set to 'Line'
+sudo amixer -c 0 cset numid=22 off           # 'Line In 2 Safe' - Disabled
 
-# 设置 Line In 1-2 控制
-sudo amixer -c 0 cset numid=12 off           # 'Line In 1-2 Link' - 单声道无需链接
-sudo amixer -c 0 cset numid=10 on            # 'Line In 1-2 Phantom Power' - 对于电容麦克风启用
+# Set Line In 1-2 controls
+sudo amixer -c 0 cset numid=12 off           # 'Line In 1-2 Link' - No need to link for mono
+sudo amixer -c 0 cset numid=10 on            # 'Line In 1-2 Phantom Power' - Enabled for condenser mics
 
-# 设置模拟输出以使用相同的混音作为两个通道（单声道设置）
-sudo amixer -c 0 cset numid=23 'Mix A'       # 'Analogue Output 01' - 设置为 'Mix A'
-sudo amixer -c 0 cset numid=24 'Mix A'       # 'Analogue Output 02' - 与输出 01 相同的混音
+# Set Analogue Outputs to use the same mix for both channels (Mono setup)
+sudo amixer -c 0 cset numid=23 'Mix A'       # 'Analogue Output 01' - Set to 'Mix A'
+sudo amixer -c 0 cset numid=24 'Mix A'       # 'Analogue Output 02' - Same mix as Output 01
 
-# 禁用直接监听以防止反馈
+# Set Direct Monitor to off to prevent feedback
 sudo amixer -c 0 cset numid=53 'Off'         # 'Direct Monitor'
 
-# 设置输入选择为输入 1
+# Set Input Select to Input 1
 sudo amixer -c 0 cset numid=11 'Input 1'     # 'Input Select'
 
-# 为单声道输出优化监听混音设置
-sudo amixer -c 0 cset numid=54 153           # 'Monitor 1 Mix A Input 01' - 设置为 153（约 -3.50 dB）
-sudo amixer -c 0 cset numid=55 153           # 'Monitor 1 Mix A Input 02' - 设置为 153 以获得平衡输出
-sudo amixer -c 0 cset numid=56 0             # 'Monitor 1 Mix A Input 03' - 静音未使用的通道
+# Optimize Monitor Mix settings for mono output
+sudo amixer -c 0 cset numid=54 153           # 'Monitor 1 Mix A Input 01' - Set to 153 (around -3.50 dB)
+sudo amixer -c 0 cset numid=55 153           # 'Monitor 1 Mix A Input 02' - Set to 153 for balanced output
+sudo amixer -c 0 cset numid=56 0             # 'Monitor 1 Mix A Input 03' - Mute unused channels
 sudo amixer -c 0 cset numid=57 0             # 'Monitor 1 Mix A Input 04'
 
-# 设置同步状态为锁定
+# Set Sync Status to Locked
 sudo amixer -c 0 cset numid=52 'Locked'      # 'Sync Status'
 
-echo "单声道优化已应用。仅使用主输入和平衡输出。"
+echo "Mono optimization applied. Only using primary input and balanced outputs."
 ```
 </details>
 
 <details>
-<summary>可选：麦克风的自动增益脚本</summary>
+<summary>Optional : Autogain script for microphone</summary>
 
-在 "$HOME/autogain.py" 中添加此内容 && chmod +x "$HOME/autogain.py"
+Add this content in "$HOME/autogain.py" && chmod +x "$HOME/autogain.py"
 
 ```python
 #!/usr/bin/env python3
 """
-麦克风增益调整脚本，带有 THD 和过载检测
+Microphone Gain Adjustment Script with THD and Overload Detection
 
-此脚本捕获来自 RTSP 流的音频，处理以计算 RMS
-在 2000-8000 Hz 频带内，检测剪辑，计算全频率范围的总谐波
-失真（THD），并根据预定义的噪声阈值、趋势和失真指标调整麦克风增益。
+This script captures audio from an RTSP stream, processes it to calculate the RMS
+within the 2000-8000 Hz frequency band, detects clipping, calculates Total Harmonic
+Distortion (THD) over the full frequency range, and adjusts the microphone gain based 
+on predefined noise thresholds, trends, and distortion metrics.
 
-依赖项：
+Dependencies:
 - numpy
 - scipy
-- ffmpeg（已安装并可在 PATH 中访问）
-- amixer（用于麦克风增益控制）
+- ffmpeg (installed and accessible in PATH)
+- amixer (for microphone gain control)
 
-作者：OpenAI ChatGPT
-日期：2024-10-28（更新）
+Author: OpenAI ChatGPT
+Date: 2024-10-28 (Updated)
 
-更改日志：
-- 2024-10-27：将采样率提高到 48,000 Hz。
-- 2024-10-27：扩展全频率范围的 THD 计算。
-- 2024-10-27：添加增益稳定延迟以减少频繁调整。
-- 2024-10-27：通过重试逻辑增强 RTSP 流的弹性。
-- 2024-10-27：通过日志记录级别增强调试输出。
-- 2024-10-28：添加简化输出的摘要日志模式。
-- 2024-10-28：删除增益稳定延迟以进行立即增益调整。
+Changelog:
+- 2024-10-27: Increased sampling rate to 48,000 Hz.
+- 2024-10-27: Extended THD calculation over the full frequency range.
+- 2024-10-27: Added gain stabilization delay to reduce frequent adjustments.
+- 2024-10-27: Improved RTSP stream resilience with retry logic.
+- 2024-10-27: Enhanced debug output with logging levels.
+- 2024-10-28: Added summary log mode for simplified output.
+- 2024-10-28: Removed gain stabilization delay for immediate gain adjustments.
 """
 
 import subprocess
@@ -450,9 +452,9 @@ from scipy.signal import butter, sosfilt, find_peaks
 import time
 import re
 
-# ---------------------------- 配置 ----------------------------
+# ---------------------------- Configuration ----------------------------
 
-# 麦克风设置
+# Microphone Settings
 MICROPHONE_NAME = "Line In 1 Gain"
 MIN_GAIN_DB = 20
 MAX_GAIN_DB = 40
@@ -460,31 +462,31 @@ DECREASE_GAIN_STEP_DB = 1
 INCREASE_GAIN_STEP_DB = 5
 CLIPPING_REDUCTION_DB = 3
 
-# 噪声阈值
+# Noise Thresholds
 NOISE_THRESHOLD_HIGH = 0.001
 NOISE_THRESHOLD_LOW = 0.00035
 
-# 趋势检测
+# Trend Detection
 TREND_COUNT_THRESHOLD = 3
 
-# 采样率
+# Sampling Rate
 SAMPLING_RATE = 44100
 
-# RTSP 流 URL
+# RTSP Stream URL
 RTSP_URL = "rtsp://192.168.178.124:8554/birdmic"
 
-# 调试和摘要模式
-DEBUG = 1            # 调试模式（1 为启用，0 为禁用）
-SUMMARY_MODE = True  # 摘要模式（仅输出摘要）
+# Debug and Summary Modes
+DEBUG = 1            # Debug Mode (1 for enabled, 0 for disabled)
+SUMMARY_MODE = True  # Summary Mode (True for summary output only)
 
-# 麦克风特性
+# Microphone Characteristics
 MIC_SENSITIVITY_DB = -28
 MIC_CLIPPING_SPL = 120
 
-# 校准常数
+# Calibration Constants
 REFERENCE_PRESSURE = 20e-6
 
-# THD 设置
+# THD Settings
 THD_FUNDAMENTAL_THRESHOLD_DB = 60
 MAX_THD_PERCENTAGE = 5.0
 
@@ -493,9 +495,9 @@ MAX_THD_PERCENTAGE = 5.0
 
 def debug_print(msg, level="info"):
     """
-    打印调试信息，启用调试模式时提供日志级别。
-    :param msg: 要打印的调试信息。
-    :param level: 日志级别 - "info"，"warning"，"error"。
+    Prints debug messages with logging levels if DEBUG mode is enabled.
+    :param msg: The debug message to print.
+    :param level: Logging level - "info", "warning", "error".
     """
     if DEBUG:
         current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
@@ -504,11 +506,11 @@ def debug_print(msg, level="info"):
 
 def summary_log(current_gain, clipping, rms_amplitude, thd_percentage):
     """
-    输出摘要日志，包含当前增益、剪辑状态、背景噪声和 THD 的日期时间。
-    :param current_gain: 当前麦克风增益（dB）。
-    :param clipping: 剪辑状态（是/否）。
-    :param rms_amplitude: 背景噪声 RMS 振幅。
-    :param thd_percentage: THD 的百分比。
+    Outputs a summary log with date, time, current gain, clipping status, background noise, and THD.
+    :param current_gain: Current microphone gain in dB.
+    :param clipping: Clipping status (yes/no).
+    :param rms_amplitude: Background noise RMS amplitude.
+    :param thd_percentage: THD in percentage.
     """
     if SUMMARY_MODE:
         current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
@@ -519,7 +521,7 @@ def summary_log(current_gain, clipping, rms_amplitude, thd_percentage):
 
 def get_gain_db(mic_name):
     """
-    使用 amixer 检索指定麦克风的当前增益设置。
+    Retrieves the current gain setting of the specified microphone using amixer.
     """
     cmd = ['amixer', 'sget', mic_name]
     try:
@@ -539,12 +541,12 @@ def get_gain_db(mic_name):
 
 def set_gain_db(mic_name, gain_db):
     """
-    使用 amixer 设置指定麦克风的增益。
+    Sets the gain of the specified microphone using amixer.
     """
     gain_db_int = int(gain_db)
     if gain_db_int > MAX_GAIN_DB:
         debug_print(f"Requested gain {gain_db_int} dB exceeds MAX_GAIN_DB {MAX_GAIN_DB} dB. Skipping.", "warning")
-        return False  # 不要超过最大增益
+        return False  # Do not exceed max gain
     cmd = ['amixer', 'sset', mic_name, f'{gain_db}dB']
     try:
         subprocess.check_call(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
@@ -557,7 +559,7 @@ def set_gain_db(mic_name, gain_db):
 
 def find_fundamental_frequency(fft_freqs, fft_magnitude, min_freq=2000, max_freq=8000):
     """
-    动态查找指定范围内的基频。
+    Dynamically finds the fundamental frequency within a specified range.
     """
     idx_min = np.searchsorted(fft_freqs, min_freq)
     idx_max = np.searchsorted(fft_freqs, max_freq)
@@ -580,7 +582,7 @@ def find_fundamental_frequency(fft_freqs, fft_magnitude, min_freq=2000, max_freq
 
 def thd_calculation(audio, sampling_rate, num_harmonics=5):
     """
-    计算音频信号的总谐波失真（THD）。
+    Calculates Total Harmonic Distortion (THD) for the audio signal.
     """
     fft_vals = np.fft.rfft(audio)
     fft_freqs = np.fft.rfftfreq(len(audio), 1 / sampling_rate)
@@ -609,7 +611,7 @@ def thd_calculation(audio, sampling_rate, num_harmonics=5):
 
 def calculate_spl(audio, mic_sensitivity_db):
     """
-    根据音频信号计算声压级（SPL）。
+    Calculates the Sound Pressure Level (SPL) from the audio signal.
     """
     rms_amplitude = np.sqrt(np.mean(audio ** 2))
     if rms_amplitude == 0:
@@ -625,7 +627,7 @@ def calculate_spl(audio, mic_sensitivity_db):
 
 def detect_microphone_overload(spl, mic_clipping_spl):
     """
-    检测计算的 SPL 是否接近麦克风的剪辑 SPL。
+    Detects if the calculated SPL is approaching the microphone's clipping SPL.
     """
     if spl >= mic_clipping_spl - 3:
         debug_print("Microphone overload detected.", "warning")
@@ -635,7 +637,7 @@ def detect_microphone_overload(spl, mic_clipping_spl):
 
 def calculate_noise_rms_and_thd(rtsp_url, bandpass_sos, sampling_rate, num_bins=5):
     """
-    捕获来自 RTSP 流的音频，计算 RMS、THD 和 SPL，并检测麦克风过载。
+    Captures audio from an RTSP stream, calculates RMS, THD, and SPL, and detects microphone overload.
     """
     cmd = [
         'ffmpeg', '-loglevel', 'error', '-rtsp_transport', 'tcp', '-i', rtsp_url,
@@ -671,26 +673,26 @@ def calculate_noise_rms_and_thd(rtsp_url, bandpass_sos, sampling_rate, num_bins=
 
         except Exception as e:
             debug_print(f"Exception during audio processing: {e}", "error")
-            time.sleep(5)  # 小延迟后重试
+            time.sleep(5)  # Small delay before retrying
 
     return None, None, None, False
 
 
 def main():
     """
-    主循环不断监控背景噪声，检测剪辑，计算 THD，
-    并使用重试逻辑调整麦克风增益，以增强 RTSP 流的弹性。
+    Main loop that continuously monitors background noise, detects clipping, calculates THD,
+    and adjusts microphone gain with retry logic for RTSP stream resilience.
     """
     TREND_COUNT = 0
     PREVIOUS_TREND = 0
 
-    # 预计算带通滤波器系数，更新采样率
+    # Precompute bandpass filter coefficients with updated SAMPLING_RATE
     LOWCUT = 2000
     HIGHCUT = 8000
     FILTER_ORDER = 5
     sos = butter(FILTER_ORDER, [LOWCUT, HIGHCUT], btype='band', fs=SAMPLING_RATE, output='sos')
 
-    # 将麦克风增益设置为起始时的最大增益
+    # Set the microphone gain to the maximum gain at the start
     success = set_gain_db(MICROPHONE_NAME, MAX_GAIN_DB)
     if success:
         print(f"Microphone gain set to {MAX_GAIN_DB} dB at start.")
@@ -706,7 +708,7 @@ def main():
             time.sleep(60)
             continue
 
-        # 如果检测到过载，则调整增益
+        # Adjust gain if overload detected
         if overload:
             current_gain_db = get_gain_db(MICROPHONE_NAME)
             if current_gain_db is not None:
@@ -714,13 +716,13 @@ def main():
                 if set_gain_db(MICROPHONE_NAME, NEW_GAIN_DB):
                     print(f"Clipping detected. Reduced gain to {NEW_GAIN_DB} dB")
                     debug_print(f"Gain reduced to {NEW_GAIN_DB} dB due to clipping.", "warning")
-            # 没有稳定延迟；继续到下一次迭代
-            # 在出现剪辑的情况下跳过趋势调整
+            # No stabilization delay; continue to next iteration
+            # Skip trend adjustment in case of clipping
             summary_log(current_gain_db if current_gain_db else MIN_GAIN_DB, True, rms, thd)
             time.sleep(60)
             continue
 
-        # 如果 SPL 超过阈值，则处理 THD
+        # Handle THD if SPL is above threshold
         if spl >= THD_FUNDAMENTAL_THRESHOLD_DB:
             if thd > MAX_THD_PERCENTAGE:
                 debug_print(f"High THD detected: {thd:.2f}%", "warning")
@@ -735,7 +737,7 @@ def main():
         else:
             debug_print("SPL below THD calculation threshold. Skipping THD check.", "info")
 
-        # 确定噪声趋势
+        # Determine the noise trend
         if rms > NOISE_THRESHOLD_HIGH:
             CURRENT_TREND = 1
         elif rms < NOISE_THRESHOLD_LOW:
@@ -765,20 +767,20 @@ def main():
 
         debug_print(f"Current gain: {current_gain_db} dB", "info")
 
-        # 输出当前状态的摘要日志
+        # Output summary log for the current state
         summary_log(current_gain_db, overload, rms, thd)
 
-        # 根据噪声趋势调整增益，如果达到阈值计数
+        # Adjust gain based on noise trend if threshold count is reached
         if TREND_COUNT >= TREND_COUNT_THRESHOLD:
             if CURRENT_TREND == 1 and int(current_gain_db) > MIN_GAIN_DB:
-                # 增益减少 DECREASE_GAIN_STEP_DB dB
+                # Decrease gain by DECREASE_GAIN_STEP_DB dB
                 NEW_GAIN_DB = max(current_gain_db - DECREASE_GAIN_STEP_DB, MIN_GAIN_DB)
                 if set_gain_db(MICROPHONE_NAME, NEW_GAIN_DB):
                     print(f"Background noise high. Decreased gain to {NEW_GAIN_DB} dB")
                     debug_print(f"Gain decreased to {NEW_GAIN_DB} dB due to high noise.", "info")
                 TREND_COUNT = 0
             elif CURRENT_TREND == -1 and int(current_gain_db) < MAX_GAIN_DB:
-                # 增益增加 INCREASE_GAIN_STEP_DB dB
+                # Increase gain by INCREASE_GAIN_STEP_DB dB
                 NEW_GAIN_DB = min(current_gain_db + INCREASE_GAIN_STEP_DB, MAX_GAIN_DB)
                 if set_gain_db(MICROPHONE_NAME, NEW_GAIN_DB):
                     print(f"Background noise low. Increased gain to {NEW_GAIN_DB} dB")
@@ -787,9 +789,12 @@ def main():
         else:
             debug_print("No gain adjustment needed based on noise trend.", "info")
 
-        # 在下一次迭代之前睡眠 1 分钟
+        # Sleep for 1 minute before the next iteration
         time.sleep(60)
 
 
 if __name__ == "__main__":
     main()
+```
+
+</details>
