@@ -1,4 +1,4 @@
-# Hass.io 插件：Flexget
+# Hass.io 插件: Flexget
 
 [![捐赠][donation-badge]](https://www.buymeacoffee.com/alexbelgium)
 [![捐赠][paypal-badge]](https://www.paypal.com/donate/?hosted_button_id=DZFULJZTP3UQA)
@@ -14,32 +14,32 @@
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20(no%20paypal)-%23d32f2f?logo=buy-me-a-coffee&style=flat&logoColor=white
 [paypal-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20with%20Paypal-0070BA?logo=paypal&style=flat&logoColor=white
 
-_感谢所有给我的仓库加星的人！要加星，请点击下面的图片，然后它将出现在右上角。谢谢！_
+_感谢所有关注我的仓库的人！要关注，请点击下面的图片，然后它会在右上角。谢谢！_
 
-[![@alexbelgium/hassio-addons 的 Stargazers 仓库名单](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
+[![关注者名单 @alexbelgium/hassio-addons](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
 
-![下载演变](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/flexget/stats.png)
+![下载发展](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/flexget/stats.png)
 
 ## 关于
 
-FlexGet 是一个多用途的自动化工具，适用于您的所有媒体。请参见 https://flexget.com/
+FlexGet 是一个多用途的媒体自动化工具。请参阅 https://flexget.com/
 
-默认密码是 'homeassistant123'，或可以从插件选项中设置
+默认密码是 'homeassistant123' ，或可以从插件选项中设置
 
-## 要求
+## 需求
 
 ## 配置
 
-    "PUID": 自定义用户（默认root）
-    "PGID": 自定义用户（默认root）
+    "PUID": 自定义用户 (默认 root)
+    "PGID": 自定义用户 (默认 root)
     "WebuiPass": webui 密码定义
     "FG_PLUGINS": 插件添加
-    "FG_LOG_LEVEL": 日志等级（critical|error|warning|info|verbose|debug|trace）
+    "FG_LOG_LEVEL": 日志级别 (critical|error|warning|info|verbose|debug|trace)
 
 ## 启动
 
-- 启动插件。等待一段时间，并检查日志以查看是否有任何错误。
+- 启动插件。稍等片刻并检查日志以查看是否有错误。
 
 ## 故障排除
 
-如果您在安装过程中遇到问题，请务必查看 GitHub。
+如果您在安装过程中遇到问题，请确保查看 github。
