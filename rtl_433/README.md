@@ -1,82 +1,82 @@
-# rtl_433 Home Assistant 附加组件
+# rtl_433 Home Assistant Add-on
 
-## 关于
+## About
 
-这个附加组件是一个简单的包装器，围绕优秀的 [rtl_433](https://github.com/merbanan/rtl_433) 项目，它通过 [支持的 SDR 加密狗之一](https://triq.org/rtl_433/HARDWARE.html) 接收无线传感器数据，解码并以多种格式输出，包括 JSON 和 MQTT。 rtl_433 理解的无线传感器主要在 433.92 MHz、868 MHz、315 MHz、345 MHz 和 915 MHz ISM 频段上发送数据。
+This add-on is a simple wrapper around the excellent [rtl_433](https://github.com/merbanan/rtl_433) project that receives wireless sensor data via [one of the supported SDR dongles](https://triq.org/rtl_433/HARDWARE.html), decodes and outputs it in a variety of formats including JSON and MQTT. The wireless sensors rtl_433 understands transmit data mostly on 433.92 MHz, 868 MHz, 315 MHz, 345 MHz, and 915 MHz ISM bands.
 
-[查看 rtl_433 文档](https://triq.org/rtl_433)
+[View the rtl_433 documentation](https://triq.org/rtl_433)
 
-## 工作原理
+## How it works
 
-这个附加组件所做的唯一事情是在 Home Assistant OS 主管下运行 rtl_433。您只需提供一个配置文件。
+The only thing this add-on does is run rtl_433 under the Home Assistant OS supervisor. All you have to do is supply a config file.
 
-默认情况下，rtl_433 将接收到的数据打印到终端 - 由您配置将数据发布到 MQTT，以便 Home Assistant 可以访问，这可以在配置文件中用一行完成。
+By default, rtl_433 prints the data it receives to the terminal - it is up to you to configure it to publish the data to MQTT so that Home Assistant can access it, which can be done with one line in the config file.
 
-一旦您将 rtl_433 传感器数据发送到 MQTT，您需要帮助 Home Assistant 发现并理解它。您可以通过多种方式做到这一点：
+Once you get the rtl_433 sensor data into MQTT, you'll need to help Home Assistant discover and make sense of it. You can do that in a number of ways:
 
-  * 手动在 HA 中配置 `sensors` 和 `binary_sensors`，并 [将它们链接到 rtl_433 输出的适当 MQTT 主题](https://www.home-assistant.io/integrations/sensor.mqtt/)，
-  * 手动运行 [rtl_433_mqtt_hass.py](https://github.com/merbanan/rtl_433/tree/master/examples/rtl_433_mqtt_hass.py) 脚本或按计划运行以自动执行大部分配置，或者
-  * 安装 [rtl_433 MQTT 自动发现 Home Assistant 附加组件](https://github.com/pbkhrv/rtl_433-hass-addons/tree/main/rtl_433_mqtt_autodiscovery)，它会为您运行 rtl_433_mqtt_hass.py。
+  * manually configure `sensors` and `binary_sensors` in HA and [link them to the appropriate MQTT topics](https://www.home-assistant.io/integrations/sensor.mqtt/) coming out of rtl_433,
+  * run the [rtl_433_mqtt_hass.py](https://github.com/merbanan/rtl_433/tree/master/examples/rtl_433_mqtt_hass.py) script manually or on a schedule to do most of the configuration automatically, or
+  * install the [rtl_433 MQTT Auto Discovery Home Assistant Add-on](https://github.com/pbkhrv/rtl_433-hass-addons/tree/main/rtl_433_mqtt_autodiscovery), which runs rtl_433_mqtt_hass.py for you.
 
-## 先决条件
+## Prerequisites
 
-要使用此附加组件，您需要以下内容：
+ To use this add-on, you need the following:
 
- 1. [一个被 rtl_433 支持的 SDR 加密狗](https://triq.org/rtl_433/HARDWARE.html)。
+ 1. [An SDR dongle supported by rtl_433](https://triq.org/rtl_433/HARDWARE.html).
 
- 2. 在安装了 SDR 加密狗的机器上运行 Home Assistant OS。
+ 2. Home Assistant OS running on a machine with the SDR dongle plugged into it.
 
- 3. 一些被 rtl_433 支持的无线传感器。支持的协议和设备的完整列表可以在 [rtl_433 的 README](https://github.com/merbanan/rtl_433/blob/master/README.md) 的“支持的设备协议”部分找到。
+ 3. Some wireless sensors supported by rtl_433. The full list of supported protocols and devices can be found under "Supported device protocols" section of the [rtl_433's README](https://github.com/merbanan/rtl_433/blob/master/README.md).
 
-## 安装
+## Installation
 
- 1. 创建一个满足您需求的 rtl_433 配置文件。如果您在运行 Home Assistant OS 的计算机以外的计算机上执行此操作，可能会更好，这样您可以自由实验并迭代，直到得到一个有效的配置。详见下文。
+ 1. Create an rtl_433 config file that does what you need. It might work better if you do this on a computer other than the one running Home Assistant OS, so that you can experiment freely and iterate until you arrive at a configuration that works well. See below for more details.
 
- 2. 使用适合您的方法（通过 Samba 附加组件、ssh/scp、文件编辑器附加组件等）将配置文件上传到 Home Assistant 的 "/config" 目录。
+ 2. Upload the config file into Home Assistant's "/config" directory using whatever method works for you (via Samba add-on, ssh/scp, File Editor add-on etc).
 
- 3. 安装附加组件。
+ 3. Install the add-on.
 
- 5. 将您的 SDR 加密狗插入运行附加组件的机器。
+ 5. Plug your SDR dongle to the machine running the add-on.
 
- 5. 启动附加组件。默认配置将在 `/config/rtl_433/` 中创建。要添加或编辑额外的配置，请在该目录中创建多个 `.conf.template` 文件。
+ 5. Start the addon. A default configuration will be created in `/config/rtl_433/`. To add or edit additional configurations, create multiple `.conf.template` files in that directory.
 
- 6. 启动附加组件并检查日志。
+ 6. Start the add-on and check the logs.
 
-## 配置
+## Configuration
 
-对于“零配置”设置，安装 [Mosquitto broker](https://github.com/home-assistant/addons/blob/master/mosquitto/DOCS.md) 附加组件。虽然其他代理可能有效，但未经过测试，并且需要手动设置。一旦安装了附加组件，启动或重启 rtl_433 和 rtl_433_mqtt_autodiscovery 附加组件以开始捕获已知的 433 MHz 协议。
+For a "zero configuration" setup, install the [Mosquitto broker](https://github.com/home-assistant/addons/blob/master/mosquitto/DOCS.md) addon. While other brokers may work, they are not tested and will require manual setup. Once the addon is installed, start or restart the rtl_433 and rtl_433_mqtt_autodiscovery addons to start capturing known 433 MHz protocols.
 
-有关更高级的配置，请查看 rtl_433 源代码中包含的示例配置文件：[rtl_433.example.conf](https://github.com/merbanan/rtl_433/blob/master/conf/rtl_433.example.conf)
+For more advanced configuration, take a look at the example config file included in the rtl_433 source code: [rtl_433.example.conf](https://github.com/merbanan/rtl_433/blob/master/conf/rtl_433.example.conf)
 
-请注意，由于配置文件中包含 bash 变量，**美元符号和其他特殊的 shell 字符需要转义**。例如，要在配置文件中使用字面字符串 `$GPRMC`，请使用 `\$GPRMC`。
+Note that since the configuration file has bash variables in it, **dollar signs and other special shell characters need to be escaped**. For example, to use the literal string `$GPRMC` in the configuration file, use `\$GPRMC`.
 
-`retain` 选项控制 MQTT 的 `retain` 标志是否默认启用或禁用。可以在每个无线电基础上通过在 `output` 设置中将 `retain` 设置为 `true` 或 `false` 来覆盖。
+The `retain` option controls if MQTT's `retain` flag is enabled or disabled by default. It can be overridden on a per-radio basis by setting `retain` to `true` or `false` in the `output` setting.
 
-在手动配置时，假设您打算将 rtl_433 数据导入到 Home Assistant，您在配置文件中需要指定的绝对最小内容是 [MQTT 连接和身份验证信息](https://triq.org/rtl_433/OPERATION.html#mqtt-output)：
+When configuring manually, assuming that you intend to get the rtl_433 data into Home Assistant, the absolute minimum that you need to specify in the config file is the [MQTT connection and authentication information](https://triq.org/rtl_433/OPERATION.html#mqtt-output):
 
 ```
 output      mqtt://HOST:PORT,user=XXXX,pass=YYYYYYY
 ```
 
-rtl_433 默认监听在 433.92MHz，但即使这就是您所需要的，明确指定频率也可能是个好主意，以避免混淆：
+rtl_433 defaults to listening on 433.92MHz, but even if that's what you need, it's probably a good idea to specify the frequency explicitly to avoid confusion:
 
 ```
 frequency   433.92M
 ```
 
-您可能还希望缩小 rtl_433 应该尝试解码的协议列表。完整列表可以在 [README](https://github.com/merbanan/rtl_433/blob/master/README.md) 的“支持的设备协议”部分找到。假设您想监听 Acurite 592TXR 温度/湿度传感器：
+You might also want to narrow down the list of protocols that rtl_433 should try to decode. The full list can be found under "Supported device protocols" section of the [README](https://github.com/merbanan/rtl_433/blob/master/README.md). Let's say you want to listen to Acurite 592TXR temperature/humidity sensors:
 
 ```
 protocol    40
 ```
 
-最后但并非最不重要的是，如果您决定使用 MQTT 自动发现脚本或附加组件，其文档建议将 rtl_433 所有输出数据中的单位转换为 SI：
+Last but not least, if you decide to use the MQTT auto discovery script or add-on, its documentation recommends converting units in all of the data coming out of rtl_433 into SI:
 
 ```
 convert     si
 ```
 
-假设您只连接了一个 USB 加密狗，并且 rtl_433 能够自动找到它，我们得到一个最小的 rtl_433 配置文件，看起来像这样：
+Assuming you have only one USB dongle attached and rtl_433 is able to automatically find it, we arrive at a minimal rtl_433 config file that looks like this:
 
 ```
 output      mqtt://HOST:PORT,user=XXXX,pass=YYYYYYY
@@ -87,8 +87,8 @@ protocol    40
 convert     si
 ```
 
-有关更多信息，请查看 [官方 rtl_433 文档](https://triq.org/rtl_433) 和 [配置文件示例](https://github.com/merbanan/rtl_433/tree/master/conf)。
+Please check [the official rtl_433 documentation](https://triq.org/rtl_433) and [config file examples](https://github.com/merbanan/rtl_433/tree/master/conf) for more information.
 
-## 致谢
+## Credit
 
-该附加组件基于 James Fry 的 [rtl4332mqtt Hass.IO 附加组件](https://github.com/james-fry/hassio-addons/tree/master/rtl4332mqtt)，而 James Fry 的项目又基于 Chris Kacerguis 的项目：[https://github.com/chriskacerguis/honeywell2mqtt](https://github.com/chriskacerguis/honeywell2mqtt)，该项目又基于 Marco Verleun 的 rtl2mqtt 镜像：[https://github.com/roflmao/rtl2mqtt](https://github.com/roflmao/rtl2mqtt)。
+This add-on is based on James Fry's [rtl4332mqtt Hass.IO Add-on](https://github.com/james-fry/hassio-addons/tree/master/rtl4332mqtt), which is in turn based on Chris Kacerguis' project here: [https://github.com/chriskacerguis/honeywell2mqtt](https://github.com/chriskacerguis/honeywell2mqtt), which is in turn based on Marco Verleun's rtl2mqtt image here: [https://github.com/roflmao/rtl2mqtt](https://github.com/roflmao/rtl2mqtt).

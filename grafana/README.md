@@ -1,24 +1,28 @@
-# Home Assistant 社区插件：Grafana
+# Home Assistant Community Add-on: Grafana
 
-[![发布][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
+[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
 
-[![通过 GitHub Sponsors 支持 Frenck][github-sponsors-shield]][github-sponsors]
+[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
 
-[![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
+[![Support Frenck on Patreon][patreon-shield]][patreon]
 
-一个开放的平台，用于美观的分析和监控。
+The open platform for beautiful analytics and monitoring.
 
-## 关于
+## About
 
-适用于您所有指标的分析平台。
+The analytics platform for all your metrics.
 
-Grafana 允许您查询、可视化、警报和了解您的指标，无论它们存储在哪里。创建、探索和分享仪表板。使用炫酷和引人入胜的图表，以及其他数据可视化，了解您的家庭自动化系统。
+Grafana allows you to query, visualize, alert on and understand your metrics
+no matter where they are stored. Create, explore, and share dashboards. Learn
+about your Home Automation system using sexy and compelling graphs, and other
+data visualizations.
 
-将此插件与 InfluxDB 插件结合使用，以获得对您家庭的强大洞察。
+Combine this add-on with the InfluxDB add-on to get insanely powerful
+insights to your home.
 
-![Grafana 在 Home Assistant 前端中的展示][screenshot]
+![Grafana in the Home Assistant Frontend][screenshot]
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons
@@ -30,6 +34,6 @@ Grafana 允许您查询、可视化、警报和了解您的指标，无论它们
 [patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
 [patreon]: https://www.patreon.com/frenck
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
-[release-shield]: https://img.shields.io/badge/version-v10.4.2-blue.svg
-[release]: https://github.com/hassio-addons/addon-grafana/tree/v10.4.2
+[release-shield]: https://img.shields.io/badge/version-v10.5.0-blue.svg
+[release]: https://github.com/hassio-addons/addon-grafana/tree/v10.5.0
 [screenshot]: https://github.com/hassio-addons/addon-grafana/raw/main/images/screenshot.png
