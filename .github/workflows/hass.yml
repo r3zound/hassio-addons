@@ -1,4 +1,4 @@
-name: Sync Home Assistant Addons
+name: Sync hass-panel Addons
 
 on:
   schedule:
@@ -22,6 +22,7 @@ jobs:
             mkdir -p hass-panel hass-panel-beta
             wget -q -O hass-panel.zip https://github.com/mrtian2016/hass-panel/archive/refs/heads/main.zip
             unzip -q -o hass-panel.zip -d hass-panel-temp && rm hass-panel.zip
+            ls -l
             mv -f hass-panel-temp/hass-panel-main/hass-panel/* hass-panel/
             mv -f hass-panel-temp/hass-panel-main/hass-panel-beta/* hass-panel-beta/
             rm -rf hass-panel-temp
