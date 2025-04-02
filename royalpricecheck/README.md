@@ -1,19 +1,19 @@
-# 家庭助手插件：皇家价格检查
+# Home assistant 插件：皇家价格检查
 
 ## 描述
-如果皇家加勒比邮轮的附加服务变便宜，将会通知。可以重新定价邮轮，仅饮料套餐、互联网、旅游等
+如果皇家加勒比邮轮附件降价，发送通知。可以重新定价邮轮、饮品套餐、互联网、游览等。
 
-_感谢每一个给我的仓库加星的人！要给它加星，请点击下面的图片，然后在右上角会显示。谢谢！_
+_感谢每一个为我的库点赞的人！要点赞，请点击下面的图片，然后它会在右上角。谢谢！_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
 ## 安装
 
-此插件的安装非常简单，与安装任何其他Hass.io插件没有区别。
+这个插件的安装非常简单，与安装任何其他 Hass.io 插件没有区别。
 
-1. [将我的Hass.io附加程序库][repository]添加到你的Hass.io实例。
-1. 安装此插件。
-1. 点击`保存`按钮以存储你的配置。
+1. [将我的 Hass.io 插件库][repository] 添加到您的 Hass.io 实例。
+1. 安装这个插件。
+1. 点击 `保存` 按钮以存储您的配置。
 1. 启动插件。它会失败，这是正常的。
 1. 转到 /addon-configs/2effc9b9_royalpricecheck
 1. 编辑 `/addon-configs/2effc9b9_royalpricecheck/config.yaml`（见下文）
@@ -21,10 +21,10 @@ _感谢每一个给我的仓库加星的人！要给它加星，请点击下面�
 1. 确认正常工作后，使用自动化每天运行一次
 
 ## Config.yaml
-参见 `https://github.com/jdeath/CheckRoyalCaribbeanPrice`
+请参阅 `https://github.com/jdeath/CheckRoyalCaribbeanPrice`
 
 ## 自动运行
-1. 创建一个自动化，每天运行一次此插件（在随机时间）
+1. 创建一个自动化，每天运行一次这个插件（在随机时间）
 
 ```
 alias: 开始皇家价格检查
@@ -45,20 +45,21 @@ mode: single
 1. 编辑 `/addon-configs/2effc9b9_royalpricecheck/config.yaml`
 1. 配置通知的行
 
-它应该类似于以下格式用于homeassistant通知：
+对于 Home Assistant 通知，它应该看起来像这样：
 ```
 # config.yaml
 apprise:
   urls:
     - 'hassio://192.168.X.XX/eyXXXXXXXXXXXXXXXX.eyXXXXXXXXXXXXXXXXXxx'
 ```
-其中 `eyXXX.eyXXX` 字符串是一个Home Assistant的长期访问令牌。可以通过用户Home Assistant个人资料页面底部的“长期访问令牌”部分创建长期访问令牌。
+其中 `eyXXX.eyXXX` 字符串是 Home Assistant 的长期访问令牌。长期访问令牌可以在用户的 Home Assistant 个人资料页面底部的“长期访问令牌”部分创建。
 
-更多详细信息请见： `https://github.com/caronc/apprise/wiki/Notify_homeassistant`
+更多详细信息请参见： `https://github.com/caronc/apprise/wiki/Notify_homeassistant`
 
-更多详细信息请见： `https://github.com/caronc/apprise` 你可以包含多个URL行来发送电子邮件等
+更多详细信息请参见： `https://github.com/caronc/apprise` 您可以包含多个 URL 行以发送电子邮件等。
+
 # 添加到侧边栏
-由于没有WebUI，因此无法在侧边栏显示。但是，你可以将以下代码添加到你的Home Assistant `configuration.yaml`中，以通过侧边栏条目显示日志
+由于没有 WebUI，无法显示在侧边栏中。但是，您可以将以下代码添加到您的 Home Assistant `configuration.yaml` 中，通过侧边栏条目显示日志。
 
 ```
 panel_custom:
@@ -72,6 +73,5 @@ panel_custom:
 ```
 
 # 问题
-
 
 [repository]: https://github.com/jdeath/homeassistant-addons

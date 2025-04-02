@@ -1,31 +1,24 @@
-# Li Tin O`ve Weedle Assistant Add-on: ntopng
+# Li Tin O`ve Weedle Assistant 附加组件: ntopng
 
-This is an ntopng add-on for Home Assistant.
-It includes opensource community version of ntopng
-and opensource netflow collector implementation netflow2ng
+这是一个用于 Home Assistant 的 ntopng 附加组件。
+它包括 ntopng 的开源社区版本
+和开源的 netflow 收集器实现 netflow2ng。
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Home Assistant add-on.
+在 Home Assistant 中安装 ntopng 附加组件。
 
-1. Click the Home Assistant My button below to open the add-on on your Home
-   Assistant instance.
+1. 点击下面的 Home Assistant 我的按钮，在您的 Home Assistant 实例中打开该附加组件。
 
-   [![Open this add-on in your Home Assistant instance.][addon-badge]][addon]
+   [![在您的 Home Assistant 实例中打开此附加组件。][addon-badge]][addon]
 
-1. Click the "Install" button to install the add-on.
-1. Start the "Example" add-on.
-1. Check the logs of the "Example" add-on to see it in action.
+2. 点击“安装”按钮以安装附加组件。
+3. 启动“示例”附加组件。
+4. 检查“示例”附加组件的日志以查看其运行情况。
 
-## Configuration
+## 配置
 
-Eventought this add-on is just an example add-on, it does come with some
-configuration options to play around with.
-
-**Note**: _Remember to restart the add-on when the configuration is changed._
-
-ntopng add-on configuration:
+ntopng 附加组件配置：
 
 ```yaml
 log_level: info
@@ -44,87 +37,77 @@ geoip_account_id: 123456
 geoip_license_key: "Kdsalhdsl_lshahc_hskljd_as"
 ```
 
-### Option: `log_level`
+### 选项: `log_level`
 
-The `log_level` option controls the level of log output by the add-on and can
-be changed to be more or less verbose, which might be useful when you are
-dealing with an unknown issue. Possible values are:
+`log_level` 选项控制附加组件的日志输出级别，可以更改为更详细或更简洁，这在处理未知问题时可能会很有用。可能的值包括：
 
-- `trace`: Show every detail, like all called internal functions.
-- `debug`: Shows detailed debug information.
-- `info`: Normal (usually) interesting events.
-- `warning`: Exceptional occurrences that are not errors.
-- `error`: Runtime errors that do not require immediate action.
-- `fatal`: Something went terribly wrong. Add-on becomes unusable.
+- `trace`: 显示每一个细节，例如所有调用的内部函数。
+- `debug`: 显示详细的调试信息。
+- `info`: 正常（通常）有趣的事件。
+- `warning`: 不是错误的异常情况。
+- `error`: 不需要立即处理的运行时错误。
+- `fatal`: 出现了严重错误。附加组件变得不可用。
 
-Please note that each level automatically includes log messages from a
-more severe level, e.g., `debug` also shows `info` messages. By default,
-the `log_level` is set to `info`, which is the recommended setting unless
-you are troubleshooting.
+请注意，每个级别自动包含来自更严重级别的日志消息，例如，`debug` 也显示 `info` 消息。默认情况下，`log_level` 设置为 `info`，这是推荐的设置，除非您在进行故障排除。
 
-### Option: `ssl`
+### 选项: `ssl`
 
-### Option: `certfile`
+### 选项: `certfile`
 
-### Option: `keyfile`
+### 选项: `keyfile`
 
-### Option: `leave_front_door_open`
+### 选项: `leave_front_door_open`
 
-### Option: `ntop_auth`
+### 选项: `ntop_auth`
 
-### Option: `custom_scripts`
+### 选项: `custom_scripts`
 
-### Option: `dns_mode`
+### 选项: `dns_mode`
 
-### Option: `loacl_net`
+### 选项: `local_net`
 
-### Option: `export_flows`
+### 选项: `export_flows`
 
-### Option: `geoip_account_id`
+### 选项: `geoip_account_id`
 
-### Option: `geoip_license_key`
+### 选项: `geoip_license_key`
 
-## Changelog & Releases
+## 更新日志与版本
 
-This repository keeps a change log using [GitHub's releases][releases]
-functionality.
+此存储库使用 [GitHub 的发行][releases]
+功能保持变更日志。
 
-Releases are based on [Semantic Versioning][semver], and use the format
-of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
-based on the following:
+发布基于 [语义版本控制][semver]，使用 `MAJOR.MINOR.PATCH` 格式。简而言之，版本将根据以下内容进行增量更新：
 
-- `MAJOR`: Incompatible or major changes.
-- `MINOR`: Backwards-compatible new features and enhancements.
-- `PATCH`: Backwards-compatible bugfixes and package updates.
+- `MAJOR`: 不兼容或重大更改。
+- `MINOR`: 向后兼容的新特性和增强。
+- `PATCH`: 向后兼容的错误修复和软件包更新。
 
-## Support
+## 支持
 
-Got questions?
+有问题吗？
 
-You have several options to get them answered:
+您有几种方式可以获得答案：
 
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+- Home Assistant [社区论坛][forum]。
+- 您也可以在 [这里提出问题][issue] GitHub。
 
-You could also [open an issue here][issue] GitHub.
+您也可以在 [这里提出问题][issue] GitHub。
 
-## Authors & contributors
+## 作者与贡献者
 
-The original setup of this repository is by [Li Tin O`ve Weedle][litin].
+该存储库的最初设置由 [Li Tin O`ve Weedle][litin] 完成。
 
-## License
+## 许可证
 
 Apache 2.0
 
-Copyright (c) 2023 Dominik Strnad
+版权所有 (c) 2023 Dominik Strnad
 
 [addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
 [addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_example&repository_url=https%3A%2F%2Fgithub.com%2Flitinoveweedle%2Fhassio-addons
 [contributors]: https://github.com/litinoveweedle/hassio-addons/graphs/contributors
-[discord-ha]: https://discord.gg/c5DvZ4e
-[forum]: https://community.home-assistant.io/t/repository-community-hass-io-add-ons/24705?u=litinoveweedle
+[forum]: https://community.home-assistant.io/t/foss-ntopng-with-netflow-collector-hassio-addon/603491
 [litin]: https://github.com/litinoveweedle
-[issue]: https://github.com/litinoveweedle/hassio-addons/issues
-[reddit]: https://reddit.com/r/homeassistant
-[releases]: https://github.com/litinoveweedle/hassio-addons/ntopng/releases
+[issue]: https://github.com/litinoveweedle/hassio-addons-dev/issues
 [semver]: http://semver.org/spec/v2.0.0.html

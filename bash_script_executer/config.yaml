@@ -1,7 +1,7 @@
 name: Bash Script Executer
-version: 1.7.3
+version: 1.7.4
 slug: bashscriptexecuter
-description: 执行您自己的bash脚本，在这个Homeassistant插件环境中。
+description: 在这个Home assistant插件环境中执行自己的bash脚本。
 url: https://gh-proxy.com/github.com/FaserF/hassio-addons/tree/master/bash_script_executer
 arch:
   - armhf

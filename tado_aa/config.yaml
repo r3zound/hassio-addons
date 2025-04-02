@@ -1,7 +1,7 @@
 name: Tado Auto Assist
-version: 1.6.3
+version: 1.6.4
 slug: tado_aa
-description: Tado自动辅助地理围栏和开窗检测功能。
+description: 地理围栏和开窗检测的tado自动辅助功能。
 url: https://gh-proxy.com/github.com/FaserF/hassio-addons/tree/master/tado_aa
 arch:
   - armhf

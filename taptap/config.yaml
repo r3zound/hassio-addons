@@ -1,10 +1,11 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: TapTap
-version: "0.1.0"
+version: "0.1.1"
 slug: taptap
-description: Tigo CCA到HomeAssistant MQTT桥接器
+description: Tigo CCA到Home Assistant MQTT桥接器
 url: "https://gh-proxy.com/github.com/litinoveweedle/hassio-addons/tree/main/taptap"
 image: "ghcr.nju.edu.cn/litinoveweedle/hassio-addon-taptap-{arch}"
+homeassistant: 2025.3.1
 arch:
   - armhf
   - armv7

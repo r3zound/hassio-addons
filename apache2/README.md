@@ -1,53 +1,52 @@
 # Home Assistant Community Add-on: Apache2
-![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield] ![Supports armhf Architecture][armhf-shield] ![Supports armv7 Architecture][armv7-shield] ![Supports i386 Architecture][i386-shield]
-![Project Maintenance][maintenance-shield]
+![支持 aarch64 架构][aarch64-shield] ![支持 amd64 架构][amd64-shield] ![支持 armhf 架构][armhf-shield] ![支持 armv7 架构][armv7-shield] ![支持 i386 架构][i386-shield]
+![项目维护][maintenance-shield]
 
-Apache2 Webserver for Homeassistant OS
+适用于 Homeassistant OS 的 Apache2 Web 服务器
 
-![Ingress Support](../_images/apache2/ingress.png)
+![Ingress 支持](../_images/apache2/ingress.png)
 
-## About
+## 关于
 
-The Apache HTTP Server Project is an effort to develop and maintain an open-source HTTP server for modern operating systems including UNIX and Windows. The goal of this project is to provide a secure, efficient and extensible server that provides HTTP services in sync with the current HTTP standards.<br />
-The Apache HTTP Server ("httpd") was launched in 1995 and it has been the most popular web server on the Internet since April 1996. It has celebrated its 25th birthday as a project in February 2020.<br />
-The Apache HTTP Server is a project of The Apache Software Foundation.
+Apache HTTP 服务器项目致力于开发和维护一个开源的 HTTP 服务器，以支持现代操作系统，包括 UNIX 和 Windows。该项目的目标是提供一个安全、高效和可扩展的服务器，提供与当前 HTTP 标准同步的 HTTP 服务。<br />
+Apache HTTP 服务器（"httpd"）于 1995 年推出，并自 1996 年 4 月以来成为互联网上最受欢迎的 web 服务器。该项目在 2020 年 2 月庆祝了其 25 周年。<br />
+Apache HTTP 服务器是 Apache 软件基金会的一个项目。
 
+## 不同版本
 
-## Different Versions
-
-### Full Version
-The [full Apache2 Version](https://github.com/FaserF/hassio-addons/tree/master/apache2) with MariaDB and common used PHP 8 modules. <br />
-This docker image comes with: apache2 php84-apache2 libxml2-dev apache2-utils apache2-mod-wsgi apache2-ssl mariadb-client ffmpeg<br />
-The following php84 extensions will be installed: php84 php84-dev php84-fpm php84-mysqli php84-opcache php84-gd zlib php84-curl php84-phar php84-mbstring php84-zip php84-pdo php84-pdo_mysql php84-iconv php84-dom php84-session php84-intl php84-soap php84-fileinfo php84-xml php84-ctype php84-pecl-xdebug php84-pdo_sqlite php84-tokenizer php84-exif php84-xmlwriter php84-cgi php84-simplexml php84-gd php84-json php84-imap php84-apcu php84-simplexml<br />
+### 完整版本
+[完整的 Apache2 版本](https://github.com/FaserF/hassio-addons/tree/master/apache2) 包含 MariaDB 和常用的 PHP 8 模块。<br />
+此 Docker 镜像包含：apache2 php84-apache2 libxml2-dev apache2-utils apache2-mod-wsgi apache2-ssl mariadb-client ffmpeg<br />
+将安装以下 php84 扩展：php84 php84-dev php84-fpm php84-mysqli php84-opcache php84-gd zlib php84-curl php84-phar php84-mbstring php84-zip php84-pdo php84-pdo_mysql php84-iconv php84-dom php84-session php84-intl php84-soap php84-fileinfo php84-xml php84-ctype php84-pecl-xdebug php84-pdo_sqlite php84-tokenizer php84-exif php84-xmlwriter php84-cgi php84-simplexml php84-gd php84-json php84-imap php84-apcu php84-simplexml<br />
 Mosquitto & Mosquitto Dev<br />
-And it comes with php locales.
+同时还包含 php 语言环境。
 
-### Minimal Version
-The [Minimal Version](https://github.com/FaserF/hassio-addons/tree/master/apache2-minimal) of the Apache2 Addon without MariaDB and with no PHP modules. <br />
-This docker image comes with: apache2 libxml2-dev apache2-utils apache2-mod-wsgi apache2-ssl
+### 最小版本
+[最小版本](https://github.com/FaserF/hassio-addons/tree/master/apache2-minimal) 的 Apache2 附加组件，不包含 MariaDB 和任何 PHP 模块。<br />
+此 Docker 镜像包含：apache2 libxml2-dev apache2-utils apache2-mod-wsgi apache2-ssl
 
-### Minimal Version with MariaDB
-The [Minimal Version with MariaDB and some PHP modules](https://github.com/FaserF/hassio-addons/tree/master/apache2-minimal-mariadb) of the Apache2 Addon. <br />
-This docker image comes with: apache2 php84-apache2 libxml2-dev apache2-utils apache2-mod-wsgi apache2-ssl mariadb-client<br />
-The following php84 extensions will be installed: php84 php84-mysqli php84-opcache php84-curl php84-mbstring php84-zip
+### 包含 MariaDB 的最小版本
+包含 MariaDB 和一些 PHP 模块的 [最小版本](https://github.com/FaserF/hassio-addons/tree/master/apache2-minimal-mariadb) 的 Apache2 附加组件。<br />
+此 Docker 镜像包含：apache2 php84-apache2 libxml2-dev apache2-utils apache2-mod-wsgi apache2-ssl mariadb-client<br />
+将安装以下 php84 扩展：php84 php84-mysqli php84-opcache php84-curl php84-mbstring php84-zip
 
-## Installation
+## 安装
 
-[![FaserF Homeassistant Addons](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2FFaserF%2Fhassio-addons)
+[![FaserF Homeassistant 附加组件](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2FFaserF%2Fhassio-addons)
 <br />
-The installation of this add-on is pretty straightforward and not different in comparison to installing any other custom Home Assistant add-on.<br />
-Just click the link above or add my repo to the hassio addons repositorys: <https://github.com/FaserF/hassio-addons>
+该附加组件的安装过程非常简单，与安装任何其他自定义 Home Assistant 附加组件没有区别。<br />
+只需点击上面的链接或将我的仓库添加到 hassio 附加组件仓库：<https://github.com/FaserF/hassio-addons>
 
-Put your website files to /share/htdocs<br />
-Example File where your index.html should be: /share/htdocs/index.html <br />
+将您的网站文件放到 /share/htdocs<br />
+您的 index.html 应放在的示例文件位置：/share/htdocs/index.html <br />
 
-If you want to integrate your website with a mariadb database. Please ensure that the MariaDB Addon is installed!
+如果您想将您的网站与 MariaDB 数据库集成，请确保已安装 MariaDB 附加组件！
 
-## Configuration
+## 配置
 
-**Note**: _Remember to restart the add-on when the configuration is changed._
+**注意**：_如果更改配置，请记得重启附加组件。_
 
-Example add-on configuration:
+示例附加组件配置：
 
 ```yaml
 document_root: /media/apache2
@@ -62,7 +61,7 @@ certfile: itdoesntmatter_as_ssl_is_set_to_false
 keyfile: itdoesntmatter_as_ssl_is_set_to_false
 ```
 <br />
-Recommended Example add-on configuration:
+推荐的示例附加组件配置：
 
 ```yaml
 document_root: /share/htdocs
@@ -75,118 +74,106 @@ certfile: fullchain.pem
 keyfile: privkey.pem
 ```
 
-**Note**: _This is just an example, don't copy and paste it! Create your own!_
+**注意**：_这只是一个示例，不要复制粘贴！请创建您自己的！_
 
-### Option: `document_root`
+### 选项：`document_root`
 
-This option is needed. Change it depending where your root webfolder is on your homeassistant installation.
+此选项是必需的。根据您的 homeassistant 安装的根网页文件夹位置进行更改。
 
-Note: it has to be somewhere in the /share or /media folder! Other folders are not visible to this addon.
+注意：它必须位于 /share 或 /media 文件夹中！其他文件夹对该附加组件不可见。
 
-### Option: `php_ini`
+### 选项：`php_ini`
 
-You can choose between the following options:
+您可以选择以下选项：
 
-default -> the default php84 php.ini file will be used
+default -> 将使用默认的 php84 php.ini 文件
 
-get_file -> copies the default php84 php.ini file from the addon to /share/apache2addon_php.ini
+get_file -> 从附加组件复制默认的 php84 php.ini 文件到 /share/apache2addon_php.ini
 
-path/to/your/new/php.ini -> Please change the location depending where your custom php.ini file is, f.e.: /share/apache2/php.ini
+path/to/your/new/php.ini -> 请根据您自定义的 php.ini 文件位置进行更改，如：/share/apache2/php.ini
 
-### Option: `default_conf` & `default_ssl_conf`
+### 选项：`default_conf` & `default_ssl_conf`
 
-You can choose between the following options:
+您可以选择以下选项：
 
-default -> the default apache2 addon file will be used
+default -> 将使用默认的 apache2 附加组件文件
 
-get_config -> Get a copy of the default apache2 addon config file to your /share folder.
+get_config -> 获取默认 apache2 附加组件配置文件的副本到您的 /share 文件夹。
 
-path/to/your/new/apache2.conf -> Please change the location depending where your custom 000-default.conf / 000-default-le-ssl.conf file is, f.e.: /share/apache2/000-default.conf <br />
-More Information: <https://cwiki.apache.org/confluence/display/HTTPD/ExampleVhosts><br /> <br />
-Please note, that I wont give any support if you are using custom apache2 config files and are receiving any apache2 errors!
+path/to/your/new/apache2.conf -> 请根据您自定义的 000-default.conf / 000-default-le-ssl.conf 文件位置进行更改，如：/share/apache2/000-default.conf <br />
+更多信息：<https://cwiki.apache.org/confluence/display/HTTPD/ExampleVhosts><br /> <br />
+请注意，如果您使用自定义的 apache2 配置文件并收到任何 apache2 错误，我将不提供任何支持！
 
-### Option: `website_name`
+### 选项：`website_name`
 
-This option is needed, if you enable ssl to true. If you are not using SSL put anything in here, as it doesnt matter.
+如果您将 ssl 设置为 true，则此选项是必需的。如果您不使用 SSL，请在此处放入任意内容，因为这无关紧要。
 
-### Option: `username`
+### 选项：`username`
 
-This option is optional. This user is for accessing web files (NOT the website itself). It will change the owner of all web files from "root" to this new owner.
+此选项是可选的。此用户用于访问 web 文件（NOT 网站本身）。它将把所有 web 文件的所有者从 "root" 更改为此新所有者。
 
-This is NOT used for authentification for your website. If you want this have a look at [Authentification for your website](#authentification-for-your-website)
+这不用于网站的身份验证。如果您想要此功能，请查看 [网站的身份验证](#authentification-for-your-website)
 
-### Option: `password`
+### 选项：`password`
 
-This option is optional. Some self hosted web sites require an authentification password to access files within the docker image. #50
+此选项是可选的。某些自托管网站需要身份验证密码才能访问 Docker 镜像中的文件。#50
 
-This is NOT used for authentification for your website. If you want this have a look at [Authentification for your website](#authentification-for-your-website)
+这不用于网站的身份验证。如果您想要此功能，请查看 [网站的身份验证](#authentification-for-your-website)
 
-### Option: `ssl`
+### 选项：`ssl`
 
-Enables/Disables SSL (HTTPS) on the web interface.
+启用/禁用 web 界面的 SSL (HTTPS)。
 
-If you need a self-signed certificate, have a look at my openssl addon: <https://github.com/FaserF/hassio-addons/tree/master/openssl>
+如果您需要自签名证书，请查看我的 openssl 附加组件：<https://github.com/FaserF/hassio-addons/tree/master/openssl>
 
-**Note**: _The files MUST be stored in `/ssl/`, which is the default_
+**注意**：_文件必须存储在 `/ssl/` 中，这是默认位置_
 
-### Option: `init_commands`
+### 选项：`init_commands`
 
-This option is optional. If you need some special packages or commands, you can use this option to install/use them. #124
+此选项是可选的。如果您需要某些特殊软件包或命令，可以使用此选项进行安装/使用。#124
 
-If you are encountering any issues, please remove this option before submitting a bug report!
+如果遇到任何问题，请在提交 bug 报告之前删除此选项！
 
-## Authentification for your website
-Use a .htaccess file in combination with a .htpasswd file for this: <https://www.htaccessredirect.net/>
+## 网站的身份验证
+使用 .htaccess 文件与 .htpasswd 文件组合来实现：<https://www.htaccessredirect.net/>
 
-Example .htaccess file:
+示例 .htaccess 文件：
 
 ```bash
 AuthType Basic
-AuthName "My Webserver Authentification"
+AuthName "我的 Web 服务器身份验证"
 AuthUserFile /share/.htpasswd
 Require valid-user
 ```
 
 ## Ingress
 
-This addon supports Homeassistant Ingress. Until now it seems only to work if you enable SSL!
-And also I am sorry, but I cant support all your websites. Basic HTML Websites will work great with ingress, the more advanced the page is, the harder it is to support ingress.
+该附加组件支持 Homeassistant Ingress。到目前为止，似乎只有在启用 SSL 时才能正常工作！
+同时很抱歉，我无法支持您所有的网站。基本的 HTML 网站与 ingress 可以良好工作，页面越复杂，支持 ingress 的难度也就越大。
 
-## Support
+## 支持
 
-Got questions or problems?
+有问题或疑问？
 
-You can [open an issue here][issue] GitHub.
-Please keep in mind, that this software is only tested on armv7 running on a Raspberry Pi 4.
+您可以在这里[提出问题][issue] gitHub。
+请注意，此软件仅在树莓派 4 的 armv7 上进行测试。
 
-## Authors & contributors
+## 作者与贡献者
 
-The original program is from the Apache Project. For more informatios please visit this page: <https://httpd.apache.org/>
-The hassio addon is brought to you by [FaserF].
+该程序的原始版本来自 Apache 项目。有关更多信息，请访问此页面：<https://httpd.apache.org/>
+此 hassio 附加组件由 [FaserF] 提供。
 
-## License
+## 许可证
 
-MIT License
+MIT 许可证
 
-Copyright (c) 2019-2023 FaserF & The Apache Project
+版权 (c) 2019-2023 FaserF & Apache 项目
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+特此免费授予任何获得本软件及其相关文档文件（"软件"）副本的人，以无任何限制地使用本软件，包括但不限于使用、复制、修改、合并、发布、分发、再许可和/或销售本软件的副本，以及允许向其提供软件的人这样做，但须遵守以下条件：
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+以上版权声明和本许可声明应包含在所有副本或实质性部分的软件中。
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+本软件是按 "原样" 提供的，不做任何种类的明示或暗示的担保，包括但不限于对适销性、特定用途的适用性和非侵权的保证。在任何情况下，作者或版权持有人均不对因使用或其他交易中发生的任何索赔、损害或其他责任承担责任，无论是在合同诉讼、侵权诉讼或其他方面。
 
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2024.svg
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
