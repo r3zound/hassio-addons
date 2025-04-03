@@ -1,3 +1,32 @@
+## 3.0.0-alpha.79 (2025-04-03)
+
+### 🐛 Fixes
+
+- fix OnOffServer after Matter.js 0.13.0-nightly upgrade ([26c3ee7](https://github.com/t0bst4r/home-assistant-matter-hub/commit/26c3ee7))
+- **bridge:** since matter 1.4 bridge names are limited to 32 characters ([d6bb614](https://github.com/t0bst4r/home-assistant-matter-hub/commit/d6bb614))
+- **climate & fan:** correctly react to property changes ([08a4d68](https://github.com/t0bst4r/home-assistant-matter-hub/commit/08a4d68))
+
+### ❤️ Thank You
+
+- Tobias Glatthar @t0bst4r
+
+## 3.0.0-alpha.78 (2025-04-03)
+
+### 🐛 Fixes
+
+- smaller fixes after upgrading to Matter 1.4 ([7472e7f](https://github.com/t0bst4r/home-assistant-matter-hub/commit/7472e7f))
+- **vacuum:** return to dock when put into idle mode ([3a8ac4a](https://github.com/t0bst4r/home-assistant-matter-hub/commit/3a8ac4a))
+
+### 🚧 Chores
+
+- move from npm to pnpm ([a560522](https://github.com/t0bst4r/home-assistant-matter-hub/commit/a560522))
+- migrate prettier and eslint to biome ([86704e0](https://github.com/t0bst4r/home-assistant-matter-hub/commit/86704e0))
+- fix release pipeline ([e6e3ab7](https://github.com/t0bst4r/home-assistant-matter-hub/commit/e6e3ab7))
+
+### ❤️ Thank You
+
+- Tobias Glatthar @t0bst4r
+
 ## 3.0.0-alpha.77 (2025-04-01)
 
 ### 🚀 Features
