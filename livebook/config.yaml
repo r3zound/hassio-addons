@@ -1,6 +1,6 @@
 name: "LiveBook"
-version: "0.15.4"
-upstream: "0.15.4"
+version: "0.15.5"
+upstream: "0.15.5"
 slug: livebook
 description: Livebook 是一个用于编写交互式和协作代码笔记本的网络应用程序。
   Livebook is a web application for writing interactive and collaborative code notebooks
