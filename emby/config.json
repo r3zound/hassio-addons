@@ -7,11 +7,10 @@
   "backup_exclude": [
     "*/cache/",
     "*/transcoding-temp/",
-    "*/logs/*",
-    "*/metadata/"
+    "*/logs/*"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "一个免费的软件媒体系统，让你能够管理和流式传输你的媒体。",
+  "description": "一个免费软件媒体系统，让你能够控制管理和流式传输你的媒体。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -126,6 +125,6 @@
   "slug": "emby_nas",
   "udev": true,
   "url": "https://gh-proxy.com/github.com/alexbelgium/hassio-addons/tree/master/emby",
-  "version": "4.9.0.42",
+  "version": "4.9.0.43",
   "video": true
 }

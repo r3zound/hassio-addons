@@ -7,7 +7,7 @@
     "**/machine-learning/*"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "移动设备直接备份照片和视频的自托管解决方案。",
+  "description": "移动设备直接使用的自托管照片和视频备份解决方案。",
   "devices": [
     "/dev/dri",
     "/dev/dxg",
@@ -148,7 +148,7 @@
   "udev": true,
   "url": "https://gh-proxy.com/github.com/alexbelgium/hassio-addons",
   "usb": true,
-  "version": "1.130.3",
+  "version": "1.131.3",
   "video": true,
   "webui": "http://[HOST]:[PORT:8080]"
 }

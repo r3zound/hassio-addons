@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "🖧🔍 WIFI/LAN扫描器、入侵者和存在探测器",
+  "description": "WIFI/LAN扫描器、入侵者检测器和存在探测器。",
   "environment": {
     "PGID": "102",
     "PORT": "20211",
@@ -52,5 +52,5 @@
   "slug": "netalertx_fa",
   "udev": true,
   "url": "https://gh-proxy.com/github.com/alexbelgium/hassio-addons",
-  "version": "25.3.1"
+  "version": "25.4.1"
 }

@@ -1,45 +1,88 @@
-# Pairing
-By default the add-on has `permit_join` set to `false`. To allow devices to join you need to activate this after the add-on has started. You can now use the [built-in frontend](https://www.zigbee2mqtt.io/information/frontend.html) to achieve this. For details on how to enable the built-in frontent see the next section.
+# 配对
 
-# Enabling the built-in frontend
-Enable `ingress` to have the frontend available in your UI: **Settings → Add-ons → Zigbee2MQTT → Show in sidebar**. You can find more details about the feature on the [Zigbee2MQTT documentation](https://www.zigbee2mqtt.io/information/frontend.html).
+默认情况下，该附加组件的 `permit_join` 设置为 `false`。要允许设备加入，您需要在附加组件启动后激活此选项。现在您可以使用 [内置前端](https://www.zigbee2mqtt.io/information/frontend.html) 来实现这一点。有关如何启用内置前端的详细信息，请参见下一节。
 
-# Configuration
-Configuration required to startup Zigbee2MQTT is available from the add-on configuration. The rest of the options can be configured via the Zigbee2MQTT frontend.
+# 启用内置前端
 
-**CAUTION:** settings configured through the add-on configuration page will take precedence over settings in the `configuration.yaml` page (e.g. you set `rtscts: false` in add-on configuration page and `rtscts: true` in `configuration.yaml`, `rtscts: false` will be used). _If you want to control the entire configuration through YAML, remove them from the add-on configuration page._
+启用 `ingress` 以在您的用户界面中使用前端：**设置 → 附加组件 → Zigbee2MQTT → 在侧边栏中显示**。您可以在 [Zigbee2MQTT 文档](https://www.zigbee2mqtt.io/information/frontend.html) 中找到有关此功能的更多详细信息。
 
-# Configuration backup
-The add-on will create a backup of your configuration.yml within your data path: `$DATA_PATH/configuration.yaml.bk`. When upgrading, you should use this to fill in the relevant values into your new config, particularly the network key, to avoid breaking your network and having to repair all of your devices.
-The backup of your configuration is created on add-on startup if no previous backup was found. 
+# 配置
 
-# Enabling the watchdog
-To automatically restart Zigbee2MQTT in case of a soft failure (like "adapter disconnected"), the watchdog can be used. It can be enabled by adding the following to the add-on configuration:
+## 入门
+
+[入门](https://www.zigbee2mqtt.io/guide/getting-started/#onboarding) 让您可以设置 Zigbee2MQTT，而无需手动输入附加组件配置页面中的详细信息。在全新安装（没有配置）下启动附加组件时，前端将显示快速设置页面，允许您选择各种设置以启动 Zigbee2MQTT。
+
+> [!注意]
+> 成功检测到适配器可以选择的情况可能因您的设置/网络而异。您可能需要在页面上 [手动输入这些详细信息](https://www.zigbee2mqtt.io/guide/configuration/adapter-settings.html#basic-configuration)。
+
+> [!提示]
+> 您可以通过附加组件配置页面中的切换选项强制重新运行入门（例如，改变适配器）（在选中 `显示未使用的可选配置选项` 后可见）。这将强制入门重新运行，即使您已经成功配置过一次。完成后请确保禁用它。
+
+## 手动
+
+启动 Zigbee2MQTT 所需的配置可在附加组件配置中找到。其余选项可以通过 Zigbee2MQTT 前端进行配置。
+
+> [!警告]
+> 通过附加组件配置页面配置的设置将优先于 `configuration.yaml` 页面中的设置（例如，您在附加组件配置页面设置 `rtscts: false`，并在 `configuration.yaml` 中设置 `rtscts: true`，将使用 `rtscts: false`）。 _如果您想通过 YAML 控制整个配置，请从附加组件配置页面中删除它们。_
+
+#### 每个配置部分的示例
+
+- socat
+  ```yaml
+  enabled: false
+  master: pty,raw,echo=0,link=/tmp/ttyZ2M,mode=777
+  slave: tcp-listen:8485,keepalive,nodelay,reuseaddr,keepidle=1,keepintvl=1,keepcnt=5
+  options: "-d -d"
+  log: false
+  ```
+- mqtt
+  ```yaml
+  server: mqtt://localhost:1883
+  user: my_user
+  password: "my_password"
+  ```
+- serial
+  ```yaml
+  adapter: zstack
+  port: /dev/serial/by-id/usb-Texas_Instruments_TI_CC2531_USB_CDC___0X00124B0018ED3DDF-if00
+  ```
+
+# 配置备份
+
+附加组件将在您的数据路径中创建 `configuration.yml` 的备份：`$DATA_PATH/configuration.yaml.bk`。升级时，您应使用此备份将相关值填入新的配置，特别是网络密钥，以避免破坏您的网络并必须重新配对所有设备。
+如果没有找到之前的备份，则在附加组件启动时创建配置的备份。
+
+# 启用看门狗
+
+为了在出现软故障（如“适配器断开连接”）的情况下自动重新启动 Zigbee2MQTT，可以使用看门狗。通过将以下内容添加到附加组件配置中来启用它：
 
 ```yaml
 watchdog: default
 ```
 
-This will use the default watchdog retry delays of 1min, 5min, 15min, 30min, 60min. Custom delays are also supported, e.g. `watchdog: 5,10,30` will start Zigbee2MQTT with the watchdog's retry delays of 5min, 10min, 30min. For more information about the watchdog, read the [docs](https://www.zigbee2mqtt.io/guide/installation/15_watchdog.html).
+这将使用默认的看门狗重试延迟，分别为 1 分钟、5 分钟、15 分钟、30 分钟和 60 分钟。自定义延迟也受支持，例如 `watchdog: 5,10,30` 将使用看门狗的重试延迟为 5 分钟、10 分钟和 30 分钟。有关看门狗的更多信息，请参见 [文档](https://www.zigbee2mqtt.io/guide/installation/15_watchdog.html)。
 
-# Adding Support for New Devices
-If you are interested in adding support for new devices to Zigbee2MQTT see [How to support new devices](https://www.zigbee2mqtt.io/how_tos/how_to_support_new_devices.html).
+# 为新设备添加支持
 
-# Notes
-- Depending on your configuration, the MQTT server config may need to include the port, typically `1883` or `8883` for SSL communications. For example, `mqtt://core-mosquitto:1883` for Home Assistant's Mosquitto add-on.
-- To find out which serial ports you have exposed go to **Supervisor → System → Host system → ⋮ → Hardware**
+如果您有兴趣为 Zigbee2MQTT 添加新设备支持，请参见 [如何支持新设备](https://www.zigbee2mqtt.io/how_tos/how_to_support_new_devices.html)。
+
+# 注意事项
+
+- 根据您的配置，MQTT 服务器配置可能需要包含端口，通常为 `1883` 或 `8883` （用于 SSL 通信）。例如，`mqtt://core-mosquitto:1883` 用于 Home Assistant 的 Mosquitto 附加组件。
+- 要查找您公开了哪些串口，请访问 **Supervisor → System → Host system → ⋮ → Hardware**
 
 # Socat
-In some cases it is not possible to forward a serial device to the container that zigbee2mqtt runs in. This could be because the device is not physically connected to the machine at all. 
 
-Socat can be used to forward a serial device over TCP to zigbee2mqtt. See the [socat man pages](https://linux.die.net/man/1/socat) for more info.
+在某些情况下，无法将串行设备转发到 Zigbee2mqtt 运行的容器。这可能是因为设备根本未物理连接到计算机。
 
-You can configure the socat module within the socat section using the following options:
+可以使用 Socat 通过 TCP 将串行设备转发到 Zigbee2mqtt。有关更多信息，请参阅 [socat 手册](https://linux.die.net/man/1/socat)。
 
-- `enabled` true/false to enable socat (default: false)
-- `master` master or first address used in socat command line (mandatory)
-- `slave` slave or second address used in socat command line (mandatory)
-- `options` extra options added to the socat command line (optional)
-- `log` true/false if to log the socat stdout/stderr to data_path/socat.log (default: false)
+您可以在 Socat 部分中使用以下选项配置 socat 模块：
 
-**NOTE:** You'll have to change both the `master` and the `slave` options according to your needs. The defaults values will make sure that socat listens on port `8485` and redirects its output to `/dev/ttyZ2M`. The zigbee2mqtt's serial port setting is NOT automatically set and has to be changed accordingly.
+- `enabled` true/false 启用 socat（默认：false）
+- `master` socat 命令行中使用的主地址或第一个地址（强制性）
+- `slave` socat 命令行中使用的从地址或第二个地址（强制性）
+- `options` 添加到 socat 命令行的额外选项（可选）
+- `log` true/false 是否将 socat 的 stdout/stderr 日志记录到 data_path/socat.log （默认：false）
+
+**注意：** 您需要根据自己的需要更改 `master` 和 `slave` 选项。默认值将确保 socat 监听端口 `8485` 并将其输出重定向到 `/dev/ttyZ2M`。Zigbee2mqtt 的串口设置不会自动设置，必须相应更改。

@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Python脚本来更新电影、节目和收藏的元数据信息，并自动创建收藏夹。",
+  "description": "Python脚本来更新电影、节目和收藏的元数据信息，并自动构建收藏。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -98,5 +98,5 @@
   "slug": "kometa",
   "udev": true,
   "url": "https://gh-proxy.com/github.com/alexbelgium/hassio-addons/tree/master/kometa",
-  "version": "2.1.0"
+  "version": "2.2.0"
 }
