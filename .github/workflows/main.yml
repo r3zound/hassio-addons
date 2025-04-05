@@ -73,6 +73,7 @@ jobs:
             ["t0bst4r"]="t0bst4r/home-assistant-addons:main"
             ["thejeffreystone"]="thejeffreystone/hassio_addons:main"
             ["torrserver"]="aatrubilin/hassio-torrserver:master"
+            ["zigbee2mqtt"]="zigbee2mqtt/hassio-zigbee2mqt:master"
 
           )
 
