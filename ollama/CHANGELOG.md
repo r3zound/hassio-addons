@@ -1,5 +1,111 @@
 # Changelog
 
+## [2.0.6](https://github.com/SirUli/homeassistant-ollama-addon/compare/v2.0.5...v2.0.6) (2025-04-03)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ollama/ollama to v0.6.4 ([12891b5](https://github.com/SirUli/homeassistant-ollama-addon/commit/12891b5068a7d4d05e269399c7d5a011ce8d3b81))
+
+## [2.0.5](https://github.com/SirUli/homeassistant-ollama-addon/compare/v2.0.4...v2.0.5) (2025-03-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ollama/ollama to v0.6.3 ([fe88c43](https://github.com/SirUli/homeassistant-ollama-addon/commit/fe88c4309af749fff600193e00c3dd66ccb7fec1))
+
+## [2.0.4](https://github.com/SirUli/homeassistant-ollama-addon/compare/v2.0.3...v2.0.4) (2025-03-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ollama/ollama to v0.6.2 ([44295e2](https://github.com/SirUli/homeassistant-ollama-addon/commit/44295e2f5e3351094495efc8eb1784f1291b4983))
+
+## [2.0.3](https://github.com/SirUli/homeassistant-ollama-addon/compare/v2.0.2...v2.0.3) (2025-03-15)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ollama/ollama to v0.6.1 ([2c0e7cb](https://github.com/SirUli/homeassistant-ollama-addon/commit/2c0e7cb641867cb747c5e822b5a4e263646b3630))
+
+## [2.0.2](https://github.com/SirUli/homeassistant-ollama-addon/compare/v2.0.1...v2.0.2) (2025-03-12)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ollama/ollama to v0.6.0 ([52fc1aa](https://github.com/SirUli/homeassistant-ollama-addon/commit/52fc1aa1bcbdfa8b32c0bfe0ae85aef21ce349f6))
+
+## [2.0.1](https://github.com/SirUli/homeassistant-ollama-addon/compare/v2.0.0...v2.0.1) (2025-03-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ollama/ollama to v0.5.13 ([632b174](https://github.com/SirUli/homeassistant-ollama-addon/commit/632b17407e20f85a4eb7890b99fdc8420727d58c))
+
+# [2.0.0](https://github.com/SirUli/homeassistant-ollama-addon/compare/v1.1.50...v2.0.0) (2025-02-25)
+
+
+### Features
+
+* Overhaul the addon with new options ([c6c19f5](https://github.com/SirUli/homeassistant-ollama-addon/commit/c6c19f5d3f553b88b1e8e14f57d3a21e3cf2ea60))
+
+
+### BREAKING CHANGES
+
+* - The ollama directory was moved to /share to allow for exclusion from
+  backups. The previous directory under /config can still be configured.
+  If you want to continue using it, please make sure to configure the
+  settings of the addon accordingly.
+
+## [1.1.50](https://github.com/SirUli/homeassistant-ollama-addon/compare/v1.1.49...v1.1.50) (2025-02-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ollama/ollama to v0.5.12 ([ed92f79](https://github.com/SirUli/homeassistant-ollama-addon/commit/ed92f791d98b4c24c0cfb64821469cdfa5dc3153))
+
+## [1.1.49](https://github.com/SirUli/homeassistant-ollama-addon/compare/v1.1.48...v1.1.49) (2025-02-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ollama/ollama to v0.5.11 ([6afb9ee](https://github.com/SirUli/homeassistant-ollama-addon/commit/6afb9ee06f9329278af72dd8543cf08361ff7034))
+
+## [1.1.48](https://github.com/SirUli/homeassistant-ollama-addon/compare/v1.1.47...v1.1.48) (2025-02-15)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ollama/ollama to v0.5.10 ([c8ac41b](https://github.com/SirUli/homeassistant-ollama-addon/commit/c8ac41bf484a086a7422bc0205ed8535665afa43))
+
+## [1.1.47](https://github.com/SirUli/homeassistant-ollama-addon/compare/v1.1.46...v1.1.47) (2025-02-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ollama/ollama to v0.5.9 ([6915021](https://github.com/SirUli/homeassistant-ollama-addon/commit/69150218a2272e8af4845eb23ed271d032326cff))
+
+## [1.1.46](https://github.com/SirUli/homeassistant-ollama-addon/compare/v1.1.45...v1.1.46) (2025-02-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ollama/ollama to v0.5.8 ([d6b00c4](https://github.com/SirUli/homeassistant-ollama-addon/commit/d6b00c4c84e59a7cc04a8793051490c74d4416ad))
+
+## [1.1.45](https://github.com/SirUli/homeassistant-ollama-addon/compare/v1.1.44...v1.1.45) (2025-01-19)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ollama/ollama to v0.5.7 ([8ab1f0d](https://github.com/SirUli/homeassistant-ollama-addon/commit/8ab1f0df66011ddcafc08416038b7aa859b0de5e))
+
+## [1.1.44](https://github.com/SirUli/homeassistant-ollama-addon/compare/v1.1.43...v1.1.44) (2025-01-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ollama/ollama to v0.5.6 ([bdaaae9](https://github.com/SirUli/homeassistant-ollama-addon/commit/bdaaae9afbc8e0d8da1a8b851f72e7d8113c1f98))
+
 ## [1.1.43](https://github.com/SirUli/homeassistant-ollama-addon/compare/v1.1.42...v1.1.43) (2025-01-14)
 
 
