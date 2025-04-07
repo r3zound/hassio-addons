@@ -1,4 +1,4 @@
-# ESPHome 设备构建器（开发分支）
+# ESPHome 设备构建器 (开发分支)
 
 [![ESPHome logo][logo]][website]
 
@@ -7,9 +7,9 @@
 
 ## 关于
 
-此附加组件允许您直接通过 Home Assistant 编写配置并将微控制器
-变成智能家居设备，**无需编程经验**。
-您需要做的就是编写 YAML 配置文件；其余的（空中更新、编译）都由 ESPHome 处理。
+这个插件允许您编写配置，并直接通过 Home Assistant 将您的微控制器
+变成智能家居设备 **无需编程经验**。
+您只需编写 YAML 配置文件；其余的（无线更新、编译）都由 ESPHome 处理。
 
 <p align="center">
 <img title="ESPHome 设备构建器截图" src="https://github.com/esphome/home-assistant-addon/raw/main/esphome-dev/images/screenshot.png" width="700px"></img>
@@ -25,7 +25,7 @@
 
 <img title="ESPHome DHT 配置示例" src="https://github.com/esphome/home-assistant-addon/raw/main/esphome-dev/images/dht-example.png" width="500px"></img>
 
-然后只需点击上传，传感器就会神奇地出现在 Home Assistant 中：
+然后只需点击上传，该传感器将在 Home Assistant 中神奇地出现：
 
 <img title="ESPHome Home Assistant 发现" src="https://github.com/esphome/home-assistant-addon/raw/main/esphome-dev/images/temperature-humidity.png" width="600px"></img>
 
