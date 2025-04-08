@@ -1,6 +1,7 @@
 name: "Ollama"
-description: "Run Ollama locally with GPU support"
-version: "0.6.4"
+description: null
+# renovate: datasource=github-tags depName=ollama/ollama
+version: "0.6.5"
 slug: "ollama"
 arch:
   - aarch64
