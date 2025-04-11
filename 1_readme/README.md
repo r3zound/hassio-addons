@@ -23,6 +23,16 @@
 ⚠️ 温馨提示：  
   由于采用机器翻译，部分专业术语或表达可能存在细微差异。
 
+## 🌐 相关网站
+
+- 🏠 **官方网站**  
+  [https://www.hasscn.top/](https://www.hasscn.top/)  
+  获取最新资讯、教程和资源
+
+- 🚀 **Home Assistant OS 极速版**  
+  [https://www.hasscn.top/hassos.html](https://www.hasscn.top/hassos.html)  
+  专为国内用户优化的HAOS，免魔法即可使用
+
 ## 📱 关注我
 
 扫描下面二维码，关注我。有需要可以随时给我留言：
