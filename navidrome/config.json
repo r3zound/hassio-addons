@@ -7,7 +7,7 @@
     "**/cache/**"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Navidrome for Home Assistant（纳维德罗姆为家庭助理）",
+  "description": "Navidrome for Home Assistant（纳维德罗姆为家庭助手）是一种结合了音乐管理和流媒体功能的智能家居应用。它允许用户通过Home Assistant平台访问和管理他们的音乐收藏，同时提供流媒体播放功能。这使得用户可以在家中轻松地浏览、搜索和播放他们喜欢的音乐，而无需使用单独的音乐管理应用程序或流媒体服务。\n\n以下是Navidrome for Home Assistant的一些主要特点和优势：\n\n1. **集成性**：Navidrome直接与Home Assistant集成，这意味着用户可以无缝地在智能家居环境中管理和播放音乐。\n2. **本地存储**：用户可以将音乐文件存储在本地服务器上，而不是依赖于云服务，这提供了更好的隐私保护和控制。\n3. **跨设备支持**：用户可以通过各种设备（如智能手机、平板电脑、智能音箱等）访问和管理他们的音乐库。\n4. **自动导入**：Navidrome可以自动从用户的文件夹中导入新添加的音乐文件，确保音乐库始终保持最新状态。\n5. **自定义界面**：用户可以根据自己的喜好定制界面的外观和布局，以获得个性化的音乐体验。\n6. **多语言支持**：Navidrome支持多种语言，使得不同地区的用户都可以轻松使用该应用。\n7. **安全性和隐私**：由于音乐数据存储在本地，用户可以更好地保护其个人数据和隐私。\n8. **社区驱动开发**：Navidrome是由一个活跃的社区驱动的开源项目，这意味着不断有新的功能和改进被添加到应用中。\n\n总的来说，Navidrome for Home Assistant提供了一个强大的工具，帮助用户在家中创建个性化的音乐体验，同时保持对数据的控制和安全性。",
   "image": "ghcr.nju.edu.cn/alexbelgium/navidrome-{arch}",
   "init": false,
   "map": [
@@ -59,6 +59,6 @@
   "slug": "navidrome",
   "udev": true,
   "url": "https://gh-proxy.com/github.com/alexbelgium/hassio-addons/tree/master/navidrome",
-  "version": "0.55.1-2",
+  "version": "0.55.2",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:4533]"
 }
