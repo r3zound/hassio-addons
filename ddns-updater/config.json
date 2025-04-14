@@ -15,10 +15,30 @@
   },
   "map": ["config:rw"],
   "options": {
-    "settings": [{}]
+    "settings": [{
+      "settings": [
+        {
+          "provider": "dynv6",
+          "domain": "domain.com",
+          "token": "token",
+          "ip_version": "ipv6",
+          "ipv6_suffix": ""
+        }
+      ]
+    }]
   },
   "schema": {
-    "settings": [{}]
+    "settings": [{
+      "settings": [
+        {
+          "provider": "dynv6",
+          "domain": "domain.com",
+          "token": "token",
+          "ip_version": "ipv6",
+          "ipv6_suffix": ""
+        }
+      ]
+    }]
   },
   "image": "ghcr.io/qdm12/ddns-updater",
   "environment": {
