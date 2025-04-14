@@ -15,8 +15,7 @@
   },
   "map": ["config:rw"],
   "options": {
-    "settings": [{
-      "settings": [
+    "settings": [
         {
           "provider": "dynv6",
           "domain": "domain.com",
@@ -25,11 +24,9 @@
           "ipv6_suffix": ""
         }
       ]
-    }]
   },
   "schema": {
-    "settings": [{
-      "settings": [
+    "settings": [
         {
           "provider": "dynv6",
           "domain": "domain.com",
@@ -38,9 +35,8 @@
           "ipv6_suffix": ""
         }
       ]
-    }]
   },
-  "image": "ghcr.io/qdm12/ddns-updater",
+  "image": "ghcr.nju.edu.cn/qdm12/ddns-updater",
   "environment": {
     "DATADIR": "/data" ,
     "CONFIG_FILEPATH": "/data/config.json"
