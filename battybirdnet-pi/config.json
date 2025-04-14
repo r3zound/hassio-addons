@@ -6,7 +6,7 @@
   "audio": true,
   "backup": "cold",
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "一个实时声学蝙蝠和鸟类分类系统，基于BattyBirdNET-Analyzer构建，适用于树莓派4/5。",
+  "description": "基于BattyBirdNET-Analyzer的树莓派4/5实时声学蝙蝠和鸟类分类系统。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -123,6 +123,6 @@
   "udev": true,
   "url": "https://gh-proxy.com/github.com/alexbelgium/hassio-addons/tree/master/battybirdnet-pi",
   "usb": true,
-  "version": "2025.04.09",
+  "version": "2025.04.10",
   "video": true
 }
