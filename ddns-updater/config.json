@@ -15,28 +15,44 @@
   },
   "map": ["config:rw"],
   "options": {
-    "settings": [
+    "settings": [{
+      "settings": [
         {
           "provider": "dynv6",
-          "domain": "dynv6.net",
+          "domain": "domain.com",
+          "host": "host",
+          "ip_version": "ipv4",
+          "ipv6_suffix": "",
           "token": "token",
-          "ip_version": "ipv6",
-          "ipv6_suffix": ""
+          "username": "username",
+          "password": "password",
+          "key": "key",
+          "secret": "secret",
+          "proxied": false
         }
       ]
+    }]
   },
   "schema": {
-    "settings": [
+    "settings": [{
+      "settings": [
         {
           "provider": "str",
           "domain": "str",
-          "token": "str",
-          "ip_version": "str",
-          "ipv6_suffix": "str"
+          "host": "str?",
+          "ip_version": "str?",
+          "ipv6_suffix": "str?",
+          "token": "str?",
+          "username": "str?",
+          "password": "str?",
+          "key": "str?",
+          "secret": "str?",
+          "proxied": "bool?"
         }
       ]
+    }]
   },
-  "image": "ghcr.nju.edu.cn/qdm12/ddns-updater",
+  "image": "ghcr.io/qdm12/ddns-updater",
   "environment": {
     "DATADIR": "/data" ,
     "CONFIG_FILEPATH": "/data/config.json"
