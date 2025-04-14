@@ -1,0 +1,288 @@
+name: Sync Home Assistant Addons
+
+on:
+  schedule:
+    - cron: '0 18 * * *'  
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60  # 添加超时限制
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            ~/.cache
+          key: ${{ runner.os }}-deps-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-deps-
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get install jq -y
+          sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq
+          sudo chmod +x /usr/bin/yq
+          npm install -g ai-markdown-translator
+
+      - name: downloading addons
+        run: |
+          # 定义下载数组
+          declare -A downloads=(
+            ["official"]="home-assistant/addons:master"
+            ["community"]="hassio-addons/repository:master"
+            ["alexbelgium"]="alexbelgium/hassio-addons:master"
+            ["Poeschl"]="Poeschl-HomeAssistant-Addons/repository:main"
+            ["erik73"]="erik73/hassio-addons:master"
+            ["einschmidt"]="einschmidt/hassio-addons:main"
+            ["FaserF"]="FaserF/hassio-addons:master"
+            ["jdeath"]="jdeath/homeassistant-addons:main"
+            ["hacs"]="hacs/addons:main"
+            ["bluemaes"]="bluemaex/home-assistant-addons:main"
+            ["expaso"]="expaso/hassos-addons:main"
+            ["blakeblackshear"]="blakeblackshear/frigate-hass-addons:main"
+            ["music-assistant"]="music-assistant/home-assistant-addon:main"
+            ["esphome"]="esphome/home-assistant-addon:main"
+            ["litinoveweedle"]="litinoveweedle/hassio-addons:main"
+            ["brenner-tobias"]="brenner-tobias/ha-addons:main"
+            ["sanderdw"]="sanderdw/hassio-addons:master"
+            ["dianlight"]="dianlight/hassio-addons:master"
+            ["hugobloem"]="hugobloem/homeassistant-addons:main"
+            ["haberda"]="haberda/hassio_addons:master"
+            ["AlexxIT"]="AlexxIT/hassio-addons:master"
+            ["da-anda"]="da-anda/hass-io-addons:main"
+            ["hacs-china"]="hacs-china/addons:china"
+          )
+
+
+          # 下载函数
+          download() {
+            local name=$1
+            local repo_branch=$2
+            local repo=${repo_branch%:*}
+            local branch=${repo_branch#*:}
+            
+            if wget -q -O "${name}.zip" "https://github.com/${repo}/archive/refs/heads/${branch}.zip"; then
+              echo "✓ Downloaded: ${name}"
+            else
+              echo "✗ Failed to download: ${name}"
+              return 1
+            fi
+          }
+
+          # 并行下载 GitHub 仓库
+          for name in "${!downloads[@]}"; do
+            download "$name" "${downloads[$name]}" &
+          done
+
+          # 特殊处理非 GitHub 仓库
+          wget -q -O "hydroqc.zip" "https://gitlab.com/hydroqc/hydroqc-hass-addons/-/archive/main/hydroqc-hass-addons-main.zip" &
+
+          # 等待所有下载完成
+          wait
+
+          # 检查下载结果
+          echo "Checking downloads..."
+          failed=0
+          for zip in *.zip; do
+            if [ ! -s "$zip" ]; then
+              echo "Warning: $zip is empty or missing"
+              ((failed++))
+            fi
+          done
+
+          # 报告结果
+          total=$((${#downloads[@]} + 1))
+          success=$((total - failed))
+          echo "Download complete: $success/$total successful"
+
+      - name: extract the addons zip files and delete the zip files 
+        run: |
+          for file in *.zip; do
+            unzip -o -q "$file" -d addons && rm "$file"
+          done
+
+          mv addons/hassio-addons-master/bazarr addons/hassio-addons-master/bazarr-nas
+          mv addons/hassio-addons-master/lidarr addons/hassio-addons-master/lidarr_nas
+          mv addons/hassio-addons-master/radarr addons/hassio-addons-master/radarr_nas
+          mv addons/hassio-addons-master/readarr addons/hassio-addons-master/readarr_nas
+          mv addons/hassio-addons-master/sonarr addons/hassio-addons-master/sonarr_nas
+
+          mv addons/repository-master/ssh addons/repository-master/ssh2
+          sed -i 's/^slug: ssh$/slug: ssh2/' addons/repository-master/ssh2/config.yaml
+          mv addons/repository-master/overseerr addons/repository-master/overseerr-comunity
+          sed -i 's/^slug: overseerr$/slug: overseerr-0/' addons/repository-master/overseerr-comunity/config.yaml
+          mv addons/repository-master/prowlarr addons/repository-master/prowlarr-comunity
+          sed -i 's/^slug: prowlarr$/slug: prowlarr-0/' addons/repository-master/prowlarr-comunity/config.yaml
+          mv addons/repository-master/sabnzbd addons/repository-master/sabnzbd-comunity
+          sed -i 's/^slug: sabnzbd$/slug: sabnzbd-0/' addons/repository-master/sabnzbd-comunity/config.yaml
+          mv addons/repository-master/tor addons/repository-master/tor-comunity
+          sed -i 's/^slug: tor$/slug: tor-0/' addons/repository-master/tor-comunity/config.yaml
+
+          mv addons/addons-china/get addons/addons-china/hacs-china
+          sed -i 's/^slug: get$/slug: hacs-china/' addons/addons-china/hacs-china/config.yaml
+
+
+
+
+
+      - name: Remove unwanted files
+        run: |
+          find addons/ -name ".*" -exec rm -rf {} + 
+          find addons/* -maxdepth 1 -type f -exec rm -f {} +
+          rm -rf addons/repository-main/mitmproxy
+          rm -rf addons/hassio-addons-master/plex
+          rm -rf addons/hassio-addons-master/addon-plex
+          rm -rf addons/repository-master/whisparr
+
+
+      - name: Check and clean up addons
+        run: |
+          extract_version() {
+            local file="$1"
+            if jq -e . "$file" >/dev/null 2>&1; then
+              jq -r '.version' "$file"
+            else
+              grep -E '^\s*version:\s*' "$file" | awk -F ': ' '{print $2}' | tr -d '\r"'
+            fi
+          }
+        
+            for addon_dir in ./addons/*/; do
+              repo_name=$(basename "$addon_dir")
+              for sub_dir in "$addon_dir"*/; do
+                latest_file=$(find "$sub_dir" -maxdepth 1 -type f \( -name "config.json" -o -name "config.yaml" \) -print -quit)
+                current_path="$(basename "$sub_dir")/$(basename "$latest_file")"
+                latest_version=$(extract_version "$latest_file")
+                current_version=$(extract_version "$current_path")
+                if [[ "$latest_version" != "$current_version" ]]; then
+                  echo "Version mismatch in $repo_name ($(basename "$sub_dir")): $latest_version - $current_version" # 只输出版本不一致的插件
+                else
+                  # echo "Version match in $repo_name ($(basename "$sub_dir")): $latest_version, Deleting $sub_dir"
+                  rm -rf "$sub_dir"
+                fi
+              done
+            done
+  
+
+      - name: modify the addons download link to accelerate url
+        run: |
+          find addons -type f \( -name "*.yaml" -o -name "*.json" -o -name "Dockerfile" \) -exec sed -i \
+            -e 's|ghcr.io|ghcr.nju.edu.cn|g' \
+            -e 's|image: homeassistant|image: docker.m.daocloud.io/homeassistant|g' \
+            -e 's|docker.io|docker.m.daocloud.io|g' \
+            -e 's|lscr.io|docker.m.daocloud.io|g' \
+            -e 's|https://github.com|https://gh-proxy.com/github.com|g' \
+            -e 's|ADD "https://raw.githubusercontent.com|ADD "https://gh-proxy.com/raw.githubusercontent.com|g' {} +
+      
+      
+
+      - name: Translate markdown files
+        run: |
+                  
+                  find ./addons -type f \( -name "README.md" -o -name "DOCS.md" \) -print0 | xargs -0 -P 5 -I {} sh -c '
+                    timeout 90s ai-markdown-translator -i "{}" -o "{}" -l "Chinese" || echo "{} translation failed or timed out."
+                  '
+
+
+      - name: Replace description in config files
+        run: |
+          find ./addons -type f \( -name "config.yaml" -o -name "config.json" \) ! -path "*/.*/*" | while read -r file; do
+            {
+              if file -b --mime-type "$file" | grep -q "json"; then
+                description=$(jq -r '.description' "$file")
+                if [ "$description" == "null" ]; then
+                  echo "No description found in $file (JSON), skipping..."
+                  continue
+                fi
+        
+                translated_description=$(curl -s --location 'https://open.bigmodel.cn/api/paas/v4/chat/completions' \
+                  --header "Authorization: Bearer ${{ secrets.ZHIPUAI_KEY }}" \
+                  --header 'Content-Type: application/json' \
+                  --data "{
+                    \"model\": \"glm-4v-flash\",
+                    \"messages\": [
+                      {
+                          \"role\": \"system\",
+                          \"content\": \"你是一个翻译程序，只将给你的内容翻译成中文，不需要任何其它多余解释以及回答，仅输出原文一致的翻译内容，每一次对话，你只输出一行内容\" 
+                      },
+                      {
+                        \"role\": \"user\",
+                        \"content\": \"翻译：$description\"
+                      }
+                    ]
+                  }" | jq -r '.choices[0].message.content')
+        
+                echo "Translated description for $file (JSON): $translated_description"
+        
+                jq --arg description "$translated_description" '.description = $description' "$file" > temp.json && mv temp.json "$file"
+              
+              elif file -b --mime-type "$file" | grep -q "text"; then
+                description=$(awk '/^description:/ {found=1; sub(/^description:[ ]*[-|]*[ ]*/, ""); desc=$0; next} found && /^[^ ]/ {found=0} found {desc = desc " " $0} END {print desc}' "$file")
+        
+                translated_description=$(curl -s --location 'https://open.bigmodel.cn/api/paas/v4/chat/completions' \
+                  --header "Authorization: Bearer ${{ secrets.ZHIPUAI_KEY }}" \
+                  --header 'Content-Type: application/json' \
+                  --data "{
+                    \"model\": \"glm-4v-flash\",
+                    \"messages\": [
+                      {
+                          \"role\": \"system\",
+                          \"content\": \"你是一个翻译程序，只将给你的内容翻译成中文，不需要任何其它多余解释以及回答，仅输出原文一致的翻译内容，每一次对话，你只输出一行内容\" 
+                      },
+                      {
+                        \"role\": \"user\",
+                        \"content\": \"翻译：$description\"
+                      }
+                    ]
+                  }" | jq -r '.choices[0].message.content')
+        
+                echo "Translated description for $file (non-JSON): $translated_description"
+                safe_description=$(printf "%q" "$translated_description")
+                sed -i "s|^description:.*|description: $safe_description|" "$file"
+              fi
+            } || {
+              echo "Error processing $file, skipping..."
+              continue
+            }
+          done
+
+      - name: copy addons to root directory and delete the temp directory
+        run: |
+          for ITEM in addons/*/*; do
+            BASENAME=$(basename "$ITEM") 
+            TARGET_PATH="./$BASENAME"
+            if [ -f "$ITEM" ]; then
+              rm -f "$ITEM"
+              echo "Deleted $ITEM" 
+            elif [ -d "$ITEM" ]; then
+              rm -rf "$TARGET_PATH"
+              mv -f "$ITEM" "./" || echo "Failed to move directory: $ITEM"
+              echo "Moved directory: $ITEM"
+            fi
+          done
+          rm -rf whisparr _images scripts script template # 删除无用的仓库
+
+
+      - name: sync hass-panel
+        run: |
+            mkdir -p hass-panel hass-panel-beta
+            wget -q -O hass-panel.zip https://github.com/mrtian2016/hass-panel/archive/refs/heads/main.zip
+            unzip -q -o hass-panel.zip -d hass-panel-temp && rm hass-panel.zip
+            mv -f hass-panel-temp/hass-panel-main/hass-panel/* hass-panel/
+            mv -f hass-panel-temp/hass-panel-main/hass-panel-beta/* hass-panel-beta/
+            rm -rf hass-panel-temp
+
+
+          
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Sync addons automatically at $(date +'%Y-%m-%d %H:%M:%S')"
+          git push

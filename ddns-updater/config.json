@@ -55,9 +55,9 @@
       }
     ]
   },
-  "image": "ghcr.io/qdm12/ddns-updater",
+  "image": "ghcr.nju.edu.cn/qdm12/ddns-updater",
   "environment": {
     "DATADIR": "/data",
-    "CONFIG_FILEPATH": "/data/config.json"
+    "CONFIG_FILEPATH": "/data/options.json"
   }
 }
