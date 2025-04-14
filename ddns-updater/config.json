@@ -4,7 +4,7 @@
   "slug": "ddns_updater",
   "description": "Automatically update DNS records for dynamic IP addresses",
   "url": "https://github.com/qdm12/ddns-updater",
-  "arch": ["amd64", "armhf", "armv7", "aarch64", "i386"],
+  "arch": ["amd64", "armhf", "armv7", "aarch64"],
   "startup": "services",
   "boot": "auto",
   "ports": {
@@ -16,41 +16,29 @@
   "map": ["config:rw"],
   "options": {
     "settings": [
-      {
-        "provider": "str",
-        "domain": "str",
-        "host": "str?",
-        "ip_version": "str?",
-        "ipv6_suffix": "str?",
-        "token": "str?",
-        "username": "str?",
-        "password": "str?",
-        "key": "str?",
-        "secret": "str?",
-        "proxied": "bool?"
-      }
-    ]
+        {
+          "provider": "dynv6",
+          "domain": "dynv6.net",
+          "token": "token",
+          "ip_version": "ipv6",
+          "ipv6_suffix": ""
+        }
+      ]
   },
   "schema": {
     "settings": [
-      {
-        "provider": "str",
-        "domain": "str",
-        "host": "str?",
-        "ip_version": "str?",
-        "ipv6_suffix": "str?",
-        "token": "str?",
-        "username": "str?",
-        "password": "str?",
-        "key": "str?",
-        "secret": "str?",
-        "proxied": "bool?"
-      }
-    ]
+        {
+          "provider": "str",
+          "domain": "str",
+          "token": "str",
+          "ip_version": "str",
+          "ipv6_suffix": "str"
+        }
+      ]
   },
   "image": "ghcr.nju.edu.cn/qdm12/ddns-updater",
   "environment": {
-    "DATADIR": "/data",
+    "DATADIR": "/data" ,
     "CONFIG_FILEPATH": "/data/config.json"
   }
 }
