@@ -1,5 +1,5 @@
 name: HPLIP Printer
-version: 3.22.10-20-edge
+version: 3.22.10-21-edge
 slug: hplip-printer
 description: 支持使用HPLIP打印驱动程序的打印机。
 url: https://gh-proxy.com/github.com/Eskander/ha-addon-printer
