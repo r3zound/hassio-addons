@@ -1,8 +1,8 @@
 ---
-version: 1.4.0
+version: 1.5.0
 slug: dhcp_server
-name: DHCP server
-description: 一个简单的DHCP服务器。
+name: "[Deprecated] DHCP server"
+description: 一个简单的DHCP服务器
 url: https://home-assistant.io/addons/dhcp_server/
 codenotary: notary@home-assistant.io
 advanced: true
@@ -53,3 +53,4 @@ schema:
       subnet: str
 startup: system
 init: false
+stage: deprecated
