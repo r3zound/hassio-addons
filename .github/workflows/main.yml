@@ -75,6 +75,7 @@ jobs:
             ["torrserver"]="aatrubilin/hassio-torrserver:master"
             ["zigbee2mqtt"]="zigbee2mqtt/hassio-zigbee2mqtt:master"
             ["ollama"]="SirUli/homeassistant-ollama-addon:main"
+            ["SimpleScheduler"]="arthurdent75/SimpleScheduler:master"
           )
 
 
