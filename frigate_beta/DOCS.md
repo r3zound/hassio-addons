@@ -1,13 +1,13 @@
-这是Frigate的前沿版本的测试版附加组件。请参考[发布说明](https://github.com/blakeblackshear/frigate/releases)以获取重大更改的详细信息。
+This is the beta addon for the bleeding edge releases of Frigate. Please reference the [release notes](https://github.com/blakeblackshear/frigate/releases) for breaking changes.
 
-您必须在Home Assistant配置目录的根目录中创建一个配置文件，命名为`frigate.yml`。
+You must create a config file as `frigate.yml` in the root of your Home Assistant configuration directory.
 
-Frigate为任何受ffmpeg支持的摄像头视频流提供实时对象检测。更详细的文档可以在[这里](https://docs.frigate.video)找到。
+Frigate brings realtime object detection to any camera video feed supported by ffmpeg. More detailed docs are maintained [here](https://docs.frigate.video).
 
-## 必需的依赖项
+## Required Dependencies
 
-- MQTT: Frigate通过MQTT进行通信
+- MQTT: Frigate communicates via MQTT
 
-## 支持
+## Support
 
-如果您需要支持，请[打开一个问题](https://github.com/blakeblackshear/frigate/issues/new/choose)。
+Please [open an issue](https://github.com/blakeblackshear/frigate/issues/new/choose) if you need support.

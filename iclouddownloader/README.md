@@ -1,20 +1,20 @@
-# Home assistant 插件: iCloud 下载器
+# Home assistant add-on: iCloud Downloader
 
-1. 安装插件
-1. 运行插件，它会失败，但会创建我们需要的目录以进行下一步
-1. 从这个代码库中复制 iclouddownloader.sh 到 /addon_configs/2effc9b9_iclouddownloader
-1. 编辑命令，输入你的用户名、密码，以及你想下载文件的位置
-1. 你应该能够通过复制账户块来添加多个账户，但首先要让一个账户正常工作！除了最后一个账户外，所有账户的行末应有一个 &，否则插件将在 1 小时后退出
-1. 查看这里所有可能的命令，并根据需要设置: https://pypi.org/project/icloudpd/1.12.0/
-1. 你可以在 Home Assistant 设置 -> 系统 -> 存储中挂载一个 smb/nfs 共享到媒体目录并指向该位置。位置将是 /media/ShareName/，并可以在下面添加你想要的任何目录结构，shareName 是你在 homeassistant 中命名的共享名
-1. 运行/重启插件，它会再次失败。（不要在插件上点击停止）
-1. 选项 1: 转到你的 homeassistantIP:8080（或你配置的其他端口）并输入 2FA 代码。Ingress 不工作
-1. 选项 1: 现在应该开始下载你的照片
-1. 选项 2: 在接下来的一个小时内，通过 SSH 登录到 home assistant（你必须在 ssh 插件中将保护模式设置为 false）
-1. 选项 2: 运行 'docker exec -it addon_2effc9b9_iclouddownloader /config/iclouddownloader.sh authorize'
-1. 选项 2: 输入在你的 iPhone 上显示的 2fa 代码（你需要每两个月重复这个重新认证步骤）
-1. 选项 2: 按 Control-C 或退出终端
-1. 选项 2: 最后一次重启插件，它应该开始下载照片。
+1. Install Addon
+1. Run Addon, it will fail, but will create the directory we need for the next step
+1. Copy iclouddownloader.sh from this repo into /addon_configs/2effc9b9_iclouddownloader
+1. Edit the command with your username,password, and location you want to download files
+1. You should be able to add multiple accounts by copying the account block, but get 1 account working first! All but the last account should have a & ending the line, or the addon will quit after 1 hour
+1. Review all the possible commands here and setup as you like: https://pypi.org/project/icloudpd/1.12.0/
+1. You can mount an smb/nfs share in Home Assistant Settings->System->Storage to the media directory and point to that location. Location will be /media/ShareName/ with any directory structure under that you wish, where sharename is what you named the share in homeassistant
+1. Run/restart the Addon, it will fail again. (Do not hit stop on the addon)
+1. Option 1: Go to your homeassistantIP:8080 (or other port you configured) and enter the 2FA code. Ingress does not work
+1. Option 1: It should now download your photos
+1. Option 2: In next hour, log into home assistant via SSH (you must set protection mode to false in ssh addon)
+1. Option 2: run 'docker exec -it addon_2effc9b9_iclouddownloader /config/iclouddownloader.sh authorize'
+1. Option 2: Enter the 2fa code that shows on your iPhone (you will need to repeat this reauthentication step every 2 months)
+1. Option 2: Hit Control-C or exit out of terminal
+1. Option 2: Restart addon one last time and it should start downloading photos.
 
 
 
