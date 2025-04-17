@@ -5,15 +5,9 @@ FROM docker.m.daocloud.io/library/ubuntu:24.10
 ARG BUILD_ARCH
 ENV BUILD_ARCH=$BUILD_ARCH
 RUN apt update \
-    && apt install -y --no-install-recommends wget 
+    && apt install -y --no-install-recommends wget ca-certificates 
 
 RUN case "$BUILD_ARCH" in \
-        "aarch64") \
-            wget -q "https://dl.oray.com/hsk/linux/phddns_5.1.0_rapi_aarch64.deb" ;; \
-        "armhf") \
-            wget -q "https://dl.oray.com/hsk/linux/phddns_5.1.0_rapi_armhf.deb";; \
-        "armv7") \
-            wget -q "https://dl.oray.com/hsk/linux/phddns_5.1.0_rapi_armhf.deb";; \
         "i386") \
             wget -q "https://dl.oray.com/hsk/linux/phddns_5.3.0_i386.deb";; \
         "amd64") \
