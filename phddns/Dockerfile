@@ -4,8 +4,9 @@ FROM docker.m.daocloud.io/library/ubuntu:24.10
 # 定义平台相关变量
 ARG BUILD_ARCH
 ENV BUILD_ARCH=$BUILD_ARCH
+RUN apt update \
+    && apt install -y --no-install-recommends wget 
 
-# 安装 wget 并根据平台下载不同的文件
 RUN case "$BUILD_ARCH" in \
         "aarch64") \
             wget -q "https://dl.oray.com/hsk/linux/phddns_5.1.0_rapi_aarch64.deb" ;; \
