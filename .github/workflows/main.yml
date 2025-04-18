@@ -264,7 +264,7 @@ jobs:
                   }" | jq -r '.choices[0].message.content')
         
                 echo "Translated description for $file (non-JSON): $translated_description"
-                safe_description=$(printf "%q" "$translated_description")
+                safe_description=$(printf "%q" "$translated_description 老王杂谈说")
                 sed -i "s|^description:.*|description: $safe_description|" "$file"
               fi
             } || {
