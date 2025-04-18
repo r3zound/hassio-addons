@@ -11,7 +11,7 @@ RUN sed -i 's@/archive.ubuntu.com/@/mirrors.ustc.edu.cn/@g' /etc/apt/sources.lis
     sed -i 's@/security.ubuntu.com/@/mirrors.ustc.edu.cn/@g' /etc/apt/sources.list && \
     apt update && \
     apt install -y --no-install-recommends wget bzip2 && \
-    wget -q -O sherpa-onnx.tar.bz2 https://github.com/k2-fsa/sherpa-onnx/releases/download/v1.10.43/sherpa-onnx-v1.10.43-linux-x64-static.tar.bz2 && \
+    wget -q -O sherpa-onnx.tar.bz2 https://ghfast.top/github.com/k2-fsa/sherpa-onnx/releases/download/v1.10.43/sherpa-onnx-v1.10.43-linux-x64-static.tar.bz2 && \
     tar -xjf sherpa-onnx.tar.bz2 --strip-components=1 -C /k2fsa/ && \
     chmod +x /k2fsa/bin/* && \
     rm -f sherpa-onnx.tar.bz2 && \
