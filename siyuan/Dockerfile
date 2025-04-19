@@ -1,5 +1,5 @@
 ARG BUILD_FROM
-FROM b3log/siyuan
+FROM docker.1ms.run/b3log/siyuan
 
 USER root
 COPY run.sh /
