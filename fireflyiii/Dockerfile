@@ -16,7 +16,7 @@
 
 ARG BUILD_FROM
 ARG BUILD_VERSION
-FROM docker.1ms.run/fireflyiii/core:latest
+FROM fireflyiii/core:latest
 
 ##################
 # 2 Modify Image #

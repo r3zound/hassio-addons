@@ -1,6 +1,6 @@
-# Home Assistant 的第二个核心
+# Second Core for Home Assistant
 
-[!["给我买杯咖啡"](https://raw.githubusercontent.com/Smeagolworms4/donate-assets/master/coffee.png)](https://www.buymeacoffee.com/smeagolworms4)
-[!["给我买杯咖啡"](https://raw.githubusercontent.com/Smeagolworms4/donate-assets/master/paypal.png)](https://www.paypal.com/donate/?business=SURRPGEXF4YVU&no_recurring=0&item_name=你好，我是 SmeagolWorms4。为了我的开源项目。%0A非常感谢你！！！&currency_code=EUR)
+[!["Buy Me A Coffee"](https://raw.githubusercontent.com/Smeagolworms4/donate-assets/master/coffee.png)](https://www.buymeacoffee.com/smeagolworms4)
+[!["Buy Me A Coffee"](https://raw.githubusercontent.com/Smeagolworms4/donate-assets/master/paypal.png)](https://www.paypal.com/donate/?business=SURRPGEXF4YVU&no_recurring=0&item_name=Hello%2C+I%27m+SmeagolWorms4.+For+my+open+source+projects.%0AThanks+you+very+mutch+%21%21%21&currency_code=EUR)
 
-在 81234 端口运行第二个 Home Assistant 核心
+在端口81234上运行第二个Home Assistant核心
