@@ -1,6 +1,6 @@
 name: "Ollama"
-description: null
-# renovate: datasource=github-tags depName=ollama/ollama
+description: "LLM Server for Ollama"
+
 version: "0.6.5"
 slug: "ollama"
 arch:
