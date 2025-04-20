@@ -1,4 +1,4 @@
-# Home Assistant 插件：emby
+# 家庭助手附加组件：emby
 
 [![捐赠][donation-badge]](https://www.buymeacoffee.com/alexbelgium)
 [![捐赠][paypal-badge]](https://www.paypal.com/donate/?hosted_button_id=DZFULJZTP3UQA)
@@ -14,18 +14,18 @@
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20(no%20paypal)-%23d32f2f?logo=buy-me-a-coffee&style=flat&logoColor=white
 [paypal-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20with%20Paypal-0070BA?logo=paypal&style=flat&logoColor=white
 
-_感谢所有给我的仓库点星的人！要点星，请点击下面的图片，然后在右上角即可。谢谢！_
+_感谢所有点赞我仓库的人！想要点赞请点击下方图片，然后它将出现在右上角。谢谢！_
 
-[![点赞者名单 @alexbelgium/hassio-addons](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
+[![Stargazers repo roster for @alexbelgium/hassio-addons](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
 
 ![下载演变](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/emby/stats.png)
 
 ## 关于
 
-[emby](https://emby.media/) 组织视频、音乐、直播电视和照片，从个人媒体库中流媒体到智能电视、流媒体盒子和移动设备。这个容器打包为一个独立的 emby 媒体服务器。
+[emby](https://emby.media/) 组织来自个人媒体库的视频、音乐、直播电视和照片，并将其流式传输到智能电视、流媒体盒和移动设备。此容器被打包为独立的 emby 媒体服务器。
 
-这个插件基于 linuxserver.io 的 [docker 镜像](https://github.com/linuxserver/docker-emby)。
-初始插件版本 : https://github.com/petersendev/hassio-addons
+这个附加组件基于来自 linuxserver.io 的 [docker 镜像](https://github.com/linuxserver/docker-emby)。
+初始附加组件版本： https://github.com/petersendev/hassio-addons
 
 ## 配置
 
@@ -35,23 +35,23 @@ Webui 可以在 `<your-ip>:8096` 找到，或者通过 Ingress 在 Home Assistan
 PGID: user
 GPID: user
 TZ: timezone
-localdisks: sda1 #将要挂载的硬盘名称用逗号分隔，或其标签。例如：sda1, sdb1, MYNAS...
-networkdisks: "//SERVER/SHARE" # 可选，挂载的 smb 服务器列表，用逗号分隔
-cifsusername: "username" # 可选，所有 smb 共享的 smb 用户名
+localdisks: sda1 # 将要挂载的硬盘名称用逗号分隔填入，或其标签。例：sda1, sdb1, MYNAS...
+networkdisks: "//SERVER/SHARE" # 可选，要挂载的 smb 服务器列表，用逗号分隔
+cifsusername: "username" # 可选，smb 用户名，所有 smb 共享均相同
 cifspassword: "password" # 可选，smb 密码
-cifsdomain: "domain" # 可选，允许为 smb 共享设置域
-silent: true #抑制调试信息
+cifsdomain: "domain" # 可选，允许设置 smb 共享的域
+silent: true # 抑制调试消息
 ```
 
 ## 安装
 
-安装此插件相当简单，没有与安装其他 Hass.io 插件的区别。
+安装该附加组件非常简单，与安装任何其他 Hass.io 附加组件没有区别。
 
-1. [将我的 Hass.io 插件库添加][repository]到你的 Hass.io 实例。
-1. 安装此插件。
-1. 点击 `保存` 按钮以存储你的配置。
-1. 启动插件。
-1. 检查插件的日志，看看是否一切顺利。
-1. 根据你的偏好仔细配置插件，请参阅官方文档以获取更多信息。
+1. [将我的 Hass.io 附加组件库][repository] 添加到您的 Hass.io 实例。
+1. 安装此附加组件。
+1. 单击 `保存` 按钮以保存您的配置。
+1. 启动该附加组件。
+1. 检查附加组件的日志，查看是否一切正常。
+1. 根据个人偏好仔细配置附加组件，具体请参见官方文档。
 
 [repository]: https://github.com/alexbelgium/hassio-addons
