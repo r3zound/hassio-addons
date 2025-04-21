@@ -1,5 +1,7 @@
 # [Changelog](https://github.com/djhui)
 
+## v0.4.3
+- 同步官方版本v0.4.3
 
 ## v0.4.0
 - Updated amd64 VoceChat server to version 0.4.0.

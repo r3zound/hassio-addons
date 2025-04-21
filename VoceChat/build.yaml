@@ -1,8 +1,8 @@
 
 
 build_from: 
-  aarch64: docker.1ms.run/privoce/vocechat-server:v0.4.1-arm64
-  amd64: docker.1ms.run/privoce/vocechat-server:v0.4.1
+  aarch64: docker.1ms.run/privoce/vocechat-server:v0.4.3-arm64
+  amd64: docker.1ms.run/privoce/vocechat-server:v0.4.3
 
 labels:
   maintainer: "Desmond Dong"
