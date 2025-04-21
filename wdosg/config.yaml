@@ -1,8 +1,8 @@
 name: wDOSg
-version: "v1.3.4"
+version: "v1.3.7"
 upstream: latest
 slug: wdosg
-description: 一个简单的Web服务器，用于管理和运行基于浏览器的DOS游戏。
+description: >一个简单的Web服务器，用于管理和运行基于浏览器的DOS游戏。 老王杂谈说
   A Simple web server to manage and run DOS based games on browser
 arch:
   - amd64
