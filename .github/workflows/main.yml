@@ -264,7 +264,11 @@ jobs:
                   }" | jq -r '.choices[0].message.content')
         
                 echo "Translated description for $file (non-JSON): $translated_description"
-                safe_description=$(printf "%q" "$translated_description 老王杂谈说")
+                if [ -z "$translated_description" ] || [ "$translated_description" == null ]; then
+                    safe_description="未翻译成功"
+                else
+                    safe_description=$(printf "%q" "$translated_description")
+                fi
                 sed -i "s|^description:.*|description: $safe_description|" "$file"
               fi
             } || {
