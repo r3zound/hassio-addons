@@ -81,6 +81,12 @@
 - 🛠️ [**Loganmarchione Addons**](https://github.com/loganmarchione/hassos-addons): Loganmarchione 的加载项
 - 🚀 [**Torrserver Addons**](https://github.com/aatrubilin/hassio-torrserver): Torrserver 的加载项
 - 🗣️ [**Rhasspy Addons**](https://github.com/rhasspy/hassio-addons): Rhasspy 的加载项
+- 🏠 [**Digi92 Addons**](https://github.com/Digi92/hassio-addon-repository): Digi92 的加载项
+- 🛠️ [**Eskander-printer Addons**](https://github.com/Eskander/ha-addon-printer): Eskander-printer 的加载项
+- 🎵 [**Fredrikbaberg Addons**](https://github.com/fredrikbaberg/ha-3dprinter-addons): Fredrikbaberg 的加载项
+- 🛠️ [**SimpleScheduler Addons**](https://github.com/arthurdent75/SimpleScheduler): SimpleScheduler 的加载项
+- 🏠 [**Hikvision Addons**](https://github.com/pergolafabio/Hikvision-Addons): Hikvision 的加载项
+- 🛠️ [**Ollama Addons**](https://github.com/SirUli/homeassistant-ollama-addon): Ollama 的加载项
 
 
 

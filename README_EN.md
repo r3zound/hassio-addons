@@ -69,6 +69,9 @@ Excellent third-party libraries:
 - 🛠️ [**Loganmarchione Addons**](https://github.com/loganmarchione/hassos-addons): Addons by Loganmarchione
 - 🚀 [**Torrserver Addons**](https://github.com/aatrubilin/hassio-torrserver): Torrserver Addons
 - 🗣️ [**Rhasspy Addons**](https://github.com/rhasspy/hassio-addons): Rhasspy Addons
+- 🛠️ [**SimpleScheduler Addons**](https://github.com/arthurdent75/SimpleScheduler): Addons by SimpleScheduler
+- 🏠 [**Hikvision Addons**](https://github.com/pergolafabio/Hikvision-Addons): Addons by Hikvision
+- 🛠️ [**Ollama Addons**](https://github.com/SirUli/homeassistant-ollama-addon): Addons by Ollama
 
 
 
