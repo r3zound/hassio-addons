@@ -1,3 +1,52 @@
+## 3.0.0-alpha.83 (2025-04-24)
+
+### 🐛 Fixes
+
+- ⚠️  remove feature flags ([75b2335](https://github.com/t0bst4r/home-assistant-matter-hub/commit/75b2335))
+- enable update of feature flags without restarting the addon ([a5bacab](https://github.com/t0bst4r/home-assistant-matter-hub/commit/a5bacab))
+
+### 📚 Documentation Changes
+
+- add more details to bridge configuration ([3cf2c7d](https://github.com/t0bst4r/home-assistant-matter-hub/commit/3cf2c7d))
+- update supported device types accordingly ([ca332ff](https://github.com/t0bst4r/home-assistant-matter-hub/commit/ca332ff))
+
+### ⚠️  Breaking Changes
+
+- Due to the growing code base and its complexity, I've decided to simplify the application by removing non-compliant workarounds.
+- **binary_sensor**: All binary sensors which have an unsupported or unknown device_class, fall back to the OnOffSensor type. If your controller does not support this, make sure to configure a correct device class on your binary sensor (e.g. by using a template helper with the correct class).
+- **fan**: Fans are now fully matter compliant using all available Fan Modes
+- **cover**: Covers can still be inverted to match the position in Home Assistant, but the "swap" feature is dropped. If you want to achieve this, please create your own template helper.
+- **media_player**: media players are not mapped to OnOffPlugInUnits anymore, but to Speaker devices. If your controller does not support speakers (e.g. Alexa), make sure to create helper entities in home assistant (e.g. input_boolean or template switch) to control your media_player.
+
+### ❤️ Thank You
+
+- t0bst4r @t0bst4r
+
+## 3.0.0-alpha.82 (2025-04-24)
+
+### 🐛 Fixes
+
+- **vacuum:** proper implement pause, resume and mode change commands ([c29ed54](https://github.com/t0bst4r/home-assistant-matter-hub/commit/c29ed54))
+- **vacuum:** consider supported features when pausing a vacuum ([70ac3af](https://github.com/t0bst4r/home-assistant-matter-hub/commit/70ac3af))
+
+### 📚 Documentation Changes
+
+- adjust documentation for vacuums ([9096337](https://github.com/t0bst4r/home-assistant-matter-hub/commit/9096337))
+
+### 🚧 Chores
+
+- always use current year for software and hardware version ([f4f8ed9](https://github.com/t0bst4r/home-assistant-matter-hub/commit/f4f8ed9))
+- ⚠️  major refactoring due to the growing number of supported device types ([75a1df3](https://github.com/t0bst4r/home-assistant-matter-hub/commit/75a1df3))
+
+### ⚠️  Breaking Changes
+
+- Almost every aspect of the device implementations were touched. I've tried to test as much as possible locally until everything was back working. But since there are so many edge cases in different devices, I probably couldn't verify everything.
+
+### ❤️ Thank You
+
+- Gustav Åkerström @gustavakerstrom
+- t0bst4r @t0bst4r
+
 ## 3.0.0-alpha.81 (2025-04-04)
 
 ### 🐛 Fixes
