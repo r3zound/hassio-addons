@@ -1,16 +1,16 @@
-![Project Stage][project-stage-shield]
-![Maintenance][maintenance-shield]
-[![License][license-shield]](https://github.com/expaso/hassos-addon-timescaledb/blob/main/LICENSE)
+![项目阶段][project-stage-shield]
+![维护][maintenance-shield]
+[![许可证][license-shield]](https://github.com/expaso/hassos-addon-timescaledb/blob/main/LICENSE)
 
-<a href="https://www.buymeacoffee.com/expaso" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+<a href="https://www.buymeacoffee.com/expaso" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="请我喝杯咖啡" height="41" width="174"></a>
 
-# Home Assistant Add-on: [PostgreSQL](https://www.postgresql.org/) [TimescaleDB](https://www.timescale.com/)
+# Home Assistant 插件: [PostgreSQL](https://www.postgresql.org/) [TimescaleDB](https://www.timescale.com/)
 
-## [PostgreSql 17.4](https://www.postgresql.org/) & [Postgis 3.5.1](https://postgis.net/) & [TimescaleDB 2.18.2](https://www.timescale.com/) & [TimescaleDB Toolkit 1.19.0](https://github.com/timescale/timescaledb-toolkit) & [pgAgent 4.2.2](https://www.pgadmin.org/docs/pgadmin4/development/pgagent.html)
+## [PostgreSql 17.4](https://www.postgresql.org/) & [Postgis 3.5.1](https://postgis.net/) & [TimescaleDB 2.18.2](https://www.timescale.com/) & [TimescaleDB 工具包 1.19.0](https://github.com/timescale/timescaledb-toolkit) & [pgAgent 4.2.2](https://www.pgadmin.org/docs/pgadmin4/development/pgagent.html)
 
-#### Configuation
+#### 配置
 
-Example add-on configuration:
+示例插件配置：
 
 ```
  {
@@ -27,77 +27,77 @@ Example add-on configuration:
  }
 ```
 
-#### Option: `databases`
+#### 选项: `databases`
 
-Sets a list of database-names that will be created for you, once you start the add-on.
-You can also create databases on your own ofcourse, using a psql client of your choice.
+设置你启动插件后将为您创建的数据库名称列表。 
+当然，你也可以使用自己选择的 psql 客户端创建数据库。
 
-#### Option: `timescale_enabled`
+#### 选项: `timescale_enabled`
 
-Sets a list of database-names where the timescale-extentions will be enabled for.
-Databases not in this list will act like normal Postgre databases.
+设置数据库名称列表，以便在其上启用 timescale 扩展。 
+不在这个列表中的数据库将像普通的 Postgre 数据库一样运作。
 
-#### Option: `timescaledb.telemetry`
+#### 选项: `timescaledb.telemetry`
 
-Switches the telemetry of TimescaleDb on or off.
-Valid options are: 'basic' or 'off'.
-See: https://docs.timescale.com/latest/using-timescaledb/telemetry
+开启或关闭 TimescaleDb 的遥测。 
+有效选项为: 'basic' 或 'off'。 
+请参见: https://docs.timescale.com/latest/using-timescaledb/telemetry
 
-#### Option: `timescaledb.maxmemory`
+#### 选项: `timescaledb.maxmemory`
 
-Sets the maximum amount of memory that PostgreSQL will claim.
-It's important to leave breathing room for other processes on your machine (or raspberry pi), so set these level not too high (say max 50% of your total ram).
+设置 PostgreSQL 将占用的最大内存量。 
+留出空间给您机器（或树莓派）上的其他进程是很重要的，因此这一级别不要设置得太高（例如最多占用您总内存的 50%）。
 
-Example: `maxmemory="1024MB"`
-Or leave empty for accepting auto-tune.
+示例: `maxmemory="1024MB"` 
+或留空以接受自动调优。
 
-#### Option: `timescaledb.maxcpu`
+#### 选项: `timescaledb.maxcpu`
 
-Sets the maximum number of cores that PostgreSQL will use.
-It's important to leave breathing room for other processes on your machine (or raspberry pi), so set these level not too high (say max 75% of your total number of cores).
+设置 PostgreSQL 将使用的最大核心数。 
+留出空间给您机器（或树莓派）上的其他进程是很重要的，因此这一级别不要设置得太高（例如最多占用您总核心数的 75%）。
 
-Example: `maxcpu="2"`
-Or leave empty for accepting auto-tune.
+示例: `maxcpu="2"` 
+或留空以接受自动调优。
 
-See also:
-https://docs.timescale.com/latest/getting-started/configuring
-for further tuning. Your Postgres.config file is located in the addon's data directory.
+参见: 
+https://docs.timescale.com/latest/getting-started/configuring 
+以进一步调优。 您的 Postgres.config 文件位于插件的数据目录中。
 
-#### Option: `max_connections`
+#### 选项: `max_connections`
 
-Sets the maximum number of connections that PostgreSql will accept.
-Setting this higher could lead to more memory usage.
+设置 PostgreSQL 将接受的最大连接数。 
+将此设置得更高可能会导致更多内存使用。
 
-Example: `max_connections=30`
+示例: `max_connections=30`
 
-#### Option: `system_packages`
+#### 选项: `system_packages`
 
-Advanced users only!
-A list of extra alpine packages to iunstall during addon-startup.
+仅面向高级用户！ 
+在插件启动期间要安装的额外阿尔卑斯包列表。 
 
-Example: ['nano']
+示例: ['nano']
 
-#### Option: `init_commands`
+#### 选项: `init_commands`
 
-Advanced users only!
-A list of extra commands to run during startup.
+仅面向高级用户！ 
+在启动期间运行的额外命令列表。
 
-To alter something in the postgresql.conf file for example:
+例如，要更改 postgresql.conf 文件中的某些内容：
 
-Example: ['sed -i -e "/max_connections =/ s/= .*/= 50/" /data/postgres/postgresql.conf']
+示例: ['sed -i -e "/max_connections =/ s/= .*/= 50/" /data/postgres/postgresql.conf']
 
-#### Option: `retry_upgrade`
+#### 选项: `retry_upgrade`
 
-Advanced users only!
-When set, the upgrade from Postgres 14 to 15 could be retryed if it failed mid-flight.
-Basically this will try to find the old database-files from Postgres 12, and restore them before trying to upgrade to Postgres 14 again.
+仅面向高级用户！ 
+如果升级从 Postgres 14 到 15 失败，可以重试。 
+基本上，这将尝试找到来自 Postgres 12 的旧数据库文件，并在尝试再次升级到 Postgres 14 之前恢复它们。
 
-!! Please don't set this if you don't know what you are doing or before taking a backup. !!
+!! 请不要在不知道您在做什么或在备份之前设置此选项。 !!
 
-### Running the container standalone.
+### 独立运行容器。
 
-In this case, you need to have a working Docker installation on your machine.
-pull one of the images for the desired architecture from docker hub:
+在这种情况下，您需要在您的计算机上有一个正常工作的 Docker 安装。 
+从 Docker Hub 下载所需架构的图像之一：
 
 ```
 docker pull ghcr.io/expaso/timescaledb/amd64:stable
@@ -107,9 +107,9 @@ docker pull ghcr.io/expaso/timescaledb/armhf:stable
 docker pull ghcr.io/expaso/timescaledb/i386:stable
 ```
 
-You can replace *stable* with the version number you want to use.
+您可以将 *stable* 替换为您想使用的版本号。
 
-Simply start it like this:
+简单地这样启动它：
 
 ```
 docker run \
@@ -120,9 +120,9 @@ docker run \
   ghcr.io/expaso/timescaledb/amd64:stable
 ```
 
-This will use ~/timescaledb_addon_data as the data directory for the container, and map the port 5432 to the host.
+这将使用 ~/timescaledb_addon_data 作为容器的数据目录，并将端口 5432 映射到主机。
 
-If you want to start the container as a daemon, simply remove the `--rm` option and add the `-d` option like so:
+如果您想将容器作为守护进程启动，只需删除 `--rm` 选项，并添加 `-d` 选项，如下所示：
 
 ```
 docker run \
@@ -133,36 +133,34 @@ docker run \
   ghcr.io/expaso/timescaledb/amd64:stable
 ```
 
-## Usage
+## 使用
 
-You are now ready to start using Postgres with TimescaleDb extenstions enabled!
+您现在可以开始使用启用了 TimescaleDb 扩展的 Postgres 了！
 
-Seeking a nice web-based client? **Try the pgAdmin4 addon.**
+寻找一个不错的基于网页的客户端？ **尝试 pgAdmin4 插件。**
 
-Please do not forget to also map the TCP/IP port in the network-section of the addon to the desired port number.
-The default is port `5432`
+请不要忘记在插件的网络部分也将 TCP/IP 端口映射到所需的端口号。 默认是端口 `5432`
 
-**Securiy Notice!**
+**安全提示！**
 
-The default username is `postgres` with password `homeassistant`.
-Make sure you change this immediately after activating the add-on:
+默认用户名是 `postgres`，密码是 `homeassistant`。 
+在激活插件后，请确保立即更改此密码：
 
 ```
 ALTER USER postgres WITH PASSWORD 'strongpassword';
 ```
 
-⚠️ It's considered best practice to create a separate user for each database you create, and transfer ownership of the database to that user.
-In this configuration, The `postgres` user should only be used for administrative tasks.
+⚠️ 最好为您创建的每个数据库创建一个单独的用户，并将数据库的所有权转移给该用户。 
+在此配置中，`postgres` 用户仅应用于管理任务。
 
-Use the following commands to create a user `homeassistant` with password `mypassword` and transfer ownership of the database `mydatabase` to that user, or use _pgAdmin_ for this task if you prefer a GUI.
+使用以下命令创建一个名为 `homeassistant` 的用户，密码为 `mypassword`，并将数据库 `mydatabase` 的所有权转移给该用户，或者如果您更喜欢图形用户界面，可以使用 _pgAdmin_ 来完成此任务。
 
 ```
 CREATE USER homeassistant WITH PASSWORD 'mypassword';
 ALTER DATABASE mydatabase OWNER TO homeassistant;
 ```
 
-
-A default `pg_hba.conf` is created in the data directory with the following content, which allows local peer users and network users with passwords.:
+在数据目录中创建了一个默认的 `pg_hba.conf`，其内容如下，允许本地对等用户和使用密码的网络用户：
 
 ```
 # TYPE  DATABASE        USER            ADDRESS                 METHOD
@@ -171,31 +169,29 @@ local   all             all             0.0.0.0/0               md5"
 local   all             all             0.0.0.0/0               peer"
 ```
 
-Please review this configuration carefully by examine the docs:
+请通过查阅文档仔细检查此配置：
 https://www.postgresql.org/docs/devel/auth-pg-hba-conf.html
 
-### Now what..
+### 接下来怎么办..
 
-Well.. Dive in!
+好吧.. 深入了解吧！
 
-You can read additional documentation on how you van work with your data and Grafana here:
+您可以在此处阅读有关如何使用您的数据和 Grafana 的附加文档：
 
 https://github.com/expaso/hassos-addons/issues/1
 
-## Support
+## 支持
 
-- Got questions?
-  [Open an issue here][issues]
+- 有问题吗？
+  [在这里开一个问题][issues]
 
-- For a general repository issue or add-on ideas? [Open an issue here][repo-issues]
+- 对于一般的仓库问题或插件想法？ [在这里开一个问题][repo-issues]
 
 [issues]: https://github.com/expaso/hassos-addon-timescaledb/issues
 [repo-issues]: https://github.com/expaso/hassos-addons/issues
 
-
-
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
-[release-shield]: https://img.shields.io/badge/version-v5.1.2-blue.svg
-[release]: https://github.com/expaso/hassos-addon-timescaledb/tree/v5.1.2
+[release-shield]: https://img.shields.io/badge/version-v5.2.0-blue.svg
+[release]: https://github.com/expaso/hassos-addon-timescaledb/tree/v5.2.0
 [license-shield]: https://img.shields.io/github/license/expaso/hassos-addon-TimescaleDB.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg
