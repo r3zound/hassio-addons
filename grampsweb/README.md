@@ -1,1 +1,1 @@
-# Home assistant 插件: grampsweb
+# Home assistant add-on: grampsweb

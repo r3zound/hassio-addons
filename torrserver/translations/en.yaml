@@ -1,10 +1,16 @@
 ---
 configuration:
   httpauth:
-    name: HTTP Auth
-    description: Enable/disable basic access authentication.
+    name: "HTTP Auth"
+    description: "Enable/disable basic access authentication"
   logins:
-    name: Logins
-    description: This section defines a http auth user definition.
+    name: "Logins"
+    description: "Users list"
+  tgtoken:
+    name: "Telegram bot token"
+    description: "I.e. `123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11`"
+  m3u_custom_host:
+    name: "Custom host for M3U playlist links"
+    description: "I.e. `http://homeassistant:8090`, leave empty to disable"
 network:
-  8090/tcp: The port to access TorrServer.
+  8090/tcp: "The port to access TorrServer"
