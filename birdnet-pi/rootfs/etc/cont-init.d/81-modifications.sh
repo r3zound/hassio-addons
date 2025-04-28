@@ -125,7 +125,6 @@ sed -i "s|plotly_streamlit.py --browser.gatherUsageStats|plotly_streamlit.py --s
 if [[ -f "$HOME/BirdNET-Pi/scripts/utils/reporting.py" ]]; then
     echo ".. add highpass and lowpass to sox extracts"
     sed -i "s|f'={stop}']|f'={stop}', 'highpass', '250']|g" "$HOME/BirdNET-Pi/scripts/utils/reporting.py"
-    sed -i '/sox.*-V1/s/spectrogram/highpass 250 spectrogram/' "$HOME/BirdNET-Pi/scripts/spectrogram.sh"
 fi
 
 # Correct timedatectl path
@@ -138,7 +137,7 @@ fi
 
 # Set RECS_DIR
 echo "... setting RECS_DIR to /tmp"
-grep -rl "RECS_DIR" $HOME | while read -r file; do
+grep -rl "RECS_DIR" $HOME --exclude="*.php" | while read -r file; do
     sed -i "s|conf\['RECS_DIR'\]|'/tmp'|g" "$file"
     sed -i "s|\$RECS_DIR|/tmp|g" "$file"
     sed -i "s|\${RECS_DIR}|/tmp|g" "$file"

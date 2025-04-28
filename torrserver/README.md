@@ -1,4 +1,4 @@
-# TorrServer 插件 для Home Assistant
+# TorrServer Home Assistant 插件
 
 [![GitHub Repo stars](https://img.shields.io/github/stars/aatrubilin/hassio-torrserver)](https://github.com/aatrubilin/hassio-torrserver)
 
@@ -11,11 +11,11 @@
 ![支持 armv7 架构](https://img.shields.io/badge/armv7-more%20likely-blue.svg)
 ![支持 i386 架构](https://img.shields.io/badge/i386-unknown-dbdbdc.svg)
 
-_请注意，此插件仅在 **HA OS** 上测试_
+_请记住，此插件仅在 **HA OS** 上进行了测试_
 
-这是一个 [Home Assistant 的 TorrServer](https://github.com/aatrubilin/hassio-torrserver)。
+这是一个 [TorrServer for Home Assistant](https://github.com/aatrubilin/hassio-torrserver)。
 
-🌟 请考虑通过给 [这个项目](https://github.com/aatrubilin/hassio-torrserver) 点个星以支持它。
+🌟 请考虑通过给 [这个项目](https://github.com/aatrubilin/hassio-torrserver) 星标来支持它。
 
 [<img src="https://raw.githubusercontent.com/aatrubilin/hassio-torrserver/master/assets/screenshot.jpg"/>](https://raw.githubusercontent.com/aatrubilin/hassio-torrserver/dev/assets/screenshot.jpg)
 
