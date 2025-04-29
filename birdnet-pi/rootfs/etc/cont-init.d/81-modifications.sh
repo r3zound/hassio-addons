@@ -66,6 +66,10 @@ if ! grep -q "/usr/bin/sudo" "$HOME/BirdNET-Pi/templates/birdnet_analysis.servic
     done < <(find "$HOME/BirdNET-Pi/templates/" -name "*net*.service" -print)
 fi
 
+# Allow pulseaudio system
+echo "... allow pulseaudio as root as backup"
+sed -i 's#pulseaudio --start#pulseaudio --start 2>/dev/null && pulseaudio --check || pulseaudio --system#g' "$HOME"/BirdNET-Pi/scripts/birdnet_recording.sh
+
 # Send services log to container logs
 echo "... redirecting services logs to container logs"
 while IFS= read -r file; do
@@ -137,7 +141,7 @@ fi
 
 # Set RECS_DIR
 echo "... setting RECS_DIR to /tmp"
-grep -rl "RECS_DIR" $HOME --exclude="*.php" | while read -r file; do
+grep -rl "RECS_DIR" "$HOME" --exclude="*.php" | while read -r file; do
     sed -i "s|conf\['RECS_DIR'\]|'/tmp'|g" "$file"
     sed -i "s|\$RECS_DIR|/tmp|g" "$file"
     sed -i "s|\${RECS_DIR}|/tmp|g" "$file"
