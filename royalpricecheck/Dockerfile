@@ -1,5 +1,5 @@
 ARG BUILD_FROM
-FROM docker.1ms.run/python:slim
+FROM python:slim
 
 
 RUN apt-get update -y && \
