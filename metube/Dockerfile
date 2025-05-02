@@ -1,5 +1,5 @@
 ARG BUILD_FROM
-FROM docker.1ms.run/alexta69/metube
+FROM alexta69/metube
 
 VOLUME [ "/share" ]
 RUN apk add -U --no-cache jq

@@ -1,5 +1,5 @@
 ---
-version: 2.4.0
+version: 2.5.0
 slug: whisper
 name: Whisper
 description: 语音转文字，使用Whisper。
@@ -12,6 +12,8 @@ discovery:
   - wyoming
 backup_exclude:
   - "models*"
+map:
+  - addon_config:rw
 options:
   model: auto
   language: en

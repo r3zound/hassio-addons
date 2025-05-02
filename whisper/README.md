@@ -4,7 +4,7 @@
 
 Home Assistant 插件，使用 [faster-whisper](https://github.com/guillaumekln/faster-whisper/) 进行语音转文本。
 
-是 [语音之年](https://www.home-assistant.io/blog/2022/12/20/year-of-voice/) 的一部分。
+这是 [声音之年](https://www.home-assistant.io/blog/2022/12/20/year-of-voice/) 的一部分。
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
