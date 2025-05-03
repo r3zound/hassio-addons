@@ -1,7 +1,7 @@
 # 家庭助手插件：emby
 
-[![Donate][donation-badge]](https://www.buymeacoffee.com/alexbelgium)
-[![Donate][paypal-badge]](https://www.paypal.com/donate/?hosted_button_id=DZFULJZTP3UQA)
+[![捐赠][donation-badge]](https://www.buymeacoffee.com/alexbelgium)
+[![捐赠][paypal-badge]](https://www.paypal.com/donate/?hosted_button_id=DZFULJZTP3UQA)
 
 ![版本](https://img.shields.io/badge/dynamic/json?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Femby%2Fconfig.json)
 ![入口](https://img.shields.io/badge/dynamic/json?label=Ingress&query=%24.ingress&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Femby%2Fconfig.json)
@@ -14,7 +14,7 @@
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20(no%20paypal)-%23d32f2f?logo=buy-me-a-coffee&style=flat&logoColor=white
 [paypal-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20with%20Paypal-0070BA?logo=paypal&style=flat&logoColor=white
 
-_感谢所有为我的库点赞的人！要点赞，请点击下面的图片，然后它会在右上角。谢谢！_
+_感谢所有给我仓库点星的人！要给我仓库点星，请点击下面的图片，然后它会在右上角显示。谢谢！_
 
 [![Stargazers repo roster for @alexbelgium/hassio-addons](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
 
@@ -22,36 +22,36 @@ _感谢所有为我的库点赞的人！要点赞，请点击下面的图片，�
 
 ## 关于
 
-[emby](https://emby.media/) 组织来自个人媒体库的视频、音乐、直播电视和照片，并将它们流式传输到智能电视、流媒体盒和移动设备。此容器打包为独立的 emby 媒体服务器。
+[emby](https://emby.media/) 组织来自个人媒体库的视频、音乐、直播电视和照片，并将其流式传输到智能电视、流媒体盒和移动设备。该容器作为独立的 emby 媒体服务器打包。
 
 此插件基于来自 linuxserver.io 的 [docker 镜像](https://github.com/linuxserver/docker-emby)。
-初始插件版本 : https://github.com/petersendev/hassio-addons
+初始插件版本： https://github.com/petersendev/hassio-addons
 
 ## 配置
 
-Webui 可以在 `<your-ip>:8096` 找到，或在家庭助手中通过入口访问。
+Webui 可以在 `<your-ip>:8096` 找到，或通过 Ingress 在家庭助手中访问。
 
 ```yaml
-PGID: 用户
-GPID: 用户
-TZ: 时区
-localdisks: sda1 #放置要挂载的驱动器的硬件名称，用逗号分隔，或其标签。例如 sda1, sdb1, MYNAS...
-networkdisks: "//SERVER/SHARE" # 可选，挂载的 smb 服务器列表，用逗号分隔
-cifsusername: "用户名" # 可选，smb 用户名，所有 smb 共享均相同
-cifspassword: "密码" # 可选，smb 密码
-cifsdomain: "域" # 可选，允许为 smb 共享设置域
+PGID: user
+GPID: user
+TZ: timezone
+localdisks: sda1 #将要挂载的硬盘名称以逗号分隔放入，或其标签。例如 sda1, sdb1, MYNAS...
+networkdisks: "//SERVER/SHARE" # 可选，要挂载的 smb 服务器列表，使用逗号分隔
+cifsusername: "username" # 可选，smb 用户名，所有 smb 共享相同
+cifspassword: "password" # 可选，smb 密码
+cifsdomain: "domain" # 可选，允许为 smb 共享设置域
 silent: true #抑制调试消息
 ```
 
 ## 安装
 
-此插件的安装非常简单，与安装其他任何 Hass.io 插件没有不同。
+此插件的安装非常简单，与安装任何其他 Hass.io 插件没有区别。
 
-1. [将我的 Hass.io 插件库][repository] 添加到您的 Hass.io 实例中。
+1. [将我的 Hass.io 插件仓库][repository] 添加到你的 Hass.io 实例。
 1. 安装此插件。
-1. 点击 `保存` 按钮以保存您的配置。
+1. 点击 `保存` 按钮以存储你的配置。
 1. 启动插件。
-1. 检查插件的日志，以查看一切是否正常。
-1. 仔细配置插件以符合您的偏好，详细信息请参见官方文档。
+1. 检查插件的日志以查看是否一切正常。
+1. 仔细配置插件以满足你的偏好，请参阅官方文档了解更多信息。
 
 [repository]: https://github.com/alexbelgium/hassio-addons
