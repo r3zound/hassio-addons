@@ -1,6 +1,6 @@
 name: Hikvision Doorbell
-description: 连接海康威视门铃到Home Assistant。 老王杂谈说
-version: '3.0.21'
+description: 连接海康威视门铃到Home Assistant。
+version: '3.0.22'
 image: ghcr.nju.edu.cn/pergolafabio/hikvision-doorbell
 slug: hikvision_doorbell
 url: https://gh-proxy.com/github.com/pergolafabio/Hikvision-Addons/tree/main/doorbell
