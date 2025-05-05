@@ -22,6 +22,9 @@ RUN sed -i 's@/archive.ubuntu.com/@/mirrors.ustc.edu.cn/@g' /etc/apt/sources.lis
     rm -rf /k2fsa/bin/*microphone* && \
     rm -rf /k2fsa/bin/*keyword* && \
     rm -rf /k2fsa/bin/*alsa* && \
+    rm -rf /k2fsa/bin/*para* && \
+    rm -rf /k2fsa/bin/*audio* && \
+    rm -rf /k2fsa/bin/*language* && \
     rm -rf sherpa-onnx.tar.bz2 && \
     apt autoremove -y && \
     rm -rf /var/lib/apt/lists/* && \
