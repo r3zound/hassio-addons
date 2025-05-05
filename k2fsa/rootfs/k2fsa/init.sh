@@ -1,7 +1,7 @@
 #!/bin/bash
 if [ ! -f /config/addons_config/k2fsa/downloaded ]; then
     mkdir -p /config/addons_config/k2fsa
-    wget -O asr-model.tar.bz2 "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/icefall-asr-zipformer-wenetspeech-20230615.tar.bz2"
+    wget -O asr-model.tar.bz2 "https://ghfast.top/https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/icefall-asr-zipformer-wenetspeech-20230615.tar.bz2"
     mkdir -p /k2fsa/module
     tar -xjf asr-model.tar.bz2 -C /config/addons_config/k2fsa --strip-components=3 icefall-asr-zipformer-wenetspeech-20230615/data/lang_char/tokens.txt
     tar -xjf asr-model.tar.bz2 -C /config/addons_config/k2fsa --strip-components=2 --wildcards '*/exp/*'
