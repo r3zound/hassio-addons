@@ -14,15 +14,15 @@ RUN sed -i 's@/archive.ubuntu.com/@/mirrors.ustc.edu.cn/@g' /etc/apt/sources.lis
     wget -q -O sherpa-onnx.tar.bz2 https://ghfast.top/github.com/k2-fsa/sherpa-onnx/releases/download/v1.10.43/sherpa-onnx-v1.10.43-linux-x64-static.tar.bz2 --no-check-certificate && \
     tar -xjf sherpa-onnx.tar.bz2 --strip-components=1 -C /k2fsa/ && \
     chmod +x /k2fsa/bin/* && \
-    rm -f /k2fsa/include && \
-    rm -f /k2fsa/lib && \
-    rm -f /k2fsa/bin/*online* && \
-    rm -f /k2fsa/bin/*vad* && \
-    rm -f /k2fsa/bin/*tts* && \
-    rm -f /k2fsa/bin/*microphone* && \
-    rm -f /k2fsa/bin/*keyword* && \
-    rm -f /k2fsa/bin/*alsa* && \
-    rm -f sherpa-onnx.tar.bz2 && \
+    rm -rf /k2fsa/include && \
+    rm -rf /k2fsa/lib && \
+    rm -rf /k2fsa/bin/*online* && \
+    rm -rrf /k2fsa/bin/*vad* && \
+    rm -rf /k2fsa/bin/*tts* && \
+    rm -rf /k2fsa/bin/*microphone* && \
+    rm -rf /k2fsa/bin/*keyword* && \
+    rm -rf /k2fsa/bin/*alsa* && \
+    rm -rf sherpa-onnx.tar.bz2 && \
     apt autoremove -y && \
     rm -rf /var/lib/apt/lists/* && \
     apt-get clean
