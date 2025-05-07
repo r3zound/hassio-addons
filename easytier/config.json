@@ -1,6 +1,6 @@
 {
   "name": "EasyTier",
-  "version": "v2.2.4",
+  "version": "v2.2.4.1",
   "slug": "easytier",
   "description": "EasyTier 优秀的开源组网工具",
   "url": "https://github.com/desmond-dong/hassio-addons",
@@ -35,6 +35,7 @@
   "boot": "manual",
   "host_network": true,
   "options": {
+    "name": "EasyTier",
     "ipv4": "10.10.10.1/24",
     "dhcp": true,
     "rpc_portal": "0.0.0.0:0",
@@ -54,6 +55,7 @@
     "config_server": "username"
   },
   "schema": {
+    "name": "str?",
     "ipv4": "str?",
     "dhcp": "bool?",
     "rpc_portal": "str?",
