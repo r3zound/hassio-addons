@@ -1,40 +1,40 @@
-# Home Assistant 附加组件：Minecraft 专用服务器基岩版
-在 Home Assistant 上运行 Minecraft 专用服务器基岩版的快速方法。
+# Home assistant 插件：Minecraft 专用服务器 Bedrock 版
+在 Home Assistant 上运行 Minecraft 专用服务器 Bedrock 版的快捷方式。
 
-_感谢每一个为我的仓库点星的人！要为它点星，请点击下面的图像，然后它将位于右上角。谢谢！_
+_感谢所有为我的仓库点星的人！要点星，请点击下面的图片，然后它将出现在右上角。谢谢！_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
 ## 关于
 
-此附加组件使用 [itzg/docker-minecraft-bedrock-server](https://github.com/itzg/docker-minecraft-bedrock-server/) docker 镜像。
+这个插件使用 [itzg/docker-minecraft-bedrock-server](https://github.com/itzg/docker-minecraft-bedrock-server/) 的 Docker 镜像。
 
-当重新启动附加组件时，它将自动获取最新版本的 Minecraft。
+每次重启插件时，它会自动获取最新版本的 Minecraft。
 
-您的世界、设置和服务器可执行文件存储在 /share/minecraftbe
+你的世界、设置和服务器可执行文件存储在 /share/minecraftbe
 
-您可能想要创建一个服务，在半夜重新启动附加组件，以便更新 Minecraft 版本（见下文）。
+你可能想要创建一个服务，在夜间重启插件，以便更新 Minecraft 的版本（见下文）
 
-如果您想在 Home Assistant 中监控您的基岩服务器，请安装此集成，因为内置的只监控 Java： https://github.com/jdeath/Bedrock-Homeassistant
+如果你想在 homeassistant 监控你的 Bedrock 服务器，请安装此集成，因为内置的只监控 Java：https://github.com/jdeath/Bedrock-Homeassistant
 
 ## 安装
 
-此附加组件的安装非常简单，与安装其他 Hass.io 附加组件没有区别。
+本插件的安装非常简单，与安装其他 Hass.io 插件没有什么不同。
 
-1. [将我的 Hass.io 附加组件仓库][repository] 添加到您的 Hass.io 实例中。
-1. 安装此附加组件。
-2. 如果需要，修改 API 端口（默认为标准 Minecraft 端口）。
-3. 单击 `保存` 按钮以存储您的配置。
-4. 创建目录 /share/minecraftbe
-5. 启动附加组件。
-6. 检查附加组件的日志以查看一切是否顺利。
-7. 编辑 /share/minecraftbe/ 中您想要的任何服务器/权限/白名单属性并重启附加组件。请注意，您不能在 server.properties 中更改端口，因为它将被某些原因覆盖。不过，您可以在 Home Assistant 的附加组件配置选项卡中更改端口。我只暴露了 IPv4 端口。如果需要 IPv6，请告诉我。
-8. 如果您想要外部访问，请确保将您的外部端口转发到您的 Home Assistant IP。
+1. [将我的 Hass.io 插件库][repository] 添加到你的 Hass.io 实例。
+2. 安装此插件。
+3. 如有需要，修改 API 端口（默认为标准 Minecraft 端口）
+4. 点击 `保存` 按钮以保存你的配置。
+5. 创建目录 /share/minecraftbe
+6. 启动插件。
+7. 检查插件的日志，查看一切是否顺利。
+8. 编辑 /share/minecraftbe/ 中的任何服务器/权限/白名单属性，并重启插件。注意，你不能在 server.properties 中更改端口，因为它会出于某种原因被覆盖。然而，你可以在 homeassistant 的插件配置标签中更改端口。我只暴露 IP4 端口。如果需要 IP6，请告诉我。
+9. 如果你想要外部访问，请确保将你的外部端口转发到你的 homeassistant IP。
 
 ## 重启自动化
 
 ```
-alias: Restart Minecraft Server
+alias: 重启 Minecraft 服务器
 description: ""
 trigger:
   - platform: time
