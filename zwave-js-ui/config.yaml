@@ -1,5 +1,5 @@
 name: Z-Wave JS UI
-version: 4.1.2
+version: 4.2.1
 slug: zwavejs2mqtt
 description: 完全可配置的Z-Wave JS网关和控制面板。
 url: https://gh-proxy.com/github.com/hassio-addons/addon-zwave-js-ui
