@@ -1,24 +1,24 @@
 # Home Assistant Community Add-on: Visual Studio Code
 
-[![发布][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
+[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
 
-[![通过 GitHub Sponsors 支持 Frenck][github-sponsors-shield]][github-sponsors]
+[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
 
-[![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
+[![Support Frenck on Patreon][patreon-shield]][patreon]
 
-Visual Studio Code，可以通过浏览器访问。
+通过浏览器访问的 Visual Studio Code。
 
 ## 关于
 
-这个插件运行 Visual Studio Code，允许您直接通过网络浏览器编辑您的 Home Assistant 配置，并且可以直接嵌入到 Home Assistant 前端 UI 中。
+此插件运行 Visual Studio Code，允许您直接通过网页浏览器编辑 Home Assistant 配置，并且可以直接嵌入到 Home Assistant 前端 UI 中。
 
-Visual Studio Code 作为一个远程服务器运行，使用 `code-server`，并且提供一个完整的 VSCode 体验。
+Visual Studio Code 作为远程服务器运行，使用 `code-server`，并提供完全丰富的 VSCode 体验。
 
-该插件已预先安装和配置 Home Assistant、MDI 图标和 YAML 扩展。这意味着自动完成功能可以立即使用，无需任何配置。
+该插件已经预装和预配置了 Home Assistant、MDI 图标和 YAML 扩展。这意味着自动补全可以立即工作，无需进行任何配置。
 
-![Home Assistant 前端中的 Studio Code 服务器][screenshot]
+![Studio Code Server in the Home Assistant Frontend][screenshot]
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons
@@ -30,6 +30,6 @@ Visual Studio Code 作为一个远程服务器运行，使用 `code-server`，�
 [patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
 [patreon]: https://www.patreon.com/frenck
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
-[release-shield]: https://img.shields.io/badge/version-v5.19.2-blue.svg
-[release]: https://github.com/hassio-addons/addon-vscode/tree/v5.19.2
+[release-shield]: https://img.shields.io/badge/version-v5.19.3-blue.svg
+[release]: https://github.com/hassio-addons/addon-vscode/tree/v5.19.3
 [screenshot]: https://github.com/hassio-addons/addon-vscode/raw/main/images/screenshot.png

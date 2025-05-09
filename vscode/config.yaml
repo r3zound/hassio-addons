@@ -1,5 +1,5 @@
 name: Studio Code Server
-version: 5.19.2
+version: 5.19.3
 slug: vscode
 description: 功能齐全的Visual Studio Code（VSCode）体验已集成到Home Assistant前端。
   Home Assistant frontend.

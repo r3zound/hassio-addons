@@ -4,7 +4,7 @@
     "armv7"
   ],
   "boot": "auto",
-  "description": "复古游戏机网络版",
+  "description": "复古架构网络",
   "environment": {
     "TZ": "America/New_York"
   },
@@ -28,7 +28,7 @@
   "startup": "services",
   "upstream": "1.0",
   "url": "https://gh-proxy.com/github.com/jdeath/homeassistant-addons",
-  "version": "1.9.2-ls167",
+  "version": "1.9.2-ls168",
   "panel_admin": false,
   "ingress": true,
   "ingress_port": 80,

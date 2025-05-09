@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "文件浏览器提供了一个在指定目录内的文件管理界面，可以用来上传、删除、预览、重命名和编辑您的文件。",
+  "description": "文件浏览器在指定的目录中提供了一个文件管理界面，可以用于上传、删除、预览、重命名和编辑您的文件。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -78,9 +78,11 @@
     "PGID": "0",
     "PUID": "0"
   },
+  "homeassistant": "2025.5.0",
   "image": "ghcr.nju.edu.cn/alexbelgium/filebrowser-{arch}",
   "ingress": true,
   "ingress_stream": true,
+  "ingress_port": 8071,
   "map": [
     "addon_config:rw",
     "media:rw",
@@ -102,7 +104,7 @@
   "panel_admin": false,
   "panel_icon": "mdi:file-search",
   "ports": {
-    "8080/tcp": null
+    "8080/tcp": 8071
   },
   "ports_description": {
     "8080/tcp": "Web UI port"
@@ -127,5 +129,5 @@
   "slug": "filebrowser",
   "udev": true,
   "url": "https://gh-proxy.com/github.com/alexbelgium/hassio-addons",
-  "version": "2.23.0_14"
+  "version": "2.32.0"
 }

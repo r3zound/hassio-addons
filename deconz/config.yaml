@@ -1,9 +1,9 @@
 ---
-version: 8.1.0
+version: 8.2.0
 slug: deconz
 name: deCONZ
-description: 通过Dresden Elektronik的ConBee或RaspBee控制Zigbee网络。
-  Control a Zigbee network with ConBee or RaspBee by Dresden Elektronik.
+description: 使用Dresden Elektronik的ConBee或RaspBee控制Zigbee网络。
+  Control a Zigbee network with ConBee or RaspBee by Dresden Elektronik
 url: https://gh-proxy.com/github.com/home-assistant/addons/tree/master/deconz
 apparmor: false
 arch:
