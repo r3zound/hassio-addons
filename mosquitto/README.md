@@ -6,7 +6,7 @@ Home Assistant 的 MQTT 代理。
 
 ## 关于
 
-您可以使用此插件安装 Eclipse Mosquitto，它是一个开源（EPL/EDL 许可）消息代理，实施了 MQTT 协议。Mosquitto 体积小巧，适合用于从低功耗单板计算机到全功能服务器的所有设备。有关更多信息，请参见 [mosquitto]。
+您可以使用这个插件来安装 Eclipse Mosquitto，它是一个开源（EPL/EDL 许可）消息代理，实施了 MQTT 协议。Mosquitto 体积小巧，适合在从低功耗单板计算机到完整服务器的所有设备上使用。有关更多信息，请参见 [mosquitto]。
 
 [mosquitto]: https://mosquitto.org
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
