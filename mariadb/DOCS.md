@@ -1,25 +1,25 @@
-# Home Assistant 插件：MariaDB
+# Home Assistant 附加组件：MariaDB
 
 ## 安装
 
-按照以下步骤在您的系统上安装插件：
+请按照以下步骤将在您的系统上安装附加组件：
 
-1. 在您的 Home Assistant 前端中导航到 **设置** -> **插件** -> **插件商店**。
-2. 找到 "MariaDB" 插件并点击它。
+1. 在您的 Home Assistant 前端中导航到 **设置** -> **附加组件** -> **附加组件商店**。
+2. 找到 "MariaDB" 附加组件并点击它。
 3. 点击 "安装" 按钮。
 
 ## 如何使用
 
-1. 将 `logins` -> `password` 字段设置为强且唯一的密码。
-2. 启动插件。
-3. 检查插件的日志输出以查看结果。
+1. 将 `logins` -> `password` 字段设置为强而独特的密码。
+2. 启动附加组件。
+3. 检查附加组件日志输出以查看结果。
 4. 将 `recorder` 集成添加到您的 Home Assistant 配置中。
 
-## 插件配置
+## 附加组件配置
 
-MariaDB 服务器插件可以根据您的喜好进行调整。本节描述了每个插件配置选项。
+MariaDB 服务器附加组件可以根据您的喜好进行调整。本部分描述了每个附加组件配置选项。
 
-示例插件配置：
+附加组件配置示例：
 
 ```yaml
 databases:
@@ -38,49 +38,49 @@ rights:
       - SELECT
 ```
 
-### 选项：`databases`（必需）
+### 选项： `databases` (必需)
 
-数据库名称，例如 `homeassistant`。允许多个名称。
+数据库名称，例如 `homeassistant`。允许多个数据库。
 
-### 选项：`logins`（必需）
+### 选项： `logins` (必需)
 
-本节定义 MariaDB 中的用户创建定义。 [创建用户][createuser] 文档。
+此部分定义在 MariaDB 中创建用户的定义。[创建用户][createuser] 文档。
 
-### 选项：`logins.username`（必需）
+### 选项： `logins.username` (必需)
 
-数据库用户登录，例如 `homeassistant`。 [用户名][username] 文档。
+数据库用户登录名，例如 `homeassistant`。[用户名][username] 文档。
 
-### 选项：`logins.password`（必需）
+### 选项： `logins.password` (必需)
 
-用户登录的密码。此密码应强且唯一。
+用户登录的密码。应为强而独特的密码。
 
-### 选项：`rights`（必需）
+### 选项： `rights` (必需)
 
-本节授予 MariaDB 中用户的权限。 [授予][grant] 文档。
+此部分授予在 MariaDB 中用户的特权。[授予][grant] 文档。
 
-### 选项：`rights.username`（必需）
+### 选项： `rights.username` (必需)
 
-这应该与 `logins` -> `username` 中定义的用户名相同。
+这应与 `logins` -> `username` 中定义的用户名相同。
 
-### 选项：`rights.database`（必需）
+### 选项： `rights.database` (必需)
 
-这应该与 `databases` 中定义的数据库相同。
+这应与 `databases` 中定义的数据库相同。
 
-### 选项：`rights.privileges`（可选）
+### 选项： `rights.privileges` (可选)
 
-要授予此用户的权限列表，来自 [授予][grant]，如 `SELECT` 和 `CREATE`。如果省略，则授予用户 `ALL PRIVILEGES`。限制 Home Assistant 使用的用户权限不推荐，但如果您希望允许其他应用程序查看录制的数据，应创建一个仅限只读访问该数据库的用户。
+要授予该用户的权限列表，如 [授予][grant] 中的 `SELECT` 和 `CREATE`。如果省略，则授予用户 `ALL PRIVILEGES`。不建议限制 Home Assistant 使用用户的权限，但如果您希望允许其他应用查看记录器数据，则应创建一个仅限于对数据库只读访问的用户。
 
-### 选项：`mariadb_server_args`（可选）
+### 选项： `mariadb_server_args` (可选)
 
-一些用户在 Home Assistant 模式更新大型数据库时遇到了 [错误][migration-issues]。如果有可用的内存，定义推荐的参数可能会有所帮助。
+一些用户在大型数据库上进行 Home Assistant 模式更新时遇到了 [错误][migration-issues]。如果有可用的 RAM，定义推荐的参数可以有所帮助。
 
 示例：`--innodb_buffer_pool_size=512M`
 
 ## Home Assistant 配置
 
-MariaDB 将由 Home Assistant 中的 `recorder` 和 `history` 组件使用。有关如何设置此内容的更多信息，请参见 Home Assistant 的 [recorder 集成][mariadb-ha-recorder] 文档。
+MariaDB 将被 Home Assistant 中的 `recorder` 和 `history` 组件使用。有关如何设置的更多信息，请参见 Home Assistant 的 [recording 集成][mariadb-ha-recorder] 文档。
 
-示例 Home Assistant 配置：
+Home Assistant 配置示例：
 
 ```yaml
 recorder:
@@ -91,23 +91,12 @@ recorder:
 
 有问题吗？
 
-您有多种方式可以获得答案：
+您可以在这里 [提出问题][issue] GitHub。
 
-- [Home Assistant Discord 聊天服务器][discord]。
-- Home Assistant [社区论坛][forum]。
-- 加入 [Reddit 子版块][reddit] 在 [/r/homeassistant][reddit]
-
-如果您发现了错误，请 [在我们的 GitHub 上打开问题][issue]。
-
-[createuser]: https://mariadb.com/kb/en/create-user/
-[username]: https://mariadb.com/kb/en/create-user/#user-name-component
-[hostname]: https://mariadb.com/kb/en/create-user/#host-name-component
-[grant]: https://mariadb.com/kb/en/grant/
-[migration-issues]: https://github.com/home-assistant/core/issues/125339
-[mariadb-ha-recorder]: https://www.home-assistant.io/integrations/recorder/
-[discord]: https://discord.gg/c5DvZ4e
-[forum]: https://community.home-assistant.io
+[aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
+[amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
+[armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
+[armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
 [i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
-[issue]: https://github.com/home-assistant/addons/issues
-[reddit]: https://reddit.com/r/homeassistant
-[repository]: https://github.com/hassio-addons/repository
+[issue]: https://github.com/erik73/addon-mariadb/issues
+[repository]: https://github.com/erik73/hassio-addons

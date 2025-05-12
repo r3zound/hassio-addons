@@ -1,50 +1,42 @@
 # Home Assistant Community Add-on: motionEye
 
-motionEye is a popular frontend to the camera software called motion. This
-add-on provides both, allowing you to add your camera's to your Hass.io setup.
+motionEye 是一个流行的相机软件 motion 的前端。此附加组件提供了两者，允许您将相机添加到您的 Hass.io 设置中。
 
-motionEye is Open Source CCTV and NVR, that is elegant and really easy to use.
-It can be used as a Baby Monitor, Construction Site Montage Viewer,
-Store Camera DVR, Garden Security, and much more.
+motionEye 是开源的 CCTV 和 NVR，优雅且易于使用。它可以用作婴儿监视器、施工现场 Montage 观察员、商店相机 DVR、花园安全以及更多功能。
 
-Some cool features of motionEye:
+motionEye 的一些酷功能：
 
-- Support for a ridiculous amount of cameras, including IP cams.
-- Add multiple cameras by hooking up multiple motionEye instances together.
-  For example, by using MotionEyeOS on a Pi Zero + Pi camera in your network.
-- Supports uploading recording into Google Drive and Dropbox.
-- motion detection, including email notification and scheduling.
-- Can record continuously, motion, or timelapse, with retention settings.
-- Supports "[action buttons][motioneye-wiki-action-buttons]" within the configuration.
+- 支持数量庞大的相机，包括 IP 摄像头。
+- 通过连接多个 motionEye 实例来添加多个相机。例如，在您的网络中使用 Pi Zero + Pi 摄像头上的 MotionEyeOS。
+- 支持将录制上传到 Google Drive 和 Dropbox。
+- 运动检测，包括电子邮件通知和调度。
+- 可以连续录制、运动录制或延时录制，并具有保留设置。
+- 支持配置中的 "[action buttons][motioneye-wiki-action-buttons]"。
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Home Assistant add-on.
+此附加组件的安装非常简单，与安装任何其他 Home Assistant 附加组件没有不同。
 
-1. Click the Home Assistant My button below to open the add-on on your Home
-   Assistant instance.
+1. 点击下方的 Home Assistant My 按钮以在您的 Home Assistant 实例中打开此附加组件。
 
-   [![Open this add-on in your Home Assistant instance.][addon-badge]][addon]
+   [![在您的 Home Assistant 实例中打开此附加组件。][addon-badge]][addon]
 
-1. Click the "Install" button to install the add-on.
-1. Start the "motionEye" add-on
-1. Check the logs of the "motionEye" add-on to see if everything went well.
-1. Click the "OPEN WEB UI" button to open the web interface
-1. Login with username "admin", without a password.
-1. Edit your admin account with a secure password!
+1. 点击“安装”按钮以安装附加组件。
+1. 启动“motionEye”附加组件
+1. 检查“motionEye”附加组件的日志以查看是否一切正常。
+1. 点击“打开 Web UI”按钮以打开网页界面。
+1. 使用用户名“admin”登录，无需输入密码。
+1. 用安全密码编辑您的管理员账户！
 
-Home Assistant, by default, ships with the Community Add-ons store installed.
-However, if it is missing (for any reason), you can add it by clicking the
-button My button below.
+默认情况下，Home Assistant 附带社区附加组件商店安装。然而，如果缺失（出于任何原因），您可以通过点击下面的 My 按钮添加它。
 
-[![Add repository to your Home Assitant instance.][repository-badge]][repository]
+[![将存储库添加到您的 Home Assistant 实例。][repository-badge]][repository]
 
-## Configuration
+## 配置
 
-**Note**: _Remember to restart the add-on when the configuration is changed._
+**注意**：_在更改配置时请记得重新启动附加组件。_
 
-Example add-on configuration:
+示例附加组件配置：
 
 ```yaml
 log_level: info
@@ -53,56 +45,48 @@ certfile: mycertfile.pem
 keyfile: mykeyfile.pem
 ```
 
-**Note**: _This is just an example, don't copy and paste it! Create your own!_
+**注意**：_这只是一个示例，请不要复制粘贴！创建您自己的！_
 
-### Option: `log_level`
+### 选项: `log_level`
 
-The `log_level` option controls the level of log output by the addon and can
-be changed to be more or less verbose, which might be useful when you are
-dealing with an unknown issue. Possible values are:
+`log_level` 选项控制附加组件的日志输出级别，可以更改为更详细或更简洁，这在处理未知问题时可能会很有用。可能的值包括：
 
-- `trace`: Show every detail, like all called internal functions.
-- `debug`: Shows detailed debug information.
-- `info`: Normal (usually) interesting events.
-- `warning`: Exceptional occurrences that are not errors.
-- `error`: Runtime errors that do not require immediate action.
-- `fatal`: Something went terribly wrong. Add-on becomes unusable.
+- `trace`: 显示所有细节，例如所有被调用的内部函数。
+- `debug`: 显示详细的调试信息。
+- `info`: 正常（通常）有趣的事件。
+- `warning`: 不是错误的异常情况。
+- `error`: 运行时错误，不需要立即采取行动。
+- `fatal`: 出现严重错误，附加组件变得不可用。
 
-Please note that each level automatically includes log messages from a
-more severe level, e.g., `debug` also shows `info` messages. By default,
-the `log_level` is set to `info`, which is the recommended setting unless
-you are troubleshooting.
+请注意，每个级别自动包含来自更高级别的日志消息，例如，`debug` 也显示 `info` 消息。默认情况下，`log_level` 设置为 `info`，除非您在排除故障，否则建议使用该设置。
 
-### Option: `motion_webcontrol`
+### 选项: `motion_webcontrol`
 
-Enables the motion webcontrol endpoint running on port `7999`.
+启用在端口 `7999` 上运行的运动 webcontrol 端点。
 
-:warning: MotionEye HTTP webcontrol **DOES NOT** support authentication
-and **DOES NOT** support SSL! Enable this **ONLY** when you know what
-you are doing! **NEVER, EVER** expose this port to the outside world!
+:warning: MotionEye HTTP webcontrol **不支持** 身份验证，并且 **不支持** SSL！仅在您知道自己在做什么时启用此选项！**绝对不要**将此端口暴露给外部世界！
 
-### Option: `ssl`
+### 选项: `ssl`
 
-Enables/Disables SSL (HTTPS) on the web interface of motionEye. Set it `true`
-to enable it, `false` otherwise.
+启用/禁用 motionEye 的网页界面上的 SSL（HTTPS）。设置为 `true` 以启用，设置为 `false` 以禁用。
 
-### Option: `certfile`
+### 选项: `certfile`
 
-The certificate file to use for SSL.
+用于 SSL 的证书文件。
 
-**Note**: _The file MUST be stored in `/ssl/`, which is the default_
+**注意**：_文件必须存储在 `/ssl/` 中，这是默认值_
 
-### Option: `keyfile`
+### 选项: `keyfile`
 
-The private key file to use for SSL.
+用于 SSL 的私钥文件。
 
-**Note**: _The file MUST be stored in `/ssl/`, which is the default_
+**注意**：_文件必须存储在 `/ssl/` 中，这是默认值_
 
-### Option: `action_buttons`
+### 选项: `action_buttons`
 
-If configured, a script will be created to implement an [action button][motioneye-wiki-action-buttons].
+如果配置，则会创建一个脚本来实现 [action button][motioneye-wiki-action-buttons]。
 
-Example action buttons configuration:
+示例 action buttons 配置：
 
 ```yaml
 action_buttons:
@@ -114,84 +98,65 @@ action_buttons:
     command: "curl -s 192.168.1.1/index.html?light=OFF > /dev/null"
 ```
 
-#### Sub-option: `action_buttons.type`
+#### 子选项: `action_buttons.type`
 
-Type of action button. Acceptable types are:
+操作按钮的类型。可接受的类型包括：
 
-- `lock` and `unlock`.
-- `light_on` and `light_off`.
-- `alarm_on` and `alarm_off`.
-- `up`, `right`, `down`, and `left`.
-- `zoom_in` and `zoom_out`.
-- `preset1` to `preset9`.
+- `lock` 和 `unlock`。
+- `light_on` 和 `light_off`。
+- `alarm_on` 和 `alarm_off`。
+- `up`、`right`、`down` 和 `left`。
+- `zoom_in` 和 `zoom_out`。
+- `preset1` 到 `preset9`。
 
-#### Sub-option: `action_buttons.camera`
+#### 子选项: `action_buttons.camera`
 
-The camera identification number. Corresponds to the camera number as set up
-within the motionEye UI.
+摄像头识别号码。对应于在 motionEye UI 中设置的摄像头号码。
 
-#### Sub-option: `action_buttons.command`
+#### 子选项: `action_buttons.command`
 
-The bash shell command to be executed when the button is pressed.
+按下按钮时要执行的 bash shell 命令。
 
-## Changelog & Releases
+## 更新日志与发布
 
-This repository keeps a change log using [GitHub's releases][releases]
-functionality.
+此存储库使用 [GitHub 的 releases][releases] 功能维护变更日志。
 
-Releases are based on [Semantic Versioning][semver], and use the format
-of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
-based on the following:
+发布基于 [语义版本控制][semver]，使用格式 `MAJOR.MINOR.PATCH`。简而言之，版本将根据以下内容递增：
 
-- `MAJOR`: Incompatible or major changes.
-- `MINOR`: Backwards-compatible new features and enhancements.
-- `PATCH`: Backwards-compatible bugfixes and package updates.
+- `MAJOR`: 不兼容或重大更改。
+- `MINOR`: 向后兼容的新功能和增强。
+- `PATCH`: 向后兼容的错误修复和软件包更新。
 
-## Support
+## 支持
 
-Got questions?
+有问题？
 
-You have several options to get them answered:
+您有几种选项可以获得答案：
 
-- The [Home Assistant Community Add-ons Discord chat server][discord] for add-on
-  support and feature requests.
-- The [Home Assistant Discord chat server][discord-ha] for general Home
-  Assistant discussions and questions.
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+- [Home Assistant Community Add-ons Discord 聊天服务器][discord] 以获取附加组件支持和功能请求。
+- [Home Assistant Discord 聊天服务器][discord-ha] 以获取一般 Home Assistant 讨论和问题。
+- Home Assistant [社区论坛][forum]。
+- 加入 [Reddit subreddit][reddit]，在 [/r/homeassistant][reddit] 中。
 
-You could also [open an issue here][issue] GitHub.
+您也可以在这里 [打开问题][issue] GitHub。
 
-## Authors & contributors
+## 作者与贡献者
 
-The original setup of this repository is by [Franck Nijhof][frenck].
+此存储库的最初设置由 [Franck Nijhof][frenck] 完成。
 
-For a full list of all authors and contributors,
-check [the contributor's page][contributors].
+有关所有作者和贡献者的完整列表，请查看 [贡献者页面][contributors]。
 
-## License
+## 许可证
 
-MIT License
+MIT 许可证
 
-Copyright (c) 2018-2024 Franck Nijhof
+版权所有 (c) 2018-2025 Franck Nijhof
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+特此免费授予任何获取本软件及相关文档文件（“软件”）副本的人，无限制地使用、复制、修改、合并、发布、分发、再授权和/或出售软件副本的权利，并允许提供给他人使用软件的人这样做，前提是满足以下条件：
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+上述版权声明和本许可声明应包含在所有软件副本或实质部分中。
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+该软件是按“原样”提供的，不提供任何种类的担保，无论是明示或暗示，包括但不限于适销性、特定用途的适用性和不侵权。在任何情况下，作者或版权持有人均不对因使用该软件或其他交易而产生的任何索赔、损害或其他责任负责，无论是在合同、侵权或其他方面。
 
 [addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
 [addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_motioneye

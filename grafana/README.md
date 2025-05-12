@@ -1,4 +1,4 @@
-# Home Assistant Community Add-on: Grafana
+# Home Assistant 社区附加组件：Grafana
 
 [![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
 
@@ -8,21 +8,17 @@
 
 [![Support Frenck on Patreon][patreon-shield]][patreon]
 
-The open platform for beautiful analytics and monitoring.
+一个用于美观分析和监控的开放平台。
 
-## About
+## 关于
 
-The analytics platform for all your metrics.
+适用于所有您度量指标的分析平台。
 
-Grafana allows you to query, visualize, alert on and understand your metrics
-no matter where they are stored. Create, explore, and share dashboards. Learn
-about your Home Automation system using sexy and compelling graphs, and other
-data visualizations.
+Grafana 允许您查询、可视化、警报和理解您的度量指标，无论它们存储在哪里。创建、探索和分享仪表板。通过迷人而引人入胜的图表和其他数据可视化，了解您的家庭自动化系统。
 
-Combine this add-on with the InfluxDB add-on to get insanely powerful
-insights to your home.
+将此附加组件与 InfluxDB 附加组件结合使用，以获取对您家非常强大的见解。
 
-![Grafana in the Home Assistant Frontend][screenshot]
+![Grafana 在 Home Assistant 前端中的展示][screenshot]
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons
@@ -34,6 +30,6 @@ insights to your home.
 [patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
 [patreon]: https://www.patreon.com/frenck
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
-[release-shield]: https://img.shields.io/badge/version-v10.5.0-blue.svg
-[release]: https://github.com/hassio-addons/addon-grafana/tree/v10.5.0
+[release-shield]: https://img.shields.io/badge/version-v11.0.0-blue.svg
+[release]: https://github.com/hassio-addons/addon-grafana/tree/v11.0.0
 [screenshot]: https://github.com/hassio-addons/addon-grafana/raw/main/images/screenshot.png
