@@ -1,4 +1,7 @@
 # Changelog
+## 2.13.1
+- Automatically updated addon-base to version v17.2.5
+
 ## 2.13.0
 - Updates addon-base to version v17.2.4
 - add php-sockets
