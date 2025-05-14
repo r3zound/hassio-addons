@@ -1,33 +1,34 @@
 # Home assistant add-on: Memos
 
-一个以隐私为首的轻量级笔记服务。轻松捕捉和分享你的精彩想法。
+A privacy-first, lightweight note-taking service. Easily capture and share your great thoughts.
 
-运行 Docker 镜像来自: https://github.com/usememos/memos
+Runs Docker Image From: https://github.com/usememos/memos
 
 
-_感谢所有给我的仓库加星的人！要加星，请点击下面的图片，然后它会在右上角显示。谢谢！_
+_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
 
-## 安装
+## Installation
 
-这个附加组件的安装非常简单，和安装其他任何 Hass.io 附加组件没有什么不同。
+The installation of this add-on is pretty straightforward and not different in
+comparison to installing any other Hass.io add-on.
 
-1. [将我的 Hass.io 附加组件仓库][repository] 添加到你的 Hass.io 实例。
-1. 安装这个附加组件。
-1. 点击 `Save` 按钮以保存你的配置。
-1. 启动附加组件。
-1. 检查附加组件的日志，以查看一切是否顺利。
-1. 打开的 WebUI 应该可以通过 ingress 或 <your-ip>:port 进行访问。
-1. 设置将存储在 /addons-config/2effc9b9_memos
+1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
+1. Install this add-on.
+1. Click the `Save` button to store your configuration.
+1. Start the add-on.
+1. Check the logs of the add-on to see if everything went well.
+1. Open WebUI should work via ingress or <your-ip>:port.
+1. Settings will be stored in /addons-config/2effc9b9_memos
 
-## 配置
+## Configuration
 
 ```
-port : 5230 #你想要运行的端口。
+port : 5230 #port you want to run on.
 ```
 
-Webui 可以在 `<your-ip>:port` 找到。
+Webui can be found at `<your-ip>:port`.
 
 [repository]: https://github.com/jdeath/homeassistant-addons

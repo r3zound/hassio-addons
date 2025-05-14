@@ -1,6 +1,7 @@
 name: Frigate Beta
-version: 0.16.0-beta1
+version: 0.16.0-beta2
 breaking_versions:
+  - 0.16.0-beta2
   - 0.16.0-beta1
   - 0.15.0
   - 0.15.0-rc2
@@ -15,7 +16,7 @@ breaking_versions:
 panel_icon: "mdi:cctv"
 panel_title: Frigate
 slug: frigate-beta
-description: NVR具有实时本地对象检测功能，适用于IP摄像头。
+description: 未翻译成功
 url: "https://gh-proxy.com/github.com/blakeblackshear/frigate"
 image: ghcr.nju.edu.cn/blakeblackshear/frigate
 startup: application
@@ -42,7 +43,7 @@ ports_description:
   8555/udp: WebRTC over udp
   8554/tcp: RTSP Restream
   8971/tcp: Authenticated Web interface
-  5000/tcp: Unauthenticated Web interface (Not required for Hass.io Ingress)
+  5000/tcp: Unauthenticated Web interface (not required for Home Assistant Ingress)
   1984/tcp: go2rtc API
 host_network: false
 devices:
@@ -72,6 +73,7 @@ arch:
   - aarch64
 map:
   - "media:rw"
+  - "ssl"
   - "addon_config:rw"
   # Mount old config dir to be migrated by the image
   - "homeassistant_config:rw"

@@ -1,32 +1,33 @@
-# Home assistant 插件：5etools
+# Home assistant add-on: 5etools
 
-一套面向 D&D 5e 玩家和 DM 的基于浏览器的工具。下载的图像来自 5etools GitHub。jdeath 的仓库不托管/发布任何图像或内容。由于 Home Assistant 插件创建者不使用此工具，因此不提供支持。自托管的图像可能比 5etools 网站晚一个版本。图像大小为 4 GB，因此安装将花费较长时间，请耐心等待。
+A suite of browser-based tools for players and DMs of D&D 5e. Downloads posted image from 5etools GitHub. No image or content is hosted/posted on jdeath's repo. No support given as Home Assistant Addon creator does not use this. Self-hosted image can be a revision behind the 5etools website. Image is 4 GB, so will take a long time to install, be patient.
 
-_感谢所有为我的仓库星标的人！要给它星标，请点击下面的图像，然后在右上角进行操作。谢谢！_
+_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
-## 关于
+## About
 
-该插件使用 [docker 镜像](https://github.com/5etools-mirror-2/5etools-mirror-2.github.io)。
+This addon uses the [docker image](https://github.com/5etools-mirror-2/5etools-mirror-2.github.io).
 
-## 安装
+## Installation
 
-安装此插件非常简单，与安装任何其他 Hass.io 插件没有区别。
+The installation of this add-on is pretty straightforward and not different in
+comparison to installing any other Hass.io add-on.
 
-1. [将我的 Hass.io 插件仓库][repository] 添加到您的 Hass.io 实例中。
-1. 安装此插件。4 GB 的镜像下载会花费一些时间。
-1. 点击 `保存` 按钮以保存您的配置。
-1. 启动插件。
-1. 检查插件的日志以查看是否一切正常。
-1. WebUI 应可通过入口或 <your-ip>:port 访问。
+1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
+1. Install this add-on. 4 GB image will take a while to download
+1. Click the `Save` button to store your configuration.
+1. Start the add-on.
+1. Check the logs of the add-on to see if everything went well.
+1. Open WebUI should work via ingress or <your-ip>:port.
 
-## 配置
+## Configuration
 
 ```
-port : 8080 #您希望运行的端口。
+port : 8080 #port you want to run on.
 ```
 
-Webui 可在 `<your-ip>:port` 找到。
+Webui can be found at `<your-ip>:port`.
 
 [repository]: https://github.com/jdeath/homeassistant-addons
