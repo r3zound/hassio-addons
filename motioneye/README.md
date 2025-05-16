@@ -1,29 +1,29 @@
-# Home Assistant 社区附加组件: motionEye
+# Home Assistant 社区附加组件：motionEye
 
-[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
+[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
 
-[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
+[![通过 GitHub 赞助商赞助 Frenck][github-sponsors-shield]][github-sponsors]
 
-[![Support Frenck on Patreon][patreon-shield]][patreon]
+[![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
 
-简单、优雅且功能丰富的 CCTV/NVR 摄像头系统。
+简单、优雅且功能丰富的 CCTV/NVR 解决方案，适用于您的摄像头。
 
 ## 关于
 
-motionEye 是一个流行的摄像头软件 motion 的前端。这个附加组件同时提供这两者，允许你将摄像头添加到你的 Hass.io 设置中。
+motionEye 是一款流行的摄像头软件 motion 的前端。这款附加组件同时提供这两者，使您能够将摄像头添加到您的 Hass.io 设置中。
 
-motionEye 是开源的 CCTV 和 NVR，既优雅又易于使用。它可以用作婴儿监视器、施工现场监控、商店摄像头 DVR、花园安全监控等。
+motionEye 是一个开源的 CCTV 和 NVR，优雅且易于使用。它可以用作婴儿监视器、施工现场视频监视器、商店摄像头 DVR、花园安全监控等。
 
 motionEye 的一些酷炫功能：
 
 - 支持大量摄像头，包括 IP 摄像头。
-- 通过连接多个 motionEye 实例添加多个摄像头。
-  例如，通过在你的网络中使用 Pi Zero + Pi 摄像头的 MotionEyeOS。
-- 支持将录制视频上传到 Google Drive 和 Dropbox。
-- 动作检测，包括电子邮件通知和调度。
-- 可以连续录制、动作录制或延时录制，并具有保留设置。
+- 通过将多个 motionEye 实例连接在一起，添加多个摄像头。
+  例如，在您的网络中使用 Pi Zero + Pi 摄像头上的 MotionEyeOS。
+- 支持将录制内容上传到 Google Drive 和 Dropbox。
+- 运动检测，包含电子邮件通知和调度。
+- 可以连续录制、运动录制或定时摄影，并具有保留设置。
 
 ![motionEye 截图][screenshot]
 
@@ -37,6 +37,6 @@ motionEye 的一些酷炫功能：
 [patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
 [patreon]: https://www.patreon.com/frenck
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
-[release-shield]: https://img.shields.io/badge/version-v0.22.0-blue.svg
-[release]: https://github.com/hassio-addons/addon-motioneye/tree/v0.22.0
+[release-shield]: https://img.shields.io/badge/version-v0.22.1-blue.svg
+[release]: https://github.com/hassio-addons/addon-motioneye/tree/v0.22.1
 [screenshot]: https://github.com/hassio-addons/addon-motioneye/raw/main/images/screenshot.png
