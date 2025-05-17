@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "自动在Epic Games商店、亚马逊Prime游戏和GOG上领取免费游戏。",
+  "description": "null",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -97,6 +97,6 @@
   "slug": "free_games_claimer",
   "udev": true,
   "url": "https://gh-proxy.com/github.com/alexbelgium/hassio-addons",
-  "version": "1.7",
+  "version": "1.8",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:6080]"
 }
