@@ -1,23 +1,23 @@
-# Li Tin O`ve Weedle Assistant Add-on: TapTap - Tigo CCA to MQTT
+# Li Tin O`ve Weedle助手插件：TapTap - Tigo CCA到MQTT
 
-This addon is based on the [taptap](https://github.com/litinoveweedle/taptap) project which reverse engineered protocol between Tigo TAP and CCA components. I was able to create [mqtt bridge](https://github.com/litinoveweedle/taptap-mqtt) and package it as a Home Assistant addon TapTap. Addon allows to get detailed information from the Tigo photovoltaic optimizer modules completely locally - without Tigo cloud and with refresh time of 10s. Addon uses Home Assistant MQTT auto discovery feature so it will setup all provided sensors automatically in the HA. :wink:
-
-
-## Installation prerequisites
-
-  - MQTT broker like for example [Mosquitto addon](https://www.home-assistant.io/integrations/mqtt/#setting-up-a-broker)
-  - Home Assistant [MQTT integration](https://www.home-assistant.io/integrations/mqtt/)
-  - Modbus RS485 to Serial/Ethernet converter like for example [WaveShare models](https://www.waveshare.com/product/iot-communication/wired-comm-converter/ethernet-to-uart-rs232-rs485.htm)
+该插件基于[taptap](https://github.com/litinoveweedle/taptap)项目，反向工程了Tigo TAP和CCA组件之间的协议。我能够创建[mqtt桥接器](https://github.com/litinoveweedle/taptap-mqtt)并将其打包为Home Assistant插件TapTap。该插件允许从Tigo光伏优化器模块获取详细信息，完全本地运行-不需要Tigo云，刷新时间为10秒。插件使用Home Assistant的MQTT自动发现功能，因此它会自动设置所有提供的传感器在HA中。:wink:
 
 
-## Modbus to Ethernet/Serial connection to Tigo CCA
+## 安装前提条件
 
-### Modbus to Ethernet/Serial converter has to be connected to the [Tigo CCA gateway](https://cs.tigoenergy.com/product/cloud-connect-advanced):
-  1. connect converter to connector named Gateway on Tigo CCA gateway
-  2. there will be already wires in this connector from the connected Tigo TAP on your roof
-  3. connect converter wires together (in parallel) with existing wires from Tigo TAP
-  4. use 3 wires - `A`, `B` and `-`/`⏚`: connect `A` to `A`, `B` to `B`, `-`/`⏚` to `-`/`⏚`
-  5. wires shall be as short as possible - mount your converter close to the Tigo CCA gateway
+  - MQTT代理，例如[Mosquitto插件](https://www.home-assistant.io/integrations/mqtt/#setting-up-a-broker)
+  - Home Assistant的[MQTT集成](https://www.home-assistant.io/integrations/mqtt/)
+  - Modbus RS485到串行/ Ethernet转换器，例如[WaveShare型号](https://www.waveshare.com/product/iot-communication/wired-comm-converter/ethernet-to-uart-rs232-rs485.htm)
+
+
+## Modbus到Ethernet/串行连接到Tigo CCA
+
+### Modbus到Ethernet/串行转换器必须连接到[Tigo CCA网关](https://cs.tigoenergy.com/product/cloud-connect-advanced):
+  1. 将转换器连接到Tigo CCA网关上名为Gateway的连接器上
+  2. 此连接器中已经有来自您屋顶上连接的Tigo TAP的电线
+  3. 将转换器的电线与Tigo TAP的现有电线连接在一起（并联）
+  4. 使用3根电线-`A`、`B`和`-`/`⏚`：将`A`连接到`A`，`B`连接到`B`，`-`/`⏚`连接到`-`/`⏚`
+  5. 电线应尽可能短-将转换器靠近Tigo CCA网关安装
 
 ```text
   ┌─────────────────────────────────────┐      ┌────────────────────────────┐
@@ -41,33 +41,32 @@ This addon is based on the [taptap](https://github.com/litinoveweedle/taptap) pr
                 │ Converter │
                 └───────────┘
 ```
-### Modbus to Ethernet converter needs some additional configuration:
-  1. connect converter to your LAN network so it will be reachable from Home Assistant
-  2. assign IP address to the converter (automatically using DHCP or manually static one)
-  3. set Modbus communication to 38400b, data bits 8, stop bits 1, Flow control None
-  4. set converter work mode to Modbus TCP Server
-  5. set protocol to Modbus TCP (not Modbus TCP to RTU), for Waveshare converter this is on the web configuration page under the 'Multi-Host Settings' as 'Protocol' set to 'None'
-  6. remember IP address and TCP port of converter to set in the addon configuration later
+### Modbus到Ethernet转换器需要一些额外的配置：
+  1. 将转换器连接到您的局域网，以便可以从Home Assistant访问
+  2. 为转换器分配IP地址（自动使用DHCP或手动静态）
+  3. 将Modbus通信设置为38400b，数据位8，停止位1，流控制无
+  4. 将转换器工作模式设置为Modbus TCP服务器
+  5. 将协议设置为Modbus TCP（而不是Modbus TCP到RTU），对于Waveshare转换器，这在网页配置页面的“多主机设置”中将“协议”设置为“无”
+  6. 记住转换器的IP地址和TCP端口以便稍后在插件配置中设置
 
-Every Modbus to Ethernet converter has different setting, you you do not see any data collected from your installation there is VERY high chance, that you have some problem in the converter connection or configuration! Please refer to the [note here](#warning)!
+每个Modbus到Ethernet的转换器设置不同，如果您没有看到从您的安装收集到的数据，那您非常有可能在转换器连接或配置上有问题！请参阅[此处的注意事项](#warning)!
 
-## Addon Installation
+## 插件安装
 
-Install TapTap addon in your Home Assistant
+在您的Home Assistant中安装TapTap插件
 
-1. Click the Home Assistant My button below to open the add-on on your Home
-   Assistant instance.
+1. 点击下面的Home Assistant我的按钮以打开您的Home Assistant实例中的插件。
 
-   [![Open this add-on in your Home Assistant instance.][addon-badge]][addon]
+   [![在您的Home Assistant实例中打开此插件。][addon-badge]][addon]
 
-2. Click the "Install" button to install the add-on.
-3. Start the "Example" add-on.
-4. Check the logs of the "Example" add-on to see it in action.
+2. 点击“安装”按钮以安装插件。
+3. 启动“示例”插件。
+4. 检查“示例”插件的日志以查看其工作情况。
 
 
-## Configuration
+## 配置
 
-TapTap add-on example configuration:
+TapTap插件示例配置：
 
 ```yaml
 log_level: warning
@@ -91,119 +90,112 @@ taptap_address: 192.168.1.50
 
 ```
 
-### Option: `log_level`
+### 选项：`log_level`
 
-The `log_level` option controls the level of log output by the add-on and can
-be changed to be more or less verbose, which might be useful when you are
-dealing with an unknown issue. Possible values are:
+`log_level`选项控制插件的日志输出级别，可以更改为更详细或更简洁，这在您处理未知问题时可能很有用。可能的值有：
 
-- `trace`: Show every detail, like all called internal functions.
-- `debug`: Shows detailed debug information.
-- `info`: Normal (usually) interesting events.
-- `warning`: Exceptional occurrences that are not errors.
-- `error`: Runtime errors that do not require immediate action.
-- `fatal`: Something went terribly wrong. Add-on becomes unusable.
+- `trace`：显示每个细节，例如所有调用的内部函数。
+- `debug`：显示详细的调试信息。
+- `info`：正常（通常）有趣的事件。
+- `warning`：不属于错误的例外事件。
+- `error`：运行时错误，不需要立即采取行动。
+- `fatal`：出现了非常严重的问题。插件变得不可用。
 
-Please note that each level automatically includes log messages from a
-more severe level, e.g., `debug` also shows `info` messages. By default,
-the `log_level` is set to `info`, which is the recommended setting unless
-you are troubleshooting.
+请注意，每个级别自动包括来自更严重级别的日志消息，例如，`debug`也会显示`info`消息。默认情况下，`log_level`设置为`info`，这是推荐的设置，除非您在进行故障排除。
 
-### Option: `mqtt_server`
+### 选项：`mqtt_server`
 
-IP address or FQDN of the MQTT broker. If you are running Mosquitto addon it will be IP address of your HomeAssistant.
+MQTT代理的IP地址或FQDN。如果您运行的是Mosquitto插件，它将是您的HomeAssistant的IP地址。
 
-### Option: `mqtt_port`
+### 选项：`mqtt_port`
 
-MQTT broker TCP port, default is `1883`.
+MQTT代理的TCP端口，默认为`1883`。
 
-### Option: `mqtt_qos`
+### 选项：`mqtt_qos`
 
-MQTT QoS configuration - refer to Home Assistant MQTT documentation, default `1`.
+MQTT QoS配置-请参阅Home Assistant MQTT文档，默认为`1`。
 
-### Option: `mqtt_timeout`
+### 选项：`mqtt_timeout`
 
-MQTT broker connection timeout - refer to Home Assistant MQTT documentation, default `5`
+MQTT代理连接超时-请参阅Home Assistant MQTT文档，默认为`5`。
 
-### Option: `mqtt_user`
+### 选项：`mqtt_user`
 
-MQTT broker username to connect to server.
+连接到服务器的MQTT代理用户名。
 
-### Option: `mqtt_pass`
+### 选项：`mqtt_pass`
 
-MQTT broker password to connect to server.
+连接到服务器的MQTT代理密码。
 
-### Option: `taptap_serial`
+### 选项：`taptap_serial`
 
-If you use Modbus to USB/Serial converter connected to Home assistant server this will be it device file (probably /dev/ttyUSB0 or /dev/ttyACM0). If you use Modbus to Ethernet converter this must not be filled!
+如果您使用的是连接到Home Assistant服务器的Modbus到USB/串行转换器，这将是它的设备文件（可能是/dev/ttyUSB0或/dev/ttyACM0）。如果您使用的是Modbus到Ethernet转换器，则此项不必填写！
 
-### Option: `taptap_address`
+### 选项：`taptap_address`
 
-If you use Modbus to Ethernet converter connected to Home assistant server this will be its IP address. If you use Modbus to Serial/USB converter this must not be filled!
+如果您使用的是连接到Home Assistant服务器的Modbus到Ethernet转换器，这将是其IP地址。如果您使用的是Modbus到串行/ USB转换器，则此项不必填写！
 
-### Option: `taptap_port`
+### 选项：`taptap_port`
 
-If you use Modbus to Ethernet converter connected to Home assistant server this will be its TCP port, default is `502`.
+如果您使用的是连接到Home Assistant服务器的Modbus到Ethernet转换器，这将是其TCP端口，默认为`502`。
 
-### Option: `taptap_module_ids`
+### 选项：`taptap_module_ids`
 
-Comma separated list of Tigo modules ids as those communicate on the Modbus. This ID are numbers typically starting from 2 and each next module has +1. If you replace one Tigo module by another new module will get new ID. Addon will log if there will be any messages received from unknown ID (not listed here).
+以逗号分隔的Tigo模块ID列表，因为这些模块在Modbus上进行通信。该ID通常是从2开始的数字，每个下一个模块+1。如果您用另一个新模块替换一个Tigo模块，则将获得新的ID。插件将在接收到未知ID（未在此处列出）时记录日志。
 
-### Option: `taptap_module_names`
+### 选项：`taptap_module_names`
 
-Comma separated list of the Tigo modules names you would like to see in Home Assistant in corresponding entities names. Enter in the same order as Ids.
+希望在Home Assistant中以相应实体名称查看的Tigo模块名称的以逗号分隔的列表。按ID的顺序输入。
 
-### Option: `taptap_topic_prefix`
+### 选项：`taptap_topic_prefix`
 
-MQTT topic prefix used on the MQTT to post messages so Home Assistant can read those, default is `taptap`. There is typically no need to change this setting.
+MQTT主题前缀，用于在MQTT上发布消息，以便Home Assistant可以读取，默认为`taptap`。通常不需要更改此设置。
 
-### Option: `taptap_topic_name`
+### 选项：`taptap_topic_name`
 
-MQTT topic name used on the MQTT to post messages so Home Assistant can read those, default is `tigo`. This name will be also used in name of the Home Assistant taptap device and entities.
+MQTT主题名称，用于在MQTT上发布消息，以便Home Assistant可以读取，默认为`tigo`。此名称也将用于Home Assistant taptap设备和实体的名称。
 
-### Option: `taptap_update`
+### 选项：`taptap_update`
 
-How often Home Assistant entities are updated in seconds, default is `10`.
+Home Assistant实体更新的频率（秒），默认为`10`。
 
-### Option: `taptap_timeout`
+### 选项：`taptap_timeout`
 
-If no message is received within last given number of seconds from the node and 'Entities unavailable if node is offline' is set to true, then corresponding entities are set to Unavailable state.
+如果在节点上未收到最后给定秒数内的消息，并且“节点离线时实体不可用”设置为true，则相应实体被设置为不可用状态。
 
-### Option: `ha_entity_availability`
+### 选项：`ha_entity_availability`
 
-If set to true, then if no message from any given module is received in the time specified by 'Availability timeout' corresponding entities are set to Unavailable state.
+如果设置为true，则如果在“可用性超时”指定的时间内未收到来自任何给定模块的消息，则相应实体被设置为不可用状态。
 
-### Option: `ha_discovery_prefix`
+### 选项：`ha_discovery_prefix`
 
-MQTT prefix Home Assistant is subscribed for auto discovery of the new devices and entities. Please refer to HA MQTT documentation, default is: `homeassistant`. There is typically no need to change this setting.
+MQTT前缀Home Assistant订阅的新设备和实体的自动发现。请参阅HA MQTT文档，默认为：`homeassistant`。通常不需要更改此设置。
 
-### Option: `ha_birth_topic`
+### 选项：`ha_birth_topic`
 
-MQTT prefix Home Assistant announces when gets online. Please refer to HA MQTT documentation, default is: `homeassistant/status`. There is typically no need to change this setting.
+MQTT前缀Home Assistant在线时宣布。请参阅HA MQTT文档，默认为：`homeassistant/status`。通常不需要更改此设置。
 
 
-## Changelog & Releases
+## 更新日志与发行版
 
-Releases are based on [Semantic Versioning][semver], and use the format
-of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
-based on the following:
+发行版基于[语义版本控制][semver]，并使用`MAJOR.MINOR.PATCH`的格式。简而言之，版本将根据以下内容进行递增：
 
-- `MAJOR`: Incompatible or major changes.
-- `MINOR`: Backwards-compatible new features and enhancements.
-- `PATCH`: Backwards-compatible bugfixes and package updates.
+- `MAJOR`：不兼容或重大更改。
+- `MINOR`：向后兼容的新功能和增强。
+- `PATCH`：向后兼容的错误修复和软件包更新。
 
 
-## Support
+## 支持
 
-### Got questions?
+### 有问题吗？
 
-You have several options to get them answered:
+您有几种方式可以获得答案：
 
-- The Home Assistant [Community Forum][forum].
-- You could also [open an issue here][issue] GitHub.
+- Home Assistant [社区论坛][forum]。
+- 您还可以在这里[打开问题][issue] GitHub。
 
-### WARNING:
-If you in the `debug` log level mode do not see any received messages (like the one bellow) **DO NOT open issue** - the problem is 100% at you side. If you do open issue anyway it will be immediately closed as invalid! You can ask for help community at the forum link bellow instead.
+### 警告：
+如果您在`debug`日志级别模式下看不到收到的任何消息（如下所示）**请不要打开问题**-问题100%出在您这边。如果您还是打开问题，它会立即被关闭为无效！您可以在下面的论坛链接中向社区寻求帮助。
 
 ```
 DEBUG: Received taptap data
@@ -211,16 +203,16 @@ DEBUG: b'{"gateway":{"id":4609},"node":{"id":14},"timestamp":"2025-04-14T15:26:0
 
 ```
 
-## Authors & contributors
+## 作者与贡献者
 
-The original setup of this repository is by [Li Tin O`ve Weedle][litin].
+该仓库的原始设置由[Li Tin O`ve Weedle][litin]提供。
 
 
-## License
+## 许可证
 
 Apache 2.0
 
-Copyright (c) 2025 Dominik Strnad
+版权(c) 2025 Dominik Strnad
 
 [addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
 [addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=taptap&repository_url=https%3A%2F%2Fgithub.com%2Flitinoveweedle%2Fhassio-addons

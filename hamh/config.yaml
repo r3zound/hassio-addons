@@ -1,8 +1,8 @@
-version: "3.0.0-alpha.83"
+version: "3.0.0-alpha.84"
 image: ghcr.nju.edu.cn/t0bst4r/home-assistant-matter-hub-addon
 slug: hamh
 name: Home-Assistant-Matter-Hub
-description: 从Home Assistant发布您的实体到任何Matter兼容控制器，如Alexa、Apple Home或Google Home。
+description: 未翻译成功
 url: https://gh-proxy.com/github.com/t0bst4r/home-assistant-matter-hub
 panel_icon: mdi:hub
 panel_title: Matter Hub

@@ -1,4 +1,6 @@
-This project is licensed under the MIT License (c) 2019–2025 FaserF.
+# MIT License
+
+Copyright (c) 2018-2021 Franck Nijhof
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
