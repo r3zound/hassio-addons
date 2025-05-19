@@ -1,10 +1,13 @@
-## 2025.5.0b2
+## 2025.5.0b4
 
-- [media_player] Deprecate ``MEDIA_PLAYER_SCHEMA`` [esphome#8784](https://github.com/esphome/esphome/pull/8784) by [@jesserockz](https://github.com/jesserockz)
-- [schema] Get component name if available for deprecation warning [esphome#8785](https://github.com/esphome/esphome/pull/8785) by [@jesserockz](https://github.com/jesserockz)
-- [fan] Update components to use ``fan_schema(...)`` [esphome#8786](https://github.com/esphome/esphome/pull/8786) by [@jesserockz](https://github.com/jesserockz)
-- Improve batching of BLE advertisements for better airtime efficiency [esphome#8778](https://github.com/esphome/esphome/pull/8778) by [@bdraco](https://github.com/bdraco)
-- Fix release to pypi [esphome#8789](https://github.com/esphome/esphome/pull/8789) by [@jesserockz](https://github.com/jesserockz)
-- [climate] Update components to use ``climate_schema(...)`` [esphome#8788](https://github.com/esphome/esphome/pull/8788) by [@jesserockz](https://github.com/jesserockz)
-- Bump esphome-dashboard to 20250514.0 [esphome#8790](https://github.com/esphome/esphome/pull/8790) by [@jesserockz](https://github.com/jesserockz)
+- Avoid protobuf message construction when tx buffer is full [esphome#8787](https://github.com/esphome/esphome/pull/8787) by [@bdraco](https://github.com/bdraco)
+- Update esp32-camera library version [esphome#8832](https://github.com/esphome/esphome/pull/8832) by [@Fexiven](https://github.com/Fexiven)
+- Fix api doc homepage [esphome#8836](https://github.com/esphome/esphome/pull/8836) by [@jesserockz](https://github.com/jesserockz)
+- Deploy doxygen docs to netlify [esphome#8837](https://github.com/esphome/esphome/pull/8837) by [@jesserockz](https://github.com/jesserockz)
+- [release] Fix output value [esphome#8839](https://github.com/esphome/esphome/pull/8839) by [@jesserockz](https://github.com/jesserockz)
+- [release] Don't wait for docker to be finished before deploying schema [esphome#8838](https://github.com/esphome/esphome/pull/8838) by [@jesserockz](https://github.com/jesserockz)
+- Fix API connection sending ping too early after connection establishment [esphome#8840](https://github.com/esphome/esphome/pull/8840) by [@bdraco](https://github.com/bdraco)
+- Fix ethernet connection timeout issue caused by incorrect time value during setup [esphome#8841](https://github.com/esphome/esphome/pull/8841) by [@bdraco](https://github.com/bdraco)
+- [docker] Update pip on build [esphome#8835](https://github.com/esphome/esphome/pull/8835) by [@jesserockz](https://github.com/jesserockz)
+- [api-docs] Run using netlify builders [esphome#8842](https://github.com/esphome/esphome/pull/8842) by [@jesserockz](https://github.com/jesserockz)
 

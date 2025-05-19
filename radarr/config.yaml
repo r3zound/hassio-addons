@@ -1,7 +1,7 @@
 name: Radarr
-version: 0.20.0
+version: 0.21.0
 slug: radarr
-description: Usenet和torrent用户的电影组织者/管理员。
+description: 未翻译成功
 url: https://gh-proxy.com/github.com/hassio-addons/addon-radarr/tree/main/README.md
 codenotary: codenotary@frenck.dev
 webui: http://[HOST]:[PORT:7878]
