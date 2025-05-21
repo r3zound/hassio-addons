@@ -1,7 +1,7 @@
 name: FreshRSS
-version: 0.4.1
+version: 0.4.2
 slug: freshrss
-description: 一个免费的自托管RSS聚合器。
+description: 未翻译成功
 url: https://gh-proxy.com/github.com/einschmidt/addon-freshrss
 panel_icon: mdi:rss-box
 arch:

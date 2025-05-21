@@ -3,7 +3,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "集成 WhatsApp 与 Home Assistant 的应用程序",
+  "description": "null",
   "image": "ghcr.nju.edu.cn/alexbelgium/whatsapper-{arch}",
   "map": [
     "addon_config:rw",
@@ -19,5 +19,5 @@
   "slug": "whatsapper",
   "udev": true,
   "url": "https://gh-proxy.com/github.com/alexbelgium/hassio-addons/tree/master/whatsapper",
-  "version": "1.0.2"
+  "version": "1.0.3"
 }

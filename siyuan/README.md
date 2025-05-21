@@ -1,36 +1,35 @@
-# Home assistant add-on: SiYuan
+# Home assistant 插件: SiYuan
 
-SiYuan is a privacy-first personal knowledge management system, support fine-grained block-level reference and Markdown WYSIWYG.
+SiYuan 是一个以隐私为首的个人知识管理系统，支持细粒度块级引用和 Markdown WYSIWYG。
 
-Seems popular, but has subscription add-ons and optional China datacenter. Use with care
+看起来很受欢迎，但有订阅插件和可选的中国数据中心。使用时请小心。
 
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢所有给我仓库点星的人！要点星请点击下方图片，然后在右上角找到。谢谢！_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
-## About
+## 关于
 
-This addon is based on the [docker image](https://github.com/siyuan-note/siyuan).
+此插件基于 [docker 镜像](https://github.com/siyuan-note/siyuan)。
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Hass.io add-on.
+此插件的安装非常简单，与安装任何其他 Hass.io 插件没有区别。
 
-1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install this add-on.
-1. Set the access code and port
-1. Click the `Save` button to store your configuration.
-1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
-1. Open WebUI should work via <your-ip>:port.
-1. Data should live in /addon_config/2effc9b9_siyuan
-## Configuration
+1. [将我的 Hass.io 插件库][repository]添加到您的 Hass.io 实例。
+1. 安装此插件。
+1. 设置访问代码和端口
+1. 点击 `保存` 按钮以存储您的配置。
+1. 启动插件。
+1. 检查插件的日志以查看一切是否顺利。
+1. 打开 WebUI 应该可以通过 <your-ip>:port 访问。
+1. 数据应存储在 /addon_config/2effc9b9_siyuan 中。
+## 配置
 
 ```
-port : 6806 #port you want to run on.
+port : 6806 #您希望运行的端口。
 ```
 
-Webui can be found at `<your-ip>:port`.
+Webui 可以在 `<your-ip>:port` 找到。
 
 [repository]: https://github.com/jdeath/homeassistant-addons

@@ -1,6 +1,6 @@
 {
   "build_from": {
-    "amd64": "docker.1ms.run/baldarn/whatsapper:latest"
+    "amd64": "baldarn/whatsapper:latest"
   },
   "codenotary": {
     "signer": "alexandrep.github@gmail.com"
