@@ -1,6 +1,6 @@
 name: "LiveBook"
-version: "0.16.0"
-upstream: "0.16.0"
+version: "0.16.1"
+upstream: "0.16.1"
 slug: livebook
 description: 未翻译成功
   Livebook is a web application for writing interactive and collaborative code notebooks

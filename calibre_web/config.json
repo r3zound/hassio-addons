@@ -84,7 +84,7 @@
   "map": [
     "media:rw",
     "share:rw",
-    "addon_config:rw",
+    "all_addon_configs:rw",
     "homeassistant_config:rw",
     "ssl"
   ],
@@ -122,6 +122,6 @@
   "slug": "calibre-web",
   "udev": true,
   "url": "https://gh-proxy.com/github.com/alexbelgium/hassio-addons/tree/master/calibre_web",
-  "version": "0.6.24-4",
+  "version": "0.6.24-5",
   "video": true
 }
