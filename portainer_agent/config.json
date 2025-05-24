@@ -8,7 +8,7 @@
     "backups"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "代理用于管理Swarm集群中的所有资源。",
+  "description": "null",
   "docker_api": true,
   "full_access": true,
   "hassio_api": true,
@@ -45,5 +45,5 @@
   "slug": "portainer_agent",
   "udev": true,
   "url": "https://gh-proxy.com/github.com/alexbelgium/hassio-addons",
-  "version": "linux-arm64-2.21.5-alpine"
+  "version": "alpine-sts"
 }

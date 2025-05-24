@@ -1,1 +1,1 @@
-# 家庭助手插件: grampsweb
+# Home assistant 插件: grampsweb
