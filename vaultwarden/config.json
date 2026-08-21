@@ -1,0 +1,32 @@
+{
+  "arch": [
+    "amd64",
+    "aarch64"
+  ],
+  "boot": "auto",
+  "description": "[老王杂谈说]：null",
+  "environment": {
+    "DATA_FOLDER": "/config"
+  },
+  "map": [
+    "addon_config:rw"
+  ],
+  "image": "ghcr.nju.edu.cn/dani-garcia/vaultwarden",
+  "version": "1.37.0",
+  "name": "Vaultwarden",
+  "options": {},
+  "ports": {
+    "80/tcp": "7277"
+  },
+  "ports_description": {
+    "80/tcp": "Web interface"
+  },
+  "schema": {},
+  "slug": "vaultwarden",
+  "startup": "services",
+  "upstream": "1.37.0",
+  "url": "https://gh-proxy.org/github.com/jdeath/homeassistant-addons",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:80]",
+  "ingress": true,
+  "ingress_port": 80
+}
